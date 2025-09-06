@@ -16,6 +16,5 @@ Hence all three bisectors are concurrent.
 
 (Incidentally, $P$ is the circumcentre of $\triangle ABC$.)                                                                           $\Box$
 
-1) **Understand the problem**
-   
-2) 
+**Understand the problem**
+   - Show
