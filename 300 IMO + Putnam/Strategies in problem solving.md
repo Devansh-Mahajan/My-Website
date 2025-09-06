@@ -20,5 +20,8 @@ Hence all three bisectors are concurrent.
    - "Show that..." or "Evaluate..." questions in which a certain statement has to be proven true, or a certain expression has to be worked out
    - "Find a..." or "Find all..." questions, which requires one to find something (or everything) that satisfies certain requirements
    - "Is there a..." questions, which either require you to prove a statement or provide a counterexample (and thus is one of the previous two types of problem)
+   
    >[!Note]
-   >Not all problems fall into these neat categories 
+   >Not all problems fall into these neat categories
+
+**Understand the Data**
