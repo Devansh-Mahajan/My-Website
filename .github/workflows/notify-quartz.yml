@@ -1,0 +1,20 @@
+name: Notify Quartz
+
+on:
+  push:
+    branches: [ main ]
+    # Optional: only trigger when note files change
+    # paths:
+    #   - "**/*.md"
+    #   - "!**/.obsidian/**"
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch event to Quartz
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PAT_FOR_QUARTZ }}  # stored in My-Website repo secrets
+          repository: Devansh-Mahajan/Obsidian-Website
+          event-type: vault-updated
