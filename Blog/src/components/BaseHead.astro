@@ -31,7 +31,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const {
 	title,
 	description,
-	featured_image = '/blog-placeholder-1.jpg',
+	featured_image,
 	featured_image_alt,
 	meta_title,
 	meta_description,
@@ -65,6 +65,7 @@ const finalTwitterImage = twitter_image || finalOgImage;
 
 // Ensure all image URLs are absolute
 const getAbsoluteImageUrl = (imageUrl: string) => {
+    if (!imageUrl) return '';
     try {
         return new URL(imageUrl, Astro.url).toString();
     } catch (e) {
@@ -72,9 +73,9 @@ const getAbsoluteImageUrl = (imageUrl: string) => {
     }
 };
 
-const absoluteFeaturedImage = getAbsoluteImageUrl(featured_image);
-const absoluteOgImage = getAbsoluteImageUrl(finalOgImage);
-const absoluteTwitterImage = getAbsoluteImageUrl(finalTwitterImage);
+const absoluteFeaturedImage = featured_image ? getAbsoluteImageUrl(featured_image) : '';
+const absoluteOgImage = finalOgImage ? getAbsoluteImageUrl(finalOgImage) : '';
+const absoluteTwitterImage = finalTwitterImage ? getAbsoluteImageUrl(finalTwitterImage) : '';
 ---
 
 <!-- Global Metadata -->
@@ -104,8 +105,8 @@ const absoluteTwitterImage = getAbsoluteImageUrl(finalTwitterImage);
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={finalOgTitle} />
 <meta property="og:description" content={finalOgDescription} />
-<meta property="og:image" content={absoluteOgImage} />
-{featured_image_alt && <meta property="og:image:alt" content={featured_image_alt} />}
+{absoluteOgImage && <meta property="og:image" content={absoluteOgImage} />}
+{featured_image_alt && absoluteOgImage && <meta property="og:image:alt" content={featured_image_alt} />}
 {author && <meta property="article:author" content={author} />}
 
 <!-- Twitter -->
@@ -113,5 +114,5 @@ const absoluteTwitterImage = getAbsoluteImageUrl(finalTwitterImage);
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={finalTwitterTitle} />
 <meta property="twitter:description" content={finalTwitterDescription} />
-<meta property="twitter:image" content={absoluteTwitterImage} />
-{featured_image_alt && <meta property="twitter:image:alt" content={featured_image_alt} />}
+{absoluteTwitterImage && <meta property="twitter:image" content={absoluteTwitterImage} />}
+{featured_image_alt && absoluteTwitterImage && <meta property="twitter:image:alt" content={featured_image_alt} />}

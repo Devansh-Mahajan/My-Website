@@ -66,12 +66,15 @@ const safeTags = tags ?? [];
 			}
 			.hero-image {
 				width: 100%;
+				margin: 2rem 0;
 			}
 			.hero-image img {
 				display: block;
 				margin: 0 auto;
 				border-radius: 12px;
 				box-shadow: var(--box-shadow);
+				max-width: 100%;
+				height: auto;
 			}
 			.prose {
 				width: 920px;
@@ -151,7 +154,7 @@ const safeTags = tags ?? [];
 								))}
 							</div>
 						)}
-						{featured_image && (
+						{featured_image && featured_image.trim() !== '' && (
 							<div class="hero-image">
 								<img
 									width={1020}
