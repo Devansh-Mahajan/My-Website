@@ -14,7 +14,7 @@ const posts = (await getCollection('blog'))
         const dateB = b.data.created_date?.valueOf() ?? 0;
         return dateB - dateA;
     })
-    .slice(0, 3);
+    .slice(0, 4);
 ---
 
 <!doctype html>
