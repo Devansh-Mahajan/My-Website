@@ -13,9 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "300 IMO + Putnam/Strategies in problem solving.md",
                 "mode": "source",
-                "source": false,
+                "source": true,
                 "backlinks": true,
                 "backlinkOpts": {
                   "collapseAll": false,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Strategies in problem solving"
             }
           }
         ]
@@ -196,9 +196,9 @@
   "active": "40c9a645630c07fa",
   "lastOpenFiles": [
     "300 IMO + Putnam/Solving Mathematical Problems -Terence Tao.md",
+    "index.md",
     "Welcome.md",
     "300 IMO + Putnam/Strategies in problem solving.md",
-    "index.md",
     "500 Book.md",
     "75427434-problem-books-in-mathematics-problem-solving-strategies.pdf",
     "998 Images/Pasted image 20250906182721.png",
