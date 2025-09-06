@@ -33,7 +33,7 @@ subtitle: A shorter subtitle    # Appears below the title
 description: A brief summary    # Used for SEO and post previews
 tags: [tag1, tag2]             # Categories for your post
 created_date: YYYY-MM-DD       # Publication date
-featured_image: URL            # Hero image for your post
+featured_image: https://example.com/image.jpg  # Hero image for your post
 ---
 ```
 
