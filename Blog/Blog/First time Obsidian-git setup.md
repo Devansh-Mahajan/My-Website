@@ -1,7 +1,7 @@
 ---
-title: 'First-Time Obsidian Git Setup: Complete Guide'
-description: 'A step-by-step guide for setting up Obsidian Git for beginners, including repository creation and plugin configuration'
-publish: true
+title: "First-Time Obsidian Git Setup: Complete Guide"
+description: A step-by-step guide for setting up Obsidian Git for beginners, including repository creation and plugin configuration
+publish: false
 created_date: 2024-01-20
 slug: git-setup-for-obsidian
 tags:

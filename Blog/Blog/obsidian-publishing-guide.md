@@ -2,10 +2,14 @@
 title: How to Publish Your Obsidian Notes to Your Blog
 subtitle: A complete guide to publishing your digital garden
 description: Learn how to publish your Obsidian notes to your personal blog using this template, including all the necessary frontmatter configurations.
-tags: [obsidian, guide, digital-garden, blogging]
+tags:
+  - obsidian
+  - guide
+  - digital-garden
+  - blogging
 created_date: 2023-12-16
 featured_image: https://obsidian.md/images/banner.png
-publish: true
+publish: false
 ---
 
 # Publishing Your Obsidian Notes to Your Blog

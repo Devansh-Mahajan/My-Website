@@ -1,9 +1,9 @@
 ---
 title: Markdown Style Guide
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
-pubDate: 
+description: Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+pubDate:
 slug: markdown-style
-publish: true
+publish: false
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.

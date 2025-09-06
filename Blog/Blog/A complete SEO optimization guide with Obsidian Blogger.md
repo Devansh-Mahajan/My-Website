@@ -1,22 +1,22 @@
 ---
 title: SEO Implementation Guide for Obsidian Blogger
-description: 'Learn how SEO is implemented in Obsidian Blogger with detailed explanations of metadata, frontmatter, and technical optimizations.'
-publish: true
+description: Learn how SEO is implemented in Obsidian Blogger with detailed explanations of metadata, frontmatter, and technical optimizations.
+publish: false
 slug: seo-implementation-guide
 created_date: 2024-01-20
 tags:
   - seo
   - optimization
   - guide
-meta_title: 'Complete SEO Implementation Guide for Obsidian Blogger'
-meta_description: 'Detailed guide on how SEO is implemented in Obsidian Blogger, including frontmatter usage, metadata handling, and technical optimizations.'
+meta_title: Complete SEO Implementation Guide for Obsidian Blogger
+meta_description: Detailed guide on how SEO is implemented in Obsidian Blogger, including frontmatter usage, metadata handling, and technical optimizations.
 keywords:
   - obsidian seo
   - blog optimization
   - frontmatter seo
   - metadata optimization
-og_title: 'Master SEO in Obsidian Blogger'
-og_description: 'Learn how Obsidian Blogger implements SEO through frontmatter, metadata, and technical optimizations'
+og_title: Master SEO in Obsidian Blogger
+og_description: Learn how Obsidian Blogger implements SEO through frontmatter, metadata, and technical optimizations
 og_type: article
 twitter_card: summary_large_image
 ---
