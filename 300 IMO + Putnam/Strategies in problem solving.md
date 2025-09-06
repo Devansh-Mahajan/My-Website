@@ -6,11 +6,11 @@
 > [!example]
 > Show that the perpendicular bisectors of a triangle are concurrent.
 
-**Proof.** Call the triangle \(ABC\). Now let \(P\) be the intersection of the perpendicular bisectors of \(AB\) and \(AC\).  
-Because \(P\) is on the \(AB\) bisector, \(|AP| = |PB|\).  
-Because \(P\) is on the \(AC\) bisector, \(|AP| = |PC|\).  
-Combining the two, \(|BP| = |PC|\).  
-But this means that \(P\) has to be on the \(BC\) bisector.  
-Hence all three bisectors are concurrent.  
+**Proof.** Call the triangle $ABC$. Now let $P$ be the intersection of the perpendicular bisectors of $AB$ and $AC$.
+Because $P$ is on the $AB$ bisector, $|AP|=|PB|$.
+Because $P$ is on the $AC$ bisector, $|AP|=|PC|$.
+Combining the two, $|BP|=|PC|$.
+But this means that $P$ has to be on the $BC$ bisector.
+Hence all three bisectors are concurrent.
 
-(Incidentally, \(P\) is the circumcentre of \(\triangle ABC\).) \(\Box\)
+(Incidentally, $P$ is the circumcentre of $\triangle ABC$.)                                                                           $\Box$
