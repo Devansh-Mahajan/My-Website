@@ -6,6 +6,6 @@ description: A brief summary
 tags:
   - tag1
   - tag2
-created_date: YYYY-MM-DD
+created_date: "{{date}}"
 featured_image: URL
 ---
