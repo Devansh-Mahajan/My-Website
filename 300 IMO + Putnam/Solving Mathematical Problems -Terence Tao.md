@@ -1,1 +1,1 @@
-this is my summary of taos famous book
+# 1. Strategies in problem solving
