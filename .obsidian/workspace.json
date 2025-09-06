@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "300 IMO + Putnam/Solving Mathematical Problems -Terence Tao.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Solving Mathematical Problems -Terence Tao"
+              "title": "index"
             }
           }
         ]
@@ -195,16 +195,17 @@
   },
   "active": "40c9a645630c07fa",
   "lastOpenFiles": [
-    "75427434-problem-books-in-mathematics-problem-solving-strategies.pdf",
+    "Welcome.md",
+    "index.md",
     "300 IMO + Putnam/Solving Mathematical Problems -Terence Tao.md",
+    "500 Book.md",
+    "75427434-problem-books-in-mathematics-problem-solving-strategies.pdf",
     "300 IMO + Putnam/Strategies in problem solving.md",
-    "Pasted image 20250906182721.png",
+    "998 Images/Pasted image 20250906182721.png",
     "999 Templates/Blog Template.md",
     "999 Templates/Class Template.md",
     "Blog/Blog/Untitled.md",
-    "index.md",
     "Blog/Blog/A complete SEO optimization guide with Obsidian Blogger.md",
-    "500 Book.md",
     "Blog/Blog/First time Obsidian-git setup.md",
     "Blog/Blog/markdown-style-guide.md",
     "Blog/Blog/Obsidian Blogger Template.md",
@@ -226,7 +227,6 @@
     "Blog/Blog/First Blog Post.md",
     "700 Quant/Untitled.md",
     "800 Projects/Untitled.md",
-    "Welcome.md",
     "Blog/src/content/blog/Test Mermaid.md",
     "Blog/src/content/notes/800 Projects/Untitled.md",
     "Blog/src/content/notes/700 Quant/Untitled.md",
