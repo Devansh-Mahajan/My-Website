@@ -15,3 +15,7 @@ But this means that $P$ has to be on the $BC$ bisector.
 Hence all three bisectors are concurrent.
 
 (Incidentally, $P$ is the circumcentre of $\triangle ABC$.)                                                                           $\Box$
+
+1) **Understand the problem**
+   
+2) 
