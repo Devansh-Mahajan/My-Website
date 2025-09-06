@@ -30,8 +30,33 @@
               "icon": "lucide-file",
               "title": "First Blog Post"
             }
+          },
+          {
+            "id": "40c9a645630c07fa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Blog/Blog/Testing blog update.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Testing blog update"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -104,7 +129,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Blog/Blog/First Blog Post.md",
+                "file": "Blog/Blog/Testing blog update.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +139,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for First Blog Post"
+              "title": "Backlinks for Testing blog update"
             }
           },
           {
@@ -123,12 +148,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Blog/Blog/First Blog Post.md",
+                "file": "Blog/Blog/Testing blog update.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from First Blog Post"
+              "title": "Outgoing links from Testing blog update"
             }
           },
           {
@@ -152,13 +177,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Blog/Blog/First Blog Post.md",
+                "file": "Blog/Blog/Testing blog update.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of First Blog Post"
+              "title": "Outline of Testing blog update"
             }
           },
           {
@@ -193,11 +218,12 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "e002f4cad20fde60",
+  "active": "40c9a645630c07fa",
   "lastOpenFiles": [
+    "Blog/Blog/First Blog Post.md",
+    "Blog/Blog/Testing blog update.md",
     "999 Templates/Blog Template.md",
     "999 Templates/Class Template.md",
-    "Blog/Blog/First Blog Post.md",
     "Blog/Blog/A complete SEO optimization guide with Obsidian Blogger.md",
     "Blog/Blog/Test Mermaid.md",
     "index.md",
@@ -233,7 +259,6 @@
     "quartz/node_modules/typescript/README.md",
     "quartz/node_modules/@img/sharp-libvips-darwin-arm64/README.md",
     "quartz/node_modules/colorjs.io/README.md",
-    "quartz/node_modules/@esbuild/darwin-arm64/README.md",
     "quartz/node_modules/gifuct-js/demo/jblack.gif",
     "quartz/node_modules/gifuct-js/demo/horses.gif",
     "quartz/node_modules/gifuct-js/demo/dog.gif",
