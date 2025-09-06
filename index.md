@@ -27,7 +27,6 @@ Comprehensive notes and insights from books I've read, covering technology, math
 ## 🚀 Recent Updates
 
 - **[[200 ETH Zurich/Untitled|ETH Zurich Course Notes]]** - Latest academic content
-- **[[300 IMO + Putnam/Tao Book|Tao's Analysis Book]]** - Advanced mathematical concepts
 - **[[500 Book/Untitled|Book Notes]]** - Recent reading insights
 
 ## 🔗 Connect

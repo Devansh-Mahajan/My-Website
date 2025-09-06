@@ -150,9 +150,33 @@
               "icon": "lucide-file",
               "title": "Class Template"
             }
+          },
+          {
+            "id": "8e20895d3fa38b8d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "999 Templates/Blog Template.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Blog Template"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -225,7 +249,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "999 Templates/Class Template.md",
+                "file": "999 Templates/Blog Template.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -235,7 +259,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Class Template"
+              "title": "Backlinks for Blog Template"
             }
           },
           {
@@ -298,12 +322,14 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "7d9294db258ba45b",
+  "active": "8e20895d3fa38b8d",
   "lastOpenFiles": [
+    "index.md",
+    "999 Templates/Blog Template.md",
+    "999 Templates/Class Template.md",
     "700 Quant/Untitled.md",
     "800 Projects/Untitled.md",
     "Welcome.md",
-    "999 Templates/Class Template.md",
     "Blog/dist/sitemap-index.xml",
     "Blog/dist/sitemap-0.xml",
     "Blog/dist/seo-implementation-guide/index.html",
@@ -337,8 +363,6 @@
     "quartz/node_modules/speech-rule-engine/README.md",
     "quartz/node_modules/rehype-citation/README.md",
     "quartz/node_modules/sass/README.md",
-    "quartz/node_modules/flexsearch/CHANGELOG.md",
-    "quartz/node_modules/flexsearch/README.md",
     "quartz/node_modules/gifuct-js/demo/jblack.gif",
     "quartz/node_modules/gifuct-js/demo/horses.gif",
     "quartz/node_modules/gifuct-js/demo/dog.gif",
