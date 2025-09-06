@@ -4,3 +4,6 @@ Recently came across this book by Terence Tao probably THE math genius of our ti
 				[[Strategies in problem solving]]
 				[[Examples in number Theory]]
 				[[Examples in algebra and analysis]]
+				[[Euclidian geometry]]
+				[[Analytic geometry]]
+				[[Sundry examples]]
