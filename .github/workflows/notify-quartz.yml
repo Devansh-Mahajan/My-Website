@@ -18,3 +18,4 @@ jobs:
           token: ${{ secrets.PAT_FOR_QUARTZ }}  # stored in My-Website repo secrets
           repository: Devansh-Mahajan/Obsidian-Website
           event-type: vault-updated
+
