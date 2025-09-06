@@ -157,7 +157,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "999 Templates/Blog Template.md",
+                "file": "Blog/Blog/A complete SEO optimization guide with Obsidian Blogger.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -172,11 +172,59 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Blog Template"
+              "title": "A complete SEO optimization guide with Obsidian Blogger"
+            }
+          },
+          {
+            "id": "b426821486a54b89",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Blog/Blog/First Blog Post.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "First Blog Post"
+            }
+          },
+          {
+            "id": "e002f4cad20fde60",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Blog/Blog/First Blog Post.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "First Blog Post"
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -249,7 +297,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "999 Templates/Blog Template.md",
+                "file": "Blog/Blog/First Blog Post.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -259,7 +307,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Blog Template"
+              "title": "Backlinks for First Blog Post"
             }
           },
           {
@@ -322,10 +370,13 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "8e20895d3fa38b8d",
+  "active": "e002f4cad20fde60",
   "lastOpenFiles": [
-    "index.md",
+    "Blog/Blog/First Blog Post.md",
     "999 Templates/Blog Template.md",
+    "Blog/Blog/A complete SEO optimization guide with Obsidian Blogger.md",
+    "Blog/Blog/Test Mermaid.md",
+    "index.md",
     "999 Templates/Class Template.md",
     "700 Quant/Untitled.md",
     "800 Projects/Untitled.md",
@@ -360,9 +411,6 @@
     "quartz/node_modules/@img/sharp-libvips-darwin-arm64/README.md",
     "quartz/node_modules/colorjs.io/README.md",
     "quartz/node_modules/@esbuild/darwin-arm64/README.md",
-    "quartz/node_modules/speech-rule-engine/README.md",
-    "quartz/node_modules/rehype-citation/README.md",
-    "quartz/node_modules/sass/README.md",
     "quartz/node_modules/gifuct-js/demo/jblack.gif",
     "quartz/node_modules/gifuct-js/demo/horses.gif",
     "quartz/node_modules/gifuct-js/demo/dog.gif",
