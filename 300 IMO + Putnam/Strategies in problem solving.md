@@ -6,6 +6,7 @@
 > [!example]
 > Show that the perpendicular bisectors of a triangle are concurrent.
 
+![[Pasted image 20250906182721.png]]
 **Proof.** Call the triangle $ABC$. Now let $P$ be the intersection of the perpendicular bisectors of $AB$ and $AC$.
 Because $P$ is on the $AB$ bisector, $|AP|=|PB|$.
 Because $P$ is on the $AC$ bisector, $|AP|=|PC|$.
