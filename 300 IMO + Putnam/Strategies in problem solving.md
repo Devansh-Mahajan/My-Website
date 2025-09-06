@@ -25,3 +25,4 @@ Hence all three bisectors are concurrent.
    >Not all problems fall into these neat categories
 
 **Understand the Data**
+i
