@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "300 IMO + Putnam/Solving Mathematical Problems -Terence Tao.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Solving Mathematical Problems -Terence Tao"
+              "title": "index"
             }
           }
         ]
@@ -195,8 +195,8 @@
   },
   "active": "40c9a645630c07fa",
   "lastOpenFiles": [
-    "Welcome.md",
     "300 IMO + Putnam/Solving Mathematical Problems -Terence Tao.md",
+    "Welcome.md",
     "300 IMO + Putnam/Strategies in problem solving.md",
     "index.md",
     "500 Book.md",
