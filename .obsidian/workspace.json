@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "300 IMO + Putnam/Strategies in problem solving.md",
+                "file": "300 IMO + Putnam/Solving Mathematical Problems -Terence Tao.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Strategies in problem solving"
+              "title": "Solving Mathematical Problems -Terence Tao"
             }
           }
         ]
@@ -195,9 +195,9 @@
   },
   "active": "40c9a645630c07fa",
   "lastOpenFiles": [
+    "300 IMO + Putnam/Strategies in problem solving.md",
     "Pasted image 20250906182721.png",
     "300 IMO + Putnam/Solving Mathematical Problems -Terence Tao.md",
-    "300 IMO + Putnam/Strategies in problem solving.md",
     "999 Templates/Blog Template.md",
     "999 Templates/Class Template.md",
     "Blog/Blog/Untitled.md",
@@ -240,7 +240,6 @@
     "quartz/node_modules/js-binary-schema-parser/example/horses.gif",
     "quartz/node_modules/js-binary-schema-parser/example/dog.gif",
     "quartz/node_modules/js-binary-schema-parser/example/box.gif",
-    "quartz/quartz/static/og-image.png",
     "Untitled.canvas"
   ]
 }
