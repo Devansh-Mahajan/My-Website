@@ -7,4 +7,3 @@ Recently came across this book by Terence Tao probably THE math genius of our ti
 - [[Euclidian geometry]]
 - [[Analytic geometry]]
 - [[Sundry examples]]
-- ![[75427434-problem-books-in-mathematics-problem-solving-strategies.pdf]]
