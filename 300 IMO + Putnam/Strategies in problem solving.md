@@ -17,4 +17,5 @@ Hence all three bisectors are concurrent.
 (Incidentally, $P$ is the circumcentre of $\triangle ABC$.)                                                                           $\Box$
 
 **Understand the problem**
-   - Show
+   - "Show that..." or "Evaluate..." questions in which a certain statement has to be proven true, or a certain expression has to be worked out
+   - "Finde"
