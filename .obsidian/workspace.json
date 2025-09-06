@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Blog/Blog/Testing blog update.md",
+                "file": "700 Quant/Untitled.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Testing blog update"
+              "title": "Untitled"
             }
           }
         ],
@@ -129,7 +129,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Blog/Blog/Testing blog update.md",
+                "file": "700 Quant/Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +139,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Testing blog update"
+              "title": "Backlinks for Untitled"
             }
           },
           {
@@ -148,12 +148,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Blog/Blog/Testing blog update.md",
+                "file": "700 Quant/Untitled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Testing blog update"
+              "title": "Outgoing links from Untitled"
             }
           },
           {
@@ -177,13 +177,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Blog/Blog/Testing blog update.md",
+                "file": "700 Quant/Untitled.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Testing blog update"
+              "title": "Outline of Untitled"
             }
           },
           {
@@ -220,10 +220,10 @@
   },
   "active": "40c9a645630c07fa",
   "lastOpenFiles": [
-    "Blog/Blog/First Blog Post.md",
-    "Blog/Blog/Testing blog update.md",
-    "999 Templates/Blog Template.md",
     "999 Templates/Class Template.md",
+    "999 Templates/Blog Template.md",
+    "Blog/Blog/Testing blog update.md",
+    "Blog/Blog/First Blog Post.md",
     "Blog/Blog/A complete SEO optimization guide with Obsidian Blogger.md",
     "Blog/Blog/Test Mermaid.md",
     "index.md",
