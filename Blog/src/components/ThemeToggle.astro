@@ -30,9 +30,6 @@
     justify-content: center;
     transition: all 0.2s ease;
     color: rgb(var(--gray-dark));
-    position: relative;
-    width: 2.5rem;
-    height: 2.5rem;
   }
 
   .theme-toggle:hover {
@@ -47,31 +44,26 @@
   .theme-toggle svg {
     width: 20px;
     height: 20px;
-    transition: all 0.3s ease;
-    position: absolute;
+    transition: transform 0.2s ease;
   }
 
   /* Show/hide icons based on theme */
-  /* In light mode: show sun icon (current theme indicator) */
+  /* In light mode: show sun icon */
   .sun-icon {
-    opacity: 1;
-    transform: rotate(0deg);
+    display: block;
   }
 
   .moon-icon {
-    opacity: 0;
-    transform: rotate(-180deg);
+    display: none;
   }
 
-  /* In dark mode: show moon icon (current theme indicator) */
+  /* In dark mode: show moon icon */
   :global([data-theme='dark']) .sun-icon {
-    opacity: 0;
-    transform: rotate(180deg);
+    display: none;
   }
 
   :global([data-theme='dark']) .moon-icon {
-    opacity: 1;
-    transform: rotate(0deg);
+    display: block;
   }
 </style>
 
@@ -94,23 +86,20 @@
     if (savedTheme) {
       setTheme(savedTheme);
     } else {
-      // Default to light mode, but respect system preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(prefersDark ? 'dark' : 'light');
+      setTheme('light');
     }
   }
 
   // Add click event listener
   themeToggle?.addEventListener('click', toggleTheme);
 
-  // Initialize theme immediately and on page load
-  initializeTheme();
+  // Initialize theme on page load
   document.addEventListener('DOMContentLoaded', initializeTheme);
 
   // Listen for system theme changes, but only if no theme is saved
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
     if (!localStorage.getItem('theme')) {
-      setTheme(e.matches ? 'dark' : 'light');
+      setTheme('light');
     }
   });
 </script>
