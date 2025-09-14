@@ -249,20 +249,52 @@ const posts = (await getCollection('blog'))
 		color: white !important;
 		box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3) !important;
 		text-decoration: none !important;
+		border: none !important;
+		outline: none !important;
 	}
 
 	.primary-button:hover,
-	.primary-button:focus {
+	.primary-button:focus,
+	.primary-button:visited,
+	.primary-button:link {
 		transform: translateY(-2px) !important;
 		box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4) !important;
 		background: linear-gradient(135deg, #2563eb, #1e40af) !important;
 		color: white !important;
 		text-decoration: none !important;
+		border: none !important;
+		outline: none !important;
 	}
 
 	.primary-button:active {
 		transform: translateY(0px) !important;
 		box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3) !important;
+		background: linear-gradient(135deg, #1d4ed8, #1e3a8a) !important;
+		color: white !important;
+		text-decoration: none !important;
+		border: none !important;
+		outline: none !important;
+	}
+
+	/* Override any potential global styles */
+	.cta-buttons .primary-button,
+	.cta-buttons .primary-button:hover,
+	.cta-buttons .primary-button:focus,
+	.cta-buttons .primary-button:active,
+	.cta-buttons .primary-button:visited,
+	.cta-buttons .primary-button:link {
+		background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+		color: white !important;
+		text-decoration: none !important;
+	}
+
+	.cta-buttons .primary-button:hover,
+	.cta-buttons .primary-button:focus {
+		background: linear-gradient(135deg, #2563eb, #1e40af) !important;
+		color: white !important;
+	}
+
+	.cta-buttons .primary-button:active {
 		background: linear-gradient(135deg, #1d4ed8, #1e3a8a) !important;
 		color: white !important;
 	}
@@ -347,8 +379,30 @@ const posts = (await getCollection('blog'))
 
 	[data-theme='dark'] .area-card {
 		background: rgb(var(--card-bg));
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-		border: 1px solid rgba(var(--gray), 0.1);
+	}
+
+	/* FINAL OVERRIDE - Ensure primary button NEVER turns white */
+	a.primary-button,
+	a.primary-button:any-link,
+	a.primary-button:link,
+	a.primary-button:visited,
+	a.primary-button:hover,
+	a.primary-button:focus,
+	a.primary-button:active {
+		background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+		color: white !important;
+		text-decoration: none !important;
+	}
+
+	a.primary-button:hover,
+	a.primary-button:focus {
+		background: linear-gradient(135deg, #2563eb, #1e40af) !important;
+		color: white !important;
+	}
+
+	a.primary-button:active {
+		background: linear-gradient(135deg, #1d4ed8, #1e3a8a) !important;
+		color: white !important;
 	}
 
 	[data-theme='dark'] .area-card:hover {
