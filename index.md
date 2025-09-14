@@ -1,6 +1,6 @@
 ---
-title: "Devansh Mahajan"
-description: "Study Notes & Projects from my ETH Computer Science Journey"
+title: Devansh Mahajan
+description: Study Notes & Projects from my ETH EECS Journey
 ---
 
 # Welcome to My Digital Garden 🌱
@@ -23,7 +23,7 @@ Exploring quantitative models in computing and finance — from probability theo
 ### [[800 Projects/|Projects]]
 A portfolio of hands-on experiments and builds: embedded systems, software engineering, algorithm design, and interdisciplinary projects.
 ### [[500 Book/|Book Notes & Reviews]]
-Comprehensive notes and insights from books I've read, covering technology, mathematics, and personal development.
+Structured notes and reviews from books across technology, mathematics, engineering, and personal growth.
 
 ## 🚀 Recent Updates
 
