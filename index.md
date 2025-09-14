@@ -5,22 +5,23 @@ description: "Study Notes & Projects from my ETH Computer Science Journey"
 
 # Welcome to My Digital Garden 🌱
 
-Hi! I'm **Devansh Mahajan**, a Computer Science student at ETH Zürich. This is my digital knowledge base where I explore the intersection of theory and practice through rigorous study and hands-on projects.
+Hi! I'm **Devansh Mahajan**, a student of **Electronics and Computer Science (EECS)** at **ETH Zürich**. 
+
+This is my evolving digital knowledge base where I document and connect insights from coursework, research, and projects — bridging rigorous theory with practical application.
 
 ## 🎯 Areas of Focus
 
 ### [[200 ETH Zurich/|ETH Zurich Studies]]
-My academic journey at ETH, covering algorithms, data structures, mathematics, and computer science fundamentals.
+Notes and reflections from my ETH journey, spanning electronics, computer systems, algorithms, data structures, and applied mathematics.
 
 ### [[300 IMO + Putnam/|Mathematics & Problem Solving]]
 Exploring mathematical concepts through IMO and Putnam problem-solving, including advanced topics in algebra, geometry, and number theory.
 
 ### [[700 Quant/|Quantitative Analysis]]
-Financial mathematics, statistical modeling, and quantitative methods in computer science and finance.
+Exploring quantitative models in computing and finance — from probability theory and statistics to algorithmic trading foundations.
 
-### [[800 Projects/|Software Projects]]
-Hands-on software engineering projects, including web development, algorithms implementation, and system design.
-
+### [[800 Projects/|Projects]]
+A portfolio of hands-on experiments and builds: embedded systems, software engineering, algorithm design, and interdisciplinary projects.
 ### [[500 Book/|Book Notes & Reviews]]
 Comprehensive notes and insights from books I've read, covering technology, mathematics, and personal development.
 
