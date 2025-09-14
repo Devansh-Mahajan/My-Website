@@ -245,22 +245,26 @@ const posts = (await getCollection('blog'))
 	}
 
 	.primary-button {
-		background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-		color: white;
-		box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+		background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+		color: white !important;
+		box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3) !important;
+		text-decoration: none !important;
 	}
 
 	.primary-button:hover,
 	.primary-button:focus {
-		transform: translateY(-2px);
-		box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
-		background: linear-gradient(135deg, #2563eb, #1e40af);
-		color: white;
+		transform: translateY(-2px) !important;
+		box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4) !important;
+		background: linear-gradient(135deg, #2563eb, #1e40af) !important;
+		color: white !important;
+		text-decoration: none !important;
 	}
 
 	.primary-button:active {
-		transform: translateY(0px);
-		box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+		transform: translateY(0px) !important;
+		box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3) !important;
+		background: linear-gradient(135deg, #1d4ed8, #1e3a8a) !important;
+		color: white !important;
 	}
 
 	.secondary-button {
