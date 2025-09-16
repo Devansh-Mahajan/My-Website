@@ -30,8 +30,33 @@
               "icon": "lucide-file",
               "title": "index"
             }
+          },
+          {
+            "id": "c96e2e85067b0236",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "200 ETH Zurich/EECS_BSc.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "EECS_BSc"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -88,8 +113,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "44ac1d4342bf6645",
@@ -194,11 +218,15 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "40c9a645630c07fa",
+  "active": "c96e2e85067b0236",
   "lastOpenFiles": [
+    "Blog/src/content/notes/200 ETH Zurich/Untitled.md",
+    "200 ETH Zurich/200 ETH Zurich.md",
+    "200 ETH Zurich/EECS_BSc.md",
+    "index.md",
+    "200 ETH Zurich/Untitled.md",
     "300 IMO + Putnam/Strategies in problem solving.md",
     "300 IMO + Putnam/Solving Mathematical Problems -Terence Tao.md",
-    "index.md",
     "Welcome.md",
     "500 Book.md",
     "75427434-problem-books-in-mathematics-problem-solving-strategies.pdf",
@@ -232,9 +260,6 @@
     "Blog/src/content/notes/800 Projects/Untitled.md",
     "Blog/src/content/notes/700 Quant/Untitled.md",
     "Blog/src/content/notes/500 Book/Untitled.md",
-    "Blog/src/content/notes/300 IMO + Putnam/Tao Book.md",
-    "Blog/src/content/notes/200 ETH Zurich/Untitled.md",
-    "quartz/node_modules/pixi.js/README.md",
     "quartz/node_modules/gifuct-js/demo/jblack.gif",
     "quartz/node_modules/gifuct-js/demo/horses.gif",
     "quartz/node_modules/gifuct-js/demo/dog.gif",

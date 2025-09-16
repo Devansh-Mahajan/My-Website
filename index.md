@@ -27,7 +27,7 @@ Structured notes and reviews from books across technology, mathematics, engineer
 
 ## 🚀 Recent Updates
 
-- **[[200 ETH Zurich/Untitled|ETH Zurich Course Notes]]** - Latest academic content
+- **[[200 ETH Zurich/EECS_BSc|ETH Zurich Course Notes]]** - Latest academic content
 - **[[500 Book/Untitled|Book Notes]]** - Recent reading insights
 
 ## 🔗 Connect
