@@ -102,6 +102,30 @@
               "icon": "lucide-file",
               "title": "Semester 1"
             }
+          },
+          {
+            "id": "03a753b715f0dd98",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technische Mechanik.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Technische Mechanik"
+            }
           }
         ],
         "currentTab": 3
@@ -268,9 +292,10 @@
   },
   "active": "3e67e03b30bff94d",
   "lastOpenFiles": [
+    "Technische Mechanik.md",
+    "Semester 1.md",
     "Semester 2.md",
     "200 ETH Zurich/EECS_BSc.md",
-    "Semester 1.md",
     "300 IMO + Putnam/Strategies in problem solving.md",
     "300 IMO + Putnam/Solving Mathematical Problems -Terence Tao.md",
     "Blog/Blog/A complete SEO optimization guide with Obsidian Blogger.md",
@@ -307,7 +332,6 @@
     "700 Quant/Untitled.md",
     "800 Projects/Untitled.md",
     "Blog/src/content/blog/Test Mermaid.md",
-    "Blog/src/content/notes/800 Projects/Untitled.md",
     "quartz/node_modules/gifuct-js/demo/jblack.gif",
     "quartz/node_modules/gifuct-js/demo/horses.gif",
     "quartz/node_modules/gifuct-js/demo/dog.gif",
