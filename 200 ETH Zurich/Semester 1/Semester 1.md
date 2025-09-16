@@ -1,3 +1,4 @@
+### Basisblock A
 - [[Technische Mechanik]]
 - [[Netzwerke und Schaltungen I]]
 - [[Digitaltechnik]]
@@ -5,3 +6,4 @@
 - [[Vorkurs Informatik]]
 - [[Lineare Algebra]]
 - [[Analysis 1]]
+### GESS / Wahlfächer

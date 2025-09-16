@@ -24,7 +24,7 @@ Exploring quantitative models in computing and finance — from probability theo
 
 ### Projects
 A portfolio of hands-on experiments and builds: embedded systems, software engineering, algorithm design, and interdisciplinary projects.
-### [[500 Book/]]
+### Books
 Structured notes and reviews from books across technology, mathematics, engineering, and personal growth.
 
 ## 🚀 Recent Updates
