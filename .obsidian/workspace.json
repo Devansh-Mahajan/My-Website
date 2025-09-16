@@ -54,9 +54,57 @@
               "icon": "lucide-file",
               "title": "EECS_BSc"
             }
+          },
+          {
+            "id": "049ae3420a8e2490",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Semester 2.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Semester 2"
+            }
+          },
+          {
+            "id": "3e67e03b30bff94d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Semester 1.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Semester 1"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -218,15 +266,18 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "c96e2e85067b0236",
+  "active": "3e67e03b30bff94d",
   "lastOpenFiles": [
-    "Blog/src/content/notes/200 ETH Zurich/Untitled.md",
-    "200 ETH Zurich/200 ETH Zurich.md",
+    "Semester 2.md",
     "200 ETH Zurich/EECS_BSc.md",
-    "index.md",
-    "200 ETH Zurich/Untitled.md",
+    "Semester 1.md",
     "300 IMO + Putnam/Strategies in problem solving.md",
     "300 IMO + Putnam/Solving Mathematical Problems -Terence Tao.md",
+    "Blog/Blog/A complete SEO optimization guide with Obsidian Blogger.md",
+    "Blog/src/content/notes/200 ETH Zurich/Untitled.md",
+    "200 ETH Zurich/200 ETH Zurich.md",
+    "index.md",
+    "200 ETH Zurich/Untitled.md",
     "Welcome.md",
     "500 Book.md",
     "75427434-problem-books-in-mathematics-problem-solving-strategies.pdf",
@@ -234,7 +285,6 @@
     "999 Templates/Blog Template.md",
     "999 Templates/Class Template.md",
     "Blog/Blog/Untitled.md",
-    "Blog/Blog/A complete SEO optimization guide with Obsidian Blogger.md",
     "Blog/Blog/First time Obsidian-git setup.md",
     "Blog/Blog/markdown-style-guide.md",
     "Blog/Blog/Obsidian Blogger Template.md",
@@ -258,8 +308,6 @@
     "800 Projects/Untitled.md",
     "Blog/src/content/blog/Test Mermaid.md",
     "Blog/src/content/notes/800 Projects/Untitled.md",
-    "Blog/src/content/notes/700 Quant/Untitled.md",
-    "Blog/src/content/notes/500 Book/Untitled.md",
     "quartz/node_modules/gifuct-js/demo/jblack.gif",
     "quartz/node_modules/gifuct-js/demo/horses.gif",
     "quartz/node_modules/gifuct-js/demo/dog.gif",
