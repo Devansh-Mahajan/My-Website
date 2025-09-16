@@ -1,0 +1,7 @@
+- [[Technische Mechanik]]
+- [[Netzwerke und Schaltungen I]]
+- [[Digitaltechnik]]
+- [[Digitaltechnik Praktikum]]
+- [[Vorkurs Informatik]]
+- [[Lineare Algebra]]
+- [[Analysis 1]]
