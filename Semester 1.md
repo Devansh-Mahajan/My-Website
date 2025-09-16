@@ -1,2 +1,4 @@
 - [[Technische Mechanik]]
-- 
+- [[Netzwerke und Schaltungen I]]
+- [[Digitaltechnik]]
+- [[Lineare Algebra]]
