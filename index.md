@@ -16,15 +16,15 @@ Notes and reflections from my ETH journey, spanning electronics, computer system
 
 - [[Semester 1]]
 
-### [[300 IMO + Putnam/|Mathematics & Problem Solving]]
+### IMO + Putnam
 Exploring mathematical concepts through IMO and Putnam problem-solving, including advanced topics in algebra, geometry, and number theory.
 
-### [[700 Quant/|Quantitative Analysis]]
+### Quantitative Analysis
 Exploring quantitative models in computing and finance — from probability theory and statistics to algorithmic trading foundations.
 
-### [[800 Projects/|Projects]]
+### Projects
 A portfolio of hands-on experiments and builds: embedded systems, software engineering, algorithm design, and interdisciplinary projects.
-### [[500 Book/|Book Notes & Reviews]]
+### [[500 Book/]]
 Structured notes and reviews from books across technology, mathematics, engineering, and personal growth.
 
 ## 🚀 Recent Updates

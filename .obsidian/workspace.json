@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "500 Book.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "500 Book"
             }
           }
         ]
@@ -195,8 +195,10 @@
   },
   "active": "fbae9be581abcf65",
   "lastOpenFiles": [
-    "300 IMO + Putnam.md",
     "index.md",
+    "500 Book.md",
+    "700 Quant.md",
+    "300 IMO + Putnam.md",
     "200 ETH Zurich.md",
     "200 ETH Zurich/Semester 1/Semester 1.md",
     "200 ETH Zurich/Semester 2.md",
@@ -219,12 +221,10 @@
     "200 ETH Zurich/200 ETH Zurich.md",
     "200 ETH Zurich/Untitled.md",
     "Welcome.md",
-    "500 Book.md",
     "75427434-problem-books-in-mathematics-problem-solving-strategies.pdf",
     "998 Images/Pasted image 20250906182721.png",
     "999 Templates/Blog Template.md",
     "999 Templates/Class Template.md",
-    "Blog/Blog/Untitled.md",
     "Blog/dist/sitemap-index.xml",
     "Blog/dist/sitemap-0.xml",
     "Blog/dist/seo-implementation-guide/index.html",
