@@ -11,7 +11,7 @@ This is my evolving digital knowledge base where I document and connect insights
 
 ## 🎯 Areas of Focus
 
-### [[200 ETH Zurich/|ETH Zurich Studies]]
+### [[EECS_BSc]]
 Notes and reflections from my ETH journey, spanning electronics, computer systems, algorithms, data structures, and applied mathematics.
 
 ### [[300 IMO + Putnam/|Mathematics & Problem Solving]]
