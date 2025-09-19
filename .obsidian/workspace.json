@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/E-Business-Recht/851-0727-02L E-Business-Recht.md",
+                "file": "200 ETH Zurich/Semester 1/Grundzüge des Rechts/851-0703-00L Grundzüge des Rechts.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "851-0727-02L E-Business-Recht"
+              "title": "851-0703-00L Grundzüge des Rechts"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#Tech",
+                "query": "tag:#Lctures",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -84,7 +84,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -193,8 +194,9 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b95d5adb6dd85c96",
+  "active": "5c5fb8f729231498",
   "lastOpenFiles": [
+    "200 ETH Zurich/Semester 1/E-Business-Recht/851-0727-02L E-Business-Recht.md",
     "200 ETH Zurich/Semester 1/Digitaltechnik Praktikum/227-0005-10L Digitaltechnik Praktikum.md",
     "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
     "200 ETH Zurich/Semester 1/Vorkurs Informatik/Lecture Notes",
@@ -215,8 +217,7 @@
     "200 ETH Zurich/Semester 1/Ökonomie/Ökonomie.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Netzwerke und Schaltungen I.md",
     "200 ETH Zurich/Semester 1/Microsystems I Process Technology and Integration/Microsystems I Process Technology and Integration.md",
-    "200 ETH Zurich/Semester 1/Grundzüge des Rechts/Grundzüge des Rechts.md",
-    "200 ETH Zurich/Semester 1/E-Business-Recht/851-0727-02L E-Business-Recht.md",
+    "200 ETH Zurich/Semester 1/Grundzüge des Rechts/851-0703-00L Grundzüge des Rechts.md",
     "index.md",
     "Blog/README.md",
     "Blog/DEPLOYMENT.md",

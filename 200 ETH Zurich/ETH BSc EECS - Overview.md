@@ -11,4 +11,4 @@
 - [[200 ETH Zurich/Semester 1/Ökonomie/Ökonomie]]
 - [[200 ETH Zurich/Semester 1/Microsystems I Process Technology and Integration/Microsystems I Process Technology and Integration]]
 - [[851-0727-02L E-Business-Recht]]
-- [[Grundzüge des Rechts]]
+- [[851-0703-00L Grundzüge des Rechts]]
