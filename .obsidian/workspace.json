@@ -84,8 +84,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -194,9 +193,10 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "5c5fb8f729231498",
+  "active": "fbae9be581abcf65",
   "lastOpenFiles": [
     "200 ETH Zurich/ETH BSc EECS - Overview.md",
+    "200 ETH Zurich/Semester 1/Technische Mechanik.md",
     "Grundzüge des Rechts.md",
     "E-Business-Recht.md",
     "200 ETH Zurich/Semester 1/Microsystems I Process Technology and Integration.md",
@@ -212,7 +212,6 @@
     "EECS_BSc.md",
     "Inex",
     "200 ETH Zurich/Semester 1",
-    "200 ETH Zurich/Semester 1/Technische Mechanik.md",
     "200 ETH Zurich/Semester 1/Vorkurs Informatik.md",
     "200 ETH Zurich/Semester 1/Digitaltechnik Praktikum.md",
     "200 ETH Zurich/Semester 1/Analysis 1.md",
