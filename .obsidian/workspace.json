@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Semester 1.md",
+                "file": "200 ETH Zurich/ETH BSc EECS - Overview.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Semester 1"
+              "title": "ETH BSc EECS - Overview"
             }
           }
         ]
@@ -195,12 +195,13 @@
   },
   "active": "fbae9be581abcf65",
   "lastOpenFiles": [
+    "Ökonomie.md",
+    "200 ETH Zurich/ETH BSc EECS - Overview.md",
     "index.md",
     "500 Book.md",
     "700 Quant.md",
     "300 IMO + Putnam.md",
     "200 ETH Zurich.md",
-    "200 ETH Zurich/Semester 1/Semester 1.md",
     "200 ETH Zurich/Semester 2.md",
     "200 ETH Zurich/EECS_BSc.md",
     "EECS_BSc 1.md",
@@ -224,7 +225,6 @@
     "75427434-problem-books-in-mathematics-problem-solving-strategies.pdf",
     "998 Images/Pasted image 20250906182721.png",
     "999 Templates/Blog Template.md",
-    "999 Templates/Class Template.md",
     "Blog/dist/sitemap-index.xml",
     "Blog/dist/sitemap-0.xml",
     "Blog/dist/seo-implementation-guide/index.html",

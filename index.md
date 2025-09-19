@@ -14,7 +14,7 @@ This is my evolving digital knowledge base where I document and connect insights
 ### ETH Zurich
 Notes and reflections from my ETH journey, spanning electronics, computer systems, algorithms, data structures, and applied mathematics.
 
-- [[Semester 1]]
+- [[ETH BSc EECS - Overview]]
 
 ### IMO + Putnam
 Exploring mathematical concepts through IMO and Putnam problem-solving, including advanced topics in algebra, geometry, and number theory.
