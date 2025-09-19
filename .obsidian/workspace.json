@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "200 ETH Zurich/Semester 1/Vorkurs Informatik/252-0865-00L Vorkurs Informatik.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "252-0865-00L Vorkurs Informatik"
             }
           }
         ]
@@ -195,12 +195,6 @@
   },
   "active": "b95d5adb6dd85c96",
   "lastOpenFiles": [
-    "500 Book.md",
-    "index.md",
-    "500 Book/Untitled.md",
-    "200 ETH Zurich/EECS_BSc.md",
-    "200 ETH Zurich/ETH BSc EECS - Overview.md",
-    "200 ETH Zurich/Semester 1/Vorkurs Informatik/252-0865-00L Vorkurs Informatik.md",
     "200 ETH Zurich/Semester 1/Technische Mechanik/151-0223-10L Technische Mechanik.md",
     "200 ETH Zurich/Semester 1/Ökonomie/351-1158-00L Ökonomie.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/227-0001-00L Netzwerke und Schaltungen I.md",
@@ -211,6 +205,12 @@
     "200 ETH Zurich/Semester 1/Digitaltechnik Praktikum/227-0005-10L Digitaltechnik Praktikum.md",
     "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
     "200 ETH Zurich/Semester 1/Analysis 1/401-0231-10L Analysis 1.md",
+    "index.md",
+    "500 Book.md",
+    "500 Book/Untitled.md",
+    "200 ETH Zurich/EECS_BSc.md",
+    "200 ETH Zurich/ETH BSc EECS - Overview.md",
+    "200 ETH Zurich/Semester 1/Vorkurs Informatik/252-0865-00L Vorkurs Informatik.md",
     "999 Templates/00 Class Template.md",
     "999 Templates/01 Blog Template.md",
     "200 ETH Zurich/Semester 1/Vorkurs Informatik/Lecture Notes",

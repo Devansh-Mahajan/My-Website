@@ -9,7 +9,5 @@ date: 2025-09-19
 draft: false
 publish: true
 ---
-**Topic:** [[252-0865-00L Vorkurs Informatik]]  
-**Topics:** #VorkursInformatik   
 **Hauptlink:** http://lec.inf.ethz.ch/itet/informatik0/  
 
