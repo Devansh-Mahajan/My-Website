@@ -17,8 +17,8 @@ export const GISCUS_CONFIG = {
   // How to map the page to a discussion
   mapping: "pathname", // Options: pathname, url, title, og:title
   
-  // Theme for the comments
-  theme: "preferred_color_scheme", // Options: light, dark, dark_dimmed, transparent_dark, preferred_color_scheme, custom
+	// Theme for the comments - will be dynamically updated by theme sync script
+	theme: "light", // Options: light, dark, dark_dimmed, transparent_dark, preferred_color_scheme, custom
   
   // Enable reactions
   reactionsEnabled: "1", // "1" or "0"

@@ -28,12 +28,82 @@ const isConfigured = isGiscusConfigured();
 	</div>
 )}
 
-{!isConfigured && (
-	<div class="giscus-setup-notice">
-		<h3>💬 Comments Coming Soon</h3>
-		<p>Comments will be available once Giscus is configured. Check the setup instructions in the repository.</p>
-	</div>
-)}
+	{!isConfigured && (
+		<div class="giscus-setup-notice">
+			<h3>💬 Comments Coming Soon</h3>
+			<p>Comments will be available once Giscus is configured. Check the setup instructions in the repository.</p>
+		</div>
+	)}
+
+	<!-- Theme synchronization script -->
+	<script>
+		// Function to get current theme
+		function getCurrentTheme() {
+			const htmlElement = document.documentElement;
+			const theme = htmlElement.getAttribute('data-theme');
+			return theme === 'dark' ? 'dark' : 'light';
+		}
+
+		// Function to update Giscus theme
+		function updateGiscusTheme(theme) {
+			const giscusFrame = document.querySelector('iframe[src*="giscus.app"]');
+			if (giscusFrame) {
+				// Send theme change message to Giscus iframe
+				giscusFrame.contentWindow.postMessage({
+					giscus: {
+						setConfig: {
+							theme: theme
+						}
+					}
+				}, 'https://giscus.app');
+			}
+		}
+
+		// Function to handle theme changes
+		function handleThemeChange() {
+			const currentTheme = getCurrentTheme();
+			updateGiscusTheme(currentTheme);
+		}
+
+		// Listen for theme changes via data-theme attribute changes
+		const observer = new MutationObserver(function(mutations) {
+			mutations.forEach(function(mutation) {
+				if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+					handleThemeChange();
+				}
+			});
+		});
+
+		// Start observing the document element for theme changes
+		observer.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ['data-theme']
+		});
+
+		// Also listen for theme toggle clicks as a backup
+		document.addEventListener('click', function(event) {
+			if (event.target.closest('#theme-toggle')) {
+				// Small delay to allow theme change to complete
+				setTimeout(handleThemeChange, 100);
+			}
+		});
+
+		// Initialize theme on page load
+		document.addEventListener('DOMContentLoaded', function() {
+			// Wait for Giscus to load, then set initial theme
+			setTimeout(handleThemeChange, 2000);
+		});
+
+		// Listen for Giscus ready event
+		window.addEventListener('message', function(event) {
+			if (event.origin !== 'https://giscus.app') return;
+			
+			if (event.data && event.data.type === 'ready') {
+				// Giscus is ready, set the initial theme
+				handleThemeChange();
+			}
+		});
+	</script>
 
 <style>
 	.giscus-container {
