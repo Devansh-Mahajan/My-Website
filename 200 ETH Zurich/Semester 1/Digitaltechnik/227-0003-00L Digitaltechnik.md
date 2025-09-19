@@ -1,12 +1,19 @@
 ---
-title: Digitaltechnik
-draft: false
+title: 227-0003-00L Digitaltechnik
+description: Index
 tags:
   - Digitaltechnik
   - index
-topic: "[[227-0003-00L Digitaltechnik]]"
-created_date: 2025-09-19
-aufzeichnung: https://video.ethz.ch/lectures/d-itet/2025/autumn/227-0003-00L
-moodle: https://moodle-app2.let.ethz.ch/course/view.php?id=25799
+  - class
+  - itet
+date: 2025-09-19
+draft: false
+publish: true
 ---
+**Topic:** [[227-0003-00L Digitaltechnik]]
+**Topics:** #Digitaltechnik 
+**Aufzeichnung:** https://video.ethz.ch/lectures/d-itet/2025/autumn/227-0003-00L
+**Moodle:** https://moodle-app2.let.ethz.ch/course/view.php?id=25799
 # Lectures
+
+
