@@ -1,18 +1,15 @@
 ---
-title: Example Title
-draft: false
+title: 227-0005-10L Digitaltechnik Praktikum
+description: index
 tags:
   - "#Digitaltechnik"
   - class
   - itet
-moodle: https://moodle-app2.let.ethz.ch/course/view.php?id=25799
-description: Short one-liner for context
 date: 2025-09-19
+draft: false
 publish: true
 ---
 **Topic:** [[227-0003-00L Digitaltechnik]]
 **Topics:** #Digitaltechnik 
-**Aufzeichnung:**
-**Moodle:**  
-**Hauptlink:**  
+**Moodle:**  https://moodle-app2.let.ethz.ch/course/view.php?id=25799
 
