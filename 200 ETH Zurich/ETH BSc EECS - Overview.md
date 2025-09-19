@@ -10,5 +10,5 @@
 ### GESS / Wahlfächer
 - [[200 ETH Zurich/Semester 1/Ökonomie/Ökonomie]]
 - [[200 ETH Zurich/Semester 1/Microsystems I Process Technology and Integration/Microsystems I Process Technology and Integration]]
-- [[E-Business-Recht]]
+- [[851-0727-02L E-Business-Recht]]
 - [[Grundzüge des Rechts]]
