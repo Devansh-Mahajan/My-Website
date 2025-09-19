@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Grundzüge des Rechts/851-0703-00L Grundzüge des Rechts.md",
+                "file": "200 ETH Zurich/Semester 1/Lineare Algebra/401-0151-00L Lineare Algebra.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "851-0703-00L Grundzüge des Rechts"
+              "title": "401-0151-00L Lineare Algebra"
             }
           }
         ]
@@ -182,13 +182,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Grundzüge des Rechts/851-0703-00L Grundzüge des Rechts.md",
+                "file": "200 ETH Zurich/Semester 1/Lineare Algebra/401-0151-00L Lineare Algebra.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 851-0703-00L Grundzüge des Rechts"
+              "title": "Outline of 401-0151-00L Lineare Algebra"
             }
           },
           {
@@ -225,6 +225,7 @@
   },
   "active": "b95d5adb6dd85c96",
   "lastOpenFiles": [
+    "200 ETH Zurich/Semester 1/Grundzüge des Rechts/851-0703-00L Grundzüge des Rechts.md",
     "200 ETH Zurich/Semester 1/E-Business-Recht/851-0727-02L E-Business-Recht.md",
     "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
     "200 ETH Zurich/Semester 1/Digitaltechnik Praktikum/227-0005-10L Digitaltechnik Praktikum.md",
@@ -237,7 +238,6 @@
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/227-0001-00L Netzwerke und Schaltungen I.md",
     "200 ETH Zurich/Semester 1/Microsystems I Process Technology and Integration/151-0621-00L Microsystems I Process Technology and Integration.md",
     "200 ETH Zurich/Semester 1/Lineare Algebra/401-0151-00L Lineare Algebra.md",
-    "200 ETH Zurich/Semester 1/Grundzüge des Rechts/851-0703-00L Grundzüge des Rechts.md",
     "200 ETH Zurich/Semester 1/Vorkurs Informatik/Lecture Notes",
     "200 ETH Zurich/Semester 1/Ökonomie/Lecture Notes",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes",

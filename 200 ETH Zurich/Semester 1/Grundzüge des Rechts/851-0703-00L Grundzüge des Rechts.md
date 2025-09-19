@@ -1,12 +1,20 @@
 ---
-title: Grundzüge des Rechts - Overview
-draft: false
+title: 851-0703-00L Grundzüge des Rechts
+description: index
 tags:
   - GrundzügedesRechts
   - Recht
-topic: "[[851-0703-00L Grundzüge des Rechts]]"
-created_date: 2025-09-19
-aufzeichnung: https://video.ethz.ch/lectures/d-gess/2025/spring/851-0708-00L
-moodle: https://moodle-app2.let.ethz.ch/course/view.php?id=25407
+  - class
+  - itet
+date: 2025-09-19
+draft: false
+publish: true
 ---
+**Topic:** [[851-0703-00L Grundzüge des Rechts]]
+**Topics:** #GrundzügedesRechts 
+**Aufzeichnung:** https://video.ethz.ch/lectures/d-gess/2025/spring/851-0708-00L
+**Moodle:** https://moodle-app2.let.ethz.ch/course/view.php?id=25407
+
 # Lectures
+
+
