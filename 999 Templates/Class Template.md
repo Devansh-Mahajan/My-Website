@@ -7,3 +7,6 @@ tags:
 **Topic**: [[]]
 **Date**: {{date}}
 **Topics**:
+**Aufzeichnung**:
+**Moodle**:
+**Hauptlink**:
