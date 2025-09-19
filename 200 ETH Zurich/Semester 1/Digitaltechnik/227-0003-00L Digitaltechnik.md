@@ -1,14 +1,12 @@
 ---
-title: Example Title
+title: Digitaltechnik
 draft: false
 tags:
   - Digitaltechnik
   - index
-  - example-tag
-topic: ""
-date: 2025-09-19T13:42:00
+topic: "[[227-0003-00L Digitaltechnik]]"
+created_date: 2025-09-19
 aufzeichnung: ""
 moodle: ""
 hauptlink: ""
-created_date: 2025-09-19
 ---
