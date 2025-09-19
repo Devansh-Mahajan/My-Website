@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "200 ETH Zurich/Semester 1/Analysis 1/401-0231-10L Analysis 1.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "401-0231-10L Analysis 1"
             }
           }
         ]
@@ -172,7 +172,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -195,6 +195,8 @@
   },
   "active": "b95d5adb6dd85c96",
   "lastOpenFiles": [
+    "Blog/node_modules/@ctrl/tinycolor/README.md",
+    "index.md",
     "200 ETH Zurich/Semester 1/Analysis 1/401-0231-10L Analysis 1.md",
     "200 ETH Zurich/ETH BSc EECS - Overview.md",
     "999 Templates/01 Blog Template.md",
@@ -229,8 +231,6 @@
     "200 ETH Zurich/Semester 1/Lineare Algebra/401-0151-00L Lineare Algebra.md",
     "200 ETH Zurich/Semester 1/Grundzüge des Rechts/851-0703-00L Grundzüge des Rechts.md",
     "200 ETH Zurich/Semester 1/E-Business-Recht/851-0727-02L E-Business-Recht.md",
-    "200 ETH Zurich/Semester 1/Digitaltechnik Praktikum/227-0005-10L Digitaltechnik Praktikum.md",
-    "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
     "Blog/dist/icon_backup.png",
     "Blog/dist/icon.png",
     "Blog/dist/favicon.svg",
