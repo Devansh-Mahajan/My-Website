@@ -7,7 +7,7 @@ tags:
 ---
 **Topic**: [[]]
 **Date**: 2025-09-19
-**Topics**:
+**Topics**: #Digitaltechnik 
 **Aufzeichnung**:
 **Moodle**:
 **Hauptlink**:
