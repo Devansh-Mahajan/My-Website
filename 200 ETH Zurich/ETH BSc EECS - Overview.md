@@ -1,3 +1,4 @@
+## Semester 1
 ### Basisblock A
 - [[Technische Mechanik]]
 - [[Netzwerke und Schaltungen I]]
@@ -8,4 +9,6 @@
 - [[Analysis 1]]
 ### GESS / Wahlfächer
 - [[Ökonomie]]
-- [[## Microsystems I: Process Technology and Integration]]
+- [[Microsystems I Process Technology and Integration]]
+- [[E-Business-Recht]]
+- [[Grundzüge des Rechts]]

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "200 ETH Zurich/ETH BSc EECS - Overview.md",
+                "file": "200 ETH Zurich/Semester 1/Technische Mechanik.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "ETH BSc EECS - Overview"
+              "title": "Technische Mechanik"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#Tech",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -84,7 +84,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -193,10 +194,13 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "fbae9be581abcf65",
+  "active": "5c5fb8f729231498",
   "lastOpenFiles": [
-    "Ökonomie.md",
     "200 ETH Zurich/ETH BSc EECS - Overview.md",
+    "Grundzüge des Rechts.md",
+    "E-Business-Recht.md",
+    "200 ETH Zurich/Semester 1/Microsystems I Process Technology and Integration.md",
+    "200 ETH Zurich/Semester 1/Ökonomie.md",
     "index.md",
     "500 Book.md",
     "700 Quant.md",
@@ -220,11 +224,8 @@
     "Blog/Blog/A complete SEO optimization guide with Obsidian Blogger.md",
     "Blog/src/content/notes/200 ETH Zurich/Untitled.md",
     "200 ETH Zurich/200 ETH Zurich.md",
-    "200 ETH Zurich/Untitled.md",
-    "Welcome.md",
     "75427434-problem-books-in-mathematics-problem-solving-strategies.pdf",
     "998 Images/Pasted image 20250906182721.png",
-    "999 Templates/Blog Template.md",
     "Blog/dist/sitemap-index.xml",
     "Blog/dist/sitemap-0.xml",
     "Blog/dist/seo-implementation-guide/index.html",
