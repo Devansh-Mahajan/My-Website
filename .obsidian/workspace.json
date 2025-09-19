@@ -4,17 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "53757583eeefc36d",
+        "id": "46198e7e190b0107",
         "type": "tabs",
         "children": [
           {
-            "id": "fbae9be581abcf65",
+            "id": "b95d5adb6dd85c96",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "index"
             }
           }
         ]
@@ -181,6 +195,13 @@
   },
   "active": "f3d1b0f46aca7cf4",
   "lastOpenFiles": [
+    "Blog/README.md",
+    "Untitled",
+    "200 ETH Zurich/Semester 1/Analysis 1/Lecture Notes",
+    "200 ETH Zurich/Semester 1/Analysis 1",
+    "Blog/DEPLOYMENT.md",
+    "Blog/Blog/A complete SEO optimization guide with Obsidian Blogger.md",
+    "Blog/dist/icon_backup.png",
     "Blog/dist/sitemap-index.xml",
     "Blog/dist/sitemap-0.xml",
     "Blog/dist/seo-implementation-guide/index.html",
@@ -188,11 +209,6 @@
     "Blog/dist/index.html",
     "Blog/dist/tag/seo/index.html",
     "Blog/dist/tag/optimization/index.html",
-    "Blog/dist/tag/guide/index.html",
-    "Blog/dist/tag/all/index.html",
-    "Blog/dist/tag/seo",
-    "Blog/dist/tag/optimization",
-    "Blog/dist/icon_backup.png",
     "Blog/dist/icon.png",
     "Blog/dist/favicon.svg",
     "Blog/dist/attachments/998 Images/Pasted image 20250906182721.png",
@@ -201,7 +217,6 @@
     "Blog/Blog/markdown-style-guide.md",
     "Blog/Blog/Obsidian Blogger Template.md",
     "Blog/Blog/First time Obsidian-git setup.md",
-    "Blog/Blog/A complete SEO optimization guide with Obsidian Blogger.md",
     "Blog/src/content/notes/800 Projects/Untitled.md",
     "Blog/src/content/notes/700 Quant/Untitled.md",
     "Blog/src/content/notes/200 ETH Zurich/ETH BSc EECS - Overview.md",
@@ -216,12 +231,10 @@
     "Blog/src/content/notes/200 ETH Zurich/Semester 1/Digitaltechnik Praktikum.md",
     "Blog/src/content/notes/200 ETH Zurich/Semester 1/Analysis 1.md",
     "Blog/public/attachments/998 Images/Pasted image 20250906182721.png",
-    "Blog/README.md",
-    "Blog/DEPLOYMENT.md",
     "200 ETH Zurich/Semester 1/Technische Mechanik/Technische Mechanik.md",
     "200 ETH Zurich/ETH BSc EECS - Overview.md",
-    "Grundzüge des Rechts.md",
-    "E-Business-Recht.md",
+    "200 ETH Zurich/Semester 1/Grundzüge des Rechts.md",
+    "200 ETH Zurich/Semester 1/E-Business-Recht.md",
     "998 Images/Pasted image 20250906182721.png",
     "quartz/node_modules/gifuct-js/demo/jblack.gif",
     "quartz/node_modules/gifuct-js/demo/horses.gif",

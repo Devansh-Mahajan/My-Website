@@ -6,7 +6,7 @@
 - [[Digitaltechnik Praktikum]]
 - [[Vorkurs Informatik]]
 - [[Lineare Algebra]]
-- [[Analysis 1]]
+- [[200 ETH Zurich/Semester 1/Analysis 1/Analysis 1]]
 ### GESS / Wahlfächer
 - [[Ökonomie]]
 - [[Microsystems I Process Technology and Integration]]
