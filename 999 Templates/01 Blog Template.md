@@ -8,4 +8,5 @@ tags:
   - tag2
 created_date: "{{date}}"
 featured_image: URL
+enable_comments: "false"
 ---

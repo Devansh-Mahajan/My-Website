@@ -1,0 +1,101 @@
+---
+import { getGiscusConfig, isGiscusConfigured } from '../config/giscus';
+
+// Get Giscus configuration
+const config = getGiscusConfig();
+const isConfigured = isGiscusConfigured();
+---
+
+{isConfigured && (
+	<div id="giscus-comments" class="giscus-container">
+		<script 
+			src="https://giscus.app/client.js"
+			data-repo={config.repo}
+			data-repo-id={config.repoId}
+			data-category={config.category}
+			data-category-id={config.categoryId}
+			data-mapping={config.mapping}
+			data-strict={config.strict}
+			data-reactions-enabled={config.reactionsEnabled}
+			data-emit-metadata={config.emitMetadata}
+			data-input-position={config.inputPosition}
+			data-theme={config.theme}
+			data-lang={config.lang}
+			data-loading={config.loading}
+			crossorigin="anonymous"
+			async>
+		</script>
+	</div>
+)}
+
+{!isConfigured && (
+	<div class="giscus-setup-notice">
+		<h3>💬 Comments Coming Soon</h3>
+		<p>Comments will be available once Giscus is configured. Check the setup instructions in the repository.</p>
+	</div>
+)}
+
+<style>
+	.giscus-container {
+		margin-top: 3rem;
+		padding-top: 2rem;
+		border-top: 1px solid rgba(var(--gray), 0.2);
+	}
+
+	/* Dark mode support for Giscus */
+	[data-theme='dark'] .giscus-container {
+		border-top-color: rgba(var(--gray), 0.3);
+	}
+
+	/* Ensure proper spacing */
+	.giscus-container :global(.giscus) {
+		margin: 0;
+	}
+
+	/* Custom styling to match your site's theme */
+	.giscus-container :global(.giscus-frame) {
+		border-radius: 0.75rem;
+		overflow: hidden;
+	}
+
+	/* Setup notice styling */
+	.giscus-setup-notice {
+		margin-top: 3rem;
+		padding: 2rem;
+		text-align: center;
+		background: rgba(var(--gray-light), 0.3);
+		border-radius: 0.75rem;
+		border: 1px solid rgba(var(--gray), 0.2);
+	}
+
+	.giscus-setup-notice h3 {
+		margin: 0 0 0.5rem 0;
+		color: rgb(var(--accent));
+		font-size: 1.25rem;
+	}
+
+	.giscus-setup-notice p {
+		margin: 0;
+		color: rgb(var(--gray));
+		font-size: 0.95rem;
+	}
+
+	/* Dark mode for setup notice */
+	[data-theme='dark'] .giscus-setup-notice {
+		background: rgba(var(--gray-light), 0.1);
+		border-color: rgba(var(--gray), 0.3);
+	}
+
+	/* Responsive adjustments */
+	@media (max-width: 768px) {
+		.giscus-container {
+			margin-top: 2rem;
+			padding-top: 1.5rem;
+		}
+		
+		.giscus-setup-notice {
+			margin-top: 2rem;
+			padding: 1.5rem;
+		}
+	}
+</style>
