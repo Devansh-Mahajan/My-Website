@@ -2,7 +2,7 @@
 ### Basisblock A
 - [[Technische Mechanik]]
 - [[200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Netzwerke und Schaltungen I]]
-- [[200 ETH Zurich/Semester 1/Digitaltechnik/Digitaltechnik]]
+- [[227-0003-00L Digitaltechnik]]
 - [[200 ETH Zurich/Semester 1/Digitaltechnik Praktikum/Digitaltechnik Praktikum]]
 - [[200 ETH Zurich/Semester 1/Vorkurs Informatik/Vorkurs Informatik]]
 - [[200 ETH Zurich/Semester 1/Lineare Algebra/Lineare Algebra]]
