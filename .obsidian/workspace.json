@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "999 Templates/Class Template.md",
+                "file": "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Class Template"
+              "title": "227-0003-00L Digitaltechnik"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "999 Templates/Class Template.md",
+                "file": "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Class Template"
+              "title": "Outline of 227-0003-00L Digitaltechnik"
             }
           },
           {
@@ -193,9 +193,11 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "44e765fe0258bcdb",
+  "active": "b95d5adb6dd85c96",
   "lastOpenFiles": [
     "200 ETH Zurich/Semester 1/Analysis 1/401-0231-10L - Analysis 1.md",
+    "999 Templates/Class Template.md",
+    "999 Templates/Blog Template.md",
     "200 ETH Zurich/Semester 1/Vorkurs Informatik/252-0865-00L Vorkurs Informatik.md",
     "200 ETH Zurich/Semester 1/Technische Mechanik/151-0223-10L Technische Mechanik.md",
     "200 ETH Zurich/Semester 1/Ökonomie/351-1158-00L Ökonomie.md",
@@ -215,9 +217,7 @@
     "200 ETH Zurich/Semester 1/E-Business-Recht/Lecture Notes",
     "200 ETH Zurich/Semester 1/Digitaltechnik Praktikum/Lecture Notes",
     "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes",
-    "999 Templates/Class Template.md",
     "200 ETH Zurich/ETH BSc EECS - Overview.md",
-    "999 Templates/Blog Template.md",
     "200 ETH Zurich/Semester 1/Vorkurs Informatik",
     "index.md",
     "Blog/README.md",

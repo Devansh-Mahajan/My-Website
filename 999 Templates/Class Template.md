@@ -6,8 +6,9 @@ date: 2025-09-19
 draft: false
 publish: true
 ---
-**Topic:** …
-**Topics:** …
-**Aufzeichnung:** <recording link>
-**Moodle:** <moodle link>
-**Hauptlink:** <main link>
+**Topic:**
+**Topics:**
+**Aufzeichnung:**
+**Moodle:**  
+**Hauptlink:**  
+
