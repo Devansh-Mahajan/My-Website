@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "200 ETH Zurich/Semester 1/Analysis 1/401-0231-10L - Analysis 1.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "401-0231-10L - Analysis 1"
             }
           }
         ]
@@ -193,22 +193,32 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "f3d1b0f46aca7cf4",
+  "active": "b95d5adb6dd85c96",
   "lastOpenFiles": [
+    "200 ETH Zurich/ETH BSc EECS - Overview.md",
+    "200 ETH Zurich/Semester 1/Analysis 1/401-0231-10L - Analysis 1.md",
+    "200 ETH Zurich/Semester 1/Vorkurs Informatik/Vorkurs Informatik.md",
+    "200 ETH Zurich/Semester 1/Vorkurs Informatik",
+    "200 ETH Zurich/Semester 1/Ökonomie/Ökonomie.md",
+    "200 ETH Zurich/Semester 1/Ökonomie",
+    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Netzwerke und Schaltungen I.md",
+    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I",
+    "200 ETH Zurich/Semester 1/Microsystems I Process Technology and Integration/Microsystems I Process Technology and Integration.md",
+    "200 ETH Zurich/Semester 1/Microsystems I Process Technology and Integration",
+    "200 ETH Zurich/Semester 1/Grundzüge des Rechts/Grundzüge des Rechts.md",
+    "200 ETH Zurich/Semester 1/Lineare Algebra",
+    "200 ETH Zurich/Semester 1/Grundzüge des Rechts",
+    "200 ETH Zurich/Semester 1/E-Business-Recht/E-Business-Recht.md",
+    "200 ETH Zurich/Semester 1/E-Business-Recht",
+    "200 ETH Zurich/Semester 1/Digitaltechnik Praktikum/Digitaltechnik Praktikum.md",
+    "200 ETH Zurich/Semester 1/Digitaltechnik Praktikum",
+    "index.md",
     "Blog/README.md",
-    "Untitled",
+    "200 ETH Zurich/Semester 1/Digitaltechnik",
     "200 ETH Zurich/Semester 1/Analysis 1/Lecture Notes",
-    "200 ETH Zurich/Semester 1/Analysis 1",
     "Blog/DEPLOYMENT.md",
     "Blog/Blog/A complete SEO optimization guide with Obsidian Blogger.md",
     "Blog/dist/icon_backup.png",
-    "Blog/dist/sitemap-index.xml",
-    "Blog/dist/sitemap-0.xml",
-    "Blog/dist/seo-implementation-guide/index.html",
-    "Blog/dist/seo-implementation-guide",
-    "Blog/dist/index.html",
-    "Blog/dist/tag/seo/index.html",
-    "Blog/dist/tag/optimization/index.html",
     "Blog/dist/icon.png",
     "Blog/dist/favicon.svg",
     "Blog/dist/attachments/998 Images/Pasted image 20250906182721.png",
@@ -225,16 +235,7 @@
     "Blog/src/content/notes/200 ETH Zurich/Semester 1/Ökonomie.md",
     "Blog/src/content/notes/200 ETH Zurich/Semester 1/Vorkurs Informatik.md",
     "Blog/src/content/notes/200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I.md",
-    "Blog/src/content/notes/200 ETH Zurich/Semester 1/Microsystems I Process Technology and Integration.md",
-    "Blog/src/content/notes/200 ETH Zurich/Semester 1/Lineare Algebra.md",
-    "Blog/src/content/notes/200 ETH Zurich/Semester 1/Digitaltechnik.md",
-    "Blog/src/content/notes/200 ETH Zurich/Semester 1/Digitaltechnik Praktikum.md",
-    "Blog/src/content/notes/200 ETH Zurich/Semester 1/Analysis 1.md",
     "Blog/public/attachments/998 Images/Pasted image 20250906182721.png",
-    "200 ETH Zurich/Semester 1/Technische Mechanik/Technische Mechanik.md",
-    "200 ETH Zurich/ETH BSc EECS - Overview.md",
-    "200 ETH Zurich/Semester 1/Grundzüge des Rechts.md",
-    "200 ETH Zurich/Semester 1/E-Business-Recht.md",
     "998 Images/Pasted image 20250906182721.png",
     "quartz/node_modules/gifuct-js/demo/jblack.gif",
     "quartz/node_modules/gifuct-js/demo/horses.gif",
