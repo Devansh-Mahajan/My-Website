@@ -111,13 +111,20 @@ const safeTags = tags ?? [];
 				justify-content: center;
 			}
 			.tag {
-				background-color: rgba(var(--gray-light), 0.5);
+				background-color: rgba(var(--gray-light), 0.8);
 				color: rgb(var(--gray-dark));
 				padding: 0.2em 0.8em;
 				border-radius: 1em;
 				font-size: 0.9em;
 				text-decoration: none;
 				transition: all 0.2s ease;
+				border: 1px solid rgba(var(--gray), 0.2);
+			}
+			
+			/* Dark mode specific tag styling */
+			[data-theme='dark'] .tag {
+				background-color: rgba(var(--gray-light), 0.5);
+				border: 1px solid rgba(var(--gray), 0.3);
 			}
 			.tag:hover {
 				background-color: rgba(var(--accent), 0.1);
