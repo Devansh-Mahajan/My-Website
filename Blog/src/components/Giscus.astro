@@ -35,13 +35,50 @@ const isConfigured = isGiscusConfigured();
 		</div>
 	)}
 
-	<!-- Theme synchronization script - only runs when Giscus component is actually rendered -->
+	<!-- Universal theme synchronization script - works in both blog and Quartz environments -->
 	<script>
-		// Function to get current theme
+		// Environment detection
+		function detectEnvironment() {
+			// Check if we're in Quartz environment
+			if (document.querySelector('meta[name="generator"][content*="Quartz"]') || 
+				window.location.hostname.includes('quartz') ||
+				document.querySelector('.dark') !== null) {
+				return 'quartz';
+			}
+			// Check if we're in blog environment
+			if (document.querySelector('meta[name="generator"][content*="Astro"]') ||
+				document.documentElement.hasAttribute('data-theme')) {
+				return 'blog';
+			}
+			// Default to blog environment
+			return 'blog';
+		}
+
+		// Universal theme detection function
 		function getCurrentTheme() {
-			const htmlElement = document.documentElement;
-			const theme = htmlElement.getAttribute('data-theme');
-			return theme === 'dark' ? 'dark' : 'light';
+			const environment = detectEnvironment();
+			
+			if (environment === 'quartz') {
+				// Quartz theme detection
+				const darkElement = document.querySelector('.dark');
+				const lightElement = document.querySelector('.light');
+				
+				if (darkElement) return 'dark';
+				if (lightElement) return 'light';
+				
+				// Fallback: check for dark class on html or body
+				if (document.documentElement.classList.contains('dark') || 
+					document.body.classList.contains('dark')) {
+					return 'dark';
+				}
+				
+				return 'light';
+			} else {
+				// Blog theme detection
+				const htmlElement = document.documentElement;
+				const theme = htmlElement.getAttribute('data-theme');
+				return theme === 'dark' ? 'dark' : 'light';
+			}
 		}
 
 		// Function to update Giscus theme
@@ -65,6 +102,73 @@ const isConfigured = isGiscusConfigured();
 			updateGiscusTheme(currentTheme);
 		}
 
+		// Universal theme change detection
+		function setupThemeObserver() {
+			const environment = detectEnvironment();
+			
+			if (environment === 'quartz') {
+				// Quartz theme change detection
+				const observer = new MutationObserver(function(mutations) {
+					let themeChanged = false;
+					mutations.forEach(function(mutation) {
+						if (mutation.type === 'attributes' && 
+							(mutation.attributeName === 'class' || mutation.attributeName === 'data-theme')) {
+							themeChanged = true;
+						}
+						if (mutation.type === 'childList') {
+							// Check for added/removed dark/light elements
+							mutation.addedNodes.forEach(node => {
+								if (node.nodeType === 1 && (node.classList.contains('dark') || node.classList.contains('light'))) {
+									themeChanged = true;
+								}
+							});
+							mutation.removedNodes.forEach(node => {
+								if (node.nodeType === 1 && (node.classList.contains('dark') || node.classList.contains('light'))) {
+									themeChanged = true;
+								}
+							});
+						}
+					});
+					if (themeChanged) {
+						setTimeout(handleThemeChange, 100);
+					}
+				});
+
+				// Observe html and body elements for theme changes
+				observer.observe(document.documentElement, {
+					attributes: true,
+					attributeFilter: ['class', 'data-theme']
+				});
+				observer.observe(document.body, {
+					attributes: true,
+					attributeFilter: ['class'],
+					childList: true,
+					subtree: true
+				});
+			} else {
+				// Blog theme change detection
+				const observer = new MutationObserver(function(mutations) {
+					mutations.forEach(function(mutation) {
+						if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+							handleThemeChange();
+						}
+					});
+				});
+
+				observer.observe(document.documentElement, {
+					attributes: true,
+					attributeFilter: ['data-theme']
+				});
+
+				// Also listen for theme toggle clicks as a backup
+				document.addEventListener('click', function(event) {
+					if (event.target.closest('#theme-toggle')) {
+						setTimeout(handleThemeChange, 100);
+					}
+				});
+			}
+		}
+
 		// Function to ensure Giscus theme is set after it loads
 		function ensureGiscusTheme() {
 			let attempts = 0;
@@ -84,34 +188,17 @@ const isConfigured = isGiscusConfigured();
 			}, 100);
 		}
 
-		// Listen for theme changes via data-theme attribute changes
-		const observer = new MutationObserver(function(mutations) {
-			mutations.forEach(function(mutation) {
-				if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
-					handleThemeChange();
-				}
-			});
-		});
-
-		// Start observing the document element for theme changes
-		observer.observe(document.documentElement, {
-			attributes: true,
-			attributeFilter: ['data-theme']
-		});
-
-		// Also listen for theme toggle clicks as a backup
-		document.addEventListener('click', function(event) {
-			if (event.target.closest('#theme-toggle')) {
-				// Small delay to allow theme change to complete
-				setTimeout(handleThemeChange, 100);
-			}
-		});
-
-		// Initialize Giscus theme after page load
-		document.addEventListener('DOMContentLoaded', function() {
-			// Wait a bit for Giscus to load, then ensure correct theme
+		// Initialize everything
+		function initializeGiscusTheme() {
+			// Set up theme change detection
+			setupThemeObserver();
+			
+			// Ensure Giscus theme is set after it loads
 			setTimeout(ensureGiscusTheme, 500);
-		});
+		}
+
+		// Initialize on DOM ready
+		document.addEventListener('DOMContentLoaded', initializeGiscusTheme);
 
 		// Listen for Giscus ready event as additional safety
 		window.addEventListener('message', function(event) {
@@ -122,6 +209,16 @@ const isConfigured = isGiscusConfigured();
 				handleThemeChange();
 			}
 		});
+
+		// Additional safety: check theme periodically for first few seconds
+		let safetyChecks = 0;
+		const safetyInterval = setInterval(() => {
+			safetyChecks++;
+			handleThemeChange();
+			if (safetyChecks >= 10) { // Check for 10 seconds
+				clearInterval(safetyInterval);
+			}
+		}, 1000);
 	</script>
 
 <style>
