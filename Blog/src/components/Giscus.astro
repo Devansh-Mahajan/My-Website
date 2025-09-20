@@ -193,8 +193,8 @@ const isConfigured = isGiscusConfigured();
 			// Set up theme change detection
 			setupThemeObserver();
 			
-			// Wait a bit longer for page to settle, then apply theme
-			setTimeout(ensureGiscusTheme, 1000);
+			// Wait longer for page to settle, then apply theme
+			setTimeout(ensureGiscusTheme, 3000);
 		}
 
 		// Initialize on DOM ready
