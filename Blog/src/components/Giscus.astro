@@ -8,7 +8,23 @@ const isConfigured = isGiscusConfigured();
 
 	{isConfigured && (
 		<div id="giscus-comments" class="giscus-container">
-			<!-- Giscus will be loaded dynamically after theme is determined -->
+			<script 
+				src="https://giscus.app/client.js"
+				data-repo={config.repo}
+				data-repo-id={config.repoId}
+				data-category={config.category}
+				data-category-id={config.categoryId}
+				data-mapping={config.mapping}
+				data-strict={config.strict}
+				data-reactions-enabled={config.reactionsEnabled}
+				data-emit-metadata={config.emitMetadata}
+				data-input-position={config.inputPosition}
+				data-theme="preferred_color_scheme"
+				data-lang={config.lang}
+				data-loading="lazy"
+				crossorigin="anonymous"
+				async>
+			</script>
 		</div>
 	)}
 
@@ -153,51 +169,23 @@ const isConfigured = isGiscusConfigured();
 			}
 		}
 
-		// Function to dynamically load Giscus with correct theme
-		function loadGiscusWithTheme() {
-			const container = document.getElementById('giscus-comments');
-			if (!container) return;
-
-			// Get current theme
-			const currentTheme = getCurrentTheme();
-			
-			// Create Giscus script element with correct theme
-			const script = document.createElement('script');
-			script.src = 'https://giscus.app/client.js';
-			script.setAttribute('data-repo', "{config.repo}");
-			script.setAttribute('data-repo-id', "{config.repoId}");
-			script.setAttribute('data-category', "{config.category}");
-			script.setAttribute('data-category-id', "{config.categoryId}");
-			script.setAttribute('data-mapping', "{config.mapping}");
-			script.setAttribute('data-strict', "{config.strict}");
-			script.setAttribute('data-reactions-enabled', "{config.reactionsEnabled}");
-			script.setAttribute('data-emit-metadata', "{config.emitMetadata}");
-			script.setAttribute('data-input-position', "{config.inputPosition}");
-			script.setAttribute('data-theme', currentTheme);
-			script.setAttribute('data-lang', "{config.lang}");
-			script.setAttribute('data-loading', 'lazy');
-			script.crossOrigin = 'anonymous';
-			script.async = true;
-
-			// Add script to container
-			container.appendChild(script);
-		}
-
-		// Function to wait for theme to be established before loading Giscus
-		function waitForThemeAndLoadGiscus() {
+		// Function to ensure Giscus theme is set after it loads
+		function ensureGiscusTheme() {
 			let attempts = 0;
-			const maxAttempts = 30; // 1.5 seconds max wait
+			const maxAttempts = 50; // 5 seconds max wait
 			
-			const checkTheme = setInterval(() => {
+			const checkGiscus = setInterval(() => {
 				attempts++;
-				const theme = getCurrentTheme();
+				const giscusFrame = document.querySelector('iframe[src*="giscus.app"]');
 				
-				// If we have a theme or we've waited long enough, proceed
-				if (theme || attempts >= maxAttempts) {
-					clearInterval(checkTheme);
-					loadGiscusWithTheme();
+				if (giscusFrame || attempts >= maxAttempts) {
+					clearInterval(checkGiscus);
+					if (giscusFrame) {
+						// Giscus is loaded, set the correct theme
+						handleThemeChange();
+					}
 				}
-			}, 50);
+			}, 100);
 		}
 
 		// Initialize everything
@@ -205,8 +193,8 @@ const isConfigured = isGiscusConfigured();
 			// Set up theme change detection
 			setupThemeObserver();
 			
-			// Wait for theme to be established, then load Giscus
-			setTimeout(waitForThemeAndLoadGiscus, 100);
+			// Ensure Giscus theme is set after it loads
+			setTimeout(ensureGiscusTheme, 500);
 		}
 
 		// Initialize on DOM ready
@@ -217,10 +205,20 @@ const isConfigured = isGiscusConfigured();
 			if (event.origin !== 'https://giscus.app') return;
 			
 			if (event.data && event.data.type === 'ready') {
-				// Giscus is ready, ensure theme is still correct
+				// Giscus is ready, set the initial theme
 				handleThemeChange();
 			}
 		});
+
+		// Additional safety: check theme periodically for first few seconds
+		let safetyChecks = 0;
+		const safetyInterval = setInterval(() => {
+			safetyChecks++;
+			handleThemeChange();
+			if (safetyChecks >= 10) { // Check for 10 seconds
+				clearInterval(safetyInterval);
+			}
+		}, 1000);
 	</script>
 
 <style>
