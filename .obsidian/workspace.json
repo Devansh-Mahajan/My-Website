@@ -172,7 +172,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -193,7 +193,7 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b95d5adb6dd85c96",
+  "active": "50a785512a07001b",
   "lastOpenFiles": [
     "Blog/node_modules/@ctrl/tinycolor/README.md",
     "index.md",
