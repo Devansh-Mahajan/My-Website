@@ -19,7 +19,7 @@ const isConfigured = isGiscusConfigured();
 				data-reactions-enabled={config.reactionsEnabled}
 				data-emit-metadata={config.emitMetadata}
 				data-input-position={config.inputPosition}
-				data-theme={config.theme}
+				data-theme="preferred_color_scheme"
 				data-lang={config.lang}
 				data-loading="lazy"
 				crossorigin="anonymous"
@@ -65,51 +65,23 @@ const isConfigured = isGiscusConfigured();
 			updateGiscusTheme(currentTheme);
 		}
 
-		// Function to ensure theme is established before Giscus loads
-		function ensureThemeEstablished() {
-			// Check if theme is already set
-			let theme = getCurrentTheme();
+		// Function to ensure Giscus theme is set after it loads
+		function ensureGiscusTheme() {
+			let attempts = 0;
+			const maxAttempts = 50; // 5 seconds max wait
 			
-			// If no theme is set, wait for theme initialization
-			if (!theme || theme === 'light') {
-				// Wait for theme to be properly initialized
-				const checkTheme = setInterval(() => {
-					const currentTheme = getCurrentTheme();
-					if (currentTheme && currentTheme !== 'light') {
-						clearInterval(checkTheme);
-						// Theme is now established, proceed with Giscus
-						initializeGiscusWithTheme();
-					}
-				}, 50);
-				
-				// Fallback timeout
-				setTimeout(() => {
-					clearInterval(checkTheme);
-					initializeGiscusWithTheme();
-				}, 1000);
-			} else {
-				// Theme is already established
-				initializeGiscusWithTheme();
-			}
-		}
-
-		// Function to initialize Giscus with proper theme
-		function initializeGiscusWithTheme() {
-			// Wait for Giscus to load, then set initial theme
 			const checkGiscus = setInterval(() => {
+				attempts++;
 				const giscusFrame = document.querySelector('iframe[src*="giscus.app"]');
-				if (giscusFrame) {
+				
+				if (giscusFrame || attempts >= maxAttempts) {
 					clearInterval(checkGiscus);
-					// Giscus is loaded, set the correct theme
-					handleThemeChange();
+					if (giscusFrame) {
+						// Giscus is loaded, set the correct theme
+						handleThemeChange();
+					}
 				}
 			}, 100);
-			
-			// Fallback timeout for Giscus loading
-			setTimeout(() => {
-				clearInterval(checkGiscus);
-				handleThemeChange();
-			}, 3000);
 		}
 
 		// Listen for theme changes via data-theme attribute changes
@@ -135,10 +107,10 @@ const isConfigured = isGiscusConfigured();
 			}
 		});
 
-		// Initialize theme on page load - ensure theme is established first
+		// Initialize Giscus theme after page load
 		document.addEventListener('DOMContentLoaded', function() {
-			// Wait a bit for theme initialization to complete
-			setTimeout(ensureThemeEstablished, 100);
+			// Wait a bit for Giscus to load, then ensure correct theme
+			setTimeout(ensureGiscusTheme, 500);
 		});
 
 		// Listen for Giscus ready event as additional safety
