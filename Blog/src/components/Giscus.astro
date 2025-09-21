@@ -1,287 +1,185 @@
 ---
+// src/components/Giscus.astro
+/**
+ * Usage:
+ * <Giscus repo="owner/name" repoId="…" category="General" categoryId="…" mapping="pathname" />
+ */
 import { getGiscusConfig, isGiscusConfigured } from '../config/giscus';
 
 // Get Giscus configuration
 const config = getGiscusConfig();
 const isConfigured = isGiscusConfigured();
+
+// Extract props for the deterministic approach
+const {
+  repo = config.repo,
+  repoId = config.repoId,
+  category = config.category,
+  categoryId = config.categoryId,
+  mapping = config.mapping,
+  lang = config.lang,
+} = Astro.props;
 ---
 
-	{isConfigured && (
-		<div id="giscus-comments" class="giscus-container">
-			<script 
-				src="https://giscus.app/client.js"
-				data-repo={config.repo}
-				data-repo-id={config.repoId}
-				data-category={config.category}
-				data-category-id={config.categoryId}
-				data-mapping={config.mapping}
-				data-strict={config.strict}
-				data-reactions-enabled={config.reactionsEnabled}
-				data-emit-metadata={config.emitMetadata}
-				data-input-position={config.inputPosition}
-				data-theme="preferred_color_scheme"
-				data-lang={config.lang}
-				data-loading="lazy"
-				crossorigin="anonymous"
-				async>
-			</script>
-		</div>
-	)}
+{isConfigured && (
+  <section id="comments" class="giscus-section">
+    <div id="giscus-container" style="visibility:hidden"></div>
+  </section>
+)}
 
-	{!isConfigured && (
-		<div class="giscus-setup-notice">
-			<h3>💬 Comments Coming Soon</h3>
-			<p>Comments will be available once Giscus is configured. Check the setup instructions in the repository.</p>
-		</div>
-	)}
+{!isConfigured && (
+  <div class="giscus-setup-notice">
+    <h3>💬 Comments Coming Soon</h3>
+    <p>Comments will be available once Giscus is configured. Check the setup instructions in the repository.</p>
+  </div>
+)}
 
-	<!-- Universal theme synchronization script - works in both blog and Quartz environments -->
-	<script>
-		// Environment detection
-		function detectEnvironment() {
-			// Check if we're in Quartz environment
-			if (document.querySelector('meta[name="generator"][content*="Quartz"]') || 
-				window.location.hostname.includes('quartz') ||
-				document.querySelector('.dark') !== null) {
-				return 'quartz';
-			}
-			// Check if we're in blog environment
-			if (document.querySelector('meta[name="generator"][content*="Astro"]') ||
-				document.documentElement.hasAttribute('data-theme')) {
-				return 'blog';
-			}
-			// Default to blog environment
-			return 'blog';
-		}
+<script is:inline>
+  (function () {
+    // --- THEME RESOLUTION (Astro friendly) ---
+    function readTheme() {
+      // common patterns:
+      // 1) <html class="dark">…</html>
+      // 2) <html data-theme="dark">…</html>
+      // 3) fall back to OS
+      const html = document.documentElement;
+      if (html.classList.contains('dark')) return 'dark';
+      const attr = html.getAttribute('data-theme');
+      if (attr === 'dark' || attr === 'light') return attr;
+      return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
 
-		// Universal theme detection function
-		function getCurrentTheme() {
-			const environment = detectEnvironment();
-			
-			if (environment === 'quartz') {
-				// Quartz theme detection
-				const darkElement = document.querySelector('.dark');
-				const lightElement = document.querySelector('.light');
-				
-				if (darkElement) return 'dark';
-				if (lightElement) return 'light';
-				
-				// Fallback: check for dark class on html or body
-				if (document.documentElement.classList.contains('dark') || 
-					document.body.classList.contains('dark')) {
-					return 'dark';
-				}
-				
-				return 'light';
-			} else {
-				// Blog theme detection
-				const htmlElement = document.documentElement;
-				const theme = htmlElement.getAttribute('data-theme');
-				return theme === 'dark' ? 'dark' : 'light';
-			}
-		}
+    // Avoid duplicate mounts on client navigations
+    function alreadyMounted() {
+      return !!document.querySelector('iframe.giscus-frame');
+    }
 
-		// Function to update Giscus theme
-		function updateGiscusTheme(theme) {
-			const giscusFrame = document.querySelector('iframe[src*="giscus.app"]');
-			if (giscusFrame) {
-				// Send theme change message to Giscus iframe
-				giscusFrame.contentWindow.postMessage({
-					giscus: {
-						setConfig: {
-							theme: theme
-						}
-					}
-				}, 'https://giscus.app');
-			}
-		}
+    function mountGiscus(theme) {
+      const container = document.getElementById('giscus-container');
+      if (!container || alreadyMounted()) return;
 
-		// Function to handle theme changes
-		function handleThemeChange() {
-			const currentTheme = getCurrentTheme();
-			updateGiscusTheme(currentTheme);
-		}
+      const s = document.createElement('script');
+      s.src = 'https://giscus.app/client.js';
+      s.async = true;
+      s.crossOrigin = 'anonymous';
 
-		// Universal theme change detection
-		function setupThemeObserver() {
-			const environment = detectEnvironment();
-			
-			if (environment === 'quartz') {
-				// Quartz theme change detection
-				const observer = new MutationObserver(function(mutations) {
-					let themeChanged = false;
-					mutations.forEach(function(mutation) {
-						if (mutation.type === 'attributes' && 
-							(mutation.attributeName === 'class' || mutation.attributeName === 'data-theme')) {
-							themeChanged = true;
-						}
-						if (mutation.type === 'childList') {
-							// Check for added/removed dark/light elements
-							mutation.addedNodes.forEach(node => {
-								if (node.nodeType === 1 && (node.classList.contains('dark') || node.classList.contains('light'))) {
-									themeChanged = true;
-								}
-							});
-							mutation.removedNodes.forEach(node => {
-								if (node.nodeType === 1 && (node.classList.contains('dark') || node.classList.contains('light'))) {
-									themeChanged = true;
-								}
-							});
-						}
-					});
-					if (themeChanged) {
-						setTimeout(handleThemeChange, 100);
-					}
-				});
+      // REQUIRED CONFIG – fill with your values
+      s.setAttribute('data-repo',        #{JSON.stringify(repo)});
+      s.setAttribute('data-repo-id',     #{JSON.stringify(repoId)});
+      s.setAttribute('data-category',    #{JSON.stringify(category)});
+      s.setAttribute('data-category-id', #{JSON.stringify(categoryId)});
 
-				// Observe html and body elements for theme changes
-				observer.observe(document.documentElement, {
-					attributes: true,
-					attributeFilter: ['class', 'data-theme']
-				});
-				observer.observe(document.body, {
-					attributes: true,
-					attributeFilter: ['class'],
-					childList: true,
-					subtree: true
-				});
-			} else {
-				// Blog theme change detection
-				const observer = new MutationObserver(function(mutations) {
-					mutations.forEach(function(mutation) {
-						if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
-							handleThemeChange();
-						}
-					});
-				});
+      // Typical options (tweak if needed)
+      s.setAttribute('data-mapping', #{JSON.stringify(mapping)});
+      s.setAttribute('data-strict', '0');
+      s.setAttribute('data-reactions-enabled', '1');
+      s.setAttribute('data-emit-metadata', '0');
+      s.setAttribute('data-input-position', 'bottom');
+      s.setAttribute('data-lang', #{JSON.stringify(lang)});
 
-				observer.observe(document.documentElement, {
-					attributes: true,
-					attributeFilter: ['data-theme']
-				});
+      // CRUCIAL: give Giscus the theme BEFORE it boots
+      s.setAttribute('data-theme', theme);
 
-				// Also listen for theme toggle clicks as a backup
-				document.addEventListener('click', function(event) {
-					if (event.target.closest('#theme-toggle')) {
-						setTimeout(handleThemeChange, 100);
-					}
-				});
-			}
-		}
+      container.appendChild(s);
+    }
 
-		// Function to ensure Giscus theme is set after it loads
-		function ensureGiscusTheme() {
-			let attempts = 0;
-			const maxAttempts = 50; // 5 seconds max wait
-			
-			const checkGiscus = setInterval(() => {
-				attempts++;
-				const giscusFrame = document.querySelector('iframe[src*="giscus.app"]');
-				
-				if (giscusFrame || attempts >= maxAttempts) {
-					clearInterval(checkGiscus);
-					if (giscusFrame) {
-						// Giscus is loaded, set the correct theme
-						handleThemeChange();
-					}
-				}
-			}, 100);
-		}
+    function setGiscusTheme(theme) {
+      const iframe = document.querySelector('iframe.giscus-frame');
+      if (!iframe || !iframe.contentWindow) return;
+      iframe.contentWindow.postMessage(
+        { giscus: { setConfig: { theme } } },
+        'https://giscus.app'
+      );
+    }
 
-		// Initialize everything
-		function initializeGiscusTheme() {
-			// Set up theme change detection
-			setupThemeObserver();
-			
-			// Wait longer for page to settle, then apply theme
-			setTimeout(ensureGiscusTheme, 3000);
-		}
+    // Reveal only after iframe has the correct theme to avoid "flash"
+    function revealOnLoad() {
+      const container = document.getElementById('giscus-container');
+      const observer = new MutationObserver(() => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (iframe) {
+          // small next-tick to allow Giscus to paint
+          setTimeout(() => { if (container) container.style.visibility = 'visible'; }, 0);
+          observer.disconnect();
+        }
+      });
+      observer.observe(document.body, { subtree: true, childList: true });
+    }
 
-		// Initialize on DOM ready
-		document.addEventListener('DOMContentLoaded', initializeGiscusTheme);
+    function boot() {
+      const theme = readTheme();
+      mountGiscus(theme);
+      revealOnLoad();
 
-		// Listen for Giscus ready event as additional safety
-		window.addEventListener('message', function(event) {
-			if (event.origin !== 'https://giscus.app') return;
-			
-			if (event.data && event.data.type === 'ready') {
-				// Giscus is ready, set the initial theme
-				handleThemeChange();
-			}
-		});
+      // Watch for theme toggles: support both class and data-theme
+      const html = document.documentElement;
+      const mo = new MutationObserver(() => setGiscusTheme(readTheme()));
+      mo.observe(html, { attributes: true, attributeFilter: ['class', 'data-theme'] });
 
-		// Additional safety: check theme periodically for first few seconds
-		let safetyChecks = 0;
-		const safetyInterval = setInterval(() => {
-			safetyChecks++;
-			handleThemeChange();
-			if (safetyChecks >= 10) { // Check for 10 seconds
-				clearInterval(safetyInterval);
-			}
-		}, 1000);
-	</script>
+      // OS theme changes
+      const mql = matchMedia('(prefers-color-scheme: dark)');
+      const onChange = () => setGiscusTheme(readTheme());
+      mql.addEventListener ? mql.addEventListener('change', onChange) : mql.addListener(onChange);
+
+      // Astro client navigations (View Transitions / SPA-ish islands)
+      // When a new page loads, if comments exist and not mounted, mount with current theme.
+      window.addEventListener('astro:page-load', () => {
+        if (document.getElementById('giscus-container') && !alreadyMounted()) {
+          mountGiscus(readTheme());
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', boot, { once: true });
+    } else {
+      boot();
+    }
+  })();
+</script>
 
 <style>
-	.giscus-container {
-		margin-top: 3rem;
-		padding-top: 2rem;
-		border-top: 1px solid rgba(var(--gray), 0.2);
-	}
+  .giscus-section { 
+    margin-top: 2rem; 
+  }
 
-	/* Dark mode support for Giscus */
-	[data-theme='dark'] .giscus-container {
-		border-top-color: rgba(var(--gray), 0.3);
-	}
+  /* Setup notice styling */
+  .giscus-setup-notice {
+    margin-top: 3rem;
+    padding: 2rem;
+    text-align: center;
+    background: rgba(var(--gray-light), 0.3);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(var(--gray), 0.2);
+  }
 
-	/* Ensure proper spacing */
-	.giscus-container :global(.giscus) {
-		margin: 0;
-	}
+  .giscus-setup-notice h3 {
+    margin: 0 0 0.5rem 0;
+    color: rgb(var(--accent));
+    font-size: 1.25rem;
+  }
 
-	/* Custom styling to match your site's theme */
-	.giscus-container :global(.giscus-frame) {
-		border-radius: 0.75rem;
-		overflow: hidden;
-	}
+  .giscus-setup-notice p {
+    margin: 0;
+    color: rgb(var(--gray));
+    font-size: 0.95rem;
+  }
 
-	/* Setup notice styling */
-	.giscus-setup-notice {
-		margin-top: 3rem;
-		padding: 2rem;
-		text-align: center;
-		background: rgba(var(--gray-light), 0.3);
-		border-radius: 0.75rem;
-		border: 1px solid rgba(var(--gray), 0.2);
-	}
+  /* Dark mode for setup notice */
+  [data-theme='dark'] .giscus-setup-notice {
+    background: rgba(var(--gray-light), 0.1);
+    border-color: rgba(var(--gray), 0.3);
+  }
 
-	.giscus-setup-notice h3 {
-		margin: 0 0 0.5rem 0;
-		color: rgb(var(--accent));
-		font-size: 1.25rem;
-	}
-
-	.giscus-setup-notice p {
-		margin: 0;
-		color: rgb(var(--gray));
-		font-size: 0.95rem;
-	}
-
-	/* Dark mode for setup notice */
-	[data-theme='dark'] .giscus-setup-notice {
-		background: rgba(var(--gray-light), 0.1);
-		border-color: rgba(var(--gray), 0.3);
-	}
-
-	/* Responsive adjustments */
-	@media (max-width: 768px) {
-		.giscus-container {
-			margin-top: 2rem;
-			padding-top: 1.5rem;
-		}
-		
-		.giscus-setup-notice {
-			margin-top: 2rem;
-			padding: 1.5rem;
-		}
-	}
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .giscus-section {
+      margin-top: 2rem;
+    }
+    
+    .giscus-setup-notice {
+      margin-top: 2rem;
+      padding: 1.5rem;
+    }
+  }
 </style>
