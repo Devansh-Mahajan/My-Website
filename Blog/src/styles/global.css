@@ -77,10 +77,10 @@ body {
 }
 
 main {
-	width: 920px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
+        width: min(920px, 100%);
+        max-width: 100%;
+        margin: 0 auto;
+        padding: clamp(2.5rem, 6vw, 3.5rem) clamp(1.25rem, 6vw, 2.5rem);
 }
 
 h1,
@@ -239,29 +239,29 @@ li {
 }
 
 @media (max-width: 720px) {
-	body {
-		font-size: 1rem;
-	}
-	
-	h1 {
-		font-size: 2rem;
-	}
-	
-	h2 {
-		font-size: 1.5rem;
-	}
-	
-	h3 {
-		font-size: 1.25rem;
-	}
-	
-	main {
-		padding: 1em;
-	}
+        body {
+                font-size: 1rem;
+        }
 
-	.prose p {
-		margin-bottom: 1.25em;
-	}
+        h1 {
+                font-size: 2rem;
+        }
+
+        h2 {
+                font-size: 1.5rem;
+        }
+
+        h3 {
+                font-size: 1.25rem;
+        }
+
+        main {
+                padding: clamp(1.5rem, 6vw, 2rem) clamp(1rem, 6vw, 1.5rem);
+        }
+
+        .prose p {
+                margin-bottom: 1.25em;
+        }
 }
 
 .sr-only {

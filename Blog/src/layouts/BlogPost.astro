@@ -61,36 +61,37 @@ const safeTags = tags ?? [];
 			no_index={no_index}
 		/>
 		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-				margin: 2rem 0;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-				max-width: 100%;
-				height: auto;
-			}
-			.prose {
-				width: 920px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
+                        main {
+                                width: 100%;
+                                max-width: 1100px;
+                                margin: 0 auto;
+                                padding: clamp(2.5rem, 7vw, 3.5rem) clamp(1.25rem, 6vw, 2.5rem);
+                        }
+                        .hero-image {
+                                width: 100%;
+                                margin: clamp(1.5rem, 5vw, 2.5rem) 0;
+                        }
+                        .hero-image img {
+                                display: block;
+                                margin: 0 auto;
+                                border-radius: 12px;
+                                box-shadow: var(--box-shadow);
+                                max-width: 100%;
+                                height: auto;
+                        }
+                        .prose {
+                                width: 100%;
+                                max-width: min(70ch, 100%);
+                                margin: 0 auto;
+                                padding: clamp(1.5rem, 5vw, 2.5rem);
+                                color: rgb(var(--gray-dark));
+                        }
+                        .title {
+                                margin-bottom: 1em;
+                                padding: clamp(1rem, 4vw, 1.5rem) 0;
+                                text-align: center;
+                                line-height: 1;
+                        }
 			.title h1 {
 				margin: 0 0 0.5em 0;
 			}
@@ -103,13 +104,13 @@ const safeTags = tags ?? [];
 				margin-bottom: 0.5em;
 				color: rgb(var(--gray));
 			}
-			.tags {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 0.5em;
-				margin: 1em 0;
-				justify-content: center;
-			}
+                        .tags {
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 0.5em;
+                                margin: 1em 0;
+                                justify-content: center;
+                        }
 			.tag {
 				background-color: rgba(var(--gray-light), 0.8);
 				color: rgb(var(--gray-dark));
@@ -137,7 +138,24 @@ const safeTags = tags ?? [];
 				border-radius: 0.5rem;
 				margin: 1rem 0;
 			}
-		</style>
+                        @media (max-width: 600px) {
+                                main {
+                                        padding: clamp(2rem, 7vw, 2.75rem) clamp(1rem, 5vw, 1.75rem);
+                                }
+
+                                .prose {
+                                        padding: clamp(1.25rem, 6vw, 2rem);
+                                }
+
+                                .title {
+                                        text-align: left;
+                                }
+
+                                .tags {
+                                        justify-content: flex-start;
+                                }
+                        }
+                </style>
 	</head>
 
 	<body>

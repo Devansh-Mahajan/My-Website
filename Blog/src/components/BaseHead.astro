@@ -81,6 +81,30 @@ const absoluteTwitterImage = finalTwitterImage ? getAbsoluteImageUrl(finalTwitte
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="color-scheme" content="light dark" />
+<script is:inline>
+  (() => {
+    const storageKey = 'theme';
+    const doc = document.documentElement;
+    let storedTheme = null;
+
+    try {
+      storedTheme = localStorage.getItem(storageKey);
+    } catch (_) {
+      storedTheme = null;
+    }
+
+    let resolved = storedTheme === 'dark' || storedTheme === 'light' ? storedTheme : null;
+    if (!resolved) {
+      const prefersDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+      resolved = prefersDark && typeof prefersDark.matches === 'boolean' && prefersDark.matches ? 'dark' : 'light';
+    }
+
+    doc.setAttribute('data-theme', resolved);
+    doc.classList.toggle('dark', resolved === 'dark');
+    doc.style.colorScheme = resolved;
+  })();
+</script>
 <!-- No favicon for clean design -->
 <meta name="generator" content={Astro.generator} />
 

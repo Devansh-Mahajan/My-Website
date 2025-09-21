@@ -3,6 +3,8 @@
   class="theme-toggle"
   title="Toggle theme"
   aria-label="Toggle theme"
+  type="button"
+  aria-pressed="false"
 >
   <svg width="20" height="20" viewBox="0 0 24 24" class="sun-icon">
     <path
@@ -68,38 +70,130 @@
 </style>
 
 <script>
-  const themeToggle = document.getElementById('theme-toggle');
-  
-  function setTheme(theme: 'light' | 'dark') {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  }
+  (() => {
+    const toggle = document.getElementById('theme-toggle');
+    const storageKey = 'theme';
+    const doc = document.documentElement;
+    const scheme = typeof window.matchMedia === 'function'
+      ? window.matchMedia('(prefers-color-scheme: dark)')
+      : { matches: false };
 
-  function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-  }
-
-  function initializeTheme() {
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else {
-      setTheme('light');
+    function normalise(theme) {
+      return theme === 'dark' || theme === 'light' ? theme : null;
     }
-  }
 
-  // Add click event listener
-  themeToggle?.addEventListener('click', toggleTheme);
-
-  // Initialize theme on page load
-  document.addEventListener('DOMContentLoaded', initializeTheme);
-
-  // Listen for system theme changes, but only if no theme is saved
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (!localStorage.getItem('theme')) {
-      setTheme('light');
+    function resolveSystemTheme() {
+      return scheme.matches ? 'dark' : 'light';
     }
-  });
+
+    let currentTheme = normalise(doc.getAttribute('data-theme')) ?? resolveSystemTheme();
+
+    function applyThemeAttributes(theme) {
+      if (doc.getAttribute('data-theme') !== theme) {
+        doc.setAttribute('data-theme', theme);
+      }
+      doc.classList.toggle('dark', theme === 'dark');
+      doc.style.colorScheme = theme;
+    }
+
+    function updateToggleState(theme) {
+      if (!toggle) return;
+      toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+      toggle.dataset.theme = theme;
+    }
+
+    function setTheme(theme, persist = true) {
+      const normalised = normalise(theme);
+      if (!normalised) return;
+
+      const changed = normalised !== currentTheme;
+      if (changed) {
+        currentTheme = normalised;
+        applyThemeAttributes(normalised);
+      }
+
+      updateToggleState(normalised);
+
+      if (persist) {
+        try {
+          localStorage.setItem(storageKey, normalised);
+        } catch (_) {
+          // Ignore storage errors (e.g. private mode).
+        }
+      }
+
+      if (changed) {
+        window.dispatchEvent(new CustomEvent('themechange', { detail: { theme: normalised } }));
+      }
+    }
+
+    function getStoredTheme() {
+      try {
+        return normalise(localStorage.getItem(storageKey));
+      } catch (_) {
+        return null;
+      }
+    }
+
+    function getActiveTheme() {
+      const attrTheme = normalise(doc.getAttribute('data-theme'));
+      if (attrTheme && attrTheme !== currentTheme) {
+        currentTheme = attrTheme;
+      }
+      return currentTheme;
+    }
+
+    function initialiseTheme() {
+      const storedTheme = getStoredTheme();
+      if (storedTheme) {
+        setTheme(storedTheme, false);
+      } else {
+        setTheme(getActiveTheme(), false);
+      }
+    }
+
+    if (toggle) {
+      updateToggleState(currentTheme);
+      toggle.addEventListener('click', () => {
+        const next = getActiveTheme() === 'dark' ? 'light' : 'dark';
+        setTheme(next);
+      });
+    }
+
+    initialiseTheme();
+
+    const handleSchemeChange = (event) => {
+      if (!getStoredTheme()) {
+        setTheme(event.matches ? 'dark' : 'light', false);
+      }
+    };
+
+    if (typeof scheme.addEventListener === 'function') {
+      scheme.addEventListener('change', handleSchemeChange);
+    } else if (typeof scheme.addListener === 'function') {
+      scheme.addListener(handleSchemeChange);
+    }
+
+    window.addEventListener('storage', (event) => {
+      if (event.key !== storageKey) return;
+
+      const newTheme = normalise(event.newValue);
+      if (newTheme) {
+        setTheme(newTheme, false);
+      } else if (event.newValue === null) {
+        setTheme(resolveSystemTheme(), false);
+      }
+    });
+
+    window.addEventListener('pageshow', (event) => {
+      if (event.persisted) {
+        const storedTheme = getStoredTheme();
+        if (storedTheme) {
+          setTheme(storedTheme, false);
+        } else {
+          setTheme(resolveSystemTheme(), false);
+        }
+      }
+    });
+  })();
 </script>

@@ -160,13 +160,13 @@ const posts = (await getCollection('blog'))
 		padding: 0;
 	}
 
-	.hero {
-		padding: 8rem 1rem;
-		text-align: center;
-		background: transparent;
-		position: relative;
-		overflow: hidden;
-	}
+        .hero {
+                padding: clamp(5rem, 12vw, 8rem) clamp(1.5rem, 6vw, 3rem);
+                text-align: center;
+                background: transparent;
+                position: relative;
+                overflow: hidden;
+        }
 
 	.hero::before {
 		content: '';
@@ -184,11 +184,12 @@ const posts = (await getCollection('blog'))
 		z-index: -1;
 	}
 
-	.hero-content {
-		max-width: 800px;
-		margin: 0 auto;
-		position: relative;
-	}
+        .hero-content {
+                max-width: min(960px, 100%);
+                margin: 0 auto;
+                position: relative;
+                padding: 0 clamp(0rem, 3vw, 1rem);
+        }
 
 	.hero-badge {
 		display: inline-block;
@@ -202,14 +203,14 @@ const posts = (await getCollection('blog'))
 		transition: var(--theme-transition);
 	}
 
-	.hero h1 {
-		font-size: 3.5rem;
-		font-weight: 700;
-		margin-bottom: 1.5rem;
-		color: rgb(var(--black));
-		line-height: 1.1;
-		letter-spacing: -0.02em;
-	}
+        .hero h1 {
+                font-size: clamp(2.75rem, 7vw, 3.5rem);
+                font-weight: 700;
+                margin-bottom: 1.5rem;
+                color: rgb(var(--black));
+                line-height: 1.1;
+                letter-spacing: -0.02em;
+        }
 
 	.name-blue {
 		background: linear-gradient(135deg, #3b82f6, #1d4ed8);
@@ -218,20 +219,23 @@ const posts = (await getCollection('blog'))
 		background-clip: text;
 	}
 
-	.hero-description {
-		font-size: 1.25rem;
-		color: rgb(var(--gray));
-		max-width: 600px;
-		margin: 0 auto 3rem;
-		line-height: 1.6;
-	}
+        .hero-description {
+                font-size: clamp(1.05rem, 3vw, 1.25rem);
+                color: rgb(var(--gray));
+                max-width: 600px;
+                margin: 0 auto clamp(2.5rem, 8vw, 3rem);
+                line-height: 1.6;
+        }
 
-	.cta-buttons {
-		display: flex;
-		gap: 1rem;
-		justify-content: center;
-		flex-wrap: wrap;
-	}
+        .cta-buttons {
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+                max-width: 32rem;
+                width: 100%;
+                margin: 0 auto;
+        }
 
 	.primary-button, .secondary-button {
 		display: inline-flex;
@@ -317,16 +321,17 @@ const posts = (await getCollection('blog'))
 		opacity: 0.8;
 	}
 
-	.areas-focus {
-		padding: 6rem 1rem;
-		background: linear-gradient(135deg, rgba(248, 250, 252, 0.5), rgba(241, 245, 249, 0.3));
-	}
+        .areas-focus {
+                padding: clamp(4.5rem, 9vw, 6rem) clamp(1.5rem, 6vw, 3rem);
+                background: linear-gradient(135deg, rgba(248, 250, 252, 0.5), rgba(241, 245, 249, 0.3));
+        }
 
-	.areas-content {
-		max-width: 1200px;
-		margin: 0 auto;
-		text-align: center;
-	}
+        .areas-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                text-align: center;
+                padding: 0 clamp(1rem, 5vw, 2rem);
+        }
 
 	.areas-focus h2 {
 		font-size: 2.5rem;
@@ -337,30 +342,30 @@ const posts = (await getCollection('blog'))
 		letter-spacing: -0.02em;
 	}
 
-	.areas-description {
-		font-size: 1.125rem;
-		color: rgb(var(--gray));
-		margin-bottom: 2rem;
-		max-width: 600px;
-		margin-left: auto;
-		margin-right: auto;
-	}
+        .areas-description {
+                font-size: clamp(1rem, 3vw, 1.125rem);
+                color: rgb(var(--gray));
+                margin-bottom: 2rem;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+        }
 
-	.areas-grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1.5rem;
-		margin-top: 2rem;
-		max-width: 800px;
-		margin-left: auto;
-		margin-right: auto;
-	}
+        .areas-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: clamp(1.25rem, 3vw, 1.75rem);
+                margin-top: 2rem;
+                max-width: min(960px, 100%);
+                margin-left: auto;
+                margin-right: auto;
+        }
 
-	.area-card {
-		background: rgba(255, 255, 255, 0.9);
-		padding: 1.5rem;
-		border-radius: 0.75rem;
-		text-align: left;
+        .area-card {
+                background: rgba(255, 255, 255, 0.9);
+                padding: clamp(1.5rem, 4vw, 1.75rem);
+                border-radius: 0.75rem;
+                text-align: left;
 		box-shadow: 0 4px 6px rgba(59, 130, 246, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
 		border: 1px solid rgba(59, 130, 246, 0.1);
 		transition: all 0.2s ease;
@@ -452,11 +457,11 @@ const posts = (await getCollection('blog'))
 		font-size: 0.9rem;
 	}
 
-	.latest-posts {
-		padding: 6rem 1rem;
-		max-width: 1200px;
-		margin: 0 auto;
-	}
+        .latest-posts {
+                padding: clamp(4.5rem, 9vw, 6rem) clamp(1.5rem, 6vw, 3rem);
+                max-width: 1200px;
+                margin: 0 auto;
+        }
 
 	.posts-content {
 		text-align: center;
@@ -471,21 +476,21 @@ const posts = (await getCollection('blog'))
 		letter-spacing: -0.02em;
 	}
 
-	.posts-description {
-		font-size: 1.125rem;
-		color: rgb(var(--gray));
-		margin-bottom: 3rem;
-		max-width: 600px;
-		margin-left: auto;
-		margin-right: auto;
-	}
+        .posts-description {
+                font-size: clamp(1rem, 3vw, 1.125rem);
+                color: rgb(var(--gray));
+                margin-bottom: 3rem;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+        }
 
-	.post-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-		gap: 2rem;
-		margin-bottom: 3rem;
-	}
+        .post-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: clamp(1.5rem, 4vw, 2.5rem);
+                margin-bottom: 3rem;
+        }
 
 	.view-all {
 		text-align: center;
@@ -516,57 +521,89 @@ const posts = (await getCollection('blog'))
 		opacity: 0.8;
 	}
 
-	@media (max-width: 768px) {
-		.hero {
-			padding: 4rem 1rem;
-		}
+        @media (max-width: 768px) {
+                .hero {
+                        padding: clamp(3.5rem, 12vw, 4.5rem) clamp(1.25rem, 5vw, 2rem);
+                }
 
-		.hero h1 {
-			font-size: 2.5rem;
-		}
+                .hero h1 {
+                        font-size: clamp(2.25rem, 8vw, 2.75rem);
+                }
 
-		.hero-description {
-			font-size: 1.1rem;
-		}
+                .hero-description {
+                        font-size: 1.05rem;
+                }
 
-		.cta-buttons {
-			flex-direction: column;
-			align-items: center;
-		}
+                .cta-buttons {
+                        flex-direction: column;
+                        align-items: stretch;
+                        max-width: none;
+                }
 
-		.primary-button, .secondary-button {
-			justify-content: center;
-		}
+                .primary-button, .secondary-button {
+                        justify-content: center;
+                        width: 100%;
+                }
 
-		.areas-focus {
-			padding: 4rem 1rem;
-		}
+                .areas-focus {
+                        padding: clamp(3.5rem, 10vw, 4.5rem) clamp(1.25rem, 5vw, 2rem);
+                }
 
-		.areas-focus h2 {
-			font-size: 2rem;
-		}
+                .areas-focus h2 {
+                        font-size: 2rem;
+                }
 
-		.areas-grid {
-			grid-template-columns: 1fr;
-			gap: 1rem;
-			max-width: 100%;
-		}
+                .areas-grid {
+                        grid-template-columns: 1fr;
+                        gap: 1rem;
+                        max-width: 100%;
+                }
 
-		.area-card {
-			padding: 1.25rem;
-		}
+                .area-card {
+                        padding: clamp(1.25rem, 5vw, 1.5rem);
+                }
 
-		.latest-posts {
-			padding: 4rem 1rem;
-		}
+                .latest-posts {
+                        padding: clamp(3.5rem, 10vw, 4.5rem) clamp(1.25rem, 5vw, 2rem);
+                }
 
-		.post-grid {
-			grid-template-columns: 1fr;
-			gap: 1.5rem;
-		}
+                .post-grid {
+                        grid-template-columns: 1fr;
+                        gap: 1.5rem;
+                }
 
-		.view-all {
-			margin-top: 1.5rem;
-		}
-	}
+                .view-all {
+                        margin-top: 1.5rem;
+                }
+        }
+
+        @media (max-width: 600px) {
+                .hero {
+                        text-align: left;
+                }
+
+                .hero-content {
+                        text-align: left;
+                        padding: 0;
+                }
+
+                .hero-badge {
+                        margin-left: 0;
+                        margin-right: auto;
+                }
+
+                .hero-description {
+                        margin: 0 0 clamp(2rem, 7vw, 2.5rem);
+                }
+
+                .cta-buttons {
+                        margin: 0;
+                        align-items: stretch;
+                }
+
+                .primary-button,
+                .secondary-button {
+                        width: 100%;
+                }
+        }
 </style>

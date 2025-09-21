@@ -35,105 +35,241 @@ const {
 )}
 
 <script define:vars={{ repo, repoId, category, categoryId, mapping, lang }}>
-  (function () {
-    // --- THEME RESOLUTION (Astro friendly) ---
-    function readTheme() {
-      // common patterns:
-      // 1) <html class="dark">…</html>
-      // 2) <html data-theme="dark">…</html>
-      // 3) fall back to OS
+  (() => {
+    const managerKey = '__giscusThemeSync__';
+
+    function createManager() {
+      const GISCUS_ORIGIN = 'https://giscus.app';
+      const IFRAME_SELECTOR = 'iframe.giscus-frame';
       const html = document.documentElement;
-      if (html.classList.contains('dark')) return 'dark';
-      const attr = html.getAttribute('data-theme');
-      if (attr === 'dark' || attr === 'light') return attr;
-      return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
+      const prefersDark = typeof window.matchMedia === 'function'
+        ? window.matchMedia('(prefers-color-scheme: dark)')
+        : {
+            matches: false,
+            addEventListener: undefined,
+            removeEventListener: undefined,
+            addListener: undefined,
+            removeListener: undefined,
+          };
+      const state = {
+        desiredTheme: 'light',
+        flushHandle: 0,
+      };
 
-    // Avoid duplicate mounts on client navigations
-    function alreadyMounted() {
-      return !!document.querySelector('iframe.giscus-frame');
-    }
+      function readTheme() {
+        if (html.classList.contains('dark')) return 'dark';
+        const attr = html.getAttribute('data-theme');
+        if (attr === 'dark' || attr === 'light') return attr;
+        return prefersDark.matches ? 'dark' : 'light';
+      }
 
-    function mountGiscus(theme) {
-      const container = document.getElementById('giscus-container');
-      if (!container || alreadyMounted()) return;
+      function getContainer() {
+        return document.getElementById('giscus-container');
+      }
 
-      const s = document.createElement('script');
-      s.src = 'https://giscus.app/client.js';
-      s.async = true;
-      s.crossOrigin = 'anonymous';
+      function ensureHidden() {
+        const container = getContainer();
+        if (container) container.style.visibility = 'hidden';
+      }
 
-      // REQUIRED CONFIG – fill with your values
-      s.setAttribute('data-repo', repo);
-      s.setAttribute('data-repo-id', repoId);
-      s.setAttribute('data-category', category);
-      s.setAttribute('data-category-id', categoryId);
+      function showContainer() {
+        const container = getContainer();
+        if (container) container.style.visibility = 'visible';
+      }
 
-      // Typical options (tweak if needed)
-      s.setAttribute('data-mapping', mapping);
-      s.setAttribute('data-strict', '0');
-      s.setAttribute('data-reactions-enabled', '1');
-      s.setAttribute('data-emit-metadata', '0');
-      s.setAttribute('data-input-position', 'bottom');
-      s.setAttribute('data-lang', lang);
+      function getIframe() {
+        const container = getContainer();
+        return container ? container.querySelector(IFRAME_SELECTOR) : null;
+      }
 
-      // CRUCIAL: give Giscus the theme BEFORE it boots
-      s.setAttribute('data-theme', theme);
+      function applyTheme(theme) {
+        const iframe = getIframe();
+        if (!iframe || !iframe.contentWindow) return false;
 
-      container.appendChild(s);
-    }
+        iframe.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          GISCUS_ORIGIN
+        );
 
-    function setGiscusTheme(theme) {
-      const iframe = document.querySelector('iframe.giscus-frame');
-      if (!iframe || !iframe.contentWindow) return;
-      iframe.contentWindow.postMessage(
-        { giscus: { setConfig: { theme } } },
-        'https://giscus.app'
-      );
-    }
+        return true;
+      }
 
-    // Reveal only after iframe has the correct theme to avoid "flash"
-    function revealOnLoad() {
-      const container = document.getElementById('giscus-container');
-      const observer = new MutationObserver(() => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (iframe) {
-          // small next-tick to allow Giscus to paint
-          setTimeout(() => { if (container) container.style.visibility = 'visible'; }, 0);
-          observer.disconnect();
+      function flushTheme() {
+        state.flushHandle = 0;
+        if (!applyTheme(state.desiredTheme)) {
+          state.flushHandle = requestAnimationFrame(flushTheme);
+        }
+      }
+
+      function requestThemeSync(theme) {
+        state.desiredTheme = theme;
+        if (!applyTheme(theme) && !state.flushHandle) {
+          state.flushHandle = requestAnimationFrame(flushTheme);
+        }
+      }
+
+      function waitForIframe() {
+        const existing = getIframe();
+        if (existing) return Promise.resolve(existing);
+
+        const container = getContainer();
+        if (!container) return Promise.resolve(null);
+
+        return new Promise((resolve) => {
+          const observer = new MutationObserver(() => {
+            const iframe = getIframe();
+            if (iframe) {
+              observer.disconnect();
+              resolve(iframe);
+            }
+          });
+
+          observer.observe(container, { childList: true });
+
+          setTimeout(() => {
+            observer.disconnect();
+            resolve(getIframe());
+          }, 4000);
+        });
+      }
+
+      function revealWhenReady() {
+        const container = getContainer();
+        if (!container) return;
+
+        const fallback = setTimeout(() => {
+          showContainer();
+        }, 4500);
+
+        waitForIframe().then((iframe) => {
+          if (!iframe) {
+            clearTimeout(fallback);
+            showContainer();
+            return;
+          }
+
+          const reveal = () => {
+            if (applyTheme(state.desiredTheme)) {
+              clearTimeout(fallback);
+              showContainer();
+            } else {
+              requestAnimationFrame(reveal);
+            }
+          };
+
+          iframe.addEventListener('load', () => requestAnimationFrame(reveal), { once: true });
+          requestAnimationFrame(reveal);
+        });
+      }
+
+      function mount(theme) {
+        const container = getContainer();
+        if (!container || container.querySelector(IFRAME_SELECTOR)) return;
+
+        ensureHidden();
+
+        const script = document.createElement('script');
+        script.src = 'https://giscus.app/client.js';
+        script.async = true;
+        script.crossOrigin = 'anonymous';
+
+        script.setAttribute('data-repo', repo);
+        script.setAttribute('data-repo-id', repoId);
+        script.setAttribute('data-category', category);
+        script.setAttribute('data-category-id', categoryId);
+        script.setAttribute('data-mapping', mapping);
+        script.setAttribute('data-strict', '0');
+        script.setAttribute('data-reactions-enabled', '1');
+        script.setAttribute('data-emit-metadata', '0');
+        script.setAttribute('data-input-position', 'bottom');
+        script.setAttribute('data-lang', lang);
+        script.setAttribute('data-theme', theme);
+
+        container.appendChild(script);
+      }
+
+      function syncToCurrentTheme() {
+        requestThemeSync(readTheme());
+      }
+
+      function mountIfNeeded() {
+        const container = getContainer();
+        if (!container) return;
+
+        const currentTheme = readTheme();
+        requestThemeSync(currentTheme);
+
+        if (container.querySelector(IFRAME_SELECTOR)) {
+          showContainer();
+          return;
+        }
+
+        mount(currentTheme);
+        revealWhenReady();
+      }
+
+      const htmlObserver = new MutationObserver(syncToCurrentTheme);
+      htmlObserver.observe(html, { attributes: true, attributeFilter: ['class', 'data-theme'] });
+
+      const handleScheme = () => syncToCurrentTheme();
+      if (typeof prefersDark.addEventListener === 'function') {
+        prefersDark.addEventListener('change', handleScheme);
+      } else if (typeof prefersDark.addListener === 'function') {
+        prefersDark.addListener(handleScheme);
+      }
+
+      const handlePageLoad = () => {
+        mountIfNeeded();
+      };
+
+      window.addEventListener('astro:page-load', handlePageLoad);
+      window.addEventListener('astro:after-swap', () => {
+        ensureHidden();
+        mountIfNeeded();
+        syncToCurrentTheme();
+      });
+
+      window.addEventListener('astro:before-swap', ensureHidden);
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+          syncToCurrentTheme();
         }
       });
-      observer.observe(document.body, { subtree: true, childList: true });
-    }
 
-    function boot() {
-      const theme = readTheme();
-      mountGiscus(theme);
-      revealOnLoad();
-
-      // Watch for theme toggles: support both class and data-theme
-      const html = document.documentElement;
-      const mo = new MutationObserver(() => setGiscusTheme(readTheme()));
-      mo.observe(html, { attributes: true, attributeFilter: ['class', 'data-theme'] });
-
-      // OS theme changes
-      const mql = matchMedia('(prefers-color-scheme: dark)');
-      const onChange = () => setGiscusTheme(readTheme());
-      mql.addEventListener ? mql.addEventListener('change', onChange) : mql.addListener(onChange);
-
-      // Astro client navigations (View Transitions / SPA-ish islands)
-      // When a new page loads, if comments exist and not mounted, mount with current theme.
-      window.addEventListener('astro:page-load', () => {
-        if (document.getElementById('giscus-container') && !alreadyMounted()) {
-          mountGiscus(readTheme());
+      window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+          ensureHidden();
+          mountIfNeeded();
+          syncToCurrentTheme();
         }
       });
+
+      window.addEventListener('themechange', (event) => {
+        const nextTheme = event && event.detail && event.detail.theme;
+        if (nextTheme === 'dark' || nextTheme === 'light') {
+          requestThemeSync(nextTheme);
+        } else {
+          syncToCurrentTheme();
+        }
+      });
+
+      return {
+        mountIfNeeded,
+        syncToCurrentTheme,
+      };
     }
 
+    const globalScope = window;
+    if (!globalScope[managerKey]) {
+      globalScope[managerKey] = createManager();
+    }
+
+    const manager = globalScope[managerKey];
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', boot, { once: true });
+      document.addEventListener('DOMContentLoaded', () => manager.mountIfNeeded(), { once: true });
     } else {
-      boot();
+      manager.mountIfNeeded();
     }
   })();
 </script>
