@@ -34,7 +34,7 @@ const {
   </div>
 )}
 
-<script is:inline>
+<script define:vars={{ repo, repoId, category, categoryId, mapping, lang }}>
   (function () {
     // --- THEME RESOLUTION (Astro friendly) ---
     function readTheme() {
@@ -64,18 +64,18 @@ const {
       s.crossOrigin = 'anonymous';
 
       // REQUIRED CONFIG – fill with your values
-      s.setAttribute('data-repo',        #{JSON.stringify(repo)});
-      s.setAttribute('data-repo-id',     #{JSON.stringify(repoId)});
-      s.setAttribute('data-category',    #{JSON.stringify(category)});
-      s.setAttribute('data-category-id', #{JSON.stringify(categoryId)});
+      s.setAttribute('data-repo', repo);
+      s.setAttribute('data-repo-id', repoId);
+      s.setAttribute('data-category', category);
+      s.setAttribute('data-category-id', categoryId);
 
       // Typical options (tweak if needed)
-      s.setAttribute('data-mapping', #{JSON.stringify(mapping)});
+      s.setAttribute('data-mapping', mapping);
       s.setAttribute('data-strict', '0');
       s.setAttribute('data-reactions-enabled', '1');
       s.setAttribute('data-emit-metadata', '0');
       s.setAttribute('data-input-position', 'bottom');
-      s.setAttribute('data-lang', #{JSON.stringify(lang)});
+      s.setAttribute('data-lang', lang);
 
       // CRUCIAL: give Giscus the theme BEFORE it boots
       s.setAttribute('data-theme', theme);
