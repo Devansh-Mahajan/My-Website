@@ -83,6 +83,20 @@ main {
 	padding: 3em 1em;
 }
 
+@media (max-width: 768px) {
+	main {
+		width: 100%;
+		max-width: 100%;
+		padding: 1.5rem 1rem;
+	}
+}
+
+@media (max-width: 480px) {
+	main {
+		padding: 1rem 0.75rem;
+	}
+}
+
 h1,
 h2,
 h3,
@@ -253,10 +267,6 @@ li {
 	
 	h3 {
 		font-size: 1.25rem;
-	}
-	
-	main {
-		padding: 1em;
 	}
 
 	.prose p {

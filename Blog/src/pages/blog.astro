@@ -89,6 +89,10 @@ const posts = (await getCollection('blog'))
             }
 
             @media (max-width: 768px) {
+                main {
+                    padding: 1.5rem 1rem;
+                }
+                
                 .blog-header {
                     padding: 3rem 1rem;
                     margin-bottom: 3rem;
@@ -106,6 +110,26 @@ const posts = (await getCollection('blog'))
                 .posts-grid {
                     grid-template-columns: 1fr;
                     gap: 1.5rem;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                main {
+                    padding: 1rem 0.75rem;
+                }
+                
+                .blog-header {
+                    padding: 2rem 0.75rem;
+                    margin-bottom: 2rem;
+                }
+
+                .blog-title {
+                    font-size: 2rem;
+                }
+
+                .blog-description {
+                    font-size: 1rem;
+                    padding: 0 0.5rem;
                 }
             }
         </style>

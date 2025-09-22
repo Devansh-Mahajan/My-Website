@@ -114,6 +114,9 @@ const description = isAllPosts
             }
 
             @media (max-width: 768px) {
+                main {
+                    padding: 1.5rem 1rem;
+                }
                 .tag-header {
                     padding: 2rem 1rem;
                     margin-bottom: 2rem;
@@ -131,6 +134,26 @@ const description = isAllPosts
                 .posts-grid {
                     grid-template-columns: 1fr;
                     gap: 1.5rem;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                main {
+                    padding: 1rem 0.75rem;
+                }
+                
+                .tag-header {
+                    padding: 1.5rem 0.75rem;
+                    margin-bottom: 1.5rem;
+                }
+
+                .tag-title {
+                    font-size: 1.75rem;
+                }
+
+                .tag-description {
+                    font-size: 0.95rem;
+                    padding: 0 0.5rem;
                 }
             }
         </style>
