@@ -71,13 +71,13 @@ const safeTags = tags ?? [];
 				main {
 					width: 100%;
 					max-width: 100%;
-					padding: 1.5rem 1rem;
+					padding: 1rem 0.75rem;
 				}
 			}
 			
 			@media (max-width: 480px) {
 				main {
-					padding: 1rem 0.75rem;
+					padding: 0.75rem 0.5rem;
 				}
 			}
 			.hero-image {
@@ -98,6 +98,20 @@ const safeTags = tags ?? [];
 				margin: auto;
 				padding: 1em;
 				color: rgb(var(--gray-dark));
+			}
+			
+			@media (max-width: 768px) {
+				.prose {
+					width: 100%;
+					max-width: 100%;
+					padding: 0.5rem;
+				}
+			}
+			
+			@media (max-width: 480px) {
+				.prose {
+					padding: 0.25rem;
+				}
 			}
 			.title {
 				margin-bottom: 1em;
