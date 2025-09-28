@@ -19,8 +19,9 @@ type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
+const resolvedSlug = post.data.slug || post.id.replace(/\.[^/.]+$/, '');
 ---
 
-<BlogPost {...post.data}>
-	<Content />
-</BlogPost> 
+<BlogPost {...post.data} slug={resolvedSlug}>
+        <Content />
+</BlogPost>
