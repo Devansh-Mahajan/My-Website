@@ -30,33 +30,8 @@
               "icon": "lucide-file",
               "title": "index"
             }
-          },
-          {
-            "id": "bf9cd8eb357e4abd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "conflict-files-obsidian-git"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -218,7 +193,7 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "bf9cd8eb357e4abd",
+  "active": "b95d5adb6dd85c96",
   "lastOpenFiles": [
     "Blog/dist/sitemap-index.xml",
     "Blog/dist/sitemap-0.xml",
@@ -235,8 +210,8 @@
     "Blog/dist/icon.png",
     "Blog/dist/favicon.svg",
     "Blog/dist/attachments/998 Images/Pasted image 20250906182721.png",
-    "index.md",
     "conflict-files-obsidian-git.md",
+    "index.md",
     "200 ETH Zurich/ETH BSc EECS - Overview.md",
     "200 ETH Zurich/Semester 1/Analysis 1/401-0231-10L Analysis 1.md",
     "Blog/node_modules/@ctrl/tinycolor/README.md",
