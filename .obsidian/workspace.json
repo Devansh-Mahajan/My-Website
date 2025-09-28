@@ -193,8 +193,9 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "50a785512a07001b",
+  "active": "b95d5adb6dd85c96",
   "lastOpenFiles": [
+    "Blog/src/components/ViewCounter.astro",
     "Blog/dist/sitemap-index.xml",
     "Blog/dist/sitemap-0.xml",
     "Blog/dist/seo-implementation-guide/index.html",
@@ -205,7 +206,6 @@
     "Blog/dist/tag/guide/index.html",
     "Blog/dist/tag/all/index.html",
     "Blog/dist/tag/seo",
-    "Blog/dist/tag/optimization",
     "Blog/dist/icon_backup.png",
     "Blog/dist/icon.png",
     "Blog/dist/favicon.svg",
