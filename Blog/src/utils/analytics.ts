@@ -14,6 +14,30 @@ const base64UrlEncode = (value: string | Record<string, unknown>) => {
         return Buffer.from(payload).toString('base64url');
 };
 
+const normalizePrivateKey = (raw: string): string => {
+        const trimmed = raw.trim();
+
+        const withoutQuotes =
+                trimmed.startsWith('"') && trimmed.endsWith('"')
+                        ? trimmed.slice(1, -1)
+                        : trimmed;
+
+        const withEscapedNewlines = withoutQuotes
+                .replace(/\\r/g, '\r')
+                .replace(/\\n/g, '\n');
+
+        const normalized = withEscapedNewlines.replace(/\r\n?/g, '\n');
+
+        if (/-----BEGIN [A-Z ]+PRIVATE KEY-----/.test(normalized)) {
+                return normalized;
+        }
+
+        const base64Body = normalized.replace(/\s+/g, '');
+        const chunked = base64Body.match(/.{1,64}/g)?.join('\n') ?? base64Body;
+
+        return `-----BEGIN PRIVATE KEY-----\n${chunked}\n-----END PRIVATE KEY-----\n`;
+};
+
 const requestAccessToken = async (clientEmail: string, privateKey: string): Promise<string> => {
         const now = Math.floor(Date.now() / 1000);
         const header = { alg: 'RS256', typ: 'JWT' };
@@ -163,7 +187,7 @@ export const getGoogleAnalyticsPageViews = async (
                 return null;
         }
 
-        const privateKey = rawPrivateKey.replace(/\\n/g, '\n');
+        const privateKey = normalizePrivateKey(rawPrivateKey);
         const accessToken = await requestAccessToken(clientEmail, privateKey);
         return readPageViews(accessToken, propertyId, pathVariants);
 };
