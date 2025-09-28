@@ -85,8 +85,8 @@ const measurementId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID?.trim();
 {measurementId && (
   <>
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
-    <script is:inline>
-      {`(function() {
+    <script is:inline set:html={`
+(function() {
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -110,8 +110,8 @@ const measurementId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID?.trim();
 
   trackPageView();
   document.addEventListener('astro:page-load', trackPageView);
-})();`}
-    </script>
+})();
+    `}></script>
   </>
 )}
 
