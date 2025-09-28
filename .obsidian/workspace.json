@@ -30,8 +30,33 @@
               "icon": "lucide-file",
               "title": "index"
             }
+          },
+          {
+            "id": "bf9cd8eb357e4abd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "conflict-files-obsidian-git"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -193,9 +218,8 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b95d5adb6dd85c96",
+  "active": "bf9cd8eb357e4abd",
   "lastOpenFiles": [
-    "Blog/src/components/ViewCounter.astro",
     "Blog/dist/sitemap-index.xml",
     "Blog/dist/sitemap-0.xml",
     "Blog/dist/seo-implementation-guide/index.html",
@@ -206,12 +230,14 @@
     "Blog/dist/tag/guide/index.html",
     "Blog/dist/tag/all/index.html",
     "Blog/dist/tag/seo",
+    "Blog/dist/tag/optimization",
     "Blog/dist/icon_backup.png",
     "Blog/dist/icon.png",
     "Blog/dist/favicon.svg",
     "Blog/dist/attachments/998 Images/Pasted image 20250906182721.png",
-    "200 ETH Zurich/ETH BSc EECS - Overview.md",
     "index.md",
+    "conflict-files-obsidian-git.md",
+    "200 ETH Zurich/ETH BSc EECS - Overview.md",
     "200 ETH Zurich/Semester 1/Analysis 1/401-0231-10L Analysis 1.md",
     "Blog/node_modules/@ctrl/tinycolor/README.md",
     "999 Templates/01 Blog Template.md",
@@ -234,7 +260,6 @@
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/227-0001-00L Netzwerke und Schaltungen I.md",
     "200 ETH Zurich/Semester 1/Microsystems I Process Technology and Integration/151-0621-00L Microsystems I Process Technology and Integration.md",
     "200 ETH Zurich/Semester 1/Lineare Algebra/401-0151-00L Lineare Algebra.md",
-    "200 ETH Zurich/Semester 1/Grundzüge des Rechts/851-0703-00L Grundzüge des Rechts.md",
     "Blog/public/attachments/998 Images/Pasted image 20250906182721.png",
     "998 Images/Pasted image 20250906182721.png",
     "quartz/node_modules/gifuct-js/demo/jblack.gif",
