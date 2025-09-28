@@ -76,11 +76,27 @@ const getAbsoluteImageUrl = (imageUrl: string) => {
 const absoluteFeaturedImage = featured_image ? getAbsoluteImageUrl(featured_image) : '';
 const absoluteOgImage = finalOgImage ? getAbsoluteImageUrl(finalOgImage) : '';
 const absoluteTwitterImage = finalTwitterImage ? getAbsoluteImageUrl(finalTwitterImage) : '';
+const measurementId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID ?? 'G-69EC1EJQ1V';
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+{measurementId && (
+  <>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
+    <script
+      is:inline
+      set:html={String.raw`
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${measurementId}');
+      `.trim()}
+    ></script>
+  </>
+)}
+
 <script is:inline>
   (() => {
     const storageKey = 'theme';
