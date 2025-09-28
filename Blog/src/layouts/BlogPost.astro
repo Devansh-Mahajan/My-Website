@@ -6,8 +6,11 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Giscus from '../components/Giscus.astro';
 import { getUrl } from '../utils/url';
+import ViewCounter from '../components/ViewCounter.astro';
 
-interface Props extends CollectionEntry<'blog'>['data'] {}
+interface Props extends CollectionEntry<'blog'>['data'] {
+    slug?: string;
+}
 
 const {
     title,
@@ -33,6 +36,7 @@ const {
     author,
     no_index,
     enable_comments = true,
+    slug,
 } = Astro.props;
 
 const safeTags = tags ?? [];
@@ -127,10 +131,20 @@ const safeTags = tags ?? [];
 				font-size: 1.25em;
 				margin-bottom: 1em;
 			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
+                        .meta {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 1.25rem;
+                                flex-wrap: wrap;
+                                margin-bottom: 0.75em;
+                                color: rgb(var(--gray));
+                        }
+
+                        .meta .date {
+                                margin: 0;
+                                color: inherit;
+                        }
 			.tags {
 				display: flex;
 				flex-wrap: wrap;
@@ -174,14 +188,21 @@ const safeTags = tags ?? [];
 			<article>
 				<div class="prose">
 					<div class="title">
-						{created_date && (
-							<div class="date">
-								<FormattedDate date={created_date} />
-								{updated_date && updated_date > created_date && (
-									<span> (Updated: <FormattedDate date={updated_date} />)</span>
-								)}
-							</div>
-						)}
+                                                {(created_date || slug) && (
+                                                        <div class="meta">
+                                                                {created_date && (
+                                                                        <div class="date">
+                                                                                <FormattedDate date={created_date} />
+                                                                                {updated_date && updated_date > created_date && (
+                                                                                        <span>
+                                                                                                {' '}(Updated: <FormattedDate date={updated_date} />)
+                                                                                        </span>
+                                                                                )}
+                                                                        </div>
+                                                                )}
+                                                                {slug && <ViewCounter slug={slug} />}
+                                                        </div>
+                                                )}
 						<h1>{title}</h1>
 						{subtitle && <div class="subtitle">{subtitle}</div>}
 						{safeTags.length > 0 && (

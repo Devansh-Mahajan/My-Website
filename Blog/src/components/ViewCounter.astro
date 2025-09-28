@@ -1,0 +1,95 @@
+---
+interface Props {
+        slug?: string;
+}
+
+const { slug } = Astro.props;
+const namespace = 'my-website-blog';
+const normalizedSlug = slug?.replace(/^\/+|\/+$/g, '').trim();
+const counterKey = normalizedSlug && normalizedSlug.length > 0 ? normalizedSlug : 'home';
+---
+
+<style>
+        .view-counter {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.35rem;
+                font-size: 0.95rem;
+                color: rgb(var(--gray));
+        }
+
+        .view-counter svg {
+                width: 1rem;
+                height: 1rem;
+        }
+
+        .view-counter .view-count {
+                font-variant-numeric: tabular-nums;
+                font-weight: 600;
+                color: rgb(var(--gray-dark));
+        }
+
+        [data-theme='dark'] .view-counter {
+                color: rgba(var(--gray-light), 0.85);
+        }
+
+        [data-theme='dark'] .view-counter .view-count {
+                color: rgba(var(--gray-light), 0.95);
+        }
+</style>
+
+<div class="view-counter" data-namespace={namespace} data-key={counterKey}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12c0 0 3.75-6.75 9.75-6.75S21.75 12 21.75 12s-3.75 6.75-9.75 6.75S2.25 12 2.25 12z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5z" />
+        </svg>
+        <span class="view-count" aria-live="polite">--</span>
+        <span class="view-label">views</span>
+</div>
+
+<script is:inline>
+        const container = document.currentScript?.previousElementSibling;
+
+        const setCountText = (count) => {
+                if (!container) return;
+                const countElement = container.querySelector('.view-count');
+                if (!countElement) return;
+                countElement.textContent = count;
+        };
+
+        const markAsUnavailable = () => setCountText('—');
+
+        const incrementAndDisplay = async () => {
+                if (!container || typeof window === 'undefined') return;
+
+                const namespace = container.getAttribute('data-namespace');
+                const key = container.getAttribute('data-key');
+                if (!namespace || !key) {
+                        markAsUnavailable();
+                        return;
+                }
+
+                const encodedKey = key
+                        .split('/')
+                        .map((segment) => encodeURIComponent(segment))
+                        .join('/');
+                const endpoint = `https://api.countapi.xyz/hit/${namespace}/${encodedKey}`;
+
+                try {
+                        const response = await fetch(endpoint);
+                        if (!response.ok) throw new Error(`Request failed with ${response.status}`);
+                        const data = await response.json();
+                        if (typeof data.value === 'number') {
+                                const count = data.value.toLocaleString();
+                                setCountText(count);
+                                return;
+                        }
+                        throw new Error('Unexpected response shape');
+                } catch (error) {
+                        console.warn('Failed to update view counter:', error);
+                        markAsUnavailable();
+                }
+        };
+
+        incrementAndDisplay();
+</script>
