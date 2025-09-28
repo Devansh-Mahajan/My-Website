@@ -87,7 +87,7 @@ The view badge displayed on each blog post can read total page views directly fr
    PUBLIC_GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
    ```
 
-   > **Tip:** When pasting the private key into `.env`, keep the `\n` escape sequences as shown above so Astro can reconstruct the original key at build time.
+   > **Tip:** The `.env.example` file shows a working format you can copy. Paste the entire key block, including the `-----BEGIN PRIVATE KEY-----` and `-----END PRIVATE KEY-----` lines, and keep the `\n` escape sequences so Astro can reconstruct the original key at build time.
 
 3. Deploy with those variables. During the build Astro queries GA4 for each post and embeds the latest total in the generated HTML.
 
