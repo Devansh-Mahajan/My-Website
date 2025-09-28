@@ -10,18 +10,41 @@ const normalizedSlug = slug
         .split('/')
         .map((segment) => segment.trim())
         .filter(Boolean)
-        .join('/')
-        .toLowerCase();
-const pagePath = normalizedSlug ? `/${normalizedSlug}/` : '/';
+        .join('/');
+
+const ensureLeadingSlash = (value: string) => (value.startsWith('/') ? value : `/${value}`);
+const withoutTrailingSlash = (value: string) => (value === '/' ? value : value.replace(/\/+$/, ''));
+const withTrailingSlash = (value: string) => {
+        if (value === '/') return value;
+        const base = withoutTrailingSlash(value);
+        return `${base}/`;
+};
+
+const canonicalPath = normalizedSlug ? ensureLeadingSlash(normalizedSlug) : '/';
+
+const pathCandidates = normalizedSlug
+        ? Array.from(
+                  new Set(
+                          [
+                                  withTrailingSlash(canonicalPath),
+                                  withoutTrailingSlash(canonicalPath),
+                                  withTrailingSlash(canonicalPath).toLowerCase(),
+                                  withoutTrailingSlash(canonicalPath).toLowerCase(),
+                          ].filter(Boolean),
+                  ),
+          )
+        : ['/'];
+
+const pagePath = pathCandidates[0] ?? '/';
 const storageKey = normalizedSlug
         ? `view-counter:google-analytics:${normalizedSlug}`
         : 'view-counter:google-analytics:root';
 
 let initialCount: number | null = null;
 
-if (normalizedSlug) {
+if (normalizedSlug && pathCandidates.length > 0) {
         try {
-                initialCount = await getGoogleAnalyticsPageViews(pagePath);
+                initialCount = await getGoogleAnalyticsPageViews(pathCandidates);
         } catch (error) {
                 console.error(`Unable to resolve Google Analytics views for ${pagePath}`, error);
                 initialCount = null;

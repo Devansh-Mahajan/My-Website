@@ -62,8 +62,12 @@ const requestAccessToken = async (clientEmail: string, privateKey: string): Prom
 const readPageViews = async (
         accessToken: string,
         propertyId: string,
-        pagePath: string,
+        pagePaths: string[],
 ): Promise<number> => {
+        if (pagePaths.length === 0) {
+                return 0;
+        }
+
         const response = await fetch(
                 `https://analyticsdata.googleapis.com/v1beta/properties/${propertyId}:runReport`,
                 {
@@ -88,13 +92,13 @@ const readPageViews = async (
                                 dimensionFilter: {
                                         filter: {
                                                 fieldName: 'pagePath',
-                                                stringFilter: {
-                                                        matchType: 'EXACT',
-                                                        value: pagePath,
+                                                inListFilter: {
+                                                        values: pagePaths,
+                                                        caseSensitive: false,
                                                 },
                                         },
                                 },
-                                limit: 1,
+                                limit: Math.min(pagePaths.length, 10),
                         }),
                 },
         );
@@ -107,12 +111,44 @@ const readPageViews = async (
                 rows?: Array<{ metricValues?: Array<{ value?: string }> }>;
         };
 
-        const countString = json.rows?.[0]?.metricValues?.[0]?.value;
-        const parsed = countString ? Number.parseInt(countString, 10) : 0;
-        return Number.isNaN(parsed) ? 0 : parsed;
+        const total = (json.rows ?? []).reduce((sum, row) => {
+                const value = row.metricValues?.[0]?.value;
+                const parsed = value ? Number.parseInt(value, 10) : 0;
+                return sum + (Number.isNaN(parsed) ? 0 : parsed);
+        }, 0);
+
+        return Number.isNaN(total) ? 0 : total;
 };
 
-export const getGoogleAnalyticsPageViews = async (pagePath: string): Promise<number | null> => {
+const buildPathVariants = (paths: string | string[]): string[] => {
+        const source = Array.isArray(paths) ? paths : [paths];
+
+        const sanitized = source
+                .map((value) => value.trim())
+                .filter(Boolean)
+                .map((value) => (value.startsWith('/') ? value : `/${value}`))
+                .flatMap((value) => {
+                        if (value === '/') {
+                                return ['/'];
+                        }
+
+                        const withoutTrailing = value.replace(/\/+$/, '');
+                        const withTrailing = `${withoutTrailing}/`;
+
+                        return [
+                                withoutTrailing,
+                                withTrailing,
+                                withoutTrailing.toLowerCase(),
+                                withTrailing.toLowerCase(),
+                        ];
+                });
+
+        return Array.from(new Set(sanitized));
+};
+
+export const getGoogleAnalyticsPageViews = async (
+        pagePath: string | string[],
+): Promise<number | null> => {
         const propertyId = import.meta.env.GOOGLE_ANALYTICS_PROPERTY_ID;
         const clientEmail = import.meta.env.GOOGLE_ANALYTICS_CLIENT_EMAIL;
         const rawPrivateKey = import.meta.env.GOOGLE_ANALYTICS_PRIVATE_KEY;
@@ -121,7 +157,13 @@ export const getGoogleAnalyticsPageViews = async (pagePath: string): Promise<num
                 return null;
         }
 
+        const pathVariants = buildPathVariants(pagePath);
+
+        if (pathVariants.length === 0) {
+                return null;
+        }
+
         const privateKey = rawPrivateKey.replace(/\\n/g, '\n');
         const accessToken = await requestAccessToken(clientEmail, privateKey);
-        return readPageViews(accessToken, propertyId, pagePath);
+        return readPageViews(accessToken, propertyId, pathVariants);
 };
