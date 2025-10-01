@@ -34,7 +34,6 @@ npm install
 3. Configure your site:
    - Copy `.env.example` to `.env`
    - Update the environment variables for your deployment
-   - Provide Google Analytics credentials (see below) if you want the on-page view counter to show GA page views
 
 4. Start the development server:
 ```bash
@@ -73,25 +72,6 @@ tags:
 | `featured_image` | No | Hero image URL |
 | `subtitle` | No | Optional subtitle |
 
-### Google Analytics View Counter
-
-The view badge displayed on each blog post can read total page views directly from Google Analytics 4. To enable it:
-
-1. Create a [service account](https://developers.google.com/identity/protocols/oauth2/service-account) that has the **Viewer** role on your GA4 property.
-2. Create a JSON key for that service account and copy the following fields into your deployment environment:
-
-   ```bash
-   GOOGLE_ANALYTICS_PROPERTY_ID=123456789 # numeric GA4 property id (without the properties/ prefix)
-   GOOGLE_ANALYTICS_CLIENT_EMAIL=service-account@project.iam.gserviceaccount.com
-   GOOGLE_ANALYTICS_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
-   PUBLIC_GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
-   ```
-
-   > **Tip:** The `.env.example` file shows a working format you can copy. Paste the entire key block, including the `-----BEGIN PRIVATE KEY-----` and `-----END PRIVATE KEY-----` lines, and keep the `\n` escape sequences so Astro can reconstruct the original key at build time.
-
-3. Deploy with those variables. During the build Astro queries GA4 for each post and embeds the latest total in the generated HTML.
-
-If the credentials are omitted the counter gracefully falls back to a dash (`—`). Trigger a new build whenever you want the displayed totals to refresh.
 
 ## 🎨 Customization
 

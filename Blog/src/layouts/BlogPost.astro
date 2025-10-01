@@ -6,7 +6,6 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Giscus from '../components/Giscus.astro';
 import { getUrl } from '../utils/url';
-import ViewCounter from '../components/ViewCounter.astro';
 
 interface Props extends CollectionEntry<'blog'>['data'] {
     slug: string;
@@ -200,7 +199,6 @@ const safeTags = tags ?? [];
                                                                                 )}
                                                                         </div>
                                                                 )}
-                                                                {slug && <ViewCounter slug={slug} />}
                                                         </div>
                                                 )}
 						<h1>{title}</h1>
