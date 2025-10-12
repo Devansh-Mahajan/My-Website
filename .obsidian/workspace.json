@@ -191,8 +191,7 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "audio-recorder:Start/stop recording": false,
-      "templater-obsidian:Templater": false,
-      "publish:Publish changes...": false
+      "templater-obsidian:Templater": false
     }
   },
   "active": "5aa38af4afee35a6",
