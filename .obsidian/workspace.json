@@ -30,8 +30,21 @@
               "icon": "lucide-file",
               "title": "151-0223-10L Technische Mechanik"
             }
+          },
+          {
+            "id": "30927cf40e1285bf",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.14"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.14"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -193,7 +206,7 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b95d5adb6dd85c96",
+  "active": "30927cf40e1285bf",
   "lastOpenFiles": [
     "conflict-files-obsidian-git.md",
     "200 ETH Zurich/Semester 1/Technische Mechanik/151-0223-10L Technische Mechanik.md",

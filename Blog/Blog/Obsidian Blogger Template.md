@@ -2,8 +2,9 @@
 title: blog
 subtitle: subtitle
 description:
-publish: false
+publish: true
 created_date: <% tp.date.now %>
+featured_image: URL
 slug:
 tags:
   - obsidian
