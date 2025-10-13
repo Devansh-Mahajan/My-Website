@@ -1,5 +1,3 @@
-Thought for 3m 37s
-
 # Zusammenfassung der Kapitel 1.12 bis 1.16 aus "Elektrotechnik" 
 
 Stellt euch vor, wir tauchen tiefer in die Welt der Elektrostatik ein, als ob wir ein Abenteuer erleben, bei dem unsichtbare Kräfte die Materie tanzen lassen. Feynman würde sagen: "Elektrizität ist wie ein unsichtbares Theater – Ladungen sind die Schauspieler, Felder die Bühne, und wir lernen, warum alles so läuft, ohne komplizierte Formeln zu fürchten." Wir bauen auf den Grundlagen auf, die wir schon kennen, und erkunden, wie Felder mit Materialien interagieren. Für euch ohne Physik-Hintergrund: Denkt an Alltagsdinge wie statische Aufladung oder warum Isolatoren Strom blocken. Lasst uns Schritt für Schritt durchgehen, mit Bildern aus dem Leben, damit ihr es nicht nur wisst, sondern fühlt.

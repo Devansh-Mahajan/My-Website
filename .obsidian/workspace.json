@@ -4,31 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "b6e314858c5ea142",
+        "id": "678c7e6fa5699a5a",
         "type": "tabs",
         "children": [
           {
-            "id": "2b8e9eb2599a33a0",
+            "id": "f328c76170829241",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "03_Week.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "03_Week"
+              "title": "New tab"
             }
           }
         ]
@@ -193,10 +179,10 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "2b8e9eb2599a33a0",
+  "active": "f328c76170829241",
   "lastOpenFiles": [
-    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/227-0001-00L Netzwerke und Schaltungen I.md",
     "03_Week.md",
+    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/227-0001-00L Netzwerke und Schaltungen I.md",
     "200 ETH Zurich/ETH BSc EECS - Overview.md",
     "998 Attachements/Pasted image 20250906182721.png",
     "998 Attachements/Pasted image 20251013145519.png",
