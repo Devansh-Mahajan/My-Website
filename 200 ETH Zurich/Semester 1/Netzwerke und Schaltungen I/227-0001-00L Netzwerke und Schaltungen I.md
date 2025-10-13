@@ -14,5 +14,5 @@ publish: true
 **Beispiel Signifikanz:** https://moodle-app2.let.ethz.ch/mod/page/view.php?id=1266928
 **Infoblatt Elektrische Generatoren Gruppenprojekt:** https://moodle-app2.let.ethz.ch/mod/resource/view.php?id=1287540
 # Lectures
-- [[Woche_1]]
+- [[01 Elektrostatische Kraft Richtung und Stärke, das Coulomb'sche Gesetz]]
 - 
