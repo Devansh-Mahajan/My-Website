@@ -15,4 +15,5 @@ publish: true
 **Infoblatt Elektrische Generatoren Gruppenprojekt:** https://moodle-app2.let.ethz.ch/mod/resource/view.php?id=1287540
 # Lectures
 - [[01 Elektrostatische Kraft Richtung und Stärke, das Coulomb'sche Gesetz (WIP)]]
-- 
+- [[02_Week]]
+- [[03_Week]]
