@@ -11,10 +11,24 @@
             "id": "f328c76170829241",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/01 Elektrostatische Kraft Richtung und Stärke, das Coulomb'sche Gesetz (WIP).md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "01 Elektrostatische Kraft Richtung und Stärke, das Coulomb'sche Gesetz (WIP)"
             }
           }
         ]
@@ -181,8 +195,8 @@
   },
   "active": "f328c76170829241",
   "lastOpenFiles": [
-    "03_Week.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/227-0001-00L Netzwerke und Schaltungen I.md",
+    "03_Week.md",
     "200 ETH Zurich/ETH BSc EECS - Overview.md",
     "998 Attachements/Pasted image 20250906182721.png",
     "998 Attachements/Pasted image 20251013145519.png",

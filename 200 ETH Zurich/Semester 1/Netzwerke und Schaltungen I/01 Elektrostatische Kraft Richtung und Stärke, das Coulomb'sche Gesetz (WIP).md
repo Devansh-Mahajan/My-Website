@@ -11,8 +11,6 @@ date: 2025-10-15
 draft: false
 publish: true
 ---
-**Topic:** #NuS1
-**Topics:** #Elektrostatische_Kraft #Coulombsche_Gesetz 
 # Prerequisite:
 - Brückenkurs Mathematik Lernpfade "Integralrechnung" und "Vektorgeometrie"
 	- [Brückenkurs Mathematik](http://pontifex.ethz.ch/site1/) 
