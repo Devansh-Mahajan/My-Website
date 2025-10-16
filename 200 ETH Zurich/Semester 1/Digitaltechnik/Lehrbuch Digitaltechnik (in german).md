@@ -82,3 +82,6 @@ The Sum of Products (SOP) form expresses a Boolean function as a sum (OR) of min
 ![[Pasted image 20251016170746.png]]
 ![[Pasted image 20251016170909.png]]
 ![[Pasted image 20251016171025.png]]
+![[Pasted image 20251016173319.png]]
+![[Pasted image 20251016173332.png]]
+![[Pasted image 20251016173428.png]]

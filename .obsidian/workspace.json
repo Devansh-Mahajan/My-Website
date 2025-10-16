@@ -8,36 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c7557a6c43a75d0b",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "998 Attachements/Pasted image 20251016150558.png"
-              },
-              "icon": "lucide-image",
-              "title": "Pasted image 20251016150558"
-            }
-          },
-          {
-            "id": "a04e226fbe2c1af5",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "998 Attachements/supp_mat_2.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "supp_mat_2"
-            }
-          },
-          {
             "id": "a17572f98df05c8d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Digitaltechnik/Lehrbuch Digitaltechnik (in german).md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,21 +28,10 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Lehrbuch Digitaltechnik (in german)"
-            }
-          },
-          {
-            "id": "f8d7c4b3b1cf4ae2",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "title": "index"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -231,22 +196,21 @@
   },
   "active": "a17572f98df05c8d",
   "lastOpenFiles": [
-    "Pasted image 20251016171025.png",
-    "Pasted image 20251016170909.png",
-    "Pasted image 20251016170746.png",
-    "Pasted image 20251016170716.png",
-    "Pasted image 20251016164012.png",
-    "Pasted image 20251016163945.png",
-    "Pasted image 20251016163929.png",
     "200 ETH Zurich/Semester 1/Digitaltechnik/Lehrbuch Digitaltechnik (in german).md",
-    "Pasted image 20251016163327.png",
+    "998 Attachements/Pasted image 20251016150558.png",
+    "998 Attachements/supp_mat_2.pdf",
+    "998 Attachements/Pasted image 20251016173428.png",
+    "998 Attachements/Pasted image 20251016173332.png",
+    "998 Attachements/Pasted image 20251016173319.png",
+    "998 Attachements/Pasted image 20251016171025.png",
+    "998 Attachements/Pasted image 20251016170909.png",
+    "998 Attachements/Pasted image 20251016170746.png",
+    "998 Attachements/Pasted image 20251016170716.png",
+    "998 Attachements/Pasted image 20251016164012.png",
+    "998 Attachements/Pasted image 20251016163945.png",
     "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
     "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/02_Logische Verknüpfungen.md",
     "998 Attachements/Vorlesung2.pdf",
-    "998 Attachements/supp_mat_2.pdf",
-    "Pasted image 20251016155058.png",
-    "998 Attachements/Pasted image 20251016150558.png",
-    "998 Attachements/Pasted image 20251016150611.png",
     "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/01_Organisation und Einführung in die digitale Welt.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/03_Week.md",
     "200 ETH Zurich/Semester 1/Digitaltechnik Praktikum/227-0005-10L Digitaltechnik Praktikum.md",
