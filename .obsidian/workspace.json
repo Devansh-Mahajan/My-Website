@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "678c7e6fa5699a5a",
+        "id": "a5527a6c5f1ee869",
         "type": "tabs",
         "children": [
           {
-            "id": "f328c76170829241",
+            "id": "c7557a6c43a75d0b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "200 ETH Zurich/ETH BSc EECS - Overview.md",
+                "file": "01_Organisation und Einführung in die digitale Welt.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,35 +28,10 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "ETH BSc EECS - Overview"
-            }
-          },
-          {
-            "id": "234f29543100488c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Brückenkurs Mathematik.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Brückenkurs Mathematik"
+              "title": "01_Organisation und Einführung in die digitale Welt"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -201,7 +176,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -218,13 +194,16 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "234f29543100488c",
+  "active": "c7557a6c43a75d0b",
   "lastOpenFiles": [
-    "Brückenkurs Mathematik.md",
-    "200 ETH Zurich/ETH BSc EECS - Overview.md",
-    "999 Templates/03 Blog Template.md",
-    "999 Templates/02 Topic Template.md",
+    "Vorlesung1.pdf",
+    "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
+    "01_Organisation und Einführung in die digitale Welt.md",
+    "999 Templates/02 Lecture or Topic Template.md",
     "999 Templates/00 Class Template.md",
+    "999 Templates/03 Blog Template.md",
+    "200 ETH Zurich/ETH BSc EECS - Overview.md",
+    "Brückenkurs Mathematik.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/01 Elektrostatische Kraft Richtung und Stärke, das Coulomb'sche Gesetz (WIP).md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/227-0001-00L Netzwerke und Schaltungen I.md",
     "03_Week.md",
@@ -263,9 +242,6 @@
     "Blog/src/content/notes/200 ETH Zurich/Semester 1/Grundzüge des Rechts/851-0703-00L Grundzüge des Rechts.md",
     "Blog/src/content/notes/200 ETH Zurich/Semester 1/Analysis 1/401-0231-10L Analysis 1.md",
     "Blog/src/content/notes/200 ETH Zurich/Semester 1/E-Business-Recht/851-0727-02L E-Business-Recht.md",
-    "Blog/src/content/notes/200 ETH Zurich/Semester 1/Digitaltechnik Praktikum/227-0005-10L Digitaltechnik Praktikum.md",
-    "Blog/src/content/notes/200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
-    "Blog/GISCUS_SETUP.md",
     "Untitled.canvas"
   ]
 }

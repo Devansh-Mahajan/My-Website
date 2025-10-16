@@ -12,3 +12,8 @@ publish: true
 **Moodle:**  
 **Hauptlink:**  
 
+# Lectures
+
+# Assignments
+
+# Anki
