@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/01_Organisation und Einführung in die digitale Welt.md",
+                "file": "02_Logische Verknüpfungen.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "01_Organisation und Einführung in die digitale Welt"
+              "title": "02_Logische Verknüpfungen"
             }
           }
         ]
@@ -194,15 +194,19 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "f3d1b0f46aca7cf4",
+  "active": "c7557a6c43a75d0b",
   "lastOpenFiles": [
+    "Vorlesung2.pdf",
+    "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
+    "02_Logische Verknüpfungen.md",
+    "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/01_Organisation und Einführung in die digitale Welt.md",
+    "Pasted image 20251016150611.png",
+    "Pasted image 20251016150558.png",
     "998 Attachements/Pasted image 20251016114606.png",
     "998 Attachements/Pasted image 20251016114428.png",
     "998 Attachements/Pasted image 20251016114348.png",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/03_Week.md",
-    "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/01_Organisation und Einführung in die digitale Welt.md",
     "998 Attachements/Pasted image 20251016114203.png",
-    "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
     "200 ETH Zurich/Semester 1/Digitaltechnik Praktikum/227-0005-10L Digitaltechnik Praktikum.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/Brückenkurs Mathematik.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik",
@@ -213,13 +217,10 @@
     "998 Attachements/Vorlesung1.pdf",
     "998 Attachements/Pasted image 20251013170141.png",
     "Pasted image 20251016113035.png",
-    "998 Attachements/Pasted image 20251016113149.png",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Elektrostatische Kraft Richtung und Stärke, das Coulomb'sche Gesetz (WIP).md",
     "999 Templates/02 Lecture or Topic Template.md",
     "999 Templates/00 Class Template.md",
     "999 Templates/03 Blog Template.md",
-    "998 Attachements/Pasted image 20250906182721.png",
-    "998 Attachements/Pasted image 20251013145519.png",
     "index.md",
     "200 ETH Zurich/Semester 1/Technische Mechanik/151-0223-10L Technische Mechanik.md",
     "conflict-files-obsidian-git.md",
@@ -241,7 +242,6 @@
     "Blog/src/content/notes/200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/227-0001-00L Netzwerke und Schaltungen I.md",
     "Blog/src/content/notes/200 ETH Zurich/Semester 1/Lineare Algebra/401-0151-00L Lineare Algebra.md",
     "Blog/src/content/notes/200 ETH Zurich/Semester 1/Grundzüge des Rechts/851-0703-00L Grundzüge des Rechts.md",
-    "Blog/src/content/notes/200 ETH Zurich/Semester 1/Analysis 1/401-0231-10L Analysis 1.md",
     "Untitled.canvas"
   ]
 }

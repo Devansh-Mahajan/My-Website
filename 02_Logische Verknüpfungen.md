@@ -1,0 +1,11 @@
+---
+title: Example Title
+description: Short one-liner for context
+tags: [class, itet]
+date: 2025-09-19
+draft: false
+publish: true
+---
+**Material:**[[Vorlesung2.pdf]], 
+
+

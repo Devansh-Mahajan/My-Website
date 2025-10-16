@@ -25,3 +25,5 @@ Die Elektronik ist ein Teilgebiet der Elektrotechnik, in dem aktive Bauelemente 
 ![[Pasted image 20251016114606.png]]
 
 # Transistor
+![[Pasted image 20251016150558.png]]
+![[Pasted image 20251016150611.png]]
