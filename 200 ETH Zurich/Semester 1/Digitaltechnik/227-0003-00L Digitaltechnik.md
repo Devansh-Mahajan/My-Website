@@ -29,6 +29,8 @@ publish: true
 [[13_Speicher und Mikroprozessoren I]]
 [[14_Mikroprozessoren II und Zusammenfassung]]
 
+ [[Lehrbuch Digitaltechnik (in german)]]
+
 # Assignments
 
 # Anki

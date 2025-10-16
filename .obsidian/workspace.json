@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02_Logische Verknüpfungen.md",
+                "file": "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,31 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "02_Logische Verknüpfungen"
+              "title": "227-0003-00L Digitaltechnik"
+            }
+          },
+          {
+            "id": "f8d7c4b3b1cf4ae2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lehrbuch Digitaltechnik (in german).md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Lehrbuch Digitaltechnik (in german)"
             }
           }
         ]
@@ -196,27 +220,29 @@
   },
   "active": "c7557a6c43a75d0b",
   "lastOpenFiles": [
-    "Vorlesung2.pdf",
+    "Lehrbuch Digitaltechnik (in german).md",
+    "Pasted image 20251016155058.png",
     "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
     "02_Logische Verknüpfungen.md",
+    "Pasted image 20251016152852.png",
+    "Pasted image 20251016152831.png",
+    "Pasted image 20251016152737.png",
+    "Pasted image 20251016152715.png",
+    "Pasted image 20251016152636.png",
+    "supp_mat_2.pdf",
+    "Vorlesung2.pdf",
     "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/01_Organisation und Einführung in die digitale Welt.md",
     "Pasted image 20251016150611.png",
     "Pasted image 20251016150558.png",
     "998 Attachements/Pasted image 20251016114606.png",
     "998 Attachements/Pasted image 20251016114428.png",
-    "998 Attachements/Pasted image 20251016114348.png",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/03_Week.md",
-    "998 Attachements/Pasted image 20251016114203.png",
     "200 ETH Zurich/Semester 1/Digitaltechnik Praktikum/227-0005-10L Digitaltechnik Praktikum.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/Brückenkurs Mathematik.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik",
     "200 ETH Zurich/ETH BSc EECS - Overview.md",
-    "Pasted image 20251016113447.png",
-    "998 Attachements/Pasted image 20251016113537.png",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/227-0001-00L Netzwerke und Schaltungen I.md",
     "998 Attachements/Vorlesung1.pdf",
-    "998 Attachements/Pasted image 20251013170141.png",
-    "Pasted image 20251016113035.png",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Elektrostatische Kraft Richtung und Stärke, das Coulomb'sche Gesetz (WIP).md",
     "999 Templates/02 Lecture or Topic Template.md",
     "999 Templates/00 Class Template.md",
@@ -230,8 +256,6 @@
     "Blog/dist/seo-implementation-guide",
     "Blog/dist/index.html",
     "Blog/dist/tag/seo/index.html",
-    "Blog/dist/tag/optimization/index.html",
-    "Blog/dist/tag/guide/index.html",
     "200 ETH Zurich/Semester 1/Analysis 1/401-0231-10L Analysis 1.md",
     "Blog/node_modules/@ctrl/tinycolor/README.md",
     "200 ETH Zurich/Semester 1/Vorkurs Informatik/252-0865-00L Vorkurs Informatik.md",
@@ -241,7 +265,6 @@
     "Blog/src/content/notes/200 ETH Zurich/Semester 1/Vorkurs Informatik/252-0865-00L Vorkurs Informatik.md",
     "Blog/src/content/notes/200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/227-0001-00L Netzwerke und Schaltungen I.md",
     "Blog/src/content/notes/200 ETH Zurich/Semester 1/Lineare Algebra/401-0151-00L Lineare Algebra.md",
-    "Blog/src/content/notes/200 ETH Zurich/Semester 1/Grundzüge des Rechts/851-0703-00L Grundzüge des Rechts.md",
     "Untitled.canvas"
   ]
 }
