@@ -162,7 +162,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -179,10 +180,10 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "50a785512a07001b",
+  "active": "59cbb8126c85f692",
   "lastOpenFiles": [
-    "Blog/public/icon.png",
     "Blog/public/favicon.svg",
+    "Blog/public/icon.png",
     "Blog/public/icon_backup.png",
     "Blog/Blog/markdown-style-guide.md",
     "Blog/README.md",
