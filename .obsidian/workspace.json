@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "ca0d8bb1fc676d47",
+        "id": "25b2d895859d4684",
         "type": "tabs",
         "children": [
           {
-            "id": "5286a8b35eb3e29b",
+            "id": "59cbb8126c85f692",
             "type": "leaf",
             "state": {
-              "type": "image",
-              "state": {
-                "file": "Blog/public/favicon.svg"
-              },
-              "icon": "lucide-image",
-              "title": "favicon"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -181,7 +179,7 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "5286a8b35eb3e29b",
+  "active": "50a785512a07001b",
   "lastOpenFiles": [
     "Blog/public/icon.png",
     "Blog/public/favicon.svg",
