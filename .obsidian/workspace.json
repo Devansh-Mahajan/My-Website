@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/Chapter_1.md",
+                "file": "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/Chapter_2.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Chapter_1"
+              "title": "Chapter_2"
             }
           }
         ],
@@ -219,9 +219,10 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "f3d1b0f46aca7cf4",
+  "active": "3107623055d4fedf",
   "lastOpenFiles": [
-    "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/Chapter_1.md",
+    "998 Attachements/Pasted image 20251017134232.png",
+    "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/Chapter_2.md",
     "200 ETH Zurich/Semester 1/Technische Mechanik/151-0223-10L Technische Mechanik.md",
     "200 ETH Zurich/Semester 1/Ökonomie/351-1158-00L Ökonomie.md",
     "Blog/public/favicon.svg",
@@ -259,7 +260,6 @@
     "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/flatted-3/project/README.md",
     "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/flatted-2/project/SPECS.md",
     "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/flatted-2/project/README.md",
-    "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/flatted-1/project/README.md",
     "Blog/BUILD/node_modules/playwright-core/lib/vite/traceViewer/playwright-logo.svg",
     "Blog/BUILD/node_modules/playwright-core/lib/vite/recorder/playwright-logo.svg",
     "Blog/BUILD/node_modules/playwright-core/lib/server/chromium/appIcon.png",
