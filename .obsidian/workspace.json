@@ -4,19 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "e93018748cc20291",
+        "id": "22eaebbdb5c99cf8",
         "type": "tabs",
         "children": [
           {
-            "id": "10aebfbe943d1462",
+            "id": "e60276a744e9a94d",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "998 Attachements/2025HS_Kolloquium01_filled.pdf"
+                "file": "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/06. Kräft und Moment.pdf.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
-              "icon": "lucide-file-text",
-              "title": "2025HS_Kolloquium01_filled"
+              "icon": "lucide-file",
+              "title": "06. Kräft und Moment.pdf"
             }
           }
         ]
@@ -182,18 +194,29 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "10aebfbe943d1462",
+  "active": "f3d1b0f46aca7cf4",
   "lastOpenFiles": [
-    "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/01. Kinematik des materiellen Punktes in kartesischen Koordinaten.md",
-    "998 Attachements/01. Kinematik des materiellen Punktes in kartesischen Koordinaten.pdf",
-    "998 Attachements/2025HS_Kolloquium01_filled.pdf",
+    "998 Attachements/06. Kräft und Moment.pdf",
     "200 ETH Zurich/Semester 1/Technische Mechanik/151-0223-10L Technische Mechanik.md",
+    "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/06. Kräft und Moment.pdf.md",
+    "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/05. Kinematik des starren Körpers in 3D.md",
+    "998 Attachements/05. Kinematik des starren Körpers in 3D 1.pdf",
+    "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/04. Freiheitsgrad.md",
+    "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/03. Kinematik des ebenen Starrkörpers.md",
+    "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/02. Kinematik des materiellen Punktes in zylindrischen Koordinaten.md",
+    "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/01. Kinematik des materiellen Punktes in kartesischen Koordinaten.md",
+    "998 Attachements/2025HS_Kolloquium01_filled.pdf",
     "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/00. Worum geht es bei der Mechanik?.md",
+    "998 Attachements/05. Kinematik des starren Körpers in 3D.pdf",
+    "998 Attachements/2025HS_Kolloquium04_template.pdf",
+    "998 Attachements/04. Freiheitsgrad.pdf",
+    "998 Attachements/2025HS_Kolloquium03_filled.pdf",
+    "998 Attachements/03. Kinematik des ebenen Starrkörpers.pdf",
+    "998 Attachements/2025HS_Kolloquium02.pdf",
+    "998 Attachements/02. Kinematik des materiellen Punktes in zylindrischen Koordinaten.pdf",
+    "998 Attachements/01. Kinematik des materiellen Punktes in kartesischen Koordinaten.pdf",
     "998 Attachements/Pasted image 20251018183505.png",
     "998 Attachements/Pasted image 20251018182516.png",
-    "998 Attachements/00. Worum geht es bei der Mechanik?.pdf",
-    "998 Attachements/MatheBasics_TechMech.pdf",
-    "998 Attachements/SkriptTechnischeMechanik.pdf",
     "200 ETH Zurich/ETH BSc EECS - Overview.md",
     "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/Chapter_2.md",
     "998 Attachements/Pasted image 20251017134232.png",
@@ -208,11 +231,6 @@
     "Blog/Blog/Obsidian Blogger Template.md",
     "Blog/Blog/First time Obsidian-git setup.md",
     "Blog/Blog/A complete SEO optimization guide with Obsidian Blogger.md",
-    "Blog/tsconfig.json",
-    "Blog/tailwind.config.mjs",
-    "Blog/src/pages/notes/[...slug].astro",
-    "Blog/src/pages/tag/[tag].astro",
-    "Blog/src/components/BaseHead.astro",
     "Blog/GISCUS_SETUP.md",
     "700 Quant/Untitled.md",
     "Blog/src/content/notes/200 ETH Zurich/ETH BSc EECS - Overview.md",
@@ -220,11 +238,6 @@
     "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/single-spa-layout/project/README.md",
     "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/is-promise-2.1.0/project/readme.md",
     "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/is-promise-2.2.2/project/readme.md",
-    "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/is-promise-2.2.1/project/readme.md",
-    "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/is-promise-2.2.0/project/readme.md",
-    "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/has-package-exports/project/README.md",
-    "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/has-package-exports/project/CHANGELOG.md",
-    "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/flatted-3/project/SPECS.md",
     "Blog/BUILD/node_modules/playwright-core/lib/vite/traceViewer/playwright-logo.svg",
     "Blog/BUILD/node_modules/playwright-core/lib/vite/recorder/playwright-logo.svg",
     "Blog/BUILD/node_modules/playwright-core/lib/server/chromium/appIcon.png",
