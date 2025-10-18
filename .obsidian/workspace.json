@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Ökonomie/351-1158-00L Ökonomie.md",
+                "file": "100 Notes/02 Wohlfahrtsökonomik, Monopol, Preiskontrollen, Steuern und Subventionen.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "351-1158-00L Ökonomie"
+              "title": "02 Wohlfahrtsökonomik, Monopol, Preiskontrollen, Steuern und Subventionen"
             }
           }
         ]
@@ -176,8 +176,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -196,6 +195,16 @@
   },
   "active": "e60276a744e9a94d",
   "lastOpenFiles": [
+    "998 Attachements/Präsenzveranstaltung_2_2025_mit Lösungen.pdf",
+    "200 ETH Zurich/Semester 1/Ökonomie/351-1158-00L Ökonomie.md",
+    "100 Notes/02 Wohlfahrtsökonomik, Monopol, Preiskontrollen, Steuern und Subventionen.md",
+    "200 ETH Zurich/Semester 1/Ökonomie/Lecture Notes/01 Haushalte, Unternehmen, Angebot und Nachfrage.md",
+    "998 Attachements/Tagesanzeiger_21_3_5_CBoom bei Ferienwohnungen steht auf wackligen Beinen_v2.pdf",
+    "998 Attachements/Economist_19_5_23_Soda stream.pdf",
+    "998 Attachements/Economist_16_9_4_Dumping and tub-thumping.pdf",
+    "998 Attachements/Präsenzveranstaltung_1_2025_mit Lösungen.pdf",
+    "998 Attachements/Präsenzveranstaltung_1_2025_ohne Lösungen.pdf",
+    "998 Attachements/Syllabus_2025.pdf",
     "200 ETH Zurich/Semester 1/Vorkurs Informatik/252-0865-00L Vorkurs Informatik.md",
     "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/06. Kräft und Moment.pdf.md",
     "998 Attachements/06. Kräft und Moment.pdf",
@@ -209,18 +218,11 @@
     "998 Attachements/2025HS_Kolloquium01_filled.pdf",
     "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/00. Worum geht es bei der Mechanik?.md",
     "998 Attachements/05. Kinematik des starren Körpers in 3D.pdf",
-    "998 Attachements/2025HS_Kolloquium04_template.pdf",
-    "998 Attachements/04. Freiheitsgrad.pdf",
-    "998 Attachements/2025HS_Kolloquium03_filled.pdf",
-    "998 Attachements/03. Kinematik des ebenen Starrkörpers.pdf",
-    "998 Attachements/2025HS_Kolloquium02.pdf",
-    "998 Attachements/02. Kinematik des materiellen Punktes in zylindrischen Koordinaten.pdf",
     "998 Attachements/Pasted image 20251018183505.png",
     "998 Attachements/Pasted image 20251018182516.png",
     "200 ETH Zurich/ETH BSc EECS - Overview.md",
     "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/Chapter_2.md",
     "998 Attachements/Pasted image 20251017134232.png",
-    "200 ETH Zurich/Semester 1/Ökonomie/351-1158-00L Ökonomie.md",
     "Blog/public/favicon.svg",
     "Blog/public/icon.png",
     "Blog/public/icon_backup.png",
@@ -235,9 +237,6 @@
     "700 Quant/Untitled.md",
     "Blog/src/content/notes/200 ETH Zurich/ETH BSc EECS - Overview.md",
     "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/preact/project/README.md",
-    "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/single-spa-layout/project/README.md",
-    "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/is-promise-2.1.0/project/readme.md",
-    "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/is-promise-2.2.2/project/readme.md",
     "Blog/BUILD/node_modules/playwright-core/lib/vite/traceViewer/playwright-logo.svg",
     "Blog/BUILD/node_modules/playwright-core/lib/vite/recorder/playwright-logo.svg",
     "Blog/BUILD/node_modules/playwright-core/lib/server/chromium/appIcon.png",
