@@ -9,4 +9,3 @@ draft: true
 publish: false
 ---
 **Material:**[[Präsenzveranstaltung_2_2025_mit Lösungen.pdf]]
-
