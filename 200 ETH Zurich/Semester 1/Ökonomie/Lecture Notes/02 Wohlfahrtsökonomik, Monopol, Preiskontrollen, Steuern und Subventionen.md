@@ -5,8 +5,8 @@ tags:
   - class
   - itet
 date: 2025-09-19
-draft: false
-publish: true
+draft: true
+publish: false
 ---
 **Material:**[[Präsenzveranstaltung_2_2025_mit Lösungen.pdf]]
 
