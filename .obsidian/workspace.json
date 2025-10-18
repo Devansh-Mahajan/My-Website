@@ -201,8 +201,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -219,7 +218,7 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "3107623055d4fedf",
+  "active": "f3d1b0f46aca7cf4",
   "lastOpenFiles": [
     "998 Attachements/Pasted image 20251017134232.png",
     "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/Chapter_2.md",
