@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "100 Notes/02 Wohlfahrtsökonomik, Monopol, Preiskontrollen, Steuern und Subventionen.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "02 Wohlfahrtsökonomik, Monopol, Preiskontrollen, Steuern und Subventionen"
+              "title": "index"
             }
           }
         ]
@@ -195,9 +195,9 @@
   },
   "active": "e60276a744e9a94d",
   "lastOpenFiles": [
+    "100 Notes/02 Wohlfahrtsökonomik, Monopol, Preiskontrollen, Steuern und Subventionen.md",
     "998 Attachements/Präsenzveranstaltung_2_2025_mit Lösungen.pdf",
     "200 ETH Zurich/Semester 1/Ökonomie/351-1158-00L Ökonomie.md",
-    "100 Notes/02 Wohlfahrtsökonomik, Monopol, Preiskontrollen, Steuern und Subventionen.md",
     "200 ETH Zurich/Semester 1/Ökonomie/Lecture Notes/01 Haushalte, Unternehmen, Angebot und Nachfrage.md",
     "998 Attachements/Tagesanzeiger_21_3_5_CBoom bei Ferienwohnungen steht auf wackligen Beinen_v2.pdf",
     "998 Attachements/Economist_19_5_23_Soda stream.pdf",
@@ -217,7 +217,6 @@
     "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/01. Kinematik des materiellen Punktes in kartesischen Koordinaten.md",
     "998 Attachements/2025HS_Kolloquium01_filled.pdf",
     "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/00. Worum geht es bei der Mechanik?.md",
-    "998 Attachements/05. Kinematik des starren Körpers in 3D.pdf",
     "998 Attachements/Pasted image 20251018183505.png",
     "998 Attachements/Pasted image 20251018182516.png",
     "200 ETH Zurich/ETH BSc EECS - Overview.md",
