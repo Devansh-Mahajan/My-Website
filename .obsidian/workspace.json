@@ -4,59 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "25b2d895859d4684",
+        "id": "e93018748cc20291",
         "type": "tabs",
         "children": [
           {
-            "id": "59cbb8126c85f692",
+            "id": "10aebfbe943d1462",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Technische Mechanik/151-0223-10L Technische Mechanik.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
+                "file": "998 Attachements/2025HS_Kolloquium01_filled.pdf"
               },
-              "icon": "lucide-file",
-              "title": "151-0223-10L Technische Mechanik"
-            }
-          },
-          {
-            "id": "3107623055d4fedf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/Chapter_2.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Chapter_2"
+              "icon": "lucide-file-text",
+              "title": "2025HS_Kolloquium01_filled"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -201,7 +164,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -218,11 +182,21 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "f3d1b0f46aca7cf4",
+  "active": "10aebfbe943d1462",
   "lastOpenFiles": [
-    "998 Attachements/Pasted image 20251017134232.png",
-    "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/Chapter_2.md",
+    "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/01. Kinematik des materiellen Punktes in kartesischen Koordinaten.md",
+    "998 Attachements/01. Kinematik des materiellen Punktes in kartesischen Koordinaten.pdf",
+    "998 Attachements/2025HS_Kolloquium01_filled.pdf",
     "200 ETH Zurich/Semester 1/Technische Mechanik/151-0223-10L Technische Mechanik.md",
+    "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/00. Worum geht es bei der Mechanik?.md",
+    "998 Attachements/Pasted image 20251018183505.png",
+    "998 Attachements/Pasted image 20251018182516.png",
+    "998 Attachements/00. Worum geht es bei der Mechanik?.pdf",
+    "998 Attachements/MatheBasics_TechMech.pdf",
+    "998 Attachements/SkriptTechnischeMechanik.pdf",
+    "200 ETH Zurich/ETH BSc EECS - Overview.md",
+    "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/Chapter_2.md",
+    "998 Attachements/Pasted image 20251017134232.png",
     "200 ETH Zurich/Semester 1/Ökonomie/351-1158-00L Ökonomie.md",
     "Blog/public/favicon.svg",
     "Blog/public/icon.png",
@@ -239,11 +213,6 @@
     "Blog/src/pages/notes/[...slug].astro",
     "Blog/src/pages/tag/[tag].astro",
     "Blog/src/components/BaseHead.astro",
-    "Blog/src/components/BlogCard.astro",
-    "Blog/src/utils/url.ts",
-    "Blog/src/styles/global.css",
-    "Blog/src/pages/tag",
-    "Blog/src/pages/rss.xml.js",
     "Blog/GISCUS_SETUP.md",
     "700 Quant/Untitled.md",
     "Blog/src/content/notes/200 ETH Zurich/ETH BSc EECS - Overview.md",
@@ -256,16 +225,10 @@
     "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/has-package-exports/project/README.md",
     "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/has-package-exports/project/CHANGELOG.md",
     "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/flatted-3/project/SPECS.md",
-    "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/flatted-3/project/README.md",
-    "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/flatted-2/project/SPECS.md",
-    "Blog/BUILD/node_modules/resolve/test/list-exports/packages/tests/fixtures/flatted-2/project/README.md",
     "Blog/BUILD/node_modules/playwright-core/lib/vite/traceViewer/playwright-logo.svg",
     "Blog/BUILD/node_modules/playwright-core/lib/vite/recorder/playwright-logo.svg",
     "Blog/BUILD/node_modules/playwright-core/lib/server/chromium/appIcon.png",
     "Blog/BUILD/node_modules/cytoscape-fcose/node_modules/layout-base/layout-schema.png",
-    "Blog/BUILD/node_modules/cytoscape-fcose/demo/incrementalConstraints.gif",
-    "Blog/BUILD/node_modules/cytoscape-fcose/demo/demo.gif",
-    "Blog/BUILD/node_modules/layout-base/layout-schema.png",
     "Untitled.canvas"
   ]
 }
