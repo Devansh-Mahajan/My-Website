@@ -26,3 +26,4 @@ Für das Lösen der Bonusaufgabe ist es hilfreich, Appendix A, B und C aus dem L
 
 - mithilfe des Coulomb'schen Gesetzes Kräfte auf Ladungen berechnen
 - den Begriff des "elektrischen Feldes" verstehen und erklären
+
