@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/Brückenkurs Mathematik.md",
+                "file": "100 Notes/Grundlagen.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Brückenkurs Mathematik"
+              "title": "Grundlagen"
             }
           }
         ],
@@ -220,9 +220,12 @@
   },
   "active": "183629a3ec072af4",
   "lastOpenFiles": [
+    "998 Attachements/102_skript_zahlen.pdf",
+    "998 Attachements/101_skript_symbole_terme_gleichungen.pdf",
+    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/Brückenkurs Mathematik.md",
+    "100 Notes/Grundlagen.md",
     "400 IOI/Untitled.md",
     "000 Goals",
-    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/Brückenkurs Mathematik.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Albach Kapitel 1.1 - 1.6.md",
     "998 Attachements/Serie_01_MuLö.pdf",
     "998 Attachements/HS25_NuS1_Kapitel_1_El_Stat_Feld_1von3.pdf",
@@ -239,7 +242,6 @@
     "998 Attachements/Präsenzveranstaltung_3_2025_ohne Lösungen.pdf",
     "200 ETH Zurich/Semester 1/Ökonomie/Lecture Notes/01 Haushalte, Unternehmen, Angebot und Nachfrage.md",
     "200 ETH Zurich/Semester 1/Ökonomie/351-1158-00L Ökonomie.md",
-    "998 Attachements/Präsenzveranstaltung_2_2025_mit Lösungen.pdf",
     "index.md",
     "200 ETH Zurich/Semester 1/Vorkurs Informatik/252-0865-00L Vorkurs Informatik.md",
     "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/06. Kräft und Moment.pdf.md",
@@ -260,7 +262,6 @@
     "Blog/public/icon_backup.png",
     "Blog/Blog/markdown-style-guide.md",
     "Blog/README.md",
-    "Blog/DEPLOYMENT.md",
     "Blog/BUILD/node_modules/playwright-core/lib/vite/traceViewer/playwright-logo.svg",
     "Blog/BUILD/node_modules/playwright-core/lib/vite/recorder/playwright-logo.svg",
     "Blog/BUILD/node_modules/playwright-core/lib/server/chromium/appIcon.png",
