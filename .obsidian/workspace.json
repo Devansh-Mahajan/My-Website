@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/Brückenkurs Mathematik.md",
+                "file": "100 Notes/Folgen & Reihen.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,35 +28,10 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Brückenkurs Mathematik"
-            }
-          },
-          {
-            "id": "183629a3ec072af4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "100 Notes/Grundlagen.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Grundlagen"
+              "title": "Folgen & Reihen"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -218,23 +193,26 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "183629a3ec072af4",
+  "active": "a4fe764ac6aa8ae6",
   "lastOpenFiles": [
+    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/Brückenkurs Mathematik.md",
+    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/Grundlagen.md",
+    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/Exponential­funktion & Logarithmus­(funktion).md",
+    "100 Notes/Folgen & Reihen.md",
+    "998 Attachements/203_skript_exponentialfunktionen.pdf",
+    "998 Attachements/204_skript_logarithmen.pdf",
+    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/Trigonometrie.md",
+    "998 Attachements/202_skript_trigonometrie.pdf",
+    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/Funktionen.md",
+    "998 Attachements/109_skript_bijektive_funktionen_und_umkehrfunktionen.pdf",
+    "998 Attachements/108_skript_quadratische_funktionen.pdf",
+    "998 Attachements/107_skript_lineare_funktionen.pdf",
+    "998 Attachements/106_skript_funktionen_grundlagen.pdf",
     "998 Attachements/110-voll-induktion.pdf",
     "998 Attachements/201_skript_potenzen_und_wurzeln.pdf",
     "998 Attachements/105_skript_quadratische_gleichungen.pdf",
-    "998 Attachements/104_skript_quadratwurzeln.pdf",
-    "998 Attachements/103_skript_lineare_gleichungssysteme.pdf",
-    "998 Attachements/102_skript_zahlen.pdf",
-    "998 Attachements/101_skript_symbole_terme_gleichungen.pdf",
-    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/Brückenkurs Mathematik.md",
-    "100 Notes/Grundlagen.md",
     "400 IOI/Untitled.md",
-    "000 Goals",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Albach Kapitel 1.1 - 1.6.md",
-    "998 Attachements/Serie_01_MuLö.pdf",
-    "998 Attachements/HS25_NuS1_Kapitel_1_El_Stat_Feld_1von3.pdf",
-    "998 Attachements/HS24_NuS1_Kapitel_0_Intro.pdf",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/227-0001-00L Netzwerke und Schaltungen I.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/03_Week.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Elektrostatische Kraft Richtung und Stärke, das Coulomb'sche Gesetz (WIP).md",
@@ -255,13 +233,10 @@
     "998 Attachements/Pasted image 20251018183505.png",
     "998 Attachements/Pasted image 20251018182516.png",
     "200 ETH Zurich/ETH BSc EECS - Overview.md",
-    "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/Chapter_2.md",
     "998 Attachements/Pasted image 20251017134232.png",
     "Blog/public/favicon.svg",
     "Blog/public/icon.png",
     "Blog/public/icon_backup.png",
-    "Blog/Blog/markdown-style-guide.md",
-    "Blog/README.md",
     "Blog/BUILD/node_modules/playwright-core/lib/vite/traceViewer/playwright-logo.svg",
     "Blog/BUILD/node_modules/playwright-core/lib/vite/recorder/playwright-logo.svg",
     "Blog/BUILD/node_modules/playwright-core/lib/server/chromium/appIcon.png",
