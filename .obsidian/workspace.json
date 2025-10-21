@@ -220,6 +220,7 @@
   },
   "active": "f3d1b0f46aca7cf4",
   "lastOpenFiles": [
+    "000 DailyNote",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/Brückenkurs Mathematik.md",
     "400 IOI/Untitled.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Albach Kapitel 1.1 - 1.6.md",
@@ -261,7 +262,6 @@
     "Blog/Blog/markdown-style-guide.md",
     "Blog/README.md",
     "Blog/DEPLOYMENT.md",
-    "Blog/Blog/obsidian-publishing-guide.md",
     "Blog/BUILD/node_modules/playwright-core/lib/vite/traceViewer/playwright-logo.svg",
     "Blog/BUILD/node_modules/playwright-core/lib/vite/recorder/playwright-logo.svg",
     "Blog/BUILD/node_modules/playwright-core/lib/server/chromium/appIcon.png",

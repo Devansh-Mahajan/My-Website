@@ -1,6 +1,6 @@
 {
   "format": "YYYY-MM-DD",
-  "folder": "01_Daily Notes",
-  "autorun": true,
-  "template": "Templates/Daily Note"
+  "folder": "000 DailyNote",
+  "autorun": false,
+  "template": "999 Templates/02 Lecture or Topic Template"
 }
