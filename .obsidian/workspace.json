@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "5e42fbfa080d18cb",
+        "id": "7f3f34d50c0df7c3",
         "type": "tabs",
         "children": [
           {
-            "id": "6d3bff76957dd58a",
+            "id": "b1a4239426e5318a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/01 Grundlagen.md",
+                "file": "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/00 Brückenkurs Mathematik.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "01 Grundlagen"
+              "title": "00 Brückenkurs Mathematik"
             }
           }
         ]
@@ -170,14 +170,23 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "8fb9694eb5212a71",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
           }
         ],
         "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -194,12 +203,17 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "6d3bff76957dd58a",
+  "active": "b1a4239426e5318a",
   "lastOpenFiles": [
+    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/08 Vektor­geometrie.md",
+    "Untitled 3.canvas",
+    "Untitled 2.canvas",
+    "Untitled 1.canvas",
+    "Untitled.canvas",
+    "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
+    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/01 Grundlagen.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/00 Brückenkurs Mathematik.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/07 Integral­rechnung.md",
-    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/08 Vektor­geometrie.md",
-    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/01 Grundlagen.md",
     "999 Templates/00 Class Template.md",
     "999 Templates/02 Lecture or Topic Template.md",
     "999 Templates/03 Blog Template.md",
@@ -230,8 +244,6 @@
     "200 ETH Zurich/Semester 1/Ökonomie/351-1158-00L Ökonomie.md",
     "index.md",
     "200 ETH Zurich/Semester 1/Vorkurs Informatik/252-0865-00L Vorkurs Informatik.md",
-    "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/06. Kräft und Moment.pdf.md",
-    "200 ETH Zurich/Semester 1/Technische Mechanik/151-0223-10L Technische Mechanik.md",
     "998 Attachements/Pasted image 20251018183505.png",
     "998 Attachements/Pasted image 20251018182516.png",
     "998 Attachements/Pasted image 20251017134232.png",
@@ -241,7 +253,6 @@
     "Blog/BUILD/node_modules/playwright-core/lib/vite/traceViewer/playwright-logo.svg",
     "Blog/BUILD/node_modules/playwright-core/lib/vite/recorder/playwright-logo.svg",
     "Blog/BUILD/node_modules/playwright-core/lib/server/chromium/appIcon.png",
-    "Blog/BUILD/node_modules/cytoscape-fcose/node_modules/layout-base/layout-schema.png",
-    "Untitled.canvas"
+    "Blog/BUILD/node_modules/cytoscape-fcose/node_modules/layout-base/layout-schema.png"
   ]
 }

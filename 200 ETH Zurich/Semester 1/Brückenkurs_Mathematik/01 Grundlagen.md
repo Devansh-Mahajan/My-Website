@@ -14,27 +14,9 @@ publish: true
 [[105_skript_quadratische_gleichungen.pdf]]
 [[201_skript_potenzen_und_wurzeln.pdf]]
 [[110-voll-induktion.pdf]]
-## 1. Fundamente: Zahlen, Terme und Gleichungen
+## 1. Grundlagen
 
 Die Mathematik baut auf einer präzisen formalen Sprache auf. Diese Sprache besteht aus Objekten (Zahlen) und einer Syntax (Terme und Gleichungen), die deren Beziehungen beschreibt.
-
->[!question] Was ist ein Term?
->Unter einem Term versteht man eine sinnvolle Aneinanderreihung von mathematischen Symbolen, in der aber kein Relationszeichen ($=,<,>,\geq,\le\mathbf\dots$) vorkommt.
-
-Beispiele von Termen: 
-$$17 + 5 - 3,$$
- $$(3x - (6 - 7x)) - (8 - 2x),$$ $$(a + b)^2,$$
- $$\frac{\pi}{3} - \left(\frac{2}{5}\right)^2,$$
- $$\sqrt{2 - \sqrt{2 - \sqrt{2}}}.$$
-Aus dieser definition lässt sich herleiten das jede Zahl/Buchtabe ein Term sein muss!
-Sobald ein Relationszeichen vorkommt spricht man von **Formeln**.
-
->[!question] Woher kommen Gleichungen?
-Wenn man an Schulen von Gleichungen spricht, so meint man meist Gleichungen der Art
-$2x - 5 = 17 - 3x$.
-Welche Zahlenmenge $X$ aus einer bestimmten Grundmenge zugelassener Zahlen hat die Eigenschaft, dass man denselben Wert erhält, wenn man für eine Zahl  die in $X$ enthalten ist, $2x - 5$ rechnet und wenn man $17 - 3x$ rechnet? Aus irgendeinem Grund sind die Terme $2x - 5$ und $17 - 3x$ es ist wichtig, herauszufinden, wann sie gleich sind.
-Dann meistens auch die Frage wichtig, wie die Gleichung gelöst werden kann.
-$$ \begin{array}{rcl|l} 2x - 5 &=& 17 - 3x & | +3x \\ 5x - 5 &=& 17 & | +5 \\ 5x &=& 22 & | :5 \\ x &=& 4.4 \end{array} $$
 
 ### 1.1 Die Hierarchie der Zahlbereiche 
 
@@ -76,6 +58,24 @@ Die Entwicklung der Zahlbereiche ist eine schrittweise Erweiterung, um immer kom
         
 
 ### 1.2 Die Grammatik: Terme, Gleichungen und Linearität (Skript 101)
+
+>[!question] Was ist ein Term?
+>Unter einem Term versteht man eine sinnvolle Aneinanderreihung von mathematischen Symbolen, in der aber kein Relationszeichen ($=,<,>,\geq,\le\mathbf\dots$) vorkommt.
+
+Beispiele von Termen: 
+$$17 + 5 - 3,$$
+ $$(3x - (6 - 7x)) - (8 - 2x),$$ $$(a + b)^2,$$
+ $$\frac{\pi}{3} - \left(\frac{2}{5}\right)^2,$$
+ $$\sqrt{2 - \sqrt{2 - \sqrt{2}}}.$$
+Aus dieser definition lässt sich herleiten das jede Zahl/Buchtabe ein Term sein muss!
+Sobald ein Relationszeichen vorkommt spricht man von **Formeln**.
+
+>[!question] Woher kommen Gleichungen?
+Wenn man an Schulen von Gleichungen spricht, so meint man meist Gleichungen der Art
+$2x - 5 = 17 - 3x$.
+Welche Zahlenmenge $X$ aus einer bestimmten Grundmenge zugelassener Zahlen hat die Eigenschaft, dass man denselben Wert erhält, wenn man für eine Zahl  die in $X$ enthalten ist, $2x - 5$ rechnet und wenn man $17 - 3x$ rechnet? Aus irgendeinem Grund sind die Terme $2x - 5$ und $17 - 3x$ es ist wichtig, herauszufinden, wann sie gleich sind.
+Dann meistens auch die Frage wichtig, wie die Gleichung gelöst werden kann.
+$$ \begin{array}{rcl|l} 2x - 5 &=& 17 - 3x & | +3x \\ 5x - 5 &=& 17 & | +5 \\ 5x &=& 22 & | :5 \\ x &=& 4.4 \end{array} $$
 
 - **Symbol:** Ein eindeutig definiertes Zeichen (z.B. $+, \pi, x, \in$).
     
