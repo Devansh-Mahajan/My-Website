@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a1a056ac05298dff",
+            "id": "2b5c8e78b7197754",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/02 Albach Kapitel 1.7 - 1.13.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,10 +28,35 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "02 Albach Kapitel 1.7 - 1.13"
+              "title": "index"
+            }
+          },
+          {
+            "id": "ad382df16bb37d1d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Albach Kapitel 1.1 - 1.6.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "01 Albach Kapitel 1.1 - 1.6"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -152,13 +177,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/02 Albach Kapitel 1.7 - 1.13.md",
+                "file": "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Albach Kapitel 1.1 - 1.6.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 02 Albach Kapitel 1.7 - 1.13"
+              "title": "Outline of 01 Albach Kapitel 1.1 - 1.6"
             }
           },
           {
@@ -203,15 +228,27 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "a1a056ac05298dff",
+  "active": "ad382df16bb37d1d",
   "lastOpenFiles": [
-    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/03 Albach Kapitel 1.14 - 1.21.md",
-    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/02 Albach Kapitel 1.7 - 1.13.md",
-    "998 Attachements/HS25_NuS1_Kapitel_1_El_Stat_Feld_2von3 1.pdf",
+    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/06 Albach Kapitel 3.6 - 3.10.md",
+    "Legal.md",
+    "index.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Albach Kapitel 1.1 - 1.6.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/227-0001-00L Netzwerke und Schaltungen I.md",
-    "998 Attachements/HS25_NuS1_Kapitel_1_El_Stat_Feld_2von3.pdf",
-    "998 Attachements/HS24_NuS1_Kapitel_0_Intro.pdf",
+    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/05 Albach Kapitel 3.1 - 3.5.md",
+    "998 Attachements/Max_Ausgangsleistung.asc",
+    "998 Attachements/Einfaches_elektrisches_Netzwerk_3_6.asc",
+    "998 Attachements/HS25_NuS1_Kapitel_3_Einfache_elektrische_Netzwerke_Teil_2von2.pdf",
+    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/04 Albach Kapitel 2.1 - 2.9.md",
+    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/03 Albach Kapitel 1.14 - 1.21.md",
+    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/02 Albach Kapitel 1.7 - 1.13.md",
+    "998 Attachements/Unbelasteter Spannungsteiler.asc",
+    "998 Attachements/Belasteter Spannungsteiler.asc",
+    "998 Attachements/Belasteter Spannungsteiler_sweep_R.asc",
+    "998 Attachements/Belasteter Spannungsteiler_2_sweep_R.asc",
+    "998 Attachements/HS25_NuS1_Kapitel_3_Einfache_elektrische_Netzwerke_Woche_5.pdf",
+    "998 Attachements/HS25_NuS1_Kapitel_2_Das stationäre elektrische Strömungsfeld.pdf",
+    "998 Attachements/HS25_NuS1_Kapitel_1_El_Stat_Feld_2von3 1.pdf",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/01 Grundlagen.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/00 Brückenkurs Mathematik.md",
     "999 Templates/03 Blog Template.md",
@@ -225,13 +262,6 @@
     "Untitled 1.canvas",
     "Untitled.canvas",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/07 Integral­rechnung.md",
-    "998 Attachements/411_Skript_Vektorgeometrie _vektorprodukt.pdf",
-    "998 Attachements/410_skript_vektorgeometrie_skp_normalformen.pdf",
-    "998 Attachements/409_skript_vektorgeometrie_geraden_und_ebenen.pdf",
-    "998 Attachements/408_skript_vektorgeometrie_grundlagen.pdf",
-    "998 Attachements/404_skript_laengen_flaechen_volumina.pdf",
-    "998 Attachements/403_skript_integrationsregeln.pdf",
-    "998 Attachements/402_skript_integral_eigenschaften.pdf",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/06 Differentialrechnung.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/05 Folgen & Reihen.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/04 Exponential­funktion & Logarithmus­(funktion).md",
@@ -240,10 +270,6 @@
     "400 IOI/Untitled.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/03_Week.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Elektrostatische Kraft Richtung und Stärke, das Coulomb'sche Gesetz (WIP).md",
-    "200 ETH Zurich/Semester 1/Ökonomie/Lecture Notes/03 Güter, Externalitäten und Marktversagen.md",
-    "200 ETH Zurich/Semester 1/Ökonomie/Lecture Notes/02 Wohlfahrtsökonomik, Monopol, Preiskontrollen, Steuern und Subventionen.md",
-    "200 ETH Zurich/Semester 1/Ökonomie/Lecture Notes/01 Haushalte, Unternehmen, Angebot und Nachfrage.md",
-    "200 ETH Zurich/Semester 1/Ökonomie/351-1158-00L Ökonomie.md",
     "998 Attachements/Pasted image 20251018183505.png",
     "998 Attachements/Pasted image 20251018182516.png",
     "998 Attachements/Pasted image 20251017134232.png",

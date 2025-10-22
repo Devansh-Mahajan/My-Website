@@ -33,24 +33,24 @@ Für das Lösen der Bonusaufgabe ist es hilfreich, Appendix A, B und C aus dem L
 - den Begriff des "elektrischen Feldes" verstehen und erklären
 ## Course Introduction: Netzwerke und Schaltungen 1 (NuS1)
 
-This course aims to build understanding of **both the concepts and the quantitative calculations** in electrical networks and circuits1111.
+This course aims to build understanding of **both the concepts and the quantitative calculations** in electrical networks and circuits.
 
 ### Course Structure & Approach
 
-- **Interactive Learning:** This course utilizes an interactive format rather than traditional lectures2. **Active participation is expected**3.
+- **Interactive Learning:** This course utilizes an interactive format rather than traditional lectures2. **Active participation is expected**.
     
-- **Preparation:** You're expected to **read the relevant textbook sections _before_ each lecture**4. Lectures will focus on deepening understanding, discussing examples, showing experiments, and clarifying difficulties5.
+- **Preparation:** You're expected to **read the relevant textbook sections _before_ each lecture**. Lectures will focus on deepening understanding, discussing examples, showing experiments, and clarifying difficulties.
     
-- **Practice:** Calculation skills are trained through exercises solved at home and during tutored exercise sessions6.
+- **Practice:** Calculation skills are trained through exercises solved at home and during tutored exercise sessions.
     
-- **Support:** Additional help is available via the Study Center and Moodle forums7.
+- **Support:** Additional help is available via the Study Center and Moodle forums.
     
 
 ### Resources
 
-- **Textbook:** "Elektrotechnik", 2nd Edition by Manfred Albach, published by Pearson8888. Includes an access code for the MyLab online learning platform999999999.
+- **Textbook:** "Elektrotechnik", 2nd Edition by Manfred Albach, published by Pearson. Includes an access code for the MyLab online learning platform.
     
-- **Exercise Book:** "Elektrotechnik Aufgabensammlung" by Albach & Fischer provides additional problems10101010101010101010101010101010.
+- **Exercise Book:** "Elektrotechnik Aufgabensammlung" by Albach & Fischer provides additional problems.
     
 
 ### Assessment & Bonus

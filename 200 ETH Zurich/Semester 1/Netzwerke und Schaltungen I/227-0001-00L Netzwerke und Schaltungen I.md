@@ -17,3 +17,7 @@ publish: true
 - [[01 Albach Kapitel 1.1 - 1.6]]
 - [[02 Albach Kapitel 1.7 - 1.13]]
 - [[03 Albach Kapitel 1.14 - 1.21]]
+- [[04 Albach Kapitel 2.1 - 2.9]]
+- [[05 Albach Kapitel 3.1 - 3.5]]
+- [[06 Albach Kapitel 3.6 - 3.10]]
+- 07 Wiederholungs Lektion (Kapitel 1 - 3)
