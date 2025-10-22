@@ -8,7 +8,7 @@ date: 2025-09-19
 draft: false
 publish: true
 ---
-[[Brückenkurs Mathematik]] Lernpfade "Integralrechnung" und "Vektorgeometrie"
+[[00 Brückenkurs Mathematik]] Lernpfade "Integralrechnung" und "Vektorgeometrie"
 Für das Lösen der Bonusaufgabe ist es hilfreich, Appendix A, B und C aus dem Lehrbuch von Albach durchzugehen.
 
 **Material:**[[HS24_NuS1_Kapitel_0_Intro.pdf]], [[HS25_NuS1_Kapitel_1_El_Stat_Feld_1von3.pdf]]

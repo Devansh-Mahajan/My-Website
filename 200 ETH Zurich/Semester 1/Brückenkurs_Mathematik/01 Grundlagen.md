@@ -1,3 +1,12 @@
+---
+tags:
+  - class
+  - itet
+  - Brückenkurs_Mathematik
+draft: false
+publish: true
+---
+# Lectures
 [[101_skript_symbole_terme_gleichungen.pdf]]
 [[102_skript_zahlen.pdf]]
 [[103_skript_lineare_gleichungssysteme.pdf]]
@@ -5,7 +14,6 @@
 [[105_skript_quadratische_gleichungen.pdf]]
 [[201_skript_potenzen_und_wurzeln.pdf]]
 [[110-voll-induktion.pdf]]
-
 ## 1. Fundamente: Zahlen, Terme und Gleichungen
 
 Die Mathematik baut auf einer präzisen formalen Sprache auf. Diese Sprache besteht aus Objekten (Zahlen) und einer Syntax (Terme und Gleichungen), die deren Beziehungen beschreibt.
@@ -426,3 +434,6 @@ Eine Behauptung $A(n)$ wird in zwei Schritten bewiesen:
         $$\begin{aligned} (1+x)^{n+1} &= (1+x)^n \cdot (1+x) \\ &\ge (1+nx) \cdot (1+x) \quad \text{(IV eingesetzt; $(1+x) > 0$ da $x > -1$)} \\ &= 1 + x + nx + nx^2 \\ &= 1 + (n+1)x + \underbrace{nx^2}_{\ge 0} \\ &\ge 1 + (n+1)x \quad \text{(da $nx^2$ nicht-negativ ist)} \end{aligned}$$
         
     - Somit ist $A(n+1)$ wahr. Der Beweis ist abgeschlossen.
+# Assignments
+
+# Anki
