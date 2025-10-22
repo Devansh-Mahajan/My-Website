@@ -3,7 +3,6 @@ title: 227-0003-00L Digitaltechnik
 description: Index
 tags:
   - Digitaltechnik
-  - index
   - class
   - itet
 date: 2025-09-19
