@@ -55,115 +55,115 @@ This course aims to build understanding of **both the concepts and the quantita
 
 ### Assessment & Bonus
 
-- **Exam:** A 120-minute session exam (part of Basisprüfung Block A) in a hybrid format (paper and online)11. It includes short questions and longer problems testing both conceptual understanding and calculations12.
+- **Exam:** A 120-minute session exam (part of Basisprüfung Block A) in a hybrid format (paper and online). It includes short questions and longer problems testing both conceptual understanding and calculations.
     
-- **Allowed Aids:** The paper version of the Albach "Elektrotechnik" textbook (can have handwritten notes), dictionaries, a formula sheet (max. 2 A4 pages), and specific calculators (Win7/Win8 version on computer or a simple calculator according to D-ITET guidelines)131313131313131313. **Notes from exercises or old exams are NOT allowed**14.
+- **Allowed Aids:** The paper version of the Albach "Elektrotechnik" textbook (can have handwritten notes), dictionaries, a formula sheet (max. 2 A4 pages), and specific calculators (Win7/Win8 version on computer or a simple calculator according to D-ITET guidelines). **Notes from exercises or old exams are NOT allowed**.
     
-- **Notenbonus:** You can earn up to a **0.25 grade bonus**15. This is achieved by completing weekly reading checks and bonus exercises on Moodle16161616. Points accumulate throughout the semester, with the bonus scaling linearly from 0 (at 140 points) to 0.25 (at 280 points or more)17171717. Submissions are due **Sundays by 18:00**18.
+- **Notenbonus:** You can earn up to a **0.25 grade bonus**. This is achieved by completing weekly reading checks and bonus exercises on Moodle. Points accumulate throughout the semester, with the bonus scaling linearly from 0 (at 140 points) to 0.25 (at 280 points or more). Submissions are due **Sundays by 18:00**.
     
 
 ### Prerequisites
 
-- **Math:** A strong foundation in **single-variable calculus and vector calculus** is required19. The Math Bridge Course is highly recommended20.
+- **Math:** A strong foundation in **single-variable calculus and vector calculus** is required. The Math Bridge Course is highly recommended.
     
-- **Course-Specific Math:** Concepts like **orthogonal coordinate systems** and **multi-dimensional integration (line/surface integrals)** are needed and covered in Appendices A, B, and C of the textbook and early exercises21.
+- **Course-Specific Math:** Concepts like **orthogonal coordinate systems** and **multi-dimensional integration (line/surface integrals)** are needed and covered in Appendices A, B, and C of the textbook and early exercises.
     
 
 ### Course Content (NuS1)
 
-This course covers the fundamentals based on **Chapters 1-6** of the Albach textbook22. Topics include electrostatic fields, stationary current fields, simple networks, conduction mechanisms, stationary magnetic fields, and time-varying electromagnetic fields2323232323232323. Later topics like AC analysis and transformations (Chapters 7-11) are covered in subsequent courses24242424.
+This course covers the fundamentals based on **Chapters 1-6** of the Albach textbook. Topics include electrostatic fields, stationary current fields, simple networks, conduction mechanisms, stationary magnetic fields, and time-varying electromagnetic fields. Later topics like AC analysis and transformations (Chapters 7-11) are covered in subsequent courses.
 
 ---
 
 ## Chapter 1: The Electrostatic Field ⚡️
 
-This chapter introduces the fundamental concepts related to **stationary electric charges** and the forces they exert25.
+This chapter introduces the fundamental concepts related to **stationary electric charges** and the forces they exert.
 
 ### Key Concepts & Definitions
 
 - **Electric Charge ($Q$):**
     
-    - Exists as positive (protons) and negative (electrons)26.
+    - Exists as positive (protons) and negative (electrons).
         
-    - The smallest indivisible unit is the elementary charge $e \approx 1.602 \times 10^{-19}$ As27272727.
+    - The smallest indivisible unit is the elementary charge $e \approx 1.602 \times 10^{-19}$ As.
         
-    - Like charges repel, unlike charges attract282828.
+    - Like charges repel, unlike charges attract.
         
-    - Charge is conserved in isolated systems29.
+    - Charge is conserved in isolated systems.
         
 - **Coulomb's Law:**
     
-    - Quantifies the force $\vec{F}$ between two point charges $Q_1$ and $Q_2$ separated by distance $r$303030303030303030:
-        
+    - Quantifies the force $\vec{F}$ between two point charges $Q_1$ and $Q_2$ separated by distance $r$:
         $$\vec{F}_{2}=\vec{e}_{r}\frac{1}{4\pi\epsilon_{0}}\frac{Q_{1}Q_{2}}{r^{2}}$$
         
-        where $\vec{e}_r$ is the unit vector pointing from $Q_1$ to $Q_2$ 313131313131313131and $\epsilon_0$ is the permittivity of free space ($\approx 8.854 \times 10^{-12}$ As/Vm)32.
+        where $\vec{e}_r$ is the unit vector pointing from $Q_1$ to $Q_2$ and $\epsilon_0$ is the permittivity of free space ($\approx 8.854 \times 10^{-12}$ As/Vm).
         
-    - The force magnitude is proportional to the product of charges and inversely proportional to the square of the distance333333333333333333.
+    - The force magnitude is proportional to the product of charges and inversely proportional to the square of the distance.
         
 - **Electric Field ($\vec{E}$):**
     
-    - A concept introduced to explain forces acting at a distance34343434343434. Charges create an electric field in the surrounding space35.
+    - A concept introduced to explain forces acting at a distance. Charges create an electric field in the surrounding space.
         
-    - Defined as the force per unit positive test charge: $\vec{E} = \vec{F}/Q_{test}$36363636. It is a property of the source charge(s) and space37373737. Unit: V/m38383838.
+    - Defined as the force per unit positive test charge: $\vec{E} = \vec{F}/Q_{test}$. It is a property of the source charge(s) and space. Unit: V/m.
         
-    - Field of a point charge $Q_1$: $\vec{E}_{1}=\vec{e}_{r}\frac{Q_{1}}{4\pi\epsilon_{0}r^{2}}$3939.
+    - Field of a point charge $Q_1$: $\vec{E}_{1}=\vec{e}_{r}\frac{Q_{1}}{4\pi\epsilon_{0}r^{2}}$.
         
-    - The force on a charge $Q$ in an electric field is $\vec{F} = Q\vec{E}$40404040.
+    - The force on a charge $Q$ in an electric field is $\vec{F} = Q\vec{E}$.
         
 - **Superposition Principle:**
     
-    - The total electric field (or force) from multiple charges is the **vector sum** of the fields (or forces) created by each charge individually41414141.
+    - The total electric field (or force) from multiple charges is the **vector sum** of the fields (or forces) created by each charge individually.
         
 - **Charge Densities:**
     
-    - For continuous distributions: Line charge $\lambda$ (As/m), Surface charge $\sigma$ (As/m²), Volume charge $\rho$ (As/m³)424242424242424242.
+    - For continuous distributions: Line charge $\lambda$ (As/m), Surface charge $\sigma$ (As/m²), Volume charge $\rho$ (As/m³).
         
 - **Field Representation:**
     
-    - **Field Lines:** Originate on positive charges, terminate on negative charges43. Tangent gives $\vec{E}$direction44. Density can indicate strength45. Cannot cross46.
+    - **Field Lines:** Originate on positive charges, terminate on negative charges43. Tangent gives $\vec{E}$ direction. Density can indicate strength. Cannot cross.
         
-    - **Equipotential Surfaces:** Surfaces where the electric potential is constant47. $\vec{E}$ is always perpendicular to equipotential surfaces48484848. Conductors in electrostatics form equipotential regions49.
+    - **Equipotential Surfaces:** Surfaces where the electric potential is constant. $\vec{E}$ is always perpendicular to equipotential surfaces. Conductors in electrostatics form equipotential regions.
         
 - **Electric Potential ($\varphi_e$) & Voltage ($U$):**
     
-    - Electrostatic field is conservative: $\oint_C \vec{E}\cdot d\vec{s} = 0$50505050.
+    - Electrostatic field is conservative: $\oint_C \vec{E}\cdot d\vec{s} = 0$.
         
-    - Allows definition of a scalar potential $\varphi_e$ (Unit: V)51. Potential difference (Voltage) is related to the work done moving a charge: $W_e = Q(\varphi_{e}(P_1) - \varphi_{e}(P_0))$52.
+    - Allows definition of a scalar potential $\varphi_e$ (Unit: V). Potential difference (Voltage) is related to the work done moving a charge: $W_e = Q(\varphi_{e}(P_1) - \varphi_{e}(P_0))$.
         
-    - Voltage between two points: $U_{12} = \varphi_{e}(P_1) - \varphi_{e}(P_2) = \int_{P_2}^{P_1} \vec{E}\cdot d\vec{s}$53.
+    - Voltage between two points: $U_{12} = \varphi_{e}(P_1) - \varphi_{e}(P_2) = \int_{P_2}^{P_1} \vec{E}\cdot d\vec{s}$.
         
 - **Electric Flux Density ($\vec{D}$):**
     
-    - Defined as $\vec{D} = \epsilon \vec{E} = \epsilon_0 \epsilon_r \vec{E}$545454. Unit: As/m²55.
+    - Defined as $\vec{D} = \epsilon \vec{E} = \epsilon_0 \epsilon_r \vec{E}$. Unit: As/m².
         
-    - **Gauss's Law:** Total electric flux $\Psi$ out of a closed surface equals the enclosed charge $Q$: $\Psi=\oint_{A}\vec{D}\cdot d\vec{A}=Q$56.
+    - **Gauss's Law:** Total electric flux $\Psi$ out of a closed surface equals the enclosed charge $Q$: $\Psi=\oint_{A}\vec{D}\cdot d\vec{A}=Q$.
         
 - **Conductors & Insulators in Electrostatic Fields:**
     
-    - **Conductors:** Contain free charges. In electrostatics, $\vec{E}=0$ inside57. They form equipotential regions58. Excess charge resides on the surface59. $\vec{E}$ is perpendicular to the surface just outside60. **Influence (Influenz):** Charge redistribution on a conductor due to an external field61. **Shielding (Faraday Cage):** A conductive enclosure blocks external static fields from the interior62.
+    - **Conductors:** Contain free charges. In electrostatics, $\vec{E}=0$ inside. They form equipotential regions58. Excess charge resides on the surface. $\vec{E}$ is perpendicular to the surface just outside. **Influence (Influenz):** Charge redistribution on a conductor due to an external field. **Shielding (Faraday Cage):** A conductive enclosure blocks external static fields from the interior.
         
-    - **Dielectrics (Insulators):** Charges are bound. An external field causes **polarization** (alignment/creation of electric dipoles)63. Described by relative permittivity $\epsilon_r$ (or dielectric constant)64. $\vec{D} = \epsilon_0 \epsilon_r \vec{E}$65.
+    - **Dielectrics (Insulators):** Charges are bound. An external field causes **polarization** (alignment/creation of electric dipoles). Described by relative permittivity $\epsilon_r$ (or dielectric constant). $\vec{D} = \epsilon_0 \epsilon_r \vec{E}$.
         
 - **Capacitance ($C$):**
     
-    - Measure of a system's ability to store electric charge and energy66. Defined as $C=Q/U$67. Unit: Farad (F)68.
+    - Measure of a system's ability to store electric charge and energy. Defined as $C=Q/U$. Unit: Farad (F).
         
-    - Parallel Plate: $C=\frac{\epsilon A}{d}$69.
+    - Parallel Plate: $C=\frac{\epsilon A}{d}$.
         
-    - Capacitors in parallel add: $C_{ges}=\sum C_{k}$70.
+    - Capacitors in parallel add: $C_{ges}=\sum C_{k}$.
         
-    - Reciprocals add for capacitors in series: $1/C_{ges}=\sum 1/C_{k}$71.
+    - Reciprocals add for capacitors in series: $1/C_{ges}=\sum 1/C_{k}$.
         
 - **Electric Energy Storage:**
     
-    - Energy stored in a capacitor: $W_e = \frac{1}{2}CU^2$72.
+    - Energy stored in a capacitor: $W_e = \frac{1}{2}CU^2$.
         
-    - Energy density in the field: $w_e = \frac{1}{2}\vec{E}\cdot\vec{D}$73.
+    - Energy density in the field: $w_e = \frac{1}{2}\vec{E}\cdot\vec{D}$.
         
 
 ### Lernziele (Week 1 / Chapter 1 Part 1)
 
-- Calculate forces on charges using Coulomb's Law74747474.
+- Calculate forces on charges using Coulomb's Law.
     
-- Understand and explain the concept of the electric field75757575.
+- Understand and explain the concept of the electric field.
+![](https://www.youtube.com/watch?v=x1-SibwIPM4)
