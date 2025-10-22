@@ -5,7 +5,6 @@ tags:
 draft: false
 publish: true
 ---
-**Topics:**
 **Aufzeichnung:**
 **Moodle:**  
 **Hauptlink:**  

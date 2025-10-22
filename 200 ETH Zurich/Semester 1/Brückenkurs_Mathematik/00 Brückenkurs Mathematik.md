@@ -3,10 +3,19 @@ tags:
   - class
   - itet
   - "#Brückenkurs_Mathematik"
+  - "#Grundlagen_Mathematik"
+  - "#Funktionen"
+  - "#Trigonometrie"
+  - "#Exponentialfunktionen"
+  - "#Logarithmus/-funktionen"
+  - "#Folgen_Reihen"
+  - "#Differentialrechnung"
+  - "#Integralrechnung"
+  - "#Vektorgeometrie"
 draft: false
 publish: true
 ---
-**Topics:** #Grundlagen_Mathematik #Funktionen #Trigonometrie #Exponentialfunktionen #Logarithmus/-funktionen #Folgen_Reihen #Differentialrechnung #Integralrechnung #Vektorgeometrie
+
 **Hauptlink:**  https://pontifex.ethz.ch
 # Lectures
 [[01 Grundlagen]]

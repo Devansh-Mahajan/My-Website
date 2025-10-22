@@ -71,11 +71,11 @@ Aus dieser definition lässt sich herleiten das jede Zahl/Buchtabe ein Term sein
 Sobald ein Relationszeichen vorkommt spricht man von **Formeln**.
 
 >[!question] Woher kommen Gleichungen?
-Wenn man an Schulen von Gleichungen spricht, so meint man meist Gleichungen der Art
-$2x - 5 = 17 - 3x$.
-Welche Zahlenmenge $X$ aus einer bestimmten Grundmenge zugelassener Zahlen hat die Eigenschaft, dass man denselben Wert erhält, wenn man für eine Zahl  die in $X$ enthalten ist, $2x - 5$ rechnet und wenn man $17 - 3x$ rechnet? Aus irgendeinem Grund sind die Terme $2x - 5$ und $17 - 3x$ es ist wichtig, herauszufinden, wann sie gleich sind.
-Dann meistens auch die Frage wichtig, wie die Gleichung gelöst werden kann.
-$$ \begin{array}{rcl|l} 2x - 5 &=& 17 - 3x & | +3x \\ 5x - 5 &=& 17 & | +5 \\ 5x &=& 22 & | :5 \\ x &=& 4.4 \end{array} $$
+>Wenn man an Schulen von Gleichungen spricht, so meint man meist Gleichungen der Art
+>$2x - 5 = 17 - 3x$.
+>Welche Zahlenmenge $X$ aus einer bestimmten Grundmenge zugelassener Zahlen hat die Eigenschaft, dass man denselben Wert erhält, wenn man für eine Zahl  die in $X$ enthalten ist, $2x - 5$ rechnet und wenn man $17 - 3x$ rechnet? Aus irgendeinem Grund sind die Terme $2x - 5$ und $17 - 3x$ es ist wichtig, herauszufinden, wann sie gleich sind.
+>Dann meistens auch die Frage wichtig, wie die Gleichung gelöst werden kann.
+>$$ \begin{array}{rcl|l} 2x - 5 &=& 17 - 3x & | +3x \\ 5x - 5 &=& 17 & | +5 \\ 5x &=& 22 & | :5 \\ x &=& 4.4 \end{array} $$
 
 - **Symbol:** Ein eindeutig definiertes Zeichen (z.B. $+, \pi, x, \in$).
     

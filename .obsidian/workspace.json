@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/00 Brückenkurs Mathematik.md",
+                "file": "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/01 Grundlagen.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "00 Brückenkurs Mathematik"
+              "title": "01 Grundlagen"
             }
           }
         ]
@@ -88,7 +88,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "44ac1d4342bf6645",
@@ -205,18 +206,18 @@
   },
   "active": "b1a4239426e5318a",
   "lastOpenFiles": [
+    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/00 Brückenkurs Mathematik.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/08 Vektor­geometrie.md",
+    "999 Templates/00 Class Template.md",
+    "999 Templates/03 Blog Template.md",
+    "999 Templates/02 Lecture or Topic Template.md",
     "Untitled 3.canvas",
     "Untitled 2.canvas",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/01 Grundlagen.md",
-    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/00 Brückenkurs Mathematik.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/07 Integral­rechnung.md",
-    "999 Templates/00 Class Template.md",
-    "999 Templates/02 Lecture or Topic Template.md",
-    "999 Templates/03 Blog Template.md",
     "998 Attachements/411_Skript_Vektorgeometrie _vektorprodukt.pdf",
     "998 Attachements/410_skript_vektorgeometrie_skp_normalformen.pdf",
     "998 Attachements/409_skript_vektorgeometrie_geraden_und_ebenen.pdf",
