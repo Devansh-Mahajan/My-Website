@@ -10,7 +10,8 @@ title: 227-0001-00L Netzwerke und Schaltungen I
 **Formelsammlung:** https://moodle-app2.let.ethz.ch/mod/resource/view.php?id=1266927
 **Beispiel Signifikanz:** https://moodle-app2.let.ethz.ch/mod/page/view.php?id=1266928
 **Infoblatt Elektrische Generatoren Gruppenprojekt:** https://moodle-app2.let.ethz.ch/mod/resource/view.php?id=1287540
-[MIT Video](https://www.youtube.com/watch?v=AfQxyVuLeCs&list=PL9F74AFA03AA06A11&index=1)
+[MIT Electronics Circuits](https://www.youtube.com/watch?v=AfQxyVuLeCs&list=PL9F74AFA03AA06A11&index=1)
+[MIT Physics II](https://www.youtube.com/watch?v=rtlJoXxlSFE&list=PLyQSN7X0ro2314mKyUiOILaOC2hk6Pc3j)
 # Lectures
 - [[01 Albach Kapitel 1.1 - 1.6]]
 - [[02 Albach Kapitel 1.7 - 1.13]]
