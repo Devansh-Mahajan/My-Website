@@ -96,11 +96,19 @@ Um elektrische Ladungen zu verstehen, müssen wir zuerst das Atommodell verstehe
 
 ![[Pasted image 20251023095612.png]]
 **Wichtige Eigenschaften:**
-	- Atomkern: bestehend aus Protonen($p^+$) und Neutronen($n$) auch *Nukleonen* gennant.
+	- Atomkern: bestehend aus Protonen($e^+$) und Neutronen($n$) auch *Nukleonen* gennant.
 		- Im Verhältnis zur Atomgrösse sehr klein $10^{-14}m$,  während der Durchmesser der Elektronenumlaufbahnen etwa um den Faktor 10 000 grösser ist.
 		- Masse der Protonen und Neutronen ist gleich und sie machen den grössten Teil der Atommasse aus $m_p$ $\approx$  $m_n$ $\approx$ $1.7 * 10^{-27}kg$
-	- Elektronenwolke oder im Niels Bohr Model die *Elektronenhülle* des Atoms ist gegen aussen neutral das heisst die Anzahl Protonen($p^+$), positive Ladungsträger, und Elektronen($e^{-}$), negative Ladungsträger, ist gleich.
-	- Entfernt man ein Elektron($e^{-}$) erhält man ein positives Ion fügt man eins hinzu dan ein negatives Ion.
+	- Elektronenwolke oder im Niels Bohr Model die *Elektronenhülle* des Atoms ist gegen aussen neutral das heisst die Anzahl Protonen($e^+$), positive Ladungsträger, und Elektronen($e^{-}$), negative Ladungsträger, ist gleich.
+	- Entfernt man ein Elektron($e^{-}$) erhält man ein positives Ion (*Elektronenmangel*) fügt man eins hinzu dan ein negatives Ion (*Elektronenüberschuss*).
+	- Da der Atomkern gegen aussen neutral ist und die Anzahl Elektronen($e^{-}$) und Protonen($e^+$) gleich muss die Ladung der Elektronen($e^{-}$) und Protonen($e^+$) entgegengesetzt gleich gross sein. Die kleinste, d.h. nicht weiter unterteilbare Ladungsmenge heißt *Elementarladung $e$*. Ihr experimentell bestimmter Wert beträgt $e = 1,6021892⋅10^{−19} As$.
+	
+>[!important]
+ >- Ladungen sind stets ein Vielfaches der Elementarladung.
+>- In einem abgeschlossenen System ist die Summe der Ladungen stets       konstant.
+>- Diese Aussage gilt unabhängig von dem Bewegungszustand des Beobachters.
+>- Ladungen gleichen Vorzeichens stossen sich gegenseitig ab, Ladungen unterschiedlichen Vorzeichens ziehen sich gegenseitig an.
+
 - **Elektrische Ladung ($Q$):**
     
     - Existiert als positive (Protonen) und negative (Elektronen).
@@ -112,14 +120,20 @@ Um elektrische Ladungen zu verstehen, müssen wir zuerst das Atommodell verstehe
     - Ladung bleibt in isolierten Systemen erhalten.
         
 - **Coulomb'sches Gesetz:**
-    
-    - Quantifiziert die Kraft $\vec{F}$ zwischen zwei Punktladungen $Q_1$ und $Q_2$ im Abstand $r$:
+	- Nehmen wir 2 Punktladungen $Q_1$ und $Q_2$ mit einem Abstand von $r$
+	- Mit der Festlegung eines Einheitsvektors $\vec{e}_{r}$, der gemäß Abb. 1.2 in Richtung der Verbindungslinie von der Punktladung Q1 zur Punktladung Q2 zeigt
+	- Wenn die Ladungen beide das gleiche Vorzeichen haben stossen sie sich ab darum haben wir den Kraftvektor $\vec{F}_{2}$ (Drittes Newtonsches Gesetz, Kraft gleich Gegenkraft, hätten wir auch einen Kraftvektor  $\vec{F}_{1}$ an $Q_1$ in die entgegengesetzte Richtung, aber in der Abbildung 1.2 wurde auf diesen verzichtet)
+	- Couloumb fand heraus das die Kraft zwischen zwei Ladungen $Q_1$ und $Q_2$ proportional zum Produkt der beiden Ladungen und umgekehrt proportional zum Quadrat des Abstandes r zwischen den Ladungen ist. Mit der Proportionalitätskonstante $\displaystyle \frac{1}{4\pi\epsilon_0}$ folgt daraus die Beziehung:
+$$
+F \sim \frac{Q_1 Q_2}{r^2} \quad \rightarrow \quad F = \frac{1}{4\pi\epsilon_0} \frac{Q_1 Q_2}{r^2}.
+$$
+    ![[Pasted image 20251023111458.png]]
+    - Quantifiziert die Kraft $\vec{F}_{2}$ zwischen zwei Punktladungen $Q_1$ und $Q_2$ im Abstand $r$:
         
         $$\vec{F}_{2}=\vec{e}_{r}\frac{1}{4\pi\epsilon_{0}}\frac{Q_{1}Q_{2}}{r^{2}}$$
-        
-    - wobei $\vec{e}_r$ der Einheitsvektor ist, der von $Q_1$ nach $Q_2$ zeigt, und $\epsilon_0$ die Permittivität des freien Raums ist ($\approx 8.854 \times 10^{-12}$ As/Vm).
-        
-    - Die Kraftgröße ist proportional zum Produkt der Ladungen und umgekehrt proportional zum Quadrat des Abstands.
+>[!important]
+        > wobei $\vec{e}_r$ der Einheitsvektor ist, der von $Q_1$ nach $Q_2$ zeigt, und $\epsilon_0$ die Permittivität des freien Raums ist ($\approx 8.854 \times 10^{-12}$ As/Vm).
+        >  Die Kraftgröße ist proportional zum Produkt der Ladungen und umgekehrt proportional zum Quadrat des Abstands.
         
 - **Elektrisches Feld ($\vec{E}$):**
     
