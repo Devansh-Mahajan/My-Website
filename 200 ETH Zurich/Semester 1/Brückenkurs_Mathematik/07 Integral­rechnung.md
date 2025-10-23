@@ -9,9 +9,9 @@ Integral calculus fundamentally deals with accumulating quantities, often visual
 
 ## 1.1. Motivation and Historical Context
 
-- **Ancient Roots:** Archimedes (around 250 BCE) calculated the area of a parabolic segment, effectively performing an early integration 1111.
+- **Ancient Roots:** Archimedes (around 250 BCE) calculated the area of a parabolic segment, effectively performing an early integration.
     
-- **17th Century Development:** Newton and Leibniz independently developed calculus, establishing the crucial link between differentiation (tangent problem) and integration (area problem) 2222.
+- **17th Century Development:** Newton and Leibniz independently developed calculus, establishing the crucial link between differentiation (tangent problem) and integration (area problem).
     
 - **19th Century Rigor:** Cauchy and Weierstrass provided the formal definitions and proofs used today, including defining the derivative as a limit of the difference quotient and rigorously proving the Fundamental Theorem 3333. Bernhard Riemann formalized the concept of the integral using sums44.
     
@@ -31,11 +31,11 @@ These sums all take the general form $\sum_{i=0}^{n-1} f(x_i) \Delta x$, known 
 
 ## 1.3. The Definite Integral
 
-- Definition: The definite integral of a function $f(x)$ from $a$ to $b$ is defined as the limit of the Riemann Sum 10:
+- Definition: The definite integral of a function $f(x)$ from $a$ to $b$ is defined as the limit of the Riemann Sum:
     
     $$\int_a^b f(x) dx := \lim_{\Delta x \to 0 \text{ bzw. } n \to \infty} \left( \sum_{i=0}^{n-1} f(x_i) \Delta x \right)$$
     
-- Terminology 11:
+- Terminology:
     
     - $a, b$: **Integration limits** (lower and upper).
         
@@ -45,18 +45,18 @@ These sums all take the general form $\sum_{i=0}^{n-1} f(x_i) \Delta x$, known 
         
     - $dx$: Indicates the **integration variable**.
         
-- **Result:** A definite integral is always a **number**13.
+- **Result:** A definite integral is always a **number**.
     
 
 ## 1.4. Geometric Interpretation: Area
 
-- If $f(x) \ge 0$ on $[a, b]$, the Riemann sum approximates the area under the curve using rectangles (Untersumme/Obersumme) 14141414.
+- If $f(x) \ge 0$ on $[a, b]$, the Riemann sum approximates the area under the curve using rectangles (Untersumme/Obersumme).
     
-- In this case, the definite integral $\int_a^b f(x) dx$ gives the **exact area** under the graph of $f(x)$ from $x=a$ to $x=b$ 15151515.
+- In this case, the definite integral $\int_a^b f(x) dx$ gives the **exact area** under the graph of $f(x)$ from $x=a$ to $x=b$.
     
-- **Important:** If $f(x)$ takes negative values, the integral represents a **net area**, where areas below the x-axis are counted negatively 16.
+- **Important:** If $f(x)$ takes negative values, the integral represents a **net area**, where areas below the x-axis are counted negatively.
     
-    - If $f(x) < 0$ on $[a,b]$, then $\int_a^b f(x) dx = -I$ (negative of the geometric area) 17171717.
+    - If $f(x) < 0$ on $[a,b]$, then $\int_a^b f(x) dx = -I$ (negative of the geometric area).
         
 
 ## 1.5. Direct Calculation (via Definition)
