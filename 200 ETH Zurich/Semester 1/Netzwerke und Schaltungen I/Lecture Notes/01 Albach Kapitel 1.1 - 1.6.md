@@ -140,8 +140,63 @@ $$
 > - wobei $\vec{e}_r$ der Einheitsvektor ist, der von $Q_1$ nach $Q_2$ zeigt, und $\epsilon_0$ die elektrische Feldkonstante (Dielektrizitätskonstante des Vakuums) ist ($\approx 8.854 \times 10^{-12}$ As/Vm).
 >  - Die Kraftgröße ist proportional zum Produkt der Ladungen und umgekehrt proportional zum Quadrat des Abstands.
 
-- **Vergleich Elektrische Ladung vs. Schwerkraft**
-	- nehmen wir an wir haben 2 Protonen($e^+$) mit einem Abstand $d$ gemäss Coloumb
+**Vergleich: Elektrische Kraft vs. Gravitationskraft (zwischen 2 Protonen)**
+
+Wir vergleichen die **abstoßende elektrische Kraft ($F_{el}$)** mit der **anziehenden Gravitationskraft ($F_{gr}$)** zwischen zwei Protonen im Abstand $d$.
+
+Formeln:
+
+**1. Elektrische Kraft (Coulomb-Gesetz):**
+
+$$F_{el} = \frac{(1.6 \cdot 10^{-19})^2 \cdot 9 \cdot 10^9}{d^2} = \frac{(1.6 \cdot 10^{-19})^2}{d^2} \cdot \frac{1}{4\pi\epsilon_0}$$
+
+- $1.6 \cdot 10^{-19}$ C: Elementarladung $e$ (Ladung eines Protons)
+    
+- $9 \cdot 10^9$ N·m²/C²: Proportionalitätskonstante $\displaystyle\frac{1}{4\pi\epsilon_0}$
+    
+
+**2. Gravitationskraft (Newtonsches Gravitationsgesetz):**
+
+$$F_{gr} = \frac{(1.7 \cdot 10^{-27})^2 \cdot 6.7 \cdot 10^{-11}}{d^2}$$
+
+- $1.7 \cdot 10^{-27}$ kg: Masse eines Protons $m_p$ (Näherung, genauer: $1.67 \cdot 10^{-27}$ kg)
+    
+- $6.7 \cdot 10^{-11}$ N·m²/kg²: Gravitationskonstante $G$
+    
+**3. Beschleunigung des Protons (Newtons 2. Gesetz):** Die Beschleunigung, die ein Proton durch die elektrische Kraft eines anderen Protons erfährt, ist:
+
+$$a_p= \displaystyle\frac{m_p}{​F_{el}​​}$$
+Die Kräfte die den Kern zusammenhalten sind die **Kernkräfte**.
+
+
+
+---
+
+**Schlussfolgerung (Conclusion)**
+
+Das Ziel dieses Vergleichs ist zu zeigen, wie sich die Stärken der beiden fundamentalen Kräfte zueinander verhalten.
+
+Um die Kräfte direkt zu vergleichen, bilden wir das Verhältnis $\frac{F_{el}}{F_{gr}}$. Man bemerkt sofort, dass sich der Abstand $d^2$ herauskürzt.
+
+$$\frac{F_{el}}{F_{gr}} = \frac{(1.6 \cdot 10^{-19})^2 \cdot 9 \cdot 10^9}{(1.7 \cdot 10^{-27})^2 \cdot 6.7 \cdot 10^{-11}} \approx 1.2 \cdot 10^{36}$$
+
+Dies führt zu einer wichtigen Einteilung, welche Kraft auf welcher Skala dominiert:
+
+1. **Nukleare Skala (10−12 m):** Im Atomkern sind die **Kernkräfte** (Starke Wechselwirkung) am stärksten. Sie überwinden die massive elektrische Abstoßung der Protonen und halten den Kern zusammen.
+    
+2. **Atomare & Menschliche Skala (>1000 km):** Die **elektrischen Kräfte** dominieren. Sie halten Atome und Moleküle zusammen und bestimmen damit die gesamte Struktur unserer Welt – von Festkörpern bis hin zu biologischen Systemen (dein Körper).
+    
+3. **Kosmische Skala (Planeten, Sterne, Galaxien):** Die **Gravitation** dominiert das Universum im Großen.
+**Wieso?**
+Obwohl sie $d$ in der Formel herauskürzt haben die meisten Dinge im Universum eine sehr kleine Menge an Ladung/Masse.
+
+Beispiel Erde und Mars: Obwohl beide Himmelskörper eine Ladung von ca. 400.000 Coulomb haben, ist ihre Masse so gigantisch, dass die Gravitationskraft zwischen ihnen $10^{17}$ (17 Größenordnungen) stärker ist als die elektrische Kraft.
+
+> [!summary] Fazit
+> 
+> Die elektrische Kraft (Abstoßung) zwischen zwei Protonen ist um den Faktor $10^{36}$ (eine Zahl mit 36 Nullen!) stärker als ihre gegenseitige Gravitationskraft (Anziehung).
+> 
+> Auf subatomarer Ebene ist die Gravitation im Vergleich zur elektromagnetischen Kraft **vollkommen vernachlässigbar**. Und ist ist auf subatomerer Ebene die Kraft die alles zusammen. 
         
 - **Elektrisches Feld ($\vec{E}$):**
     
