@@ -85,12 +85,12 @@ Dieser Kurs behandelt die Grundlagen basierend auf den **Kapiteln 1-6** des Al
 
 ---
 
-# Kapitel 1: Das elektrostatische Feld
+# Kapitel 1.1: Das elektrostatische Feld
 
 Dieses Kapitel führt die grundlegenden Konzepte im Zusammenhang mit **stationären elektrischen Ladungen** und den von ihnen ausgeübten Kräften ein.
 
 ![](https://www.youtube.com/watch?v=x1-SibwIPM4&list=PLyQSN7X0ro2314mKyUiOILaOC2hk6Pc3j&index=2)
-## Schlüsselkonzepte & Definitionen
+
 
 ### Bohr'sches Atommodell
 Um elektrische Ladungen zu verstehen, müssen wir zuerst das Atommodell verstehen:
@@ -120,7 +120,7 @@ Um elektrische Ladungen zu verstehen, müssen wir zuerst das Atommodell verstehe
 		
 - Ladung bleibt in isolierten Systemen erhalten.
         
-#### Coulomb'sches Gesetz:
+# Kapitel 1.2: Das Coulomb'sche Gesetz:
 - Nehmen wir 2 Punktladungen $Q_1$ und $Q_2$ mit einem Abstand von $r$
 	- Mit der Festlegung eines Einheitsvektors $\vec{e}_{r}$, der gemäß Abb. 1.2 in Richtung der Verbindungslinie von der Punktladung $Q_1$ zur Punktladung $Q_2$ zeigt
 	- Wenn die Ladungen beide das gleiche Vorzeichen haben stossen sie sich ab darum haben wir den Kraftvektor $\vec{F}_{2}$ (Drittes Newtonsches Gesetz, Kraft gleich Gegenkraft, hätten wir auch einen Kraftvektor  $\vec{F}_{1}$ an $Q_1$ in die entgegengesetzte Richtung, aber in der Abbildung 1.2 wurde auf diesen verzichtet)
@@ -141,7 +141,7 @@ $$
 > - wobei $\vec{e}_r$ der Einheitsvektor ist, der von $Q_1$ nach $Q_2$ zeigt, und $\epsilon_0$ die elektrische Feldkonstante (Dielektrizitätskonstante des Vakuums) ist ($\approx 8.854 \times 10^{-12}$ As/Vm).
 >  - Die Kraftgröße ist proportional zum Produkt der Ladungen und umgekehrt proportional zum Quadrat des Abstands.
 
-**Vergleich: Elektrische Kraft vs. Gravitationskraft (zwischen 2 Protonen)**
+### Elektrische Kraft vs. Gravitationskraft 
 
 Wir vergleichen die **abstoßende elektrische Kraft ($F_{el}$)** mit der **anziehenden Gravitationskraft ($F_{gr}$)** zwischen zwei Protonen im Abstand $d$.
 
@@ -184,7 +184,7 @@ Obwohl sich $d$ in der Formel herauskürzt haben die meisten Dinge im Universum 
 Beispiel Erde und Mars: Obwohl beide Himmelskörper eine Ladung von ca. 400.000 Coulomb haben, ist ihre Masse so gigantisch, dass die Gravitationskraft zwischen ihnen $10^{17}$ (17 Grössenordnungen) stärker ist als die elektrische Kraft.
 
 
-### Elektrisches Feld ($\vec{E}$):
+# Kapitel 1.3: Die elektrische Feldstärke
 ![](https://youtu.be/Pd9HY8iLiCA?si=WUl65j2WDeoP272O)
 - Ein Konzept, das eingeführt wurde, um Kräfte zu erklären, die auf Distanz wirken. Ladungen erzeugen ein elektrisches Feld im umgebenden Raum. (siehe [[01 Albach Kapitel 1.1 - 1.6#Coulomb'sches Gesetz | Coulomb'sches Gesetz]])
 ![[Pasted image 20251023164928.png]]
@@ -194,14 +194,21 @@ Beispiel Erde und Mars: Obwohl beide Himmelskörper eine Ladung von ca. 400.000 
         
 - Feld einer Punktladung $Q_1$: $\vec{E}_{1}=\vec{e}_{r}\frac{Q_{1}}{4\pi\epsilon_{0}r^{2}}$.
         
-- Die Kraft auf eine Ladung $Q$ in einem elektrischen Feld ist $\vec{F} = Q\vec{E}$.
-Beispiel Feldlinien einer Positiven Ladung $Q_{+}$ weil die Testladung immer positive ist 
+
+Beispiel Feldlinien einer Positiven Ladung $Q_{+}$
 ![[Pasted image 20251023170222.png]]
-        
+Man sieht das Elektrische Feld ist am stärksten in der nähe der Ladung deshalb sind die Pfeile dort am grössten jedoch werden sie immer kleiner weil das Feld im $r^2$ abnimmt.
+Beispiel Feldlinien einer Positiven Ladung $Q_{-}$        
+![[Pasted image 20251023171024.png]]
+
+>[!important]
+> Während sich die als elektrische Feldstärke bezeichnete vektorielle Raumzustandsgröße auf einen speziellen Raumpunkt bezieht, kennzeichnet man mit dem Begriff elektrisches Feld die Gesamtheit der Feldvektoren in allen Raumpunkten.
+
+# Kapitel 1.4: Überlagerung von Feldern
 - **Superpositionsprinzip:**
-    
     - Das gesamte elektrische Feld (oder die Kraft) von mehreren Ladungen ist die **Vektorsumme** der Felder (oder Kräfte), die von jeder Ladung einzeln erzeugt werden.
-        
+        ![[Pasted image 20251023173203.png]]
+		- Die Kraft auf eine Ladung $Q$ auf dem Punkt $P$ in einem elektrischen Feld ist immer $\vec{F} = Q\vec{E}$.
 - **Ladungsdichten:**
     
     - Für kontinuierliche Verteilungen: Linienladung $\lambda$ (As/m), Flächenladung $\sigma$ (As/m²), Volumenladung $\rho$ (As/m³).
