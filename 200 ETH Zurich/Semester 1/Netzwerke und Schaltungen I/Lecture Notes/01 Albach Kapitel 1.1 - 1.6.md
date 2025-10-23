@@ -163,13 +163,6 @@ $$F_{gr} = \frac{(1.7 \cdot 10^{-27})^2 \cdot 6.7 \cdot 10^{-11}}{d^2}$$
     
 - $6.7 \cdot 10^{-11}$ N·m²/kg²: Gravitationskonstante $G$
     
-**3. Beschleunigung des Protons (Newtons 2. Gesetz):** Die Beschleunigung, die ein Proton durch die elektrische Kraft eines anderen Protons erfährt, ist:
-
-$$a_p= \displaystyle\frac{m_p}{​F_{el}​​}$$
-Die Kräfte die den Kern zusammenhalten sind die **Kernkräfte**.
-
-
-
 ---
 
 **Schlussfolgerung (Conclusion)**
@@ -182,26 +175,19 @@ $$\frac{F_{el}}{F_{gr}} = \frac{(1.6 \cdot 10^{-19})^2 \cdot 9 \cdot 10^9}{(1.7 
 
 Dies führt zu einer wichtigen Einteilung, welche Kraft auf welcher Skala dominiert:
 
-1. **Nukleare Skala (10−12 m):** Im Atomkern sind die **Kernkräfte** (Starke Wechselwirkung) am stärksten. Sie überwinden die massive elektrische Abstoßung der Protonen und halten den Kern zusammen.
-    
-2. **Atomare & Menschliche Skala (>1000 km):** Die **elektrischen Kräfte** dominieren. Sie halten Atome und Moleküle zusammen und bestimmen damit die gesamte Struktur unserer Welt – von Festkörpern bis hin zu biologischen Systemen (dein Körper).
-    
-3. **Kosmische Skala (Planeten, Sterne, Galaxien):** Die **Gravitation** dominiert das Universum im Großen.
+**Menschliche Skala**: Die **elektrischen Kräfte** dominieren. Sie halten Atome und Moleküle zusammen und bestimmen damit die gesamte Struktur unserer Welt – von Festkörpern bis hin zu biologischen Systemen (Menschlicher Körper).
+ **Kosmische Skala (Planeten, Sterne, Galaxien):** Die **Gravitation** dominiert das Universum im Grossen.
 **Wieso?**
-Obwohl sie $d$ in der Formel herauskürzt haben die meisten Dinge im Universum eine sehr kleine Menge an Ladung/Masse.
+Obwohl sich $d$ in der Formel herauskürzt haben die meisten Dinge im Universum eine sehr kleine Menge an Ladung/Masse.
 
-Beispiel Erde und Mars: Obwohl beide Himmelskörper eine Ladung von ca. 400.000 Coulomb haben, ist ihre Masse so gigantisch, dass die Gravitationskraft zwischen ihnen $10^{17}$ (17 Größenordnungen) stärker ist als die elektrische Kraft.
+Beispiel Erde und Mars: Obwohl beide Himmelskörper eine Ladung von ca. 400.000 Coulomb haben, ist ihre Masse so gigantisch, dass die Gravitationskraft zwischen ihnen $10^{17}$ (17 Grössenordnungen) stärker ist als die elektrische Kraft.
 
-> [!summary] Fazit
-> 
-> Die elektrische Kraft (Abstoßung) zwischen zwei Protonen ist um den Faktor $10^{36}$ (eine Zahl mit 36 Nullen!) stärker als ihre gegenseitige Gravitationskraft (Anziehung).
-> 
-> Auf subatomarer Ebene ist die Gravitation im Vergleich zur elektromagnetischen Kraft **vollkommen vernachlässigbar**. Und ist ist auf subatomerer Ebene die Kraft die alles zusammen. 
-        
+
 - **Elektrisches Feld ($\vec{E}$):**
     
     - Ein Konzept, das eingeführt wurde, um Kräfte zu erklären, die auf Distanz wirken. Ladungen erzeugen ein elektrisches Feld im umgebenden Raum.
-        
+
+
     - Definiert als die Kraft pro positiver Einheits-Testladung: $\vec{E} = \vec{F}/Q_{test}$. Es ist eine Eigenschaft der Quellladung(en) und des Raums. Einheit: V/m.
         
     - Feld einer Punktladung $Q_1$: $\vec{E}_{1}=\vec{e}_{r}\frac{Q_{1}}{4\pi\epsilon_{0}r^{2}}$.
