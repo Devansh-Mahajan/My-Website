@@ -24,146 +24,166 @@ Für das Lösen der Bonusaufgabe ist es hilfreich, Appendix A, B und C aus dem L
 **Schlüsselkonzepte:**
 
 - Linien- und Flächenintegrale (Anhang C, Lernvideos #03 und #04 von EE4ETH)
+    
 - elektrostatische Kraft: Richtung und Stärke (Kap. 1.3)
+    
 - das Coulomb'sche Gesetz (Kap 1.2)
+    
 
 **Lernziele:**
 
 - mithilfe des Coulomb'schen Gesetzes Kräfte auf Ladungen berechnen
+    
 - den Begriff des "elektrischen Feldes" verstehen und erklären
-## Course Introduction: Netzwerke und Schaltungen 1 (NuS1)
-
-This course aims to build understanding of **both the concepts and the quantitative calculations** in electrical networks and circuits.
-
-### Course Structure & Approach
-
-- **Interactive Learning:** This course utilizes an interactive format rather than traditional lectures2. **Active participation is expected**.
-    
-- **Preparation:** You're expected to **read the relevant textbook sections _before_ each lecture**. Lectures will focus on deepening understanding, discussing examples, showing experiments, and clarifying difficulties.
-    
-- **Practice:** Calculation skills are trained through exercises solved at home and during tutored exercise sessions.
-    
-- **Support:** Additional help is available via the Study Center and Moodle forums.
     
 
-### Resources
+> [!info]
+> 
+> Ich habe die legendären [Vorlesungen von Walter Lewin](https://www.youtube.com/watch?v=rtlJoXxlSFE&list=PLyQSN7X0ro2314mKyUiOILaOC2hk6Pc3j&index=1) als Ergänzung in diesem Kurs verwendet.
 
-- **Textbook:** "Elektrotechnik", 2nd Edition by Manfred Albach, published by Pearson. Includes an access code for the MyLab online learning platform.
-    
-- **Exercise Book:** "Elektrotechnik Aufgabensammlung" by Albach & Fischer provides additional problems.
-    
+## Kurseinführung: Netzwerke und Schaltungen 1 (NuS1)
 
-### Assessment & Bonus
+Dieser Kurs zielt darauf ab, ein Verständnis **sowohl der Konzepte als auch der quantitativen Berechnungen** in elektrischen Netzwerken und Schaltungen aufzubauen.
 
-- **Exam:** A 120-minute session exam (part of Basisprüfung Block A) in a hybrid format (paper and online). It includes short questions and longer problems testing both conceptual understanding and calculations.
-    
-- **Allowed Aids:** The paper version of the Albach "Elektrotechnik" textbook (can have handwritten notes), dictionaries, a formula sheet (max. 2 A4 pages), and specific calculators (Win7/Win8 version on computer or a simple calculator according to D-ITET guidelines). **Notes from exercises or old exams are NOT allowed**.
-    
-- **Notenbonus:** You can earn up to a **0.25 grade bonus**. This is achieved by completing weekly reading checks and bonus exercises on Moodle. Points accumulate throughout the semester, with the bonus scaling linearly from 0 (at 140 points) to 0.25 (at 280 points or more). Submissions are due **Sundays by 18:00**.
-    
+### Kursstruktur & Ansatz
 
-### Prerequisites
-
-- **Math:** A strong foundation in **single-variable calculus and vector calculus** is required. The Math Bridge Course is highly recommended.
+- **Interaktives Lernen:** Dieser Kurs verwendet ein interaktives Format anstelle von traditionellen Vorlesungen2. **Aktive Teilnahme wird erwartet**.
     
-- **Course-Specific Math:** Concepts like **orthogonal coordinate systems** and **multi-dimensional integration (line/surface integrals)** are needed and covered in Appendices A, B, and C of the textbook and early exercises.
+- **Vorbereitung:** Es wird erwartet, dass Sie **die relevanten Lehrbuchabschnitte _vor_ jeder Vorlesung lesen**. Die Vorlesungen konzentrieren sich auf die Vertiefung des Verständnisses, die Diskussion von Beispielen, das Zeigen von Experimenten und die Klärung von Schwierigkeiten.
+    
+- **Übung:** Rechenfähigkeiten werden durch Übungen trainiert, die zu Hause und während betreuter Übungsstunden gelöst werden.
+    
+- **Unterstützung:** Zusätzliche Hilfe ist über das Study Center und die Moodle-Foren verfügbar.
     
 
-### Course Content (NuS1)
+### Ressourcen
 
-This course covers the fundamentals based on **Chapters 1-6** of the Albach textbook. Topics include electrostatic fields, stationary current fields, simple networks, conduction mechanisms, stationary magnetic fields, and time-varying electromagnetic fields. Later topics like AC analysis and transformations (Chapters 7-11) are covered in subsequent courses.
+- **Lehrbuch:** "Elektrotechnik", 2. Auflage von Manfred Albach, erschienen bei Pearson. Enthält einen Zugangscode für die Online-Lernplattform MyLab.
+    
+- **Übungsbuch:** "Elektrotechnik Aufgabensammlung" von Albach & Fischer bietet zusätzliche Aufgaben.
+    
+
+### Bewertung & Bonus
+
+- **Prüfung:** Eine 120-minütige Sessionsprüfung (Teil der Basisprüfung Block A) in einem hybriden Format (Papier und online). Sie umfasst kurze Fragen und längere Probleme, die sowohl das konzeptionelle Verständnis als auch Berechnungen testen.
+    
+- **Erlaubte Hilfsmittel:** Die Papierversion des Albach "Elektrotechnik" Lehrbuchs (darf handschriftliche Notizen enthalten), Wörterbücher, ein Formelblatt (max. 2 A4-Seiten) und spezifische Taschenrechner (Win7/Win8-Version auf dem Computer oder ein einfacher Taschenrechner gemäß D-ITET-Richtlinien). **Notizen aus Übungen oder alten Prüfungen sind NICHT erlaubt**.
+    
+- **Notenbonus:** Sie können bis zu einen **0.25 Notenbonus** verdienen. Dieser wird durch das Absolvieren wöchentlicher Lesetests und Bonusübungen auf Moodle erreicht. Punkte sammeln sich über das Semester an, wobei der Bonus linear von 0 (bei 140 Punkten) bis 0.25 (bei 280 Punkten oder mehr) skaliert. Abgaben sind **Sonntags bis 18:00 Uhr** fällig.
+    
+
+### Voraussetzungen
+
+- **Mathematik:** Eine solide Grundlage in **Analysis einer Variablen und Vektorrechnung** ist erforderlich. Der Mathe-Brückenkurs wird dringend empfohlen.
+    
+- **Kursspezifische Mathematik:** Konzepte wie **orthogonale Koordinatensysteme** und **mehrdimensionale Integration (Linien-/Oberflächenintegrale)** werden benötigt und in den Anhängen A, B und C des Lehrbuchs sowie in frühen Übungen behandelt.
+    
+
+### Kursinhalt (NuS1)
+
+Dieser Kurs behandelt die Grundlagen basierend auf den **Kapiteln 1-6** des Albach-Lehrbuchs. Zu den Themen gehören elektrostatische Felder, stationäre Strömungsfelder, einfache Netzwerke, Leitungsmechanismen, stationäre Magnetfelder und zeitlich veränderliche elektromagnetische Felder. Spätere Themen wie Wechselstromanalyse und Transformationen (Kapitel 7-11) werden in nachfolgenden Kursen behandelt.
 
 ---
 
-## Chapter 1: The Electrostatic Field ⚡️
+## Kapitel 1: Das elektrostatische Feld
 
-This chapter introduces the fundamental concepts related to **stationary electric charges** and the forces they exert.
+Dieses Kapitel führt die grundlegenden Konzepte im Zusammenhang mit **stationären elektrischen Ladungen** und den von ihnen ausgeübten Kräften ein.
 
-### Key Concepts & Definitions
+![](https://www.youtube.com/watch?v=x1-SibwIPM4&list=PLyQSN7X0ro2314mKyUiOILaOC2hk6Pc3j&index=2)
+### Schlüsselkonzepte & Definitionen
 
-- **Electric Charge ($Q$):**
+Um elektrische Ladungen zu verstehen, müssen wir zuerst das Atommodell verstehen:
+
+![[Pasted image 20251023095612.png]]
+**Wichtige Eigenschaften:**
+	- Atomkern: bestehend aus Protonen($p^+$) und Neutronen($n$) auch *Nukleonen* gennant.
+		- Im Verhältnis zur Atomgrösse sehr klein $10^{-14}m$,  während der Durchmesser der Elektronenumlaufbahnen etwa um den Faktor 10 000 grösser ist.
+		- Masse der Protonen und Neutronen ist gleich und sie machen den grössten Teil der Atommasse aus $m_p$ $\approx$  $m_n$ $\approx$ $1.7 * 10^{-27}kg$
+	- Elektronenwolke oder im Niels Bohr Model die *Elektronenhülle* des Atoms ist gegen aussen neutral das heisst die Anzahl Protonen($p^+$), positive Ladungsträger, und Elektronen($e^{-}$), negative Ladungsträger, ist gleich.
+	- Entfernt man ein Elektron($e^{-}$) erhält man ein positives Ion fügt man eins hinzu dan ein negatives Ion.
+- **Elektrische Ladung ($Q$):**
     
-    - Exists as positive (protons) and negative (electrons).
+    - Existiert als positive (Protonen) und negative (Elektronen).
         
-    - The smallest indivisible unit is the elementary charge $e \approx 1.602 \times 10^{-19}$ As.
+    - Die kleinste unteilbare Einheit ist die Elementarladung $e \approx 1.602 \times 10^{-19}$ As.
         
-    - Like charges repel, unlike charges attract.
+    - Gleichnamige Ladungen stoßen sich ab, ungleichnamige ziehen sich an.
         
-    - Charge is conserved in isolated systems.
+    - Ladung bleibt in isolierten Systemen erhalten.
         
-- **Coulomb's Law:**
+- **Coulomb'sches Gesetz:**
     
-    - Quantifies the force $\vec{F}$ between two point charges $Q_1$ and $Q_2$ separated by distance $r$:
+    - Quantifiziert die Kraft $\vec{F}$ zwischen zwei Punktladungen $Q_1$ und $Q_2$ im Abstand $r$:
+        
         $$\vec{F}_{2}=\vec{e}_{r}\frac{1}{4\pi\epsilon_{0}}\frac{Q_{1}Q_{2}}{r^{2}}$$
         
-        where $\vec{e}_r$ is the unit vector pointing from $Q_1$ to $Q_2$ and $\epsilon_0$ is the permittivity of free space ($\approx 8.854 \times 10^{-12}$ As/Vm).
+    - wobei $\vec{e}_r$ der Einheitsvektor ist, der von $Q_1$ nach $Q_2$ zeigt, und $\epsilon_0$ die Permittivität des freien Raums ist ($\approx 8.854 \times 10^{-12}$ As/Vm).
         
-    - The force magnitude is proportional to the product of charges and inversely proportional to the square of the distance.
+    - Die Kraftgröße ist proportional zum Produkt der Ladungen und umgekehrt proportional zum Quadrat des Abstands.
         
-- **Electric Field ($\vec{E}$):**
+- **Elektrisches Feld ($\vec{E}$):**
     
-    - A concept introduced to explain forces acting at a distance. Charges create an electric field in the surrounding space.
+    - Ein Konzept, das eingeführt wurde, um Kräfte zu erklären, die auf Distanz wirken. Ladungen erzeugen ein elektrisches Feld im umgebenden Raum.
         
-    - Defined as the force per unit positive test charge: $\vec{E} = \vec{F}/Q_{test}$. It is a property of the source charge(s) and space. Unit: V/m.
+    - Definiert als die Kraft pro positiver Einheits-Testladung: $\vec{E} = \vec{F}/Q_{test}$. Es ist eine Eigenschaft der Quellladung(en) und des Raums. Einheit: V/m.
         
-    - Field of a point charge $Q_1$: $\vec{E}_{1}=\vec{e}_{r}\frac{Q_{1}}{4\pi\epsilon_{0}r^{2}}$.
+    - Feld einer Punktladung $Q_1$: $\vec{E}_{1}=\vec{e}_{r}\frac{Q_{1}}{4\pi\epsilon_{0}r^{2}}$.
         
-    - The force on a charge $Q$ in an electric field is $\vec{F} = Q\vec{E}$.
+    - Die Kraft auf eine Ladung $Q$ in einem elektrischen Feld ist $\vec{F} = Q\vec{E}$.
         
-- **Superposition Principle:**
+- **Superpositionsprinzip:**
     
-    - The total electric field (or force) from multiple charges is the **vector sum** of the fields (or forces) created by each charge individually.
+    - Das gesamte elektrische Feld (oder die Kraft) von mehreren Ladungen ist die **Vektorsumme** der Felder (oder Kräfte), die von jeder Ladung einzeln erzeugt werden.
         
-- **Charge Densities:**
+- **Ladungsdichten:**
     
-    - For continuous distributions: Line charge $\lambda$ (As/m), Surface charge $\sigma$ (As/m²), Volume charge $\rho$ (As/m³).
+    - Für kontinuierliche Verteilungen: Linienladung $\lambda$ (As/m), Flächenladung $\sigma$ (As/m²), Volumenladung $\rho$ (As/m³).
         
-- **Field Representation:**
+- **Felddarstellung:**
     
-    - **Field Lines:** Originate on positive charges, terminate on negative charges43. Tangent gives $\vec{E}$ direction. Density can indicate strength. Cannot cross.
+    - **Feldlinien:** Beginnen auf positiven Ladungen, enden auf negativen Ladungen43. Die Tangente gibt die $\vec{E}$-Richtung an. Die Dichte kann die Stärke anzeigen. Können sich nicht kreuzen.
         
-    - **Equipotential Surfaces:** Surfaces where the electric potential is constant. $\vec{E}$ is always perpendicular to equipotential surfaces. Conductors in electrostatics form equipotential regions.
+    - **Äquipotentialflächen:** Flächen, auf denen das elektrische Potential konstant ist. $\vec{E}$ steht immer senkrecht auf Äquipotentialflächen. Leiter bilden in der Elektrostatik Äquipotentialbereiche.
         
-- **Electric Potential ($\varphi_e$) & Voltage ($U$):**
+- **Elektrisches Potential ($\varphi_e$) & Spannung ($U$):**
     
-    - Electrostatic field is conservative: $\oint_C \vec{E}\cdot d\vec{s} = 0$.
+    - Das elektrostatische Feld ist konservativ: $\oint_C \vec{E}\cdot d\vec{s} = 0$.
         
-    - Allows definition of a scalar potential $\varphi_e$ (Unit: V). Potential difference (Voltage) is related to the work done moving a charge: $W_e = Q(\varphi_{e}(P_1) - \varphi_{e}(P_0))$.
+    - Ermöglicht die Definition eines skalaren Potentials $\varphi_e$ (Einheit: V). Potentialdifferenz (Spannung) hängt mit der Arbeit zusammen, die beim Bewegen einer Ladung verrichtet wird: $W_e = Q(\varphi_{e}(P_1) - \varphi_{e}(P_0))$.
         
-    - Voltage between two points: $U_{12} = \varphi_{e}(P_1) - \varphi_{e}(P_2) = \int_{P_2}^{P_1} \vec{E}\cdot d\vec{s}$.
+    - Spannung zwischen zwei Punkten: $U_{12} = \varphi_{e}(P_1) - \varphi_{e}(P_2) = \int_{P_2}^{P_1} \vec{E}\cdot d\vec{s}$.
         
-- **Electric Flux Density ($\vec{D}$):**
+- **Elektrische Flussdichte ($\vec{D}$):**
     
-    - Defined as $\vec{D} = \epsilon \vec{E} = \epsilon_0 \epsilon_r \vec{E}$. Unit: As/m².
+    - Definiert als $\vec{D} = \epsilon \vec{E} = \epsilon_0 \epsilon_r \vec{E}$. Einheit: As/m².
         
-    - **Gauss's Law:** Total electric flux $\Psi$ out of a closed surface equals the enclosed charge $Q$: $\Psi=\oint_{A}\vec{D}\cdot d\vec{A}=Q$.
+    - **Gauß'sches Gesetz:** Der gesamte elektrische Fluss $\Psi$ aus einer geschlossenen Oberfläche entspricht der eingeschlossenen Ladung $Q$: $\Psi=\oint_{A}\vec{D}\cdot d\vec{A}=Q$.
         
-- **Conductors & Insulators in Electrostatic Fields:**
+- **Leiter & Isolatoren in elektrostatischen Feldern:**
     
-    - **Conductors:** Contain free charges. In electrostatics, $\vec{E}=0$ inside. They form equipotential regions58. Excess charge resides on the surface. $\vec{E}$ is perpendicular to the surface just outside. **Influence (Influenz):** Charge redistribution on a conductor due to an external field. **Shielding (Faraday Cage):** A conductive enclosure blocks external static fields from the interior.
+    - **Leiter:** Enthalten freie Ladungen. In der Elektrostatik ist $\vec{E}=0$ im Inneren. Sie bilden Äquipotentialbereiche58. Überschüssige Ladung befindet sich auf der Oberfläche. $\vec{E}$ steht direkt außen senkrecht zur Oberfläche. **Influenz:** Ladungsumverteilung auf einem Leiter aufgrund eines externen Feldes. **Abschirmung (Faraday'scher Käfig):** Ein leitfähiges Gehäuse blockiert externe statische Felder vom Inneren.
         
-    - **Dielectrics (Insulators):** Charges are bound. An external field causes **polarization** (alignment/creation of electric dipoles). Described by relative permittivity $\epsilon_r$ (or dielectric constant). $\vec{D} = \epsilon_0 \epsilon_r \vec{E}$.
+    - **Dielektrika (Isolatoren):** Ladungen sind gebunden. Ein externes Feld verursacht **Polarisation**(Ausrichtung/Erzeugung von elektrischen Dipolen). Beschrieben durch die relative Permittivität $\epsilon_r$(oder Dielektrizitätskonstante). $\vec{D} = \epsilon_0 \epsilon_r \vec{E}$.
         
-- **Capacitance ($C$):**
+- **Kapazität ($C$):**
     
-    - Measure of a system's ability to store electric charge and energy. Defined as $C=Q/U$. Unit: Farad (F).
+    - Maß für die Fähigkeit eines Systems, elektrische Ladung und Energie zu speichern. Definiert als $C=Q/U$. Einheit: Farad (F).
         
-    - Parallel Plate: $C=\frac{\epsilon A}{d}$.
+    - Plattenkondensator: $C=\frac{\epsilon A}{d}$.
         
-    - Capacitors in parallel add: $C_{ges}=\sum C_{k}$.
+    - Kondensatoren in Parallelschaltung addieren sich: $C_{ges}=\sum C_{k}$.
         
-    - Reciprocals add for capacitors in series: $1/C_{ges}=\sum 1/C_{k}$.
+    - Bei Kondensatoren in Serienschaltung addieren sich die Kehrwerte: $1/C_{ges}=\sum 1/C_{k}$.
         
-- **Electric Energy Storage:**
+- **Speicherung elektrischer Energie:**
     
-    - Energy stored in a capacitor: $W_e = \frac{1}{2}CU^2$.
+    - In einem Kondensator gespeicherte Energie: $W_e = \frac{1}{2}CU^2$.
         
-    - Energy density in the field: $w_e = \frac{1}{2}\vec{E}\cdot\vec{D}$.
+    - Energiedichte im Feld: $w_e = \frac{1}{2}\vec{E}\cdot\vec{D}$.
         
 
-### Lernziele (Week 1 / Chapter 1 Part 1)
+### Lernziele (Woche 1 / Kapitel 1 Teil 1)
 
-- Calculate forces on charges using Coulomb's Law.
+- Kräfte auf Ladungen mithilfe des Coulomb'schen Gesetzes berechnen.
     
-- Understand and explain the concept of the electric field.
-![](https://www.youtube.com/watch?v=x1-SibwIPM4)
+- Den Begriff des elektrischen Feldes verstehen und erklären.
