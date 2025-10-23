@@ -128,12 +128,20 @@ $$
 F \sim \frac{Q_1 Q_2}{r^2} \quad \rightarrow \quad F = \frac{1}{4\pi\epsilon_0} \frac{Q_1 Q_2}{r^2}.
 $$
     ![[Pasted image 20251023111458.png]]
-    - Quantifiziert die Kraft $\vec{F}_{2}$ zwischen zwei Punktladungen $Q_1$ und $Q_2$ im Abstand $r$:
-        
-        $$\vec{F}_{2}=\vec{e}_{r}\frac{1}{4\pi\epsilon_{0}}\frac{Q_{1}Q_{2}}{r^{2}}$$
+    - Quantifiziert die Kraft $\vec{F}_{2}$ zwischen zwei Punktladungen $Q_1$ und $Q_2$ im Abstand $r$ mit der Richtung vom Einheitsvektor $\vec{e}_{r}$:
+    $$\vec{F}_{2}=\vec{e}_{r}\frac{1}{4\pi\epsilon_{0}}\frac{Q_{1}Q_{2}}{r^{2}}$$
+	- Der Faktor $ε_0$ wird als *elektrische Feldkonstante (Dielektrizitätskonstante des Vakuums)* bezeichnet. Durch die Festlegung der Basiseinheit 1A (vgl. Kapitel 5.4) ist $ε_0$ nicht mehr frei wählbar. Messungen ergeben einen auf vier Stellen gerundeten Wert von $ε_0 = 8,854⋅10^{−12} As/Vm$.
+	- Die Formel ist Vorzeichenempfindlich weil wenn $Q_1$ und $Q_2$ beide negative oder positive sind ist $\vec{F}_{2}$ in der Richting von $\vec{e}_{r}$ ist das Vorzeichen der Ladungen $Q_1$ und $Q_2$ jedoch unterschiedlich dann ist die Richtung entgegengesetzt von $\vec{e}_{r}$. Was intuitive Sinn macht denn gleiche Ladungen stossen sich ab und ungleiche ziehen sich an.
+	- Proportionalitätskonstante $\displaystyle \frac{1}{4\pi\epsilon_0} = 9 * 10^9  \frac{Nm^2}{C^2}$ 
+	- Die Ladung $Q$ wird in der Einheit $C$ (Couloumb) angegeben wichtig zu wissen $1C$ ist eine sehr sehr grosse Ladung meistens arbeiten wir mit mikro Couloumb ($µC$) oder weniger.
+		- Die Ladung von einem Proton welches gleich ist wie die Ladung eines Elektrons beträgt $Q_{e^+} = Q_{e^-} \approx 1.6 * 10^{-19}C$
+	
 >[!important]
-        > wobei $\vec{e}_r$ der Einheitsvektor ist, der von $Q_1$ nach $Q_2$ zeigt, und $\epsilon_0$ die Permittivität des freien Raums ist ($\approx 8.854 \times 10^{-12}$ As/Vm).
-        >  Die Kraftgröße ist proportional zum Produkt der Ladungen und umgekehrt proportional zum Quadrat des Abstands.
+> - wobei $\vec{e}_r$ der Einheitsvektor ist, der von $Q_1$ nach $Q_2$ zeigt, und $\epsilon_0$ die elektrische Feldkonstante (Dielektrizitätskonstante des Vakuums) ist ($\approx 8.854 \times 10^{-12}$ As/Vm).
+>  - Die Kraftgröße ist proportional zum Produkt der Ladungen und umgekehrt proportional zum Quadrat des Abstands.
+
+- **Vergleich Elektrische Ladung vs. Schwerkraft**
+	- nehmen wir an wir haben 2 Protonen($e^+$) mit einem Abstand $d$ gemäss Coloumb
         
 - **Elektrisches Feld ($\vec{E}$):**
     
@@ -195,9 +203,3 @@ $$
         
     - Energiedichte im Feld: $w_e = \frac{1}{2}\vec{E}\cdot\vec{D}$.
         
-
-### Lernziele (Woche 1 / Kapitel 1 Teil 1)
-
-- Kräfte auf Ladungen mithilfe des Coulomb'schen Gesetzes berechnen.
-    
-- Den Begriff des elektrischen Feldes verstehen und erklären.
