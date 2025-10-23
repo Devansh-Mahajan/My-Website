@@ -85,13 +85,14 @@ Dieser Kurs behandelt die Grundlagen basierend auf den **Kapiteln 1-6** des Al
 
 ---
 
-## Kapitel 1: Das elektrostatische Feld
+# Kapitel 1: Das elektrostatische Feld
 
 Dieses Kapitel führt die grundlegenden Konzepte im Zusammenhang mit **stationären elektrischen Ladungen** und den von ihnen ausgeübten Kräften ein.
 
 ![](https://www.youtube.com/watch?v=x1-SibwIPM4&list=PLyQSN7X0ro2314mKyUiOILaOC2hk6Pc3j&index=2)
-### Schlüsselkonzepte & Definitionen
+## Schlüsselkonzepte & Definitionen
 
+### Bohr'sches Atommodell
 Um elektrische Ladungen zu verstehen, müssen wir zuerst das Atommodell verstehen:
 
 ![[Pasted image 20251023095612.png]]
@@ -109,19 +110,19 @@ Um elektrische Ladungen zu verstehen, müssen wir zuerst das Atommodell verstehe
 >- Diese Aussage gilt unabhängig von dem Bewegungszustand des Beobachters.
 >- Ladungen gleichen Vorzeichens stossen sich gegenseitig ab, Ladungen unterschiedlichen Vorzeichens ziehen sich gegenseitig an.
 
-- **Elektrische Ladung ($Q$):**
+### Elektrische Ladung ($Q$):
     
-    - Existiert als positive (Protonen) und negative (Elektronen).
+- Existiert als positive (Protonen) und negative (Elektronen).
+		
+- Die kleinste unteilbare Einheit ist die Elementarladung $e \approx 1.602 \times 10^{-19}$ As.
+		
+- Gleichnamige Ladungen stoßen sich ab, ungleichnamige ziehen sich an.
+		
+- Ladung bleibt in isolierten Systemen erhalten.
         
-    - Die kleinste unteilbare Einheit ist die Elementarladung $e \approx 1.602 \times 10^{-19}$ As.
-        
-    - Gleichnamige Ladungen stoßen sich ab, ungleichnamige ziehen sich an.
-        
-    - Ladung bleibt in isolierten Systemen erhalten.
-        
-- **Coulomb'sches Gesetz:**
-	- Nehmen wir 2 Punktladungen $Q_1$ und $Q_2$ mit einem Abstand von $r$
-	- Mit der Festlegung eines Einheitsvektors $\vec{e}_{r}$, der gemäß Abb. 1.2 in Richtung der Verbindungslinie von der Punktladung Q1 zur Punktladung Q2 zeigt
+#### Coulomb'sches Gesetz:
+- Nehmen wir 2 Punktladungen $Q_1$ und $Q_2$ mit einem Abstand von $r$
+	- Mit der Festlegung eines Einheitsvektors $\vec{e}_{r}$, der gemäß Abb. 1.2 in Richtung der Verbindungslinie von der Punktladung $Q_1$ zur Punktladung $Q_2$ zeigt
 	- Wenn die Ladungen beide das gleiche Vorzeichen haben stossen sie sich ab darum haben wir den Kraftvektor $\vec{F}_{2}$ (Drittes Newtonsches Gesetz, Kraft gleich Gegenkraft, hätten wir auch einen Kraftvektor  $\vec{F}_{1}$ an $Q_1$ in die entgegengesetzte Richtung, aber in der Abbildung 1.2 wurde auf diesen verzichtet)
 	- Couloumb fand heraus das die Kraft zwischen zwei Ladungen $Q_1$ und $Q_2$ proportional zum Produkt der beiden Ladungen und umgekehrt proportional zum Quadrat des Abstandes r zwischen den Ladungen ist. Mit der Proportionalitätskonstante $\displaystyle \frac{1}{4\pi\epsilon_0}$ folgt daraus die Beziehung:
 $$
@@ -183,16 +184,19 @@ Obwohl sich $d$ in der Formel herauskürzt haben die meisten Dinge im Universum 
 Beispiel Erde und Mars: Obwohl beide Himmelskörper eine Ladung von ca. 400.000 Coulomb haben, ist ihre Masse so gigantisch, dass die Gravitationskraft zwischen ihnen $10^{17}$ (17 Grössenordnungen) stärker ist als die elektrische Kraft.
 
 
-- **Elektrisches Feld ($\vec{E}$):**
-    
-    - Ein Konzept, das eingeführt wurde, um Kräfte zu erklären, die auf Distanz wirken. Ladungen erzeugen ein elektrisches Feld im umgebenden Raum.
-
-
-    - Definiert als die Kraft pro positiver Einheits-Testladung: $\vec{E} = \vec{F}/Q_{test}$. Es ist eine Eigenschaft der Quellladung(en) und des Raums. Einheit: V/m.
+### Elektrisches Feld ($\vec{E}$):
+![](https://youtu.be/Pd9HY8iLiCA?si=WUl65j2WDeoP272O)
+- Ein Konzept, das eingeführt wurde, um Kräfte zu erklären, die auf Distanz wirken. Ladungen erzeugen ein elektrisches Feld im umgebenden Raum. (siehe [[01 Albach Kapitel 1.1 - 1.6#Coulomb'sches Gesetz | Coulomb'sches Gesetz]])
+![[Pasted image 20251023164928.png]]
+	(im Bild ist $Q_{test}$ als q definiert zusätzlich gilt das die Ladung $Q_{+}$ positive oder negative  $Q_{-}$ sein kann 
+- Definiert als die Kraft pro positiver Einheits-Testladung: $\vec{E} = \vec{F}/Q_{test}$ (Ich eliminere so $Q_{test}$ in der Formel).Einheit: V/m. 
+- Die Richtung des Elektrischen Feldes $\vec{E}$ ist gleich wie die Kraft $\vec{F}$ auf einer positiven Testladung $Q_{test}$. Heisst wenn $Q_{+}$ positive ist dann zeigt der Vektor $\vec{E}$ von $Q_{test}$ weg vice versa.
         
-    - Feld einer Punktladung $Q_1$: $\vec{E}_{1}=\vec{e}_{r}\frac{Q_{1}}{4\pi\epsilon_{0}r^{2}}$.
+- Feld einer Punktladung $Q_1$: $\vec{E}_{1}=\vec{e}_{r}\frac{Q_{1}}{4\pi\epsilon_{0}r^{2}}$.
         
-    - Die Kraft auf eine Ladung $Q$ in einem elektrischen Feld ist $\vec{F} = Q\vec{E}$.
+- Die Kraft auf eine Ladung $Q$ in einem elektrischen Feld ist $\vec{F} = Q\vec{E}$.
+Beispiel Feldlinien einer Positiven Ladung $Q_{+}$ weil die Testladung immer positive ist 
+![[Pasted image 20251023170222.png]]
         
 - **Superpositionsprinzip:**
     
