@@ -1,22 +1,21 @@
 Vorwissen für NuS1 #Vektorgeometrie #Vektoren
-# Zusammenfassung: Anhänge Elektrotechnik Buch
-
-Hier ist eine Zusammenfassung der Anhänge A bis H und der Koordinatensysteme aus dem Buch "Elektrotechnik" von Manfred Albach (2. Auflage).
-
----
+# Anhänge Elektrotechnik Buch
 
 ## Anhang A: Vektoren   
 
 Dieser Anhang behandelt die Grundlagen der Vektorrechnung.
 
+![[Pasted image 20251024170610.png]]
 ### A.1 Einheitsvektoren
 * Ein **Einheitsvektor** $\vec{e}_a$ hat den Betrag 1 ($|\vec{e}_a| = 1$) und zeigt in eine bestimmte Richtung.
 * Jeder Vektor $\vec{a}$ kann als Produkt seines Betrags $a = |\vec{a}|$ und eines Einheitsvektors in seiner Richtung dargestellt werden: $\vec{a} = a \vec{e}_a$.
 
+![[Pasted image 20251024170633.png]]
+
 ### A.2 Einfache Rechenoperationen
 * **Addition/Subtraktion**: Vektoren werden komponentenweise addiert/subtrahiert oder grafisch aneinandergelegt. $\vec{a} \pm \vec{b}$.
 * **Multiplikation mit Skalar**: Ein Vektor $\vec{a}$ multipliziert mit einem Skalar $p$ ergibt $p\vec{a}$, was die Länge des Vektors um den Faktor $|p|$ ändert und ggf. die Richtung umkehrt (wenn $p < 0$).
-
+![[Pasted image 20251024172032.png]]
 ### A.3 Das Skalarprodukt (Dot Product)
 * Das Skalarprodukt zweier Vektoren $\vec{a}$ und $\vec{b}$ ist ein **Skalar**:
     $$\vec{a} \cdot \vec{b} = ab \cos \alpha$$
@@ -48,7 +47,7 @@ Dieser Anhang behandelt die Grundlagen der Vektorrechnung.
 
 ---
 
-## Anhang B: Orthogonale Koordinatensysteme 🌐
+## Anhang B: Orthogonale Koordinatensysteme 
 
 Dieser Anhang beschreibt drei wichtige orthogonale Koordinatensysteme. Orthogonal bedeutet, dass die Einheitsvektoren an jedem Punkt senkrecht aufeinander stehen. Es handelt sich um Rechtssysteme.
 
