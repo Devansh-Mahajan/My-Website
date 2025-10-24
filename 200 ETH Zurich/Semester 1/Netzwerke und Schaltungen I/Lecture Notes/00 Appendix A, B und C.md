@@ -1,7 +1,9 @@
 Vorwissen für NuS1 #Vektorgeometrie #Vektoren
 # Anhänge Elektrotechnik Buch
 
+
 ## Anhang A: Vektoren   
+
 
 Dieser Anhang behandelt die Grundlagen der Vektorrechnung.
 
@@ -18,12 +20,16 @@ Dieser Anhang behandelt die Grundlagen der Vektorrechnung.
 ![[Pasted image 20251024172032.png]]
 ### A.3 Das Skalarprodukt (Dot Product)
 * Das Skalarprodukt zweier Vektoren $\vec{a}$ und $\vec{b}$ ist ein **Skalar**:
+
+
+$$\vec{a} \cdot \vec{b} \stackrel{\text{(A.2)}}{=} a \vec{e}_a \cdot b \vec{e}_b = ab \vec{e}_a \cdot \vec{e}_b = ab \cos \alpha$$
     $$\vec{a} \cdot \vec{b} = ab \cos \alpha$$
     wobei $\alpha$ der Winkel zwischen den Vektoren ist.
 * Es ist **kommutativ**: $\vec{a} \cdot \vec{b} = \vec{b} \cdot \vec{a}$.
 * Stehen Vektoren **senkrecht** aufeinander, ist ihr Skalarprodukt Null ($\vec{a} \cdot \vec{b} = 0$, wenn $\alpha = 90^\circ$).
 * Sind Vektoren **parallel**, ist $\vec{a} \cdot \vec{b} = ab$. Sind sie **antiparallel**, ist $\vec{a} \cdot \vec{b} = -ab$.
 
+![[Pasted image 20251024182905.png]]
 ### A.4 Das Vektorprodukt (Cross Product)
 * Das Vektorprodukt zweier Vektoren $\vec{a}$ und $\vec{b}$ ist ein **Vektor** $\vec{c}$:
     $$\vec{c} = \vec{a} \times \vec{b}$$
