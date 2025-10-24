@@ -5,7 +5,7 @@ Hier ist eine Zusammenfassung der Anhänge A bis H und der Koordinatensysteme au
 
 ---
 
-## Anhang A: Vektoren   🧭
+## Anhang A: Vektoren   
 
 Dieser Anhang behandelt die Grundlagen der Vektorrechnung.
 
@@ -87,8 +87,10 @@ Dieser Anhang beschreibt drei wichtige orthogonale Koordinatensysteme. Orthogona
 
 *(Hinweis: Der separate Abschnitt "Koordinatensysteme" auf S. 676 listet nur die Symbole für die in Anhang B erklärten Systeme auf.)*
 
----
 
+![[Pasted image 20251024154550.png]]
+![[Pasted image 20251024154638.png]]
+___
 ## Anhang C: Ergänzungen zur Integralrechnung ∫
 
 Erklärt zwei wichtige Integralarten für Vektorfelder.
@@ -109,7 +111,7 @@ Erklärt zwei wichtige Integralarten für Vektorfelder.
 
 ---
 
-## Anhang D: Physikalische Grundbegriffe ⚛️
+## Anhang D: Physikalische Grundbegriffe 
 
 Diskutiert die korrekte Handhabung physikalischer Größen und Gleichungen.
 
@@ -158,7 +160,7 @@ Zusammenfassung der komplexen Zahlen und Rechenoperationen, wichtig für die Wec
 
 ---
 
-## Anhang F: Ergänzungen zu den Ortskurven 🔄
+## Anhang F: Ergänzungen zu den Ortskurven 
 
 Liefert die mathematischen Beweise für die geometrischen Regeln der Inversion (Kehrwertbildung $w = 1/z$) von Ortskurven in der komplexen Ebene.
 
@@ -169,7 +171,7 @@ Liefert die mathematischen Beweise für die geometrischen Regeln der Inversion (
 
 ---
 
-## Anhang G: Ergänzungen zur Fourier-Entwicklung 📈📉
+## Anhang G: Ergänzungen zur Fourier-Entwicklung 
 
 Vertieft Aspekte der Konvergenz von Fourier-Reihen.
 
@@ -190,7 +192,7 @@ Vertieft Aspekte der Konvergenz von Fourier-Reihen.
 
 ---
 
-## Anhang H: Kleine mathematische Formelsammlung 🧮
+## Anhang H: Kleine mathematische Formelsammlung 
 
 Dieser Anhang listet nützliche Formeln und Tabellen auf.
 

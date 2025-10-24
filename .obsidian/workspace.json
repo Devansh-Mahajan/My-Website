@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/00 Appendix A, B und C.md",
+                "file": "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Albach Kapitel 1.1 - 1.6.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "00 Appendix A, B und C"
+              "title": "01 Albach Kapitel 1.1 - 1.6"
             }
           }
         ]
@@ -88,8 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "44ac1d4342bf6645",
@@ -153,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/00 Appendix A, B und C.md",
+                "file": "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Albach Kapitel 1.1 - 1.6.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 00 Appendix A, B und C"
+              "title": "Outline of 01 Albach Kapitel 1.1 - 1.6"
             }
           },
           {
@@ -207,8 +206,10 @@
   },
   "active": "ad382df16bb37d1d",
   "lastOpenFiles": [
-    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Albach Kapitel 1.1 - 1.6.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/00 Appendix A, B und C.md",
+    "998 Attachements/Pasted image 20251024154638.png",
+    "998 Attachements/Pasted image 20251024154550.png",
+    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Albach Kapitel 1.1 - 1.6.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/05 Albach Kapitel 3.1 - 3.5.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/04 Albach Kapitel 2.1 - 2.9.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/02 Albach Kapitel 1.7 - 1.13.md",
@@ -253,9 +254,6 @@
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/04 Exponential­funktion & Logarithmus­(funktion).md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/03 Trigonometrie.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/02 Funktionen.md",
-    "400 IOI/Untitled.md",
-    "998 Attachements/Pasted image 20251018183505.png",
-    "998 Attachements/Pasted image 20251018182516.png",
-    "998 Attachements/Pasted image 20251017134232.png"
+    "998 Attachements/Pasted image 20251018183505.png"
   ]
 }
