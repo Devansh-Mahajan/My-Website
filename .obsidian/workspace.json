@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/04 Albach Kapitel 2.1 - 2.9.md",
+                "file": "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/00 Appendix A, B und C.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "04 Albach Kapitel 2.1 - 2.9"
+              "title": "00 Appendix A, B und C"
             }
           }
         ]
@@ -88,7 +88,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "44ac1d4342bf6645",
@@ -152,13 +153,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/04 Albach Kapitel 2.1 - 2.9.md",
+                "file": "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/00 Appendix A, B und C.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 04 Albach Kapitel 2.1 - 2.9"
+              "title": "Outline of 00 Appendix A, B und C"
             }
           },
           {
@@ -186,7 +187,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -205,8 +207,11 @@
   },
   "active": "ad382df16bb37d1d",
   "lastOpenFiles": [
-    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/02 Albach Kapitel 1.7 - 1.13.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Albach Kapitel 1.1 - 1.6.md",
+    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/00 Appendix A, B und C.md",
+    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/05 Albach Kapitel 3.1 - 3.5.md",
+    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/04 Albach Kapitel 2.1 - 2.9.md",
+    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/02 Albach Kapitel 1.7 - 1.13.md",
     "998 Attachements/Pasted image 20251023173203.png",
     "998 Attachements/Pasted image 20251023171024.png",
     "998 Attachements/Pasted image 20251023170222.png",
@@ -221,11 +226,9 @@
     "index.md",
     "Legal.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/06 Albach Kapitel 3.6 - 3.10.md",
-    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/05 Albach Kapitel 3.1 - 3.5.md",
     "998 Attachements/Max_Ausgangsleistung.asc",
     "998 Attachements/Einfaches_elektrisches_Netzwerk_3_6.asc",
     "998 Attachements/HS25_NuS1_Kapitel_3_Einfache_elektrische_Netzwerke_Teil_2von2.pdf",
-    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/04 Albach Kapitel 2.1 - 2.9.md",
     "998 Attachements/Unbelasteter Spannungsteiler.asc",
     "998 Attachements/Belasteter Spannungsteiler.asc",
     "998 Attachements/Belasteter Spannungsteiler_sweep_R.asc",

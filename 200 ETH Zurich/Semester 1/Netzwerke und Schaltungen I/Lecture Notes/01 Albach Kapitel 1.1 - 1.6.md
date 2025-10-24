@@ -13,7 +13,7 @@ publish: true
 ---
 [[07 Integral­rechnung]]
 [[08 Vektor­geometrie]]
-Für das Lösen der Bonusaufgabe ist es hilfreich, Appendix A, B und C aus dem Lehrbuch von Albach durchzugehen.
+Für das Lösen der Bonusaufgabe ist es hilfreich, [[00 Appendix A, B und C]] aus dem Lehrbuch von Albach durchzugehen.
 
 **Material:**
 [[HS24_NuS1_Kapitel_0_Intro.pdf]], [[HS25_NuS1_Kapitel_1_El_Stat_Feld_1von3.pdf]]

@@ -80,7 +80,7 @@ A current field is "stationary" (or DC) if the current density $\vec{J}$ is co
 
 These are material properties that link the electric field $\vec{E}$ to the resulting current density $\vec{J}$.
 
-- **Drift Velocity:** In a conductor, free electrons move randomly17171717. An applied $\vec{E}$-field causes them to "drift" with an average velocity $\vec{v}_e$. This drift velocity is proportional to the field: $\vec{v}_e = -\mu_e \vec{E}$, where $\mu_e$ is the electron mobility.
+- **Drift Velocity:** In a conductor, free electrons move randomly17171717. An applied $\vec{E}$-field causes them to "drift" with an average velocity $\vec{v}_e$. This drift velocity is proportional to the field: $\vec{v}_e = -\mu_e \vec{E}$, where $\mu_e$ is the electron mobility           .
     
 - Specific Conductivity ($\kappa$): Combining the microscopic view $\vec{J} = \rho \vec{v}_e = (-ne)\vec{v}_e$ (where $n$ is the density of free electrons) with the drift velocity gives:
     
