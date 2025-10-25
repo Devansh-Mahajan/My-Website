@@ -48,8 +48,6 @@ Für das Lösen der Bonusaufgabe ist es hilfreich, [[00 Anhänge Elektrotechnik 
 Dieses Kapitel führt die grundlegenden Konzepte im Zusammenhang mit **stationären elektrischen Ladungen** und den von ihnen ausgeübten Kräften ein.
 
 ![](https://www.youtube.com/watch?v=x1-SibwIPM4&list=PLyQSN7X0ro2314mKyUiOILaOC2hk6Pc3j&index=2)
-
-
 ### Bohr'sches Atommodell
 Um elektrische Ladungen zu verstehen, müssen wir zuerst das Atommodell verstehen:
 
