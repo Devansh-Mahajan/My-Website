@@ -1,7 +1,13 @@
-Vorwissen für NuS1 #Vektorgeometrie #Vektoren
-
-
-
+---
+tags:
+  - class
+  - itet
+  - NuS1
+  - Vektoren
+  - Vektorgeometrie
+draft: false
+publish: true
+---
 ## Anhang A: Vektoren   
 
 
