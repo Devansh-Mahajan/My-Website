@@ -14,8 +14,8 @@ title: 227-0001-00L Netzwerke und Schaltungen I
 [MIT Physics II](https://www.youtube.com/watch?v=rtlJoXxlSFE&list=PLyQSN7X0ro2314mKyUiOILaOC2hk6Pc3j)  
 # Lectures
 - [[00 Anhänge Elektrotechnik Buch]]. 
-- [[01 Albach Kapitel 1.1. - 1.6]]. 
-- [[02 Albach Kapitel 1.7 - 1.13]]. 
+- [[01 Albach Kapitel 1.1 - 1.6]].   
+- [[02 Albach Kapitel 1.7 - 1.13]].   
 - [[03 Albach Kapitel 1.14 - 1.21]]. 
 - [[04 Albach Kapitel 2.1 - 2.9]]. 
 - [[05 Albach Kapitel 3.1 - 3.5]]. 
