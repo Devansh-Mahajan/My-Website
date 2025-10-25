@@ -24,68 +24,26 @@ Für das Lösen der Bonusaufgabe ist es hilfreich, [[00 Anhänge Elektrotechnik 
 **Schlüsselkonzepte:**
 
 - Linien- und Flächenintegrale (Anhang C, Lernvideos #03 und #04 von EE4ETH)
-    
+
 - elektrostatische Kraft: Richtung und Stärke (Kap. 1.3)
-    
+
 - das Coulomb'sche Gesetz (Kap 1.2)
-    
+
 
 **Lernziele:**
 
 - mithilfe des Coulomb'schen Gesetzes Kräfte auf Ladungen berechnen
-    
+
 - den Begriff des "elektrischen Feldes" verstehen und erklären
-    
+
 
 > [!info]
 > 
 > Ich habe die legendären [Vorlesungen von Walter Lewin](https://www.youtube.com/watch?v=rtlJoXxlSFE&list=PLyQSN7X0ro2314mKyUiOILaOC2hk6Pc3j&index=1) als Ergänzung in diesem Kurs verwendet.
 
-## Kurseinführung: Netzwerke und Schaltungen 1 (NuS1)
 
-Dieser Kurs zielt darauf ab, ein Verständnis **sowohl der Konzepte als auch der quantitativen Berechnungen** in elektrischen Netzwerken und Schaltungen aufzubauen.
 
-### Kursstruktur & Ansatz
-
-- **Interaktives Lernen:** Dieser Kurs verwendet ein interaktives Format anstelle von traditionellen Vorlesungen2. **Aktive Teilnahme wird erwartet**.
-    
-- **Vorbereitung:** Es wird erwartet, dass Sie **die relevanten Lehrbuchabschnitte _vor_ jeder Vorlesung lesen**. Die Vorlesungen konzentrieren sich auf die Vertiefung des Verständnisses, die Diskussion von Beispielen, das Zeigen von Experimenten und die Klärung von Schwierigkeiten.
-    
-- **Übung:** Rechenfähigkeiten werden durch Übungen trainiert, die zu Hause und während betreuter Übungsstunden gelöst werden.
-    
-- **Unterstützung:** Zusätzliche Hilfe ist über das Study Center und die Moodle-Foren verfügbar.
-    
-
-### Ressourcen
-
-- **Lehrbuch:** "Elektrotechnik", 2. Auflage von Manfred Albach, erschienen bei Pearson. Enthält einen Zugangscode für die Online-Lernplattform MyLab.
-    
-- **Übungsbuch:** "Elektrotechnik Aufgabensammlung" von Albach & Fischer bietet zusätzliche Aufgaben.
-    
-
-### Bewertung & Bonus
-
-- **Prüfung:** Eine 120-minütige Sessionsprüfung (Teil der Basisprüfung Block A) in einem hybriden Format (Papier und online). Sie umfasst kurze Fragen und längere Probleme, die sowohl das konzeptionelle Verständnis als auch Berechnungen testen.
-    
-- **Erlaubte Hilfsmittel:** Die Papierversion des Albach "Elektrotechnik" Lehrbuchs (darf handschriftliche Notizen enthalten), Wörterbücher, ein Formelblatt (max. 2 A4-Seiten) und spezifische Taschenrechner (Win7/Win8-Version auf dem Computer oder ein einfacher Taschenrechner gemäß D-ITET-Richtlinien). **Notizen aus Übungen oder alten Prüfungen sind NICHT erlaubt**.
-    
-- **Notenbonus:** Sie können bis zu einen **0.25 Notenbonus** verdienen. Dieser wird durch das Absolvieren wöchentlicher Lesetests und Bonusübungen auf Moodle erreicht. Punkte sammeln sich über das Semester an, wobei der Bonus linear von 0 (bei 140 Punkten) bis 0.25 (bei 280 Punkten oder mehr) skaliert. Abgaben sind **Sonntags bis 18:00 Uhr** fällig.
-    
-
-### Voraussetzungen
-
-- **Mathematik:** Eine solide Grundlage in **Analysis einer Variablen und Vektorrechnung** ist erforderlich. Der Mathe-Brückenkurs wird dringend empfohlen.
-    
-- **Kursspezifische Mathematik:** Konzepte wie **orthogonale Koordinatensysteme** und **mehrdimensionale Integration (Linien-/Oberflächenintegrale)** werden benötigt und in den Anhängen A, B und C des Lehrbuchs sowie in frühen Übungen behandelt.
-    
-
-### Kursinhalt (NuS1)
-
-Dieser Kurs behandelt die Grundlagen basierend auf den **Kapiteln 1-6** des Albach-Lehrbuchs. Zu den Themen gehören elektrostatische Felder, stationäre Strömungsfelder, einfache Netzwerke, Leitungsmechanismen, stationäre Magnetfelder und zeitlich veränderliche elektromagnetische Felder. Spätere Themen wie Wechselstromanalyse und Transformationen (Kapitel 7-11) werden in nachfolgenden Kursen behandelt.
-
----
-
-# Kapitel 1.1: Das elektrostatische Feld
+## Kapitel 1.1: Das elektrostatische Feld
 
 Dieses Kapitel führt die grundlegenden Konzepte im Zusammenhang mit **stationären elektrischen Ladungen** und den von ihnen ausgeübten Kräften ein.
 
@@ -120,7 +78,7 @@ Um elektrische Ladungen zu verstehen, müssen wir zuerst das Atommodell verstehe
 		
 - Ladung bleibt in isolierten Systemen erhalten.
         
-# Kapitel 1.2: Das Coulomb'sche Gesetz:
+## Kapitel 1.2: Das Coulomb'sche Gesetz:
 - Nehmen wir 2 Punktladungen $Q_1$ und $Q_2$ mit einem Abstand von $r$
 - Mit der Festlegung eines Einheitsvektors $\vec{e}_{r}$, der gemäß Abb. 1.2 in Richtung der Verbindungslinie von der Punktladung $Q_1$ zur Punktladung $Q_2$ zeigt
 - Wenn die Ladungen beide das gleiche Vorzeichen haben stossen sie sich ab darum haben wir den Kraftvektor $\vec{F}_{2}$ (Drittes Newtonsches Gesetz, Kraft gleich Gegenkraft, hätten wir auch einen Kraftvektor  $\vec{F}_{1}$ an $Q_1$ in die entgegengesetzte Richtung, aber in der Abbildung 1.2 wurde auf diesen verzichtet)
@@ -185,7 +143,7 @@ Obwohl sich $d$ in der Formel herauskürzt haben die meisten Dinge im Universum 
 Beispiel Erde und Mars: Obwohl beide Himmelskörper eine Ladung von ca. 400.000 Coulomb haben, ist ihre Masse so gigantisch, dass die Gravitationskraft zwischen ihnen $10^{17}$ (17 Grössenordnungen) stärker ist als die elektrische Kraft.
 
 
-# Kapitel 1.3: Die elektrische Feldstärke
+## Kapitel 1.3: Die elektrische Feldstärke
 ![](https://youtu.be/Pd9HY8iLiCA?si=WUl65j2WDeoP272O)
 - Ein Konzept, das eingeführt wurde, um Kräfte zu erklären, die auf Distanz wirken. Ladungen erzeugen ein elektrisches Feld im umgebenden Raum. (siehe [[01 Albach Kapitel 1.1 - 1.6#Coulomb'sches Gesetz | Coulomb'sches Gesetz]])
 ![[Pasted image 20251023164928.png]]
@@ -205,7 +163,7 @@ Beispiel Feldlinien einer Positiven Ladung $Q_{-}$
 >[!important]
 > Während sich die als elektrische Feldstärke bezeichnete vektorielle Raumzustandsgröße auf einen speziellen Raumpunkt bezieht, kennzeichnet man mit dem Begriff elektrisches Feld die Gesamtheit der Feldvektoren in allen Raumpunkten.
 
-# Kapitel 1.4: Überlagerung von Feldern
+## Kapitel 1.4: Überlagerung von Feldern
 - **Superpositionsprinzip:**
 - Das gesamte elektrische Feld (oder die Kraft) von mehreren Ladungen ist die **Vektorsumme** der Felder (oder Kräfte), die von jeder Ladung einzeln erzeugt werden.
 ![[Pasted image 20251023173203.png]]
