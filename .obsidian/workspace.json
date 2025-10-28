@@ -18,8 +18,33 @@
               "icon": "lucide-file-text",
               "title": "Vorlesung1"
             }
+          },
+          {
+            "id": "ceca0b31282c8b5c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/01_Organisation und Einführung in die digitale Welt.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "01_Organisation und Einführung in die digitale Welt"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -174,7 +199,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -191,15 +217,17 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "fe5f04a36be88a68",
+  "active": "ceca0b31282c8b5c",
   "lastOpenFiles": [
+    "998 Attachements/Vorlesung1.pdf",
     "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/01_Organisation und Einführung in die digitale Welt.md",
+    "998 Attachements/Pasted image 20251028122723.png",
+    "998 Attachements/Pasted image 20251028122649.png",
     "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
+    "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/02_Logische Verknüpfungen.md",
     "200 ETH Zurich/ETH BSc EECS - Overview.md",
     "100 Notes/Untitled.base",
     "998 Attachements/Vorlesung2.pdf",
-    "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/02_Logische Verknüpfungen.md",
-    "998 Attachements/Vorlesung1.pdf",
     "200 ETH Zurich/Semester 1/Analysis 1/401-0231-10L Analysis 1.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Albach Kapitel 1.1 - 1.6.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/227-0001-00L Netzwerke und Schaltungen I.md",
@@ -228,8 +256,6 @@
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/04 Albach Kapitel 2.1 - 2.9.md",
     "998 Attachements/Pasted image 20251023173203.png",
     "998 Attachements/Pasted image 20251023171024.png",
-    "998 Attachements/Pasted image 20251023170222.png",
-    "998 Attachements/Pasted image 20251023164928.png",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/03 Albach Kapitel 1.14 - 1.21.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/07 Integral­rechnung.md",
     "998 Attachements/Max_Ausgangsleistung.asc",
