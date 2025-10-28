@@ -11,6 +11,7 @@ publish: true
 ---
 **Aufzeichnung:** https://video.ethz.ch/lectures/d-itet/2025/autumn/227-0003-00L  
 **Moodle:** https://moodle-app2.let.ethz.ch/course/view.php?id=25799  
+[MIT Lecture](https://www.youtube.com/playlist?list=PLUl4u3cNGP62WVs95MNq3dQBqY2vGOtQ2)
 # Lectures
 
 [[01_Organisation und Einführung in die digitale Welt]]

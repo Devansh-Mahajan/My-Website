@@ -114,13 +114,12 @@ Die Definition erfolgt am **Einheitskreis** (Kreis mit Radius 1 um den Ursprun
 
 Herleitbar durch elementare Geometrie am Einheitskreis (z.B. für $30^\circ, 45^\circ, 60^\circ$).
 
-|**Winkel (α)**|**0∘(0)**|**30∘(π/6)**|**45∘(π/4)**|**60∘(π/3)**|**90∘(π/2)**|
-|---|---|---|---|---|---|
-|$\sin(\alpha)$|0|$1/2$|$\sqrt{2}/2$|$\sqrt{3}/2$|1|
-|$\cos(\alpha)$|1|$\sqrt{3}/2$|$\sqrt{2}/2$|$1/2$|0|
-|$\tan(\alpha)$|0|$\sqrt{3}/3$|1|$\sqrt{3}$|undef.|
-|$\cot(\alpha)$|undef.|$\sqrt{3}$|1|$\sqrt{3}/3$|0|
-|21212121212121212121212121212121||||||
+| **Winkel (α)**                   | **0∘(0)** | **30∘(π/6)** | **45∘(π/4)** | **60∘(π/3)** | **90∘(π/2)** |
+| -------------------------------- | --------- | ------------ | ------------ | ------------ | ------------ |
+| $\sin(\alpha)$                   | 0         | $1/2$        | $\sqrt{2}/2$ | $\sqrt{3}/2$ | 1            |
+| $\cos(\alpha)$                   | 1         | $\sqrt{3}/2$ | $\sqrt{2}/2$ | $1/2$        | 0            |
+| $\tan(\alpha)$                   | 0         | $\sqrt{3}/3$ | 1            | $\sqrt{3}$   | undef.       |
+| $\cot(\alpha)$                   | undef.    | $\sqrt{3}$   | 1            | $\sqrt{3}/3$ | 0            |
 
 ---
 
@@ -146,7 +145,7 @@ Da die trigonometrischen Funktionen periodisch und somit nicht bijektiv (nicht i
         
 - **Arcustangens ($\arctan$ oder $\tan^{-1}$):**
     
-    - Einschränkung von $\tan$ auf $]-\pi/2, \pi/2[$28.
+    - Einschränkung von $\tan$ auf $]-\pi/2, \pi/2[$.
         
     - $\arctan: \mathbb{R} \to ]-\pi/2, \pi/2[$.
         
@@ -206,11 +205,11 @@ $$ 1 + \cot^2(\alpha) = \frac{1}{\sin^2(\alpha)} \quad \text{39}$$
 
 Diese folgen direkt aus der Betrachtung entsprechender Winkel am Einheitskreis:
 
-- **Negative Winkel:** $\sin(-\alpha)=-\sin(\alpha)$, $\cos(-\alpha)=\cos(\alpha)$, $\tan(-\alpha)=-\tan(\alpha)$40.
+- **Negative Winkel:** $\sin(-\alpha)=-\sin(\alpha)$, $\cos(-\alpha)=\cos(\alpha)$, $\tan(-\alpha)=-\tan(\alpha)$.
     
-- **Phasenverschiebung um $\pi/2$:** $\sin(\alpha+\pi/2)=\cos(\alpha)$, $\cos(\alpha+\pi/2)=-\sin(\alpha)$ 41.
+- **Phasenverschiebung um $\pi/2$:** $\sin(\alpha+\pi/2)=\cos(\alpha)$, $\cos(\alpha+\pi/2)=-\sin(\alpha)$.
     
-- **Supplementärwinkel:** $\sin(\alpha)=\sin(\pi-\alpha)$, $\cos(\alpha)=-\cos(\pi-\alpha)$42.
+- **Supplementärwinkel:** $\sin(\alpha)=\sin(\pi-\alpha)$, $\cos(\alpha)=-\cos(\pi-\alpha)$.
     
 
 ### 5.4 Additionstheoreme
@@ -227,7 +226,7 @@ $$\tan(\alpha \pm \beta) = \frac{\tan(\alpha) \pm \tan(\beta)}{1 \mp \tan(\alpha
 
 ### 5.5 Doppel-, Halbe- und Dreifachwinkelformeln
 
-Folgen aus den Additionstheoremen (z.B. $\sin(2\alpha) = \sin(\alpha+\alpha) = \ldots$)45454545.
+Folgen aus den Additionstheoremen (z.B. $\sin(2\alpha) = \sin(\alpha+\alpha) = \ldots$).
 
 - $\sin(2\alpha) = 2 \sin(\alpha)\cos(\alpha)$ 46
     

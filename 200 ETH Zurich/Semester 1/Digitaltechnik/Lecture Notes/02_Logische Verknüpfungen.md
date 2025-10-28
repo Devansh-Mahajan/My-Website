@@ -11,13 +11,3 @@ publish: true
 ---
 **Material:**[[Vorlesung2.pdf]], [[supp_mat_2.pdf]]
 
-# Nützliche Konzepte
-
-![[Pasted image 20251016152636.png]]
-![[Pasted image 20251016152715.png]]
-![[Pasted image 20251016152737.png]]
-![[Pasted image 20251016152831.png]]
-![[Pasted image 20251016152852.png]]
-
-
-ffff
