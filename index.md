@@ -1,6 +1,5 @@
 ---
 title: Devansh Mahajan
-Notes: EECS ETH Zurich
 ---
 Hi! I'm **Devansh Mahajan**, a student of **Electronics and Computer Science (EECS)** at **ETH Zürich**.  
 

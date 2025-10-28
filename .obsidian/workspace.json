@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "353fc386cc609869",
+        "id": "d44bd2580856fc9f",
         "type": "tabs",
         "children": [
           {
-            "id": "c8f19cfe09c50e18",
+            "id": "fe5f04a36be88a68",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Vorkurs Informatik/252-0865-00L Vorkurs Informatik.md",
+                "file": "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/01_Organisation und Einführung in die digitale Welt.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "252-0865-00L Vorkurs Informatik"
+              "title": "01_Organisation und Einführung in die digitale Welt"
             }
           }
         ]
@@ -203,26 +203,31 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "c8f19cfe09c50e18",
+  "active": "fe5f04a36be88a68",
   "lastOpenFiles": [
+    "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
+    "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/01_Organisation und Einführung in die digitale Welt.md",
+    "998 Attachements/Vorlesung1.pdf",
     "200 ETH Zurich/ETH BSc EECS - Overview.md",
+    "200 ETH Zurich/Semester 1/Analysis 1/401-0231-10L Analysis 1.md",
+    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Albach Kapitel 1.1 - 1.6.md",
+    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/227-0001-00L Netzwerke und Schaltungen I.md",
+    "100 Notes/Untitled.base",
+    "Untitled.canvas",
+    "index.md",
+    "000 Goals/2025-10-28.md",
+    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/02 Albach Kapitel 1.7 - 1.13.md",
     "200 ETH Zurich/Semester 1/Vorkurs Informatik/252-0865-00L Vorkurs Informatik.md",
     "200 ETH Zurich/Semester 1/Technische Mechanik/151-0223-10L Technische Mechanik.md",
     "200 ETH Zurich/Semester 1/Microsystems I Process Technology and Integration/151-0621-00L Microsystems I Process Technology and Integration.md",
-    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/227-0001-00L Netzwerke und Schaltungen I.md",
     "200 ETH Zurich/Semester 1/Lineare Algebra/401-0151-00L Lineare Algebra.md",
-    "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
     "200 ETH Zurich/Semester 1/Digitaltechnik/Lehrbuch Digitaltechnik (in german).md",
-    "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/01_Organisation und Einführung in die digitale Welt.md",
     "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/02_Logische Verknüpfungen.md",
-    "998 Attachements/Vorlesung1.pdf",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/03 Trigonometrie.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/01 Grundlagen.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/00 Brückenkurs Mathematik.md",
-    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Albach Kapitel 1.1 - 1.6.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/05 Albach Kapitel 3.1 - 3.5.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/00 Anhänge Elektrotechnik Buch.md",
-    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/02 Albach Kapitel 1.7 - 1.13.md",
     "100 Notes/01 Albach Kapitel 1.1. - 1.6.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/06 Albach Kapitel 3.6 - 3.10.md",
     "998 Attachements/Pasted image 20251024182905.png",
@@ -238,8 +243,6 @@
     "998 Attachements/Pasted image 20251023164928.png",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/03 Albach Kapitel 1.14 - 1.21.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/07 Integral­rechnung.md",
-    "index.md",
-    "Legal.md",
     "998 Attachements/Max_Ausgangsleistung.asc",
     "998 Attachements/Einfaches_elektrisches_Netzwerk_3_6.asc",
     "998 Attachements/HS25_NuS1_Kapitel_3_Einfache_elektrische_Netzwerke_Teil_2von2.pdf",
@@ -248,12 +251,8 @@
     "998 Attachements/Belasteter Spannungsteiler_sweep_R.asc",
     "998 Attachements/Belasteter Spannungsteiler_2_sweep_R.asc",
     "998 Attachements/HS25_NuS1_Kapitel_3_Einfache_elektrische_Netzwerke_Woche_5.pdf",
-    "998 Attachements/HS25_NuS1_Kapitel_2_Das stationäre elektrische Strömungsfeld.pdf",
-    "999 Templates/03 Blog Template.md",
-    "200 ETH Zurich/Semester 1/Analysis 1/401-0231-10L Analysis 1.md",
     "Untitled 3.canvas",
     "Untitled 2.canvas",
-    "Untitled 1.canvas",
-    "Untitled.canvas"
+    "Untitled 1.canvas"
   ]
 }
