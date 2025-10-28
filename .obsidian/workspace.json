@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e4c60c8499311e2f",
+        "id": "aa1d3d0efbf637b0",
         "type": "tabs",
         "children": [
           {
-            "id": "986339609db8e008",
+            "id": "72cbebb06c5f3f1e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -203,10 +203,10 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "986339609db8e008",
+  "active": "72cbebb06c5f3f1e",
   "lastOpenFiles": [
-    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/227-0001-00L Netzwerke und Schaltungen I.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Albach Kapitel 1.1 - 1.6.md",
+    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/227-0001-00L Netzwerke und Schaltungen I.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/05 Albach Kapitel 3.1 - 3.5.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/00 Anhänge Elektrotechnik Buch.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/02 Albach Kapitel 1.7 - 1.13.md",
