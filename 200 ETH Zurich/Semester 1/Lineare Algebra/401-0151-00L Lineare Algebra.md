@@ -13,4 +13,5 @@ publish: true
 **Aufzeichnung:** https://video.ethz.ch/lectures/d-math/2025/autumn/401-0151-00L  
 **Aufzeichnung_Last_Year:** https://video.ethz.ch/lectures/d-math/2024/autumn/401-0151-00L  
 **Moodle:** https://moodle-app2.let.ethz.ch/course/view.php?id=26378  
+[MIt Lecture - Gilbert Strang](https://www.youtube.com/watch?v=7UJ4CFRGd-U&list=PL221E2BBF13BECF6C)
 # Lectures
