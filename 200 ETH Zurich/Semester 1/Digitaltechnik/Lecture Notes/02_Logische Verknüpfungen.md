@@ -11,3 +11,10 @@ publish: true
 ---
 **Material:**[[Vorlesung2.pdf]], [[supp_mat_2.pdf]]
 
+# Basisfunktionen
+## Nützliche Konzepte
+## UND, ODER, NICHT Verknüpfung
+# Schaltnetzanalyse
+## Zusammengesetzte Gatter
+## Schaltungen aus Grundgattern
+# Zusammenfassung
