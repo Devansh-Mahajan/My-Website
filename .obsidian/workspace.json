@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "aa1d3d0efbf637b0",
+        "id": "62bc827a07c380c7",
         "type": "tabs",
         "children": [
           {
-            "id": "72cbebb06c5f3f1e",
+            "id": "369fb66e0257b924",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Albach Kapitel 1.1 - 1.6.md",
+                "file": "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/03 Trigonometrie.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "01 Albach Kapitel 1.1 - 1.6"
+              "title": "03 Trigonometrie"
             }
           }
         ]
@@ -203,8 +203,10 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "72cbebb06c5f3f1e",
+  "active": "369fb66e0257b924",
   "lastOpenFiles": [
+    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/01 Grundlagen.md",
+    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/00 Brückenkurs Mathematik.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/01 Albach Kapitel 1.1 - 1.6.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/227-0001-00L Netzwerke und Schaltungen I.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/05 Albach Kapitel 3.1 - 3.5.md",
@@ -238,8 +240,6 @@
     "998 Attachements/HS25_NuS1_Kapitel_3_Einfache_elektrische_Netzwerke_Woche_5.pdf",
     "998 Attachements/HS25_NuS1_Kapitel_2_Das stationäre elektrische Strömungsfeld.pdf",
     "998 Attachements/HS25_NuS1_Kapitel_1_El_Stat_Feld_2von3 1.pdf",
-    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/01 Grundlagen.md",
-    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/00 Brückenkurs Mathematik.md",
     "999 Templates/03 Blog Template.md",
     "200 ETH Zurich/Semester 1/Analysis 1/401-0231-10L Analysis 1.md",
     "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
