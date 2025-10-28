@@ -3,7 +3,7 @@ title: Devansh Mahajan
 ---
 Hi! I'm **Devansh Mahajan**, a student of **Electronics and Computer Science (EECS)** at **ETH Zürich**.  
 
-## [[200 ETH Zurich/ETH BSc EECS - Overview|ETH Zurich]]
+## [[ETH BSc EECS - Overview|ETH Zurich]]
 Notes and reflections from my ETH journey 
 
 
