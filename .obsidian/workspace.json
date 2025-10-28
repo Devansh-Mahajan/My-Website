@@ -43,8 +43,7 @@
               "title": "01_Organisation und Einführung in die digitale Welt"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -217,10 +216,12 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "ceca0b31282c8b5c",
+  "active": "fe5f04a36be88a68",
   "lastOpenFiles": [
-    "998 Attachements/Vorlesung1.pdf",
     "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/01_Organisation und Einführung in die digitale Welt.md",
+    "998 Attachements/Pasted image 20251028144030.png",
+    "998 Attachements/Vorlesung1.pdf",
+    "998 Attachements/Pasted image 20251028143906.png",
     "998 Attachements/Pasted image 20251028122723.png",
     "998 Attachements/Pasted image 20251028122649.png",
     "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
@@ -254,8 +255,6 @@
     "998 Attachements/Pasted image 20251024154638.png",
     "998 Attachements/Pasted image 20251024154550.png",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/04 Albach Kapitel 2.1 - 2.9.md",
-    "998 Attachements/Pasted image 20251023173203.png",
-    "998 Attachements/Pasted image 20251023171024.png",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/03 Albach Kapitel 1.14 - 1.21.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/07 Integral­rechnung.md",
     "998 Attachements/Max_Ausgangsleistung.asc",

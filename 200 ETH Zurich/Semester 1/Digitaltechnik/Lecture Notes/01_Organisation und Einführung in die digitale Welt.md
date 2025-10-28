@@ -17,3 +17,8 @@ Diskretisierung des Analogen Signals ("Abtasten eines Physikalische Signals"):
 ![[Pasted image 20251028122723.png]]
 
 ## Beispiel Thermometer
+
+Als erstes legen wir unsere Auflösung fest welche hier 1°C zwischen 0°C bis 35°C beträgt
+
+![[Pasted image 20251028143906.png]]
+![[Pasted image 20251028144030.png]]
