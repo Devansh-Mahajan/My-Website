@@ -11,12 +11,24 @@
             "id": "5afd94efb02d3fba",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "998 Attachements/supp_mat_2.pdf"
+                "file": "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/02_Logische Verknüpfungen.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
-              "icon": "lucide-file-text",
-              "title": "supp_mat_2"
+              "icon": "lucide-file",
+              "title": "02_Logische Verknüpfungen"
             }
           },
           {
@@ -206,13 +218,14 @@
   },
   "active": "5afd94efb02d3fba",
   "lastOpenFiles": [
+    "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
+    "200 ETH Zurich/Semester 1/Digitaltechnik/Lehrbuch Digitaltechnik (in german).md",
     "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/02_Logische Verknüpfungen.md",
     "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/01_Organisation und Einführung in die digitale Welt.md",
+    "998 Attachements/supp_mat_2.pdf",
     "998 Attachements/Vorlesung2.pdf",
-    "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
     "998 Attachements/Vorlesung1.pdf",
     "998 Attachements/Pasted image 20251028153113.png",
-    "200 ETH Zurich/Semester 1/Digitaltechnik/Lehrbuch Digitaltechnik (in german).md",
     "998 Attachements/Pasted image 20251028144030.png",
     "998 Attachements/Pasted image 20251028143906.png",
     "998 Attachements/Pasted image 20251028122723.png",
@@ -251,7 +264,6 @@
     "998 Attachements/Unbelasteter Spannungsteiler.asc",
     "998 Attachements/Belasteter Spannungsteiler.asc",
     "998 Attachements/Belasteter Spannungsteiler_sweep_R.asc",
-    "998 Attachements/Belasteter Spannungsteiler_2_sweep_R.asc",
     "Untitled 3.canvas",
     "Untitled 2.canvas",
     "Untitled 1.canvas"
