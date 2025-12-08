@@ -9,16 +9,17 @@ publish: true
 **Material:** [[Vorlesung1.pdf]]
 
 # Analog vs. Digital
-**Problem:** Mit Analogen Signalen kann man sehr schlecht arbeiten Temperatur, Geräusche etc. ist sehr schlecht Speicherfähig und modifizierbar, haben eine unendlich hohe Auflösung und deshalb für spätere Verarbeitung (Berechnungen, Bearbeitung des Signals etc.) nicht zu gebrauchen.
 
-**Lösung:** Diskretisierung des Analogen Signals. Es ist unmöglich für uns mit wertkontinueirlichen Signalen zu arbeiten denn digitale Signale mit welchen wir in digitalen Systemen Arbeiten, besitzen nur eine endliche Zahl diskreter Werte, digitale Systeme arbeiten nur mit 0 und 1. Unsere digitale Systeme haben deshalb immer eine Auflösung im vergleich besitzen Physikalische Signale eine unendliche Auflösung. Dies bedeutet einen Informationsverlust, der als Quantisierungsfehler bezeichnet wird, denn nach der Wertdiskretisierung ist nicht mehr zurückzuverfolgen, auf welchen Analogwert innerhalb eines Quantisierungsintervalls("Abtastintervall") das Digitalsignal ursächlich zurückzuführen war.
+**Problem:** Mit Analogen Signalen kann man sehr schlecht arbeiten Temperature, Geräusche etc. ist sehr schlecht Speicherfähig und modifizierbar, haben eine unendlich hohe Auflösung und deshalb für spätere Verarbeitung (Berechnungen, Bearbeitung des Signals etc.) nicht zu gebrauchen.
 
-Diskretisierung des Analogen Signals ("Abtasten eines Physikalische Signals"):
+**Lösung:** Diskretisierung des Analogen Signals. Es ist unmöglich für uns mit wertkontinueirlichen Signalen zu arbeiten denn digitale Signale mit welchen wir in digitalen Systemen Arbeiten, besitzen nur eine endliche Zahl diskreter Werte, digitale Systeme arbeiten nur mit 0 und 1. Unsere digitale Systeme haben deshalb immer eine Auflösung im vergleich besitzen Physikalische Signale eine unendliche Auflösung. Dies bedeutet einen Informationsverlust, der also Quantisierungsfehler bezeichnet wird, denn nach der Wertdiskretisierung ist nicht mehr zurückzuverfolgen, auf welchen Analogwert innerhalb eines Quantisierungsintervalls("Abtastintervall") das Digitalsignal ursächlich zurückzuführen war.
+
+Diskretisierung des Analogen Signals ("Abtasten eines Physikalische Signals"):<br>
 ![[Pasted image 20251028122723.png]]
 
 ## Beispiel Thermometer
 
-Als erstes legen wir unsere Auflösung fest welche hier 1°C zwischen 0°C bis 35°C beträgt
+Also erstes legen wir unsere Auflösung fest welche hier 1°C zwischen 0°C bis 35°C beträgt
 
-![[Pasted image 20251028143906.png]]
+![[Pasted image 20251028143906.png]]<br>
 ![[Pasted image 20251028144030.png]]![[Pasted image 20251028153113.png]]
