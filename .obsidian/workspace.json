@@ -11,10 +11,24 @@
             "id": "2bec41d7829324a5",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/01 Grundlagen.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "01 Grundlagen"
             }
           }
         ]
@@ -74,7 +88,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "44ac1d4342bf6645",
@@ -192,6 +207,8 @@
   },
   "active": "2bec41d7829324a5",
   "lastOpenFiles": [
+    "998 Attachements/Pasted image 20260211175839.png",
+    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/00 Brückenkurs Mathematik.md",
     "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/02_Logische Verknüpfungen.md",
     "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/01_Organisation und Einführung in die digitale Welt.md",
     "200 ETH Zurich/Semester 1/Digitaltechnik/227-0003-00L Digitaltechnik.md",
@@ -220,7 +237,6 @@
     "200 ETH Zurich/Semester 1/Lineare Algebra/401-0151-00L Lineare Algebra.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/03 Trigonometrie.md",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/01 Grundlagen.md",
-    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/00 Brückenkurs Mathematik.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/00 Anhänge Elektrotechnik Buch.md",
     "100 Notes/01 Albach Kapitel 1.1. - 1.6.md",
     "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/06 Albach Kapitel 3.6 - 3.10.md",
