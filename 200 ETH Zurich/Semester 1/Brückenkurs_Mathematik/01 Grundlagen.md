@@ -78,6 +78,44 @@ Daher jede Zahl, Variable, Paramter und eine aneinanderkettung von Termen durch 
 
 ### Gleichungen
 
+
+#### Was ist eine Gleichung?
+
+**Intuitiv betrachtet:**
+
+Eine Gleichung ist keine starre Behauptung, sondern eine **Frage** oder ein **Rätsel**. Sie beschreibt eine Situation, in der zwei unterschiedliche Dinge (Terme) den gleichen Wert haben sollen.
+
+Man kann sie sich wie eine Balkenwaage vorstellen:
+
+- **Linke Waagschale:** Term 1 (z. B. $2x - 5$)
+    
+- **Rechte Waagschale:** Term 2 (z. B. $17 - 3x$)
+    
+- **Gleichheitszeichen ($=$):** Der Zustand der Balance.
+    
+
+**Die Kernfrage:**
+
+> "Welchen Wert muss ich für den Platzhalter $x$ einsetzen, damit die Waage im Gleichgewicht ist?"
+
+**Der Kontext ("Weltausschnitt"):**
+
+Gleichungen fallen nicht vom Himmel. Sie modellieren ein echtes Problem.
+
+- Der Term links ($2x - 5$) beschreibt einen Sachverhalt (z. B. Kosten Tarif A).
+    
+- Der Term rechts ($17 - 3x$) beschreibt einen anderen Sachverhalt (z. B. Kosten Tarif B).
+    
+- Die Gleichung fragt: **Wann (unter welcher Bedingung) ist beides gleich?**
+    
+
+**Mathematische Struktur:**
+
+$$\underbrace{2x - 5}_{\text{Term 1}} = \underbrace{17 - 3x}_{\text{Term 2}}$$
+
+- **Grundmenge:** Welche Zahlen _darf_ ich überhaupt testen?
+    
+- **Lösungsmenge:** Welche Zahlen machen die Aussage _wahr_?
 # Assignments
 
 # Anki
