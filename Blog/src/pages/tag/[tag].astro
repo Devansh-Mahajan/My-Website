@@ -6,178 +6,189 @@ import BlogCard from '../../components/BlogCard.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-    const posts = await getCollection('blog', ({ data }) => {
-        return data.publish !== false;
-    });
+	const posts = await getCollection('blog', ({ data }) => data.publish !== false);
+	const tags = [...new Set(posts.flatMap(post => post.data.tags ?? []))];
 
-    // Get all unique tags
-    const tags = [...new Set(posts.flatMap(post => post.data.tags ?? []))];
-    
-    // Add "all" tag that shows all posts
-    return [
-        {
-            params: { tag: 'all' },
-            props: { posts, tag: 'all' }
-        },
-        ...tags.map(tag => ({
-            params: { tag },
-            props: {
-                posts: posts.filter(post => post.data.tags?.includes(tag)),
-                tag
-            }
-        }))
-    ];
+	return [
+		{ params: { tag: 'all' }, props: { posts, tag: 'all' } },
+		...tags.map(tag => ({
+			params: { tag },
+			props: { posts: posts.filter(post => post.data.tags?.includes(tag)), tag },
+		})),
+	];
 }
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
 
-// Sort posts by date
 const sortedPosts = [...posts].sort((a, b) => {
-    const dateA = a.data.created_date ?? new Date(0);
-    const dateB = b.data.created_date ?? new Date(0);
-    return dateB.valueOf() - dateA.valueOf();
+	const dateA = a.data.created_date?.valueOf() ?? 0;
+	const dateB = b.data.created_date?.valueOf() ?? 0;
+	return dateB - dateA;
 });
 
-const isAllPosts = tag === 'all';
-const title = isAllPosts ? 'All Posts' : `Posts tagged with #${tag}`;
-const description = isAllPosts 
-    ? 'Browse all articles and insights from our blog.'
-    : `Browse all articles and insights related to ${tag}.`;
+const isAll = tag === 'all';
+const pageTitle = isAll ? 'All Writing' : `#${tag}`;
+const pageDesc = isAll
+	? 'Essays and notes from EECS study, mathematics, and software systems.'
+	: `Writing tagged with #${tag}.`;
 ---
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <BaseHead title={title} description={description} />
-        <style>
-            /* Ensure the body takes up at least the full viewport height */
-            body {
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-                margin: 0;
-            }
+<head>
+	<BaseHead title={`${pageTitle} — Devansh Mahajan`} description={pageDesc} />
+</head>
+<body>
+	<Header />
+	<main>
 
-            main {
-                flex: 1;
-                width: 100%;
-                max-width: 1400px;
-                margin: 0 auto;
-                padding: 2rem;
-                display: flex;
-                flex-direction: column;
-            }
+		<section class="page-hero">
+			<p class="eyebrow">
+				<svg class="bolt-icon" viewBox="0 0 10 14" fill="currentColor" aria-hidden="true"><path d="M6.5 0L0 8h4.5L3 14l7-8.5H5.5L6.5 0z"/></svg>
+				{isAll ? 'Writing' : 'Tag'}
+			</p>
+			<h1>{pageTitle}</h1>
+			<p class="lead">{pageDesc}</p>
+		</section>
 
-            .tag-header {
-                text-align: center;
-                margin-bottom: 3rem;
-                padding: 3rem 1rem;
-                background: color-mix(in srgb, var(--accent) 6%, transparent);
-                border-radius: 1.5rem;
-            }
+		{sortedPosts.length > 0 ? (
+			<section class="posts-section">
+				<div class="posts-grid">
+					{sortedPosts.map((post) => (
+						<BlogCard
+							title={post.data.title}
+							description={post.data.description ?? undefined}
+							date={post.data.created_date}
+							slug={post.data.slug ?? post.id}
+						/>
+					))}
+				</div>
+			</section>
+		) : (
+			<div class="empty-state">
+				<p class="empty-message">No posts tagged #{tag} yet.</p>
+			</div>
+		)}
 
-            .tag-title {
-                font-size: 2.5rem;
-                font-weight: 800;
-                color: rgb(var(--black));
-                margin-bottom: 0.75rem;
-            }
+	</main>
+	<Footer />
+</body>
+</html>
 
-            .tag-description {
-                font-size: 1.1rem;
-                color: rgb(var(--gray));
-                max-width: 600px;
-                line-height: 1.6;
-                margin: 0 auto;
-            }
+<style>
+	main {
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 0 1.5rem 8rem;
+	}
 
-            .posts-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-                gap: 2rem;
-                flex: 1;
-                margin-bottom: 2rem;
-            }
+	.page-hero {
+		padding: 4rem 0 3.5rem;
+	}
 
-            /* Empty state for when there are no posts */
-            .no-posts {
-                text-align: center;
-                padding: 4rem 1rem;
-                color: rgb(var(--gray));
-                font-size: 1.25rem;
-                flex: 1;
-            }
+	.eyebrow {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		margin: 0 0 1.25rem;
+		padding: 0.3rem 0.8rem;
+		background: color-mix(in srgb, var(--accent) 10%, transparent);
+		color: var(--accent);
+		border-radius: 999px;
+		font-size: 0.74rem;
+		font-weight: 600;
+		letter-spacing: 0.07em;
+		text-transform: uppercase;
+	}
 
-            @media (max-width: 768px) {
-                main {
-                    padding: 1rem 0.75rem;
-                }
-                .tag-header {
-                    padding: 2rem 1rem;
-                    margin-bottom: 2rem;
-                }
+	.bolt-icon {
+		width: 7px;
+		height: 10px;
+		flex-shrink: 0;
+	}
 
-                .tag-title {
-                    font-size: 2rem;
-                }
+	h1 {
+		margin: 0 0 1rem;
+		font-size: clamp(2.5rem, 7vw, 4.25rem);
+		font-weight: 800;
+		line-height: 0.95;
+		letter-spacing: -0.038em;
+		color: rgb(var(--black));
+	}
 
-                .tag-description {
-                    font-size: 1rem;
-                    padding: 0 1rem;
-                }
+	[data-theme='dark'] h1 {
+		text-shadow:
+			0 0 50px color-mix(in srgb, var(--accent) 20%, transparent),
+			0 0 100px color-mix(in srgb, var(--accent) 8%, transparent);
+	}
 
-                .posts-grid {
-                    grid-template-columns: 1fr;
-                    gap: 1.5rem;
-                }
-            }
-            
-            @media (max-width: 480px) {
-                main {
-                    padding: 0.75rem 0.5rem;
-                }
-                
-                .tag-header {
-                    padding: 1.5rem 0.75rem;
-                    margin-bottom: 1.5rem;
-                }
+	.lead {
+		max-width: 520px;
+		margin: 0;
+		font-size: clamp(1rem, 2vw, 1.125rem);
+		line-height: 1.68;
+		color: rgb(var(--gray));
+	}
 
-                .tag-title {
-                    font-size: 1.75rem;
-                }
+	.posts-section {
+		padding-top: 1rem;
+		position: relative;
+	}
 
-                .tag-description {
-                    font-size: 0.95rem;
-                    padding: 0 0.5rem;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <Header />
-        <main>
-            <div class="tag-header">
-                <h1 class="tag-title">{title}</h1>
-                <p class="tag-description">{description}</p>
-            </div>
-            {sortedPosts.length > 0 ? (
-                <div class="posts-grid">
-                    {sortedPosts.map((post) => (
-                        <BlogCard
-                            title={post.data.title}
-                            description={post.data.description ?? undefined}
-                            date={post.data.created_date}
-                            slug={post.data.slug ?? post.id}
-                        />
-                    ))}
-                </div>
-            ) : (
-                <div class="no-posts">
-                    No posts found with tag #{tag}. Check back soon!
-                </div>
-            )}
-        </main>
-        <Footer />
-    </body>
-</html> 
+	.posts-section::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(var(--gray), 0.18) 15%,
+			rgba(0, 113, 227, 0.30) 50%,
+			rgba(var(--gray), 0.18) 85%,
+			transparent 100%
+		);
+	}
+
+	[data-theme='dark'] .posts-section::before {
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(var(--gray), 0.18) 15%,
+			rgba(41, 151, 255, 0.40) 50%,
+			rgba(var(--gray), 0.18) 85%,
+			transparent 100%
+		);
+	}
+
+	.posts-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+		padding-top: 2.5rem;
+	}
+
+	.empty-state {
+		padding: 5rem 0;
+	}
+
+	.empty-message {
+		margin: 0;
+		font-size: 1.125rem;
+		color: rgb(var(--gray));
+	}
+
+	@media (max-width: 768px) {
+		main { padding: 0 1.1rem 5rem; }
+		.page-hero { padding: 3rem 0 2.5rem; }
+		.posts-grid { grid-template-columns: 1fr; }
+	}
+
+	@media (max-width: 480px) {
+		main { padding: 0 0.75rem 4rem; }
+		.page-hero { padding: 2.5rem 0 2rem; }
+	}
+</style>

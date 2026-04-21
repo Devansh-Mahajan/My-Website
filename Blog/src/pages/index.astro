@@ -75,6 +75,28 @@ const focusAreas = [
 		<Header />
 		<main>
 
+			<!-- Page-spanning lightning decoration -->
+			<div class="page-lightning" aria-hidden="true">
+				<svg viewBox="0 0 120 2400" preserveAspectRatio="xMaxYMin meet" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<!-- Bolt A: top, large, dominant -->
+					<path class="pl-bolt pl-bolt-a" stroke-linecap="round" stroke-linejoin="round"
+						d="M 108,0 L 72,280 L 100,280 L 56,600 L 92,600 L 38,1000"/>
+					<!-- Bolt B: offset, secondary scale -->
+					<path class="pl-bolt pl-bolt-b" stroke-linecap="round" stroke-linejoin="round"
+						d="M 120,120 L 96,340 L 114,340 L 84,580 L 108,580 L 68,860"/>
+					<!-- Bolt C: lower page -->
+					<path class="pl-bolt pl-bolt-c" stroke-linecap="round" stroke-linejoin="round"
+						d="M 100,1100 L 62,1380 L 90,1380 L 48,1700 L 80,1700 L 24,2100"/>
+					<!-- Animated charge pulses -->
+					<path class="pl-charge pl-charge-a" stroke-linecap="round" stroke-linejoin="round"
+						d="M 108,0 L 72,280 L 100,280 L 56,600 L 92,600 L 38,1000"/>
+					<path class="pl-charge pl-charge-b" stroke-linecap="round" stroke-linejoin="round"
+						d="M 120,120 L 96,340 L 114,340 L 84,580 L 108,580 L 68,860"/>
+					<path class="pl-charge pl-charge-c" stroke-linecap="round" stroke-linejoin="round"
+						d="M 100,1100 L 62,1380 L 90,1380 L 48,1700 L 80,1700 L 24,2100"/>
+				</svg>
+			</div>
+
 			<!-- ── HERO ─────────────────────────────────── -->
 			<section class="hero" aria-labelledby="hero-name">
 
@@ -91,31 +113,46 @@ const focusAreas = [
 					aria-hidden="true"
 				>
 					<!-- Static background traces (orthogonal, PCB-style) -->
-					<g class="traces" stroke="currentColor" stroke-width="1" fill="none">
+					<g class="traces" stroke="currentColor" stroke-width="1.2" fill="none">
 						<path d="M 960 88  H 812 V 148 H 960"/>
 						<path d="M 680  0  V 88  H 812 V 315 H 960"/>
 						<path d="M 812 148 V 242 H 722 V 315"/>
 						<path d="M 600 335 H 722 V 450 H 600"/>
 						<path d="M 812 315 V 395 V 500 H 660 V 560 H 960"/>
 						<path d="M 500 195 H 582 V 258 H 500"/>
+						<!-- Additional trace lines for density -->
+						<path d="M 750 0 V 60 H 820 V 88"/>
+						<path d="M 960 240 H 880 V 315"/>
+						<path d="M 660 560 V 620 H 780 V 680"/>
 					</g>
 
 					<!-- Junction nodes (solder points) -->
 					<g class="nodes" fill="currentColor">
-						<circle cx="812" cy="88"  r="2.8"/>
-						<circle cx="680" cy="88"  r="2.8"/>
-						<circle cx="812" cy="148" r="2.8"/>
-						<circle cx="812" cy="242" r="2.8"/>
-						<circle cx="722" cy="242" r="2.8"/>
-						<circle cx="722" cy="315" r="2.8"/>
-						<circle cx="812" cy="315" r="2.8"/>
-						<circle cx="812" cy="395" r="2.8"/>
-						<circle cx="722" cy="395" r="2.8"/>
-						<circle cx="600" cy="395" r="2.8"/>
-						<circle cx="660" cy="500" r="2.8"/>
-						<circle cx="660" cy="560" r="2.8"/>
-						<circle cx="582" cy="195" r="2.8"/>
-						<circle cx="582" cy="258" r="2.8"/>
+						<circle cx="812" cy="88"  r="3.5"/>
+						<circle cx="680" cy="88"  r="3.5"/>
+						<circle cx="812" cy="148" r="3.5"/>
+						<circle cx="812" cy="242" r="3.5"/>
+						<circle cx="722" cy="242" r="3.5"/>
+						<circle cx="722" cy="315" r="3.5"/>
+						<circle cx="812" cy="315" r="3.5"/>
+						<circle cx="812" cy="395" r="3.5"/>
+						<circle cx="722" cy="395" r="3.5"/>
+						<circle cx="600" cy="395" r="3.5"/>
+						<circle cx="660" cy="500" r="3.5"/>
+						<circle cx="660" cy="560" r="3.5"/>
+						<circle cx="582" cy="195" r="3.5"/>
+						<circle cx="582" cy="258" r="3.5"/>
+						<circle cx="750" cy="60"  r="3.5"/>
+						<circle cx="880" cy="315" r="3.5"/>
+					</g>
+
+					<!-- ── Bold EECS Lightning Bolts ── -->
+					<!-- These sit in the right half of the hero, giving it electrical character -->
+					<g class="lightning-hero" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<!-- Primary bolt -->
+						<path class="lb lb-1" d="M 918,0 L 856,200 L 898,200 L 816,408 L 866,408 L 760,645"/>
+						<!-- Secondary bolt (thinner, offset) -->
+						<path class="lb lb-2" d="M 960,55 L 928,235 L 955,235 L 914,432 L 944,432 L 896,622"/>
 					</g>
 
 					<!-- Traveling signal pulses (one per route) -->
@@ -123,6 +160,12 @@ const focusAreas = [
 					<path class="signal signal-b" d="M 680  0  V 88  H 960"/>
 					<path class="signal signal-c" d="M 600 335 H 722 V 450 H 600"/>
 					<path class="signal signal-d" d="M 812 395 V 500 H 660 V 560"/>
+
+					<!-- Lightning bolt animated charges -->
+					<path class="lc lc-1" stroke-linecap="round" stroke-linejoin="round"
+						d="M 918,0 L 856,200 L 898,200 L 816,408 L 866,408 L 760,645"/>
+					<path class="lc lc-2" stroke-linecap="round" stroke-linejoin="round"
+						d="M 960,55 L 928,235 L 955,235 L 914,432 L 944,432 L 896,622"/>
 				</svg>
 
 				<!-- Hero content -->
@@ -148,7 +191,6 @@ const focusAreas = [
 					<a class="btn-ghost" href="https://www.linkedin.com/in/devansh-mahajan-2b2b99185/" target="_blank" rel="noreferrer">LinkedIn</a>
 				</div>
 
-				<!-- Monospace metadata — precision is the aesthetic -->
 				<p class="hero-meta" aria-label="Status">
 					<span>BSc Candidate</span>
 					<span class="meta-sep" aria-hidden="true">/</span>
@@ -162,7 +204,13 @@ const focusAreas = [
 			<!-- ── 01 — SELECTED WORK ────────────────────── -->
 			<section class="section" aria-labelledby="work-heading">
 				<header class="section-header">
-					<p class="label"><span class="label-num">01</span>Selected Work</p>
+					<p class="label">
+						<span class="label-num">
+							<svg class="label-bolt-icon" viewBox="0 0 10 14" fill="currentColor" aria-hidden="true"><path d="M6.5 0L0 8h4.5L3 14l7-8.5H5.5L6.5 0z"/></svg>
+							01
+						</span>
+						Selected Work
+					</p>
 					<h2 id="work-heading">Building in public.</h2>
 				</header>
 
@@ -204,7 +252,13 @@ const focusAreas = [
 			<!-- ── 02 — FOCUS ────────────────────────────── -->
 			<section class="section" aria-labelledby="focus-heading">
 				<header class="section-header">
-					<p class="label"><span class="label-num">02</span>Focus</p>
+					<p class="label">
+						<span class="label-num">
+							<svg class="label-bolt-icon" viewBox="0 0 10 14" fill="currentColor" aria-hidden="true"><path d="M6.5 0L0 8h4.5L3 14l7-8.5H5.5L6.5 0z"/></svg>
+							02
+						</span>
+						Focus
+					</p>
 					<h2 id="focus-heading">Technical foundations.</h2>
 				</header>
 				<div class="focus-grid">
@@ -222,7 +276,13 @@ const focusAreas = [
 			{hasPosts && (
 				<section class="section" aria-labelledby="writing-heading">
 					<header class="section-header">
-						<p class="label"><span class="label-num">03</span>Writing</p>
+						<p class="label">
+							<span class="label-num">
+								<svg class="label-bolt-icon" viewBox="0 0 10 14" fill="currentColor" aria-hidden="true"><path d="M6.5 0L0 8h4.5L3 14l7-8.5H5.5L6.5 0z"/></svg>
+								03
+							</span>
+							Writing
+						</p>
 						<h2 id="writing-heading">Latest essays.</h2>
 					</header>
 					<div class="post-grid">
@@ -257,44 +317,73 @@ const focusAreas = [
 		to   { opacity: 1; transform: translateY(0); }
 	}
 
-	/* Status indicator pulse */
 	@keyframes status-pulse {
 		0%, 100% { box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.5); opacity: 1; }
 		60%      { box-shadow: 0 0 0 5px rgba(48, 209, 88, 0);  opacity: 0.85; }
 	}
 
-	/* Node solder-point pulse */
 	@keyframes node-pulse {
-		0%, 100% { opacity: 0.18; }
-		50%      { opacity: 0.55; }
+		0%, 100% { opacity: 0.22; }
+		50%      { opacity: 0.65; }
 	}
 
-	/* Circuit signal traveling along a trace
-	   — small bright dash moves from start (dashoffset=0)
-	     to end (dashoffset = –pathLength–extra)             */
 	@keyframes sig-a {
 		0%   { stroke-dashoffset:   0; opacity: 0; }
-		4%   { opacity: 0.9; }
-		88%  { opacity: 0.9; }
+		4%   { opacity: 1; }
+		88%  { opacity: 1; }
 		100% { stroke-dashoffset: -470; opacity: 0; }
 	}
 	@keyframes sig-b {
 		0%   { stroke-dashoffset:   0; opacity: 0; }
-		4%   { opacity: 0.9; }
-		88%  { opacity: 0.9; }
+		4%   { opacity: 1; }
+		88%  { opacity: 1; }
 		100% { stroke-dashoffset: -250; opacity: 0; }
 	}
 	@keyframes sig-c {
 		0%   { stroke-dashoffset:   0; opacity: 0; }
-		4%   { opacity: 0.9; }
-		88%  { opacity: 0.9; }
+		4%   { opacity: 1; }
+		88%  { opacity: 1; }
 		100% { stroke-dashoffset: -380; opacity: 0; }
 	}
 	@keyframes sig-d {
 		0%   { stroke-dashoffset:   0; opacity: 0; }
+		4%   { opacity: 1; }
+		88%  { opacity: 1; }
+		100% { stroke-dashoffset: -345; opacity: 0; }
+	}
+
+	/* Lightning bolt charge along hero SVG bolts */
+	@keyframes lc-anim-1 {
+		0%   { stroke-dashoffset:   0; opacity: 0; }
+		5%   { opacity: 1; }
+		88%  { opacity: 1; }
+		100% { stroke-dashoffset: -820; opacity: 0; }
+	}
+	@keyframes lc-anim-2 {
+		0%   { stroke-dashoffset:   0; opacity: 0; }
+		5%   { opacity: 1; }
+		88%  { opacity: 1; }
+		100% { stroke-dashoffset: -680; opacity: 0; }
+	}
+
+	/* Page-spanning lightning charge pulses */
+	@keyframes pl-charge-a {
+		0%   { stroke-dashoffset:    0; opacity: 0; }
 		4%   { opacity: 0.9; }
 		88%  { opacity: 0.9; }
-		100% { stroke-dashoffset: -345; opacity: 0; }
+		100% { stroke-dashoffset: -1100; opacity: 0; }
+	}
+	@keyframes pl-charge-b {
+		0%   { stroke-dashoffset:   0; opacity: 0; }
+		4%   { opacity: 0.9; }
+		88%  { opacity: 0.9; }
+		100% { stroke-dashoffset: -820; opacity: 0; }
+	}
+	@keyframes pl-charge-c {
+		0%   { stroke-dashoffset:   0; opacity: 0; }
+		4%   { opacity: 0.9; }
+		88%  { opacity: 0.9; }
+		100% { stroke-dashoffset: -1200; opacity: 0; }
 	}
 
 	/* ═══════════════════════════════════════════════════════
@@ -302,9 +391,77 @@ const focusAreas = [
 	   ═══════════════════════════════════════════════════════ */
 
 	main {
+		position: relative;
 		max-width: 960px;
 		margin: 0 auto;
 		padding: 0 1.5rem 8rem;
+		overflow: hidden;
+	}
+
+	/* ═══════════════════════════════════════════════════════
+	   PAGE-SPANNING LIGHTNING DECORATION
+	   Tall SVG on right edge, spans all sections
+	   ═══════════════════════════════════════════════════════ */
+
+	.page-lightning {
+		position: absolute;
+		right: -12px;
+		top: 0;
+		bottom: 0;
+		width: 110px;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	.page-lightning svg {
+		width: 100%;
+		height: 100%;
+		overflow: visible;
+	}
+
+	/* Static bolt outlines */
+	.pl-bolt {
+		fill: none;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+	.pl-bolt-a {
+		stroke: rgba(0, 113, 227, 0.12);
+		stroke-width: 3;
+	}
+	.pl-bolt-b {
+		stroke: rgba(0, 113, 227, 0.07);
+		stroke-width: 2;
+	}
+	.pl-bolt-c {
+		stroke: rgba(0, 113, 227, 0.09);
+		stroke-width: 2.5;
+	}
+
+	[data-theme='dark'] .pl-bolt-a { stroke: rgba(41, 151, 255, 0.22); }
+	[data-theme='dark'] .pl-bolt-b { stroke: rgba(41, 151, 255, 0.13); }
+	[data-theme='dark'] .pl-bolt-c { stroke: rgba(41, 151, 255, 0.17); }
+
+	/* Animated charge pulses on page bolts */
+	.pl-charge {
+		fill: none;
+		stroke: var(--accent);
+		opacity: 0;
+	}
+	.pl-charge-a {
+		stroke-width: 3;
+		stroke-dasharray: 20 1100;
+		animation: pl-charge-a 4.6s linear infinite 0.2s;
+	}
+	.pl-charge-b {
+		stroke-width: 2;
+		stroke-dasharray: 14 820;
+		animation: pl-charge-b 6.0s linear infinite 2.4s;
+	}
+	.pl-charge-c {
+		stroke-width: 2.5;
+		stroke-dasharray: 18 1200;
+		animation: pl-charge-c 5.4s linear infinite 1.0s;
 	}
 
 	/* ═══════════════════════════════════════════════════════
@@ -321,7 +478,6 @@ const focusAreas = [
 		overflow: hidden;
 	}
 
-	/* Soft ambient glow — blue tint behind the name */
 	.hero-glow {
 		position: absolute;
 		top: -20%;
@@ -344,12 +500,11 @@ const focusAreas = [
 		height: 100%;
 		pointer-events: none;
 		z-index: 0;
-		/* trace color — very faint in light mode */
-		color: rgba(0, 113, 227, 0.07);
+		color: rgba(0, 113, 227, 0.10);
 	}
 
 	[data-theme='dark'] .circuit-bg {
-		color: rgba(41, 151, 255, 0.11);
+		color: rgba(41, 151, 255, 0.16);
 	}
 
 	.traces path {
@@ -374,30 +529,63 @@ const focusAreas = [
 	.nodes circle:nth-child(12) { animation-delay: 0.8s; }
 	.nodes circle:nth-child(13) { animation-delay: 1.3s; }
 	.nodes circle:nth-child(14) { animation-delay: 2.1s; }
+	.nodes circle:nth-child(15) { animation-delay: 0.5s; }
+	.nodes circle:nth-child(16) { animation-delay: 1.7s; }
 
 	/* Signal dots — bright accent traveling along the trace */
 	.signal {
 		fill: none;
 		stroke: var(--accent);
-		stroke-width: 1.5;
+		stroke-width: 2.5;
 		opacity: 0;
 	}
-
 	.signal-a {
-		stroke-dasharray: 14 480;
+		stroke-dasharray: 16 480;
 		animation: sig-a 5.2s linear infinite 0s;
 	}
 	.signal-b {
-		stroke-dasharray: 14 260;
+		stroke-dasharray: 16 260;
 		animation: sig-b 3.4s linear infinite 1.8s;
 	}
 	.signal-c {
-		stroke-dasharray: 14 390;
+		stroke-dasharray: 16 390;
 		animation: sig-c 4.8s linear infinite 3.0s;
 	}
 	.signal-d {
-		stroke-dasharray: 14 355;
+		stroke-dasharray: 16 355;
 		animation: sig-d 4.4s linear infinite 0.9s;
+	}
+
+	/* ── Hero lightning bolts ── */
+	.lb {
+		fill: none;
+	}
+	.lb-1 {
+		stroke: rgba(0, 113, 227, 0.13);
+		stroke-width: 3;
+	}
+	.lb-2 {
+		stroke: rgba(0, 113, 227, 0.08);
+		stroke-width: 1.8;
+	}
+	[data-theme='dark'] .lb-1 { stroke: rgba(41, 151, 255, 0.24); }
+	[data-theme='dark'] .lb-2 { stroke: rgba(41, 151, 255, 0.15); }
+
+	/* Lightning charge pulses — hero SVG bolts */
+	.lc {
+		fill: none;
+		stroke: var(--accent);
+		opacity: 0;
+	}
+	.lc-1 {
+		stroke-width: 3;
+		stroke-dasharray: 20 820;
+		animation: lc-anim-1 3.8s linear infinite 0.4s;
+	}
+	.lc-2 {
+		stroke-width: 1.8;
+		stroke-dasharray: 12 680;
+		animation: lc-anim-2 5.2s linear infinite 2.2s;
 	}
 
 	/* ── Eyebrow / status badge ── */
@@ -420,13 +608,12 @@ const focusAreas = [
 		animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
 	}
 
-	/* Live status indicator — green dot pulsing like an LED */
 	.status-dot {
 		display: inline-block;
 		width: 6px;
 		height: 6px;
 		border-radius: 50%;
-		background: #30d158;  /* Apple green */
+		background: #30d158;
 		flex-shrink: 0;
 		animation: status-pulse 2.4s ease-in-out infinite;
 	}
@@ -445,11 +632,10 @@ const focusAreas = [
 		animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
 	}
 
-	/* Electric glow on name in dark mode — like a lit display */
 	[data-theme='dark'] h1 {
 		text-shadow:
-			0 0 55px color-mix(in srgb, var(--accent) 22%, transparent),
-			0 0 110px color-mix(in srgb, var(--accent) 8%, transparent);
+			0 0 60px color-mix(in srgb, var(--accent) 26%, transparent),
+			0 0 120px color-mix(in srgb, var(--accent) 10%, transparent);
 	}
 
 	/* ── Lead text ── */
@@ -476,7 +662,7 @@ const focusAreas = [
 		animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
 	}
 
-	/* ── Hero metadata — monospace technical line ── */
+	/* ── Hero metadata ── */
 	.hero-meta {
 		position: relative;
 		z-index: 1;
@@ -539,8 +725,37 @@ const focusAreas = [
 	   ═══════════════════════════════════════════════════════ */
 
 	.section {
+		position: relative;
 		padding: 5rem 0;
-		border-top: 1px solid rgba(var(--gray), 0.13);
+	}
+
+	/* Gradient divider — accent glow at center, fades to edges */
+	.section::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(var(--gray), 0.18) 15%,
+			rgba(0, 113, 227, 0.30) 50%,
+			rgba(var(--gray), 0.18) 85%,
+			transparent 100%
+		);
+	}
+
+	[data-theme='dark'] .section::before {
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(var(--gray), 0.18) 15%,
+			rgba(41, 151, 255, 0.40) 50%,
+			rgba(var(--gray), 0.18) 85%,
+			transparent 100%
+		);
 	}
 
 	.section-header { margin-bottom: 2.5rem; }
@@ -557,14 +772,23 @@ const focusAreas = [
 		color: rgb(var(--gray));
 	}
 
-	/* Monospace section index — engineering precision */
 	.label-num {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.22rem;
 		font-family: var(--font-mono);
 		font-size: 0.64rem;
 		font-weight: 400;
 		letter-spacing: 0.04em;
 		color: var(--accent);
-		opacity: 0.75;
+		opacity: 0.85;
+	}
+
+	.label-bolt-icon {
+		width: 7px;
+		height: 9px;
+		flex-shrink: 0;
+		opacity: 0.9;
 	}
 
 	.section-header h2 {
@@ -604,7 +828,6 @@ const focusAreas = [
 		animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 	}
 
-	/* Accent sweep — a thin electric line appears at the top on hover */
 	.work-card::before {
 		content: '';
 		position: absolute;
@@ -621,9 +844,7 @@ const focusAreas = [
 		transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 
-	.work-card:hover::before {
-		transform: scaleX(1);
-	}
+	.work-card:hover::before { transform: scaleX(1); }
 
 	.work-card:hover {
 		transform: translateY(-5px);
@@ -634,7 +855,6 @@ const focusAreas = [
 	[data-theme='dark'] .work-card       { background: rgba(var(--gray-light), 0.5); }
 	[data-theme='dark'] .work-card:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 4px 8px rgba(0,0,0,0.2); }
 
-	/* Card meta in monospace — reads as a chip label or register spec */
 	.card-meta {
 		margin: 0 0 0.65rem;
 		font-family: var(--font-mono);
@@ -757,12 +977,16 @@ const focusAreas = [
 		padding: 1.875rem 2.125rem;
 		border-right:  1px solid rgba(var(--gray), 0.15);
 		border-bottom: 1px solid rgba(var(--gray), 0.15);
+		transition: background 0.2s ease;
+	}
+
+	.focus-cell:hover {
+		background: rgba(var(--accent), 0.03);
 	}
 
 	.focus-cell:nth-child(even)      { border-right: none; }
 	.focus-cell:nth-last-child(-n+2) { border-bottom: none; }
 
-	/* Monospace index number — like a schematic reference designator */
 	.cell-idx {
 		display: block;
 		margin-bottom: 0.7rem;
@@ -821,9 +1045,19 @@ const focusAreas = [
 		main { padding: 0 1.1rem 5rem; }
 
 		.hero { min-height: auto; padding: 5rem 0 3.5rem; }
-
-		/* Circuit traces off on mobile — too small to read */
 		.circuit-bg { display: none; }
+
+		/* Scale down page lightning on mobile */
+		.page-lightning {
+			width: 60px;
+			right: -6px;
+		}
+		.pl-bolt-a { stroke-width: 2; }
+		.pl-bolt-b { display: none; }
+		.pl-bolt-c { stroke-width: 1.5; }
+		.pl-charge-a { stroke-width: 2; }
+		.pl-charge-b { display: none; }
+		.pl-charge-c { stroke-width: 1.5; }
 
 		h1 {
 			font-size: clamp(3rem, 17vw, 4.5rem);
@@ -843,6 +1077,7 @@ const focusAreas = [
 	}
 
 	@media (max-width: 480px) {
+		.page-lightning { display: none; }
 		.hero-actions { gap: 0.5rem; }
 		.notes-nav-label { display: none; }
 		.hero-meta { flex-wrap: wrap; }
