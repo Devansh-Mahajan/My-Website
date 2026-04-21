@@ -8,13 +8,13 @@ import { getCollection } from 'astro:content';
 import { getUrl } from '../utils/url';
 
 const notes = {
-	home: QUARTZ_URL,
-	eecs: `${QUARTZ_URL}200-ETH-Zurich/ETH-BSc-EECS---Overview`,
-	math: `${QUARTZ_URL}300-IMO-+-Putnam/Strategies-in-problem-solving`,
+	home:        QUARTZ_URL,
+	eecs:        `${QUARTZ_URL}200-ETH-Zurich/ETH-BSc-EECS---Overview`,
+	math:        `${QUARTZ_URL}300-IMO-+-Putnam/Strategies-in-problem-solving`,
 	programming: `${QUARTZ_URL}400-IOI/Competitive-Programming`,
-	books: `${QUARTZ_URL}500-Book/Book-Notes`,
-	quant: `${QUARTZ_URL}700-Quant/Quantitative-Work`,
-	projects: `${QUARTZ_URL}800-Projects/Projects`,
+	books:       `${QUARTZ_URL}500-Book/Book-Notes`,
+	quant:       `${QUARTZ_URL}700-Quant/Quantitative-Work`,
+	projects:    `${QUARTZ_URL}800-Projects/Projects`,
 };
 
 const posts = (await getCollection('blog'))
@@ -30,26 +30,39 @@ const hasPosts = posts.length > 0;
 
 const selectedWork = [
 	{
-		title: 'ETH Zurich EECS notebook',
-		meta: 'Coursework / circuits / systems',
-		description:
-			'A public engineering notebook for Electrical Engineering and Computer Science study at ETH Zurich.',
+		title: 'ETH Zurich EECS Notebook',
+		meta: 'Circuits · Signals · Systems',
+		description: 'EECS coursework notes — digital circuits, signal processing, linear systems, and computer architecture.',
 		href: notes.eecs,
 	},
 	{
-		title: 'Competitive programming',
-		meta: 'Algorithms / implementation',
-		description:
-			'IOI-style problem solving notes, templates, and techniques for writing reliable contest code.',
+		title: 'Competitive Programming',
+		meta: 'Algorithms · Complexity',
+		description: 'Problem solving notes, algorithm templates, and contest techniques at IOI difficulty.',
 		href: notes.programming,
 	},
 	{
 		title: 'Projects',
-		meta: 'Build logs / design notes',
-		description:
-			'Technical project write-ups across electronics, software systems, and quantitative experiments.',
+		meta: 'Hardware · Software · Quant',
+		description: 'Project logs across hardware, software systems, and quantitative experiments.',
 		href: notes.projects,
 	},
+];
+
+const noteLinks = [
+	{ label: 'ETH Zurich EECS',        href: notes.eecs },
+	{ label: 'Problem Solving',         href: notes.math },
+	{ label: 'Competitive Programming', href: notes.programming },
+	{ label: 'Book Notes',              href: notes.books },
+	{ label: 'Quantitative Work',       href: notes.quant },
+	{ label: 'Projects',                href: notes.projects },
+];
+
+const focusAreas = [
+	{ idx: '01', title: 'Electronics',       description: 'Circuits, signals, digital logic, and physical systems.' },
+	{ idx: '02', title: 'Mathematics',       description: 'Proofs, linear algebra, calculus, probability, and problem solving.' },
+	{ idx: '03', title: 'Software Systems',  description: 'Clean implementation, automation, infrastructure, and data workflows.' },
+	{ idx: '04', title: 'Quantitative Work', description: 'Modelling, backtesting, statistics, and computational experiments.' },
 ];
 ---
 
@@ -61,97 +74,157 @@ const selectedWork = [
 	<body>
 		<Header />
 		<main>
-			<section class="intro" aria-labelledby="intro-title">
-				<p class="eyebrow">ETH Zurich / EECS</p>
-				<h1 id="intro-title">Devansh Mahajan</h1>
-				<p class="lead">
-					Electrical Engineering and Computer Science student building a public notebook
-					across circuits, mathematics, software systems, and quantitative work.
+
+			<!-- ── HERO ─────────────────────────────────── -->
+			<section class="hero" aria-labelledby="hero-name">
+
+				<!-- Ambient glow -->
+				<div class="hero-glow" aria-hidden="true"></div>
+
+				<!-- PCB circuit traces — decorative EECS background element -->
+				<svg
+					class="circuit-bg"
+					viewBox="0 0 960 680"
+					preserveAspectRatio="xMaxYMid meet"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					aria-hidden="true"
+				>
+					<!-- Static background traces (orthogonal, PCB-style) -->
+					<g class="traces" stroke="currentColor" stroke-width="1" fill="none">
+						<path d="M 960 88  H 812 V 148 H 960"/>
+						<path d="M 680  0  V 88  H 812 V 315 H 960"/>
+						<path d="M 812 148 V 242 H 722 V 315"/>
+						<path d="M 600 335 H 722 V 450 H 600"/>
+						<path d="M 812 315 V 395 V 500 H 660 V 560 H 960"/>
+						<path d="M 500 195 H 582 V 258 H 500"/>
+					</g>
+
+					<!-- Junction nodes (solder points) -->
+					<g class="nodes" fill="currentColor">
+						<circle cx="812" cy="88"  r="2.8"/>
+						<circle cx="680" cy="88"  r="2.8"/>
+						<circle cx="812" cy="148" r="2.8"/>
+						<circle cx="812" cy="242" r="2.8"/>
+						<circle cx="722" cy="242" r="2.8"/>
+						<circle cx="722" cy="315" r="2.8"/>
+						<circle cx="812" cy="315" r="2.8"/>
+						<circle cx="812" cy="395" r="2.8"/>
+						<circle cx="722" cy="395" r="2.8"/>
+						<circle cx="600" cy="395" r="2.8"/>
+						<circle cx="660" cy="500" r="2.8"/>
+						<circle cx="660" cy="560" r="2.8"/>
+						<circle cx="582" cy="195" r="2.8"/>
+						<circle cx="582" cy="258" r="2.8"/>
+					</g>
+
+					<!-- Traveling signal pulses (one per route) -->
+					<path class="signal signal-a" d="M 960 88  H 812 V 395"/>
+					<path class="signal signal-b" d="M 680  0  V 88  H 960"/>
+					<path class="signal signal-c" d="M 600 335 H 722 V 450 H 600"/>
+					<path class="signal signal-d" d="M 812 395 V 500 H 660 V 560"/>
+				</svg>
+
+				<!-- Hero content -->
+				<p class="eyebrow">
+					<span class="status-dot" aria-hidden="true"></span>
+					ETH Zurich &middot; EECS
 				</p>
-				<div class="intro-actions">
-					<a class="primary-link" href={notes.home} target="_blank" rel="noreferrer">
-						Browse Notes Index
+
+				<h1 id="hero-name">Devansh<br />Mahajan</h1>
+
+				<p class="lead">
+					EECS student at ETH Zurich. Building a public notebook
+					across circuits, mathematics, software systems, and
+					quantitative work — everything is open.
+				</p>
+
+				<div class="hero-actions">
+					<a class="btn-primary" href={notes.home} target="_blank" rel="noreferrer">
+						Browse Notes
+						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7m0 0H7m10 0v10"/></svg>
 					</a>
-					<a class="quiet-link" href="https://github.com/Devansh-Mahajan" target="_blank" rel="noreferrer">
-						GitHub
-					</a>
-					<a class="quiet-link" href="https://www.linkedin.com/in/devansh-mahajan-2b2b99185/" target="_blank" rel="noreferrer">
-						LinkedIn
-					</a>
+					<a class="btn-ghost" href="https://github.com/Devansh-Mahajan" target="_blank" rel="noreferrer">GitHub</a>
+					<a class="btn-ghost" href="https://www.linkedin.com/in/devansh-mahajan-2b2b99185/" target="_blank" rel="noreferrer">LinkedIn</a>
 				</div>
+
+				<!-- Monospace metadata — precision is the aesthetic -->
+				<p class="hero-meta" aria-label="Status">
+					<span>BSc Candidate</span>
+					<span class="meta-sep" aria-hidden="true">/</span>
+					<span>Spring 2026</span>
+					<span class="meta-sep" aria-hidden="true">/</span>
+					<span>Z&uuml;rich</span>
+				</p>
+
 			</section>
 
-			<section class="section" aria-labelledby="work-title">
-				<div class="section-heading">
-					<p class="kicker">Selected Work</p>
-					<h2 id="work-title">Things I am building and learning.</h2>
-				</div>
-				<div class="work-list">
-					{selectedWork.map((item) => (
-						<a class="work-row" href={item.href} target="_blank" rel="noreferrer">
-							<span>
-								<strong>{item.title}</strong>
-								<small>{item.meta}</small>
+			<!-- ── 01 — SELECTED WORK ────────────────────── -->
+			<section class="section" aria-labelledby="work-heading">
+				<header class="section-header">
+					<p class="label"><span class="label-num">01</span>Selected Work</p>
+					<h2 id="work-heading">Building in public.</h2>
+				</header>
+
+				<div class="work-grid">
+					{selectedWork.map((item, i) => (
+						<a
+							class="work-card"
+							href={item.href}
+							target="_blank"
+							rel="noreferrer"
+							style={`animation-delay:${0.05 + i * 0.07}s`}
+						>
+							<p class="card-meta">{item.meta}</p>
+							<h3>{item.title}</h3>
+							<p class="card-desc">{item.description}</p>
+							<span class="card-arrow" aria-hidden="true">
+								<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
 							</span>
-							<p>{item.description}</p>
 						</a>
+					))}
+				</div>
+
+				<nav class="notes-nav" aria-label="Notes index">
+					<span class="notes-nav-label">Browse</span>
+					<div class="note-tags" role="list">
+						{noteLinks.map((link) => (
+							<a class="note-tag" href={link.href} target="_blank" rel="noreferrer" role="listitem">
+								{link.label}
+							</a>
+						))}
+					</div>
+					<a class="notes-all-link" href={notes.home} target="_blank" rel="noreferrer">
+						All notes
+						<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7m0 0H7m10 0v10"/></svg>
+					</a>
+				</nav>
+			</section>
+
+			<!-- ── 02 — FOCUS ────────────────────────────── -->
+			<section class="section" aria-labelledby="focus-heading">
+				<header class="section-header">
+					<p class="label"><span class="label-num">02</span>Focus</p>
+					<h2 id="focus-heading">Technical foundations.</h2>
+				</header>
+				<div class="focus-grid">
+					{focusAreas.map((area) => (
+						<div class="focus-cell">
+							<span class="cell-idx">{area.idx}</span>
+							<strong>{area.title}</strong>
+							<p>{area.description}</p>
+						</div>
 					))}
 				</div>
 			</section>
 
-			<section class="section notes-section" aria-labelledby="notes-title">
-				<div class="section-heading">
-					<p class="kicker">Public Knowledge Base</p>
-					<h2 id="notes-title">Quartz is the source of truth for notes.</h2>
-				</div>
-				<div class="notes-copy">
-					<p>
-						The landing site stays intentionally light. All notes, backlinks, graph views,
-						search, and comments live in Quartz.
-					</p>
-					<a class="primary-link" href={notes.home} target="_blank" rel="noreferrer">Open Quartz</a>
-				</div>
-				<div class="index-links" aria-label="Quartz sections">
-					<a href={notes.eecs} target="_blank" rel="noreferrer">200 ETH Zurich EECS</a>
-					<a href={notes.math} target="_blank" rel="noreferrer">300 Problem Solving</a>
-					<a href={notes.programming} target="_blank" rel="noreferrer">400 Competitive Programming</a>
-					<a href={notes.books} target="_blank" rel="noreferrer">500 Book Notes</a>
-					<a href={notes.quant} target="_blank" rel="noreferrer">700 Quantitative Work</a>
-					<a href={notes.projects} target="_blank" rel="noreferrer">800 Projects</a>
-				</div>
-			</section>
-
-			<section class="section capabilities" aria-labelledby="focus-title">
-				<div class="section-heading">
-					<p class="kicker">Focus</p>
-					<h2 id="focus-title">A technical foundation across hardware and software.</h2>
-				</div>
-				<div class="focus-grid">
-					<div>
-						<strong>Electronics</strong>
-						<p>Circuits, signals, digital logic, and physical systems.</p>
-					</div>
-					<div>
-						<strong>Mathematics</strong>
-						<p>Proofs, linear algebra, calculus, probability, and problem solving.</p>
-					</div>
-					<div>
-						<strong>Software Systems</strong>
-						<p>Clean implementation, automation, infrastructure, and data workflows.</p>
-					</div>
-					<div>
-						<strong>Quantitative Work</strong>
-						<p>Modelling, backtesting, statistics, and computational experiments.</p>
-					</div>
-				</div>
-			</section>
-
+			<!-- ── 03 — WRITING ──────────────────────────── -->
 			{hasPosts && (
-				<section class="section" aria-labelledby="writing-title">
-					<div class="section-heading">
-						<p class="kicker">Writing</p>
-						<h2 id="writing-title">Recent essays.</h2>
-					</div>
+				<section class="section" aria-labelledby="writing-heading">
+					<header class="section-header">
+						<p class="label"><span class="label-num">03</span>Writing</p>
+						<h2 id="writing-heading">Latest essays.</h2>
+					</header>
 					<div class="post-grid">
 						{posts.map((post) => (
 							<BlogCard
@@ -162,273 +235,616 @@ const selectedWork = [
 							/>
 						))}
 					</div>
-					<a class="quiet-link more-link" href={getUrl('/blog')}>All writing</a>
+					<a class="more-link" href={getUrl('/blog')}>
+						All writing
+						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+					</a>
 				</section>
 			)}
+
 		</main>
 		<Footer />
 	</body>
 </html>
 
 <style>
+	/* ═══════════════════════════════════════════════════════
+	   KEYFRAMES
+	   ═══════════════════════════════════════════════════════ */
+
+	@keyframes fadeUp {
+		from { opacity: 0; transform: translateY(16px); }
+		to   { opacity: 1; transform: translateY(0); }
+	}
+
+	/* Status indicator pulse */
+	@keyframes status-pulse {
+		0%, 100% { box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.5); opacity: 1; }
+		60%      { box-shadow: 0 0 0 5px rgba(48, 209, 88, 0);  opacity: 0.85; }
+	}
+
+	/* Node solder-point pulse */
+	@keyframes node-pulse {
+		0%, 100% { opacity: 0.18; }
+		50%      { opacity: 0.55; }
+	}
+
+	/* Circuit signal traveling along a trace
+	   — small bright dash moves from start (dashoffset=0)
+	     to end (dashoffset = –pathLength–extra)             */
+	@keyframes sig-a {
+		0%   { stroke-dashoffset:   0; opacity: 0; }
+		4%   { opacity: 0.9; }
+		88%  { opacity: 0.9; }
+		100% { stroke-dashoffset: -470; opacity: 0; }
+	}
+	@keyframes sig-b {
+		0%   { stroke-dashoffset:   0; opacity: 0; }
+		4%   { opacity: 0.9; }
+		88%  { opacity: 0.9; }
+		100% { stroke-dashoffset: -250; opacity: 0; }
+	}
+	@keyframes sig-c {
+		0%   { stroke-dashoffset:   0; opacity: 0; }
+		4%   { opacity: 0.9; }
+		88%  { opacity: 0.9; }
+		100% { stroke-dashoffset: -380; opacity: 0; }
+	}
+	@keyframes sig-d {
+		0%   { stroke-dashoffset:   0; opacity: 0; }
+		4%   { opacity: 0.9; }
+		88%  { opacity: 0.9; }
+		100% { stroke-dashoffset: -345; opacity: 0; }
+	}
+
+	/* ═══════════════════════════════════════════════════════
+	   LAYOUT
+	   ═══════════════════════════════════════════════════════ */
+
 	main {
 		max-width: 960px;
 		margin: 0 auto;
-		padding: 0 1.5rem 6rem;
+		padding: 0 1.5rem 8rem;
 	}
 
-	.intro {
-		min-height: min(640px, calc(100vh - 4rem));
+	/* ═══════════════════════════════════════════════════════
+	   HERO
+	   ═══════════════════════════════════════════════════════ */
+
+	.hero {
+		position: relative;
+		min-height: min(680px, calc(100svh - 5rem));
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		padding: 4.5rem 0 3rem;
+		justify-content: flex-end;
+		padding-bottom: 5rem;
+		overflow: hidden;
 	}
 
-	.eyebrow,
-	.kicker {
-		margin: 0 0 1rem;
-		color: rgb(var(--gray));
-		font-size: 0.85rem;
-		font-weight: 600;
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
+	/* Soft ambient glow — blue tint behind the name */
+	.hero-glow {
+		position: absolute;
+		top: -20%;
+		left: -10%;
+		width: 70%;
+		max-width: 560px;
+		aspect-ratio: 1;
+		background: radial-gradient(ellipse at center,
+			color-mix(in srgb, var(--accent) 9%, transparent) 0%,
+			transparent 65%);
+		pointer-events: none;
+		z-index: 0;
 	}
 
-	h1,
-	h2 {
-		color: rgb(var(--black));
-		letter-spacing: 0;
+	/* ── Circuit SVG ── */
+	.circuit-bg {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		z-index: 0;
+		/* trace color — very faint in light mode */
+		color: rgba(0, 113, 227, 0.07);
 	}
 
-	h1 {
-		max-width: 840px;
-		margin: 0;
-		font-size: clamp(4rem, 10vw, 7.25rem);
-		line-height: 0.92;
-		font-weight: 700;
+	[data-theme='dark'] .circuit-bg {
+		color: rgba(41, 151, 255, 0.11);
 	}
 
-	.lead {
-		max-width: 680px;
-		margin: 1.65rem 0 0;
-		color: rgb(var(--gray-dark));
-		font-size: clamp(1.15rem, 2vw, 1.45rem);
-		line-height: 1.45;
-		text-wrap: pretty;
+	.traces path {
+		stroke: currentColor;
+		fill: none;
 	}
 
-	.intro-actions {
-		display: flex;
-		align-items: center;
-		gap: 1.25rem;
-		flex-wrap: wrap;
-		margin-top: 2rem;
+	.nodes circle {
+		fill: currentColor;
+		animation: node-pulse 3s ease-in-out infinite;
+	}
+	.nodes circle:nth-child(2)  { animation-delay: 0.4s; }
+	.nodes circle:nth-child(3)  { animation-delay: 0.9s; }
+	.nodes circle:nth-child(4)  { animation-delay: 1.4s; }
+	.nodes circle:nth-child(5)  { animation-delay: 1.8s; }
+	.nodes circle:nth-child(6)  { animation-delay: 0.6s; }
+	.nodes circle:nth-child(7)  { animation-delay: 1.1s; }
+	.nodes circle:nth-child(8)  { animation-delay: 2.0s; }
+	.nodes circle:nth-child(9)  { animation-delay: 0.3s; }
+	.nodes circle:nth-child(10) { animation-delay: 1.6s; }
+	.nodes circle:nth-child(11) { animation-delay: 2.3s; }
+	.nodes circle:nth-child(12) { animation-delay: 0.8s; }
+	.nodes circle:nth-child(13) { animation-delay: 1.3s; }
+	.nodes circle:nth-child(14) { animation-delay: 2.1s; }
+
+	/* Signal dots — bright accent traveling along the trace */
+	.signal {
+		fill: none;
+		stroke: var(--accent);
+		stroke-width: 1.5;
+		opacity: 0;
 	}
 
-	.primary-link,
-	.quiet-link {
+	.signal-a {
+		stroke-dasharray: 14 480;
+		animation: sig-a 5.2s linear infinite 0s;
+	}
+	.signal-b {
+		stroke-dasharray: 14 260;
+		animation: sig-b 3.4s linear infinite 1.8s;
+	}
+	.signal-c {
+		stroke-dasharray: 14 390;
+		animation: sig-c 4.8s linear infinite 3.0s;
+	}
+	.signal-d {
+		stroke-dasharray: 14 355;
+		animation: sig-d 4.4s linear infinite 0.9s;
+	}
+
+	/* ── Eyebrow / status badge ── */
+	.eyebrow {
+		position: relative;
+		z-index: 1;
 		display: inline-flex;
 		align-items: center;
-		min-height: 2.75rem;
-		text-decoration: none;
-		font-weight: 600;
-	}
-
-	.primary-link {
-		padding: 0 1.15rem;
-		border-radius: 8px;
-		background: rgb(var(--black));
-		color: rgb(var(--gray-light));
-	}
-
-	.primary-link:hover {
-		background: rgb(var(--gray-dark));
-		text-decoration: none;
-	}
-
-	.quiet-link {
-		color: rgb(var(--black));
-	}
-
-	.quiet-link:hover {
+		gap: 0.5rem;
+		align-self: flex-start;
+		margin: 0 0 1.25rem;
+		padding: 0.3rem 0.8rem;
+		background: color-mix(in srgb, var(--accent) 10%, transparent);
 		color: var(--accent);
-		text-decoration: none;
+		border-radius: 999px;
+		font-size: 0.74rem;
+		font-weight: 600;
+		letter-spacing: 0.07em;
+		text-transform: uppercase;
+		animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
 	}
+
+	/* Live status indicator — green dot pulsing like an LED */
+	.status-dot {
+		display: inline-block;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background: #30d158;  /* Apple green */
+		flex-shrink: 0;
+		animation: status-pulse 2.4s ease-in-out infinite;
+	}
+
+	/* ── Name ── */
+	h1 {
+		position: relative;
+		z-index: 1;
+		max-width: 14ch;
+		margin: 0 0 1.25rem;
+		font-size: clamp(3.75rem, 9.5vw, 6.25rem);
+		font-weight: 800;
+		line-height: 0.93;
+		letter-spacing: -0.042em;
+		color: rgb(var(--black));
+		animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+	}
+
+	/* Electric glow on name in dark mode — like a lit display */
+	[data-theme='dark'] h1 {
+		text-shadow:
+			0 0 55px color-mix(in srgb, var(--accent) 22%, transparent),
+			0 0 110px color-mix(in srgb, var(--accent) 8%, transparent);
+	}
+
+	/* ── Lead text ── */
+	.lead {
+		position: relative;
+		z-index: 1;
+		max-width: 480px;
+		margin: 0 0 2rem;
+		font-size: clamp(1rem, 2vw, 1.125rem);
+		line-height: 1.68;
+		color: rgb(var(--gray));
+		font-weight: 400;
+		animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+	}
+
+	/* ── CTA row ── */
+	.hero-actions {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		gap: 0.65rem;
+		flex-wrap: wrap;
+		animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+	}
+
+	/* ── Hero metadata — monospace technical line ── */
+	.hero-meta {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		gap: 0.55rem;
+		margin: 1.1rem 0 0;
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		letter-spacing: 0.03em;
+		color: rgb(var(--gray));
+		opacity: 0.5;
+		animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.26s both;
+	}
+
+	.meta-sep { opacity: 0.4; }
+
+	/* ═══════════════════════════════════════════════════════
+	   BUTTONS
+	   ═══════════════════════════════════════════════════════ */
+
+	.btn-primary {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.575rem 1.1rem;
+		background: var(--accent);
+		color: #fff !important;
+		border-radius: 999px;
+		font-size: 0.9rem;
+		font-weight: 500;
+		letter-spacing: -0.005em;
+		text-decoration: none !important;
+		transition: opacity 0.18s ease, transform 0.18s ease;
+	}
+	.btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+
+	.btn-ghost {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.575rem 1.1rem;
+		background: transparent;
+		border: 1px solid rgba(var(--gray), 0.3);
+		color: rgb(var(--black)) !important;
+		border-radius: 999px;
+		font-size: 0.9rem;
+		font-weight: 500;
+		letter-spacing: -0.005em;
+		text-decoration: none !important;
+		transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+	}
+	.btn-ghost:hover {
+		background: rgba(var(--gray-light), 0.8);
+		border-color: rgba(var(--gray), 0.5);
+		transform: translateY(-1px);
+	}
+
+	/* ═══════════════════════════════════════════════════════
+	   SECTIONS
+	   ═══════════════════════════════════════════════════════ */
 
 	.section {
 		padding: 5rem 0;
-		border-top: 1px solid rgba(var(--gray), 0.18);
+		border-top: 1px solid rgba(var(--gray), 0.13);
 	}
 
-	.section-heading {
-		display: grid;
-		grid-template-columns: 0.8fr 1.4fr;
-		gap: 3rem;
-		align-items: start;
-		margin-bottom: 2.5rem;
-	}
+	.section-header { margin-bottom: 2.5rem; }
 
-	.section-heading h2 {
-		margin: 0;
-		font-size: clamp(2rem, 4vw, 3.25rem);
-		line-height: 1.05;
-		font-weight: 700;
-	}
-
-	.work-list {
-		display: grid;
-		gap: 0;
-		border-top: 1px solid rgba(var(--gray), 0.22);
-	}
-
-	.work-row {
-		display: grid;
-		grid-template-columns: minmax(180px, 0.8fr) 1.4fr;
-		gap: 3rem;
-		padding: 1.5rem 0;
-		border-bottom: 1px solid rgba(var(--gray), 0.22);
-		color: rgb(var(--black));
-		text-decoration: none;
-	}
-
-	.work-row:hover {
-		text-decoration: none;
-	}
-
-	.work-row strong {
-		display: block;
-		font-size: 1.05rem;
-		line-height: 1.35;
-	}
-
-	.work-row small {
-		display: block;
-		margin-top: 0.35rem;
-		color: rgb(var(--gray));
-		font-size: 0.9rem;
-	}
-
-	.work-row p,
-	.notes-copy p,
-	.focus-grid p {
-		margin: 0;
-		color: rgb(var(--gray-dark));
-		line-height: 1.65;
-	}
-
-	.notes-copy {
+	.label {
 		display: flex;
-		align-items: flex-start;
-		justify-content: space-between;
-		gap: 2rem;
-		margin-bottom: 2rem;
+		align-items: center;
+		gap: 0.55rem;
+		margin: 0 0 0.45rem;
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+		color: rgb(var(--gray));
 	}
 
-	.notes-copy p {
-		max-width: 580px;
-		font-size: 1.1rem;
+	/* Monospace section index — engineering precision */
+	.label-num {
+		font-family: var(--font-mono);
+		font-size: 0.64rem;
+		font-weight: 400;
+		letter-spacing: 0.04em;
+		color: var(--accent);
+		opacity: 0.75;
 	}
 
-	.index-links {
+	.section-header h2 {
+		margin: 0;
+		font-size: clamp(1.75rem, 4vw, 2.625rem);
+		font-weight: 700;
+		line-height: 1.07;
+		letter-spacing: -0.028em;
+		color: rgb(var(--black));
+	}
+
+	/* ═══════════════════════════════════════════════════════
+	   WORK CARDS
+	   ═══════════════════════════════════════════════════════ */
+
+	.work-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.875rem;
+	}
+
+	.work-card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		padding: 1.625rem;
+		background: rgb(var(--gray-light));
+		border: 1px solid rgba(var(--gray), 0.15);
+		border-radius: 16px;
+		overflow: hidden;
+		text-decoration: none !important;
+		color: rgb(var(--black)) !important;
+		transition:
+			transform    0.3s cubic-bezier(0.22, 1, 0.36, 1),
+			box-shadow   0.3s cubic-bezier(0.22, 1, 0.36, 1),
+			border-color 0.2s ease;
+		animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+	}
+
+	/* Accent sweep — a thin electric line appears at the top on hover */
+	.work-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 2px;
+		background: linear-gradient(90deg,
+			transparent 0%,
+			var(--accent) 40%,
+			color-mix(in srgb, var(--accent) 60%, transparent) 100%);
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	.work-card:hover::before {
+		transform: scaleX(1);
+	}
+
+	.work-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 20px 40px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.04);
+		border-color: rgba(var(--gray), 0.3);
+	}
+
+	[data-theme='dark'] .work-card       { background: rgba(var(--gray-light), 0.5); }
+	[data-theme='dark'] .work-card:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 4px 8px rgba(0,0,0,0.2); }
+
+	/* Card meta in monospace — reads as a chip label or register spec */
+	.card-meta {
+		margin: 0 0 0.65rem;
+		font-family: var(--font-mono);
+		font-size: 0.68rem;
+		font-weight: 400;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--accent);
+		opacity: 0.85;
+	}
+
+	.work-card h3 {
+		margin: 0 0 0.5rem;
+		font-size: 0.975rem;
+		font-weight: 600;
+		line-height: 1.3;
+		letter-spacing: -0.012em;
+	}
+
+	.card-desc {
+		flex: 1;
+		margin: 0;
+		font-size: 0.89rem;
+		line-height: 1.62;
+		color: rgb(var(--gray));
+	}
+
+	.card-arrow {
+		display: flex;
+		align-items: center;
+		margin-top: 1.35rem;
+		color: var(--accent);
+		transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+	.work-card:hover .card-arrow { transform: translateX(5px); }
+
+	/* ═══════════════════════════════════════════════════════
+	   NOTES NAV BAR
+	   ═══════════════════════════════════════════════════════ */
+
+	.notes-nav {
+		display: flex;
+		align-items: center;
+		gap: 0.55rem;
+		margin-top: 1.25rem;
+		padding: 0.8rem 1rem;
+		background: rgb(var(--gray-light));
+		border: 1px solid rgba(var(--gray), 0.14);
+		border-radius: 12px;
+		flex-wrap: wrap;
+	}
+
+	[data-theme='dark'] .notes-nav { background: rgba(var(--gray-light), 0.4); }
+
+	.notes-nav-label {
+		font-family: var(--font-mono);
+		font-size: 0.67rem;
+		font-weight: 400;
+		letter-spacing: 0.07em;
+		text-transform: uppercase;
+		color: rgb(var(--gray));
+		white-space: nowrap;
+		padding-right: 0.35rem;
+		border-right: 1px solid rgba(var(--gray), 0.22);
+	}
+
+	.note-tags {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.65rem;
+		gap: 0.4rem;
+		flex: 1;
 	}
 
-	.index-links a {
-		padding: 0.7rem 0.9rem;
-		border: 1px solid rgba(var(--gray), 0.24);
-		border-radius: 8px;
-		color: rgb(var(--black));
-		text-decoration: none;
-		font-size: 0.95rem;
-		font-weight: 600;
-		background: rgba(var(--gray-light), 0.5);
+	.note-tag {
+		padding: 0.265rem 0.65rem;
+		background: rgb(var(--bg));
+		border: 1px solid rgba(var(--gray), 0.2);
+		border-radius: 999px;
+		font-size: 0.775rem;
+		font-weight: 500;
+		color: rgb(var(--black)) !important;
+		text-decoration: none !important;
+		transition: border-color 0.15s ease, color 0.15s ease;
 	}
 
-	.index-links a:hover {
-		border-color: rgba(var(--gray-dark), 0.45);
-		text-decoration: none;
+	.note-tag:hover {
+		border-color: var(--accent);
+		color: var(--accent) !important;
 	}
+
+	[data-theme='dark'] .note-tag { background: transparent; }
+
+	.notes-all-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25rem;
+		margin-left: auto;
+		font-size: 0.8rem;
+		font-weight: 500;
+		color: var(--accent) !important;
+		text-decoration: none !important;
+		white-space: nowrap;
+		transition: opacity 0.15s ease;
+	}
+	.notes-all-link:hover { opacity: 0.7; }
+
+	/* ═══════════════════════════════════════════════════════
+	   FOCUS GRID
+	   ═══════════════════════════════════════════════════════ */
 
 	.focus-grid {
 		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 2rem 3rem;
+		grid-template-columns: repeat(2, 1fr);
+		border: 1px solid rgba(var(--gray), 0.15);
+		border-radius: 16px;
+		overflow: hidden;
 	}
 
-	.focus-grid strong {
-		display: block;
-		margin-bottom: 0.5rem;
-		color: rgb(var(--black));
-		font-size: 1.05rem;
+	.focus-cell {
+		padding: 1.875rem 2.125rem;
+		border-right:  1px solid rgba(var(--gray), 0.15);
+		border-bottom: 1px solid rgba(var(--gray), 0.15);
 	}
+
+	.focus-cell:nth-child(even)      { border-right: none; }
+	.focus-cell:nth-last-child(-n+2) { border-bottom: none; }
+
+	/* Monospace index number — like a schematic reference designator */
+	.cell-idx {
+		display: block;
+		margin-bottom: 0.7rem;
+		font-family: var(--font-mono);
+		font-size: 0.65rem;
+		font-weight: 400;
+		letter-spacing: 0.05em;
+		color: var(--accent);
+		opacity: 0.65;
+	}
+
+	.focus-cell strong {
+		display: block;
+		margin-bottom: 0.4rem;
+		font-size: 0.94rem;
+		font-weight: 600;
+		letter-spacing: -0.012em;
+		color: rgb(var(--black));
+	}
+
+	.focus-cell p {
+		margin: 0;
+		font-size: 0.89rem;
+		line-height: 1.65;
+		color: rgb(var(--gray));
+	}
+
+	/* ═══════════════════════════════════════════════════════
+	   WRITING
+	   ═══════════════════════════════════════════════════════ */
 
 	.post-grid {
 		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 1rem;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.875rem;
+		margin-bottom: 1.4rem;
 	}
 
 	.more-link {
-		margin-top: 1.5rem;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3rem;
+		font-size: 0.9rem;
+		font-weight: 500;
+		color: var(--accent) !important;
+		text-decoration: none !important;
+		transition: opacity 0.15s ease;
 	}
+	.more-link:hover { opacity: 0.7; }
 
-	[data-theme='dark'] .primary-link {
-		background: rgb(var(--black));
-		color: rgb(var(--gray-light));
-	}
-
-	[data-theme='dark'] .index-links a {
-		background: rgba(var(--gray-light), 0.08);
-	}
+	/* ═══════════════════════════════════════════════════════
+	   RESPONSIVE
+	   ═══════════════════════════════════════════════════════ */
 
 	@media (max-width: 760px) {
-		main {
-			padding: 0 1.1rem 4rem;
-		}
+		main { padding: 0 1.1rem 5rem; }
 
-		.intro {
-			min-height: auto;
-			padding: 5rem 0 3.5rem;
-		}
+		.hero { min-height: auto; padding: 5rem 0 3.5rem; }
+
+		/* Circuit traces off on mobile — too small to read */
+		.circuit-bg { display: none; }
 
 		h1 {
-			font-size: clamp(3.4rem, 18vw, 5rem);
+			font-size: clamp(3rem, 17vw, 4.5rem);
+			letter-spacing: -0.035em;
 		}
 
-		.lead {
-			max-width: 100%;
-			font-size: 1.08rem;
-			line-height: 1.55;
-		}
+		.section { padding: 3.5rem 0; }
 
-		.intro-actions {
-			gap: 0.8rem;
-		}
+		.work-grid, .post-grid { grid-template-columns: 1fr; }
 
-		.primary-link {
-			padding-inline: 0.95rem;
-		}
+		.focus-grid  { grid-template-columns: 1fr; border-radius: 14px; }
+		.focus-cell  { border-right: none; border-bottom: 1px solid rgba(var(--gray), 0.15); }
+		.focus-cell:last-child { border-bottom: none; }
 
-		.section {
-			padding: 3.75rem 0;
-		}
+		.notes-nav { gap: 0.45rem; }
+		.notes-all-link { margin-left: 0; }
+	}
 
-		.section-heading,
-		.work-row {
-			grid-template-columns: 1fr;
-			gap: 1rem;
-		}
-
-		.notes-copy {
-			flex-direction: column;
-		}
-
-		.focus-grid,
-		.post-grid {
-			grid-template-columns: 1fr;
-		}
+	@media (max-width: 480px) {
+		.hero-actions { gap: 0.5rem; }
+		.notes-nav-label { display: none; }
+		.hero-meta { flex-wrap: wrap; }
 	}
 </style>

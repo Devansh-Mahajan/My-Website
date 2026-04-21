@@ -49,11 +49,7 @@ const posts = (await getCollection('blog'))
                 text-align: center;
                 margin-bottom: 4rem;
                 padding: 4rem 1rem;
-                background: linear-gradient(
-                    180deg,
-                    rgba(var(--accent), 0.08) 0%,
-                    rgba(var(--accent), 0.02) 100%
-                );
+                background: color-mix(in srgb, var(--accent) 6%, transparent);
                 border-radius: 1.5rem;
             }
 

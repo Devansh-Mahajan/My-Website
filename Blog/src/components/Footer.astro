@@ -1,37 +1,67 @@
 ---
+import { QUARTZ_URL } from '../consts';
 const today = new Date();
 ---
 
 <footer>
-	<div class="footer-content">
-		<div class="copyright">
-			&copy; {today.getFullYear()} Devansh Mahajan. All rights reserved.
-		</div>
+	<div class="footer-inner">
+		<span class="copyright">&copy; {today.getFullYear()} Devansh Mahajan</span>
+		<nav class="footer-links" aria-label="Footer navigation">
+			<a href={QUARTZ_URL} target="_blank" rel="noreferrer">Notes</a>
+			<a href="https://github.com/Devansh-Mahajan" target="_blank" rel="noreferrer">GitHub</a>
+			<a href="https://www.linkedin.com/in/devansh-mahajan-2b2b99185/" target="_blank" rel="noreferrer">LinkedIn</a>
+		</nav>
 	</div>
 </footer>
 
 <style>
 	footer {
-		padding: 3rem 1rem;
-		background: rgba(var(--gray-light), 0.5);
-		color: rgb(var(--gray));
-		border-top: 1px solid rgba(var(--gray), 0.1);
+		padding: 2rem 1.5rem;
+		border-top: 1px solid rgba(var(--gray), 0.14);
 	}
 
-	.footer-content {
-		max-width: 920px;
+	.footer-inner {
+		max-width: 960px;
 		margin: 0 auto;
-		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1.5rem;
+		flex-wrap: wrap;
 	}
 
 	.copyright {
-		font-size: 0.9rem;
+		font-size: 0.875rem;
 		color: rgb(var(--gray));
 	}
 
-	@media (max-width: 720px) {
+	.footer-links {
+		display: flex;
+		gap: 1.5rem;
+	}
+
+	.footer-links a {
+		font-size: 0.875rem;
+		font-weight: 500;
+		color: rgb(var(--gray));
+		text-decoration: none;
+		transition: color 0.15s ease;
+	}
+
+	.footer-links a:hover {
+		color: rgb(var(--black));
+		text-decoration: none;
+	}
+
+	@media (max-width: 480px) {
 		footer {
-			padding: 2rem 1rem;
+			padding: 1.75rem 1rem;
+		}
+
+		.footer-inner {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 1rem;
 		}
 	}
 </style>

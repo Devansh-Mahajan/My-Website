@@ -168,8 +168,8 @@ const safeTags = tags ?? [];
 				border: 1px solid rgba(var(--gray), 0.3);
 			}
 			.tag:hover {
-				background-color: rgba(var(--accent), 0.1);
-				color: rgb(var(--accent));
+				background-color: color-mix(in srgb, var(--accent) 10%, transparent);
+				color: var(--accent);
 				transform: translateY(-2px);
 			}
 		</style>
