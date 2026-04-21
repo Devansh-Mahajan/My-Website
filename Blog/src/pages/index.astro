@@ -252,6 +252,148 @@ const focusAreas = [
 						d="M 918,0 L 856,200 L 898,200 L 816,408 L 866,408 L 760,645"/>
 					<path class="lc lc-2" stroke-linecap="round" stroke-linejoin="round"
 						d="M 960,55 L 928,235 L 955,235 L 914,432 L 944,432 L 896,622"/>
+
+					<!-- ══ LEFT-SIDE EXTENSION ══════════════════════════════════════ -->
+
+					<!-- ── Left power rail + bus traces ── -->
+					<g class="traces" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="square">
+						<!-- Power rail from left edge to existing bus at x=680 -->
+						<path d="M 0 60 H 200 V 88 H 440"/>
+						<path d="M 200 0 V 60"/>
+						<!-- U3 pin connections -->
+						<path d="M 0 158 H 55"/>
+						<path d="M 145 158 H 300 V 88"/>
+						<path d="M 0 175 H 55"/>
+						<path d="M 145 175 H 220 V 240"/>
+						<!-- Horizontal bus below U3 -->
+						<path d="M 0 240 H 220"/>
+						<path d="M 300 88 V 240 H 220"/>
+						<!-- Lower left traces -->
+						<path d="M 220 240 V 380 H 0"/>
+						<path d="M 300 240 V 380 H 380 V 455"/>
+						<!-- Connect left bus to existing crystal stub area -->
+						<path d="M 440 88 H 500 V 195"/>
+						<!-- GND stub left -->
+						<path d="M 110 240 V 285"/>
+					</g>
+
+					<!-- ── GND Symbol (left side) ── -->
+					<g class="gnd-sym" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+						<line x1="102" y1="287" x2="118" y2="287"/>
+						<line x1="105" y1="291" x2="115" y2="291"/>
+						<line x1="108" y1="295" x2="112" y2="295"/>
+					</g>
+
+					<!-- ── IC U3 Footprint (6-pin, DSP) ── -->
+					<g class="ic-pkg">
+						<rect x="55" y="146" width="90" height="70" class="ic-body" rx="2"/>
+						<path d="M 55 146 L 67 146 L 55 158 Z" class="ic-pin1-mark"/>
+						<!-- Left pads -->
+						<rect x="41" y="152" width="14" height="7" class="ic-pad"/>
+						<rect x="41" y="168" width="14" height="7" class="ic-pad"/>
+						<rect x="41" y="184" width="14" height="7" class="ic-pad"/>
+						<!-- Right pads -->
+						<rect x="145" y="152" width="14" height="7" class="ic-pad"/>
+						<rect x="145" y="168" width="14" height="7" class="ic-pad"/>
+						<rect x="145" y="184" width="14" height="7" class="ic-pad"/>
+						<!-- Pin numbers -->
+						<text x="48" y="158" class="pin-num">1</text>
+						<text x="48" y="174" class="pin-num">2</text>
+						<text x="48" y="190" class="pin-num">3</text>
+						<text x="151" y="158" class="pin-num">6</text>
+						<text x="151" y="174" class="pin-num">5</text>
+						<text x="151" y="190" class="pin-num">4</text>
+						<text x="100" y="176" class="ic-ref">U3</text>
+						<text x="100" y="188" class="ic-val">DSP</text>
+						<line x1="55" y1="181" x2="145" y2="181" class="ic-divider"/>
+					</g>
+
+					<!-- ── R2: SMD Resistor on left power rail ── -->
+					<g class="smd-pkg">
+						<rect x="154" y="82" width="26" height="12" class="ic-body" rx="1"/>
+						<text x="167" y="78" class="comp-ref">R2</text>
+						<text x="167" y="104" class="comp-val">4k7</text>
+					</g>
+
+					<!-- ── C2: Bypass cap near U3 ── -->
+					<g class="smd-pkg">
+						<rect x="300" y="295" width="8" height="18" class="ic-body" rx="1"/>
+						<line x1="300" y1="295" x2="308" y2="295" class="ic-divider"/>
+						<text x="312" y="305" class="comp-ref">C2</text>
+						<text x="312" y="314" class="comp-val">10u</text>
+					</g>
+
+					<!-- ── L1: SMD Inductor (coil symbol) ── -->
+					<g class="crystal-pkg">
+						<path d="M 370 455 H 390 C 390 445 400 445 400 455 C 400 465 410 465 410 455 C 410 445 420 445 420 455 H 440"
+							stroke="currentColor" stroke-width="1.2" fill="none"/>
+						<line x1="380" y1="455" x2="370" y2="455" stroke="currentColor" stroke-width="1.2"/>
+						<line x1="440" y1="455" x2="460" y2="455" stroke="currentColor" stroke-width="1.2"/>
+						<text x="405" y="443" class="comp-ref">L1</text>
+						<text x="405" y="473" class="comp-val">10uH</text>
+					</g>
+
+					<!-- ── New Vias (left side) ── -->
+					<g class="vias">
+						<circle cx="200" cy="88"  r="5"/><circle cx="200" cy="88"  r="2"/>
+						<circle cx="300" cy="88"  r="5"/><circle cx="300" cy="88"  r="2"/>
+						<circle cx="220" cy="240" r="5"/><circle cx="220" cy="240" r="2"/>
+						<circle cx="300" cy="240" r="5"/><circle cx="300" cy="240" r="2"/>
+						<circle cx="220" cy="380" r="4"/><circle cx="220" cy="380" r="1.8"/>
+						<circle cx="300" cy="380" r="4"/><circle cx="300" cy="380" r="1.8"/>
+						<circle cx="500" cy="195" r="4"/><circle cx="500" cy="195" r="1.8"/>
+						<circle cx="200" cy="60"  r="4"/><circle cx="200" cy="60"  r="1.8"/>
+					</g>
+
+					<!-- ── New Signal Paths (left network) ── -->
+					<path class="signal signal-e" d="M 0 88 H 300 V 240 H 220"/>
+					<path class="signal signal-f" d="M 0 158 H 145 V 88 H 300"/>
+
+					<!-- ══ NAME BUS ══════════════════════════════════════════════════
+					     Horizontal trace through the name area with regular pin stubs
+					     — treats the name like an IC component on the board.
+					     y=310 sits between the y=240 and y=380 buses, mid-name. -->
+					<g class="traces" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="square">
+						<path d="M 0 310 H 440"/>
+						<!-- Up stubs (letter width cadence) -->
+						<path d="M 50  310 V 268"/>
+						<path d="M 113 310 V 268"/>
+						<path d="M 176 310 V 268"/>
+						<path d="M 239 310 V 268"/>
+						<path d="M 302 310 V 268"/>
+						<path d="M 365 310 V 268"/>
+						<!-- Down stubs -->
+						<path d="M 82  310 V 352"/>
+						<path d="M 145 310 V 352"/>
+						<path d="M 208 310 V 352"/>
+						<path d="M 271 310 V 352"/>
+						<path d="M 334 310 V 352"/>
+						<path d="M 408 310 V 352"/>
+					</g>
+					<!-- Test-point pads at stub tips -->
+					<g class="name-tp">
+						<circle cx="50"  cy="268" r="2.2"/>
+						<circle cx="113" cy="268" r="2.2"/>
+						<circle cx="176" cy="268" r="2.2"/>
+						<circle cx="239" cy="268" r="2.2"/>
+						<circle cx="302" cy="268" r="2.2"/>
+						<circle cx="365" cy="268" r="2.2"/>
+						<circle cx="82"  cy="352" r="2.2"/>
+						<circle cx="145" cy="352" r="2.2"/>
+						<circle cx="208" cy="352" r="2.2"/>
+						<circle cx="271" cy="352" r="2.2"/>
+						<circle cx="334" cy="352" r="2.2"/>
+						<circle cx="408" cy="352" r="2.2"/>
+					</g>
+					<!-- Via rings on the name bus -->
+					<g class="vias">
+						<circle cx="110" cy="310" r="4.5"/><circle cx="110" cy="310" r="1.8"/>
+						<circle cx="220" cy="310" r="4.5"/><circle cx="220" cy="310" r="1.8"/>
+						<circle cx="330" cy="310" r="4.5"/><circle cx="330" cy="310" r="1.8"/>
+						<circle cx="440" cy="310" r="4.5"/><circle cx="440" cy="310" r="1.8"/>
+					</g>
+					<!-- Signal pulse sweeping through the name -->
+					<path class="signal signal-name" d="M 0 310 H 440"/>
 				</svg>
 
 				<!-- Hero content -->
@@ -275,19 +417,6 @@ const focusAreas = [
 					</a>
 					<a class="btn-ghost" href="https://github.com/Devansh-Mahajan" target="_blank" rel="noreferrer">GitHub</a>
 					<a class="btn-ghost" href="https://www.linkedin.com/in/devansh-mahajan-2b2b99185/" target="_blank" rel="noreferrer">LinkedIn</a>
-				</div>
-
-				<!-- Oscilloscope signal trace -->
-				<div class="osc-wrap" aria-hidden="true">
-					<svg class="osc-svg" viewBox="0 0 480 28" overflow="visible" fill="none">
-						<line x1="0" y1="14" x2="480" y2="14" class="osc-base"/>
-						<line x1="120" y1="0" x2="120" y2="28" class="osc-grid"/>
-						<line x1="240" y1="0" x2="240" y2="28" class="osc-grid"/>
-						<line x1="360" y1="0" x2="360" y2="28" class="osc-grid"/>
-						<g class="osc-trace">
-							<path d="M 0,14 C 15,4 45,4 60,14 C 75,24 105,24 120,14 C 135,4 165,4 180,14 C 195,24 225,24 240,14 C 255,4 285,4 300,14 C 315,24 345,24 360,14 C 375,4 405,4 420,14 C 435,24 465,24 480,14 C 495,4 525,4 540,14 C 555,24 585,24 600,14 C 615,4 645,4 660,14 C 675,24 705,24 720,14 C 735,4 765,4 780,14 C 795,24 825,24 840,14 C 855,4 885,4 900,14 C 915,24 945,24 960,14"/>
-						</g>
-					</svg>
 				</div>
 
 				<p class="hero-meta" aria-label="Status">
@@ -484,18 +613,23 @@ const focusAreas = [
 		88%  { opacity: 1; }
 		100% { stroke-dashoffset: -345; opacity: 0; }
 	}
-
-	/* LED signal sweep — bright pulse travels left→right through the name text */
-	@keyframes led-sweep {
-		0%   { background-position: 100% center; }
-		58%  { background-position: 0%   center; }
-		100% { background-position: 0%   center; }
+	@keyframes sig-e {
+		0%   { stroke-dashoffset:   0; opacity: 0; }
+		4%   { opacity: 1; }
+		88%  { opacity: 1; }
+		100% { stroke-dashoffset: -552; opacity: 0; }
 	}
-
-	/* Oscilloscope trace scrolling */
-	@keyframes osc-scroll {
-		from { transform: translateX(0); }
-		to   { transform: translateX(-480px); }
+	@keyframes sig-f {
+		0%   { stroke-dashoffset:   0; opacity: 0; }
+		4%   { opacity: 1; }
+		88%  { opacity: 1; }
+		100% { stroke-dashoffset: -372; opacity: 0; }
+	}
+	@keyframes sig-name {
+		0%   { stroke-dashoffset:   0; opacity: 0; }
+		8%   { opacity: 1; }
+		82%  { opacity: 1; }
+		100% { stroke-dashoffset: -440; opacity: 0; }
 	}
 
 	@keyframes lc-anim-1 {
@@ -632,6 +766,12 @@ const focusAreas = [
 	/* SMD passive packages */
 	.smd-pkg .ic-body, .crystal-pkg .ic-body { stroke: currentColor; fill: color-mix(in srgb, currentColor 5%, transparent); }
 
+	/* Test-point pads on name bus */
+	.name-tp circle {
+		fill: currentColor;
+		opacity: 0.28;
+	}
+
 	/* Via ring style — annular ring, like plated through-holes */
 	.vias circle:nth-child(odd)  {
 		stroke: currentColor;
@@ -660,6 +800,14 @@ const focusAreas = [
 	.vias circle:nth-child(25), .vias circle:nth-child(26) { animation-delay: 1.3s; }
 	.vias circle:nth-child(27), .vias circle:nth-child(28) { animation-delay: 2.1s; }
 	.vias circle:nth-child(29), .vias circle:nth-child(30) { animation-delay: 0.5s; }
+	.vias circle:nth-child(31), .vias circle:nth-child(32) { animation-delay: 1.7s; }
+	.vias circle:nth-child(33), .vias circle:nth-child(34) { animation-delay: 0.2s; }
+	.vias circle:nth-child(35), .vias circle:nth-child(36) { animation-delay: 2.4s; }
+	.vias circle:nth-child(37), .vias circle:nth-child(38) { animation-delay: 1.0s; }
+	.vias circle:nth-child(39), .vias circle:nth-child(40) { animation-delay: 0.7s; }
+	.vias circle:nth-child(41), .vias circle:nth-child(42) { animation-delay: 1.9s; }
+	.vias circle:nth-child(43), .vias circle:nth-child(44) { animation-delay: 0.4s; }
+	.vias circle:nth-child(45), .vias circle:nth-child(46) { animation-delay: 2.6s; }
 
 	/* Signal pulses */
 	.signal {
@@ -672,6 +820,9 @@ const focusAreas = [
 	.signal-b { stroke-dasharray: 16 260; animation: sig-b 3.4s linear infinite 1.8s; }
 	.signal-c { stroke-dasharray: 16 390; animation: sig-c 4.8s linear infinite 3.0s; }
 	.signal-d { stroke-dasharray: 16 355; animation: sig-d 4.4s linear infinite 0.9s; }
+	.signal-e { stroke-dasharray: 16 560; animation: sig-e 6.0s linear infinite 1.5s; }
+	.signal-f { stroke-dasharray: 16 380; animation: sig-f 4.2s linear infinite 4.0s; }
+	.signal-name { stroke-dasharray: 22 450; animation: sig-name 3.4s linear infinite 0.8s; }
 
 	/* Lightning bolts */
 	.lb { fill: none; }
@@ -715,7 +866,7 @@ const focusAreas = [
 		animation: status-pulse 2.4s ease-in-out infinite;
 	}
 
-	/* ── Name — LED signal sweep ── */
+	/* ── Name ── */
 	h1 {
 		position: relative;
 		z-index: 1;
@@ -725,45 +876,8 @@ const focusAreas = [
 		font-weight: 800;
 		line-height: 0.93;
 		letter-spacing: -0.042em;
-		/* LED sweep: gradient acts as text fill; bright spot travels L→R */
-		background: linear-gradient(
-			90deg,
-			rgb(var(--black)) 0%,
-			rgb(var(--black)) 43%,
-			color-mix(in srgb, var(--accent) 55%, white) 47%,
-			white 50%,
-			color-mix(in srgb, var(--accent) 55%, white) 53%,
-			rgb(var(--black)) 57%,
-			rgb(var(--black)) 100%
-		);
-		background-size: 300% 100%;
-		-webkit-background-clip: text;
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-		animation:
-			fadeUp    0.6s  cubic-bezier(0.22, 1, 0.36, 1) 0.1s both,
-			led-sweep 4.8s  ease-in-out infinite 1.4s;
-	}
-
-	/* In dark mode the base text color flips to near-white so the "off" letters stay visible */
-	[data-theme='dark'] h1 {
-		background: linear-gradient(
-			90deg,
-			rgb(var(--black)) 0%,
-			rgb(var(--black)) 43%,
-			color-mix(in srgb, var(--accent) 40%, white) 47%,
-			white 50%,
-			color-mix(in srgb, var(--accent) 40%, white) 53%,
-			rgb(var(--black)) 57%,
-			rgb(var(--black)) 100%
-		);
-		background-size: 300% 100%;
-		-webkit-background-clip: text;
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-		animation:
-			fadeUp    0.6s  cubic-bezier(0.22, 1, 0.36, 1) 0.1s both,
-			led-sweep 4.8s  ease-in-out infinite 1.4s;
+		color: rgb(var(--black));
+		animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
 	}
 
 	/* ── Lead ── */
@@ -807,43 +921,6 @@ const focusAreas = [
 	}
 
 	.meta-sep { opacity: 0.4; }
-
-	/* ── Oscilloscope signal trace ── */
-	@keyframes fadeUpOsc {
-		from { opacity: 0;    transform: translateY(16px); }
-		to   { opacity: 0.55; transform: translateY(0); }
-	}
-
-	.osc-wrap {
-		position: relative;
-		z-index: 1;
-		width: min(420px, 100%);
-		height: 28px;
-		overflow: hidden;
-		margin: 1.5rem 0 0;
-		opacity: 0;
-		animation: fadeUpOsc 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
-	}
-
-	.osc-svg { display: block; width: 100%; height: 28px; }
-
-	.osc-base {
-		stroke: rgba(var(--gray), 0.35);
-		stroke-width: 0.5;
-	}
-	.osc-grid {
-		stroke: rgba(var(--gray), 0.15);
-		stroke-width: 0.5;
-		stroke-dasharray: 2 3;
-	}
-	.osc-trace path {
-		stroke: var(--accent);
-		stroke-width: 1.5;
-		fill: none;
-	}
-	.osc-trace {
-		animation: osc-scroll 2.8s linear infinite;
-	}
 
 	/* ── Tesla coil background ── */
 	.tesla-coil-bg {
