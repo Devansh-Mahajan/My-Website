@@ -19,7 +19,7 @@ publish: true
 
 # Lecture Notes
 
-[[00. Worum geht es bei der Mechanik?]]
+[[00. Worum geht es bei der Mechanik]]
 [[01. Kinematik des materiellen Punktes in kartesischen Koordinaten]]
 [[02. Kinematik des materiellen Punktes in zylindrischen Koordinaten]]
 [[03. Kinematik des ebenen Starrkörpers]]

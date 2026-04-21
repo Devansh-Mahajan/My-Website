@@ -2,11 +2,13 @@ name: Notify Quartz
 
 on:
   push:
-    branches: [ main ]
-    # Optional: only trigger when note files change
-    # paths:
-    #   - "**/*.md"
-    #   - "!**/.obsidian/**"
+    branches: [main]
+    paths:
+      - "**/*.md"
+      - "998 Attachements/**"
+      - "!Blog/**"
+      - "!999 Templates/**"
+      - "!.obsidian/**"
 
 jobs:
   trigger:
@@ -15,7 +17,6 @@ jobs:
       - name: Dispatch event to Quartz
         uses: peter-evans/repository-dispatch@v3
         with:
-          token: ${{ secrets.PAT_FOR_QUARTZ }}  # stored in My-Website repo secrets
+          token: ${{ secrets.PAT_FOR_QUARTZ }}
           repository: Devansh-Mahajan/Obsidian-Website
           event-type: vault-updated
-

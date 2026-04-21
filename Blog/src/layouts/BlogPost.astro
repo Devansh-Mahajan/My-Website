@@ -172,12 +172,6 @@ const safeTags = tags ?? [];
 				color: rgb(var(--accent));
 				transform: translateY(-2px);
 			}
-			:global(.mermaid) {
-				background: rgb(248, 250, 252);
-				padding: 1.5rem;
-				border-radius: 0.5rem;
-				margin: 1rem 0;
-			}
 		</style>
 	</head>
 
@@ -229,14 +223,5 @@ const safeTags = tags ?? [];
 			</article>
 		</main>
 		<Footer />
-		<script>
-			import mermaid from 'mermaid';
-			document.addEventListener('astro:page-load', () => {
-				mermaid.initialize({ 
-					startOnLoad: true,
-					theme: 'default'
-				});
-			});
-		</script>
 	</body>
 </html>

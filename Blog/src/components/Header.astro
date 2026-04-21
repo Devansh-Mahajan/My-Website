@@ -1,7 +1,7 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
 import ThemeToggle from './ThemeToggle.astro';
+import { QUARTZ_URL } from '../consts';
 import { getUrl } from '../utils/url';
 ---
 
@@ -10,6 +10,7 @@ import { getUrl } from '../utils/url';
 		<div class="nav-wrapper">
 			<div class="nav-brand">
 				<a href={getUrl('/')} class="brand-link">
+					<span class="brand-initials" aria-hidden="true">DM</span>
 					<span class="brand-text">Devansh Mahajan</span>
 				</a>
 			</div>
@@ -17,7 +18,7 @@ import { getUrl } from '../utils/url';
 			<div class="nav-links">
 				<HeaderLink href={getUrl('/')}>Home</HeaderLink>
 				<HeaderLink href={getUrl('/blog')}>Blog</HeaderLink>
-				<HeaderLink href="https://devansh-mahajan.github.io/Obsidian-Website/" target="_blank">Study Notes</HeaderLink>
+				<HeaderLink href={QUARTZ_URL} target="_blank">Notes</HeaderLink>
 			</div>
 
 			<div class="nav-actions">
@@ -42,10 +43,10 @@ import { getUrl } from '../utils/url';
 		position: sticky;
 		top: 0;
 		z-index: 100;
-		background: rgba(var(--gray-light), 0.85);
-		backdrop-filter: blur(12px);
-		-webkit-backdrop-filter: blur(12px);
-		border-bottom: 1px solid rgba(var(--gray), 0.1);
+		background: rgba(var(--gray-light), 0.78);
+		backdrop-filter: blur(18px);
+		-webkit-backdrop-filter: blur(18px);
+		border-bottom: 1px solid rgba(var(--gray), 0.16);
 		transition: var(--theme-transition);
 	}
 
@@ -55,13 +56,13 @@ import { getUrl } from '../utils/url';
 	}
 
 	.nav-wrapper {
-		max-width: 1200px;
+		max-width: 960px;
 		height: 100%;
 		margin: 0 auto;
 		display: grid;
 		grid-template-columns: auto 1fr auto;
 		align-items: center;
-		gap: 2rem;
+		gap: 1.5rem;
 	}
 
 	.nav-brand {
@@ -76,49 +77,36 @@ import { getUrl } from '../utils/url';
 		gap: 0.75rem;
 		text-decoration: none;
 		color: rgb(var(--black));
-		font-weight: 600;
+		font-weight: 650;
 		padding: 0.5rem;
 		margin: -0.5rem;
-		border-radius: 0.75rem;
+		border-radius: 8px;
 		transition: all 0.2s ease;
 		min-width: 0;
 	}
 
 	.brand-link:hover {
-		background: rgba(var(--gray), 0.1);
+		background: rgba(var(--gray), 0.08);
 	}
 
-	.brand-icon {
-		display: flex;
+	.brand-initials {
+		display: none;
 		align-items: center;
 		justify-content: center;
-		width: 2.25rem;
-		height: 2.25rem;
-		background: rgba(var(--gray-light), 0.5);
-		border-radius: 0.85rem;
-		padding: 0.25rem;
-		flex-shrink: 0;
-		box-shadow: 
-			0 2px 4px rgba(var(--gray), 0.1),
-			0 0 0 1px rgba(var(--gray), 0.05);
-	}
-
-	.brand-icon img {
-		width: 100%;
-		height: 100%;
-		border-radius: 0.6rem;
-		object-fit: cover;
-		transition: transform 0.2s ease;
-	}
-
-	.brand-link:hover .brand-icon img {
-		transform: scale(1.05);
+		width: 2rem;
+		height: 2rem;
+		border-radius: 8px;
+		background: rgb(var(--black));
+		color: rgb(var(--gray-light));
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0;
 	}
 
 	.brand-text {
-		font-size: 1.125rem;
-		font-weight: 600;
-		letter-spacing: -0.01em;
+		font-size: 1rem;
+		font-weight: 650;
+		letter-spacing: 0;
 		color: rgb(var(--black));
 		white-space: nowrap;
 		overflow: hidden;
@@ -128,7 +116,7 @@ import { getUrl } from '../utils/url';
 
 	.nav-links {
 		display: flex;
-		gap: 1rem;
+		gap: 0.25rem;
 		align-items: center;
 		justify-content: center;
 		height: 100%;
@@ -136,19 +124,19 @@ import { getUrl } from '../utils/url';
 
 	.nav-links a {
 		position: relative;
-		padding: 0.5rem 0.75rem;
+		padding: 0.45rem 0.65rem;
 		color: rgb(var(--gray-dark));
 		text-decoration: none;
-		font-size: 0.95rem;
-		font-weight: 500;
-		border-radius: 0.5rem;
+		font-size: 0.92rem;
+		font-weight: 600;
+		border-radius: 8px;
 		transition: all 0.2s ease;
 		white-space: nowrap;
 	}
 
 	.nav-links a:hover {
 		color: rgb(var(--black));
-		background: rgba(var(--gray), 0.1);
+		background: rgba(var(--gray), 0.08);
 	}
 
 	.nav-links a.active {
@@ -159,7 +147,7 @@ import { getUrl } from '../utils/url';
 	.nav-actions {
 		display: flex;
 		align-items: center;
-		gap: 0.75rem;
+		gap: 0.5rem;
 	}
 
 	.social-link {
@@ -171,15 +159,15 @@ import { getUrl } from '../utils/url';
 		color: rgb(var(--gray-dark));
 		border-radius: 0.5rem;
 		transition: all 0.2s ease;
-		background: rgba(var(--gray-light), 0.3);
-		border: 1px solid rgba(var(--gray), 0.1);
+		background: transparent;
+		border: 1px solid transparent;
 	}
 
 	.social-link:hover {
 		color: rgb(var(--black));
-		background: rgba(var(--gray), 0.15);
+		background: rgba(var(--gray), 0.1);
 		transform: translateY(-1px);
-		border-color: rgba(var(--gray), 0.2);
+		border-color: rgba(var(--gray), 0.18);
 	}
 
 	.social-link svg {
@@ -200,11 +188,6 @@ import { getUrl } from '../utils/url';
 
 		.brand-text {
 			font-size: 1.05rem;
-		}
-
-		.brand-icon {
-			width: 2.1rem;
-			height: 2.1rem;
 		}
 
 		.nav-links {
@@ -229,14 +212,11 @@ import { getUrl } from '../utils/url';
 		}
 
 		.brand-text {
-			font-size: 1rem;
-			max-width: 120px;
+			display: none;
 		}
 
-		.brand-icon {
-			width: 2rem;
-			height: 2rem;
-			padding: 0.2rem;
+		.brand-initials {
+			display: inline-flex;
 		}
 
 		.nav-links {
