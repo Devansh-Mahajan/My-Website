@@ -260,11 +260,7 @@ const focusAreas = [
 					ETH Zurich &middot; EECS
 				</p>
 
-				<!-- Matrix scramble reveal on name -->
-				<h1 id="hero-name">
-					<span class="scramble-line">Devansh</span><br />
-					<span class="scramble-line">Mahajan</span>
-				</h1>
+				<h1 id="hero-name">Devansh<br />Mahajan</h1>
 
 				<p class="lead">
 					EECS student at ETH Zurich. Building a public notebook
@@ -279,6 +275,19 @@ const focusAreas = [
 					</a>
 					<a class="btn-ghost" href="https://github.com/Devansh-Mahajan" target="_blank" rel="noreferrer">GitHub</a>
 					<a class="btn-ghost" href="https://www.linkedin.com/in/devansh-mahajan-2b2b99185/" target="_blank" rel="noreferrer">LinkedIn</a>
+				</div>
+
+				<!-- Oscilloscope signal trace -->
+				<div class="osc-wrap" aria-hidden="true">
+					<svg class="osc-svg" viewBox="0 0 480 28" overflow="visible" fill="none">
+						<line x1="0" y1="14" x2="480" y2="14" class="osc-base"/>
+						<line x1="120" y1="0" x2="120" y2="28" class="osc-grid"/>
+						<line x1="240" y1="0" x2="240" y2="28" class="osc-grid"/>
+						<line x1="360" y1="0" x2="360" y2="28" class="osc-grid"/>
+						<g class="osc-trace">
+							<path d="M 0,14 C 15,4 45,4 60,14 C 75,24 105,24 120,14 C 135,4 165,4 180,14 C 195,24 225,24 240,14 C 255,4 285,4 300,14 C 315,24 345,24 360,14 C 375,4 405,4 420,14 C 435,24 465,24 480,14 C 495,4 525,4 540,14 C 555,24 585,24 600,14 C 615,4 645,4 660,14 C 675,24 705,24 720,14 C 735,4 765,4 780,14 C 795,24 825,24 840,14 C 855,4 885,4 900,14 C 915,24 945,24 960,14"/>
+						</g>
+					</svg>
 				</div>
 
 				<p class="hero-meta" aria-label="Status">
@@ -393,66 +402,43 @@ const focusAreas = [
 			)}
 
 		</main>
+		<!-- Tesla coil background: concentric circles inspired by patent drawings -->
+		<div class="tesla-coil-bg" aria-hidden="true">
+			<svg viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<!-- Concentric winding circles — Tesla transformer cross-section -->
+				<circle cx="220" cy="220" r="18"/>
+				<circle cx="220" cy="220" r="40"/>
+				<circle cx="220" cy="220" r="65"/>
+				<circle cx="220" cy="220" r="93"/>
+				<circle cx="220" cy="220" r="124"/>
+				<circle cx="220" cy="220" r="158"/>
+				<circle cx="220" cy="220" r="195"/>
+				<circle cx="220" cy="220" r="215"/>
+				<!-- Center-to-edge axis lines (patent drawing style) -->
+				<line x1="220" y1="0"   x2="220" y2="440"/>
+				<line x1="0"   y1="220" x2="440" y2="220"/>
+				<line x1="64"  y1="64"  x2="376" y2="376"/>
+				<line x1="376" y1="64"  x2="64"  y2="376"/>
+				<!-- Small terminal marks at axis ends -->
+				<circle cx="220" cy="5"   r="3" fill="currentColor"/>
+				<circle cx="220" cy="435" r="3" fill="currentColor"/>
+				<circle cx="5"   cy="220" r="3" fill="currentColor"/>
+				<circle cx="435" cy="220" r="3" fill="currentColor"/>
+				<!-- Patent reference labels -->
+				<text x="228" y="12"  class="tesla-label">A</text>
+				<text x="228" y="433" class="tesla-label">A'</text>
+				<text x="430" y="225" class="tesla-label">B</text>
+				<text x="4"   y="225" class="tesla-label">B'</text>
+				<text x="220" y="256" class="tesla-fig" text-anchor="middle">Fig. 1</text>
+				<!-- Central core -->
+				<circle cx="220" cy="220" r="6" fill="currentColor" opacity="0.4"/>
+			</svg>
+		</div>
+
 		<Footer />
 	</body>
 </html>
 
-<!-- Matrix scramble reveal for the hero name -->
-<script>
-  (() => {
-    // EECS-flavored character set: Greek/math symbols, hex digits, logic chars
-    const CHARS = 'ΩλΔμπΣφψαβγ0123456789ABCDEF#$@!?∀∃∈∇⊕';
-
-    function scramble(el: HTMLElement, startDelay: number) {
-      const final = el.textContent ?? '';
-      const len = final.length;
-      if (!len) return;
-
-      const FRAMES   = 28;       // total animation frames
-      const INTERVAL = 38;       // ms per frame (~26 fps)
-
-      let frame = 0;
-
-      // Pre-fill with scrambled chars so there's no flash of real text
-      el.textContent = Array.from({ length: len }, (_, i) =>
-        final[i] === ' ' ? ' ' : CHARS[Math.floor(Math.random() * CHARS.length)]
-      ).join('');
-
-      setTimeout(() => {
-        const tick = () => {
-          const locked = Math.floor((frame / FRAMES) * len);
-          let out = '';
-          for (let i = 0; i < len; i++) {
-            if (i < locked || final[i] === ' ') {
-              out += final[i];
-            } else {
-              out += CHARS[Math.floor(Math.random() * CHARS.length)];
-            }
-          }
-          el.textContent = out;
-          frame++;
-          if (frame <= FRAMES) {
-            setTimeout(tick, INTERVAL);
-          } else {
-            el.textContent = final;
-          }
-        };
-        tick();
-      }, startDelay);
-    }
-
-    const init = () => {
-      const lines = document.querySelectorAll<HTMLElement>('.scramble-line');
-      lines.forEach((line, i) => scramble(line, 120 + i * 160));
-    };
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', init, { once: true });
-    } else {
-      init();
-    }
-  })();
-</script>
 
 <style>
 	/* ═══════════════════════════════════════════════════════
@@ -497,6 +483,19 @@ const focusAreas = [
 		4%   { opacity: 1; }
 		88%  { opacity: 1; }
 		100% { stroke-dashoffset: -345; opacity: 0; }
+	}
+
+	/* LED signal sweep — bright pulse travels left→right through the name text */
+	@keyframes led-sweep {
+		0%   { background-position: 100% center; }
+		58%  { background-position: 0%   center; }
+		100% { background-position: 0%   center; }
+	}
+
+	/* Oscilloscope trace scrolling */
+	@keyframes osc-scroll {
+		from { transform: translateX(0); }
+		to   { transform: translateX(-480px); }
 	}
 
 	@keyframes lc-anim-1 {
@@ -716,7 +715,7 @@ const focusAreas = [
 		animation: status-pulse 2.4s ease-in-out infinite;
 	}
 
-	/* ── Name — matrix scramble target ── */
+	/* ── Name — LED signal sweep ── */
 	h1 {
 		position: relative;
 		z-index: 1;
@@ -726,18 +725,46 @@ const focusAreas = [
 		font-weight: 800;
 		line-height: 0.93;
 		letter-spacing: -0.042em;
-		color: rgb(var(--black));
-		animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+		/* LED sweep: gradient acts as text fill; bright spot travels L→R */
+		background: linear-gradient(
+			90deg,
+			rgb(var(--black)) 0%,
+			rgb(var(--black)) 43%,
+			color-mix(in srgb, var(--accent) 55%, white) 47%,
+			white 50%,
+			color-mix(in srgb, var(--accent) 55%, white) 53%,
+			rgb(var(--black)) 57%,
+			rgb(var(--black)) 100%
+		);
+		background-size: 300% 100%;
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation:
+			fadeUp    0.6s  cubic-bezier(0.22, 1, 0.36, 1) 0.1s both,
+			led-sweep 4.8s  ease-in-out infinite 1.4s;
 	}
 
+	/* In dark mode the base text color flips to near-white so the "off" letters stay visible */
 	[data-theme='dark'] h1 {
-		text-shadow:
-			0 0 60px color-mix(in srgb, var(--accent) 26%, transparent),
-			0 0 120px color-mix(in srgb, var(--accent) 10%, transparent);
+		background: linear-gradient(
+			90deg,
+			rgb(var(--black)) 0%,
+			rgb(var(--black)) 43%,
+			color-mix(in srgb, var(--accent) 40%, white) 47%,
+			white 50%,
+			color-mix(in srgb, var(--accent) 40%, white) 53%,
+			rgb(var(--black)) 57%,
+			rgb(var(--black)) 100%
+		);
+		background-size: 300% 100%;
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation:
+			fadeUp    0.6s  cubic-bezier(0.22, 1, 0.36, 1) 0.1s both,
+			led-sweep 4.8s  ease-in-out infinite 1.4s;
 	}
-
-	/* The scramble spans sit inside h1 — no extra styling needed */
-	.scramble-line { display: inline; }
 
 	/* ── Lead ── */
 	.lead {
@@ -780,6 +807,86 @@ const focusAreas = [
 	}
 
 	.meta-sep { opacity: 0.4; }
+
+	/* ── Oscilloscope signal trace ── */
+	@keyframes fadeUpOsc {
+		from { opacity: 0;    transform: translateY(16px); }
+		to   { opacity: 0.55; transform: translateY(0); }
+	}
+
+	.osc-wrap {
+		position: relative;
+		z-index: 1;
+		width: min(420px, 100%);
+		height: 28px;
+		overflow: hidden;
+		margin: 1.5rem 0 0;
+		opacity: 0;
+		animation: fadeUpOsc 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+	}
+
+	.osc-svg { display: block; width: 100%; height: 28px; }
+
+	.osc-base {
+		stroke: rgba(var(--gray), 0.35);
+		stroke-width: 0.5;
+	}
+	.osc-grid {
+		stroke: rgba(var(--gray), 0.15);
+		stroke-width: 0.5;
+		stroke-dasharray: 2 3;
+	}
+	.osc-trace path {
+		stroke: var(--accent);
+		stroke-width: 1.5;
+		fill: none;
+	}
+	.osc-trace {
+		animation: osc-scroll 2.8s linear infinite;
+	}
+
+	/* ── Tesla coil background ── */
+	.tesla-coil-bg {
+		position: fixed;
+		right: -60px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 360px;
+		height: 360px;
+		pointer-events: none;
+		z-index: 0;
+		opacity: 0.038;
+		color: rgb(var(--black));
+		display: none;
+	}
+
+	[data-theme='dark'] .tesla-coil-bg { opacity: 0.07; }
+
+	@media (min-width: 1120px) {
+		.tesla-coil-bg { display: block; }
+	}
+
+	.tesla-coil-bg svg circle,
+	.tesla-coil-bg svg line {
+		stroke: currentColor;
+		fill: none;
+		stroke-width: 0.6;
+	}
+
+	.tesla-label {
+		font-family: 'Georgia', 'Times New Roman', serif;
+		font-size: 11px;
+		fill: currentColor;
+		font-style: italic;
+	}
+
+	.tesla-fig {
+		font-family: 'Georgia', 'Times New Roman', serif;
+		font-size: 9px;
+		fill: currentColor;
+		font-style: italic;
+		opacity: 0.7;
+	}
 
 	/* ═══════════════════════════════════════════════════════
 	   BUTTONS
