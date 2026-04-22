@@ -78,73 +78,157 @@ const focusAreas = [
 			<!-- ── HERO ─────────────────────────────────── -->
 			<section class="hero" aria-labelledby="hero-name">
 
-				<!-- PCB schematic: routes itself in on load, one slow signal pulse -->
+				<!-- PCB schematic: routes itself in on load, two calm signal pulses -->
 				<svg class="pcb-bg" viewBox="0 0 520 600" fill="none"
 				     preserveAspectRatio="xMaxYMid meet" aria-hidden="true">
 
-					<!-- Traces — draw in sequentially on page load -->
+					<!-- ══ TRACES ═══════════════════════════════════════ -->
 					<g stroke="currentColor" stroke-width="1.1" fill="none" stroke-linecap="square">
-						<!-- Power entry: right edge → main junction -->
-						<path class="tr tr-1" pathLength="1000" d="M 520 68 H 290"/>
-						<!-- Return rail at top -->
-						<path class="tr tr-2" pathLength="1000" d="M 290 38 H 520"/>
-						<!-- Short vertical connecting top rail to junction -->
-						<path class="tr tr-3" pathLength="1000" d="M 290 38 V 68"/>
-						<!-- Main vertical bus -->
-						<path class="tr tr-4" pathLength="1000" d="M 290 68 V 520"/>
-						<!-- Bus → IC right pins (two stubs) -->
-						<path class="tr tr-5"  pathLength="1000" d="M 290 165 H 228"/>
-						<path class="tr tr-5b" pathLength="1000" d="M 290 183 H 228"/>
-						<!-- IC left pins → off screen -->
-						<path class="tr tr-6"  pathLength="1000" d="M 100 165 H 0"/>
-						<path class="tr tr-6b" pathLength="1000" d="M 100 183 H 0"/>
-						<!-- Lower output branches -->
-						<path class="tr tr-7" pathLength="1000" d="M 290 330 H 520"/>
-						<path class="tr tr-8" pathLength="1000" d="M 290 445 H 520"/>
-						<!-- GND stub -->
-						<path class="tr tr-9" pathLength="1000" d="M 290 520 V 548"/>
+
+						<!-- Rails + bus spine -->
+						<path class="tr tr-1"   pathLength="1000" d="M 520 50 H 290"/>
+						<path class="tr tr-2"   pathLength="1000" d="M 290 20 H 440"/>
+						<path class="tr tr-2b"  pathLength="1000" d="M 480 20 H 520"/>
+						<path class="tr tr-3"   pathLength="1000" d="M 290 20 V 50"/>
+						<path class="tr tr-4"   pathLength="1000" d="M 290 50 V 565"/>
+						<path class="tr tr-15"  pathLength="1000" d="M 290 565 V 583"/>
+
+						<!-- U1 (FPGA, left): bus → right pin stubs -->
+						<path class="tr tr-5"   pathLength="1000" d="M 290 133 H 238"/>
+						<path class="tr tr-5b"  pathLength="1000" d="M 290 149 H 238"/>
+						<path class="tr tr-5c"  pathLength="1000" d="M 290 165 H 238"/>
+						<path class="tr tr-5d"  pathLength="1000" d="M 290 181 H 238"/>
+						<!-- U1 left pin exits off-screen -->
+						<path class="tr tr-6"   pathLength="1000" d="M 64 133 H 0"/>
+						<path class="tr tr-6b"  pathLength="1000" d="M 64 149 H 0"/>
+						<path class="tr tr-6c"  pathLength="1000" d="M 64 165 H 0"/>
+
+						<!-- U2 (MCU, right): bus → left pin stubs -->
+						<path class="tr tr-7"   pathLength="1000" d="M 290 128 H 314"/>
+						<path class="tr tr-7b"  pathLength="1000" d="M 290 143 H 314"/>
+						<path class="tr tr-7c"  pathLength="1000" d="M 290 158 H 314"/>
+						<path class="tr tr-7d"  pathLength="1000" d="M 290 173 H 314"/>
+						<!-- U2 right outputs -->
+						<path class="tr tr-8"   pathLength="1000" d="M 430 128 H 520"/>
+						<path class="tr tr-8b"  pathLength="1000" d="M 430 143 H 520"/>
+
+						<!-- C1: VCC junction stub down, then GND lead -->
+						<path class="tr tr-9"   pathLength="1000" d="M 372 50 V 60"/>
+						<path class="tr tr-9b"  pathLength="1000" d="M 372 66 V 92"/>
+
+						<!-- C2: branch off bus, GND lead -->
+						<path class="tr tr-10"  pathLength="1000" d="M 290 265 H 452 V 272"/>
+						<path class="tr tr-10b" pathLength="1000" d="M 452 278 V 302"/>
+
+						<!-- R1: inline on trace at y=310 -->
+						<path class="tr tr-11"  pathLength="1000" d="M 290 310 H 375"/>
+						<path class="tr tr-11b" pathLength="1000" d="M 413 310 H 520"/>
+
+						<!-- L1: left lead, arc bumps (4×), right lead -->
+						<path class="tr tr-12"  pathLength="1000" d="M 290 375 H 352"/>
+						<path class="tr tr-12c" pathLength="1000" stroke-linecap="round"
+						      d="M 352 375 Q 361 362 370 375 Q 379 362 388 375 Q 397 362 406 375 Q 415 362 424 375"/>
+						<path class="tr tr-12b" pathLength="1000" d="M 424 375 H 520"/>
+
+						<!-- R2: inline at y=445 -->
+						<path class="tr tr-13"  pathLength="1000" d="M 290 445 H 372"/>
+						<path class="tr tr-13b" pathLength="1000" d="M 410 445 H 520"/>
+
 					</g>
 
-					<!-- GND symbol -->
+					<!-- ══ GND SYMBOLS ══════════════════════════════════ -->
 					<g stroke="currentColor" stroke-width="0.9" stroke-linecap="round">
-						<line x1="278" y1="552" x2="302" y2="552"/>
-						<line x1="282" y1="557" x2="298" y2="557"/>
-						<line x1="286" y1="562" x2="294" y2="562"/>
+						<!-- Bus bottom -->
+						<line x1="278" y1="586" x2="302" y2="586"/>
+						<line x1="282" y1="591" x2="298" y2="591"/>
+						<line x1="286" y1="596" x2="294" y2="596"/>
+					</g>
+					<g stroke="currentColor" stroke-width="0.75" stroke-linecap="round">
+						<!-- C1 bottom -->
+						<line x1="365" y1="93"  x2="379" y2="93"/>
+						<line x1="368" y1="97"  x2="376" y2="97"/>
+						<line x1="371" y1="101" x2="373" y2="101"/>
+						<!-- C2 bottom -->
+						<line x1="445" y1="304" x2="459" y2="304"/>
+						<line x1="448" y1="308" x2="456" y2="308"/>
+						<line x1="451" y1="312" x2="453" y2="312"/>
 					</g>
 
-					<!-- Via rings at junctions -->
-					<circle class="via-o" cx="290" cy="68"  r="5"/>
-					<circle class="via-i" cx="290" cy="68"  r="2"/>
-					<circle class="via-o" cx="290" cy="38"  r="3.5"/>
-					<circle class="via-i" cx="290" cy="38"  r="1.5"/>
-					<circle class="via-o" cx="290" cy="330" r="5"/>
-					<circle class="via-i" cx="290" cy="330" r="2"/>
-					<circle class="via-o" cx="290" cy="445" r="3.5"/>
-					<circle class="via-i" cx="290" cy="445" r="1.5"/>
+					<!-- ══ VIAS ══════════════════════════════════════════ -->
+					<circle class="via-o" cx="290" cy="50"  r="5"/>  <circle class="via-i" cx="290" cy="50"  r="2"/>
+					<circle class="via-o" cx="290" cy="20"  r="3.5"/><circle class="via-i" cx="290" cy="20"  r="1.5"/>
+					<circle class="via-o" cx="290" cy="265" r="3.5"/><circle class="via-i" cx="290" cy="265" r="1.5"/>
+					<circle class="via-o" cx="290" cy="310" r="4"/>  <circle class="via-i" cx="290" cy="310" r="1.8"/>
+					<circle class="via-o" cx="290" cy="375" r="4"/>  <circle class="via-i" cx="290" cy="375" r="1.8"/>
+					<circle class="via-o" cx="290" cy="445" r="3.5"/><circle class="via-i" cx="290" cy="445" r="1.5"/>
+					<circle class="via-o" cx="372" cy="50"  r="3.5"/><circle class="via-i" cx="372" cy="50"  r="1.5"/>
 
-					<!-- IC U1: schematic box symbol -->
-					<rect class="ic-box" x="100" y="143" width="128" height="78" rx="2"/>
-					<circle class="ic-pin1" cx="108" cy="150" r="2.2"/>
-					<!-- Right pin stubs (extending outside body to bus traces) -->
-					<line class="ic-pin" x1="228" y1="159" x2="244" y2="159"/>
-					<line class="ic-pin" x1="228" y1="172" x2="244" y2="172"/>
-					<line class="ic-pin" x1="228" y1="185" x2="244" y2="185"/>
-					<!-- Left pin stubs -->
-					<line class="ic-pin" x1="100" y1="159" x2="84"  y2="159"/>
-					<line class="ic-pin" x1="100" y1="172" x2="84"  y2="172"/>
-					<line class="ic-pin" x1="100" y1="185" x2="84"  y2="185"/>
-					<!-- Internal divider + labels -->
-					<line class="ic-div" x1="100" y1="179" x2="228" y2="179"/>
-					<text class="ic-ref-lbl" x="164" y="171">U1</text>
-					<text class="ic-val-lbl" x="164" y="185">FPGA</text>
+					<!-- ══ U1: FPGA (schematic box, left of bus) ════════ -->
+					<rect class="ic-box" x="78" y="116" width="160" height="90" rx="2"/>
+					<circle class="ic-pin1" cx="86" cy="124" r="2.2"/>
+					<line class="ic-pin" x1="238" y1="131" x2="252" y2="131"/>
+					<line class="ic-pin" x1="238" y1="147" x2="252" y2="147"/>
+					<line class="ic-pin" x1="238" y1="163" x2="252" y2="163"/>
+					<line class="ic-pin" x1="238" y1="179" x2="252" y2="179"/>
+					<line class="ic-pin" x1="78"  y1="131" x2="64"  y2="131"/>
+					<line class="ic-pin" x1="78"  y1="147" x2="64"  y2="147"/>
+					<line class="ic-pin" x1="78"  y1="163" x2="64"  y2="163"/>
+					<line class="ic-div" x1="78" y1="176" x2="238" y2="176"/>
+					<text class="ic-ref-lbl" x="158" y="168">U1</text>
+					<text class="ic-val-lbl" x="158" y="182">FPGA</text>
 
-					<!-- R1: IEC resistor box inline on lower trace -->
-					<rect class="ic-box r-box" x="388" y="323" width="38" height="14" rx="1.5"/>
-					<text class="comp-ref-lbl" x="407" y="318">R1</text>
-					<text class="comp-val-lbl" x="407" y="347">4.7k</text>
+					<!-- ══ U2: MCU (right of bus) ════════════════════════ -->
+					<rect class="ic-box" x="328" y="112" width="88" height="74" rx="2"/>
+					<circle class="ic-pin1" cx="336" cy="120" r="2"/>
+					<line class="ic-pin" x1="328" y1="128" x2="314" y2="128"/>
+					<line class="ic-pin" x1="328" y1="143" x2="314" y2="143"/>
+					<line class="ic-pin" x1="328" y1="158" x2="314" y2="158"/>
+					<line class="ic-pin" x1="328" y1="173" x2="314" y2="173"/>
+					<line class="ic-pin" x1="416" y1="128" x2="430" y2="128"/>
+					<line class="ic-pin" x1="416" y1="143" x2="430" y2="143"/>
+					<line class="ic-div" x1="328" y1="155" x2="416" y2="155"/>
+					<text class="ic-ref-lbl" x="372" y="147">U2</text>
+					<text class="ic-val-lbl" x="372" y="161">MCU</text>
 
-					<!-- Single calm signal pulse: power-in → bus → lower branch → right -->
-					<path class="sig" d="M 520 68 H 290 V 330 H 520"/>
+					<!-- ══ C1: Decoupling capacitor (VCC → GND) ═════════ -->
+					<line class="ic-pin" x1="363" y1="60" x2="381" y2="60"/>
+					<line class="ic-pin" x1="363" y1="66" x2="381" y2="66"/>
+					<text class="comp-ref-lbl" x="388" y="61">C1</text>
+					<text class="comp-val-lbl" x="388" y="72">100n</text>
+
+					<!-- ══ C2: Bypass capacitor (bus branch → GND) ══════ -->
+					<line class="ic-pin" x1="443" y1="272" x2="461" y2="272"/>
+					<line class="ic-pin" x1="443" y1="278" x2="461" y2="278"/>
+					<text class="comp-ref-lbl" x="466" y="277">C2</text>
+					<text class="comp-val-lbl" x="466" y="288">10µ</text>
+
+					<!-- ══ R1: Resistor 4.7k ═════════════════════════════ -->
+					<rect class="ic-box r-box" x="375" y="303" width="38" height="14" rx="1.5"/>
+					<text class="comp-ref-lbl" x="394" y="299">R1</text>
+					<text class="comp-val-lbl" x="394" y="327">4.7k</text>
+
+					<!-- ══ L1: Inductor 10µH (4 arc bumps) ══════════════ -->
+					<!-- arc bumps drawn as tr-12c in trace group above -->
+					<text class="comp-ref-lbl" x="388" y="357">L1</text>
+					<text class="comp-val-lbl" x="388" y="390">10µH</text>
+
+					<!-- ══ R2: Resistor 10k ══════════════════════════════ -->
+					<rect class="ic-box r-box" x="372" y="438" width="38" height="14" rx="1.5"/>
+					<text class="comp-ref-lbl" x="391" y="434">R2</text>
+					<text class="comp-val-lbl" x="391" y="462">10k</text>
+
+					<!-- ══ Y1: Crystal oscillator (inline on return rail) -->
+					<rect class="ic-box" x="440" y="13" width="40" height="14" rx="2"/>
+					<rect class="ic-box crys" x="448" y="15.5" width="24" height="9" rx="0.5"/>
+					<text class="comp-ref-lbl" x="460" y="9">Y1</text>
+					<text class="comp-val-lbl" x="460" y="33">16MHz</text>
+
+					<!-- ══ SIGNALS ════════════════════════════════════════ -->
+					<!-- Main: power rail → bus → R1 branch → right edge -->
+					<path class="sig sig-1" d="M 520 50 H 290 V 310 H 520"/>
+					<!-- Secondary: return rail → Y1 crystal -->
+					<path class="sig sig-2" d="M 290 20 H 440"/>
+
 				</svg>
 
 				<!-- Ghost: math/code equations wipe in and fade in the PCB region -->
@@ -326,8 +410,8 @@ const focusAreas = [
 	   TOKENS
 	   ═══════════════════════════════════════════════════════ */
 
-	:root { --ghost-vis: 0.07; }
-	[data-theme='dark'] { --ghost-vis: 0.11; }
+	:root { --ghost-vis: 0.13; }
+	[data-theme='dark'] { --ghost-vis: 0.20; }
 
 	/* ═══════════════════════════════════════════════════════
 	   LAYOUT
@@ -370,7 +454,7 @@ const focusAreas = [
 		width: 52%;
 		pointer-events: none;
 		z-index: 0;
-		color: rgba(0, 113, 227, 0.08);
+		color: rgba(0, 113, 227, 0.15);
 		mask-image: linear-gradient(to right,
 			transparent 0%,
 			rgba(0,0,0,0.2) 22%,
@@ -384,7 +468,7 @@ const focusAreas = [
 			black 72%
 		);
 	}
-	[data-theme='dark'] .pcb-bg { color: rgba(41, 151, 255, 0.17); }
+	[data-theme='dark'] .pcb-bg { color: rgba(41, 151, 255, 0.28); }
 
 	/* Traces */
 	.tr {
@@ -392,17 +476,41 @@ const focusAreas = [
 		stroke-dashoffset: 1000;
 		animation: drawTrace 1.3s cubic-bezier(0.25, 0, 0.5, 1) forwards;
 	}
-	.tr-1  { animation-delay: 0.10s; }
-	.tr-2  { animation-delay: 0.22s; }
-	.tr-3  { animation-delay: 0.28s; }
-	.tr-4  { animation-delay: 0.40s; }
-	.tr-5  { animation-delay: 0.72s; }
-	.tr-5b { animation-delay: 0.78s; }
-	.tr-6  { animation-delay: 0.95s; }
-	.tr-6b { animation-delay: 1.00s; }
-	.tr-7  { animation-delay: 0.60s; }
-	.tr-8  { animation-delay: 0.85s; }
-	.tr-9  { animation-delay: 1.10s; }
+	/* Rails + bus — establish the skeleton first */
+	.tr-1   { animation-delay: 0.10s; }
+	.tr-2   { animation-delay: 0.18s; }
+	.tr-2b  { animation-delay: 0.25s; }
+	.tr-3   { animation-delay: 0.28s; }
+	.tr-4   { animation-delay: 0.38s; }
+	/* C1 stub — branches off power rail early */
+	.tr-9   { animation-delay: 0.50s; }
+	.tr-9b  { animation-delay: 0.56s; }
+	/* U1 + U2 connections — both ICs route simultaneously */
+	.tr-5   { animation-delay: 0.62s; }
+	.tr-7   { animation-delay: 0.62s; }
+	.tr-5b  { animation-delay: 0.68s; }
+	.tr-7b  { animation-delay: 0.68s; }
+	.tr-5c  { animation-delay: 0.74s; }
+	.tr-7c  { animation-delay: 0.74s; }
+	.tr-5d  { animation-delay: 0.80s; }
+	.tr-7d  { animation-delay: 0.80s; }
+	/* IC outputs */
+	.tr-8   { animation-delay: 0.88s; }
+	.tr-8b  { animation-delay: 0.93s; }
+	.tr-6   { animation-delay: 0.95s; }
+	.tr-6b  { animation-delay: 1.00s; }
+	.tr-6c  { animation-delay: 1.05s; }
+	/* Lower component branches — cascade downward */
+	.tr-10  { animation-delay: 1.10s; }
+	.tr-10b { animation-delay: 1.16s; }
+	.tr-11  { animation-delay: 1.22s; }
+	.tr-11b { animation-delay: 1.28s; }
+	.tr-12  { animation-delay: 1.34s; }
+	.tr-12c { animation-delay: 1.40s; }
+	.tr-12b { animation-delay: 1.52s; }
+	.tr-13  { animation-delay: 1.56s; }
+	.tr-13b { animation-delay: 1.62s; }
+	.tr-15  { animation-delay: 1.70s; }
 
 	/* Via rings */
 	.via-o {
@@ -466,14 +574,27 @@ const focusAreas = [
 		opacity: 0.42;
 	}
 
-	/* Signal dot */
-	.sig {
-		fill: none;
-		stroke: var(--accent);
+	/* Crystal inner wafer (slightly different fill) */
+	.crys { fill: color-mix(in srgb, currentColor 9%, transparent); }
+
+	/* Signal dots */
+	.sig { fill: none; stroke: var(--accent); opacity: 0; }
+
+	.sig-1 {
 		stroke-width: 2;
-		stroke-dasharray: 14 718;
-		opacity: 0;
-		animation: sigPulse 6.5s linear infinite 2s;
+		stroke-dasharray: 14 708;
+		animation: sigPulse 6.5s linear infinite 2.2s;
+	}
+	@keyframes sigPulse2 {
+		0%   { stroke-dashoffset:    0; opacity: 0; }
+		8%   { opacity: 0.75; }
+		85%  { opacity: 0.75; }
+		100% { stroke-dashoffset: -153; opacity: 0; }
+	}
+	.sig-2 {
+		stroke-width: 1.5;
+		stroke-dasharray: 8 145;
+		animation: sigPulse2 4.5s linear infinite 6s;
 	}
 
 	/* ── Ghost code fragments ── */
