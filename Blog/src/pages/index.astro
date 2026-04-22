@@ -81,6 +81,24 @@ const focusAreas = [
 				<!-- Ambient glow -->
 				<div class="hero-glow" aria-hidden="true"></div>
 
+				<!-- Ardra storm: organic lightning arcs — Rudra's howling energy -->
+				<svg class="storm-bg" viewBox="0 0 960 680" fill="none"
+					preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+					<!-- Base static arcs: ambient storm presence -->
+					<path class="sa" d="M 32 0 L 16 75 L 36 75 L 18 168 L 40 168 L 22 280 L 44 280 L 26 408"/>
+					<path class="sa" d="M 128 0 L 112 62 L 134 62 L 116 148 L 138 148 L 120 252"/>
+					<path class="sa" d="M 235 0 L 218 58 L 240 58 L 222 135 L 244 135 L 226 218"/>
+					<path class="sa" d="M 72 188 L 52 268 L 76 268 L 58 360 L 80 360 L 62 462"/>
+					<path class="sa" d="M 178 205 L 160 290 L 182 290 L 165 392"/>
+					<!-- Charge pulses traveling down the arcs -->
+					<path class="sa-pulse sa-p1"
+						d="M 32 0 L 16 75 L 36 75 L 18 168 L 40 168 L 22 280 L 44 280 L 26 408"/>
+					<path class="sa-pulse sa-p2"
+						d="M 128 0 L 112 62 L 134 62 L 116 148 L 138 148 L 120 252"/>
+					<path class="sa-pulse sa-p3"
+						d="M 72 188 L 52 268 L 76 268 L 58 360 L 80 360 L 62 462"/>
+				</svg>
+
 				<!--
 					PCB Schematic Background
 					Orthogonal traces, IC footprints (U1/U2), passive components (R1/C1/Y1),
@@ -253,146 +271,18 @@ const focusAreas = [
 					<path class="lc lc-2" stroke-linecap="round" stroke-linejoin="round"
 						d="M 960,55 L 928,235 L 955,235 L 914,432 L 944,432 L 896,622"/>
 
-					<!-- ══ LEFT-SIDE EXTENSION ══════════════════════════════════════ -->
-
-					<!-- ── Left power rail + bus traces ── -->
-					<g class="traces" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="square">
-						<!-- Power rail from left edge to existing bus at x=680 -->
-						<path d="M 0 60 H 200 V 88 H 440"/>
-						<path d="M 200 0 V 60"/>
-						<!-- U3 pin connections -->
-						<path d="M 0 158 H 55"/>
-						<path d="M 145 158 H 300 V 88"/>
-						<path d="M 0 175 H 55"/>
-						<path d="M 145 175 H 220 V 240"/>
-						<!-- Horizontal bus below U3 -->
-						<path d="M 0 240 H 220"/>
-						<path d="M 300 88 V 240 H 220"/>
-						<!-- Lower left traces -->
-						<path d="M 220 240 V 380 H 0"/>
-						<path d="M 300 240 V 380 H 380 V 455"/>
-						<!-- Connect left bus to existing crystal stub area -->
-						<path d="M 440 88 H 500 V 195"/>
-						<!-- GND stub left -->
-						<path d="M 110 240 V 285"/>
-					</g>
-
-					<!-- ── GND Symbol (left side) ── -->
-					<g class="gnd-sym" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-						<line x1="102" y1="287" x2="118" y2="287"/>
-						<line x1="105" y1="291" x2="115" y2="291"/>
-						<line x1="108" y1="295" x2="112" y2="295"/>
-					</g>
-
-					<!-- ── IC U3 Footprint (6-pin, DSP) ── -->
-					<g class="ic-pkg">
-						<rect x="55" y="146" width="90" height="70" class="ic-body" rx="2"/>
-						<path d="M 55 146 L 67 146 L 55 158 Z" class="ic-pin1-mark"/>
-						<!-- Left pads -->
-						<rect x="41" y="152" width="14" height="7" class="ic-pad"/>
-						<rect x="41" y="168" width="14" height="7" class="ic-pad"/>
-						<rect x="41" y="184" width="14" height="7" class="ic-pad"/>
-						<!-- Right pads -->
-						<rect x="145" y="152" width="14" height="7" class="ic-pad"/>
-						<rect x="145" y="168" width="14" height="7" class="ic-pad"/>
-						<rect x="145" y="184" width="14" height="7" class="ic-pad"/>
-						<!-- Pin numbers -->
-						<text x="48" y="158" class="pin-num">1</text>
-						<text x="48" y="174" class="pin-num">2</text>
-						<text x="48" y="190" class="pin-num">3</text>
-						<text x="151" y="158" class="pin-num">6</text>
-						<text x="151" y="174" class="pin-num">5</text>
-						<text x="151" y="190" class="pin-num">4</text>
-						<text x="100" y="176" class="ic-ref">U3</text>
-						<text x="100" y="188" class="ic-val">DSP</text>
-						<line x1="55" y1="181" x2="145" y2="181" class="ic-divider"/>
-					</g>
-
-					<!-- ── R2: SMD Resistor on left power rail ── -->
-					<g class="smd-pkg">
-						<rect x="154" y="82" width="26" height="12" class="ic-body" rx="1"/>
-						<text x="167" y="78" class="comp-ref">R2</text>
-						<text x="167" y="104" class="comp-val">4k7</text>
-					</g>
-
-					<!-- ── C2: Bypass cap near U3 ── -->
-					<g class="smd-pkg">
-						<rect x="300" y="295" width="8" height="18" class="ic-body" rx="1"/>
-						<line x1="300" y1="295" x2="308" y2="295" class="ic-divider"/>
-						<text x="312" y="305" class="comp-ref">C2</text>
-						<text x="312" y="314" class="comp-val">10u</text>
-					</g>
-
-					<!-- ── L1: SMD Inductor (coil symbol) ── -->
-					<g class="crystal-pkg">
-						<path d="M 370 455 H 390 C 390 445 400 445 400 455 C 400 465 410 465 410 455 C 410 445 420 445 420 455 H 440"
-							stroke="currentColor" stroke-width="1.2" fill="none"/>
-						<line x1="380" y1="455" x2="370" y2="455" stroke="currentColor" stroke-width="1.2"/>
-						<line x1="440" y1="455" x2="460" y2="455" stroke="currentColor" stroke-width="1.2"/>
-						<text x="405" y="443" class="comp-ref">L1</text>
-						<text x="405" y="473" class="comp-val">10uH</text>
-					</g>
-
-					<!-- ── New Vias (left side) ── -->
-					<g class="vias">
-						<circle cx="200" cy="88"  r="5"/><circle cx="200" cy="88"  r="2"/>
-						<circle cx="300" cy="88"  r="5"/><circle cx="300" cy="88"  r="2"/>
-						<circle cx="220" cy="240" r="5"/><circle cx="220" cy="240" r="2"/>
-						<circle cx="300" cy="240" r="5"/><circle cx="300" cy="240" r="2"/>
-						<circle cx="220" cy="380" r="4"/><circle cx="220" cy="380" r="1.8"/>
-						<circle cx="300" cy="380" r="4"/><circle cx="300" cy="380" r="1.8"/>
-						<circle cx="500" cy="195" r="4"/><circle cx="500" cy="195" r="1.8"/>
-						<circle cx="200" cy="60"  r="4"/><circle cx="200" cy="60"  r="1.8"/>
-					</g>
-
-					<!-- ── New Signal Paths (left network) ── -->
-					<path class="signal signal-e" d="M 0 88 H 300 V 240 H 220"/>
-					<path class="signal signal-f" d="M 0 158 H 145 V 88 H 300"/>
-
-					<!-- ══ NAME BUS ══════════════════════════════════════════════════
-					     Horizontal trace through the name area with regular pin stubs
-					     — treats the name like an IC component on the board.
-					     y=310 sits between the y=240 and y=380 buses, mid-name. -->
+					<!-- ══ NAME BUS ═══════════════════════════════════════════════════
+					     Single clean trace threading through the name at mid-height.
+					     Emerges from the storm side, anchors into the circuit on the right. -->
 					<g class="traces" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="square">
 						<path d="M 0 310 H 440"/>
-						<!-- Up stubs (letter width cadence) -->
-						<path d="M 50  310 V 268"/>
-						<path d="M 113 310 V 268"/>
-						<path d="M 176 310 V 268"/>
-						<path d="M 239 310 V 268"/>
-						<path d="M 302 310 V 268"/>
-						<path d="M 365 310 V 268"/>
-						<!-- Down stubs -->
-						<path d="M 82  310 V 352"/>
-						<path d="M 145 310 V 352"/>
-						<path d="M 208 310 V 352"/>
-						<path d="M 271 310 V 352"/>
-						<path d="M 334 310 V 352"/>
-						<path d="M 408 310 V 352"/>
 					</g>
-					<!-- Test-point pads at stub tips -->
-					<g class="name-tp">
-						<circle cx="50"  cy="268" r="2.2"/>
-						<circle cx="113" cy="268" r="2.2"/>
-						<circle cx="176" cy="268" r="2.2"/>
-						<circle cx="239" cy="268" r="2.2"/>
-						<circle cx="302" cy="268" r="2.2"/>
-						<circle cx="365" cy="268" r="2.2"/>
-						<circle cx="82"  cy="352" r="2.2"/>
-						<circle cx="145" cy="352" r="2.2"/>
-						<circle cx="208" cy="352" r="2.2"/>
-						<circle cx="271" cy="352" r="2.2"/>
-						<circle cx="334" cy="352" r="2.2"/>
-						<circle cx="408" cy="352" r="2.2"/>
-					</g>
-					<!-- Via rings on the name bus -->
+					<!-- Via rings — visible where the circuit begins to appear -->
 					<g class="vias">
-						<circle cx="110" cy="310" r="4.5"/><circle cx="110" cy="310" r="1.8"/>
-						<circle cx="220" cy="310" r="4.5"/><circle cx="220" cy="310" r="1.8"/>
 						<circle cx="330" cy="310" r="4.5"/><circle cx="330" cy="310" r="1.8"/>
 						<circle cx="440" cy="310" r="4.5"/><circle cx="440" cy="310" r="1.8"/>
 					</g>
-					<!-- Signal pulse sweeping through the name -->
+					<!-- Signal pulse: born in the storm, arriving at the circuit -->
 					<path class="signal signal-name" d="M 0 310 H 440"/>
 				</svg>
 
@@ -613,18 +503,26 @@ const focusAreas = [
 		88%  { opacity: 1; }
 		100% { stroke-dashoffset: -345; opacity: 0; }
 	}
-	@keyframes sig-e {
+	/* Storm charge pulses — Ardra lightning traveling down the arcs */
+	@keyframes sa-anim-1 {
 		0%   { stroke-dashoffset:   0; opacity: 0; }
-		4%   { opacity: 1; }
-		88%  { opacity: 1; }
-		100% { stroke-dashoffset: -552; opacity: 0; }
+		5%   { opacity: 0.75; }
+		85%  { opacity: 0.75; }
+		100% { stroke-dashoffset: -485; opacity: 0; }
 	}
-	@keyframes sig-f {
+	@keyframes sa-anim-2 {
 		0%   { stroke-dashoffset:   0; opacity: 0; }
-		4%   { opacity: 1; }
-		88%  { opacity: 1; }
-		100% { stroke-dashoffset: -372; opacity: 0; }
+		5%   { opacity: 0.65; }
+		85%  { opacity: 0.65; }
+		100% { stroke-dashoffset: -315; opacity: 0; }
 	}
+	@keyframes sa-anim-3 {
+		0%   { stroke-dashoffset:   0; opacity: 0; }
+		5%   { opacity: 0.55; }
+		85%  { opacity: 0.55; }
+		100% { stroke-dashoffset: -335; opacity: 0; }
+	}
+
 	@keyframes sig-name {
 		0%   { stroke-dashoffset:   0; opacity: 0; }
 		8%   { opacity: 1; }
@@ -683,6 +581,48 @@ const focusAreas = [
 		z-index: 0;
 	}
 
+	/* ── Ardra storm: lightning arcs, left side ── */
+	.storm-bg {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		z-index: 0;
+		color: rgba(0, 113, 227, 0.09);
+		mask-image: linear-gradient(to right,
+			rgba(0,0,0,0.85) 0%,
+			rgba(0,0,0,0.55) 26%,
+			rgba(0,0,0,0.15) 46%,
+			transparent      60%
+		);
+		-webkit-mask-image: linear-gradient(to right,
+			rgba(0,0,0,0.85) 0%,
+			rgba(0,0,0,0.55) 26%,
+			rgba(0,0,0,0.15) 46%,
+			transparent      60%
+		);
+	}
+	[data-theme='dark'] .storm-bg { color: rgba(41, 151, 255, 0.14); }
+
+	.sa {
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 0.9;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+	.sa-pulse {
+		fill: none;
+		stroke: var(--accent);
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		opacity: 0;
+	}
+	.sa-p1 { stroke-width: 1.6; stroke-dasharray: 14 490; animation: sa-anim-1 5.8s linear infinite 0.5s; }
+	.sa-p2 { stroke-width: 1.3; stroke-dasharray: 11 315; animation: sa-anim-2 4.2s linear infinite 2.4s; }
+	.sa-p3 { stroke-width: 1.1; stroke-dasharray:  9 340; animation: sa-anim-3 4.6s linear infinite 3.8s; }
+
 	/* ── PCB Circuit SVG ── */
 	.circuit-bg {
 		position: absolute;
@@ -692,6 +632,21 @@ const focusAreas = [
 		pointer-events: none;
 		z-index: 0;
 		color: rgba(0, 113, 227, 0.10);
+		/* PCB emerges from the right half — left stays clean for the name */
+		mask-image: linear-gradient(to right,
+			transparent      0%,
+			transparent      38%,
+			rgba(0,0,0,0.15) 52%,
+			rgba(0,0,0,0.65) 64%,
+			black            76%
+		);
+		-webkit-mask-image: linear-gradient(to right,
+			transparent      0%,
+			transparent      38%,
+			rgba(0,0,0,0.15) 52%,
+			rgba(0,0,0,0.65) 64%,
+			black            76%
+		);
 	}
 
 	[data-theme='dark'] .circuit-bg { color: rgba(41, 151, 255, 0.16); }
@@ -766,12 +721,6 @@ const focusAreas = [
 	/* SMD passive packages */
 	.smd-pkg .ic-body, .crystal-pkg .ic-body { stroke: currentColor; fill: color-mix(in srgb, currentColor 5%, transparent); }
 
-	/* Test-point pads on name bus */
-	.name-tp circle {
-		fill: currentColor;
-		opacity: 0.28;
-	}
-
 	/* Via ring style — annular ring, like plated through-holes */
 	.vias circle:nth-child(odd)  {
 		stroke: currentColor;
@@ -800,14 +749,6 @@ const focusAreas = [
 	.vias circle:nth-child(25), .vias circle:nth-child(26) { animation-delay: 1.3s; }
 	.vias circle:nth-child(27), .vias circle:nth-child(28) { animation-delay: 2.1s; }
 	.vias circle:nth-child(29), .vias circle:nth-child(30) { animation-delay: 0.5s; }
-	.vias circle:nth-child(31), .vias circle:nth-child(32) { animation-delay: 1.7s; }
-	.vias circle:nth-child(33), .vias circle:nth-child(34) { animation-delay: 0.2s; }
-	.vias circle:nth-child(35), .vias circle:nth-child(36) { animation-delay: 2.4s; }
-	.vias circle:nth-child(37), .vias circle:nth-child(38) { animation-delay: 1.0s; }
-	.vias circle:nth-child(39), .vias circle:nth-child(40) { animation-delay: 0.7s; }
-	.vias circle:nth-child(41), .vias circle:nth-child(42) { animation-delay: 1.9s; }
-	.vias circle:nth-child(43), .vias circle:nth-child(44) { animation-delay: 0.4s; }
-	.vias circle:nth-child(45), .vias circle:nth-child(46) { animation-delay: 2.6s; }
 
 	/* Signal pulses */
 	.signal {
@@ -820,8 +761,6 @@ const focusAreas = [
 	.signal-b { stroke-dasharray: 16 260; animation: sig-b 3.4s linear infinite 1.8s; }
 	.signal-c { stroke-dasharray: 16 390; animation: sig-c 4.8s linear infinite 3.0s; }
 	.signal-d { stroke-dasharray: 16 355; animation: sig-d 4.4s linear infinite 0.9s; }
-	.signal-e { stroke-dasharray: 16 560; animation: sig-e 6.0s linear infinite 1.5s; }
-	.signal-f { stroke-dasharray: 16 380; animation: sig-f 4.2s linear infinite 4.0s; }
 	.signal-name { stroke-dasharray: 22 450; animation: sig-name 3.4s linear infinite 0.8s; }
 
 	/* Lightning bolts */
@@ -1312,7 +1251,7 @@ const focusAreas = [
 		main { padding: 0 1.1rem 5rem; }
 
 		.hero { min-height: auto; padding: 5rem 0 3.5rem; }
-		.circuit-bg { display: none; }
+		.circuit-bg, .storm-bg { display: none; }
 
 		h1 {
 			font-size: clamp(3rem, 17vw, 4.5rem);
