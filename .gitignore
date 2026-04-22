@@ -5,3 +5,9 @@ Thumbs.db
 # Obsidian workspace state (local only)
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+
+# Website build artifacts (inside .website/)
+.website/node_modules/
+.website/dist/
+.website/.astro/
+.website/src/content/blog/

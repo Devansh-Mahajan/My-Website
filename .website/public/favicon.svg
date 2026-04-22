@@ -1,0 +1,23 @@
+<svg viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="drop" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#4db8ff"/>
+      <stop offset="100%" stop-color="#0050c8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- App-icon background -->
+  <rect width="32" height="32" rx="7" fill="#09090f"/>
+
+  <!-- Ardra teardrop — Rudra's storm tear, nakshatra symbol -->
+  <path d="M16 3
+           C16 3 7 13.5 7 20
+           C7 24.97 11.03 29 16 29
+           C20.97 29 25 24.97 25 20
+           C25 13.5 16 3 16 3Z"
+        fill="url(#drop)"/>
+
+  <!-- Lightning bolt — Rudra's strike, born inside the storm -->
+  <path d="M18 9.5 L12.5 19 L16.5 19 L14.5 27 L21 15.5 L17 15.5 Z"
+        fill="white" opacity="0.95"/>
+</svg>

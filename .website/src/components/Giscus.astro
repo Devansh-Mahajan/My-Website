@@ -1,0 +1,289 @@
+---
+// src/components/Giscus.astro
+/**
+ * Usage:
+ * <Giscus repo="owner/name" repoId="…" category="General" categoryId="…" mapping="pathname" />
+ */
+import { getGiscusConfig, isGiscusConfigured } from '../config/giscus';
+
+// Get Giscus configuration
+const config = getGiscusConfig();
+const isConfigured = isGiscusConfigured();
+
+// Extract props for the deterministic approach
+const {
+  repo = config.repo,
+  repoId = config.repoId,
+  category = config.category,
+  categoryId = config.categoryId,
+  mapping = config.mapping,
+  lang = config.lang,
+} = Astro.props;
+---
+
+{isConfigured && (
+  <section id="comments" class="giscus-section">
+    <div id="giscus-container" style="visibility:hidden"></div>
+  </section>
+)}
+
+{!isConfigured && (
+  <div class="giscus-setup-notice">
+    <h3>💬 Comments Coming Soon</h3>
+    <p>Comments will be available once Giscus is configured. Check the setup instructions in the repository.</p>
+  </div>
+)}
+
+<script define:vars={{ repo, repoId, category, categoryId, mapping, lang }}>
+  (() => {
+    const managerKey = '__giscusThemeSync__';
+
+    function createManager() {
+      const GISCUS_ORIGIN = 'https://giscus.app';
+      const IFRAME_SELECTOR = 'iframe.giscus-frame';
+      const html = document.documentElement;
+      const prefersDark = typeof window.matchMedia === 'function'
+        ? window.matchMedia('(prefers-color-scheme: dark)')
+        : {
+            matches: false,
+            addEventListener: undefined,
+            removeEventListener: undefined,
+            addListener: undefined,
+            removeListener: undefined,
+          };
+      const state = {
+        desiredTheme: 'light',
+        flushHandle: 0,
+      };
+
+      function readTheme() {
+        if (html.classList.contains('dark')) return 'dark';
+        const attr = html.getAttribute('data-theme');
+        if (attr === 'dark' || attr === 'light') return attr;
+        return prefersDark.matches ? 'dark' : 'light';
+      }
+
+      function getContainer() {
+        return document.getElementById('giscus-container');
+      }
+
+      function ensureHidden() {
+        const container = getContainer();
+        if (container) container.style.visibility = 'hidden';
+      }
+
+      function showContainer() {
+        const container = getContainer();
+        if (container) container.style.visibility = 'visible';
+      }
+
+      function getIframe() {
+        const container = getContainer();
+        return container ? container.querySelector(IFRAME_SELECTOR) : null;
+      }
+
+      function applyTheme(theme) {
+        const iframe = getIframe();
+        if (!iframe || !iframe.contentWindow) return false;
+
+        iframe.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          GISCUS_ORIGIN
+        );
+
+        return true;
+      }
+
+      function flushTheme() {
+        state.flushHandle = 0;
+        if (!applyTheme(state.desiredTheme)) {
+          state.flushHandle = requestAnimationFrame(flushTheme);
+        }
+      }
+
+      function requestThemeSync(theme) {
+        state.desiredTheme = theme;
+        if (!applyTheme(theme) && !state.flushHandle) {
+          state.flushHandle = requestAnimationFrame(flushTheme);
+        }
+      }
+
+      function waitForIframe() {
+        const existing = getIframe();
+        if (existing) return Promise.resolve(existing);
+
+        const container = getContainer();
+        if (!container) return Promise.resolve(null);
+
+        return new Promise((resolve) => {
+          const observer = new MutationObserver(() => {
+            const iframe = getIframe();
+            if (iframe) {
+              observer.disconnect();
+              resolve(iframe);
+            }
+          });
+
+          observer.observe(container, { childList: true });
+
+          setTimeout(() => {
+            observer.disconnect();
+            resolve(getIframe());
+          }, 4000);
+        });
+      }
+
+      function revealWhenReady() {
+        const container = getContainer();
+        if (!container) return;
+
+        const fallback = setTimeout(() => {
+          showContainer();
+        }, 4500);
+
+        waitForIframe().then((iframe) => {
+          if (!iframe) {
+            clearTimeout(fallback);
+            showContainer();
+            return;
+          }
+
+          const reveal = () => {
+            if (applyTheme(state.desiredTheme)) {
+              clearTimeout(fallback);
+              showContainer();
+            } else {
+              requestAnimationFrame(reveal);
+            }
+          };
+
+          iframe.addEventListener('load', () => requestAnimationFrame(reveal), { once: true });
+          requestAnimationFrame(reveal);
+        });
+      }
+
+      function mount(theme) {
+        const container = getContainer();
+        if (!container || container.querySelector(IFRAME_SELECTOR)) return;
+
+        ensureHidden();
+
+        const script = document.createElement('script');
+        script.src = 'https://giscus.app/client.js';
+        script.async = true;
+        script.crossOrigin = 'anonymous';
+
+        script.setAttribute('data-repo', repo);
+        script.setAttribute('data-repo-id', repoId);
+        script.setAttribute('data-category', category);
+        script.setAttribute('data-category-id', categoryId);
+        script.setAttribute('data-mapping', mapping);
+        script.setAttribute('data-strict', '0');
+        script.setAttribute('data-reactions-enabled', '1');
+        script.setAttribute('data-emit-metadata', '0');
+        script.setAttribute('data-input-position', 'bottom');
+        script.setAttribute('data-lang', lang);
+        script.setAttribute('data-theme', theme);
+
+        container.appendChild(script);
+      }
+
+      function syncToCurrentTheme() {
+        requestThemeSync(readTheme());
+      }
+
+      function mountIfNeeded() {
+        const container = getContainer();
+        if (!container) return;
+
+        const currentTheme = readTheme();
+        requestThemeSync(currentTheme);
+
+        if (container.querySelector(IFRAME_SELECTOR)) {
+          showContainer();
+          return;
+        }
+
+        mount(currentTheme);
+        revealWhenReady();
+      }
+
+      const htmlObserver = new MutationObserver(syncToCurrentTheme);
+      htmlObserver.observe(html, { attributes: true, attributeFilter: ['class', 'data-theme'] });
+
+      const handleScheme = () => syncToCurrentTheme();
+      if (typeof prefersDark.addEventListener === 'function') {
+        prefersDark.addEventListener('change', handleScheme);
+      } else if (typeof prefersDark.addListener === 'function') {
+        prefersDark.addListener(handleScheme);
+      }
+
+      window.addEventListener('astro:page-load', () => {
+        mountIfNeeded();
+      });
+
+      return {
+        mountIfNeeded,
+        syncToCurrentTheme,
+      };
+    }
+
+    const globalScope = window;
+    if (!globalScope[managerKey]) {
+      globalScope[managerKey] = createManager();
+    }
+
+    const manager = globalScope[managerKey];
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => manager.mountIfNeeded(), { once: true });
+    } else {
+      manager.mountIfNeeded();
+    }
+  })();
+</script>
+
+<style>
+  .giscus-section { 
+    margin-top: 2rem; 
+  }
+
+  /* Setup notice styling */
+  .giscus-setup-notice {
+    margin-top: 3rem;
+    padding: 2rem;
+    text-align: center;
+    background: rgba(var(--gray-light), 0.3);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(var(--gray), 0.2);
+  }
+
+  .giscus-setup-notice h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--accent);
+    font-size: 1.25rem;
+  }
+
+  .giscus-setup-notice p {
+    margin: 0;
+    color: rgb(var(--gray));
+    font-size: 0.95rem;
+  }
+
+  /* Dark mode for setup notice */
+  [data-theme='dark'] .giscus-setup-notice {
+    background: rgba(var(--gray-light), 0.1);
+    border-color: rgba(var(--gray), 0.3);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .giscus-section {
+      margin-top: 2rem;
+    }
+    
+    .giscus-setup-notice {
+      margin-top: 2rem;
+      padding: 1.5rem;
+    }
+  }
+</style>

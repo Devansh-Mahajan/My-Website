@@ -1,0 +1,57 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+.astro/
+.output/
+build/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Local storage of data
+.cache/
+.npm/
+.yarn/
+
+# Generated content by sync script
+public/attachments/
+public/notes-*.json
+src/content/blog/
+src/content/notes/
+
+# Puppeteer/Chromium files (often large)
+puppeteer/
+chromium/
+.local-chromium/
+
+# Other large or temporary files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.bak
+*.tmp
+
+# Quartz temporary files
+../quartz-temp/
+quartz-temp/
