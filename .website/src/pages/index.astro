@@ -295,9 +295,9 @@ const focusAreas = [
 				<h1 id="hero-name">Devansh<br />Mahajan</h1>
 
 				<p class="lead">
-					EECS student at ETH Zurich. Building a public notebook
-					across circuits, mathematics, software systems, and
-					quantitative work — everything is open.
+					EECS at ETH Zurich. Circuits, mathematics, software systems,
+					and computation — studied rigorously, built openly,
+					documented permanently.
 				</p>
 
 				<div class="hero-actions">
@@ -320,7 +320,7 @@ const focusAreas = [
 			</section>
 
 			<!-- ── 01 — SELECTED WORK ────────────────────── -->
-			<section class="section" aria-labelledby="work-heading">
+			<section class="section section-rule" aria-labelledby="work-heading">
 				<header class="section-header">
 					<p class="label">
 						<span class="label-num">
@@ -368,7 +368,7 @@ const focusAreas = [
 			</section>
 
 			<!-- ── 02 — FOCUS ────────────────────────────── -->
-			<section class="section" aria-labelledby="focus-heading">
+			<section class="section section-rule" aria-labelledby="focus-heading">
 				<header class="section-header">
 					<p class="label">
 						<span class="label-num">
@@ -392,7 +392,7 @@ const focusAreas = [
 
 			<!-- ── 03 — WRITING ──────────────────────────── -->
 			{hasPosts && (
-				<section class="section" aria-labelledby="writing-heading">
+				<section class="section section-rule" aria-labelledby="writing-heading">
 					<header class="section-header">
 						<p class="label">
 							<span class="label-num">
@@ -951,32 +951,6 @@ const focusAreas = [
 	.section {
 		position: relative;
 		padding: 5rem 0;
-	}
-
-	.section::before {
-		content: '';
-		position: absolute;
-		top: 0; left: 0; right: 0;
-		height: 1px;
-		background: linear-gradient(
-			90deg,
-			transparent 0%,
-			rgba(var(--gray), 0.18) 15%,
-			rgba(0, 113, 227, 0.30) 50%,
-			rgba(var(--gray), 0.18) 85%,
-			transparent 100%
-		);
-	}
-
-	[data-theme='dark'] .section::before {
-		background: linear-gradient(
-			90deg,
-			transparent 0%,
-			rgba(var(--gray), 0.18) 15%,
-			rgba(41, 151, 255, 0.40) 50%,
-			rgba(var(--gray), 0.18) 85%,
-			transparent 100%
-		);
 	}
 
 	.section-header { margin-bottom: 2.5rem; }

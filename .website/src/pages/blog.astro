@@ -27,19 +27,17 @@ const posts = (await getCollection('blog'))
 	<Header />
 	<main>
 
-		<!-- Page hero -->
 		<section class="page-hero">
-			<p class="eyebrow">
-				<svg class="bolt-icon" viewBox="0 0 10 14" fill="currentColor" aria-hidden="true"><path d="M6.5 0L0 8h4.5L3 14l7-8.5H5.5L6.5 0z"/></svg>
+			<p class="eyebrow-tag">
+				<svg viewBox="0 0 10 14" fill="currentColor" aria-hidden="true" style="width:7px;height:10px;flex-shrink:0"><path d="M6.5 0L0 8h4.5L3 14l7-8.5H5.5L6.5 0z"/></svg>
 				Writing
 			</p>
 			<h1>Essays &amp; notes.</h1>
 			<p class="lead">Thinking across circuits, systems, and mathematics — published openly.</p>
 		</section>
 
-		<!-- Posts -->
 		{posts.length > 0 ? (
-			<section class="posts-section">
+			<section class="section-rule">
 				<div class="posts-grid">
 					{posts.map((post) => (
 						<BlogCard
@@ -73,31 +71,7 @@ const posts = (await getCollection('blog'))
 		padding: 0 1.5rem 8rem;
 	}
 
-	/* ── Page hero ── */
-	.page-hero {
-		padding: 4rem 0 3.5rem;
-	}
-
-	.eyebrow {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.4rem;
-		margin: 0 0 1.25rem;
-		padding: 0.3rem 0.8rem;
-		background: color-mix(in srgb, var(--accent) 10%, transparent);
-		color: var(--accent);
-		border-radius: 999px;
-		font-size: 0.74rem;
-		font-weight: 600;
-		letter-spacing: 0.07em;
-		text-transform: uppercase;
-	}
-
-	.bolt-icon {
-		width: 7px;
-		height: 10px;
-		flex-shrink: 0;
-	}
+	.page-hero { padding: 4rem 0 3.5rem; }
 
 	h1 {
 		margin: 0 0 1rem;
@@ -105,7 +79,6 @@ const posts = (await getCollection('blog'))
 		font-weight: 800;
 		line-height: 0.95;
 		letter-spacing: -0.038em;
-		color: rgb(var(--black));
 	}
 
 	[data-theme='dark'] h1 {
@@ -122,48 +95,6 @@ const posts = (await getCollection('blog'))
 		color: rgb(var(--gray));
 	}
 
-	/* ── Posts section ── */
-	.posts-section {
-		padding-top: 1rem;
-		position: relative;
-	}
-
-	.posts-section::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 1px;
-		background: linear-gradient(
-			90deg,
-			transparent 0%,
-			rgba(var(--gray), 0.18) 15%,
-			rgba(0, 113, 227, 0.30) 50%,
-			rgba(var(--gray), 0.18) 85%,
-			transparent 100%
-		);
-	}
-
-	[data-theme='dark'] .posts-section::before {
-		background: linear-gradient(
-			90deg,
-			transparent 0%,
-			rgba(var(--gray), 0.18) 15%,
-			rgba(41, 151, 255, 0.40) 50%,
-			rgba(var(--gray), 0.18) 85%,
-			transparent 100%
-		);
-	}
-
-	.posts-grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1rem;
-		padding-top: 2.5rem;
-	}
-
-	/* ── Empty state ── */
 	.empty-state {
 		padding: 5rem 0;
 		display: flex;
@@ -172,11 +103,7 @@ const posts = (await getCollection('blog'))
 		gap: 1.25rem;
 	}
 
-	.empty-message {
-		margin: 0;
-		font-size: 1.125rem;
-		color: rgb(var(--gray));
-	}
+	.empty-message { margin: 0; font-size: 1.125rem; color: rgb(var(--gray)); }
 
 	.empty-link {
 		display: inline-flex;
@@ -193,15 +120,10 @@ const posts = (await getCollection('blog'))
 	}
 	.empty-link:hover { opacity: 0.85; transform: translateY(-1px); }
 
-	/* ── Responsive ── */
 	@media (max-width: 768px) {
 		main { padding: 0 1.1rem 5rem; }
-
 		.page-hero { padding: 3rem 0 2.5rem; }
-
-		.posts-grid { grid-template-columns: 1fr; }
 	}
-
 	@media (max-width: 480px) {
 		main { padding: 0 0.75rem 4rem; }
 		.page-hero { padding: 2.5rem 0 2rem; }
