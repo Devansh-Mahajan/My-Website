@@ -1,15 +1,23 @@
-<svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="faviconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    <linearGradient id="drop" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#4db8ff"/>
+      <stop offset="100%" stop-color="#0050c8"/>
     </linearGradient>
   </defs>
-  <!-- Background circle -->
-  <circle cx="12" cy="12" r="11" fill="url(#faviconGradient)" opacity="0.1"/>
-  <circle cx="12" cy="12" r="11" stroke="url(#faviconGradient)" stroke-width="1.5" fill="none"/>
-  
-  <!-- Professional D letter design -->
-  <path d="M8 6h4c2.5 0 4 1.5 4 4s-1.5 4-4 4H8V6z" fill="url(#faviconGradient)"/>
-  <path d="M10 8v8h2c1.5 0 2.5-1 2.5-2.5S13.5 11 12 11h-2V8z" fill="white" opacity="0.9"/>
+
+  <!-- App-icon background -->
+  <rect width="32" height="32" rx="7" fill="#09090f"/>
+
+  <!-- Ardra teardrop — Rudra's storm tear, nakshatra symbol -->
+  <path d="M16 3
+           C16 3 7 13.5 7 20
+           C7 24.97 11.03 29 16 29
+           C20.97 29 25 24.97 25 20
+           C25 13.5 16 3 16 3Z"
+        fill="url(#drop)"/>
+
+  <!-- Lightning bolt — Rudra's strike, born inside the storm -->
+  <path d="M18 9.5 L12.5 19 L16.5 19 L14.5 27 L21 15.5 L17 15.5 Z"
+        fill="white" opacity="0.95"/>
 </svg>
