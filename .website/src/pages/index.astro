@@ -154,14 +154,14 @@ const focusAreas = [
 						<line x1="451" y1="312" x2="453" y2="312"/>
 					</g>
 
-					<!-- ══ VIAS ══════════════════════════════════════════ -->
-					<circle class="via-o" cx="290" cy="50"  r="5"/>  <circle class="via-i" cx="290" cy="50"  r="2"/>
-					<circle class="via-o" cx="290" cy="20"  r="3.5"/><circle class="via-i" cx="290" cy="20"  r="1.5"/>
-					<circle class="via-o" cx="290" cy="265" r="3.5"/><circle class="via-i" cx="290" cy="265" r="1.5"/>
-					<circle class="via-o" cx="290" cy="310" r="4"/>  <circle class="via-i" cx="290" cy="310" r="1.8"/>
-					<circle class="via-o" cx="290" cy="375" r="4"/>  <circle class="via-i" cx="290" cy="375" r="1.8"/>
-					<circle class="via-o" cx="290" cy="445" r="3.5"/><circle class="via-i" cx="290" cy="445" r="1.5"/>
-					<circle class="via-o" cx="372" cy="50"  r="3.5"/><circle class="via-i" cx="372" cy="50"  r="1.5"/>
+					<!-- ══ VIAS — staggered pulse so nodes feel alive ══ -->
+					<circle class="via-o" cx="290" cy="50"  r="5"/>  <circle class="via-i" cx="290" cy="50"  r="2"   style="animation-delay:0.0s"/>
+					<circle class="via-o" cx="290" cy="20"  r="3.5"/><circle class="via-i" cx="290" cy="20"  r="1.5" style="animation-delay:0.6s"/>
+					<circle class="via-o" cx="290" cy="265" r="3.5"/><circle class="via-i" cx="290" cy="265" r="1.5" style="animation-delay:1.2s"/>
+					<circle class="via-o" cx="290" cy="310" r="4"/>  <circle class="via-i" cx="290" cy="310" r="1.8" style="animation-delay:0.4s"/>
+					<circle class="via-o" cx="290" cy="375" r="4"/>  <circle class="via-i" cx="290" cy="375" r="1.8" style="animation-delay:1.8s"/>
+					<circle class="via-o" cx="290" cy="445" r="3.5"/><circle class="via-i" cx="290" cy="445" r="1.5" style="animation-delay:0.9s"/>
+					<circle class="via-o" cx="372" cy="50"  r="3.5"/><circle class="via-i" cx="372" cy="50"  r="1.5" style="animation-delay:1.5s"/>
 
 					<!-- ══ U1: FPGA (schematic box, left of bus) ════════ -->
 					<rect class="ic-box" x="78" y="116" width="160" height="90" rx="2"/>
@@ -224,10 +224,15 @@ const focusAreas = [
 					<text class="comp-val-lbl" x="460" y="33">16MHz</text>
 
 					<!-- ══ SIGNALS ════════════════════════════════════════ -->
-					<!-- Main: power rail → bus → R1 branch → right edge -->
+					<!-- sig-1: power rail → bus → R1 branch → right -->
 					<path class="sig sig-1" d="M 520 50 H 290 V 310 H 520"/>
-					<!-- Secondary: return rail → Y1 crystal -->
+					<!-- sig-2: return rail → Y1 crystal -->
 					<path class="sig sig-2" d="M 290 20 H 440"/>
+					<!-- sig-3: bus → L1 inductor arcs → right -->
+					<path class="sig sig-3" stroke-linecap="round"
+					      d="M 290 375 H 352 Q 361 362 370 375 Q 379 362 388 375 Q 397 362 406 375 Q 415 362 424 375 H 520"/>
+					<!-- sig-4: bus → through U2 layer → right output -->
+					<path class="sig sig-4" d="M 290 143 H 520"/>
 
 				</svg>
 
@@ -387,12 +392,18 @@ const focusAreas = [
 		to   { stroke-dashoffset: 0; }
 	}
 
-	/* Single calm signal dot traveling the main path */
+	/* Universal signal dot — works on any path length */
 	@keyframes sigPulse {
 		0%   { stroke-dashoffset:    0; opacity: 0; }
 		5%   { opacity: 0.9; }
 		88%  { opacity: 0.9; }
-		100% { stroke-dashoffset: -730; opacity: 0; }
+		100% { stroke-dashoffset: -1000; opacity: 0; }
+	}
+
+	/* Via node activity pulse */
+	@keyframes viaPulse {
+		0%, 100% { opacity: 0.3; }
+		50%      { opacity: 1;   }
 	}
 
 	/* Ghost code: clip-wipe in from left, linger, fade out */
@@ -520,7 +531,7 @@ const focusAreas = [
 	}
 	.via-i {
 		fill: currentColor;
-		opacity: 0.55;
+		animation: viaPulse 3.5s ease-in-out infinite;
 	}
 
 	/* IC schematic symbol */
@@ -577,24 +588,32 @@ const focusAreas = [
 	/* Crystal inner wafer (slightly different fill) */
 	.crys { fill: color-mix(in srgb, currentColor 9%, transparent); }
 
-	/* Signal dots */
+	/* Signal dots — all use universal sigPulse keyframe */
 	.sig { fill: none; stroke: var(--accent); opacity: 0; }
 
+	/* sig-1: main traversal, power → bus → R1 → exit (~720 px) */
 	.sig-1 {
 		stroke-width: 2;
-		stroke-dasharray: 14 708;
+		stroke-dasharray: 14 990;
 		animation: sigPulse 6.5s linear infinite 2.2s;
 	}
-	@keyframes sigPulse2 {
-		0%   { stroke-dashoffset:    0; opacity: 0; }
-		8%   { opacity: 0.75; }
-		85%  { opacity: 0.75; }
-		100% { stroke-dashoffset: -153; opacity: 0; }
-	}
+	/* sig-2: return rail → Y1 (~150 px), small dot */
 	.sig-2 {
-		stroke-width: 1.5;
-		stroke-dasharray: 8 145;
-		animation: sigPulse2 4.5s linear infinite 6s;
+		stroke-width: 1.4;
+		stroke-dasharray: 8 990;
+		animation: sigPulse 4.5s linear infinite 6.0s;
+	}
+	/* sig-3: bus → L1 inductor arcs → exit (~250 px) */
+	.sig-3 {
+		stroke-width: 1.6;
+		stroke-dasharray: 10 990;
+		animation: sigPulse 5.5s linear infinite 4.0s;
+	}
+	/* sig-4: bus → U2 layer → right output (~230 px), fast */
+	.sig-4 {
+		stroke-width: 1.4;
+		stroke-dasharray: 8 990;
+		animation: sigPulse 3.8s linear infinite 8.5s;
 	}
 
 	/* ── Ghost code fragments ── */
