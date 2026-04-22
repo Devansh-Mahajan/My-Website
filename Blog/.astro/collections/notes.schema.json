@@ -1,0 +1,126 @@
+{
+  "$ref": "#/definitions/notes",
+  "definitions": {
+    "notes": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "anyOf": [
+            {
+              "anyOf": [
+                {
+                  "not": {}
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "description": {
+          "anyOf": [
+            {
+              "anyOf": [
+                {
+                  "not": {}
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "publish": {
+          "type": "boolean",
+          "default": true
+        },
+        "created_date": {
+          "anyOf": [
+            {
+              "anyOf": [
+                {
+                  "not": {}
+                },
+                {
+                  "anyOf": [
+                    {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        {
+                          "type": "string",
+                          "format": "date"
+                        },
+                        {
+                          "type": "integer",
+                          "format": "unix-time"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": "2026-04-21T14:52:10.628Z"
+                }
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "updated_date": {
+          "anyOf": [
+            {
+              "anyOf": [
+                {
+                  "not": {}
+                },
+                {
+                  "$ref": "#/definitions/notes/properties/created_date/anyOf/0/anyOf/1"
+                }
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "tags": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": []
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "no_index": {
+          "type": "boolean",
+          "default": false
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
