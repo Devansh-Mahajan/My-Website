@@ -84,19 +84,23 @@ const focusAreas = [
 				<!-- Ardra storm: organic lightning arcs — Rudra's howling energy -->
 				<svg class="storm-bg" viewBox="0 0 960 680" fill="none"
 					preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-					<!-- Base static arcs: ambient storm presence -->
+					<!-- Base static arcs -->
 					<path class="sa" d="M 32 0 L 16 75 L 36 75 L 18 168 L 40 168 L 22 280 L 44 280 L 26 408"/>
 					<path class="sa" d="M 128 0 L 112 62 L 134 62 L 116 148 L 138 148 L 120 252"/>
 					<path class="sa" d="M 235 0 L 218 58 L 240 58 L 222 135 L 244 135 L 226 218"/>
 					<path class="sa" d="M 72 188 L 52 268 L 76 268 L 58 360 L 80 360 L 62 462"/>
 					<path class="sa" d="M 178 205 L 160 290 L 182 290 L 165 392"/>
+					<!-- Additional arcs: deeper storm -->
+					<path class="sa" d="M 165 0 L 148 58 L 170 58 L 152 138 L 175 138 L 157 235"/>
+					<path class="sa" d="M 295 0 L 278 45 L 300 45 L 282 108 L 305 108 L 287 188"/>
+					<path class="sa" d="M 48 92 L 30 162 L 54 162 L 36 252 L 58 252 L 40 362 L 62 362"/>
+					<path class="sa" d="M 212 338 L 194 418 L 216 418 L 198 512"/>
 					<!-- Charge pulses traveling down the arcs -->
-					<path class="sa-pulse sa-p1"
-						d="M 32 0 L 16 75 L 36 75 L 18 168 L 40 168 L 22 280 L 44 280 L 26 408"/>
-					<path class="sa-pulse sa-p2"
-						d="M 128 0 L 112 62 L 134 62 L 116 148 L 138 148 L 120 252"/>
-					<path class="sa-pulse sa-p3"
-						d="M 72 188 L 52 268 L 76 268 L 58 360 L 80 360 L 62 462"/>
+					<path class="sa-pulse sa-p1" d="M 32 0 L 16 75 L 36 75 L 18 168 L 40 168 L 22 280 L 44 280 L 26 408"/>
+					<path class="sa-pulse sa-p2" d="M 128 0 L 112 62 L 134 62 L 116 148 L 138 148 L 120 252"/>
+					<path class="sa-pulse sa-p3" d="M 72 188 L 52 268 L 76 268 L 58 360 L 80 360 L 62 462"/>
+					<path class="sa-pulse sa-p4" d="M 165 0 L 148 58 L 170 58 L 152 138 L 175 138 L 157 235"/>
+					<path class="sa-pulse sa-p5" d="M 48 92 L 30 162 L 54 162 L 36 252 L 58 252 L 40 362 L 62 362"/>
 				</svg>
 
 				<!--
@@ -287,17 +291,13 @@ const focusAreas = [
 				</svg>
 
 				<!-- Hero content -->
-				<p class="eyebrow">
-					<span class="status-dot" aria-hidden="true"></span>
-					ETH Zurich &middot; EECS
-				</p>
+				<p class="eyebrow">ETH Z&uuml;rich &mdash; EECS</p>
 
 				<h1 id="hero-name">Devansh<br />Mahajan</h1>
 
 				<p class="lead">
-					EECS at ETH Zurich. Circuits, mathematics, software systems,
-					and computation — studied rigorously, built openly,
-					documented permanently.
+					Electrical engineering and mathematics at ETH Z&uuml;rich.
+					Every note, experiment, and build is public.
 				</p>
 
 				<div class="hero-actions">
@@ -469,11 +469,6 @@ const focusAreas = [
 		to   { opacity: 1; transform: translateY(0); }
 	}
 
-	@keyframes status-pulse {
-		0%, 100% { box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.5); opacity: 1; }
-		60%      { box-shadow: 0 0 0 5px rgba(48, 209, 88, 0);  opacity: 0.85; }
-	}
-
 	@keyframes via-pulse {
 		0%, 100% { opacity: 0.20; }
 		50%      { opacity: 0.55; }
@@ -530,6 +525,19 @@ const focusAreas = [
 		100% { stroke-dashoffset: -440; opacity: 0; }
 	}
 
+	@keyframes sa-anim-4 {
+		0%   { stroke-dashoffset:   0; opacity: 0; }
+		5%   { opacity: 0.70; }
+		85%  { opacity: 0.70; }
+		100% { stroke-dashoffset: -245; opacity: 0; }
+	}
+	@keyframes sa-anim-5 {
+		0%   { stroke-dashoffset:   0; opacity: 0; }
+		5%   { opacity: 0.60; }
+		85%  { opacity: 0.60; }
+		100% { stroke-dashoffset: -370; opacity: 0; }
+	}
+
 	@keyframes lc-anim-1 {
 		0%   { stroke-dashoffset:   0; opacity: 0; }
 		5%   { opacity: 1; }
@@ -569,16 +577,21 @@ const focusAreas = [
 
 	.hero-glow {
 		position: absolute;
-		top: -20%;
-		left: -10%;
-		width: 70%;
-		max-width: 560px;
+		top: -25%;
+		left: -15%;
+		width: 80%;
+		max-width: 640px;
 		aspect-ratio: 1;
 		background: radial-gradient(ellipse at center,
-			color-mix(in srgb, var(--accent) 9%, transparent) 0%,
-			transparent 65%);
+			color-mix(in srgb, var(--accent) 10%, transparent) 0%,
+			transparent 68%);
 		pointer-events: none;
 		z-index: 0;
+	}
+	[data-theme='dark'] .hero-glow {
+		background: radial-gradient(ellipse at center,
+			color-mix(in srgb, var(--accent) 18%, transparent) 0%,
+			transparent 65%);
 	}
 
 	/* ── Ardra storm: lightning arcs, left side ── */
@@ -603,7 +616,7 @@ const focusAreas = [
 			transparent      60%
 		);
 	}
-	[data-theme='dark'] .storm-bg { color: rgba(41, 151, 255, 0.14); }
+	[data-theme='dark'] .storm-bg { color: rgba(41, 151, 255, 0.22); }
 
 	.sa {
 		fill: none;
@@ -622,6 +635,8 @@ const focusAreas = [
 	.sa-p1 { stroke-width: 1.6; stroke-dasharray: 14 490; animation: sa-anim-1 5.8s linear infinite 0.5s; }
 	.sa-p2 { stroke-width: 1.3; stroke-dasharray: 11 315; animation: sa-anim-2 4.2s linear infinite 2.4s; }
 	.sa-p3 { stroke-width: 1.1; stroke-dasharray:  9 340; animation: sa-anim-3 4.6s linear infinite 3.8s; }
+	.sa-p4 { stroke-width: 1.4; stroke-dasharray: 12 250; animation: sa-anim-4 3.6s linear infinite 1.2s; }
+	.sa-p5 { stroke-width: 1.0; stroke-dasharray:  8 375; animation: sa-anim-5 5.2s linear infinite 4.5s; }
 
 	/* ── PCB Circuit SVG ── */
 	.circuit-bg {
@@ -649,7 +664,7 @@ const focusAreas = [
 		);
 	}
 
-	[data-theme='dark'] .circuit-bg { color: rgba(41, 151, 255, 0.16); }
+	[data-theme='dark'] .circuit-bg { color: rgba(41, 151, 255, 0.22); }
 
 	/* Traces */
 	.traces path  { stroke: currentColor; fill: none; }
@@ -767,56 +782,47 @@ const focusAreas = [
 	.lb { fill: none; }
 	.lb-1 { stroke: rgba(0, 113, 227, 0.13); stroke-width: 3; }
 	.lb-2 { stroke: rgba(0, 113, 227, 0.08); stroke-width: 1.8; }
-	[data-theme='dark'] .lb-1 { stroke: rgba(41, 151, 255, 0.24); }
-	[data-theme='dark'] .lb-2 { stroke: rgba(41, 151, 255, 0.15); }
+	[data-theme='dark'] .lb-1 { stroke: rgba(41, 151, 255, 0.38); }
+	[data-theme='dark'] .lb-2 { stroke: rgba(41, 151, 255, 0.22); }
 
 	/* Lightning charge pulses */
 	.lc { fill: none; stroke: var(--accent); opacity: 0; }
 	.lc-1 { stroke-width: 3;   stroke-dasharray: 20 820; animation: lc-anim-1 3.8s linear infinite 0.4s; }
 	.lc-2 { stroke-width: 1.8; stroke-dasharray: 12 680; animation: lc-anim-2 5.2s linear infinite 2.2s; }
 
-	/* ── Eyebrow ── */
+	/* ── Eyebrow — raw monospace label, no pill ── */
 	.eyebrow {
 		position: relative;
 		z-index: 1;
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
 		align-self: flex-start;
-		margin: 0 0 1.25rem;
-		padding: 0.3rem 0.8rem;
-		background: color-mix(in srgb, var(--accent) 10%, transparent);
-		color: var(--accent);
-		border-radius: 999px;
-		font-size: 0.74rem;
-		font-weight: 600;
-		letter-spacing: 0.07em;
+		margin: 0 0 1.5rem;
+		font-family: var(--font-mono);
+		font-size: 0.68rem;
+		font-weight: 400;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
+		color: var(--accent);
+		opacity: 0.9;
 		animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
-	}
-
-	.status-dot {
-		display: inline-block;
-		width: 6px;
-		height: 6px;
-		border-radius: 50%;
-		background: #30d158;
-		flex-shrink: 0;
-		animation: status-pulse 2.4s ease-in-out infinite;
 	}
 
 	/* ── Name ── */
 	h1 {
 		position: relative;
 		z-index: 1;
-		max-width: 14ch;
+		max-width: 12ch;
 		margin: 0 0 1.25rem;
-		font-size: clamp(3.75rem, 9.5vw, 6.25rem);
+		font-size: clamp(4.5rem, 12vw, 8rem);
 		font-weight: 800;
-		line-height: 0.93;
-		letter-spacing: -0.042em;
+		line-height: 0.90;
+		letter-spacing: -0.045em;
 		color: rgb(var(--black));
 		animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+	}
+	[data-theme='dark'] h1 {
+		text-shadow:
+			0 0 80px rgba(41, 151, 255, 0.16),
+			0 0 200px rgba(41, 151, 255, 0.06);
 	}
 
 	/* ── Lead ── */
@@ -1228,8 +1234,9 @@ const focusAreas = [
 		.circuit-bg, .storm-bg { display: none; }
 
 		h1 {
-			font-size: clamp(3rem, 17vw, 4.5rem);
-			letter-spacing: -0.035em;
+			font-size: clamp(3.5rem, 18vw, 5rem);
+			letter-spacing: -0.038em;
+			line-height: 0.92;
 		}
 
 		.section { padding: 3.5rem 0; }
