@@ -14,23 +14,12 @@ interface Props extends CollectionEntry<'blog'>['data'] {
 const {
 	title,
 	subtitle,
-	description = '',
+	description,
 	created_date,
 	updated_date,
 	featured_image,
 	featured_image_alt,
 	tags = [],
-	meta_title,
-	meta_description,
-	canonical_url,
-	og_title,
-	og_description,
-	og_image,
-	og_type,
-	twitter_title,
-	twitter_description,
-	twitter_image,
-	twitter_card,
 	keywords,
 	author,
 	no_index,
@@ -45,22 +34,10 @@ const safeTags = tags ?? [];
 	<head>
 		<BaseHead
 			title={title}
-			description={description}
-			featured_image={featured_image}
-			featured_image_alt={featured_image_alt}
-			meta_title={meta_title}
-			meta_description={meta_description}
-			canonical_url={canonical_url}
-			og_title={og_title}
-			og_description={og_description}
-			og_image={og_image}
-			og_type={og_type}
-			twitter_title={twitter_title}
-			twitter_description={twitter_description}
-			twitter_image={twitter_image}
-			twitter_card={twitter_card}
-			keywords={[...safeTags, ...(keywords || [])]}
-			author={author}
+			description={description ?? ''}
+			image={featured_image ?? undefined}
+			keywords={[...safeTags, ...(keywords ?? [])]}
+			author={author ?? undefined}
 			no_index={no_index}
 		/>
 	</head>
