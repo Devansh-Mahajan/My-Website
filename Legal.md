@@ -2,22 +2,21 @@
 
 **1. Haftung für Inhalte**
 
-Der Autor dieser Webseite übernimmt keine Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen und Zusammenfassungen. Alle Inhalte werden "wie besehen" (as-is) und ausschliesslich zu Informations- und Bildungszwecken zur Verfügung gestellt.
+Der Author dieser Webseite übernimmt keine Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen und Zusammenfassungen. Alle Inhalte werden "wie besehen" (as-is) und ausschliesslich zu Informationsund Bildungszwecken zur Verfügung gestellt.
 
-Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter oder unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt.
+Haftungsansprüche gegen den Author, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter oder unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Authors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt.
 
 **2. Haftung für Links**
 
-Diese Webseite enthält möglicherweise Verweise und Links auf Webseiten Dritter. Für die Inhalte dieser externen Webseiten ist ausschliesslich der jeweilige Anbieter oder Betreiber verantwortlich. Der Autor hat auf die Inhalte dieser Seiten keinen Einfluss.
+Diese Webseite enthält möglicherweise Verweise und Links auf Webseiten Dritter. Für die Inhalte dieser externen Webseiten ist ausschliesslich der jeweilige Anbieter oder Betreiber verantwortlich. Der Author hat auf die Inhalte dieser Seiten keinen Einfluss.
 
 Zum Zeitpunkt der Linksetzung wurden die verlinkten Seiten auf mögliche Rechtsverstösse überprüft. Rechtswidrige Inhalte waren zu diesem Zeitpunkt nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden derartige Links umgehend entfernt.
 
 **3. Urheberrecht**
 
-Die durch den Betreiber dieser Webseite erstellten Inhalte und Werke (insbesondere persönliche Zusammenfassungen und Texte) unterliegen dem schweizerischen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet (Eigengebrauch gem. Art. 19 URG).
+Die durch den Betreiber dieser Webseite erstellten Inhalte und Werke (insbesondere persönliche Zusammenfassungen und Texte) unterliegen dem schweizerischen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Authors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet (Eigengebrauch gem. Art. 19 URG).
 
-Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, wird um einen entsprechenden Hinweis gebeten. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
-
+Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter also solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, wird um einen entsprechenden Hinweis gebeten. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
 
 ## Legal Disclaimer
 
