@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "05792c6e3404e3db",
+        "id": "5b7f424f842cef92",
         "type": "tabs",
         "children": [
           {
-            "id": "fa5fc38b2f282e25",
+            "id": "2bec41d7829324a5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "600 Sidequests/Sidequests.md",
+                "file": "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/01 Grundlagen.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,10 +28,71 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Sidequests"
+              "title": "01 Grundlagen"
+            }
+          },
+          {
+            "id": "4dd31d398bb4ae26",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "700 Quant/Quantitative Work.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Quantitative Work"
+            }
+          },
+          {
+            "id": "de9b0ca1003a2f88",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "600 Sidequests/index.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "index"
+            }
+          },
+          {
+            "id": "b9e73311fd30c9b8",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.11.7"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -152,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/00 Anhänge Elektrotechnik Buch.md",
+                "file": "600 Sidequests/index.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 00 Anhänge Elektrotechnik Buch"
+              "title": "Outline of index"
             }
           },
           {
@@ -167,8 +228,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "git-view"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           },
           {
@@ -177,8 +238,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "advanced-tables-toolbar"
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
             }
           }
         ],
@@ -186,12 +247,13 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
       "bases:Create new base": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -199,21 +261,25 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "audio-recorder:Start/stop recording": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "templater-obsidian:Templater": false,
-      "obsidian-git:Open Git source control": false
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "fa5fc38b2f282e25",
+  "active": "de9b0ca1003a2f88",
   "lastOpenFiles": [
-    "600 Sidequests/Reading List.md",
-    "600 Sidequests/index.md",
     "600 Sidequests/Sidequests.md",
-    "index.md",
-    "Legal.md",
-    "Untitled.base",
-    "Untitled 1.base",
-    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/01 Grundlagen.md",
+    "600 Sidequests/Reading List.md",
+    "700 Quant/Quantitative Work.md",
+    "600 Sidequests/test.md",
+    "600 Sidequests/index.md",
+    "Blog/markdown-style-guide.md",
+    "Blog/public/_redirects",
+    "998 Attachements/00. Worum geht es bei der Mechanik.pdf",
+    "800 Projects/Projects.md",
+    "700 Quant",
+    "500 Book/Book Notes.md",
+    "500 Book",
+    "400 IOI/Competitive Programming.md",
+    "200 ETH Zurich/Semester 1/Technische Mechanik/Lecture Notes/00. Worum geht es bei der Mechanik.md",
     "998 Attachements/Pasted image 20260211175839.png",
     "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/00 Brückenkurs Mathematik.md",
     "200 ETH Zurich/Semester 1/Digitaltechnik/Lecture Notes/02_Logische Verknüpfungen.md",
@@ -236,23 +302,17 @@
     "100 Notes/Untitled.base",
     "200 ETH Zurich/Semester 1/Analysis 1/401-0231-10L Analysis 1.md",
     "Untitled.canvas",
+    "index.md",
     "000 Goals/2025-10-28.md",
     "200 ETH Zurich/Semester 1/Vorkurs Informatik/252-0865-00L Vorkurs Informatik.md",
     "200 ETH Zurich/Semester 1/Technische Mechanik/151-0223-10L Technische Mechanik.md",
     "200 ETH Zurich/Semester 1/Microsystems I Process Technology and Integration/151-0621-00L Microsystems I Process Technology and Integration.md",
-    "200 ETH Zurich/Semester 1/Lineare Algebra/401-0151-00L Lineare Algebra.md",
-    "200 ETH Zurich/Semester 1/Brückenkurs_Mathematik/03 Trigonometrie.md",
-    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/00 Anhänge Elektrotechnik Buch.md",
-    "100 Notes/01 Albach Kapitel 1.1. - 1.6.md",
-    "200 ETH Zurich/Semester 1/Netzwerke und Schaltungen I/Lecture Notes/06 Albach Kapitel 3.6 - 3.10.md",
     "998 Attachements/Pasted image 20251024182905.png",
     "998 Attachements/Pasted image 20251024172032.png",
     "998 Attachements/Pasted image 20251024170633.png",
     "998 Attachements/Pasted image 20251024170610.png",
     "998 Attachements/Max_Ausgangsleistung.asc",
     "998 Attachements/Einfaches_elektrisches_Netzwerk_3_6.asc",
-    "998 Attachements/HS25_NuS1_Kapitel_3_Einfache_elektrische_Netzwerke_Teil_2von2.pdf",
-    "998 Attachements/Unbelasteter Spannungsteiler.asc",
     "Untitled 3.canvas",
     "Untitled 2.canvas",
     "Untitled 1.canvas"
