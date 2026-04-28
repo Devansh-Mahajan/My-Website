@@ -56,7 +56,7 @@
             }
           },
           {
-            "id": "de9b0ca1003a2f88",
+            "id": "b9e73311fd30c9b8",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -77,18 +77,6 @@
               },
               "icon": "lucide-file",
               "title": "Analysis_Complete_Guide"
-            }
-          },
-          {
-            "id": "b9e73311fd30c9b8",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.11.7"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.11.7"
             }
           }
         ],
@@ -264,8 +252,10 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "de9b0ca1003a2f88",
+  "active": "b9e73311fd30c9b8",
   "lastOpenFiles": [
+    "200 ETH Zurich/Semester 1/Analysis 1 + 2/Analysis_Complete_Guide.md",
+    "200 ETH Zurich/Semester 1/Analysis 1 + 2/Analysis_Complete_Guide-2.md",
     "600 Sidequests/Reading List.md",
     "600 Sidequests/index.md",
     "Untitled.base",
@@ -307,7 +297,6 @@
     "index.md",
     "000 Goals/2025-10-28.md",
     "200 ETH Zurich/Semester 1/Vorkurs Informatik/252-0865-00L Vorkurs Informatik.md",
-    "200 ETH Zurich/Semester 1/Technische Mechanik/151-0223-10L Technische Mechanik.md",
     "998 Attachements/Pasted image 20251024182905.png",
     "998 Attachements/Pasted image 20251024172032.png",
     "998 Attachements/Pasted image 20251024170633.png",

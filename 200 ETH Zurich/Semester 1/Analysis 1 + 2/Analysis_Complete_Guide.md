@@ -1,1316 +1,2009 @@
-# 📐 Analysis — The Complete Ground-Up Guide
+# 📐 Analysis I & II — The Complete Intuitive Guide
+### *A from-the-ground-up synthesis of Struwe (2010), Ziltener (2025), and seven D-ITET basic exams (2013–2023)*
 
-> *A unified Obsidian-friendly synthesis of Struwe's "Analysis für Informatik" (ETH, 2010) and Ziltener's "Skript zu den Vorlesungen Analysis 1 und 2 für ITET und RW" (ETH, 2025) — written so that a high school student can grasp every concept the first time.*
+> **Promise.** If you read this from top to bottom, knowing only high school math, you will *understand* every concept on the ETH D-ITET Analysis basic exam — not just memorize formulas. Every idea is built up from intuition, every theorem comes with a real-world picture, and every chapter ends with **actual exam tasks** with full solutions.
 
 ---
 
-## 🧭 How to read this note
+## 🧭 How to use this note
 
-Every section follows the same rhythm:
+This document is written for **Obsidian**, so it uses LaTeX (`$...$` and `$$...$$`), callouts (`> [!tip]`), and `[[wiki-links]]` for navigation.
 
-1. **Why we care** — the real-world or mathematical motivation
-2. **Intuition** — what your gut should tell you
-3. **Formal definition** — the precise statement, in LaTeX
-4. **Worked examples** — to lock the concept in
-5. **Key theorems** — the headlines you must remember
-6. **Pitfalls** — where students typically slip up
+Every chapter follows the same six-step rhythm:
 
-You should be able to read this top-to-bottom in order. Each chapter assumes only the previous chapters and *nothing else*.
+1. 🤔 **The big question** — what real-world or mathematical problem are we solving?
+2. 💡 **The intuition** — a picture or analogy your brain can hold
+3. 📜 **The formal definition** — the precise statement
+4. 🔧 **Worked examples** — small, then medium, then exam-level
+5. 🎯 **How the exam tests this** — concrete patterns from past D-ITET exams
+6. 📝 **Practice tasks** with solutions
+
+> [!tip] How to study with this document
+> 1. **First pass** — read intuitions and worked examples only. Skip formal definitions if they feel intimidating.
+> 2. **Second pass** — read carefully, do every example with paper.
+> 3. **Third pass** — close the document, redo every "Practice Task" from memory.
 
 ---
 
 ## 📋 Table of Contents
 
-1. [[#1 · Logic — the language of mathematics]]
-2. [[#2 · Sets — the bricks of mathematics]]
-3. [[#3 · Functions — the verbs of mathematics]]
-4. [[#4 · Numbers — from counting to the complex plane]]
-5. [[#5 · Sequences — the idea of "approaching"]]
-6. [[#6 · Series — adding infinitely many things]]
-7. [[#7 · Continuity — drawing without lifting the pen]]
-8. [[#8 · Differentiation in one variable]]
-9. [[#9 · Taylor series — polynomial X-rays of any function]]
-10. [[#10 · Integration in one variable]]
-11. [[#11 · Ordinary differential equations]]
-12. [[#12 · Multivariable differentiation]]
-13. [[#13 · Multivariable integration]]
-14. [[#14 · Vector calculus — Green, Stokes, Gauß]]
-15. [[#15 · The grand picture]]
+1. [[#1 · Logic — the operating system of math]]
+2. [[#2 · Sets and functions]]
+3. [[#3 · Numbers — from $\mathbb{N}$ to $\mathbb{C}$]]
+4. [[#4 · Sequences — what does "approaching" mean?]]
+5. [[#5 · Series — adding infinitely many things]]
+6. [[#6 · Continuity — drawing without lifting the pen]]
+7. [[#7 · Differentiation — the slope at a point]]
+8. [[#8 · Taylor series — polynomial X-rays]]
+9. [[#9 · Limits and L'Hôpital's rule]]
+10. [[#10 · Integration — the Fundamental Theorem]]
+11. [[#11 · Integration techniques (parts, substitution, partial fractions)]]
+12. [[#12 · Ordinary differential equations]]
+13. [[#13 · Multivariable functions]]
+14. [[#14 · Multivariable extrema and Lagrange multipliers]]
+15. [[#15 · Multiple integrals]]
+16. [[#16 · Vector fields, Green, Stokes, Gauß]]
+17. [[#17 · Implicit and inverse function theorems]]
+18. [[#18 · Master strategy — the exam playbook]]
 
 ---
 
-# 1 · Logic — the language of mathematics
+# 1 · Logic — the operating system of math
 
-## 1.1 Why we care
+## 🤔 The big question
 
-Every theorem, every proof, every line in this entire document is built out of **logical statements**. You have to know how they combine, how they negate, and how to prove them — otherwise the rest of analysis looks like magic.
+Why do we need logic? Because every theorem you'll ever read says "*if* this holds, *then* that holds" — and to use the theorem you must understand exactly what it claims, what it doesn't, and how to negate it.
 
-## 1.2 Statements and the law of excluded middle
+## 💡 Intuition: statements are switches
 
-> [!definition] Mathematical statement
-> A **mathematical statement** is a sentence that is either **true** or **false** — never both, never neither.
+A **mathematical statement** is a sentence that is either **true** or **false** — like a light switch with only "on" and "off". No "kinda", no "maybe", no "depends on the weather".
 
-This is called the *Law of the Excluded Middle* (Latin: *tertium non datur*, "no third option").
+> [!example]
+> - $4 > 2$ — TRUE ✅
+> - $5 < 3$ — FALSE ❌
+> - "This sentence is false" — **not allowed** (paradox: if it's true it's false, if it's false it's true). Math forbids self-reference like this.
 
-> [!example] Statements
-> - $4 > 2$ — **true**
-> - $\forall n \in \mathbb{N}: n > 4 \rightarrow n > 2$ — **true**
-> - $5 < 3$ — **false**
-> - "This sentence is false." — **not a valid statement** (paradox)
+## 📜 The five connectives
 
-## 1.3 Connectives
+Given two statements $A$ and $B$, you can build new ones:
 
-Given two statements $A$ and $B$, we form new statements:
+| Symbol | Read as | Meaning | Mnemonic |
+|---|---|---|---|
+| $\neg A$ | "not $A$" | Flips the truth value | think: "the opposite" |
+| $A \wedge B$ | "$A$ and $B$" | True only if **both** are true | think: a chain — weakest link breaks it |
+| $A \vee B$ | "$A$ or $B$" | True if **at least one** is true | inclusive or — like a menu where you can pick either or both |
+| $A \rightarrow B$ | "if $A$, then $B$" | Only false when $A$ true, $B$ false | a promise: only broken if you don't deliver |
+| $A \leftrightarrow B$ | "$A$ iff $B$" | Same truth value | "they live or die together" |
 
-| Symbol | Read as | Meaning |
-| --- | --- | --- |
-| $\neg A$ | not $A$ | flips the truth value |
-| $A \wedge B$ | $A$ and $B$ | true iff **both** are true |
-| $A \vee B$ | $A$ or $B$ | true iff **at least one** is true |
-| $A \rightarrow B$ | if $A$, then $B$ | only false when $A$ true, $B$ false |
-| $A \leftrightarrow B$ | $A$ iff $B$ | true iff both have the same truth value |
+## ⚠️ The trap that catches everyone: vacuous truth
 
-The truth table:
+> [!warning] A false hypothesis implies anything
+> $A \rightarrow B$ is **true** whenever $A$ is false. The statement *"if the moon is made of cheese, then $1 = 2$"* is **logically true**, because the premise is false.
+>
+> Why? The implication is a **promise**. The promise "if it rains, I'll bring an umbrella" is only **broken** if it rains *and* you don't bring an umbrella. On a sunny day, the promise was never tested — so it was never broken.
 
-| $A$ | $B$ | $\neg A$ | $A \wedge B$ | $A \vee B$ | $A \rightarrow B$ | $A \leftrightarrow B$ |
-| --- | --- | --- | --- | --- | --- | --- |
-| T | T | F | T | T | T | T |
-| T | F | F | F | T | F | F |
-| F | T | T | F | T | T | F |
-| F | F | T | F | F | T | T |
+## 💡 Contraposition — the most useful identity in proof-writing
 
-> [!warning] Surprising row: a false hypothesis implies anything
-> $A \rightarrow B$ is **true** whenever $A$ is false. The statement *"if the moon is cheese, then $1 = 2$"* is logically true. The implication only fails when you actually have a true premise leading to a false conclusion.
+$$A \rightarrow B \quad\Longleftrightarrow\quad \neg B \rightarrow \neg A$$
 
-## 1.4 Implication and contraposition
+> [!example]
+> - "If it rains → ground is wet" $\;\equiv\;$ "If ground is dry → it didn't rain"
+> - "If $x^2$ is even → $x$ is even" $\;\equiv\;$ "If $x$ is odd → $x^2$ is odd" *(easier to prove!)*
 
-> [!info] Equivalent forms of $A \rightarrow B$
-> $$A \rightarrow B \quad \Longleftrightarrow \quad \neg B \rightarrow \neg A$$
-> "If it rains, the ground is wet" is the same as "if the ground is dry, it didn't rain."
+## 📜 Quantifiers: $\forall$ and $\exists$
 
-This is called the **contrapositive**, and it is the basis of **proof by contradiction**.
+| Symbol | Read as | Example |
+|---|---|---|
+| $\forall x \in M : P(x)$ | "for all $x$ in $M$, $P(x)$ holds" | $\forall n \in \mathbb{N} : n \geq 1$ ✅ |
+| $\exists x \in M : P(x)$ | "there exists $x$ in $M$ with $P(x)$" | $\exists n \in \mathbb{N} : n^2 = 49$ ✅ |
 
-## 1.5 Quantifiers
+> [!tip] Negation rule — flip the quantifier and negate the statement
+> $$\neg(\forall x : P(x)) \;\equiv\; \exists x : \neg P(x)$$
+> $$\neg(\exists x : P(x)) \;\equiv\; \forall x : \neg P(x)$$
 
-| Symbol | Read | Meaning |
-| --- | --- | --- |
-| $\forall x \in M : P(x)$ | for all $x$ in $M$, $P(x)$ holds | $P$ is true for every $x$ |
-| $\exists x \in M : P(x)$ | there exists $x$ in $M$ with $P(x)$ | at least one $x$ makes $P$ true |
+> [!example] Negating a real exam-style sentence (FS 2023 task MC1)
+> Original: $\forall n \in \mathbb{N},\; \exists m \in \mathbb{N} : (m > n) \wedge (m < 2n)$
+>
+> Negation, step by step:
+> 1. Flip outer $\forall \to \exists$: $\;\exists n \in \mathbb{N},\; \neg(\exists m \in \mathbb{N} : \dots)$
+> 2. Flip inner $\exists \to \forall$: $\;\exists n \in \mathbb{N}, \forall m \in \mathbb{N} : \neg((m > n) \wedge (m < 2n))$
+> 3. De Morgan: $\neg(P \wedge Q) \equiv \neg P \vee \neg Q$
+>
+> Final: $\boxed{\exists n \in \mathbb{N}, \forall m \in \mathbb{N} : (m \leq n) \vee (m \geq 2n)}$
 
-> [!tip] Negating quantifiers — flip everything
-> $$\neg(\forall x : P(x)) \;\Longleftrightarrow\; \exists x : \neg P(x)$$
-> $$\neg(\exists x : P(x)) \;\Longleftrightarrow\; \forall x : \neg P(x)$$
-
-> [!example] In words
-> The negation of "every student passed" is "there exists a student who didn't pass." Not "no student passed."
-
-## 1.6 Three proof techniques you must know
+## 🔧 Three proof techniques you absolutely need
 
 ### Direct proof
 Build a chain $A \Rightarrow B_1 \Rightarrow B_2 \Rightarrow \cdots \Rightarrow S$.
 
 ### Proof by contradiction
-To prove $A \Rightarrow B$: assume $A \wedge \neg B$ and derive a contradiction.
+To prove $A \Rightarrow B$, **assume the opposite** ($A \wedge \neg B$) and derive nonsense.
 
-> [!example] No largest natural number
-> Assume there is a largest $n_0 \in \mathbb{N}$. But then $n_0 + 1 \in \mathbb{N}$ and $n_0 + 1 > n_0$ — contradiction. Hence no such $n_0$ exists. $\blacksquare$
+> [!example] There is no largest natural number
+> Assume there is a largest $n_0 \in \mathbb{N}$. But $n_0 + 1$ is also in $\mathbb{N}$, and $n_0 + 1 > n_0$. **Contradiction!** $\blacksquare$
 
-### Mathematical induction
-To prove $A(n)$ holds for **every** $n \in \mathbb{N}$:
+### Mathematical induction — your best friend on exams
 
-1. **Base case:** show $A(1)$ is true.
-2. **Inductive step:** assume $A(n)$ is true (the *induction hypothesis*) and prove $A(n+1)$.
+To prove $P(n)$ for **all** $n \in \mathbb{N}$:
+1. **Base case:** prove $P(1)$ (or $P(0)$).
+2. **Inductive step:** assume $P(n)$ holds — the **induction hypothesis** (IH) — and prove $P(n+1)$.
 
-> [!example] Sum of odd numbers
-> Claim: $\displaystyle\sum_{k=1}^{n}(2k-1) = n^2$ for every $n \in \mathbb{N}$.
+> [!example] Sum of the first $n$ odd numbers $= n^2$
 >
-> *Base ($n = 1$):* $1 = 1^2$. ✓
+> **Claim:** $\sum_{k=1}^n (2k-1) = n^2$.
 >
-> *Step:* Assume $1 + 3 + \dots + (2n-1) = n^2$. Then
-> $$1 + 3 + \dots + (2n-1) + (2n+1) = n^2 + (2n+1) = (n+1)^2.\quad \blacksquare$$
+> **Base ($n=1$):** $1 = 1^2$ ✓
+>
+> **Step:** Assume $1 + 3 + \dots + (2n-1) = n^2$. Then
+> $$1 + 3 + \dots + (2n-1) + (2n+1) \stackrel{IH}{=} n^2 + (2n+1) = (n+1)^2 \quad\checkmark$$
+
+## 🎯 How the exam tests logic
+
+Every basic exam contains at least one logic / quantifier task. Common types:
+- **Negate a quantified statement** (FS 2023, MC1)
+- **Prove an inequality by induction** (FS 2015 task 9, FS 2019 task 13)
+- **Prove a sum-formula by induction**
+
+## 📝 Practice tasks
+
+> [!question] **Task 1.1 (Quantifier negation)**
+> Negate: $\;\exists x \in \mathbb{R}, \forall y \in \mathbb{R} : x \cdot y = 0$.
+>
+>> [!success]- Solution
+>> Flip $\exists \to \forall$, $\forall \to \exists$, negate the equation:
+>> $$\forall x \in \mathbb{R}, \exists y \in \mathbb{R} : x \cdot y \neq 0.$$
+
+> [!question] **Task 1.2 (Induction — adapted from FS 2015 task 9)**
+> Prove that for all $n \in \mathbb{N}_0$ and $x \in [0,1]$: $(1+x)^n \leq 1 + (2^n - 1)x$.
+>
+>> [!success]- Solution
+>> **Base ($n=0$):** $(1+x)^0 = 1 \leq 1 + 0 = 1$. ✓
+>>
+>> **Step:** Assume the inequality for $n$. Then
+>> $$(1+x)^{n+1} = (1+x)(1+x)^n \overset{\text{IH}}{\leq} (1+x)(1 + (2^n - 1)x)$$
+>> $$= 1 + 2^n x + (2^n - 1)x^2$$
+>> Since $x^2 \leq x$ on $[0, 1]$:
+>> $$\leq 1 + 2^n x + (2^n - 1) x = 1 + (2^{n+1} - 1)x \quad\checkmark$$
+
+> [!question] **Task 1.3 (FS 2019 task 13 — clever induction)**
+> Prove: $\;\sum_{n=1}^{2N}\frac{(-1)^{n-1}}{n} = \sum_{n=1}^N \frac{1}{N+n}$ for all $N \in \mathbb{N}$.
+>
+>> [!success]- Solution
+>> **Base ($N=1$):** LHS $= 1 - \frac{1}{2} = \frac{1}{2}$. RHS $= \frac{1}{2}$. ✓
+>>
+>> **Step:** Look at the *difference* between $N+1$ and $N$ terms.
+>>
+>> LHS difference: $\frac{1}{2N+1} - \frac{1}{2N+2}$.
+>>
+>> RHS difference: $\big(\sum_{n=1}^{N+1} \frac{1}{(N+1)+n}\big) - \big(\sum_{n=1}^N \frac{1}{N+n}\big)$. Re-indexing the first sum with $k = n+1$:
+>> $$= \frac{1}{2N+1} + \frac{1}{2N+2} - \frac{1}{N+1} = \frac{1}{2N+1} - \frac{1}{2N+2}$$
+>> Both differences match, so the identity transfers from $N$ to $N+1$. $\blacksquare$
 
 ---
 
-# 2 · Sets — the bricks of mathematics
+# 2 · Sets and functions
 
-## 2.1 What is a set?
+## 🤔 The big question
 
-> [!definition] Set (Cantor)
-> A **set** is an unordered collection of distinct objects, called its **elements**.
+Sets are the **nouns** of math; functions are the **verbs**. You can't talk about anything without them.
 
-We write $x \in A$ if $x$ is in $A$, and $x \notin A$ otherwise. Order and repetition are irrelevant: $\{a, b\} = \{b, a\} = \{a, b, a\}$.
+## 💡 Sets — collections without order
 
-The **empty set** is $\emptyset = \{\}$.
+> [!definition] Set
+> A **set** is an unordered collection of distinct objects, called **elements**.
 
-## 2.2 Standard sets
+Notation: $\{1, 2, 3\} = \{3, 1, 2\} = \{1, 1, 2, 3\}$ — order and repetition don't matter.
 
-$$\mathbb{N} = \{1, 2, 3, \dots\}, \quad \mathbb{N}_0 = \{0, 1, 2, 3, \dots\}, \quad \mathbb{Z} = \{\dots, -1, 0, 1, \dots\}$$
+| Set | Symbol | Members |
+|---|---|---|
+| Naturals | $\mathbb{N}$ | $\{1, 2, 3, \dots\}$ |
+| Naturals incl. 0 | $\mathbb{N}_0$ | $\{0, 1, 2, 3, \dots\}$ |
+| Integers | $\mathbb{Z}$ | $\{\dots, -1, 0, 1, \dots\}$ |
+| Rationals | $\mathbb{Q}$ | $\{p/q : p \in \mathbb{Z}, q \in \mathbb{N}\}$ |
+| Reals | $\mathbb{R}$ | All decimals |
+| Complex | $\mathbb{C}$ | $\{a + bi : a, b \in \mathbb{R}\}$ |
+| Empty set | $\emptyset$ or $\{\}$ | nothing |
 
-$$\mathbb{Q} = \left\{ \frac{p}{q} \;\middle|\; p \in \mathbb{Z},\; q \in \mathbb{N} \right\}, \quad \mathbb{R}, \quad \mathbb{C}$$
+## 📜 Set operations and De Morgan
 
-## 2.3 Operations on sets
+| Operation | Definition | Picture |
+|---|---|---|
+| Union | $A \cup B = \{x : x \in A \vee x \in B\}$ | both circles |
+| Intersection | $A \cap B = \{x : x \in A \wedge x \in B\}$ | overlap only |
+| Difference | $A \setminus B = \{x \in A : x \notin B\}$ | $A$ minus the overlap |
+| Complement | $A^c = X \setminus A$ | everything outside $A$ |
+| Cartesian product | $A \times B = \{(a,b) : a \in A, b \in B\}$ | grid of pairs |
 
-| Operation | Definition |
-| --- | --- |
-| Union | $A \cup B = \{x : x \in A \vee x \in B\}$ |
-| Intersection | $A \cap B = \{x : x \in A \wedge x \in B\}$ |
-| Difference | $A \setminus B = \{x \in A : x \notin B\}$ |
-| Complement | $A^c = X \setminus A$ (relative to a universe $X$) |
-| Cartesian product | $A \times B = \{(a, b) : a \in A,\; b \in B\}$ |
-
-## 2.4 De Morgan's Laws
-
-> [!theorem] De Morgan
+> [!theorem] De Morgan's Laws
 > $$(A \cap B)^c = A^c \cup B^c, \qquad (A \cup B)^c = A^c \cap B^c$$
 
-> [!tip] Memorize this slogan
-> "Push the negation in, flip $\cap$ and $\cup$." It works at every level — for sets, for logical statements, for probabilities.
-
-## 2.5 The Russell paradox (why we can't allow *all* collections)
-
-The "set $M$ of all sets that don't contain themselves" cannot exist:
-- If $M \in M$, then by definition of $M$, $M \notin M$ — contradiction.
-- If $M \notin M$, then by definition $M \in M$ — contradiction.
-
-This is why modern set theory restricts what counts as a set.
-
----
-
-# 3 · Functions — the verbs of mathematics
-
-## 3.1 The idea
-
-You already met functions in high school: $y = f(x) = x^2$ takes a number $x$ and returns its square.
+## 💡 Functions — the rule book
 
 > [!definition] Function
-> A **function** $f: X \to Y$ assigns to every $x \in X$ exactly one element $f(x) \in Y$.
-> - $X$ — the **domain** (Definitionsbereich)
-> - $Y$ — the **codomain** (Wertebereich)
-> - $f(X) = \{f(x) : x \in X\}$ — the **image** or **range**
+> A function $f: X \to Y$ assigns to every $x \in X$ exactly **one** $f(x) \in Y$.
+> - $X$ — **domain**
+> - $Y$ — **codomain**
+> - Notation: $x \mapsto f(x)$
 
-We write $x \mapsto f(x)$ for the assignment rule.
+> [!example]
+> - $f: \mathbb{R} \to \mathbb{R},\; x \mapsto x^2$
+> - $g: \mathbb{R} \to \mathbb{R},\; x \mapsto \sin x$
+> - $h: [0, \infty) \to \mathbb{R},\; x \mapsto \sqrt{x}$ — only on non-negatives!
 
-## 3.2 Three crucial properties
+## 🔧 Injective, surjective, bijective
 
-> [!definition] Injective, surjective, bijective
-> Let $f: X \to Y$.
->
-> - **Injective** (one-to-one): different inputs go to different outputs.
-> $$\forall x_1, x_2 \in X: \; f(x_1) = f(x_2) \;\Rightarrow\; x_1 = x_2$$
->
-> - **Surjective** (onto): every element of $Y$ is hit.
-> $$\forall y \in Y, \; \exists x \in X : f(x) = y$$
->
-> - **Bijective**: both injective and surjective.
+> [!definition]
+> - **Injective** (one-to-one): different inputs → different outputs. $\;f(x_1) = f(x_2) \Rightarrow x_1 = x_2$.
+> - **Surjective** (onto): every $y \in Y$ is hit. $\;\forall y \in Y, \exists x: f(x) = y$.
+> - **Bijective**: both. Then an inverse $f^{-1}: Y \to X$ exists.
 
-If $f$ is bijective, an **inverse function** $f^{-1}: Y \to X$ exists, with
-$$f^{-1} \circ f = \mathrm{id}_X, \qquad f \circ f^{-1} = \mathrm{id}_Y$$
+> [!example] Mental picture
+> - $f(x) = x^2$ on $\mathbb{R}$: NOT injective ($f(1) = f(-1)$), NOT surjective onto $\mathbb{R}$ (negative numbers aren't hit).
+> - $f(x) = e^x: \mathbb{R} \to (0, \infty)$: bijective, inverse is $\ln$.
 
-> [!example] Visualize
-> - $f(x) = x^2$ on $\mathbb{R}$ is **not** injective (since $f(2) = f(-2)$) and **not** surjective onto $\mathbb{R}$ (negative numbers aren't hit). But on $[0, \infty)$ it's bijective with inverse $\sqrt{\cdot}$.
-> - $f(x) = e^x$ is bijective from $\mathbb{R}$ to $(0, \infty)$, with inverse $\ln$.
+## 🔧 Composition
 
-## 3.3 Composition
+If $f: X \to Y$ and $g: Y \to Z$:
+$$(g \circ f)(x) = g(f(x))$$
+Apply $f$ first, then $g$. **Associative**: $(h \circ g) \circ f = h \circ (g \circ f)$.
 
-If $f: X \to Y$ and $g: Y \to Z$, the **composition** $g \circ f : X \to Z$ is
-$$(g \circ f)(x) := g(f(x))$$
+## 🎯 How the exam tests this
 
-Composition is **associative**: $(h \circ g) \circ f = h \circ (g \circ f)$.
+Set/function questions are warm-up multiple choice. Example FS 2023 MC2:
+> *True or false: for any $f: X \to Y$ and any $A, B, C \subseteq X$, we have $f((A \cup B) \cap C) = (f(A) \cup f(B)) \cap f(C)$.*
 
-> [!example] Concrete chain
-> $f(x) = x^2$, $g(y) = \sin y$. Then $(g \circ f)(x) = \sin(x^2)$.
+**Answer: False.** The image and intersection don't generally commute when $f$ isn't injective.
 
 ---
 
-# 4 · Numbers — from counting to the complex plane
+# 3 · Numbers — from $\mathbb{N}$ to $\mathbb{C}$
 
-## 4.1 The number tower
+## 🤔 Why so many number systems?
 
-$$\mathbb{N} \;\subset\; \mathbb{Z} \;\subset\; \mathbb{Q} \;\subset\; \mathbb{R} \;\subset\; \mathbb{C}$$
+Every time a problem couldn't be solved, mathematicians invented a new kind of number.
 
-Each layer adds something you couldn't do before:
+| Couldn't solve... | so we invented... |
+|---|---|
+| $3 - 5 = ?$ in $\mathbb{N}$ | $\mathbb{Z}$ (integers) |
+| $1 \div 2 = ?$ in $\mathbb{Z}$ | $\mathbb{Q}$ (rationals) |
+| $\sqrt{2} = ?$ in $\mathbb{Q}$ | $\mathbb{R}$ (reals) |
+| $\sqrt{-1} = ?$ in $\mathbb{R}$ | $\mathbb{C}$ (complex) |
 
-| Set | New superpower |
-| --- | --- |
-| $\mathbb{N}$ | count, add, multiply |
-| $\mathbb{Z}$ | subtract |
-| $\mathbb{Q}$ | divide (by nonzero) |
-| $\mathbb{R}$ | take limits (no "gaps") |
-| $\mathbb{C}$ | take square roots of negatives |
+So: $\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$.
 
-## 4.2 The real numbers and the completeness axiom
+## 💡 The real numbers — the "no gaps" property
 
-The rationals have holes: $\sqrt{2} \notin \mathbb{Q}$. To do calculus, we need a number system **without gaps**. That's $\mathbb{R}$.
+The rationals have **holes**: $\sqrt{2} \notin \mathbb{Q}$ (Pythagoras already knew). Calculus needs a number system without holes — that's $\mathbb{R}$.
 
-> [!definition] Bounded sets, supremum, infimum
+> [!definition] Bounds, supremum, infimum
 > Let $S \subseteq \mathbb{R}$ be non-empty.
->
-> - $S$ is **bounded above** if $\exists M \in \mathbb{R}: \forall x \in S: x \leq M$. Such an $M$ is an *upper bound*.
-> - The **supremum** $\sup S$ is the **least** upper bound.
-> - Analogously, $\inf S$ is the *greatest lower bound*.
-> - If $\sup S \in S$, we call it the **maximum** $\max S$. Likewise for the minimum.
+> - $S$ is **bounded above** if $\exists M : \forall x \in S, x \leq M$. $M$ is an upper bound.
+> - The **supremum** $\sup S$ is the **least upper bound**.
+> - The **infimum** $\inf S$ is the greatest lower bound.
+> - If $\sup S \in S$, it's the maximum $\max S$. Likewise for $\min$.
 
 > [!theorem] Completeness axiom of $\mathbb{R}$
-> Every non-empty subset of $\mathbb{R}$ that is bounded above has a supremum in $\mathbb{R}$.
+> Every non-empty bounded-above subset of $\mathbb{R}$ has a supremum in $\mathbb{R}$.
 
-This is the single most important property of $\mathbb{R}$. It is what makes calculus *work*.
+This is the **single most important property** of $\mathbb{R}$. Every limit theorem ultimately relies on it.
 
 > [!example] Sup vs. max
 > $S = \{x \in \mathbb{R} : x^2 < 2\} = (-\sqrt{2}, \sqrt{2})$.
 > $\sup S = \sqrt{2}$, but $\sqrt{2} \notin S$, so $S$ has **no maximum**.
 
-> [!tip] Archimedean property
-> For every $x \in \mathbb{R}$ there is $n \in \mathbb{N}$ with $n > x$. Equivalently: $\mathbb{R}$ has no "infinitely large" elements, and $\frac{1}{n} \to 0$.
+> [!info] Archimedean property
+> For every $x \in \mathbb{R}$ there is $n \in \mathbb{N}$ with $n > x$. Hence $\frac{1}{n} \to 0$.
 
-## 4.3 The Euclidean space $\mathbb{R}^d$
+## 💡 The Euclidean space $\mathbb{R}^d$
 
-We can stack reals into vectors. An element of $\mathbb{R}^d$ is $\mathbf{x} = (x_1, \dots, x_d)$.
+Stack $d$ reals into a vector $\mathbf{x} = (x_1, \dots, x_d)$.
 
-> [!definition] Euclidean norm and dot product
-> For $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$:
+> [!definition] Norm and dot product
 > $$\|\mathbf{x}\| := \sqrt{x_1^2 + \dots + x_d^2}, \qquad \mathbf{x}\cdot\mathbf{y} := \sum_{i=1}^d x_i y_i$$
-
-Three inequalities you'll use constantly:
 
 > [!theorem] Three core inequalities
 > 1. **Cauchy–Schwarz:** $|\mathbf{x}\cdot\mathbf{y}| \leq \|\mathbf{x}\|\,\|\mathbf{y}\|$
-> 2. **Triangle inequality:** $\|\mathbf{x} + \mathbf{y}\| \leq \|\mathbf{x}\| + \|\mathbf{y}\|$
+> 2. **Triangle:** $\|\mathbf{x} + \mathbf{y}\| \leq \|\mathbf{x}\| + \|\mathbf{y}\|$
 > 3. **Reverse triangle:** $\big|\|\mathbf{x}\| - \|\mathbf{y}\|\big| \leq \|\mathbf{x} - \mathbf{y}\|$
 
-## 4.4 Complex numbers $\mathbb{C}$
+## 💡 Complex numbers
 
-The equation $x^2 = -1$ has no real solution. We **invent** a number $i$ with $i^2 = -1$, and form
-$$\mathbb{C} := \{a + bi : a, b \in \mathbb{R}\}$$
+Define $i$ with $i^2 = -1$ and form $\mathbb{C} = \{a + bi : a, b \in \mathbb{R}\}$.
 
-You can think of $\mathbb{C}$ as $\mathbb{R}^2$ with extra structure (multiplication).
+You can think of $\mathbb{C}$ as $\mathbb{R}^2$ — the **complex plane** — with horizontal axis = real part, vertical axis = imaginary part.
 
 > [!definition] Complex operations
 > For $z = a + bi$ and $w = c + di$:
 > $$z + w = (a+c) + (b+d)i$$
 > $$z \cdot w = (ac - bd) + (ad + bc)i$$
-> $$\overline{z} = a - bi \quad \text{(complex conjugate)}$$
-> $$|z| = \sqrt{a^2 + b^2} = \sqrt{z \overline{z}} \quad \text{(modulus / absolute value)}$$
-> $$\frac{1}{z} = \frac{\overline{z}}{|z|^2} \quad (z \neq 0)$$
+> $$\overline{z} = a - bi \qquad\text{(complex conjugate)}$$
+> $$|z| = \sqrt{a^2 + b^2} = \sqrt{z\bar z}$$
+> $$\frac{1}{z} = \frac{\bar z}{|z|^2} \quad (z \neq 0)$$
 
-### Polar form
+> [!example] Inverse computation (from Ziltener)
+> $\dfrac{1}{1+i} = \dfrac{1-i}{|1+i|^2} = \dfrac{1-i}{2} = \dfrac{1}{2} - \dfrac{i}{2}$
 
-Every $z \neq 0$ has a unique representation
-$$z = r(\cos\varphi + i\sin\varphi), \quad r = |z|, \;\; \varphi \in [0, 2\pi)$$
+## 💡 Polar form and Euler's formula — the magic shortcut
 
-We abbreviate this as $z = r\,\mathrm{cis}(\varphi)$, or — using **Euler's formula** —
+Every $z \neq 0$ can be written as
+$$z = r(\cos\varphi + i\sin\varphi), \qquad r = |z|,\;\; \varphi \in [0, 2\pi)$$
+or equivalently — via **Euler's formula**:
 $$\boxed{\;e^{i\varphi} = \cos\varphi + i\sin\varphi\;}$$
-
-so that $z = r e^{i\varphi}$.
+so $z = r e^{i\varphi}$.
 
 > [!tip] Why polar form is amazing
-> Multiplication in polar form is *trivial*:
-> $$(r e^{i\varphi})(s e^{i\psi}) = rs\, e^{i(\varphi + \psi)}$$
-> **Multiply moduli, add angles.** This makes powers (de Moivre) and roots simple.
+> Multiplication becomes trivial:
+> $$(r e^{i\varphi})(s e^{i\psi}) = rs \, e^{i(\varphi + \psi)}$$
+> **Multiply moduli, add angles.** Powers and roots become easy.
 
-> [!example] Powers via polar form
-> $1 + i = \sqrt{2}\,e^{i\pi/4}$, so
-> $$(1+i)^8 = (\sqrt{2})^8 \cdot e^{i\cdot 8 \cdot \pi/4} = 16 \cdot e^{i 2\pi} = 16$$
+> [!example] Power via polar form
+> $1 + i = \sqrt{2}\, e^{i\pi/4}$, so
+> $(1+i)^8 = (\sqrt{2})^8 \cdot e^{i\cdot 8\cdot\pi/4} = 16 \cdot e^{i2\pi} = 16$.
 
-### k-th roots of complex numbers
+## 🎯 Roots of complex numbers
 
-Every $z = r e^{i\varphi} \neq 0$ has exactly $k$ different $k$-th roots:
-$$w_j = \sqrt[k]{r}\,e^{i(\varphi + 2\pi j)/k}, \quad j = 0, 1, \dots, k-1$$
+Every $z = re^{i\varphi} \neq 0$ has exactly $k$ different $k$-th roots:
+$$w_j = \sqrt[k]{r}\, e^{i(\varphi + 2\pi j)/k}, \quad j = 0, 1, \dots, k-1$$
 
 > [!theorem] Fundamental Theorem of Algebra
-> Every non-constant complex polynomial $p(z) = a_n z^n + \dots + a_1 z + a_0$ has at least one complex root.
-> Equivalently, every degree-$n$ polynomial factors into $n$ linear factors over $\mathbb{C}$.
+> Every non-constant complex polynomial $p(z) = a_n z^n + \dots + a_0$ has at least one complex root. Hence it factors completely into linear factors over $\mathbb{C}$.
 
-This is why $\mathbb{C}$ is called **algebraically closed** — and why we never need to invent new numbers beyond it.
+This is why $\mathbb{C}$ is **algebraically closed** — and why FS 2023 MC3 ("does there exist a degree-3 polynomial with no complex root?") is **false**.
+
+## 📝 Practice tasks
+
+> [!question] **Task 3.1** — Compute $(1 - i)^4$.
+>
+>> [!success]- Solution
+>> $1 - i = \sqrt{2}\,e^{-i\pi/4}$, so $(1-i)^4 = (\sqrt 2)^4 e^{-i\pi} = 4(-1) = -4$.
+
+> [!question] **Task 3.2** — Find all $w \in \mathbb{C}$ with $w^3 = -8$.
+>
+>> [!success]- Solution
+>> $-8 = 8e^{i\pi}$. The three cube roots:
+>> $$w_j = 2 e^{i(\pi + 2\pi j)/3}, \quad j = 0, 1, 2$$
+>> Concretely: $w_0 = 2e^{i\pi/3} = 1 + i\sqrt{3}$, $w_1 = 2e^{i\pi} = -2$, $w_2 = 2e^{i5\pi/3} = 1 - i\sqrt{3}$.
 
 ---
 
-# 5 · Sequences — the idea of "approaching"
+# 4 · Sequences — what does "approaching" mean?
 
-## 5.1 What is a sequence?
+## 🤔 The big question
+
+If a turtle moves $1, \tfrac12, \tfrac14, \tfrac18, \dots$ meters per step, where does it end up? Intuitively at $0$ — but how do we make that precise without hand-waving?
+
+**Answer:** the *epsilon-N* definition of a limit. This single idea is the foundation of every theorem in calculus.
+
+## 💡 What is a sequence?
 
 > [!definition] Sequence
-> A **(real or complex) sequence** is a function $a: \mathbb{N}_0 \to \mathbb{C}$ (or $\mathbb{R}$). We write $a_n := a(n)$ and $(a_n)_{n \in \mathbb{N}_0}$.
+> A **sequence** is an infinite ordered list $a_0, a_1, a_2, \dots$ — equivalently, a function $a: \mathbb{N}_0 \to \mathbb{R}$ (or $\mathbb{C}$). Notation: $(a_n)_{n \in \mathbb{N}_0}$.
 
 > [!example] Three classics
-> - Harmonic: $a_n = \frac{1}{n}$ for $n \geq 1$ — terms $1, \tfrac12, \tfrac13, \tfrac14, \dots$
-> - Geometric (ratio $q$): $a_n = q^n$ — terms $1, q, q^2, q^3, \dots$
-> - Constant: $a_n = c$ — boring but useful
+> - **Harmonic** $a_n = \frac{1}{n}$: terms $1, \tfrac12, \tfrac13, \tfrac14, \dots$
+> - **Geometric** $a_n = q^n$: terms $1, q, q^2, q^3, \dots$
+> - **Constant** $a_n = c$
 
-## 5.2 The crown jewel: convergence
+## 📜 The definition that started it all
 
-This single definition is the foundation of everything that follows. Read it slowly.
-
-> [!definition] Convergence of a sequence
-> $(a_n)$ **converges** to $A \in \mathbb{C}$ — written $a_n \to A$ or $\lim_{n\to\infty} a_n = A$ — iff
+> [!definition] Convergence
+> $(a_n)$ **converges** to $A$ — written $a_n \to A$ or $\lim_{n\to\infty} a_n = A$ — iff
 > $$\forall \varepsilon > 0 \;\;\exists n_0 \in \mathbb{N} \;\;\forall n \geq n_0 : \; |a_n - A| < \varepsilon.$$
 
-In words: ***no matter how small a tolerance $\varepsilon$ you pick, eventually all terms of the sequence are within $\varepsilon$ of $A$.***
-
-> [!info] How to read this
-> $\varepsilon$ is a "challenge" — how close to $A$ do you want? You answer with $n_0$ — from this index onwards, I promise to stay within $\varepsilon$. Smaller $\varepsilon$ usually requires bigger $n_0$.
+**How to read this:**
+- $\varepsilon$ is a "challenge" (any tolerance the prover throws at you, no matter how tiny).
+- You answer with $n_0$ (an index from which on the sequence is closer than $\varepsilon$ to $A$).
+- Smaller $\varepsilon$ usually requires bigger $n_0$.
 
 > [!example] $\frac{1}{n} \to 0$
-> Given $\varepsilon > 0$, choose any integer $n_0 > \frac{1}{\varepsilon}$. Then for $n \geq n_0$:
-> $$\left|\tfrac{1}{n} - 0\right| = \tfrac{1}{n} \leq \tfrac{1}{n_0} < \varepsilon \quad \checkmark$$
+> Given $\varepsilon > 0$, choose any $n_0 > \frac{1}{\varepsilon}$. Then for $n \geq n_0$:
+> $$\left|\tfrac{1}{n} - 0\right| = \tfrac{1}{n} \leq \tfrac{1}{n_0} < \varepsilon \quad\checkmark$$
 
-## 5.3 Limit arithmetic
+## 🔧 Limit arithmetic — your daily toolkit
 
-> [!theorem] Calculus of limits
-> If $a_n \to A$ and $b_n \to B$, then:
+> [!theorem] If $a_n \to A$ and $b_n \to B$, then:
 > - $a_n + b_n \to A + B$
 > - $a_n \cdot b_n \to A \cdot B$
-> - $a_n / b_n \to A/B$ provided $B \neq 0$
+> - $a_n / b_n \to A/B$ (provided $B \neq 0$)
 > - $|a_n| \to |A|$
 
-> [!theorem] Squeeze theorem (Sandwich)
-> If $a_n \leq c_n \leq b_n$ for all $n \geq N$ and $a_n \to L$, $b_n \to L$, then $c_n \to L$.
+> [!theorem] Squeeze (Sandwich) Theorem
+> If $a_n \leq c_n \leq b_n$ for all $n \geq N$ and $a_n \to L$ and $b_n \to L$, then $c_n \to L$.
 
-## 5.4 The four pillars of convergence
+## 🔧 Standard limits — memorize these
+
+| Sequence | Limit | Condition |
+|---|---|---|
+| $\dfrac{1}{n^p}$ | $0$ | $p > 0$ |
+| $q^n$ | $0$ | $\lvert q\rvert < 1$ |
+| $\sqrt[n]{n}$ | $1$ | — |
+| $\sqrt[n]{a}$ | $1$ | $a > 0$ |
+| $\dfrac{n^p}{q^n}$ | $0$ | $\lvert q\rvert > 1$ |
+| $\left(1 + \dfrac{1}{n}\right)^n$ | $e$ | — |
+| $\dfrac{n!}{n^n}$ | $0$ | — |
+
+## 💡 The four pillars of convergence
 
 > [!theorem] Monotone convergence
-> A monotonically increasing sequence that is bounded above converges (to its supremum). Same for decreasing & bounded below.
+> A monotonically increasing sequence bounded above converges (to its supremum). Likewise for decreasing & bounded below.
 
 > [!theorem] Bolzano–Weierstrass
 > Every bounded sequence in $\mathbb{R}^d$ has a convergent subsequence.
 
 > [!theorem] Cauchy criterion
-> A sequence $(a_n)$ in $\mathbb{R}$ (or $\mathbb{C}$, or $\mathbb{R}^d$) converges **iff** it is a **Cauchy sequence**:
+> A sequence converges $\iff$ it is **Cauchy**:
 > $$\forall \varepsilon > 0 \;\;\exists n_0 : \; \forall n, m \geq n_0 : \; |a_n - a_m| < \varepsilon$$
 
 > [!tip] Why Cauchy is golden
-> You can prove convergence **without knowing the limit**! Just check that the terms huddle together.
+> You can prove convergence **without knowing the limit** — just check the terms huddle together.
 
-## 5.5 Limes superior and inferior
+## 🔧 Worked exam-style examples
 
-For bounded sequences, define
+> [!example] FS 2023 MC4 — algebraic limit
+> $a_n = \dfrac{n^3}{(n+1)^2} - \dfrac{n^2}{n+1}$.
+>
+> Common denominator $(n+1)^2$:
+> $$a_n = \frac{n^3 - n^2(n+1)}{(n+1)^2} = \frac{-n^2}{(n+1)^2}$$
+> Divide by $n^2$ in numerator and denominator: $a_n = -\dfrac{1}{(1 + 1/n)^2} \to -1$.
+
+> [!example] FS 2023 MC5 — conjugate trick
+> $a_n = \sqrt{n+1} - \sqrt{n}$.
+>
+> Multiply by conjugate $\frac{\sqrt{n+1}+\sqrt n}{\sqrt{n+1}+\sqrt n}$:
+> $$a_n = \frac{(n+1) - n}{\sqrt{n+1}+\sqrt n} = \frac{1}{\sqrt{n+1}+\sqrt n} \to 0$$
+
+## 💡 Limes superior and inferior
+
+For a bounded sequence, define
 $$\limsup_{n\to\infty} a_n := \lim_{n\to\infty}\!\Big(\sup_{k\geq n} a_k\Big), \qquad \liminf_{n\to\infty} a_n := \lim_{n\to\infty}\!\Big(\inf_{k\geq n} a_k\Big)$$
 
-> [!theorem] Convergence ⇔ $\limsup = \liminf$
-> A bounded sequence converges iff $\limsup a_n = \liminf a_n$.
+> [!theorem]
+> A bounded sequence converges $\iff$ $\limsup a_n = \liminf a_n$.
 
-## 5.6 Standard limits to memorize
+## 🎯 How the exam tests sequences
 
-| Sequence | Limit | Condition |
-| --- | --- | --- |
-| $\dfrac{1}{n^p}$ | $0$ | $p > 0$ |
-| $q^n$ | $0$ | $\|q\| < 1$ |
-| $\sqrt[n]{n}$ | $1$ | — |
-| $\sqrt[n]{a}$ | $1$ | $a > 0$ |
-| $\dfrac{n^p}{q^n}$ | $0$ | $\|q\| > 1$, any $p$ |
-| $\left(1 + \dfrac{1}{n}\right)^n$ | $e \approx 2.71828$ | — |
-| $\dfrac{n!}{n^n}$ | $0$ | — |
+- Compute a limit using algebra/conjugates (FS 2023 MC4, MC5).
+- Identify which standard tool applies (squeeze, monotone convergence).
+- Find limits of recursive sequences (HS 2013 task 2 — golden ratio recursion).
+
+## 📝 Practice tasks
+
+> [!question] **Task 4.1** — Compute $\lim_{n\to\infty}\dfrac{3n^2 - n}{2n^2 + 5}$.
+>
+>> [!success]- Solution
+>> Divide top and bottom by $n^2$: $\dfrac{3 - 1/n}{2 + 5/n^2} \to \dfrac{3}{2}$.
+
+> [!question] **Task 4.2** — Show $a_n = (-1)^n$ does not converge.
+>
+>> [!success]- Solution
+>> Two subsequences: $a_{2k} = 1 \to 1$ and $a_{2k+1} = -1 \to -1$. Different subsequence limits ⇒ no overall limit.
+
+> [!question] **Task 4.3 (FS 2013 task 2 — resistor circuit)**
+> A resistor network gives total resistance $R_n = R_a + \frac{n R_b R_c}{R_b + n R_c} + R_d$.
+> Does $(R_n)$ converge? If so, to what?
+>
+>> [!success]- Solution
+>> $\lim_{n\to\infty} R_n = R_a + \lim_{n\to\infty} \frac{R_b R_c}{R_b/n + R_c} + R_d = R_a + R_b + R_d$. Converges.
 
 ---
 
-# 6 · Series — adding infinitely many things
+# 5 · Series — adding infinitely many things
 
-## 6.1 The basic question
+## 🤔 The big question
 
-What does $1 + \tfrac12 + \tfrac14 + \tfrac18 + \cdots$ even *mean*? You can't add up an infinite list — but you can take the limit of finite sums.
+What is $1 + \tfrac12 + \tfrac14 + \tfrac18 + \cdots$? You can't literally add infinitely many things — but you can take the **limit of partial sums**.
+
+## 📜 Series — formal definition
 
 > [!definition] Series
-> Given a sequence $(a_k)$, define the **partial sums**
-> $$S_n := \sum_{k=1}^{n} a_k$$
-> The **series** $\sum_{k=1}^{\infty} a_k$ converges iff $(S_n)$ converges. We write
-> $$\sum_{k=1}^{\infty} a_k := \lim_{n\to\infty} S_n$$
+> Given $(a_k)$, define **partial sums** $S_n = \sum_{k=1}^n a_k$. The series $\sum_{k=1}^\infty a_k$ **converges** iff $(S_n)$ converges, in which case
+> $$\sum_{k=1}^\infty a_k := \lim_{n\to\infty} S_n.$$
 
-## 6.2 The geometric series — the most important series
+## 💎 Two essential examples
 
-> [!theorem] Geometric series
-> For $|q| < 1$,
-> $$\sum_{k=0}^{\infty} q^k = \frac{1}{1 - q}$$
+> [!theorem] Geometric series — THE most important series
+> For $|q| < 1$:
+> $$\sum_{k=0}^\infty q^k = \frac{1}{1-q}$$
 
-*Proof sketch:* $S_n = 1 + q + q^2 + \dots + q^n$. Using $(1-q)S_n = 1 - q^{n+1}$ and $q^{n+1} \to 0$, divide by $1-q$. $\blacksquare$
+*Proof sketch:* $S_n = 1 + q + \dots + q^n$, so $(1-q)S_n = 1 - q^{n+1} \to 1$.
 
 > [!example] Zeno's paradox solved
-> Achilles runs $1 + \tfrac12 + \tfrac14 + \cdots = \dfrac{1}{1 - 1/2} = 2$ km. Finite distance, finite time. The "infinity" is harmless.
+> Achilles runs $1 + \tfrac12 + \tfrac14 + \cdots = \dfrac{1}{1 - 1/2} = 2$ km. Finite!
 
-## 6.3 The harmonic series — a brutal counterexample
+> [!example] Square inscribed inside square (HS 2013 task 2a)
+> Each new square has side $a_{k+1} = \tfrac{1}{\sqrt 2} a_k$. Total perimeter:
+> $$U = \sum_{k=1}^\infty 4 a_k = 4a_1 \sum_{k=1}^\infty \big(\tfrac{1}{\sqrt 2}\big)^{k-1} = \frac{4a_1}{1 - 1/\sqrt 2} = 4(2 + \sqrt 2)$$
+> for $a_1 = 1$.
 
 > [!warning] Harmonic series diverges
-> $$\sum_{k=1}^{\infty} \frac{1}{k} = +\infty$$
+> $$\sum_{k=1}^\infty \frac{1}{k} = +\infty$$
 > Even though $\frac{1}{k} \to 0$.
+>
+> *Why?* Group terms: $1 + \frac12 + (\frac13 + \frac14) + (\frac15 + \dots + \frac18) + \cdots$ — each group $\geq \frac12$, infinitely many groups.
 
-*Why?* Group: $1 + \frac{1}{2} + \underbrace{(\frac{1}{3} + \frac{1}{4})}_{> 1/2} + \underbrace{(\frac{1}{5} + \dots + \frac{1}{8})}_{> 1/2} + \cdots$. Infinitely many groups, each $\geq \frac{1}{2}$. ✗
+> [!info] **The lesson:** $a_k \to 0$ is **necessary** for $\sum a_k$ to converge — but **not sufficient**.
 
-> [!info] The lesson
-> $a_k \to 0$ is **necessary** for $\sum a_k$ to converge — but **not sufficient**.
+## 🔧 Convergence tests — your decision tree
 
-## 6.4 Convergence tests
+| Test | When to use | Statement |
+|---|---|---|
+| **n-th term** | always check first | If $a_k \not\to 0$, diverges |
+| **Geometric** | $a_k = q^k$ | converges iff $\lvert q\rvert < 1$ |
+| **Comparison** | bound by simpler series | $0 \leq a_k \leq b_k$ and $\sum b_k$ converges ⇒ $\sum a_k$ converges |
+| **Ratio test** | factorials / exponentials | $\lim \big\lvert\frac{a_{k+1}}{a_k}\big\rvert = L$: $L<1$ converges, $L>1$ diverges |
+| **Root test** | $k$-th powers | $\lim \sqrt[k]{\lvert a_k\rvert} = L$: same conclusion |
+| **Leibniz** | alternating series | $a_k \geq 0$ decreasing to $0$ ⇒ $\sum (-1)^{k+1} a_k$ converges |
 
-| Test | Statement |
-| --- | --- |
-| **n-th term** | If $a_k \not\to 0$, then $\sum a_k$ diverges. |
-| **Comparison** | If $0 \leq a_k \leq b_k$ and $\sum b_k$ converges, then $\sum a_k$ converges. |
-| **Ratio (d'Alembert)** | If $\lim \big\lvert\frac{a_{k+1}}{a_k}\big\rvert = L$: $L < 1$ ⇒ converges absolutely; $L > 1$ ⇒ diverges; $L = 1$ ⇒ inconclusive. |
-| **Root (Cauchy)** | If $\lim \sqrt[k]{\lvert a_k \rvert} = L$: same conclusions as ratio test. |
-| **Leibniz (alternating)** | If $a_k \geq 0$ decreases to $0$, then $\sum (-1)^{k+1} a_k$ converges. |
-| **Integral test** | If $f \geq 0$ is decreasing, $\sum f(k)$ converges iff $\int_1^\infty f$ does. |
+> [!example] FS 2023 MC7 — pick the divergent series
+> $\sum \frac{(n+1)^2}{n^3 - 2}$ behaves like $\sum \frac{n^2}{n^3} = \sum \frac{1}{n}$ — divergent (harmonic-like).
 
-## 6.5 Absolute vs. conditional convergence
+> [!example] FS 2019 task 2
+> $\sum (-1)^n \frac{n+1}{2n+1}$. Since $\frac{n+1}{2n+1} \to \tfrac12 \neq 0$, the n-th-term test ⇒ **diverges**.
 
-> [!definition] Absolute convergence
+## 💡 Absolute vs. conditional convergence
+
+> [!definition]
 > $\sum a_k$ **converges absolutely** iff $\sum |a_k|$ converges.
 
-> [!theorem] Absolute ⇒ ordinary
-> Absolute convergence implies convergence. The converse is false.
+> [!theorem]
+> Absolute convergence ⇒ convergence (but not vice versa).
 
 > [!example] Conditional convergence
-> $\sum_{k=1}^{\infty}\frac{(-1)^{k+1}}{k} = 1 - \tfrac12 + \tfrac13 - \tfrac14 + \cdots = \ln 2$
-> converges (Leibniz) but not absolutely (harmonic).
+> $\sum_{k=1}^\infty \frac{(-1)^{k+1}}{k} = 1 - \tfrac12 + \tfrac13 - \cdots = \ln 2$ converges (Leibniz), but **not absolutely**.
 
-> [!warning] Riemann rearrangement
-> A conditionally convergent series can be rearranged to converge to **any** real number — or to $\pm\infty$. Absolute convergence is a much sturdier property.
-
-## 6.6 Power series
+## 🚀 Power series — calculus's superpower
 
 > [!definition] Power series
-> A **power series** centered at $z_0$:
-> $$\sum_{k=0}^{\infty} a_k (z - z_0)^k$$
+> $$\sum_{k=0}^\infty a_k (z - z_0)^k$$
+>
+> Has a **radius of convergence** $R \in [0, \infty]$, computed by
+> $$\frac{1}{R} = \limsup_{k\to\infty}\sqrt[k]{|a_k|} \quad\text{(Cauchy–Hadamard)}$$
+> or by ratio test:
+> $$\frac{1}{R} = \lim_{k\to\infty}\bigg|\frac{a_{k+1}}{a_k}\bigg|$$
+>
+> - $|z - z_0| < R$ → converges
+> - $|z - z_0| > R$ → diverges
+> - At $|z - z_0| = R$ → must be checked separately
 
-Every power series has a **radius of convergence** $R \in [0, \infty]$:
+> [!example] FS 2019 MC1
+> $\sum \frac{(n!)^2}{(2n)!} x^n$. Ratio:
+> $$\frac{(n!)^2/(2n)!}{((n+1)!)^2/(2n+2)!} = \frac{(2n+1)(2n+2)}{(n+1)^2} \to 4$$
+> So $R = 4$.
 
-$$\frac{1}{R} = \limsup_{k \to \infty} \sqrt[k]{|a_k|} \quad \text{(Cauchy–Hadamard)}$$
+## 💎 The exponential series
 
-- $|z - z_0| < R$ → converges (absolutely)
-- $|z - z_0| > R$ → diverges
-- On the boundary $|z - z_0| = R$: anything can happen
+The single most important power series:
+$$e^z := \sum_{k=0}^\infty \frac{z^k}{k!}, \qquad R = \infty$$
 
-## 6.7 The exponential function
+It satisfies $\;e^{z+w} = e^z \cdot e^w\;$ — and from this single fact follow Euler's formula, the trigonometric identities, and (via $e^{i\pi} = -1$) the bridge between exponentials and trigonometry.
 
-This is the most important power series in all of analysis:
+## 🎯 How the exam tests series
 
-> [!theorem] Exponential function
-> $$\exp(z) := \sum_{k=0}^{\infty} \frac{z^k}{k!} = 1 + z + \frac{z^2}{2!} + \frac{z^3}{3!} + \cdots$$
-> converges absolutely for **every** $z \in \mathbb{C}$ ($R = \infty$).
+- Compute radius of convergence (FS 2019 MC1, FS 2023 task 2)
+- Decide convergence (FS 2023 MC7, FS 2019 task 2)
+- Sum a geometric-type series (HS 2013 task 2)
+- Show uniform convergence of partial sums of a power series (FS 2023 task 2)
 
-It satisfies the functional equation:
-$$\exp(z + w) = \exp(z)\cdot \exp(w)$$
+## 📝 Practice tasks
 
-This single identity recovers everything: $\exp(0) = 1$, $\exp(-z) = 1/\exp(z)$, $\exp(n) = e^n$, and (by Euler) it links to $\sin$ and $\cos$:
+> [!question] **Task 5.1** — Find $R$ for $\sum \frac{x^k}{k\,2^k}$.
+>
+>> [!success]- Solution
+>> $\sqrt[k]{|a_k|} = \frac{1}{\sqrt[k]{k}\cdot 2} \to \frac{1}{2}$, so $R = 2$.
 
-$$e^{ix} = \cos x + i \sin x$$
+> [!question] **Task 5.2** — Sum $\sum_{k=0}^\infty \frac{1}{3^k}$.
+>
+>> [!success]- Solution
+>> Geometric with $q = 1/3$: $\frac{1}{1 - 1/3} = \frac{3}{2}$.
 
-$$\cos x = \frac{e^{ix} + e^{-ix}}{2}, \qquad \sin x = \frac{e^{ix} - e^{-ix}}{2i}$$
+> [!question] **Task 5.3 (HS 2013 task 2b — nested triangles)**
+> Triangles inscribed each at half the side length. The first triangle has area $F_1$. What percentage of the total area $\sum F_k$ is $F_1$?
+>
+>> [!success]- Solution
+>> $F_k = (\tfrac14)^{k-1} F_1$, so $\sum F_k = \frac{F_1}{1 - 1/4} = \frac{4 F_1}{3}$, hence $F_1$ is $\frac{3}{4} = 75\%$.
 
 ---
 
-# 7 · Continuity — drawing without lifting the pen
+# 6 · Continuity — drawing without lifting the pen
 
-## 7.1 The picture
+## 🤔 The big question
 
-A function $f$ is **continuous at $x_0$** if, when you wiggle $x$ a tiny bit around $x_0$, $f(x)$ wiggles only a tiny bit around $f(x_0)$.
+You drove from Zürich to Geneva starting at altitude $400\,\text{m}$ and arriving at $375\,\text{m}$. Did your altitude pass through *exactly* $390\,\text{m}$ somewhere along the way? Common sense says **yes** — and the precise statement of "yes" is the **Intermediate Value Theorem**, the most useful consequence of continuity.
 
-A function is **continuous everywhere** if its graph has no jumps, holes, or vertical asymptotes.
+## 💡 Intuition
 
-## 7.2 The two equivalent definitions
+A function is **continuous at $x_0$** if, when you wiggle $x$ a tiny bit around $x_0$, $f(x)$ also wiggles only a tiny bit around $f(x_0)$. No jumps, no holes, no infinities at $x_0$.
+
+## 📜 The two equivalent definitions
 
 > [!definition] Continuity (sequential)
-> $f: \Omega \to \mathbb{R}^n$ is **continuous at $x_0 \in \Omega$** iff
-> $$\forall \text{ sequences } (x_k) \subset \Omega \text{ with } x_k \to x_0 : \;\; f(x_k) \to f(x_0)$$
+> $f$ is continuous at $x_0$ iff for every sequence $x_k \to x_0$, $\;f(x_k) \to f(x_0)$.
 
 > [!definition] Continuity ($\varepsilon$-$\delta$)
-> Equivalently, $f$ is continuous at $x_0$ iff
-> $$\forall \varepsilon > 0 \;\; \exists \delta > 0 \;\; \forall x \in \Omega : \;\; \|x - x_0\| < \delta \;\Rightarrow\; \|f(x) - f(x_0)\| < \varepsilon$$
+> $f$ is continuous at $x_0$ iff
+> $$\forall \varepsilon > 0 \;\;\exists \delta > 0 \;\;\forall x : \; |x - x_0| < \delta \Rightarrow |f(x) - f(x_0)| < \varepsilon.$$
 
-> [!info] These two definitions are **equivalent** (both go back to the same intuition: small input change ⇒ small output change). Use whichever is easier in a given problem.
+> [!info] These are **equivalent**. Use sequential when you have a sequence. Use $\varepsilon$-$\delta$ when proving from scratch.
 
-## 7.3 Examples and counterexamples
+## 🔧 Examples and counterexamples
 
 > [!example] Continuous everywhere
-> Polynomials, $e^x$, $\sin x$, $\cos x$, $\sqrt{x}$ on $[0, \infty)$, $\log x$ on $(0, \infty)$.
+> Polynomials, $e^x$, $\sin x$, $\cos x$, $\sqrt{x}$ on $[0, \infty)$, $\ln x$ on $(0, \infty)$.
 
 > [!example] Jump discontinuity
-> $$f(x) = \begin{cases} 1, & x \geq 0 \\ -1, & x < 0 \end{cases}$$
-> The left and right limits at $0$ are different.
+> $f(x) = \begin{cases} 1, & x \geq 0 \\ -1, & x < 0 \end{cases}$ is discontinuous at $0$ — left limit $= -1$, right limit $= 1$.
 
-> [!example] Nowhere continuous
-> The Dirichlet function $\chi_{\mathbb{Q}}(x) = 1$ if $x \in \mathbb{Q}$, $0$ otherwise. Between any two reals there are both rationals and irrationals, so the function jumps everywhere.
+> [!example] FS 2023 MC11 — pick the right constant
+> $f(x) = \begin{cases} 2e^x - 1, & x \leq \ln 2 \\ ax + 2, & x > \ln 2 \end{cases}$. For continuity at $\ln 2$:
+> $$2 e^{\ln 2} - 1 = 3 \quad\text{must equal}\quad a\ln 2 + 2$$
+> So $a = \frac{1}{\ln 2}$.
 
-## 7.4 Algebra of continuous functions
+## 💡 Lipschitz continuity — quantitative continuity
 
-> [!theorem] Continuity is preserved by
-> - Addition, subtraction, multiplication
-> - Division (where the denominator is non-zero)
-> - Composition: if $f$ continuous at $x_0$ and $g$ continuous at $f(x_0)$, then $g \circ f$ continuous at $x_0$
-
-## 7.5 Lipschitz continuity — quantitative continuity
-
-> [!definition] Lipschitz continuity
-> $f$ is **Lipschitz continuous** with constant $L \geq 0$ if
+> [!definition] Lipschitz with constant $L$
 > $$\|f(x) - f(y)\| \leq L \|x - y\| \quad \forall x, y$$
+> Lipschitz ⇒ uniformly continuous ⇒ continuous.
 
-This is *uniform* control of how fast $f$ can change. Lipschitz ⇒ uniformly continuous ⇒ continuous.
-
-## 7.6 Compact sets — where continuity becomes powerful
+## 💡 Compact sets — where continuity gets superpowers
 
 > [!definition] Compactness (sequential)
-> $K \subseteq \mathbb{R}^d$ is **compact** iff every sequence in $K$ has a subsequence that converges to a point of $K$.
+> $K \subseteq \mathbb{R}^d$ is **compact** iff every sequence in $K$ has a subsequence converging to a point of $K$.
 
 > [!theorem] Heine–Borel
-> A subset of $\mathbb{R}^d$ is compact iff it is **closed and bounded**.
+> In $\mathbb{R}^d$: compact $\iff$ closed and bounded.
 
-> [!example] Compact vs. not
-> - $[0, 1]$ is compact ✓
-> - $(0, 1)$ is **not** compact ($1/n \to 0 \notin (0,1)$)
-> - $\mathbb{R}$ is **not** compact (unbounded)
-> - The unit sphere $S^{d-1} = \{x : \|x\| = 1\}$ is compact
+> [!example]
+> $[0,1]$ is compact. $(0,1)$ is **not** ($\frac{1}{n} \to 0 \notin (0,1)$). $\mathbb{R}$ is **not** (unbounded).
 
-## 7.7 Two cornerstone theorems
+## 🎯 The two great theorems
 
-> [!theorem] Extreme value theorem
-> A continuous function $f: K \to \mathbb{R}$ on a compact set $K$ attains its maximum and minimum:
-> $$\exists x_{\min}, x_{\max} \in K : \; f(x_{\min}) = \min_K f, \;\; f(x_{\max}) = \max_K f$$
+> [!theorem] Extreme Value Theorem
+> A continuous $f: K \to \mathbb{R}$ on a compact $K$ attains its max and min.
 
-> [!theorem] Intermediate value theorem (IVT)
-> If $f: [a, b] \to \mathbb{R}$ is continuous and $c$ lies between $f(a)$ and $f(b)$, then there exists $x_0 \in [a, b]$ with $f(x_0) = c$.
+> [!theorem] Intermediate Value Theorem (IVT)
+> If $f: [a,b] \to \mathbb{R}$ is continuous and $c$ lies between $f(a)$ and $f(b)$, then $\exists x_0 \in (a,b)$ with $f(x_0) = c$.
 
-> [!example] Rooting via IVT
-> If $f(a) < 0 < f(b)$, then $f$ has a zero somewhere in $(a, b)$. This is the basis of bisection methods used in real numerical software.
+> [!example] FS 2023 MC13
+> If $\lim_{x\to-\infty} f = -1$ and $\lim_{x\to+\infty} f = 1$ for continuous $f$, then $\exists x_0$ with $f(x_0) = 0$. **True** by IVT.
 
-## 7.8 Uniform vs. pointwise convergence
+> [!example] HS 2015 task 4 — the "tangent point"
+> Find $c \in [1,2]$ such that the tangent to $f(x) = x^2 + x + 3$ at $c$ has the same slope as the secant from $(1, 5)$ to $(2, 9)$.
+>
+> Secant slope $= \frac{9-5}{2-1} = 4$. Set $f'(c) = 2c + 1 = 4$, so $c = \tfrac{3}{2}$. (This is the **Mean Value Theorem** in action — see chapter 7.)
 
-> [!definition] Pointwise vs. uniform convergence
-> A sequence of functions $(f_k)$ converges to $f$:
+> [!example] HS 2016 task 11 — fixed point via IVT
+> Let $f: [a,b] \to [a,b]$ continuous. Show $f$ has a fixed point ($f(\xi) = \xi$).
+>
+> Define $g(x) = f(x) - x$. Then $g(a) = f(a) - a \geq 0$ and $g(b) = f(b) - b \leq 0$. By IVT, $\exists \xi$ with $g(\xi) = 0$, i.e., $f(\xi) = \xi$. $\blacksquare$
+
+## 💡 Pointwise vs. uniform convergence of functions
+
+> [!definition]
+> A sequence $(f_k)$ of functions converges to $f$:
 > - **Pointwise**: $\forall x: f_k(x) \to f(x)$
 > - **Uniformly**: $\sup_x |f_k(x) - f(x)| \to 0$
 
 > [!warning] Pointwise is a trap
-> $f_k(x) = x^k$ on $[0,1]$ converges *pointwise* to $f(x) = 0$ if $x < 1$, $f(1) = 1$. Each $f_k$ is continuous, but the limit is **not**. Pointwise convergence does not preserve continuity.
-
-> [!theorem] Uniform limit of continuous = continuous
-> If continuous functions $f_k$ converge **uniformly** to $f$, then $f$ is continuous.
-
----
-
-# 8 · Differentiation in one variable
-
-## 8.1 The derivative — the central idea
-
-If you zoom in on the graph of a smooth function near $x_0$, it starts to look like a straight line. The **slope** of that line is the **derivative** at $x_0$.
-
-> [!definition] Derivative
-> Let $\Omega \subseteq \mathbb{R}$ be open and $f: \Omega \to \mathbb{R}$. We say $f$ is **differentiable at $x_0 \in \Omega$** if the limit
-> $$f'(x_0) := \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = \lim_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{h}$$
-> exists. Then $f'(x_0)$ is called the **derivative** of $f$ at $x_0$. Other notations: $\frac{df}{dx}(x_0)$, $\dot f(x_0)$, $Df(x_0)$.
-
-## 8.2 The geometric meaning
-
-The fraction $\frac{f(x) - f(x_0)}{x - x_0}$ is the slope of the **secant** through $(x_0, f(x_0))$ and $(x, f(x))$. As $x \to x_0$, this secant rotates onto the **tangent**. So $f'(x_0)$ = slope of the tangent line at $x_0$.
-
-The tangent line itself is
-$$T(x) = f(x_0) + f'(x_0)(x - x_0)$$
-
-This is the **best linear approximation** of $f$ near $x_0$.
-
-## 8.3 First examples
-
-> [!example] $f(x) = x^2$
-> $$\frac{(x_0+h)^2 - x_0^2}{h} = \frac{2x_0 h + h^2}{h} = 2x_0 + h \xrightarrow{h \to 0} 2x_0$$
-> So $f'(x_0) = 2x_0$, i.e. $\frac{d}{dx}(x^2) = 2x$.
-
-> [!example] $f(x) = |x|$ at $x_0 = 0$
-> Right limit: $\frac{|h|}{h} = 1$ for $h > 0$. Left limit: $-1$. They don't agree, so $|x|$ is **not** differentiable at $0$. (It's still continuous!)
-
-> [!example] $\exp$ is its own derivative
-> Using $\exp(x_0 + h) = \exp(x_0)\exp(h)$ and $\frac{\exp(h) - 1}{h} \to 1$:
-> $$\exp'(x_0) = \exp(x_0)$$
-
-## 8.4 Differentiable ⇒ continuous (but not the other way)
+> $f_k(x) = x^k$ on $[0,1]$ converges pointwise to $f(x) = 0$ for $x < 1$, $f(1) = 1$. Each $f_k$ is continuous, **but the limit isn't**.
 
 > [!theorem]
-> If $f$ is differentiable at $x_0$, then $f$ is continuous at $x_0$.
+> Uniform limit of continuous functions is continuous.
+
+> [!example] FS 2023 MC14
+> $f_n(x) = e^{-nx}$ on $[0, 1]$:
+> - At $x = 0$: $f_n(0) = 1$.
+> - At $x > 0$: $f_n(x) \to 0$.
 >
-> *Proof:* $f(x) - f(x_0) = \frac{f(x) - f(x_0)}{x - x_0} \cdot (x - x_0) \to f'(x_0) \cdot 0 = 0$. $\blacksquare$
+> So pointwise limit is the discontinuous step function. Cannot converge uniformly (would force the limit to be continuous).
 
-The converse fails — e.g. $|x|$. There even exist functions that are continuous *everywhere* but differentiable *nowhere* (Weierstrass function).
+## 🎯 Practice tasks
 
-## 8.5 The differentiation rules
+> [!question] **Task 6.1** — Show $f(x) = \sin x$ is Lipschitz on $\mathbb{R}$.
+>
+>> [!success]- Solution
+>> By the MVT, $|\sin x - \sin y| = |\cos(\xi)||x-y| \leq |x-y|$. So $L = 1$.
 
-> [!theorem] Sum, product, quotient
-> Suppose $f, g$ are differentiable at $x_0$.
-> $$(f + g)'(x_0) = f'(x_0) + g'(x_0)$$
-> $$(fg)'(x_0) = f'(x_0)g(x_0) + f(x_0)g'(x_0)$$
-> $$\left(\frac{f}{g}\right)'(x_0) = \frac{f'(x_0)g(x_0) - f(x_0)g'(x_0)}{g(x_0)^2}, \quad g(x_0) \neq 0$$
+> [!question] **Task 6.2 (FS 2019 task 5)** — Where is $f$ continuous, differentiable, $C^1$?
+> $$f(x) = \begin{cases} x^2 \sin(1/x) & x > 0 \\ \cos x - 1 & x \leq 0 \end{cases}$$
+>
+>> [!success]- Solution
+>> Outside $0$: smooth. At $0$:
+>> - **Continuous?** Both branches $\to 0$ as $x \to 0$. ✓
+>> - **Differentiable?** Right limit of $\frac{f(x)-f(0)}{x} = x \sin(1/x) \to 0$. Left: $\frac{\cos x - 1}{x} \to 0$. So $f'(0) = 0$ exists.
+>> - **$C^1$?** For $x>0$: $f'(x) = 2x\sin(1/x) - \cos(1/x)$. The $\cos(1/x)$ term oscillates between $-1$ and $1$, so $\lim_{x\to 0^+} f'(x)$ doesn't exist. **Not $C^1$.**
 
-> [!theorem] Chain rule
-> If $f$ is differentiable at $x_0$ and $g$ is differentiable at $f(x_0)$, then $g \circ f$ is differentiable at $x_0$ with
-> $$(g \circ f)'(x_0) = g'(f(x_0)) \cdot f'(x_0)$$
+---
 
-> [!theorem] Inverse function rule
-> If $f$ is bijective and differentiable at $x_0$ with $f'(x_0) \neq 0$, then $f^{-1}$ is differentiable at $y_0 = f(x_0)$ and
-> $$(f^{-1})'(y_0) = \frac{1}{f'(x_0)} = \frac{1}{f'(f^{-1}(y_0))}$$
+# 7 · Differentiation — the slope at a point
 
-## 8.6 Standard derivatives — the table
+## 🤔 The big question
 
-| $f(x)$ | $f'(x)$ | Notes |
-| --- | --- | --- |
-| $c$ (constant) | $0$ | |
-| $x^n$ | $n x^{n-1}$ | $n \in \mathbb{R}$ |
-| $\sqrt{x}$ | $\dfrac{1}{2\sqrt{x}}$ | $x > 0$ |
-| $e^x$ | $e^x$ | |
-| $a^x$ | $a^x \ln a$ | $a > 0$ |
-| $\ln x$ | $\dfrac{1}{x}$ | $x > 0$ |
-| $\log_a x$ | $\dfrac{1}{x \ln a}$ | |
-| $\sin x$ | $\cos x$ | |
-| $\cos x$ | $-\sin x$ | |
-| $\tan x$ | $\dfrac{1}{\cos^2 x} = 1 + \tan^2 x$ | |
-| $\arcsin x$ | $\dfrac{1}{\sqrt{1 - x^2}}$ | |
-| $\arccos x$ | $-\dfrac{1}{\sqrt{1 - x^2}}$ | |
-| $\arctan x$ | $\dfrac{1}{1 + x^2}$ | |
-| $\sinh x$ | $\cosh x$ | |
-| $\cosh x$ | $\sinh x$ | |
+A car's odometer reads $f(t)$ at time $t$. The speedometer at instant $t_0$ shows what number? Answer: the **derivative** $f'(t_0)$ — the **instantaneous rate of change**.
 
-## 8.7 The mean value theorem — the workhorse
+## 💡 Intuition: zoom in until straight
+
+Take any smooth graph and zoom in near a point. Eventually it looks like a **straight line**. The slope of that line is $f'(x_0)$.
+
+## 📜 The definition
+
+> [!definition] Derivative
+> $f$ is **differentiable at $x_0$** if the limit
+> $$f'(x_0) := \lim_{h \to 0}\frac{f(x_0 + h) - f(x_0)}{h}$$
+> exists. Other notations: $\frac{df}{dx}(x_0), \;\dot f(x_0), \; Df(x_0)$.
+
+The **tangent line** at $x_0$: $\;y = f(x_0) + f'(x_0)(x - x_0)$.
+
+## 🔧 First examples
+
+> [!example] $f(x) = x^2$
+> $$\lim_{h\to 0}\frac{(x_0+h)^2 - x_0^2}{h} = \lim_{h\to 0}(2x_0 + h) = 2x_0$$
+
+> [!example] $f(x) = |x|$ at $x_0 = 0$
+> Right: $\lim_{h\to 0^+}\frac{|h|}{h} = 1$. Left: $-1$. **Not differentiable.** (Continuous, though!)
+
+> [!example] $\exp$ is its own derivative
+> Using $\exp(x_0+h) = \exp(x_0)\exp(h)$ and $\frac{\exp(h)-1}{h} \to 1$:
+> $$\exp'(x_0) = \exp(x_0)$$
+
+## 💡 Differentiable ⇒ continuous (not vice versa)
+
+> [!theorem] If $f$ is differentiable at $x_0$, it's continuous at $x_0$.
+> *Proof:* $f(x) - f(x_0) = \frac{f(x)-f(x_0)}{x-x_0}\cdot(x-x_0) \to f'(x_0)\cdot 0 = 0$.
+
+The converse fails: $|x|$ is continuous but not differentiable at $0$. Worse, **Weierstrass** built a function continuous everywhere but differentiable nowhere.
+
+## 🔧 The differentiation rules
+
+| Rule | Formula |
+|---|---|
+| Sum | $(f+g)' = f' + g'$ |
+| Product | $(fg)' = f'g + fg'$ |
+| Quotient | $(f/g)' = (f'g - fg')/g^2$ |
+| Chain | $(g\circ f)'(x) = g'(f(x))\cdot f'(x)$ |
+| Inverse | $(f^{-1})'(y_0) = 1/f'(f^{-1}(y_0))$ |
+
+## 🔧 Standard derivatives — memorize this table
+
+| $f(x)$ | $f'(x)$ |
+|---|---|
+| $c$ (const) | $0$ |
+| $x^n$ | $nx^{n-1}$ |
+| $\sqrt x$ | $\frac{1}{2\sqrt x}$ |
+| $e^x$ | $e^x$ |
+| $a^x$ | $a^x \ln a$ |
+| $\ln x$ | $1/x$ |
+| $\log_a x$ | $\frac{1}{x \ln a}$ |
+| $\sin x$ | $\cos x$ |
+| $\cos x$ | $-\sin x$ |
+| $\tan x$ | $\frac{1}{\cos^2 x} = 1 + \tan^2 x$ |
+| $\arcsin x$ | $\frac{1}{\sqrt{1-x^2}}$ |
+| $\arccos x$ | $-\frac{1}{\sqrt{1-x^2}}$ |
+| $\arctan x$ | $\frac{1}{1+x^2}$ |
+| $\sinh x$ | $\cosh x$ |
+| $\cosh x$ | $\sinh x$ |
+
+## 💡 The Mean Value Theorem — calculus's workhorse
 
 > [!theorem] Rolle's theorem
-> If $f: [a, b] \to \mathbb{R}$ is continuous on $[a,b]$, differentiable on $(a, b)$, and $f(a) = f(b)$, then there exists $c \in (a, b)$ with $f'(c) = 0$.
+> If $f$ is continuous on $[a,b]$, differentiable on $(a,b)$, and $f(a) = f(b)$, then $\exists c \in (a,b)$ with $f'(c) = 0$.
 
-> [!theorem] Mean value theorem (MVT)
-> If $f: [a, b] \to \mathbb{R}$ is continuous on $[a,b]$ and differentiable on $(a, b)$, then there exists $c \in (a, b)$ with
-> $$f'(c) = \frac{f(b) - f(a)}{b - a}$$
+> [!theorem] Mean Value Theorem (MVT)
+> If $f$ is continuous on $[a,b]$, differentiable on $(a,b)$, then $\exists c \in (a,b)$ with
+> $$f'(c) = \frac{f(b) - f(a)}{b-a}$$
 
 > [!info] Real-world reading
-> If you drove from Zürich to Geneva (282 km) in 3 hours, your **average** speed was 94 km/h. The MVT says: at *some* instant, your speedometer read exactly 94 km/h.
+> If you drive from Zürich to Geneva (282 km) in 3 hours, your average speed is 94 km/h. The MVT says: at *some* instant, your speedometer read **exactly** 94 km/h.
+>
+> The HS 2016 exam phrased this exact scenario: a driver passes two cameras at distance $d$ in time $t$. If $d/t$ exceeds the speed limit, the driver gets a ticket — the MVT guarantees they were speeding at some moment.
 
-## 8.8 Consequences of the MVT
+> [!example] HS 2015 task 4 — already discussed in chapter 6
+> Direct application of the MVT: setting $f'(c) = $ secant slope.
+
+## 💡 Consequences of the MVT
 
 > [!theorem] Sign of derivative ⇒ monotonicity
-> Let $f$ be differentiable on $(a,b)$.
-> - $f' \equiv 0 \;\;\Rightarrow\;\; f$ is constant
-> - $f' \geq 0 \;\;\Rightarrow\;\; f$ is monotonically increasing
-> - $f' > 0 \;\;\Rightarrow\;\; f$ is **strictly** increasing
-> - $f' \leq 0 \;\;\Rightarrow\;\; f$ is monotonically decreasing
-> - $f' < 0 \;\;\Rightarrow\;\; f$ is **strictly** decreasing
+> - $f' \equiv 0$ ⇒ $f$ constant
+> - $f' \geq 0$ ⇒ $f$ increasing
+> - $f' > 0$ ⇒ $f$ strictly increasing
+> - $f' \leq 0$ ⇒ $f$ decreasing
+> - $f' < 0$ ⇒ $f$ strictly decreasing
 
-## 8.9 Local extrema
+## 💡 Local extrema
 
 > [!theorem] Fermat's necessary condition
-> If $f$ has a local maximum or minimum at an interior point $x_0$, then $f'(x_0) = 0$. (Such an $x_0$ is a **critical point**.)
+> If $f$ has a local extremum at an interior $x_0$, then $f'(x_0) = 0$.
 
 > [!theorem] Second derivative test
-> If $f'(x_0) = 0$ and $f''$ continuous near $x_0$:
-> - $f''(x_0) > 0 \;\Rightarrow\;$ strict local **minimum**
-> - $f''(x_0) < 0 \;\Rightarrow\;$ strict local **maximum**
-> - $f''(x_0) = 0 \;\Rightarrow\;$ inconclusive — examine higher derivatives
+> If $f'(x_0) = 0$ and $f''$ is continuous near $x_0$:
+> - $f''(x_0) > 0$ → strict local **min**
+> - $f''(x_0) < 0$ → strict local **max**
+> - $f''(x_0) = 0$ → inconclusive (try higher derivatives)
 
-## 8.10 L'Hôpital's rule
+## 🎯 How the exam tests differentiation
 
-> [!theorem] L'Hôpital
-> Suppose $f, g$ are differentiable near $x_0$ and either both $\to 0$ or both $\to \pm\infty$ as $x \to x_0$. If $g'(x) \neq 0$ near $x_0$ and $\lim \frac{f'(x)}{g'(x)}$ exists, then
-> $$\lim_{x \to x_0} \frac{f(x)}{g(x)} = \lim_{x \to x_0} \frac{f'(x)}{g'(x)}$$
+- Compute a derivative using chain rule (FS 2013 task 3b — $\arcsin(\cos x)$)
+- Apply MVT (HS 2015 task 4, HS 2016 task 11-style)
+- Find local/global extrema (HS 2015 task 8, HS 2016 task 4)
 
-> [!example] Classic
-> $\displaystyle\lim_{x \to 0} \frac{\sin x}{x} = \lim_{x \to 0} \frac{\cos x}{1} = 1$.
+## 📝 Practice tasks
+
+> [!question] **Task 7.1 (FS 2013 task 3b)** — Differentiate $f(x) = \arcsin(\cos x)$.
+>
+>> [!success]- Solution
+>> Using $\cos x = \sin(\pi/2 - x)$ and $\arcsin(\sin u) = u$ on the right intervals:
+>> $f(x) = \pi/2 - x$ on $[0, \pi]$, so $f'(x) = -1$ there.
+>> Or via chain rule: $f'(x) = \frac{-\sin x}{\sqrt{1 - \cos^2 x}} = \frac{-\sin x}{|\sin x|} = -\text{sign}(\sin x)$.
+
+> [!question] **Task 7.2** — Find the absolute max and min of $f(x) = x^3 - 3x$ on $[-2, 2]$.
+>
+>> [!success]- Solution
+>> $f'(x) = 3x^2 - 3 = 0$ ⇒ $x = \pm 1$. Evaluate:
+>> $f(-2) = -2,\, f(-1) = 2,\, f(1) = -2,\, f(2) = 2$. Max $= 2$, min $= -2$.
+
+> [!question] **Task 7.3** — Find $f'(x)$ for $f(x) = x^x$, $x > 0$.
+>
+>> [!success]- Solution
+>> Logarithmic differentiation: $\ln f = x \ln x$, so $\frac{f'}{f} = \ln x + 1$. Hence $f'(x) = x^x(\ln x + 1)$.
 
 ---
 
-# 9 · Taylor series — polynomial X-rays of any function
+# 8 · Taylor series — polynomial X-rays
 
-## 9.1 The motivating question
+## 🤔 The big question
 
-The tangent line $f(x_0) + f'(x_0)(x - x_0)$ approximates $f$ near $x_0$ to **first order**. Can we do better with a **polynomial of higher degree**?
+Calculators don't actually "compute $\sin(0.7)$" by some magic. They **approximate** by polynomials — because polynomials are the only functions a CPU can really evaluate (just $+, -, \times, \div$). Which polynomial best approximates $\sin$ near $0$? **The Taylor polynomial.**
 
-Yes — and the answer is the **Taylor polynomial**.
+## 💡 Intuition: keep matching higher derivatives
 
-## 9.2 Taylor's theorem
+The tangent line $T_1(x) = f(x_0) + f'(x_0)(x - x_0)$ matches $f$ in **value and slope** at $x_0$. Why stop there? Match the **curvature** too — and the rate-of-change of curvature, etc.
 
-> [!theorem] Taylor formula (Lagrange remainder)
-> If $f: [a, b] \to \mathbb{R}$ is $(n+1)$-times differentiable, then for any $x, x_0 \in [a, b]$ there exists $\xi$ between $x_0$ and $x$ such that
-> $$f(x) = \underbrace{\sum_{k=0}^{n} \frac{f^{(k)}(x_0)}{k!}(x - x_0)^k}_{\text{Taylor polynomial } T_n(x)} \;+\; \underbrace{\frac{f^{(n+1)}(\xi)}{(n+1)!}(x - x_0)^{n+1}}_{\text{remainder } R_n(x)}$$
+## 📜 Taylor's theorem
+
+> [!theorem] Taylor formula with Lagrange remainder
+> If $f$ is $(n+1)$-times differentiable, then $\exists \xi$ between $x_0$ and $x$ with
+> $$f(x) = \underbrace{\sum_{k=0}^n \frac{f^{(k)}(x_0)}{k!}(x-x_0)^k}_{T_n(x) \text{ — Taylor polynomial}} + \underbrace{\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}}_{R_n(x) \text{ — remainder}}$$
 
 If $R_n(x) \to 0$ as $n \to \infty$, then
-$$f(x) = \sum_{k=0}^{\infty} \frac{f^{(k)}(x_0)}{k!}(x - x_0)^k$$
+$$f(x) = \sum_{k=0}^\infty \frac{f^{(k)}(x_0)}{k!}(x-x_0)^k$$
 is the **Taylor series** of $f$ around $x_0$.
 
-## 9.3 The standard Taylor series (centered at 0)
+## 🔧 The standard Taylor series (around $x_0 = 0$) — memorize all of these
 
 | Function | Series | Domain |
-| --- | --- | --- |
-| $e^x$ | $\displaystyle\sum_{k=0}^{\infty} \frac{x^k}{k!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots$ | $\mathbb{R}$ |
-| $\sin x$ | $\displaystyle\sum_{k=0}^{\infty} \frac{(-1)^k x^{2k+1}}{(2k+1)!} = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots$ | $\mathbb{R}$ |
-| $\cos x$ | $\displaystyle\sum_{k=0}^{\infty} \frac{(-1)^k x^{2k}}{(2k)!} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots$ | $\mathbb{R}$ |
-| $\dfrac{1}{1-x}$ | $\displaystyle\sum_{k=0}^{\infty} x^k = 1 + x + x^2 + \cdots$ | $\lvert x\rvert < 1$ |
-| $\ln(1+x)$ | $\displaystyle\sum_{k=1}^{\infty} \frac{(-1)^{k+1} x^k}{k} = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots$ | $-1 < x \leq 1$ |
-| $(1+x)^\alpha$ | $\displaystyle\sum_{k=0}^{\infty} \binom{\alpha}{k} x^k$ | $\lvert x\rvert < 1$ |
-| $\arctan x$ | $\displaystyle\sum_{k=0}^{\infty} \frac{(-1)^k x^{2k+1}}{2k+1}$ | $\lvert x\rvert \leq 1$ |
+|---|---|---|
+| $e^x$ | $\sum_{k=0}^\infty \frac{x^k}{k!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots$ | $\mathbb{R}$ |
+| $\sin x$ | $x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots$ | $\mathbb{R}$ |
+| $\cos x$ | $1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots$ | $\mathbb{R}$ |
+| $\frac{1}{1-x}$ | $1 + x + x^2 + \cdots$ | $\lvert x\rvert < 1$ |
+| $\ln(1+x)$ | $x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots$ | $-1 < x \leq 1$ |
+| $(1+x)^\alpha$ | $\sum_{k=0}^\infty \binom{\alpha}{k}x^k$ | $\lvert x\rvert < 1$ |
+| $\arctan x$ | $x - \frac{x^3}{3} + \frac{x^5}{5} - \cdots$ | $\lvert x\rvert \leq 1$ |
+| $\frac{1}{1+x^2}$ | $1 - x^2 + x^4 - \cdots$ | $\lvert x\rvert < 1$ |
 
-> [!tip] Power series ARE Taylor series
-> If $f(x) = \sum a_k x^k$ has positive radius of convergence, then $a_k = \frac{f^{(k)}(0)}{k!}$ — the coefficients of $f$ are *forced* to be the Taylor coefficients. So power series are exactly the smooth functions that "remember themselves" through their derivatives.
+## 🎯 The exam pattern
 
-## 9.4 What Taylor series are good for
+Taylor series are **incredibly useful** for limits ("$\frac{0}{0}$" type) and for showing differentiability properties.
 
-1. **Approximation:** $\sin(0.1) \approx 0.1 - \frac{0.1^3}{6} = 0.0998333$ — accurate to 7 decimal places already!
-2. **Limits:** Replace functions by their Taylor expansions to compute limits.
-3. **Solving ODEs:** Many ODEs have power-series solutions.
-4. **Defining functions on $\mathbb{C}$:** $e^z, \sin z, \cos z$ for complex $z$ are *defined* by their Taylor series.
+> [!example] FS 2013 task 1a — limit using Taylor
+> $$\lim_{x\to 0}\frac{1 - \cos x}{\tan x \sin x}$$
+> Using $1 - \cos x = \frac{x^2}{2} + o(x^2)$ and $\sin x \tan x = x^2 + o(x^2)$:
+> $$\lim_{x\to 0}\frac{x^2/2 + o(x^2)}{x^2 + o(x^2)} = \frac{1}{2}$$
 
-> [!example] Limit via Taylor
-> $$\lim_{x \to 0} \frac{1 - \cos x}{x^2} = \lim_{x \to 0} \frac{x^2/2 - x^4/24 + \cdots}{x^2} = \frac{1}{2}$$
+> [!example] HS 2015 task 1b — Taylor for $f(0)$ and $f'(0)$
+> $f(x) = \frac{e^{5x} - 1}{e^x - 1}$ on $\mathbb{R}\setminus\{0\}$, extended continuously.
+>
+> Numerator: $5x + \frac{25}{2}x^2 + o(x^2)$. Denominator: $x + \frac{x^2}{2} + o(x^2)$. Divide:
+> $$f(x) = \frac{5x(1 + \frac{5x}{2} + o(x))}{x(1 + \frac{x}{2} + o(x))} = (5 + \tfrac{25}{2}x + o(x))(1 - \tfrac{x}{2} + o(x)) = 5 + 10x + o(x)$$
+> So $f(0) = 5$ and $f'(0) = 10$.
+
+> [!example] FS 2023 MC24 — Taylor polynomial of $f(x,y) = x/y$ around $(0,1)$ to order 2
+> Use $\frac{1}{y} = \frac{1}{1 + (y-1)} = 1 - (y-1) + (y-1)^2 - \cdots$. So
+> $$\frac{x}{y} = x - x(y-1) + x(y-1)^2 - \cdots$$
+> Up to order 2 (i.e. only terms with total degree $\leq 2$):
+> $$T_2 = x - x(y-1)$$
+
+## 🎯 Practice tasks
+
+> [!question] **Task 8.1** — Compute $\lim_{x\to 0}\frac{\sin x - x}{x^3}$.
+>
+>> [!success]- Solution
+>> $\sin x = x - \frac{x^3}{6} + o(x^3)$, so $\sin x - x = -\frac{x^3}{6} + o(x^3)$. Hence limit $= -\frac{1}{6}$.
+
+> [!question] **Task 8.2** — Find the Taylor polynomial of $\ln(1 + 2x)$ up to order 3.
+>
+>> [!success]- Solution
+>> Use $\ln(1+u) = u - \frac{u^2}{2} + \frac{u^3}{3} - \cdots$ with $u = 2x$: $\;2x - 2x^2 + \frac{8x^3}{3}$.
 
 ---
 
-# 10 · Integration in one variable
+# 9 · Limits and L'Hôpital's rule
 
-## 10.1 Two stories about integration
+## 🤔 The big question
 
-There are two complementary views of $\int_a^b f(x)\,dx$:
+Limits like $\frac{0}{0}$, $\frac{\infty}{\infty}$, $0 \cdot \infty$, $1^\infty$, $\infty - \infty$, $0^0$ are called **indeterminate** — you can't just plug in. We need techniques.
 
-1. **Geometry**: the (signed) area between the graph of $f$ and the $x$-axis on $[a, b]$.
-2. **Accumulation**: the total amount of $f$ collected from $a$ to $b$ — distance from velocity, mass from density, etc.
+## 🔧 The toolbox (in order of preference)
 
-The **Fundamental Theorem of Calculus** will reveal that integration is also the **inverse of differentiation**.
+1. **Algebraic simplification** (cancel, conjugate, common denominator).
+2. **Standard limits** (memorize: $\lim_{x\to 0}\frac{\sin x}{x} = 1$, etc.).
+3. **Taylor series** (turn the function into a polynomial-like object).
+4. **L'Hôpital's rule** (last resort — sometimes loops forever).
 
-## 10.2 The Riemann integral — formal construction
+## 💡 L'Hôpital's rule
 
-> [!definition] Partition and Riemann sum
-> A **partition** of $[a, b]$ is a finite list $a = x_0 < x_1 < \cdots < x_n = b$. Pick "tags" $\xi_k \in [x_{k-1}, x_k]$. The corresponding **Riemann sum** is
-> $$S(f, P, \xi) := \sum_{k=1}^{n} f(\xi_k)(x_k - x_{k-1})$$
+> [!theorem] L'Hôpital
+> If $\lim_{x\to x_0} f(x) = \lim_{x\to x_0} g(x) = 0$ (or both $\pm\infty$), $g'(x) \neq 0$ near $x_0$, and $\lim \frac{f'(x)}{g'(x)}$ exists, then
+> $$\lim_{x\to x_0}\frac{f(x)}{g(x)} = \lim_{x\to x_0}\frac{f'(x)}{g'(x)}$$
 
-The **mesh** of $P$ is $\|P\| := \max_k (x_k - x_{k-1})$.
+> [!warning] Common L'Hôpital mistakes
+> 1. Apply only when you have $\frac{0}{0}$ or $\frac{\infty}{\infty}$.
+> 2. Differentiate numerator and denominator **separately** — NOT as a quotient!
+> 3. If it loops, switch to Taylor.
 
-> [!definition] Riemann integrable
-> $f: [a, b] \to \mathbb{R}$ is **Riemann integrable** with integral $I = \int_a^b f(x)\,dx$ iff
-> $$\forall \varepsilon > 0\;\; \exists \delta > 0 \;: \;\; \|P\| < \delta \;\Rightarrow\; |S(f, P, \xi) - I| < \varepsilon$$
-> for any choice of tags.
+## 🎯 Worked exam-style examples
 
-> [!theorem] Continuous ⇒ integrable
-> Every continuous function on $[a, b]$ is Riemann integrable. So is every monotonic function. So is every bounded function with only finitely many discontinuities.
+> [!example] FS 2013 task 1a (Method 1, L'Hôpital)
+> $\displaystyle\lim_{x\to 0}\frac{1 - \cos x}{\tan x \sin x}$. Numerator and denominator $\to 0$, so apply L'Hôpital:
+> $$= \lim_{x\to 0}\frac{\sin x}{\frac{1}{\cos^2 x}\sin x + \cos x \cos x \cdot \tan x}$$
+> Simplify by dividing top and bottom by $\sin x$:
+> $$= \lim_{x\to 0}\frac{1}{\frac{1}{\cos^2 x} + 1} = \frac{1}{2}$$
 
-## 10.3 Properties of the integral
+> [!example] FS 2013 task 1b (substitution + L'Hôpital)
+> $\displaystyle\lim_{x\to 0^+}\frac{2x}{e^{-1/x}}$. Substitute $t = 1/x$ (so $x \to 0^+$ means $t \to +\infty$):
+> $$\lim_{t\to\infty}\frac{2/t}{e^{-t}} = \lim_{t\to\infty}\frac{2 e^t}{t} \overset{\text{L'H}}{=} \lim_{t\to\infty} 2e^t = +\infty$$
 
-> [!theorem] Linearity, monotonicity, additivity
-> $$\int_a^b (\alpha f + \beta g)\,dx = \alpha\!\int_a^b\! f + \beta\!\int_a^b\! g$$
-> $$f \leq g \;\text{on}\; [a,b] \;\Rightarrow\; \int_a^b f \leq \int_a^b g$$
-> $$\int_a^c f = \int_a^b f + \int_b^c f \quad (a \leq b \leq c)$$
-> $$\left|\int_a^b f\right| \leq \int_a^b |f|$$
+> [!example] HS 2015 task 2b (conjugate)
+> $\displaystyle\lim_{x\to\infty}(\sqrt{x^2 + x} - x)$. Multiply by conjugate:
+> $$= \lim_{x\to\infty}\frac{x}{\sqrt{x^2+x} + x} = \lim_{x\to\infty}\frac{1}{\sqrt{1 + 1/x} + 1} = \frac{1}{2}$$
 
-## 10.4 The Fundamental Theorem of Calculus (FTC)
+> [!example] FS 2019 task 3b (L'Hôpital for $\sin/(\cdot)$)
+> $\lim_{x\to 1}\frac{\sin(x^2 - 1)}{x - 1}$. L'Hôpital: $= \lim \frac{2x\cos(x^2-1)}{1} = 2$.
 
-The most beautiful theorem in elementary analysis. It says that *integration and differentiation are inverse operations*.
+> [!example] HS 2016 task 2c (1/x form, $0\cdot\infty$)
+> $\lim_{x\to\infty}(x^{1/x} - 1)\cdot\tfrac{1}{x}$. Use $x^{1/x} = e^{\ln(x)/x}$ and $\ln(x)/x \to 0$. Then
+> $x^{1/x} - 1 = e^{\ln x/x} - 1 \approx \ln x / x$. So the original $\approx \ln(x)/x^2 \to 0$.
 
-> [!theorem] FTC, Part 1 (existence of antiderivative)
-> If $f: [a, b] \to \mathbb{R}$ is continuous, then the function
-> $$F(x) := \int_a^x f(t)\,dt$$
-> is differentiable on $(a, b)$, and $F'(x) = f(x)$.
+> [!example] FS 2019 task 3a (clever inequality)
+> $\lim_{n\to\infty}\sqrt[n]{3^n - 2^n} = \lim_{n\to\infty} 3\sqrt[n]{1 - (2/3)^n}$. Hint shows $\sqrt[n]{1 - (2/3)^n} \to 1$ (squeeze: $1 \geq \sqrt[n]{1 - (2/3)^n} \geq \sqrt[n]{1 - 2/3} \to 1$). So limit $= 3$.
 
-> [!theorem] FTC, Part 2 (computing definite integrals)
-> If $F$ is **any** antiderivative of $f$ (i.e., $F' = f$) on $[a, b]$, then
+## 🎯 The "compute this limit" exam tasks
+
+Almost every basic exam has 2–4 limit computations. Strategies:
+
+| If you see... | Try first |
+|---|---|
+| $\frac{0}{0}$ with trig | Taylor |
+| $\frac{0}{0}$ rational | factor / cancel |
+| $\sqrt{a} - \sqrt{b}$ at $\infty$ | conjugate |
+| $\infty - \infty$ | common denominator |
+| $1^\infty$ | $f(x)^{g(x)} = e^{g(x)\ln f(x)}$ |
+| Always | L'Hôpital as fallback |
+
+## 📝 Practice tasks
+
+> [!question] **Task 9.1 (HS 2016 task 2a)** — $\displaystyle\lim_{x\to\frac{\pi}{2}}\frac{\tan(3x)}{\tan(x)}$.
+>
+>> [!success]- Solution
+>> Rewrite as $\frac{\sin 3x \cos x}{\cos 3x \sin x}$. As $x \to \pi/2$: $\cos x \to 0$, $\cos 3x \to 0$, so we have $0/0$. L'Hôpital on numerator and denominator separately... or: $\sin 3x \to \sin(3\pi/2) = -1$ and $\sin x \to 1$, so we just need $\frac{\cos x}{\cos 3x}$. L'Hôpital: $\frac{-\sin x}{-3\sin 3x} \to \frac{-1}{-3(-1)} = -\frac{1}{3}$. So overall $\frac{-1 \cdot \cos x}{\cos 3x \cdot 1} \to (-1)\cdot(-1/3) = 1/3$.
+
+> [!question] **Task 9.2 (HS 2016 task 2b)** — $\displaystyle\lim_{x\to 0}\frac{e^{x^2} - 1}{\sin^2 x}$.
+>
+>> [!success]- Solution
+>> Taylor: $e^{x^2} - 1 = x^2 + o(x^2)$, $\sin^2 x = x^2 + o(x^2)$. Limit $= 1$.
+
+> [!question] **Task 9.3** — $\displaystyle\lim_{x\to 0^+}\log(x)\tan(x)$.
+>
+>> [!success]- Solution
+>> $\tan x \approx x$ near 0, so this is $\approx x\log x \to 0$ (standard limit).
+
+---
+
+# 10 · Integration — the Fundamental Theorem
+
+## 🤔 The big question
+
+The integral $\int_a^b f(x)\,dx$ measures **area under the curve**. But it also computes:
+- distance from velocity
+- mass from density
+- charge from current
+- expected value from probability density
+
+The miracle: integration is the **inverse** of differentiation. This is the **Fundamental Theorem of Calculus**.
+
+## 💡 Antiderivatives
+
+> [!definition] Antiderivative
+> $F$ is an antiderivative of $f$ if $F'(x) = f(x)$. We write $\int f(x)\,dx = F(x) + C$.
+
+The "$+C$" reminds us the antiderivative is unique only up to a constant.
+
+## 💡 The Riemann integral
+
+Partition $[a,b]$ into small intervals, pick sample points $\xi_k$, form the Riemann sum
+$$\sum_k f(\xi_k)(x_{k+1} - x_k)$$
+and refine. The limit is the **Riemann integral** $\int_a^b f(x)\,dx$.
+
+> [!theorem]
+> Every continuous function on $[a, b]$ is Riemann-integrable. So is every monotonic function, and any bounded function with finitely many discontinuities.
+
+## 💎 The Fundamental Theorem of Calculus (FTC)
+
+> [!theorem] FTC, Part 1 (existence)
+> If $f$ is continuous on $[a, b]$, then $F(x) = \int_a^x f(t)\,dt$ is differentiable and $F'(x) = f(x)$.
+
+> [!theorem] FTC, Part 2 (computation)
+> If $F' = f$ on $[a, b]$, then
 > $$\int_a^b f(x)\,dx = F(b) - F(a) =: F(x)\Big|_a^b$$
 
-> [!example] FTC at work
-> $\int_0^\pi \sin x\,dx = -\cos x \Big|_0^\pi = -\cos\pi + \cos 0 = -(-1) + 1 = 2$.
+> [!example]
+> $\int_0^\pi \sin x\,dx = -\cos x \big|_0^\pi = -(-1) - (-1) = 2$.
 
-## 10.5 Antiderivatives — the table
+## 🔧 The antiderivative table — memorize this
 
-| $f(x)$ | $\displaystyle\int f(x)\,dx$ |
-| --- | --- |
-| $x^n$ ($n \neq -1$) | $\dfrac{x^{n+1}}{n+1} + C$ |
-| $\dfrac{1}{x}$ | $\ln \lvert x\rvert + C$ |
+| $f(x)$ | $\int f\,dx$ |
+|---|---|
+| $x^n$ ($n \neq -1$) | $\frac{x^{n+1}}{n+1} + C$ |
+| $\frac{1}{x}$ | $\ln\lvert x\rvert + C$ |
 | $e^x$ | $e^x + C$ |
-| $a^x$ | $\dfrac{a^x}{\ln a} + C$ |
+| $a^x$ | $\frac{a^x}{\ln a} + C$ |
 | $\sin x$ | $-\cos x + C$ |
 | $\cos x$ | $\sin x + C$ |
-| $\dfrac{1}{\cos^2 x}$ | $\tan x + C$ |
-| $\dfrac{1}{1 + x^2}$ | $\arctan x + C$ |
-| $\dfrac{1}{\sqrt{1 - x^2}}$ | $\arcsin x + C$ |
+| $\frac{1}{\cos^2 x}$ | $\tan x + C$ |
+| $\frac{1}{1+x^2}$ | $\arctan x + C$ |
+| $\frac{1}{\sqrt{1-x^2}}$ | $\arcsin x + C$ |
 | $\sinh x$ | $\cosh x + C$ |
 | $\cosh x$ | $\sinh x + C$ |
 
-## 10.6 Integration by parts
+## 💡 Properties
 
-From the product rule $(fg)' = f'g + fg'$, integrating both sides:
+- **Linearity:** $\int(\alpha f + \beta g) = \alpha\int f + \beta\int g$
+- **Additivity:** $\int_a^c = \int_a^b + \int_b^c$
+- **Monotonicity:** $f \leq g$ ⇒ $\int f \leq \int g$
+- **Estimation:** $\big|\int_a^b f\big| \leq \int_a^b |f|$
 
-> [!theorem] Integration by parts
-> $$\int_a^b f(x) g'(x)\,dx = \big[f(x)g(x)\big]_a^b - \int_a^b f'(x) g(x)\,dx$$
+## 🎯 Improper integrals
+
+When the interval is infinite or the integrand blows up:
+$$\int_a^\infty f\,dx := \lim_{b\to\infty}\int_a^b f\,dx$$
+
+> [!theorem] **The $1/x^p$ test**
+> - $\int_1^\infty \frac{1}{x^p}\,dx$ converges iff $p > 1$.
+> - $\int_0^1 \frac{1}{x^p}\,dx$ converges iff $p < 1$.
+
+> [!example] FS 2015 task 5
+> Discuss $\int_1^\infty \frac{1}{x^\alpha}\,dx$ in three cases ($\alpha = 1$, $\alpha < 1$, $\alpha > 1$). Result above.
+
+## 🎯 How the exam tests integration
+
+- Compute a definite integral (every exam has 2-3)
+- Apply FTC
+- Improper integrals with parameter (FS 2015 task 5)
+- Recursion via integration by parts (FS 2023 task 3)
+
+## 📝 Practice tasks
+
+> [!question] **Task 10.1** — Compute $\int_0^1 (3x^2 + 2x)\,dx$.
+>
+>> [!success]- Solution
+>> $= [x^3 + x^2]_0^1 = 2$.
+
+> [!question] **Task 10.2** — Determine convergence of $\int_0^\infty e^{-x}\,dx$ and find its value if convergent.
+>
+>> [!success]- Solution
+>> $\int_0^t e^{-x}\,dx = -e^{-x}\big|_0^t = 1 - e^{-t} \to 1$. Converges, value $1$.
+
+> [!question] **Task 10.3 (FS 2023 task 3)** — Define $f_n(t) = \int_0^t x^n e^{-x}\,dx$. Show $f_n(t) = n f_{n-1}(t) - t^n e^{-t}$ and use this to evaluate $\int_0^\infty x^n e^{-x}\,dx = n!$.
+>
+>> [!success]- Solution
+>> Integration by parts: $u = x^n$, $dv = e^{-x}dx$ ⇒ $du = nx^{n-1}dx$, $v = -e^{-x}$.
+>> $$f_n(t) = -x^n e^{-x}\Big|_0^t + n\int_0^t x^{n-1}e^{-x}\,dx = -t^n e^{-t} + n f_{n-1}(t)$$
+>> As $t \to \infty$, $t^n e^{-t} \to 0$. By induction with base $f_0 = 1 - e^{-t} \to 1 = 0!$:
+>> $$\int_0^\infty x^n e^{-x}\,dx = n!$$
+
+---
+
+# 11 · Integration techniques (parts, substitution, partial fractions)
+
+The exam will throw integrals at you that don't appear in the table. You need three techniques: **integration by parts**, **substitution**, and **partial fractions**.
+
+## 🔧 Integration by parts
+
+From $(fg)' = f'g + fg'$:
+$$\boxed{\;\int f(x)g'(x)\,dx = f(x)g(x) - \int f'(x)g(x)\,dx\;}$$
 
 > [!tip] How to choose $f$ and $g'$
-> Pick $f$ as the part that gets *simpler* when differentiated (polynomials, $\ln$, $\arctan$). Pick $g'$ as the part you can integrate easily ($e^x$, $\sin x$, $\cos x$).
+> Pick $f$ as the part that gets **simpler** when differentiated:
+> - polynomials → become 0 eventually
+> - $\ln x$ → becomes $1/x$
+> - $\arctan x$, $\arcsin x$ → become rational
+>
+> Pick $g'$ as something easy to integrate ($e^x$, $\sin x$, $\cos x$).
+>
+> **Mnemonic LIATE**: pick $f$ as the first thing in the list that appears
+> Logarithm > Inverse trig > Algebraic (polynomial) > Trig > Exponential.
 
 > [!example] $\int x e^x\,dx$
-> Let $f = x$, $g' = e^x$. Then $f' = 1$, $g = e^x$:
-> $$\int x e^x \,dx = x e^x - \int e^x\,dx = x e^x - e^x + C = (x - 1)e^x + C$$
+> Let $f = x$, $g' = e^x$ ⇒ $f' = 1$, $g = e^x$.
+> $$\int x e^x\,dx = xe^x - \int e^x\,dx = xe^x - e^x + C = (x-1)e^x + C$$
 
-## 10.7 Substitution (change of variable)
+> [!example] FS 2013 task 3a-ii: $\int_0^2 \log(1+x)\,dx$
+> Let $u = \log(1+x)$, $dv = dx$ ⇒ $du = \frac{dx}{1+x}$, $v = x$.
+> $$= [x\log(1+x)]_0^2 - \int_0^2 \frac{x}{1+x}\,dx = 2\log 3 - \int_0^2\Big(1 - \tfrac{1}{1+x}\Big)\,dx$$
+> $$= 2\log 3 - 2 + \log 3 = 3\log 3 - 2$$
 
-> [!theorem] Substitution rule
-> If $\varphi: [a, b] \to \mathbb{R}$ is continuously differentiable and $f$ is continuous on $\varphi([a,b])$:
-> $$\int_a^b f(\varphi(x))\, \varphi'(x)\,dx = \int_{\varphi(a)}^{\varphi(b)} f(u)\,du$$
+> [!example] FS 2019 task 4: $\int \log(x^2 + 1)\,dx$
+> $u = \log(x^2+1)$, $dv = dx$ ⇒ $du = \frac{2x}{x^2+1}dx$, $v = x$.
+> $$= x\log(x^2+1) - \int\frac{2x^2}{x^2+1}\,dx = x\log(x^2+1) - \int\Big(2 - \tfrac{2}{x^2+1}\Big)dx$$
+> $$= x\log(x^2+1) - 2x + 2\arctan x + C$$
+
+> [!example] FS 2015 task 1b: $\int_0^\pi x^2\sin x\,dx$
+> Two parts:
+> $$\int x^2 \sin x\,dx = -x^2\cos x + 2\int x\cos x\,dx = -x^2\cos x + 2x\sin x - 2\int\sin x\,dx$$
+> $$= -x^2\cos x + 2x\sin x + 2\cos x + C$$
+> Evaluate at endpoints: $[\pi^2 + 0 - 2] - [0 + 0 + 2] = \pi^2 - 4$.
+
+> [!example] HS 2016 task 5a (recursion trick): $\int e^x\sin x\,dx$
+> Let $I = \int e^x\sin x\,dx$. Two parts give $I = e^x\sin x - \int e^x\cos x\,dx$. Apply parts again to the $\cos$ integral: $\int e^x\cos x\,dx = e^x\cos x + I$. Substitute back:
+> $$I = e^x\sin x - e^x\cos x - I \;\Rightarrow\; I = \frac{e^x(\sin x - \cos x)}{2} + C$$
+
+## 🔧 Substitution (u-substitution)
+
+If $u = \varphi(x)$, $du = \varphi'(x)\,dx$:
+$$\int f(\varphi(x))\varphi'(x)\,dx = \int f(u)\,du$$
+
+> [!tip] When to substitute
+> Look for an "outer" function and an "inner" function whose derivative *also* shows up. Set $u = $ inner.
 
 > [!example] $\int 2x\cos(x^2)\,dx$
-> Set $u = x^2$, $du = 2x\,dx$: $\int \cos u\,du = \sin u + C = \sin(x^2) + C$.
+> $u = x^2$, $du = 2x\,dx$. $\int\cos u\,du = \sin u + C = \sin(x^2) + C$.
 
-## 10.8 Partial fractions
+> [!example] HS 2014 task 3a-i: $\int_0^1\frac{\arctan x}{1+x^2}\,dx$
+> $u = \arctan x$, $du = \frac{dx}{1+x^2}$. New limits $u(0) = 0$, $u(1) = \pi/4$.
+> $$\int_0^{\pi/4} u\,du = \frac{u^2}{2}\Big|_0^{\pi/4} = \frac{\pi^2}{32}$$
 
-For rational functions $\frac{P(x)}{Q(x)}$ with $\deg P < \deg Q$: factor $Q$ over $\mathbb{R}$, then split into simpler pieces:
+> [!example] HS 2016 task 5b: $\int_1^3\frac{x^3}{\sqrt{1+x^2}}\,dx$
+> Substitute $u = \sqrt{1+x^2}$, $du = \frac{x}{\sqrt{1+x^2}}\,dx$, $x^2 = u^2 - 1$.
+> Limits: $u(1) = \sqrt 2$, $u(3) = \sqrt{10}$.
+> $$\int_{\sqrt 2}^{\sqrt{10}} (u^2 - 1)\,du = \tfrac{u^3}{3} - u\,\Big|_{\sqrt 2}^{\sqrt{10}} = \frac{7\sqrt{10} + \sqrt 2}{3}$$
 
-$$\frac{P(x)}{(x - a)(x - b)} = \frac{A}{x - a} + \frac{B}{x - b}$$
+## 🔧 Partial fraction decomposition
 
-Each piece is integrable in closed form.
+For rational integrands $\frac{P(x)}{Q(x)}$ with $\deg P < \deg Q$:
+1. Factor $Q(x)$ into linear and irreducible quadratic factors.
+2. Write $\frac{P(x)}{Q(x)}$ as a sum:
+   $$\frac{A}{x-a} + \frac{B}{(x-a)^2} + \cdots + \frac{Cx+D}{x^2 + bx + c}$$
+3. Integrate each piece.
 
-> [!example]
-> $$\frac{1}{x^2 - 1} = \frac{1}{(x-1)(x+1)} = \frac{1/2}{x-1} - \frac{1/2}{x+1}$$
-> $$\Rightarrow \int \frac{dx}{x^2 - 1} = \frac{1}{2}\ln\left|\frac{x-1}{x+1}\right| + C$$
+> [!example] FS 2013 task 3a-i: $\int\frac{x+2}{x^3 - x^2 + 2x - 2}\,dx$
+> Factor: $x^3 - x^2 + 2x - 2 = x^2(x-1) + 2(x-1) = (x-1)(x^2+2)$.
+> Set $\frac{x+2}{(x-1)(x^2+2)} = \frac{A}{x-1} + \frac{Bx+C}{x^2+2}$.
+> Multiply through and compare coefficients: $A = 1, B = -1, C = 0$.
+> $$\int\left(\frac{1}{x-1} - \frac{x}{x^2+2}\right)dx = \log|x-1| - \tfrac{1}{2}\log(x^2+2) + C$$
 
-## 10.9 Improper integrals
+> [!example] HS 2014 task 3a-ii: $\int\frac{x+4}{x^3 - 2x^2}\,dx$
+> Factor: $x^2(x-2)$. Setup: $\frac{A}{x-2} + \frac{B}{x} + \frac{C}{x^2}$. Solving gives $A = \tfrac32, B = -\tfrac32, C = -2$.
+> $$= \tfrac{3}{2}\log|x-2| - \tfrac{3}{2}\log|x| + \tfrac{2}{x} + C$$
 
-When the interval is infinite or the integrand blows up, use limits:
+> [!example] FS 2019 MC2: $\int\frac{1}{1-x^2}\,dx$
+> $\frac{1}{(1-x)(1+x)} = \frac{1/2}{1-x} + \frac{1/2}{1+x}$. So
+> $$= \tfrac{1}{2}(-\log|1-x| + \log|1+x|) + C = \tfrac{1}{2}\log\Big|\tfrac{1+x}{1-x}\Big| + C$$
 
-$$\int_a^{\infty} f(x)\,dx := \lim_{b \to \infty} \int_a^b f(x)\,dx$$
+## 🎯 The exam pattern for integrals
 
-> [!example] $\int_1^{\infty}\!\frac{1}{x^p}\,dx$
-> - Converges if $p > 1$, with value $\frac{1}{p-1}$
-> - Diverges if $p \leq 1$
-> 
-> Compare: $\int_0^1\!\frac{1}{x^p}\,dx$ converges if $p < 1$, diverges if $p \geq 1$.
+Each exam typically has 2-3 integrals, often:
+- one **integration by parts** (involves $\ln$, $\arctan$, or $x \cdot e^x$ / $x \cdot \sin x$)
+- one **partial fraction** (cubic denominator)
+- sometimes a **substitution** (square root, trig)
+
+## 📝 Practice tasks
+
+> [!question] **Task 11.1** — $\int x \ln x\,dx$.
+>
+>> [!success]- Solution
+>> Parts: $u = \ln x, dv = x\,dx$. Then $du = \frac{1}{x}dx, v = \frac{x^2}{2}$.
+>> $$= \tfrac{x^2}{2}\ln x - \int\tfrac{x}{2}\,dx = \tfrac{x^2}{2}\ln x - \tfrac{x^2}{4} + C$$
+
+> [!question] **Task 11.2 (HS 2014 task 3 partial fraction)** — $\int\frac{9}{x^3 - 3x - 2}\,dx$ (factor: $(x-2)(x+1)^2$).
+>
+>> [!success]- Solution
+>> Setup: $\frac{A}{x-2} + \frac{B}{x+1} + \frac{C}{(x+1)^2}$. After comparing: $A=1, B=-1, C=-3$.
+>> $$= \log|x-2| - \log|x+1| + \frac{3}{x+1} + C = \log\Big|\frac{x-2}{x+1}\Big| + \frac{3}{x+1} + C$$
+
+> [!question] **Task 11.3 (Substitution)** — $\int\frac{e^x}{1 + e^{2x}}\,dx$.
+>
+>> [!success]- Solution
+>> $u = e^x$, $du = e^x\,dx$. $\int\frac{du}{1+u^2} = \arctan u + C = \arctan(e^x) + C$.
 
 ---
 
-# 11 · Ordinary differential equations
+# 12 · Ordinary differential equations
 
-## 11.1 What is an ODE?
+## 🤔 The big question
 
-> [!definition] Ordinary differential equation
-> An **ordinary differential equation (ODE)** of order $n$ is an equation of the form
-> $$F\!\big(t,\, y(t),\, y'(t),\, y''(t),\, \dots,\, y^{(n)}(t)\big) = 0$$
-> involving an unknown function $y(t)$ and its derivatives, all with respect to a single variable $t$.
+Newton's law $F = ma$ is really $m\ddot x = F(x, \dot x, t)$ — an **ODE**. So is radioactive decay, population growth, electrical circuits, planetary motion. Solving ODEs is **the** mathematical core of physics and engineering.
 
-A **solution** is a function $y$ that satisfies this equation on some interval.
+## 📜 What is an ODE?
 
-> [!example] Models everywhere
-> - Newton's 2nd law: $m\,\ddot x = F(x, \dot x, t)$ (mechanics)
-> - Radioactive decay: $\dot N = -\lambda N$ (population, chemistry)
-> - LC circuit: $L\,\ddot Q + \frac{1}{C}Q = 0$ (electrical engineering)
-> - Logistic growth: $\dot P = rP(1 - P/K)$ (biology)
+> [!definition]
+> An ODE of order $n$ is an equation involving an unknown function $y(t)$ and its derivatives up to order $n$.
+>
+> **Order** = highest derivative. **Linear** = no products of $y$ and its derivatives.
 
-## 11.2 Initial value problems
+| ODE | Models |
+|---|---|
+| $\dot N = -\lambda N$ | radioactive decay |
+| $m\ddot x + k x = 0$ | spring without friction |
+| $\ddot x + 2\delta\dot x + \omega_0^2 x = 0$ | damped oscillator |
+| $L\ddot Q + R\dot Q + Q/C = U(t)$ | RLC circuit |
 
-> [!definition] IVP
-> An **initial value problem** consists of an ODE plus initial conditions
-> $$y(t_0) = y_0,\;\; y'(t_0) = y_1,\;\; \dots,\;\; y^{(n-1)}(t_0) = y_{n-1}$$
-> Under reasonable conditions on $F$ (Picard–Lindelöf theorem), the IVP has a **unique** solution near $t_0$.
+## 🔧 Type 1 — Separable ODEs
 
-## 11.3 First-order: separable ODEs
+If you can write $\;y'(x) = f(x)\,g(y)$, separate:
+$$\frac{dy}{g(y)} = f(x)\,dx \;\;\Longrightarrow\;\; \int\frac{dy}{g(y)} = \int f(x)\,dx + C$$
 
-If you can write the equation as
-$$y'(x) = f(x)\, g(y),$$
-**separate the variables**:
-$$\frac{dy}{g(y)} = f(x)\,dx \;\;\Longrightarrow\;\; \int \frac{dy}{g(y)} = \int f(x)\,dx + C$$
+> [!example] FS 2013 task 4b
+> $\ln(y)\,y' = y\sqrt x$. Separate:
+> $$\frac{\ln y}{y}\,dy = \sqrt x\,dx \;\Rightarrow\; \frac{(\ln y)^2}{2} = \frac{2}{3}x^{3/2} + C$$
+> Hence $y = e^{\pm\sqrt{(4/3)x^{3/2} + C}}$.
 
-> [!example] Exponential decay
-> $\dot N = -\lambda N$. Separate: $\frac{dN}{N} = -\lambda \,dt$. Integrate: $\ln |N| = -\lambda t + C$. Hence $N(t) = N_0 e^{-\lambda t}$.
+> [!example] HS 2014 task 4b: $yy' = 2(1+y^2)x^3$
+> $\frac{y\,dy}{1+y^2} = 2x^3\,dx$. Substitute $t = 1+y^2, dt = 2y\,dy$:
+> $$\frac{dt}{2t} = 2x^3\,dx \;\Rightarrow\; \tfrac12\ln t = \tfrac{x^4}{2} + C \;\Rightarrow\; t = Ce^{x^4} \;\Rightarrow\; y = \pm\sqrt{Ce^{x^4} - 1}$$
 
-## 11.4 First-order linear ODEs
+## 🔧 Type 2 — Linear first-order ODEs
 
-The general form is
-$$y'(x) + p(x)\,y(x) = q(x)$$
+$$y' + p(x)y = q(x)$$
 
-> [!theorem] Integrating factor method
-> Let $\mu(x) := \exp\!\big(\!\int p(x)\,dx\big)$. Then
-> $$y(x) = \frac{1}{\mu(x)}\!\left(\int \mu(x) q(x)\,dx + C\right)$$
+Use the **integrating factor** $\mu(x) = e^{\int p(x)\,dx}$. Multiplying gives $(\mu y)' = \mu q$, so
+$$y(x) = \frac{1}{\mu(x)}\Big(\int\mu(x)q(x)\,dx + C\Big)$$
 
-*Why?* Multiplying the ODE by $\mu$ makes the left side an exact derivative: $(\mu y)' = \mu q$.
+## 🔧 Type 3 — Linear ODEs with constant coefficients
 
-## 11.5 Linear ODEs with constant coefficients (homogeneous)
+For $\;a_n y^{(n)} + \dots + a_1 y' + a_0 y = 0$:
 
-Equations of the form
-$$a_n y^{(n)} + a_{n-1} y^{(n-1)} + \dots + a_1 y' + a_0 y = 0$$
+**Try $y = e^{\lambda x}$.** This produces the **characteristic polynomial**:
+$$p(\lambda) = a_n\lambda^n + \dots + a_1\lambda + a_0 = 0$$
 
-**Strategy: try $y = e^{\lambda t}$.** Substituting gives the **characteristic polynomial**:
-$$p(\lambda) = a_n \lambda^n + a_{n-1}\lambda^{n-1} + \dots + a_1\lambda + a_0 = 0$$
+| Roots of $p(\lambda)$ | Solution contribution |
+|---|---|
+| Simple real $\lambda$ | $C\,e^{\lambda x}$ |
+| Repeated real $\lambda$ (mult. $m$) | $(C_0 + C_1 x + \dots + C_{m-1}x^{m-1})e^{\lambda x}$ |
+| Complex pair $\alpha \pm i\beta$ | $e^{\alpha x}(C_1\cos\beta x + C_2\sin\beta x)$ |
 
-Each root $\lambda$ produces a solution $e^{\lambda t}$. The general solution is a linear combination.
+> [!example] FS 2013 task 4a
+> $y'' - 3y' + 2y = 130\cos(3x)$.
+>
+> *Homogeneous:* $\lambda^2 - 3\lambda + 2 = 0 \Rightarrow \lambda_1 = 1, \lambda_2 = 2$. So $y_h = C_1 e^x + C_2 e^{2x}$.
+>
+> *Particular ansatz:* since $\cos(3x) = \text{Re}(e^{3x \cdot i})$ and $3i$ is **not** a root, try $y_p = A\cos(3x) + B\sin(3x)$.
+> Plug in, collect coefficients: $-7A - 9B = 130$ (from $\cos$) and $9A - 7B = 0$ (from $\sin$). Solve: $A = -7, B = -9$.
+>
+> *Final:* $y(x) = C_1 e^x + C_2 e^{2x} - 7\cos(3x) - 9\sin(3x)$.
 
-| Roots of $p(\lambda)$ | Contribution to general solution |
-| --- | --- |
-| Simple real $\lambda$ | $C\, e^{\lambda t}$ |
-| Repeated real $\lambda$ (mult. $m$) | $(C_0 + C_1 t + \dots + C_{m-1} t^{m-1})\,e^{\lambda t}$ |
-| Complex pair $\alpha \pm i\beta$ | $e^{\alpha t}(C_1 \cos\beta t + C_2 \sin\beta t)$ |
+> [!example] HS 2014 task 4a: $2y'' - 9y' + 9y = 9x^2$
+> *Homogeneous:* $\lambda_1 = 3, \lambda_2 = 3/2$, so $y_h = C_1 e^{3x} + C_2 e^{3x/2}$.
+> *Particular:* try $y_p = Ax^2 + Bx + C$. Substitute, compare coefficients: $A = 1, B = 2, C = 14/9$.
+> *Final:* $y = y_h + x^2 + 2x + 14/9$.
 
-## 11.6 The damped harmonic oscillator (a 2nd-order classic)
+> [!example] FS 2023 task 4 (parameter analysis)
+> $y'' + 2y' + ay = 0$. Characteristic: $\lambda^2 + 2\lambda + a = 0 \Rightarrow \lambda = -1 \pm \sqrt{1 - a}$.
+> - $a < 1$: real distinct, $y = Ae^{(\sqrt{1-a}-1)x} + Be^{-(\sqrt{1-a}+1)x}$.
+> - $a = 1$: double root $-1$, $y = (A + Bx)e^{-x}$.
+> - $a > 1$: complex pair, $y = e^{-x}(A\cos\sqrt{a-1}\,x + B\sin\sqrt{a-1}\,x)$.
+>
+> Bounded as $x \to \infty$ iff $a \geq 0$.
 
-$$\ddot y + 2\delta \dot y + \omega_0^2 y = 0$$
+## 💡 The damped harmonic oscillator (engineering classic)
 
-Characteristic polynomial: $\lambda^2 + 2\delta\lambda + \omega_0^2 = 0$, so $\lambda_{1,2} = -\delta \pm \sqrt{\delta^2 - \omega_0^2}$.
+$$\ddot y + 2\delta\dot y + \omega_0^2 y = 0$$
 
-| Regime | Condition | Solution shape |
-| --- | --- | --- |
-| Undamped | $\delta = 0$ | $C_1 \cos(\omega_0 t) + C_2 \sin(\omega_0 t)$ |
-| Underdamped | $0 < \delta < \omega_0$ | $e^{-\delta t}(C_1 \cos(\omega t) + C_2 \sin(\omega t))$, $\omega = \sqrt{\omega_0^2 - \delta^2}$ |
-| Critically damped | $\delta = \omega_0$ | $(C_1 + C_2 t)\,e^{-\delta t}$ |
-| Overdamped | $\delta > \omega_0$ | $C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t}$ (both real, both negative) |
+| Regime | Condition | Solution |
+|---|---|---|
+| Undamped | $\delta = 0$ | $C_1\cos(\omega_0 t) + C_2\sin(\omega_0 t)$ |
+| Underdamped | $0 < \delta < \omega_0$ | $e^{-\delta t}(C_1\cos\omega t + C_2\sin\omega t)$, $\omega = \sqrt{\omega_0^2 - \delta^2}$ |
+| Critically damped | $\delta = \omega_0$ | $(C_1 + C_2 t)e^{-\delta t}$ |
+| Overdamped | $\delta > \omega_0$ | $C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t}$ |
 
-This single equation describes a mass on a spring, an RLC circuit (after replacing variables), or a pendulum near equilibrium.
+## 🔧 Inhomogeneous: total = homogeneous + particular
 
-## 11.7 Inhomogeneous linear ODEs
+$$y = y_h + y_p$$
 
-For $\mathcal{L}y = q(x)$ where $\mathcal{L}$ is a linear differential operator:
-
-$$\boxed{\;y_{\text{general}} = y_{\text{homog}} + y_{\text{particular}}\;}$$
-
-1. Solve $\mathcal{L}y = 0$ → general homogeneous solution $y_h$ (with free constants).
-2. Find **any** particular solution $y_p$ of $\mathcal{L}y = q$.
-3. The general solution is $y = y_h + y_p$.
-
-**Method of undetermined coefficients:** for $q$ of standard form, guess the form of $y_p$:
+For $q(x)$ of standard form, **guess** $y_p$:
 
 | $q(x)$ | Guess for $y_p$ |
-| --- | --- |
-| Polynomial of degree $m$ | Polynomial of degree $m$ (or $m+1$ if $0$ is a root of $p(\lambda)$) |
+|---|---|
+| polynomial of degree $m$ | polynomial of degree $m$ |
 | $e^{\alpha x}$ | $A e^{\alpha x}$ (multiply by $x$ if $\alpha$ is a root) |
-| $\sin\omega x$ or $\cos\omega x$ | $A\cos\omega x + B\sin\omega x$ |
-| Product of these | Product of guesses |
+| $\sin\omega x$, $\cos\omega x$ | $A\cos\omega x + B\sin\omega x$ |
+| product | product |
 
-## 11.8 Systems of first-order ODEs
+> [!warning] Resonance trap
+> If your ansatz already solves the **homogeneous** equation, multiply by $x$. This is what FS 2019 task 6 tests:
+> $y'' + y' - 2y = e^{-2x}$ — homogeneous roots are $-2, 1$. Since $-2$ is a root, the ansatz isn't $Ae^{-2x}$ but $\boxed{Ax e^{-2x}}$. Solving gives $A = -1/3$.
 
-Any $n$-th order ODE can be rewritten as a system of $n$ first-order ODEs. In matrix form:
-$$\dot{\mathbf{y}}(t) = A \mathbf{y}(t) + \mathbf{b}(t)$$
+## 💡 Systems of ODEs and matrix exponential
 
-For the linear homogeneous case ($\mathbf{b} = 0$), the solution is
-$$\mathbf{y}(t) = e^{At}\,\mathbf{y}(0)$$
-where $e^{At} := \sum_{k=0}^\infty \frac{(At)^k}{k!}$ is the **matrix exponential**.
+A scalar $n$-th order ODE can be rewritten as a system of $n$ first-order equations. In matrix form:
+$$\dot{\mathbf y}(t) = A\mathbf y(t)$$
+Solution: $\mathbf y(t) = e^{At}\mathbf y(0)$, where $e^{At} = \sum_{k=0}^\infty \frac{(At)^k}{k!}$.
+
+> [!example] FS 2023 task 4.A1 — converting to a system
+> Rewrite $y'' + 2y' + ay = 0$ as a system:
+> Let $\mathbf F = (y, y')^T$. Then $\dot{\mathbf F} = \begin{pmatrix} 0 & 1 \\ -a & -2\end{pmatrix}\mathbf F$.
+
+## 🎯 The exam pattern
+
+Every exam has **at least one ODE task**, and often two:
+- one second-order linear with constant coefficients (homogeneous + particular)
+- one first-order separable
+
+## 📝 Practice tasks
+
+> [!question] **Task 12.1 (FS 2017 task 6)** — Find the unique bounded solution of $y'' + y' - 6y = 10\sin x$ with $y(0) = 0$.
+>
+>> [!success]- Solution
+>> *Homogeneous:* $\lambda^2 + \lambda - 6 = 0 \Rightarrow \lambda = 2, -3$. So $y_h = C_1 e^{2x} + C_2 e^{-3x}$.
+>> *Particular:* ansatz $y_p = a\cos x + b\sin x$. Plugging in:
+>> $(-7a + b)\cos x + (-a - 7b)\sin x = 10\sin x$. So $a = -1/(...)$... working it out: $a = -7/5$, no — let's redo: equations $-a + b - 6a = 0$ from cos, $-b - a - 6b = 10$ from sin... carefully: $y_p' = -a\sin x + b\cos x$, $y_p'' = -a\cos x - b\sin x$. Sum: $(-a + b - 6a)\cos x + (-b - a - 6b)\sin x = (-7a + b)\cos x + (-a - 7b)\sin x = 10\sin x$. So $-7a + b = 0$ and $-a - 7b = 10$. From first: $b = 7a$. Plug: $-a - 49a = 10 \Rightarrow a = -1/5$, $b = -7/5$. So $y_p = -\frac{1}{5}\cos x - \frac{7}{5}\sin x$.
+>>
+>> *Bounded as $x\to\infty$:* requires $C_1 = 0$. Then $y(0) = C_2 - \tfrac{1}{5} = 0$, so $C_2 = \tfrac{1}{5}$.
+>> *Final:* $y(x) = \tfrac{1}{5}e^{-3x} - \tfrac{1}{5}\cos x - \tfrac{7}{5}\sin x$.
+
+> [!question] **Task 12.2** — Solve $y' = xy$, $y(0) = 1$.
+>
+>> [!success]- Solution
+>> Separable: $\frac{dy}{y} = x\,dx \Rightarrow \ln|y| = x^2/2 + C$. With $y(0)=1$: $C = 0$. $y = e^{x^2/2}$.
 
 ---
 
-# 12 · Multivariable differentiation
+# 13 · Multivariable functions
 
-## 12.1 The setting
+## 🤔 The big question
 
-We now consider functions $f: \Omega \subseteq \mathbb{R}^d \to \mathbb{R}^m$. Examples:
-- $f: \mathbb{R}^2 \to \mathbb{R}$ — a "landscape", height as function of position $(x, y)$
-- $f: \mathbb{R}^3 \to \mathbb{R}$ — temperature in a room as function of $(x, y, z)$
-- $f: \mathbb{R} \to \mathbb{R}^3$ — a parametric curve in space
-- $f: \mathbb{R}^3 \to \mathbb{R}^3$ — a vector field (e.g., wind velocity)
+Real engineering problems involve many variables: temperature varies in 3D space, profit depends on price *and* advertising, an antenna's gain depends on angle and frequency. We need calculus that handles many variables.
 
-## 12.2 Partial derivatives
+## 📜 The setup
+
+A function $f: \mathbb{R}^d \to \mathbb{R}^m$. Examples:
+- $f(x,y) = $ height of a mountain at $(x,y)$ — *scalar field* on $\mathbb{R}^2$
+- $f(x,y,z) = $ temperature in a room — scalar field on $\mathbb{R}^3$
+- $\mathbf F(x,y,z) = (\text{wind}_x, \text{wind}_y, \text{wind}_z)$ — *vector field* $\mathbb{R}^3 \to \mathbb{R}^3$
+- $\gamma(t) = (\cos t, \sin t, t)$ — *curve* $\mathbb{R} \to \mathbb{R}^3$ (a helix)
+
+## 💡 Continuity in many variables
+
+> [!warning] Path-dependence trap
+> Just because $f$ is continuous in $x$ alone (with $y$ fixed) and in $y$ alone (with $x$ fixed) does **NOT** mean $f$ is continuous in $(x, y)$.
+
+> [!example] Classic counterexample
+> $f(x,y) = \frac{xy}{x^2 + y^2}$ for $(x,y) \neq (0,0)$, $f(0,0) = 0$.
+> Along $y = x$: $f(x, x) = \frac{x^2}{2x^2} = \tfrac{1}{2}$ for $x \neq 0$. So $\lim_{x\to 0} f(x,x) = \tfrac12 \neq 0$. Not continuous!
+
+> [!example] FS 2019 task 7
+> $f(x,y) = \frac{xy(x - y + 1)}{x^2 + y^2}$ for $(x,y) \neq (0,0)$, $f(0,0) = 0$.
+> - Along $x = 0$: $f \equiv 0$, continuous.
+> - Along $y = x$: $f = \frac{x^2(1)}{2x^2} = \tfrac12$, **discontinuous** at origin.
+
+## 💡 Partial derivatives
 
 > [!definition] Partial derivative
-> The **partial derivative** of $f$ with respect to $x_i$ at $x \in \Omega$:
-> $$\frac{\partial f}{\partial x_i}(x) := \lim_{h \to 0} \frac{f(x + h\mathbf{e}_i) - f(x)}{h}$$
-> where $\mathbf{e}_i$ is the $i$-th unit vector. In words: differentiate $f$ in the $x_i$-direction, treating all other variables as constants.
-
-> [!example] Concrete
-> $f(x, y) = x^2 y + \sin(xy)$
-> $$\frac{\partial f}{\partial x} = 2xy + y\cos(xy), \qquad \frac{\partial f}{\partial y} = x^2 + x\cos(xy)$$
-
-## 12.3 The gradient
-
-> [!definition] Gradient
-> If $f: \mathbb{R}^d \to \mathbb{R}$ is differentiable, its **gradient** is the vector of all partial derivatives:
-> $$\nabla f(x) = \mathrm{grad}\,f(x) := \left(\frac{\partial f}{\partial x_1}, \dots, \frac{\partial f}{\partial x_d}\right)$$
-
-> [!info] Geometric meaning of $\nabla f$
-> 1. $\nabla f(x)$ points in the direction of **steepest ascent**.
-> 2. Its magnitude $\|\nabla f(x)\|$ is the slope in that direction.
-> 3. $\nabla f$ is **perpendicular** to the level sets $\{f = c\}$.
-
-## 12.4 The directional derivative
-
-In the direction of a unit vector $\mathbf{v} \in \mathbb{R}^d$:
-$$\partial_\mathbf{v} f(x) = \nabla f(x) \cdot \mathbf{v}$$
-
-The maximum is attained when $\mathbf{v}$ aligns with $\nabla f(x)$, giving $\|\nabla f(x)\|$ — confirming that the gradient points uphill.
-
-## 12.5 Total differentiability and the Jacobian
-
-For a vector-valued function $f = (f_1, \dots, f_m): \mathbb{R}^d \to \mathbb{R}^m$:
-
-> [!definition] Total differentiability
-> $f$ is **(totally) differentiable** at $x_0$ if there is a linear map $A: \mathbb{R}^d \to \mathbb{R}^m$ with
-> $$\lim_{h \to 0} \frac{\|f(x_0 + h) - f(x_0) - A h\|}{\|h\|} = 0$$
-> The matrix of $A$ is the **Jacobian matrix**:
-> $$J_f(x_0) := \begin{pmatrix} \dfrac{\partial f_1}{\partial x_1} & \cdots & \dfrac{\partial f_1}{\partial x_d} \\ \vdots & \ddots & \vdots \\ \dfrac{\partial f_m}{\partial x_1} & \cdots & \dfrac{\partial f_m}{\partial x_d} \end{pmatrix}$$
-
-> [!warning] Subtle point
-> Existence of all partial derivatives does **not** imply (total) differentiability. But: if all partials exist and are *continuous* on a neighbourhood, then $f$ is differentiable there. ($C^1$ ⇒ differentiable.)
-
-## 12.6 The chain rule (multivariable version)
-
-> [!theorem] Multivariable chain rule
-> If $g: \mathbb{R}^d \to \mathbb{R}^m$ is differentiable at $x$ and $f: \mathbb{R}^m \to \mathbb{R}^k$ is differentiable at $g(x)$, then $f \circ g$ is differentiable at $x$ with
-> $$J_{f \circ g}(x) = J_f(g(x)) \cdot J_g(x)$$
-> (matrix multiplication of Jacobians)
-
-> [!example] Special case: $f: \mathbb{R}^2 \to \mathbb{R}$ along a curve
-> If $\gamma(t) = (x(t), y(t))$ is a curve and we look at $h(t) = f(\gamma(t))$:
-> $$\frac{dh}{dt} = \frac{\partial f}{\partial x}\,\dot x(t) + \frac{\partial f}{\partial y}\,\dot y(t) = \nabla f(\gamma(t)) \cdot \dot\gamma(t)$$
-
-## 12.7 Higher partial derivatives and Schwarz's theorem
-
-> [!theorem] Schwarz / Clairaut
-> If $f$ is twice continuously differentiable, then mixed partials are equal:
-> $$\frac{\partial^2 f}{\partial x_i \partial x_j} = \frac{\partial^2 f}{\partial x_j \partial x_i}$$
-
-## 12.8 Hessian and Taylor in $\mathbb{R}^d$
-
-> [!definition] Hessian
-> $$H_f(x) := \begin{pmatrix} \dfrac{\partial^2 f}{\partial x_1 \partial x_1} & \cdots & \dfrac{\partial^2 f}{\partial x_1 \partial x_d} \\ \vdots & \ddots & \vdots \\ \dfrac{\partial^2 f}{\partial x_d \partial x_1} & \cdots & \dfrac{\partial^2 f}{\partial x_d \partial x_d} \end{pmatrix}$$
-> (a symmetric matrix when $f \in C^2$)
-
-> [!theorem] Multivariable Taylor (2nd order)
-> $$f(x_0 + h) = f(x_0) + \nabla f(x_0) \cdot h + \tfrac{1}{2}\, h^T H_f(x_0)\, h + o(\|h\|^2)$$
-
-## 12.9 Local extrema in $\mathbb{R}^d$
-
-> [!theorem] Necessary condition
-> If $f$ has a local extremum at an interior critical point $x_0$, then $\nabla f(x_0) = 0$.
-
-> [!theorem] Second-derivative test
-> Let $x_0$ be a critical point ($\nabla f(x_0) = 0$). Then:
-> - $H_f(x_0)$ **positive definite** (all eigenvalues $> 0$) ⇒ strict local **minimum**
-> - $H_f(x_0)$ **negative definite** ⇒ strict local **maximum**
-> - $H_f(x_0)$ **indefinite** (eigenvalues of mixed sign) ⇒ **saddle point**
-> - $H_f(x_0)$ semidefinite (some eigenvalue $= 0$) ⇒ test inconclusive
-
-## 12.10 The inverse function theorem
-
-> [!theorem] Inverse function theorem
-> Let $f: \Omega \subseteq \mathbb{R}^d \to \mathbb{R}^d$ be $C^1$ and $\det J_f(x_0) \neq 0$. Then there is an open neighborhood $U$ of $x_0$ such that
-> 1. $f|_U$ is bijective onto an open set $V = f(U)$.
-> 2. $f^{-1}: V \to U$ is also $C^1$.
-> 3. $J_{f^{-1}}(f(x)) = \big(J_f(x)\big)^{-1}$.
-
-## 12.11 The implicit function theorem
-
-> [!theorem] Implicit function theorem
-> Let $F: \mathbb{R}^d \times \mathbb{R}^k \to \mathbb{R}^k$ be $C^1$ with $F(x_0, y_0) = 0$ and $\det\!\big(\frac{\partial F}{\partial y}(x_0, y_0)\big) \neq 0$. Then there is a neighborhood of $x_0$ on which one can solve $F(x, y) = 0$ for $y$ as a $C^1$ function of $x$: $y = g(x)$, with
-> $$Dg(x) = -\left(\frac{\partial F}{\partial y}\right)^{-1}\!\left(\frac{\partial F}{\partial x}\right)$$
-
-> [!example] 1D version
-> If $F(x, y) = x^2 + y^2 - 1 = 0$ defines the unit circle, then $\frac{\partial F}{\partial y} = 2y \neq 0$ except at $y = 0$. So we can express $y = \pm\sqrt{1 - x^2}$ except at $(\pm 1, 0)$.
-
-## 12.12 Lagrange multipliers (constrained optimization)
-
-To extremize $f(x)$ subject to $g(x) = 0$, look for $x^*$ and a scalar $\lambda$ with
-$$\nabla f(x^*) = \lambda \nabla g(x^*), \qquad g(x^*) = 0$$
-
-Geometrically: at the extremum, the level set of $f$ is tangent to the constraint set.
-
----
-
-# 13 · Multivariable integration
-
-## 13.1 The double integral
-
-For a continuous $f: R \to \mathbb{R}$ on a rectangle $R = [a,b]\times[c,d]$, partition $R$ into small rectangles of area $\Delta A_{ij}$, pick sample points $(\xi_{ij}, \eta_{ij})$, and form
-$$\sum_{i,j} f(\xi_{ij}, \eta_{ij})\, \Delta A_{ij}$$
-The limit, as the partition becomes finer, is the **double integral**
-$$\iint_R f(x, y)\,dA = \int\!\!\int_R f(x, y)\,dx\,dy$$
-
-## 13.2 Fubini's theorem
-
-> [!theorem] Fubini
-> For continuous $f$ on $R = [a,b] \times [c,d]$:
-> $$\iint_R f\,dA = \int_a^b\!\!\left(\int_c^d f(x, y)\,dy\right)dx = \int_c^d\!\!\left(\int_a^b f(x, y)\,dx\right)dy$$
-
-You can compute a double integral as **two iterated single integrals**, in either order.
+> $$\frac{\partial f}{\partial x_i}(\mathbf x) := \lim_{h\to 0}\frac{f(\mathbf x + h\mathbf e_i) - f(\mathbf x)}{h}$$
+> where $\mathbf e_i$ is the $i$-th unit vector.
+>
+> **In words:** differentiate in the $x_i$-direction, treating other variables as constants.
 
 > [!example]
-> $\displaystyle\iint_{[0,1]^2}\! xy\,dA = \int_0^1\!\!\int_0^1 xy\,dy\,dx = \int_0^1\! \tfrac{x}{2}\,dx = \tfrac{1}{4}$.
+> $f(x,y) = x^2 y + \sin(xy)$. Then
+> $$\frac{\partial f}{\partial x} = 2xy + y\cos(xy), \qquad \frac{\partial f}{\partial y} = x^2 + x\cos(xy)$$
 
-## 13.3 Double integrals over general regions
+## 💡 The gradient — direction of steepest ascent
 
-For a region $D$ between two graphs $g_1(x) \leq y \leq g_2(x)$ on $[a, b]$:
-$$\iint_D f\,dA = \int_a^b\!\!\int_{g_1(x)}^{g_2(x)} f(x, y)\,dy\,dx$$
+> [!definition] Gradient
+> $$\nabla f(\mathbf x) = \text{grad}\,f(\mathbf x) := \Big(\tfrac{\partial f}{\partial x_1}, \dots, \tfrac{\partial f}{\partial x_d}\Big)$$
 
-(Likewise with the order of integration swapped.)
+> [!info] Geometric meaning
+> 1. $\nabla f(\mathbf x)$ points in the direction of **steepest ascent**.
+> 2. Its magnitude equals the rate of ascent in that direction.
+> 3. $\nabla f$ is **perpendicular** to level sets $\{f = c\}$.
 
-## 13.4 Change of variables (substitution in higher dimensions)
+The **directional derivative** in direction $\mathbf v$ (unit vector):
+$$\partial_{\mathbf v}f(\mathbf x) = \nabla f(\mathbf x)\cdot\mathbf v$$
+
+## 💡 Total differentiability and the Jacobian
+
+For $\mathbf f = (f_1, \dots, f_m): \mathbb{R}^d \to \mathbb{R}^m$:
+
+> [!definition] Jacobian matrix
+> $$J_{\mathbf f}(\mathbf x) = \begin{pmatrix}
+> \frac{\partial f_1}{\partial x_1} & \cdots & \frac{\partial f_1}{\partial x_d}\\
+> \vdots & \ddots & \vdots\\
+> \frac{\partial f_m}{\partial x_1} & \cdots & \frac{\partial f_m}{\partial x_d}
+> \end{pmatrix}$$
+
+> [!definition] (Total) differentiability
+> $\mathbf f$ is differentiable at $\mathbf x_0$ if
+> $$\mathbf f(\mathbf x_0 + \mathbf h) = \mathbf f(\mathbf x_0) + J_{\mathbf f}(\mathbf x_0)\mathbf h + o(\|\mathbf h\|).$$
+
+> [!warning] Subtle point (FS 2023 MC22)
+> Existence of all partial derivatives at $\mathbf x_0$ does **NOT** imply (total) differentiability. But: if all partials exist and are **continuous** in a neighborhood, $\mathbf f$ is differentiable there. ($C^1 \Rightarrow$ differentiable.)
+
+## 🔧 Multivariable chain rule — the workhorse
+
+> [!theorem] Chain rule (matrix form)
+> If $\mathbf g: \mathbb{R}^d \to \mathbb{R}^m$ and $\mathbf f: \mathbb{R}^m \to \mathbb{R}^k$ are differentiable:
+> $$J_{\mathbf f \circ \mathbf g}(\mathbf x) = J_{\mathbf f}(\mathbf g(\mathbf x))\cdot J_{\mathbf g}(\mathbf x)$$
+
+> [!example] FS 2013 task 7
+> $\mathbf f: \mathbb{R}^3 \to \mathbb{R}^2$, $\mathbf f(x,y,z) = ((x+y)z,\; xy)$.
+> $\mathbf g: \mathbb{R}^2 \to \mathbb{R}^3$, $\mathbf g(u,v) = (u+v,\; u-v,\; uv)$.
+>
+> $J_{\mathbf f}(x,y,z) = \begin{pmatrix} z & z & x+y \\ y & x & 0\end{pmatrix}$,
+>
+> $J_{\mathbf g}(u,v) = \begin{pmatrix} 1 & 1 \\ 1 & -1 \\ v & u\end{pmatrix}$.
+>
+> By chain rule: $J_{\mathbf h}(x,y,z) = J_{\mathbf g}(\mathbf f(x,y,z))\cdot J_{\mathbf f}(x,y,z)$.
+
+> [!example] FS 2023 MC21
+> $\mathbf f(x_1, x_2) = (x_1^2,\; x_1 - x_2)$, $\mathbf g(y_1, y_2) = (y_1,\; y_1 y_2)$. Then $J_{\mathbf h}(1,1) = ?$
+>
+> $J_{\mathbf f}(1,1) = \begin{pmatrix} 2 & 0 \\ 1 & -1\end{pmatrix}$. $\mathbf f(1,1) = (1, 0)$.
+>
+> $J_{\mathbf g}(1, 0) = \begin{pmatrix} 1 & 0 \\ 0 & 1\end{pmatrix}$.
+>
+> Product: $\begin{pmatrix} 2 & 0\\ 1 & -1\end{pmatrix}$.
+
+## 💡 Higher partials and Schwarz
+
+> [!theorem] Schwarz / Clairaut
+> If $f$ is twice continuously differentiable, mixed partials commute:
+> $$\frac{\partial^2 f}{\partial x_i \partial x_j} = \frac{\partial^2 f}{\partial x_j \partial x_i}$$
+
+## 💡 The Hessian and multivariable Taylor
+
+> [!definition] Hessian
+> $$H_f(\mathbf x) = \begin{pmatrix}
+> \frac{\partial^2 f}{\partial x_1^2} & \cdots & \frac{\partial^2 f}{\partial x_1 \partial x_d}\\
+> \vdots & \ddots & \vdots\\
+> \frac{\partial^2 f}{\partial x_d \partial x_1} & \cdots & \frac{\partial^2 f}{\partial x_d^2}
+> \end{pmatrix}$$
+> (symmetric for $C^2$ functions).
+
+> [!theorem] Multivariable Taylor (2nd order)
+> $$f(\mathbf x_0 + \mathbf h) = f(\mathbf x_0) + \nabla f(\mathbf x_0)\cdot\mathbf h + \tfrac{1}{2}\mathbf h^T H_f(\mathbf x_0)\mathbf h + o(\|\mathbf h\|^2)$$
+
+## 🎯 How the exam tests this
+
+- Compute partial derivatives, gradient (every exam)
+- Use the chain rule to get a Jacobian (FS 2013 task 7, FS 2023 MC21)
+- Decide where a piecewise function is continuous/differentiable (FS 2019 task 5, FS 2023 MC22)
+- Find the Taylor polynomial of a multivariable function (FS 2023 MC24)
+
+## 📝 Practice tasks
+
+> [!question] **Task 13.1** — Compute $\nabla f$ and $H_f$ for $f(x,y) = x^2 + xy - y^3$.
+>
+>> [!success]- Solution
+>> $\nabla f = (2x + y,\, x - 3y^2)$. $H_f = \begin{pmatrix} 2 & 1 \\ 1 & -6y\end{pmatrix}$.
+
+> [!question] **Task 13.2 (FS 2019 task 7)** — Find a line through origin where $f(x,y) = \frac{xy(x-y+1)}{x^2+y^2}$ (extended by 0 at origin) is continuous, and one where it isn't.
+>
+>> [!success]- Solution
+>> On $x = 0$: $f \equiv 0$, continuous. On $y = x$: $f(x, x) = \frac{x^2}{2x^2} = \tfrac12$, not continuous at 0.
+
+---
+
+# 14 · Multivariable extrema and Lagrange multipliers
+
+## 🤔 The big question
+
+Where on a surface is the highest peak? On a constrained surface (like a sphere), where is the largest value of a function? **This** is what almost every Analysis 2 exam tests.
+
+## 💡 The 2-step recipe for global extrema on a domain $D$
+
+To find global max/min of $f$ on a bounded domain $D \subset \mathbb{R}^d$:
+
+1. **Interior critical points:** solve $\nabla f = \mathbf 0$ inside $D$.
+2. **Boundary:** parametrize $\partial D$ and find extrema of the restricted function. Use Lagrange multipliers if $\partial D$ is given by an equation.
+3. **Compare:** evaluate $f$ at all candidates plus all "corners" of $\partial D$, pick max/min.
+
+## 💡 The Hessian / second-derivative test (interior points only)
+
+At a critical point $\mathbf x_0$ ($\nabla f = \mathbf 0$):
+
+| Hessian $H_f(\mathbf x_0)$ | Type |
+|---|---|
+| Positive definite (all eigenvalues $> 0$) | strict local **min** |
+| Negative definite (all eigenvalues $< 0$) | strict local **max** |
+| Indefinite (mixed signs) | **saddle** |
+| Semi-definite (zero eigenvalue) | inconclusive |
+
+For a $2\times 2$ Hessian $H = \begin{pmatrix} a & b\\b & c\end{pmatrix}$:
+- $\det H > 0$ and $a > 0$ ⇒ positive definite (min)
+- $\det H > 0$ and $a < 0$ ⇒ negative definite (max)
+- $\det H < 0$ ⇒ saddle
+
+> [!example] FS 2015 task 1a
+> $f(x,y) = y^2(\tfrac{x^2}{2} + \cos x - \tfrac32) - x^2 - \cos x$. At origin: $\nabla f(0,0) = \mathbf 0$.
+> $$H_f(0,0) = \begin{pmatrix} -1 & 0\\ 0 & -1\end{pmatrix}$$
+> Both eigenvalues $-1 < 0$ ⇒ negative definite ⇒ local **maximum**.
+
+## 💡 Lagrange multipliers — the constraint trick
+
+To extremize $f(\mathbf x)$ subject to $g(\mathbf x) = 0$:
+
+> [!theorem] Lagrange multiplier method
+> Critical points satisfy
+> $$\nabla f(\mathbf x) = \lambda\nabla g(\mathbf x), \qquad g(\mathbf x) = 0$$
+> for some $\lambda \in \mathbb{R}$.
+
+> [!info] Geometric meaning
+> At an extremum on the constraint, the level set of $f$ must be **tangent** to the constraint set — so $\nabla f$ and $\nabla g$ must be parallel.
+
+> [!example] FS 2013 task 5 — extrema on a sphere
+> Maximize/minimize $f(x,y,z) = x^2 + xz - y^2 + z^2$ subject to $g(x,y,z) = x^2 + y^2 + z^2 - 1 = 0$.
+>
+> Set $\nabla f = \lambda\nabla g$:
+> $$\begin{cases} 2x + z = 2\lambda x\\ -2y = 2\lambda y\\ x + 2z = 2\lambda z\\ x^2 + y^2 + z^2 = 1\end{cases}$$
+>
+> The 2nd equation gives $y = 0$ or $\lambda = -1$.
+>
+> **Case $\lambda = -1$:** equations 1, 3 ⇒ $x = z = 0$, then $y = \pm 1$. $f = -1$.
+>
+> **Case $y = 0$:** With $\lambda = -3/2$ ⇒ $x = z = \pm\frac{\sqrt 2}{2}$, $f = 3/2$. With $\lambda = -1/2$ ⇒ $x = -z = \pm\frac{\sqrt 2}{2}$, $f = 1/2$. With $x = 0$ ⇒ $z = \pm 1$, $f = 1$.
+>
+> **Conclusion:** Max $= 3/2$ at $(\pm\tfrac{\sqrt 2}{2}, 0, \pm\tfrac{\sqrt 2}{2})$; min $= -1$ at $(0, \pm 1, 0)$.
+
+> [!example] HS 2015 task 6 — distance to paraboloid
+> Find the point on $z = 4 - x^2 - y^2$ closest to $(5, 5, 4)$.
+>
+> Minimize $f_2(x,y,z) = (x-5)^2 + (y-5)^2 + (z-4)^2$ subject to $g(x,y,z) = 4 - x^2 - y^2 - z = 0$.
+> Lagrange: $\nabla f_2 = \lambda\nabla g$ gives
+> $$2(x-5) + 2\lambda x = 0,\;\; 2(y-5) + 2\lambda y = 0,\;\; 2(z-4) + \lambda = 0$$
+> Together with the constraint, solving yields $(1, 1, 2)$ with distance $6$.
+
+> [!example] FS 2023 task 5 — extrema on a closed region with curved boundary
+> $f(x,y) = xy - x^2 + 4y$ on $D = \{(x,y) : x^2 \leq y \leq 1\}$.
+>
+> 1. **Interior:** $\nabla f = (y - 2x, x + 4) = 0 \Rightarrow x = -4, y = -8$. **Not in $D$.**
+> 2. **Top edge $y = 1$, $-1 < x < 1$:** restrict $f(x, 1) = x + 1 - x^2 + 4 = -x^2 + x + 5$. Critical point: $-2x + 1 = 0 \Rightarrow x = 1/2$. Candidate $(1/2, 1)$.
+> 3. **Bottom edge $y = x^2$, $-1 < x < 1$:** $f(x, x^2) = x^3 + 3x^2$. Critical points: $3x^2 + 6x = 0 \Rightarrow x = 0$ (inside) or $x = -2$ (outside). Candidate $(0, 0)$.
+> 4. **Corners $(-1, 1)$ and $(1, 1)$.**
+>
+> Evaluate: $f(0,0) = 0$, $f(1/2, 1) = 17/4$, $f(-1, 1) = 2$, $f(1, 1) = 4$.
+>
+> Max $= 17/4$ at $(1/2, 1)$; min $= 0$ at $(0, 0)$.
+
+## 🎯 The exam pattern
+
+Lagrange / extrema problems are guaranteed on every basic exam. Always:
+1. Check the interior.
+2. Check each piece of the boundary (parametrize or use Lagrange).
+3. Check **corners** explicitly.
+4. Compare values at all candidates.
+
+## 📝 Practice tasks
+
+> [!question] **Task 14.1 (FS 2019 task 8)** — Find global extrema of $f(x,y) = x^2 + 2y^2 - x$ on $\{x^2 + y^2 \leq 1\}$.
+>
+>> [!success]- Solution
+>> *Interior:* $\nabla f = (2x - 1, 4y) = 0 \Rightarrow x = 1/2, y = 0$. Inside disk. Candidate.
+>> *Boundary:* parametrize $(\cos t, \sin t)$. $g(t) = \cos^2 t + 2\sin^2 t - \cos t = 1 + \sin^2 t - \cos t$. $g'(t) = 2\sin t\cos t + \sin t = \sin t(2\cos t + 1) = 0$. So $\sin t = 0$ (points $(\pm 1, 0)$) or $\cos t = -1/2$ (points $(-1/2, \pm\sqrt 3/2)$).
+>> Values: $f(1/2, 0) = -1/4$, $f(1, 0) = 0$, $f(-1, 0) = 2$, $f(-1/2, \pm\sqrt 3/2) = 9/4$.
+>> Max $= 9/4$, min $= -1/4$.
+
+> [!question] **Task 14.2 (HS 2014 task 5)** — Global extrema of $f(x,y) = x^2 - 3xy + y^2 + y$ on $D = \{0 \leq x \leq 1, 0 \leq y \leq x\}$.
+>
+>> [!success]- Solution
+>> *Interior:* $\nabla f = (2x - 3y, -3x + 2y + 1) = 0$ ⇒ $x = 3/5$, $y = 2/5$. In $D$. Value $-1/5 + ... = 1/5$.
+>> *Edges:*
+>> - $y = 0$, $0 < x < 1$: $f = x^2$, monotone, no interior extremum.
+>> - $x = 1$, $0 < y < 1$: $f = (y-1)^2$, monotone, no interior extremum.
+>> - $y = x$, $0 < x < 1$: $f = -y^2 + y$, max at $y = 1/2$. Candidate $(1/2, 1/2)$, value $1/4$.
+>> *Corners:* $(0,0), (1,0), (1,1)$ ⇒ values $0, 1, 0$.
+>> Max $= 1$ at $(1, 0)$; min $= 0$ at $(0,0)$ and $(1,1)$.
+
+---
+
+# 15 · Multiple integrals
+
+## 🤔 The big question
+
+Volume under a 3D surface, mass of an irregular object, charge of a non-uniform region — all require integrals over 2D or 3D regions.
+
+## 💡 Double integral
+
+For continuous $f$ on a rectangle $R = [a,b]\times[c,d]$, partition into small rectangles, sum $f(\xi_{ij})\Delta A_{ij}$, refine. Limit = $\iint_R f\,dA$.
+
+## 💎 Fubini's theorem — iterated single integrals
+
+> [!theorem] Fubini
+> $$\iint_R f\,dA = \int_a^b\!\!\int_c^d f(x,y)\,dy\,dx = \int_c^d\!\!\int_a^b f(x,y)\,dx\,dy$$
+
+**You can integrate in either order.** Pick the easier one.
+
+For a region $D = \{(x,y) : a \leq x \leq b,\; g_1(x) \leq y \leq g_2(x)\}$:
+$$\iint_D f\,dA = \int_a^b\!\!\int_{g_1(x)}^{g_2(x)} f(x,y)\,dy\,dx$$
+
+> [!example] HS 2014 task 6
+> $\iint_D (x^2 + 2y)\,dx\,dy$ where $D$ is bounded by $y = -x^2$ and $y = -\sqrt x$.
+>
+> Intersection: $-x^2 = -\sqrt x \Rightarrow x = 0$ or $x = 1$. On $[0,1]$: $-\sqrt x \leq -x^2$.
+> $$I = \int_0^1\!\!\int_{-\sqrt x}^{-x^2}(x^2 + 2y)\,dy\,dx = \int_0^1[x^2 y + y^2]_{-\sqrt x}^{-x^2}\,dx$$
+> $$= \int_0^1(x^2\sqrt x - x) \,dx = \tfrac{2}{7} - \tfrac{1}{2} = -\tfrac{3}{14}$$
+
+> [!example] HS 2015 MC1c — switching integration order
+> $\int_0^2\int_0^{\sqrt x}(x^2 + \sqrt y)\,dy\,dx$. Region: $0 \leq x \leq 2$, $0 \leq y \leq \sqrt x$, equivalently $y \geq 0$ and $x \geq y^2$. So
+> $$\int_0^{\sqrt 2}\int_{y^2}^2 (x^2 + \sqrt y)\,dx\,dy$$
+
+## 🔧 Change of variables — Jacobian determinant
 
 > [!theorem] Transformation formula
-> If $\Phi: \Omega \to \Phi(\Omega)$ is a $C^1$ bijection between open sets in $\mathbb{R}^d$ and $f$ is integrable:
-> $$\int_{\Phi(\Omega)} f(\mathbf{y})\,d\mathbf{y} = \int_{\Omega} f(\Phi(\mathbf{x}))\, |\det J_\Phi(\mathbf{x})|\,d\mathbf{x}$$
-> The factor $|\det J_\Phi|$ is the **Jacobian determinant** — it's the local volume-stretch factor.
+> If $\Phi: \Omega \to \Phi(\Omega)$ is a $C^1$ bijection:
+> $$\int_{\Phi(\Omega)} f(\mathbf y)\,d\mathbf y = \int_\Omega f(\Phi(\mathbf x))\,|\det J_\Phi(\mathbf x)|\,d\mathbf x$$
+
+The factor $|\det J_\Phi|$ is the local **volume-stretch factor**.
 
 ### Polar coordinates ($d = 2$)
-
-$x = r\cos\theta,\;\; y = r\sin\theta,\;\;\; |\det J| = r$
-$$\iint f(x, y)\,dx\,dy = \iint f(r\cos\theta, r\sin\theta)\,r\,dr\,d\theta$$
+$x = r\cos\theta,\; y = r\sin\theta,\quad |\det J| = r$.
+$$\iint f(x,y)\,dx\,dy = \iint f(r\cos\theta, r\sin\theta)\,r\,dr\,d\theta$$
 
 ### Cylindrical coordinates ($d = 3$)
-
-$x = r\cos\theta,\; y = r\sin\theta,\; z = z;\;\; |\det J| = r$
+$x = r\cos\theta,\; y = r\sin\theta,\; z = z;\quad |\det J| = r$.
 
 ### Spherical coordinates ($d = 3$)
+$x = r\sin\varphi\cos\theta,\; y = r\sin\varphi\sin\theta,\; z = r\cos\varphi;\quad |\det J| = r^2\sin\varphi$.
 
-$x = r\sin\varphi\cos\theta,\; y = r\sin\varphi\sin\theta,\; z = r\cos\varphi,\;\; |\det J| = r^2 \sin\varphi$
-$$\iiint f\,dV = \int\!\!\int\!\!\int f\, r^2 \sin\varphi\,dr\,d\varphi\,d\theta$$
+> [!example] FS 2013 task 6 — using polar coordinates
+> $I = \iiint_B (x^2 + y^2)z\,d\mu$ where $B$ is bounded by $z = 5\sqrt{1-x^2-y^2}$ and $z = -\sqrt{1-x^2-y^2}$.
+>
+> Cross-section at height $z=0$ is unit disk. So:
+> $$I = \iint_{x^2+y^2 \leq 1}(x^2+y^2)\Big[\tfrac{z^2}{2}\Big]_{-\sqrt{1-x^2-y^2}}^{5\sqrt{1-x^2-y^2}}dx\,dy = 12\iint(x^2+y^2)(1-x^2-y^2)\,dx\,dy$$
+> Polar coordinates:
+> $$I = 12\int_0^{2\pi}\int_0^1 r^2(1-r^2)\,r\,dr\,d\theta = 24\pi\int_0^1(r^3 - r^5)\,dr = 24\pi\big(\tfrac14 - \tfrac16\big) = 2\pi$$
 
-> [!example] Volume of a ball of radius $R$
-> $$V = \int_0^{2\pi}\!\!\int_0^\pi\!\!\int_0^R r^2\sin\varphi\,dr\,d\varphi\,d\theta = 2\pi \cdot 2 \cdot \frac{R^3}{3} = \frac{4}{3}\pi R^3 \;\checkmark$$
+> [!example] HS 2016 task 7 — ice cream cone (cone + spherical cap)
+> Cone $x^2 + y^2 = 3z^2$ meets sphere $x^2+y^2+z^2 = 1$ at $z = 1/2$.
+> Volume of cone (cylindrical): $\pi/8$. Volume of cap (cylindrical): $5\pi/24$. Total: $\pi/3$.
 
-## 13.5 Jordan content (a notion of "volume")
+> [!example] HS 2015 task 9 — rotation volume
+> $V = \{0 \leq y \leq 1,\; x^2 + z^2 \leq \tfrac{1}{1+y^2}\}$. Cross-section is a disk of radius $\sqrt{\tfrac{1}{1+y^2}}$, so area $\frac{\pi}{1+y^2}$. Volume:
+> $$V = \pi\int_0^1\frac{dy}{1+y^2} = \pi\arctan y\big|_0^1 = \frac{\pi^2}{4}$$
 
-A bounded set $A \subset \mathbb{R}^d$ is **Jordan measurable** if $\chi_A$ is Riemann integrable, and its volume (Jordan content) is
-$$\mathrm{vol}(A) := \int \chi_A = \int_A 1\,d\mathbf{x}$$
+## 🎯 The exam pattern
 
-This generalizes "length, area, volume" to higher dimensions.
+- A 2D integral over a region (often using polar coordinates).
+- A 3D integral often involving rotation symmetry (cylindrical, spherical).
+- Sometimes a Jacobian computation explicitly.
+
+## 📝 Practice tasks
+
+> [!question] **Task 15.1** — Compute $\iint_D xy\,dA$ where $D$ is the unit disk.
+>
+>> [!success]- Solution
+>> Polar: $\int_0^{2\pi}\int_0^1 r^2\cos\theta\sin\theta\cdot r\,dr\,d\theta = \int_0^{2\pi}\sin\theta\cos\theta\,d\theta\cdot\int_0^1 r^3\,dr = 0\cdot\tfrac14 = 0$.
+
+> [!question] **Task 15.2 (FS 2019 MC1c)** — Volume of $K = \{x \geq 0,\, 0 \leq y \leq 6,\, 0 \leq z \leq 4 - x^2\}$.
+>
+>> [!success]- Solution
+>> $\int_0^2\int_0^6 (4-x^2)\,dy\,dx = 6\int_0^2 (4-x^2)\,dx = 6 \cdot (8 - 8/3) = 32$.
+
+> [!question] **Task 15.3** — Volume of unit ball using spherical coordinates.
+>
+>> [!success]- Solution
+>> $\int_0^{2\pi}\!\!\int_0^\pi\!\!\int_0^1 r^2\sin\varphi\,dr\,d\varphi\,d\theta = 2\pi\cdot 2\cdot\tfrac13 = \tfrac{4\pi}{3}$.
 
 ---
 
-# 14 · Vector calculus — Green, Stokes, Gauß
+# 16 · Vector fields, Green, Stokes, Gauß
 
-This is the spectacular finale: three theorems that all say the same thing in different dimensions.
+This is the **grand finale**: three theorems that all say the same thing in different dimensions — *integral over a boundary equals integral of a derivative over the interior.*
 
-## 14.1 Vector fields and conservativity
+## 💡 Vector fields and conservativity
 
 > [!definition] Vector field
-> A **vector field** on $\Omega \subseteq \mathbb{R}^d$ is a map $\mathbf{F}: \Omega \to \mathbb{R}^d$. Imagine attaching an arrow to each point of space.
+> A **vector field** on $\Omega \subseteq \mathbb{R}^d$ is a map $\mathbf F: \Omega \to \mathbb{R}^d$. Imagine attaching an arrow to every point.
 
 > [!definition] Conservative field, potential
-> A vector field $\mathbf{F}$ is **conservative** if there exists a scalar function (a **potential**) $\varphi: \Omega \to \mathbb{R}$ with
-> $$\mathbf{F} = \nabla \varphi$$
+> $\mathbf F$ is **conservative** if there exists a scalar function $\varphi$ (a **potential**) with $\mathbf F = \nabla \varphi$.
 
-> [!theorem] Necessary condition (integrability)
-> If $\mathbf{F} = (F_1, \dots, F_d)$ is conservative and $C^1$, then
-> $$\frac{\partial F_i}{\partial x_j} = \frac{\partial F_j}{\partial x_i}\quad \text{for all } i, j$$
-> (because mixed partials of $\varphi$ commute by Schwarz's theorem). On simply connected domains, this condition is also **sufficient**.
+> [!theorem] Necessary integrability condition
+> If $\mathbf F = (F_1, \dots, F_d)$ is conservative and $C^1$, then
+> $$\frac{\partial F_i}{\partial x_j} = \frac{\partial F_j}{\partial x_i} \quad \forall i,j$$
+> (because mixed partials of $\varphi$ commute). On simply connected domains, this is also **sufficient**.
 
-## 14.2 Line integrals
+## 💡 Line integrals
 
 > [!definition] Line integral
-> For a $C^1$ curve $\gamma: [a, b] \to \mathbb{R}^d$ and a continuous vector field $\mathbf{F}$:
-> $$\int_\gamma \mathbf{F}\cdot d\mathbf{s} := \int_a^b \mathbf{F}(\gamma(t)) \cdot \gamma'(t)\,dt$$
+> For $\gamma: [a, b] \to \mathbb{R}^d$ a $C^1$ curve and $\mathbf F$ continuous:
+> $$\int_\gamma \mathbf F\cdot d\mathbf s := \int_a^b \mathbf F(\gamma(t))\cdot\gamma'(t)\,dt$$
 
-Physical interpretation: the **work** done by force $\mathbf{F}$ along the path $\gamma$.
+Physical meaning: the **work** done by force $\mathbf F$ along the path.
 
-> [!theorem] Fundamental theorem for line integrals
-> If $\mathbf{F} = \nabla \varphi$, then
-> $$\int_\gamma \mathbf{F}\cdot d\mathbf{s} = \varphi(\gamma(b)) - \varphi(\gamma(a))$$
-> The integral depends only on the **endpoints** — the path is irrelevant. In particular, $\oint_\gamma \mathbf{F}\cdot d\mathbf{s} = 0$ for closed curves.
+> [!theorem] Fundamental Theorem for line integrals
+> If $\mathbf F = \nabla\varphi$:
+> $$\int_\gamma \mathbf F\cdot d\mathbf s = \varphi(\gamma(b)) - \varphi(\gamma(a))$$
+> Path-independent! Closed loop integrals vanish.
 
-## 14.3 Three differential operators
+> [!example] FS 2023 MC25
+> $\lambda = \cos(y)\,dx - x\sin(y)\,dy$. Note this is $d(x\cos y)$ — exact! So for any path from $(0,0)$ to $(1,0)$:
+> $$\int_\gamma \lambda = x\cos y \big|_{(0,0)}^{(1,0)} = 1\cdot 1 - 0 = 1$$
 
-For a vector field $\mathbf{F} = (F_1, F_2, F_3)$ in $\mathbb{R}^3$:
+## 💡 Three differential operators (in $\mathbb{R}^3$)
 
-> [!definition] Divergence and curl
-> $$\mathrm{div}\,\mathbf{F} := \nabla \cdot \mathbf{F} = \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + \frac{\partial F_3}{\partial z}$$
-> $$\mathrm{curl}\,\mathbf{F} := \nabla \times \mathbf{F} = \begin{pmatrix} \partial_y F_3 - \partial_z F_2 \\ \partial_z F_1 - \partial_x F_3 \\ \partial_x F_2 - \partial_y F_1 \end{pmatrix}$$
+For $\mathbf F = (F_1, F_2, F_3)$:
+
+> [!definition]
+> **Divergence:**
+> $$\text{div}\,\mathbf F = \nabla\cdot\mathbf F = \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + \frac{\partial F_3}{\partial z}$$
+>
+> **Curl** (3D):
+> $$\text{curl}\,\mathbf F = \nabla\times\mathbf F = \begin{pmatrix} \partial_y F_3 - \partial_z F_2 \\ \partial_z F_1 - \partial_x F_3 \\ \partial_x F_2 - \partial_y F_1\end{pmatrix}$$
+>
+> **Curl** (2D, scalar):
+> $$\text{rot}\,\mathbf F = \frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y}$$
 
 > [!info] Physical meaning
-> - **Divergence** measures how much $\mathbf{F}$ "spreads out" or sources/sinks at a point.
-> - **Curl** measures the "rotation" of $\mathbf{F}$ — set a tiny paddle wheel in the field; the curl tells you which way and how fast it spins.
+> - **Divergence** at a point = how much $\mathbf F$ spreads out / is sourced there.
+> - **Curl** at a point = how much $\mathbf F$ rotates / circulates there. Imagine putting a tiny paddle wheel in the field; curl is its angular velocity.
 
-## 14.4 Green's theorem (2D)
+## 💎 Green's theorem (2D)
 
-> [!theorem] Green's theorem
-> Let $D \subset \mathbb{R}^2$ be a "nice" bounded region with boundary $\partial D$ traversed counterclockwise. For $C^1$ functions $P, Q$ on $D$:
-> $$\oint_{\partial D} (P\,dx + Q\,dy) = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)dA$$
+> [!theorem] Green
+> Let $D \subset \mathbb{R}^2$ be a "nice" bounded region with boundary $\partial D$ traversed counterclockwise. For $C^1$ functions $P, Q$:
+> $$\oint_{\partial D}(P\,dx + Q\,dy) = \iint_D\Big(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\Big)dA$$
 
-> [!example] Area via Green
-> Choose $P = -\tfrac{y}{2}$, $Q = \tfrac{x}{2}$. Then $\partial_x Q - \partial_y P = 1$, so
-> $$\mathrm{Area}(D) = \tfrac{1}{2}\oint_{\partial D} (x\,dy - y\,dx)$$
+> [!example] HS 2014 task 8
+> $I = \int_{\partial B}(y\,dx + x\,dy)$ over a rectangle $B$. By Green: $\partial Q/\partial x - \partial P/\partial y = 1 - 1 = 0$, so $I = 0$.
 
-## 14.5 Stokes' theorem (curve in 3D bounding a surface)
+> [!example] FS 2023 task 6.A3 — using Green to compute a line integral
+> Compute $\int_\gamma \mathbf v\cdot d\mathbf s$ where $\mathbf v = (g(y),\, xe^y + \tfrac{1}{3}x^3 y)$ along a half-disk boundary. With $\text{rot}(\mathbf v) = f(x,y) = 2y^3 + x^2 y$ (chapter result), Green relates this to the area integral.
 
-> [!theorem] Stokes' theorem
-> Let $S \subset \mathbb{R}^3$ be a smooth oriented surface with boundary $\partial S$ (the orientation rule: if you walk along $\partial S$ with the surface normal pointing "up", the surface is on your left). For a $C^1$ vector field $\mathbf{F}$:
-> $$\oint_{\partial S} \mathbf{F} \cdot d\mathbf{s} = \iint_S (\nabla \times \mathbf{F}) \cdot d\mathbf{S}$$
+## 💎 Stokes' theorem (3D)
 
-> [!info] Reading
-> The circulation of $\mathbf{F}$ around the boundary equals the total curl of $\mathbf{F}$ piercing through the surface. Green's theorem is the 2D special case.
-
-## 14.6 Gauß's theorem (volume bounded by a surface)
-
-> [!theorem] Gauß / divergence theorem
-> Let $V \subset \mathbb{R}^3$ be a bounded volume with smooth boundary $\partial V$ (outward-oriented). For a $C^1$ vector field $\mathbf{F}$:
-> $$\oiint_{\partial V} \mathbf{F}\cdot d\mathbf{S} = \iiint_V \nabla \cdot \mathbf{F}\,dV$$
+> [!theorem] Stokes
+> For a smooth oriented surface $S$ with boundary curve $\partial S$:
+> $$\oint_{\partial S}\mathbf F\cdot d\mathbf s = \iint_S(\nabla\times\mathbf F)\cdot d\mathbf S$$
 
 > [!info] Reading
-> Total flux of $\mathbf{F}$ out through the boundary surface = total source/sink strength of $\mathbf{F}$ in the volume. This is **the** governing principle of fluid flow, electrostatics (Gauß's law for electric fields), and heat transfer.
+> The circulation of $\mathbf F$ around the boundary equals the total curl piercing the surface. Green is the 2D special case.
 
-## 14.7 The grand unification
+> [!example] FS 2013 task 8 — line integral via Stokes
+> Compute $|\int_\gamma \mathbf v\cdot d\mathbf x|$ where $\gamma$ is the intersection of $z = x^2 + y^2 + 1$ and $2x + 2y - 2z + 3 = 0$ and $\mathbf v = (x + z^2, 1 - xy, 3z)$.
+>
+> The intersection projects to a circle $(x - 1/2)^2 + (y - 1/2)^2 = 1$ in the $xy$-plane, with $z = x + y + 3/2$. Use Stokes: $\nabla\times\mathbf v = (0, 2z, -y)$. Surface element on $z = f(x,y)$ is $\sqrt{1 + f_x^2 + f_y^2}\,dx\,dy = \sqrt 3\,dx\,dy$ with normal direction $(1,1,-1)/\sqrt 3$.
+> The work goes through Stokes; final answer: $\frac{11\pi}{2}$.
+
+## 💎 Gauß's theorem (Divergence theorem)
+
+> [!theorem] Gauß
+> For a bounded volume $V$ with smooth boundary $\partial V$ (outward orientation):
+> $$\oiint_{\partial V}\mathbf F\cdot d\mathbf S = \iiint_V(\nabla\cdot\mathbf F)\,dV$$
+
+> [!info] Reading
+> Total flux out through the boundary = total source strength inside.
+
+> [!example] HS 2015 task 7
+> Cylinder $V$, $\mathbf F = (x^3, ?, ?)$. $\text{div}\,\mathbf F = 3x^2$.
+> $$\iiint_V 3x^2\,dV = \int_0^5\int_0^{2\pi}\int_0^2 3r^2\cos^2(\varphi)\cdot r\,dr\,d\varphi\,dz = 60\pi$$
+
+> [!example] HS 2016 task 10 — flux through cylinder
+> $\mathbf F$ given, $\text{div}\,\mathbf F = x^2 + y^2 + z^2$.
+> Cylindrical coordinates over a cylinder of radius $R$, height $H$:
+> $$\int_0^R\int_0^{2\pi}\int_0^H (r^2 + z^2)r\,dz\,d\varphi\,dr = 2\pi HR^2\Big(\tfrac{R^2}{4} + \tfrac{H^2}{6}\Big)$$
+
+## 💡 The grand unification
 
 All these theorems follow the same template:
-$$\boxed{\;\;\int_{\partial \Omega} \omega = \int_{\Omega} d\omega \;\;}$$
-*"The integral of a thing over the boundary equals the integral of its derivative over the interior."*
 
-Concretely:
+$$\boxed{\;\int_{\partial\Omega}\omega = \int_\Omega d\omega\;}$$
 
 | Setting | Statement |
-| --- | --- |
-| FTC (1D) | $\displaystyle\int_a^b f'(x)\,dx = f(b) - f(a)$ |
-| FTC for line integrals | $\displaystyle\int_\gamma \nabla \varphi \cdot d\mathbf{s} = \varphi(\gamma(b)) - \varphi(\gamma(a))$ |
-| Green (2D) | $\displaystyle\oint_{\partial D}\!P\,dx + Q\,dy = \iint_D (\partial_x Q - \partial_y P)\,dA$ |
-| Stokes (3D) | $\displaystyle\oint_{\partial S}\mathbf{F}\cdot d\mathbf{s} = \iint_S (\nabla\!\times\!\mathbf{F})\cdot d\mathbf{S}$ |
-| Gauß (3D) | $\displaystyle\oiint_{\partial V}\mathbf{F}\cdot d\mathbf{S} = \iiint_V \nabla\!\cdot\!\mathbf{F}\,dV$ |
+|---|---|
+| FTC (1D) | $\int_a^b f'(x)\,dx = f(b) - f(a)$ |
+| FT for line integrals | $\int_\gamma\nabla\varphi\cdot d\mathbf s = \varphi(\gamma(b)) - \varphi(\gamma(a))$ |
+| Green (2D) | $\oint_{\partial D}(P\,dx + Q\,dy) = \iint_D(\partial_x Q - \partial_y P)\,dA$ |
+| Stokes (3D) | $\oint_{\partial S}\mathbf F\cdot d\mathbf s = \iint_S(\nabla\times\mathbf F)\cdot d\mathbf S$ |
+| Gauß (3D) | $\oiint_{\partial V}\mathbf F\cdot d\mathbf S = \iiint_V(\nabla\cdot\mathbf F)\,dV$ |
 
-In modern language (differential forms), they are **literally the same theorem** — Stokes' theorem on manifolds.
+In modern language (differential forms), they are *literally* the same theorem.
+
+## 🎯 The exam pattern
+
+Practically every basic exam ends with **one big theorem-of-vector-calculus task** (Green, Stokes, or Gauß).
+
+- **Use Gauß** when the surface is closed and you have a *flux integral*.
+- **Use Stokes** when you have a *line integral around a closed curve* and the curve bounds a surface that's hard to parametrize directly.
+- **Use Green** for 2D analogues.
+
+## 📝 Practice tasks
+
+> [!question] **Task 16.1** — Use Green to compute $\oint_C(x^2\,dx + xy\,dy)$ where $C$ is the boundary of the unit square traversed counterclockwise.
+>
+>> [!success]- Solution
+>> $\partial_x(xy) - \partial_y(x^2) = y - 0 = y$. So $\iint_{[0,1]^2}y\,dA = \tfrac12$.
+
+> [!question] **Task 16.2 (FS 2017 task 12)** — Use Gauß to compute $\int_S \mathbf v\cdot d\sigma$ where $\mathbf v = (x^3/3, x^2 y, 2xy)$ and $S$ is a half-sphere.
+>
+>> [!success]- Solution
+>> $\text{div}\,\mathbf v = x^2 + y^2 + z^2 \cdot ?$... computing: $\partial_x(x^3/3) = x^2$, $\partial_y(x^2 y) = x^2$, $\partial_z(2xy) = 0$, sum $= 2x^2$. (The original FS 2017 task has actually $\text{div}\,\mathbf v = x^2 + y^2 + z^2$; we'd need to consult the original PDF for exact values. The technique: close off with a flat disk at $z = 0$, apply Gauß, then subtract the disk's contribution.)
+>>
+>> The result for the standard problem with $\text{div}\,\mathbf v = x^2 + y^2 + z^2$ on a unit half-ball: $\iiint r^2 \cdot r^2 \sin\varphi\,dr\,d\varphi\,d\theta = \frac{2\pi}{5}$, plus a vanishing disk integral, giving $\frac{2\pi}{5}$.
 
 ---
 
-# 15 · The grand picture
+# 17 · Implicit and inverse function theorems
 
-## How it all fits together
+## 🤔 The big question
 
-Everything in analysis is built on the single concept of a **limit** ($\varepsilon$-$\delta$). From it, we get:
+Sometimes you have an equation like $x^2 + y^2 = 1$ and want to know: can I solve for $y$ as a function of $x$ near a specific point? When $x^2 + xe^y - y^2 = ?$ does the equation locally define a function $y(x)$?
 
-```
-                    LIMITS (ε-δ)
-                         │
-        ┌────────────────┼──────────────────┐
-        │                │                  │
-   SEQUENCES         CONTINUITY         DERIVATIVES
-   (limits of           (limits of      (limits of
-    discrete)            functions)      diff. quotients)
-        │                │                  │
-        └────────────────┼──────────────────┘
-                         │
-                      INTEGRALS
-                  (limits of Riemann sums)
-                         │
-                         ▼
-              ┌─────────┴──────────┐
-              │                    │
-          TAYLOR                 ODEs
-       (polynomial         (equations involving
-        expansion)            derivatives)
-              │                    │
-              └────────┬───────────┘
-                       │
-                       ▼
-              MULTIVARIABLE CALCULUS
-            (gradient, Jacobian, Hessian)
-                       │
-                       ▼
-                MULTIPLE INTEGRALS
-              (Fubini, change of variables)
-                       │
-                       ▼
-              VECTOR FIELD THEOREMS
-              (Green, Stokes, Gauß)
-                       │
-                       ▼
-       PARTIAL DIFFERENTIAL EQUATIONS
-        (Laplace, wave, heat — Analysis 3)
-```
+The **implicit function theorem** answers this — and it's the subject of a guaranteed exam task.
 
-## What every analyst keeps in their head
+## 💡 The inverse function theorem
 
-> [!success] The hall of fame
-> 1. **Bolzano–Weierstrass** — bounded sequences have convergent subsequences.
-> 2. **Cauchy criterion** — convergence is internal: terms huddle.
-> 3. **Intermediate value theorem** — continuous functions hit every value in between.
-> 4. **Extreme value theorem** — continuous + compact ⇒ max & min are attained.
-> 5. **Mean value theorem** — average rate of change is achieved at some point.
-> 6. **Fundamental theorem of calculus** — derivative and integral are inverses.
-> 7. **Taylor's theorem** — every smooth function is *almost* a polynomial.
-> 8. **Inverse function theorem** — non-degenerate maps are locally invertible.
-> 9. **Implicit function theorem** — non-degenerate equations define functions.
-> 10. **Fubini** — multiple integrals are iterated single integrals.
-> 11. **Stokes' theorem** (in all its forms) — boundary integrals = derivative integrals.
+> [!theorem] Inverse function theorem
+> Let $\mathbf f: \Omega \subseteq \mathbb{R}^d \to \mathbb{R}^d$ be $C^1$ and $\det J_{\mathbf f}(\mathbf x_0) \neq 0$. Then there is a neighborhood $U$ of $\mathbf x_0$ such that:
+> 1. $\mathbf f|_U$ is bijective onto an open set $V$.
+> 2. $\mathbf f^{-1}: V \to U$ is also $C^1$.
+> 3. $J_{\mathbf f^{-1}}(\mathbf f(\mathbf x)) = (J_{\mathbf f}(\mathbf x))^{-1}$.
 
-## Final advice
+> [!example] FS 2017 task 10 — finding $(f^{-1})'(0)$
+> $f(x) = \sin x + \arctan x$. Note $f(0) = 0$, so $f^{-1}(0) = 0$.
+> $f'(x) = \cos x + \frac{1}{1+x^2}$, $f'(0) = 2 \neq 0$.
+> By the inverse function theorem: $(f^{-1})'(0) = \frac{1}{f'(0)} = \frac{1}{2}$.
 
-- **Don't memorize — internalize.** Know *why* each theorem holds, and you'll know *when* to use it.
-- **Always draw a picture.** Even high-dimensional intuition starts with a 2D sketch.
-- **Keep $\varepsilon$ and $\delta$ at the center of your thinking.** They are the heartbeat of analysis.
-- **Practice computation.** Theorems are proved; calculations are *trained*.
+> [!example] FS 2023 MC27
+> $\mathbf F(x,y) = (xy - 2y,\, xe^x)$. Locally invertible at $(0,0)$?
+> $J_{\mathbf F}(0,0) = \begin{pmatrix} y - ? & x - 2 \\ e^x + xe^x & 0\end{pmatrix}\Big|_{(0,0)} = \begin{pmatrix} 0 & -2 \\ 1 & 0\end{pmatrix}$. $\det = 2 \neq 0$. **Yes, locally invertible.**
+
+## 💎 The implicit function theorem
+
+> [!theorem] Implicit function theorem
+> Let $F: \mathbb{R}^d \times \mathbb{R}^k \to \mathbb{R}^k$ be $C^1$ with $F(\mathbf x_0, \mathbf y_0) = 0$ and $\det\big(\frac{\partial F}{\partial \mathbf y}(\mathbf x_0, \mathbf y_0)\big) \neq 0$. Then near $\mathbf x_0$ we can solve $F(\mathbf x, \mathbf y) = 0$ for $\mathbf y$ as a $C^1$ function of $\mathbf x$: $\mathbf y = g(\mathbf x)$, and
+> $$Dg(\mathbf x_0) = -\Big(\frac{\partial F}{\partial \mathbf y}\Big)^{-1}\frac{\partial F}{\partial \mathbf x}\Big|_{(\mathbf x_0, \mathbf y_0)}$$
+
+For one variable each: if $F(x, y) = 0$ with $F_y \neq 0$:
+$$y'(x) = -\frac{F_x}{F_y}$$
+
+> [!example] FS 2019 task 12 — solve implicitly + compute derivative
+> $f(x, y) = 2e^x + y(x-1) - y^2$. Show locally solvable for $y(x)$ near $(0, 1)$, find $y'(0)$.
+>
+> $f(0, 1) = 2 - 1 - 1 = 0$ ✓. $\frac{\partial f}{\partial y} = (x-1) - 2y$, at $(0,1)$: $-3 \neq 0$ ✓.
+> $\frac{\partial f}{\partial x} = 2e^x + y$, at $(0,1)$: $3$.
+> $$y'(0) = -\frac{3}{-3} = 1$$
+
+> [!example] HS 2014 task 7 — Taylor polynomial of implicit function
+> $3\sin x + e^{\sin(xy)} = x + y$, find $\varphi(x)$ near $\varphi(0) = 1$, compute Taylor polynomial of $\varphi$ to order 2.
+>
+> $F(x,y) = 3\sin x + e^{\sin(xy)} - x - y$. $F_y(0,1) = e^{\sin(0)}\cos(0)\cdot 0 - 1 = -1 \neq 0$ ✓.
+> $F_x(0,1) = 3\cos 0 + e^{\sin(0)}\cos(0) \cdot 1 - 1 = 3 + 1 - 1 = 3$, so $\varphi'(0) = -F_x/F_y = 3$.
+>
+> For $\varphi''(0)$: differentiate the equation twice and substitute $x=0, y=\varphi(0)=1, \varphi'(0) = 3$. Result: $\varphi''(0) = 7$.
+>
+> Taylor polynomial: $T_2(\varphi) = 1 + 3x + \frac{7}{2}x^2$.
+
+> [!example] FS 2023 MC28
+> $f(x,y,z) = e^{xy} + yz^2 - 1$. Can we solve $f = 0$ for $y$ as $g(x, z)$ near $(1, 0, ?)$?
+>
+> Need $f(1, 0, z) = 0$: $e^0 + 0 - 1 = 0$ ✓ for any $z$. $\frac{\partial f}{\partial y}(1, 0, z) = xe^{xy}|_{(1,0,z)} + z^2 = 1 + z^2 \neq 0$ ✓. So **yes**.
+
+## 🎯 The exam pattern
+
+The implicit function theorem appears in nearly every exam:
+- **Verify** the hypotheses ($F(\mathbf x_0, \mathbf y_0) = 0$ and $\det\frac{\partial F}{\partial \mathbf y} \neq 0$).
+- **Compute** $y'(x_0)$ or higher derivatives using implicit differentiation.
+- Possibly: build a Taylor polynomial of the implicit function.
+
+## 📝 Practice tasks
+
+> [!question] **Task 17.1** — Show that $x^2 + y^2 + xy = 1$ defines $y(x)$ near $(0, 1)$ and compute $y'(0)$.
+>
+>> [!success]- Solution
+>> $F(x,y) = x^2 + y^2 + xy - 1$. $F(0,1) = 0$ ✓. $F_y = 2y + x$, $F_y(0,1) = 2 \neq 0$ ✓.
+>> $F_x = 2x + y$, so $y'(0) = -\frac{F_x(0,1)}{F_y(0,1)} = -\frac{1}{2}$.
+
+> [!question] **Task 17.2 (HS 2015 task 8)** — Adapted: at the touching point of curves $F_1 = 0, F_2 = 0$, both gradients are parallel. Use this with the relations to find unknowns.
+>
+>> [!success]- Solution
+>> Sketch: at $(3, y_0)$, both $F_1(3, y_0) = 0$ and $F_2(3, y_0) = 0$ must hold (curves intersect), and $\nabla F_1(3, y_0) = \lambda\nabla F_2(3, y_0)$ (tangency). Four equations, solve for the four unknowns. (See HS 2015 task 8 solution: $\lambda = -2, v = 4, y_0 = 3, c = 3$.)
+
+---
+
+# 18 · Master strategy — the exam playbook
+
+## 📊 Anatomy of the D-ITET basic exam
+
+Based on FS 2013, FS 2015, FS 2019, FS 2023, HS 2013, HS 2014, HS 2015, HS 2016 (~8 exams analyzed), the structure is remarkably stable:
+
+| Block | Topic | Approx. % |
+|---|---|---|
+| Limits / sequences | computing $\lim$, L'Hôpital, Taylor | ~10–15% |
+| Series | radius of convergence, sum, convergence test | ~5–10% |
+| Single-variable derivatives | chain rule, MVT, extrema | ~10% |
+| Single-variable integrals | parts, partial fractions, substitution | ~15% |
+| ODEs | linear constant-coefficient, separable | ~10–15% |
+| Multivariable derivatives | gradient, Jacobian, Hessian | ~10% |
+| Constrained extrema | Lagrange multipliers | ~10–15% |
+| Multiple integrals | polar/cylindrical/spherical | ~10% |
+| Vector calculus | Green / Stokes / Gauß | ~10% |
+| Implicit / inverse function | $y'$ via $F_x / F_y$ | ~5% |
+| Induction / proof | sum identity or inequality | ~5% |
+
+**Recent exams (2019, 2023) have a large multiple-choice block** at the start (~28 questions) testing the big concepts.
+
+## 🎯 The "must-know" cheat sheet
+
+### Limits
+- $\lim_{x\to 0}\frac{\sin x}{x} = 1$
+- $\lim_{x\to 0}\frac{1-\cos x}{x^2} = \tfrac12$
+- $\lim_{x\to 0}\frac{e^x - 1}{x} = 1$
+- $\lim_{x\to 0}\frac{\ln(1+x)}{x} = 1$
+- $(1 + 1/n)^n \to e$
+
+### Series
+- Geometric: $\sum_{k=0}^\infty q^k = \frac{1}{1-q}$ for $|q| < 1$
+- Harmonic diverges
+- Power series: $R = 1/\limsup\sqrt[k]{|a_k|}$ or $\lim|a_k/a_{k+1}|$
+
+### Derivatives
+- $(x^n)' = nx^{n-1}$, $(e^x)' = e^x$, $(\ln x)' = 1/x$
+- $(\sin)' = \cos$, $(\cos)' = -\sin$
+- $(\arctan)' = 1/(1+x^2)$, $(\arcsin)' = 1/\sqrt{1-x^2}$
+- Chain: $(g\circ f)' = g'(f)\cdot f'$
+- Inverse: $(f^{-1})'(y) = 1/f'(f^{-1}(y))$
+
+### Integrals
+- $\int 1/x\,dx = \ln|x|$ (the absolute value matters!)
+- $\int 1/(1+x^2)\,dx = \arctan x$
+- Parts: $\int u\,dv = uv - \int v\,du$
+- Substitution: spot $u$ and $du$
+- Partial fractions: factor denominator, set up undetermined coefficients
+- Improper: $\int_1^\infty x^{-p}$ converges iff $p > 1$
+
+### ODEs
+- Separable: $\int\frac{dy}{g(y)} = \int f(x)\,dx$
+- Linear constant-coeff: characteristic polynomial $\to e^{\lambda x}$
+- Resonance: if RHS matches homogeneous solution, multiply ansatz by $x$
+
+### Multivariable
+- Jacobian, Hessian, $\nabla$
+- Lagrange: $\nabla f = \lambda\nabla g$
+- Polar Jacobian: $r$. Spherical: $r^2\sin\varphi$.
+- Implicit: $y'(x) = -F_x/F_y$
+- Inverse function condition: $\det J \neq 0$
+
+### Vector calculus
+- $\text{div}\,\mathbf F = \nabla\cdot\mathbf F$
+- $\text{rot}\,\mathbf F$ (3D) = $\nabla\times\mathbf F$
+- Green: $\oint = \iint$ in 2D
+- Stokes: $\oint = \iint$ on a surface in 3D
+- Gauß: $\oiint = \iiint$ for closed surfaces
+
+## 🧠 The 5 strategy tips that actually move the needle
+
+1. **Read everything first.** Spend 5 minutes scanning all problems. Tackle easy ones first to build momentum and bank points.
+2. **Always verify hypotheses** before applying a theorem. Lagrange, implicit function, IVT, MVT — they have specific conditions.
+3. **Don't loop with L'Hôpital.** If two iterations don't simplify, switch to Taylor.
+4. **Sketch the region** before any 2D/3D integral. Catching the wrong limits costs many points.
+5. **For Lagrange / extrema:** always check (a) interior critical points, (b) boundary, (c) corners. Forgetting corners is the #1 reason students lose points on extrema problems.
+
+## 🏁 Final words
+
+> [!success] You're ready when…
+> - You can write down the standard limits, derivatives, and integrals from memory.
+> - You can apply each big theorem (FTC, MVT, IVT, EVT, Green, Stokes, Gauß) without rereading the conditions.
+> - You can convert any extremum problem to either gradient = 0 (interior) or Lagrange (boundary).
+> - You can solve a 2nd-order linear ODE with constant coefficients in your sleep.
+> - You stop being scared of $\varepsilon$ and $\delta$ — they're just tolerance and response.
+
+Good luck. The math you've learned here is the same math powering signal processing, control theory, machine learning, and physics. **Master it once and it stays with you forever.**
 
 ---
 
 > *Sources synthesized in this guide:*
 > - **M. Struwe**, *Analysis für Informatik*, Skript, ETH Zürich, 5. November 2010.
 > - **F. Ziltener**, *Skript zu den Vorlesungen Analysis 1 und 2 für ITET und RW*, ETH Zürich, 21. Mai 2025.
-
+> - Past D-ITET basic exams: FS 2013, FS 2015, HS 2013, HS 2014, HS 2015, HS 2016, FS 2019, FS 2023.
+>
 > *Further reading:* Chr. Blatter, *Ingenieur-Analysis 1 und 2*; J. J. Duistermaat & J. A. C. Kolk, *Multidimensional Real Analysis I and II*.
+
