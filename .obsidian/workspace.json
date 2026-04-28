@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "600 Sidequests/Reading List.md",
+                "file": "200 ETH Zurich/Semester 1/Analysis 1 + 2/Analysis_Complete_Guide.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -76,7 +76,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Reading List"
+              "title": "Analysis_Complete_Guide"
             }
           },
           {
@@ -266,11 +266,11 @@
   },
   "active": "de9b0ca1003a2f88",
   "lastOpenFiles": [
+    "600 Sidequests/Reading List.md",
     "600 Sidequests/index.md",
     "Untitled.base",
     "Untitled 1.base",
     "600 Sidequests/Sidequests.md",
-    "600 Sidequests/Reading List.md",
     "700 Quant/Quantitative Work.md",
     "600 Sidequests/test.md",
     "Blog/markdown-style-guide.md",
