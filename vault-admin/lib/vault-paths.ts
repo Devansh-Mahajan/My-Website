@@ -11,6 +11,7 @@ const EXCLUDED_TOPS = new Set([
   '.github',
   '.git',
   'vault-admin',
+  '.website',
 ])
 
 const EDIT_EXTS = new Set(['.md', '.mdx'])

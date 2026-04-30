@@ -6,9 +6,58 @@ on:
     paths:
       - "vault-admin/**"
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Vercel redeploy
-        run: curl -s -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Trigger Vercel deployment
+        run: |
+          TRIGGER_MS=$(date -u +%s)000
+          echo "TRIGGER_MS=$TRIGGER_MS" >> $GITHUB_ENV
+          curl -sS -f -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
+
+      - name: Wait for production deployment to be ready
+        id: deployment
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          echo "Polling Vercel for new production deployment (up to 10 min)..."
+          for i in $(seq 1 30); do
+            sleep 20
+            RESP=$(curl -s \
+              -H "Authorization: Bearer $VERCEL_TOKEN" \
+              "https://api.vercel.com/v6/deployments?limit=5&target=production")
+            URL=$(echo "$RESP" | jq -r --argjson since "$TRIGGER_MS" \
+              '[.deployments[] | select(.createdAt > $since and .state == "READY")] | first | .url // empty')
+            if [ -n "$URL" ] && [ "$URL" != "null" ]; then
+              echo "url=https://$URL" >> $GITHUB_OUTPUT
+              echo "Deployment ready: https://$URL"
+              exit 0
+            fi
+            echo "Attempt $i/30: not ready yet..."
+          done
+          echo "Timed out waiting for Vercel deployment"
+          exit 1
+
+      - name: Update VAULT_ADMIN_URL in landing page
+        run: |
+          NEW_URL="${{ steps.deployment.outputs.url }}"
+          sed -i "s|export const VAULT_ADMIN_URL = \"[^\"]*\"|export const VAULT_ADMIN_URL = \"$NEW_URL\"|" .website/src/consts.ts
+          echo "Updated to: $NEW_URL"
+
+      - name: Commit and push updated URL
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .website/src/consts.ts
+          git diff --staged --quiet && echo "No URL change, skipping commit" && exit 0
+          git pull --rebase origin main
+          git commit -m "chore: update vault admin URL to ${{ steps.deployment.outputs.url }}"
+          git push

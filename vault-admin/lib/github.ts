@@ -25,6 +25,20 @@ export async function readBinary(path: string) {
     ref: 'main',
   })
   if (Array.isArray(data) || data.type !== 'file') throw new Error('Not a file')
+
+  // Contents API returns empty content for files > 1MB — fall back to blob API
+  if (!data.content) {
+    const { data: blob } = await client().git.getBlob({
+      owner: OWNER,
+      repo: REPO,
+      file_sha: data.sha,
+    })
+    return {
+      buffer: Buffer.from(blob.content.replace(/\n/g, ''), 'base64'),
+      sha: data.sha,
+    }
+  }
+
   return {
     buffer: Buffer.from(data.content.replace(/\n/g, ''), 'base64'),
     sha: data.sha,
