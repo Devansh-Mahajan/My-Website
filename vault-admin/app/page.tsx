@@ -5,6 +5,8 @@ import dynamic from 'next/dynamic'
 import { FileTree, TreeNode } from '@/components/FileTree'
 import { Preview } from '@/components/Preview'
 import { FrontmatterPanel } from '@/components/FrontmatterPanel'
+import { AssetViewer } from '@/components/AssetViewer'
+import { canEdit } from '@/lib/vault-paths'
 
 const Editor = dynamic(() => import('@/components/Editor'), { ssr: false })
 
@@ -35,6 +37,7 @@ export default function AdminPage() {
   const [showNewFile, setShowNewFile] = useState(false)
   const [showUpload, setShowUpload] = useState(false)
   const [showDelete, setShowDelete] = useState(false)
+  const [viewMode, setViewMode] = useState<'edit' | 'asset'>('edit')
   const [newFilePath, setNewFilePath] = useState('')
   const [uploadFile, setUploadFile] = useState<File | null>(null)
   const [uploadFolder, setUploadFolder] = useState('998 Attachements/')
@@ -84,11 +87,28 @@ export default function AdminPage() {
 
   // ─── Load file ────────────────────────────────────────────────
   const loadFile = useCallback(async (path: string) => {
+    // Non-editable files (images, PDFs…) — just open the viewer
+    if (!canEdit(path)) {
+      if (isDirty) {
+        const ok = window.confirm('You have unsaved changes. Discard them?')
+        if (!ok) return
+      }
+      setSelectedPath(path)
+      setViewMode('asset')
+      // Fetch the SHA so we can delete if needed
+      fetch(`/api/vault/file?path=${encodeURIComponent(path)}`)
+        .then(r => r.ok ? r.json() : null)
+        .then(d => { if (d?.sha) setSha(d.sha) })
+        .catch(() => {})
+      return
+    }
+
     if (isDirty) {
       const ok = window.confirm('You have unsaved changes. Discard them?')
       if (!ok) return
     }
     setFileLoading(true)
+    setViewMode('edit')
     try {
       const r = await fetch(`/api/vault/file?path=${encodeURIComponent(path)}`)
       if (!r.ok) throw new Error()
@@ -178,6 +198,7 @@ export default function AdminPage() {
       setContent('')
       setSavedContent('')
       setSha(null)
+      setViewMode('edit')
       setShowDelete(false)
       loadTree(true)
       showToast('success', 'File deleted')
@@ -340,39 +361,50 @@ export default function AdminPage() {
             </button>
           </div>
 
-          {/* Frontmatter panel (Obsidian-style metadata editor) */}
-          {selectedPath && (
-            <FrontmatterPanel content={content} onChange={setContent} />
-          )}
-
-          {/* Editor + Preview split */}
-          <div className="flex-1 flex overflow-hidden">
-            <div
-              className="flex-1 overflow-hidden transition-opacity duration-150"
-              style={{ opacity: fileLoading ? 0.5 : 1 }}
-            >
-              {selectedPath ? (
-                <Editor
-                  value={content}
-                  onChange={setContent}
-                  onSave={saveFile}
-                  isDark={theme === 'dark'}
-                  files={flattenTree(tree)}
-                />
-              ) : (
-                <EmptyState />
+          {/* Asset viewer (images, PDFs, videos) */}
+          {viewMode === 'asset' && selectedPath ? (
+            <AssetViewer
+              path={selectedPath}
+              sha={sha}
+              onDelete={() => setShowDelete(true)}
+            />
+          ) : (
+            <>
+              {/* Frontmatter panel (Obsidian-style metadata editor) */}
+              {selectedPath && (
+                <FrontmatterPanel content={content} onChange={setContent} />
               )}
-            </div>
 
-            {previewOpen && selectedPath && (
-              <div
-                className="flex-1 overflow-y-auto"
-                style={{ borderLeft: '1px solid var(--border)' }}
-              >
-                <Preview content={content} />
+              {/* Editor + Preview split */}
+              <div className="flex-1 flex overflow-hidden">
+                <div
+                  className="flex-1 overflow-hidden transition-opacity duration-150"
+                  style={{ opacity: fileLoading ? 0.5 : 1 }}
+                >
+                  {selectedPath ? (
+                    <Editor
+                      value={content}
+                      onChange={setContent}
+                      onSave={saveFile}
+                      isDark={theme === 'dark'}
+                      files={flattenTree(tree)}
+                    />
+                  ) : (
+                    <EmptyState />
+                  )}
+                </div>
+
+                {previewOpen && selectedPath && (
+                  <div
+                    className="flex-1 overflow-y-auto"
+                    style={{ borderLeft: '1px solid var(--border)' }}
+                  >
+                    <Preview content={content} />
+                  </div>
+                )}
               </div>
-            )}
-          </div>
+            </>
+          )}
         </div>
       </div>
 

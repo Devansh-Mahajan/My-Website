@@ -16,6 +16,15 @@ interface Props {
   depth?: number
 }
 
+function fileIcon(name: string): string {
+  const e = name.slice(name.lastIndexOf('.')).toLowerCase()
+  if (['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp'].includes(e)) return '🖼'
+  if (e === '.pdf') return '📄'
+  if (['.mp4', '.mov'].includes(e)) return '🎬'
+  if (e === '.zip') return '📦'
+  return '·'
+}
+
 export function FileTree({ nodes, selectedPath, onSelect, depth = 0 }: Props) {
   if (!nodes.length) return null
   return (
@@ -102,7 +111,7 @@ function TreeItem({
           if (!isSelected)(e.currentTarget as HTMLElement).style.background = 'transparent'
         }}
       >
-        <span className="shrink-0 text-xs" style={{ color: 'var(--muted)' }}>·</span>
+        <span className="shrink-0 text-xs leading-none" aria-hidden="true">{fileIcon(node.name)}</span>
         <span className="truncate">{node.name.replace(/\.(md|mdx)$/, '')}</span>
       </button>
     </li>

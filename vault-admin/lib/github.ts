@@ -17,6 +17,20 @@ export async function getTree() {
   return data.tree
 }
 
+export async function readBinary(path: string) {
+  const { data } = await client().repos.getContent({
+    owner: OWNER,
+    repo: REPO,
+    path,
+    ref: 'main',
+  })
+  if (Array.isArray(data) || data.type !== 'file') throw new Error('Not a file')
+  return {
+    buffer: Buffer.from(data.content.replace(/\n/g, ''), 'base64'),
+    sha: data.sha,
+  }
+}
+
 export async function readFile(path: string) {
   const { data } = await client().repos.getContent({
     owner: OWNER,

@@ -34,4 +34,28 @@ export function canUpload(path: string): boolean {
   return UPLOAD_EXTS.has(ext)
 }
 
+export function canView(path: string): boolean {
+  if (!noTraversal(path)) return false
+  const ext = path.slice(path.lastIndexOf('.')).toLowerCase()
+  return UPLOAD_EXTS.has(ext)
+}
+
+const CONTENT_TYPES: Record<string, string> = {
+  '.pdf':  'application/pdf',
+  '.png':  'image/png',
+  '.jpg':  'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.gif':  'image/gif',
+  '.svg':  'image/svg+xml',
+  '.webp': 'image/webp',
+  '.mp4':  'video/mp4',
+  '.mov':  'video/quicktime',
+  '.zip':  'application/zip',
+}
+
+export function getContentType(path: string): string {
+  const ext = path.slice(path.lastIndexOf('.')).toLowerCase()
+  return CONTENT_TYPES[ext] ?? 'application/octet-stream'
+}
+
 export { EXCLUDED_TOPS }
