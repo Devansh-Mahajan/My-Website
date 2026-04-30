@@ -4,10 +4,20 @@ import { useEffect, useState, useCallback, useRef } from 'react'
 import dynamic from 'next/dynamic'
 import { FileTree, TreeNode } from '@/components/FileTree'
 import { Preview } from '@/components/Preview'
+import { FrontmatterPanel } from '@/components/FrontmatterPanel'
 
 const Editor = dynamic(() => import('@/components/Editor'), { ssr: false })
 
 type Toast = { type: 'success' | 'error'; msg: string }
+
+function flattenTree(nodes: TreeNode[]): string[] {
+  const out: string[] = []
+  for (const n of nodes) {
+    if (n.type === 'blob') out.push(n.path)
+    else if (n.children) out.push(...flattenTree(n.children))
+  }
+  return out
+}
 
 export default function AdminPage() {
   const [tree, setTree] = useState<TreeNode[]>([])
@@ -330,6 +340,11 @@ export default function AdminPage() {
             </button>
           </div>
 
+          {/* Frontmatter panel (Obsidian-style metadata editor) */}
+          {selectedPath && (
+            <FrontmatterPanel content={content} onChange={setContent} />
+          )}
+
           {/* Editor + Preview split */}
           <div className="flex-1 flex overflow-hidden">
             <div
@@ -342,6 +357,7 @@ export default function AdminPage() {
                   onChange={setContent}
                   onSave={saveFile}
                   isDark={theme === 'dark'}
+                  files={flattenTree(tree)}
                 />
               ) : (
                 <EmptyState />

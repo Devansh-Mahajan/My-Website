@@ -12,6 +12,7 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, description, image, keywords = [], author, no_index = false } = Astro.props;
+const gaId = import.meta.env.PUBLIC_GA_ID as string | undefined;
 
 const absoluteImage = image
 	? (() => { try { return new URL(image, Astro.url).toString(); } catch (_) { return image; } })()
@@ -59,3 +60,15 @@ const absoluteImage = image
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 {absoluteImage && <meta name="twitter:image" content={absoluteImage} />}
+
+{gaId && (
+  <>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+    <script is:inline define:vars={{ gaId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gaId, { anonymize_ip: true });
+    </script>
+  </>
+)}

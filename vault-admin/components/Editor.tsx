@@ -7,23 +7,26 @@ import { githubLight, githubDark } from '@uiw/codemirror-theme-github'
 import { keymap } from '@codemirror/view'
 import { Prec } from '@codemirror/state'
 import { EditorView } from '@codemirror/view'
+import { obsidianExtensions } from '@/lib/wikilinks'
 
 interface Props {
   value: string
   onChange: (value: string) => void
   onSave: () => void
   isDark: boolean
+  files?: string[]
 }
 
 const wordWrap = EditorView.lineWrapping
 
-export default function Editor({ value, onChange, onSave, isDark }: Props) {
+export default function Editor({ value, onChange, onSave, isDark, files = [] }: Props) {
   const extensions = [
     markdown({ base: markdownLanguage, codeLanguages: languages }),
     wordWrap,
     Prec.highest(
       keymap.of([{ key: 'Mod-s', run: () => { onSave(); return true } }]),
     ),
+    ...obsidianExtensions(files),
   ]
 
   return (
@@ -51,7 +54,7 @@ export default function Editor({ value, onChange, onSave, isDark }: Props) {
         syntaxHighlighting: true,
         bracketMatching: true,
         closeBrackets: true,
-        autocompletion: false,
+        autocompletion: false, // we use our own via obsidianExtensions
         rectangularSelection: false,
         crosshairCursor: false,
         highlightActiveLine: true,
@@ -61,7 +64,7 @@ export default function Editor({ value, onChange, onSave, isDark }: Props) {
         searchKeymap: true,
         historyKeymap: true,
         foldKeymap: false,
-        completionKeymap: false,
+        completionKeymap: true,
         lintKeymap: false,
       }}
     />

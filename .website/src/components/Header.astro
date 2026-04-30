@@ -1,7 +1,7 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import ThemeToggle from './ThemeToggle.astro';
-import { QUARTZ_URL } from '../consts';
+import { QUARTZ_URL, VAULT_ADMIN_URL } from '../consts';
 import { getUrl } from '../utils/url';
 ---
 
@@ -19,6 +19,10 @@ import { getUrl } from '../utils/url';
 				<HeaderLink href={getUrl('/')}>Home</HeaderLink>
 				<HeaderLink href={getUrl('/blog')}>Blog</HeaderLink>
 				<HeaderLink href={QUARTZ_URL} target="_blank">Notes</HeaderLink>
+				<a href={VAULT_ADMIN_URL} target="_blank" class="editor-link" aria-label="Edit vault">
+					<svg viewBox="0 0 24 24" aria-hidden="true" width="13" height="13"><path fill="currentColor" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+					Edit
+				</a>
 			</div>
 
 			<div class="nav-actions">
@@ -142,6 +146,27 @@ import { getUrl } from '../utils/url';
 	.nav-links a.active {
 		color: rgb(var(--black));
 		font-weight: 600;
+	}
+
+	.editor-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3rem;
+		padding: 0.3rem 0.6rem;
+		font-size: 0.8125rem;
+		font-weight: 500;
+		color: rgb(var(--gray));
+		border: 1px solid rgba(var(--gray), 0.25);
+		border-radius: 6px;
+		text-decoration: none;
+		transition: all 0.18s ease;
+		letter-spacing: -0.005em;
+	}
+
+	.editor-link:hover {
+		color: rgb(var(--accent));
+		border-color: rgba(var(--accent), 0.4);
+		background: rgba(var(--accent), 0.06);
 	}
 
 	.nav-actions {
