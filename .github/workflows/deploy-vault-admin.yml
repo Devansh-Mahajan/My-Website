@@ -6,16 +6,14 @@ on:
     paths:
       - "vault-admin/**"
 
-permissions:
-  contents: write
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_FOR_QUARTZ }}
+          fetch-depth: 0
 
       - name: Trigger Vercel deployment
         run: |
@@ -46,18 +44,19 @@ jobs:
           echo "Timed out waiting for Vercel deployment"
           exit 1
 
-      - name: Update VAULT_ADMIN_URL in landing page
+      - name: Fetch latest main and update VAULT_ADMIN_URL
         run: |
+          git fetch origin main
+          git checkout origin/main -- .website/src/consts.ts
           NEW_URL="${{ steps.deployment.outputs.url }}"
           sed -i "s|export const VAULT_ADMIN_URL = \"[^\"]*\"|export const VAULT_ADMIN_URL = \"$NEW_URL\"|" .website/src/consts.ts
           echo "Updated to: $NEW_URL"
 
-      - name: Commit and push updated URL
+      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .website/src/consts.ts
-          git diff --staged --quiet && echo "No URL change, skipping commit" && exit 0
-          git pull --rebase origin main
+          git diff --staged --quiet && echo "No URL change, skipping" && exit 0
           git commit -m "chore: update vault admin URL to ${{ steps.deployment.outputs.url }}"
-          git push
+          git push origin HEAD:main
