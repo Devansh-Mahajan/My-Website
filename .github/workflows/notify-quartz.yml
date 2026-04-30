@@ -5,10 +5,12 @@ on:
     branches: [main]
     paths:
       - "**/*.md"
+      - "**/*.mdx"
       - "998 Attachements/**"
       - "!Blog/**"
       - "!999 Templates/**"
       - "!.obsidian/**"
+      - "!vault-admin/**"
 
 jobs:
   trigger:

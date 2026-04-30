@@ -1,5 +1,7 @@
 'use client'
 
+import { useState } from 'react'
+
 interface Props {
   path: string
   sha: string | null
@@ -21,6 +23,7 @@ export function AssetViewer({ path, sha, onDelete }: Props) {
   const isPdf = e === '.pdf'
   const isVideo = VIDEO_EXTS.has(e)
   const isZip = e === '.zip'
+  const [loadError, setLoadError] = useState(false)
 
   return (
     <div className="flex-1 flex flex-col overflow-hidden min-w-0">
@@ -60,7 +63,20 @@ export function AssetViewer({ path, sha, onDelete }: Props) {
         className="flex-1 overflow-auto flex items-center justify-center p-6"
         style={{ background: 'var(--surface-muted)' }}
       >
-        {isImage && (
+        {loadError && (
+          <div className="text-center space-y-3">
+            <div className="text-5xl opacity-50">⚠</div>
+            <p className="font-semibold" style={{ color: 'var(--text)' }}>Failed to load file</p>
+            <p className="text-sm" style={{ color: 'var(--muted)' }}>
+              The file may be too large, still deploying, or unavailable.
+            </p>
+            <a href={url} download={name} className="btn-primary text-sm inline-flex">
+              ↓ Try downloading directly
+            </a>
+          </div>
+        )}
+
+        {!loadError && isImage && (
           <img
             src={url}
             alt={name}
@@ -69,10 +85,11 @@ export function AssetViewer({ path, sha, onDelete }: Props) {
               border: '1px solid var(--border)',
               boxShadow: 'var(--shadow-soft)',
             }}
+            onError={() => setLoadError(true)}
           />
         )}
 
-        {isPdf && (
+        {!loadError && isPdf && (
           <iframe
             src={url}
             title={name}
@@ -83,10 +100,11 @@ export function AssetViewer({ path, sha, onDelete }: Props) {
               boxShadow: 'var(--shadow-soft)',
               background: '#fff',
             }}
+            onError={() => setLoadError(true)}
           />
         )}
 
-        {isVideo && (
+        {!loadError && isVideo && (
           <video
             src={url}
             controls
@@ -95,6 +113,7 @@ export function AssetViewer({ path, sha, onDelete }: Props) {
               border: '1px solid var(--border)',
               boxShadow: 'var(--shadow-soft)',
             }}
+            onError={() => setLoadError(true)}
           />
         )}
 

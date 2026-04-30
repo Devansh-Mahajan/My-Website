@@ -95,6 +95,7 @@ export default function AdminPage() {
       }
       setSelectedPath(path)
       setViewMode('asset')
+      setSha(null)
       // Fetch the SHA so we can delete if needed
       fetch(`/api/vault/file?path=${encodeURIComponent(path)}`)
         .then(r => r.ok ? r.json() : null)

@@ -1,27 +1,39 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
-import { readFile, writeFile, deleteFile } from '@/lib/github'
-import { canEdit } from '@/lib/vault-paths'
+import { readFile, readBinary, writeFile, deleteFile } from '@/lib/github'
+import { canEdit, canView } from '@/lib/vault-paths'
 
 function authed(req: NextRequest) {
   return req.cookies.has('vault-session')
 }
 
 // GET /api/vault/file?path=xxx
+// For editable files: returns { content, sha }
+// For viewable assets: returns { sha } only (so the UI can offer delete)
 export async function GET(req: NextRequest) {
   if (!authed(req)) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const path = req.nextUrl.searchParams.get('path') ?? ''
-  if (!canEdit(path)) {
-    return NextResponse.json({ error: 'Invalid or disallowed path' }, { status: 400 })
+
+  if (canEdit(path)) {
+    try {
+      const { content, sha } = await readFile(path)
+      return NextResponse.json({ content, sha })
+    } catch {
+      return NextResponse.json({ error: 'File not found' }, { status: 404 })
+    }
   }
 
-  try {
-    const { content, sha } = await readFile(path)
-    return NextResponse.json({ content, sha })
-  } catch {
-    return NextResponse.json({ error: 'File not found' }, { status: 404 })
+  if (canView(path)) {
+    try {
+      const { sha } = await readBinary(path)
+      return NextResponse.json({ sha })
+    } catch {
+      return NextResponse.json({ error: 'File not found' }, { status: 404 })
+    }
   }
+
+  return NextResponse.json({ error: 'Invalid or disallowed path' }, { status: 400 })
 }
 
 // PUT /api/vault/file — create or update
@@ -67,7 +79,7 @@ export async function DELETE(req: NextRequest) {
   if (!parsed.success) return NextResponse.json({ error: 'Invalid input' }, { status: 400 })
 
   const { path, sha } = parsed.data
-  if (!canEdit(path)) {
+  if (!canEdit(path) && !canView(path)) {
     return NextResponse.json({ error: 'Invalid or disallowed path' }, { status: 400 })
   }
 

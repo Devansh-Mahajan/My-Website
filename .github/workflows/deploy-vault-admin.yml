@@ -1,0 +1,14 @@
+name: Deploy Vault Admin
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "vault-admin/**"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel redeploy
+        run: curl -s -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
