@@ -90,18 +90,28 @@ export function AssetViewer({ path, sha, onDelete }: Props) {
         )}
 
         {!loadError && isPdf && (
-          <iframe
-            src={url}
-            title={name}
-            className="w-full rounded-xl"
-            style={{
-              height: 'calc(100vh - 200px)',
-              border: '1px solid var(--border)',
-              boxShadow: 'var(--shadow-soft)',
-              background: '#fff',
-            }}
-            onError={() => setLoadError(true)}
-          />
+          <div className="w-full flex flex-col" style={{ height: 'calc(100vh - 200px)' }}>
+            <div className="flex justify-end mb-2 shrink-0">
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary text-xs"
+              >
+                ↗ Open in new tab
+              </a>
+            </div>
+            <embed
+              src={url}
+              type="application/pdf"
+              className="flex-1 w-full rounded-xl"
+              style={{
+                border: '1px solid var(--border)',
+                boxShadow: 'var(--shadow-soft)',
+                background: '#fff',
+              }}
+            />
+          </div>
         )}
 
         {!loadError && isVideo && (
