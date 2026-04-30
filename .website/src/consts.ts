@@ -5,4 +5,4 @@ export const SITE_TITLE = "Devansh Mahajan";
 export const SITE_DESCRIPTION =
   "Electrical Engineering and Computer Science student at ETH Zurich.";
 export const QUARTZ_URL = "https://devansh-mahajan.github.io/Obsidian-Website/";
-export const VAULT_ADMIN_URL = "https://my-website-7xqhi9793-mahajandevansh-9424s-projects.vercel.app";
+export const VAULT_ADMIN_URL = "https://my-website-bbza6ig9v-mahajandevansh-9424s-projects.vercel.app";
