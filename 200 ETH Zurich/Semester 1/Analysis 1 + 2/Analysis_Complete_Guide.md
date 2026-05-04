@@ -54,41 +54,144 @@ Every chapter follows the same six-step rhythm:
 
 Why do we need logic? Because every theorem you'll ever read says "*if* this holds, *then* that holds" — and to use the theorem you must understand exactly what it claims, what it doesn't, and how to negate it.
 
-## 💡 Intuition: statements are switches
+In math, **a proof is a derivation of a statement from axioms** (basic assumptions). A **theorem** (Satz) is a statement that has been proved. So mathematics literally *is* a collection of true statements together with their derivations. Logic is the rulebook that says which derivations are valid.
 
-A **mathematical statement** is a sentence that is either **true** or **false** — like a light switch with only "on" and "off". No "kinda", no "maybe", no "depends on the weather".
+> [!info] Where this chapter sits
+> This corresponds to Ziltener §1.1 (Logik) and §1.3 (Quantoren), and Struwe Chapter 1.
 
-> [!example]
-> - $4 > 2$ — TRUE ✅
-> - $5 < 3$ — FALSE ❌
-> - "This sentence is false" — **not allowed** (paradox: if it's true it's false, if it's false it's true). Math forbids self-reference like this.
+## 💡 What counts as a mathematical statement (Aussage)?
 
-## 📜 The five connectives
+> [!definition] Statement (Aussage)
+> A **statement** is a sentence that is either **true** (T) or **false** (F) — never both, never neither.
 
-Given two statements $A$ and $B$, you can build new ones:
+Two foundational principles ground everything:
 
-| Symbol | Read as | Meaning | Mnemonic |
+> [!tip] The two pillars of classical logic
+> - **Law of non-contradiction** (*Satz vom ausgeschlossenen Widerspruch*): no statement is both true and false simultaneously.
+> - **Law of the excluded middle** (*Satz vom ausgeschlossenen Dritten*, *tertium non datur*): every statement is either true or false — there is no third option.
+
+> [!example]- Statements vs. non-statements
+> ✅ Are statements:
+> - "Bern is the capital of Switzerland." (T)
+> - $1 + 1 = 2$ (T)
+> - $0 < 0$ (F)
+>
+> ❌ NOT statements:
+> - "Hello!" (an exclamation)
+> - "Close the door." (a command)
+> - "What time is it?" (a question)
+>
+> Statements have a *truth value*. Exclamations, commands, and questions don't.
+
+> [!warning]- The liar paradox — why self-reference is forbidden
+> Consider $P :=$ *"This sentence is false."*
+> - If $P$ is true, then by what it says, $P$ is false. Contradiction.
+> - If $P$ is false, then by what it says, $P$ is true. Contradiction.
+>
+> So $P$ violates the law of non-contradiction. Math forbids self-referential sentences like this — they're not legitimate Aussagen.
+>
+> Same idea, ancient version: **Epimenides the Cretan** declared *"All Cretans are liars."* (Said by a Cretan.)
+
+## 📜 The five connectives — building bigger statements
+
+Given statements $A$ and $B$, you can build new ones:
+
+| Symbol | Read as | True when... | Mnemonic |
 |---|---|---|---|
-| $\neg A$ | "not $A$" | Flips the truth value | think: "the opposite" |
-| $A \wedge B$ | "$A$ and $B$" | True only if **both** are true | think: a chain — weakest link breaks it |
-| $A \vee B$ | "$A$ or $B$" | True if **at least one** is true | inclusive or — like a menu where you can pick either or both |
-| $A \rightarrow B$ | "if $A$, then $B$" | Only false when $A$ true, $B$ false | a promise: only broken if you don't deliver |
-| $A \leftrightarrow B$ | "$A$ iff $B$" | Same truth value | "they live or die together" |
+| $\neg A$ | "not $A$" | $A$ is false | flip the switch |
+| $A \wedge B$ | "$A$ **and** $B$" | both are true | a chain — weakest link breaks it |
+| $A \vee B$ | "$A$ **or** $B$" (inclusive) | at least one is true | menu where you may pick either or both |
+| $A \;\dot\vee\; B$ | "**either** $A$ or $B$" (exclusive) | exactly one is true | XOR |
+| $A \rightarrow B$ | "if $A$, then $B$" | NOT ($A$ true and $B$ false) | a promise: broken only if you don't deliver |
+| $A \leftrightarrow B$ | "$A$ iff $B$" | both have the same truth value | "live or die together" |
+
+The full **truth table**:
+
+| $A$ | $B$ | $\neg A$ | $A\wedge B$ | $A\vee B$ | $A\rightarrow B$ | $A\leftrightarrow B$ |
+|---|---|---|---|---|---|---|
+| T | T | F | T | T | T | T |
+| T | F | F | F | T | F | F |
+| F | T | T | F | T | T | F |
+| F | F | T | F | F | T | T |
+
+> [!example]- Practice with connectives
+> Each row applies the table to a concrete pair of statements.
+>
+> | $A$ | $B$ | Combined statement | Truth |
+> |---|---|---|---|
+> | $0<1$ | $1+1=2$ | $A \wedge B$ | T ∧ T = **T** |
+> | $0<1$ | $1+1=3$ | $A \wedge B$ | T ∧ F = **F** |
+> | $0<1$ | $1+1=3$ | $A \vee B$ | T ∨ F = **T** |
+> | $0<0$ | $1+1=2$ | $A \rightarrow B$ | F → T = **T** (vacuous) |
+> | $0<0$ | $1+1=3$ | $A \rightarrow B$ | F → F = **T** (vacuous!) |
+
+> [!info]- The hardware connection — logic gates
+> Every connective above corresponds to a physical **logic gate** in digital electronics: AND-gate, OR-gate, NOT-gate, XOR-gate. Modern processors are essentially billions of these gates wired into circuits. Boolean logic isn't an abstract toy — it's literally how your computer computes.
 
 ## ⚠️ The trap that catches everyone: vacuous truth
 
 > [!warning] A false hypothesis implies anything
 > $A \rightarrow B$ is **true** whenever $A$ is false. The statement *"if the moon is made of cheese, then $1 = 2$"* is **logically true**, because the premise is false.
 >
-> Why? The implication is a **promise**. The promise "if it rains, I'll bring an umbrella" is only **broken** if it rains *and* you don't bring an umbrella. On a sunny day, the promise was never tested — so it was never broken.
+> **Why?** The implication is a **promise**. The promise "if it rains, I'll bring an umbrella" is only **broken** if it rains *and* you don't bring an umbrella. On a sunny day, the promise was never tested — so it was never broken.
+
+> [!example]- More vacuous truths
+> All of the following are **true** statements:
+> - "If $0 = 1$, then I am Napoleon." (premise is false)
+> - "If $n \in \mathbb{N}$ with $n < 0$, then $n^2 = 17$." (no such $n$ exists, so the universal statement is vacuously true)
+> - $\forall x \in \emptyset : P(x)$ holds for **any** $P$.
+>
+> Vacuous truth feels weird, but it makes the rules of logic simple and consistent.
+
+## 💡 Logical equivalence ($\equiv$) vs. material equivalence ($\leftrightarrow$)
+
+These look similar but say different things:
+
+- $A \leftrightarrow B$ is itself a **statement** that says "$A$ and $B$ have the same truth value, *here*". It can be true or false depending on $A, B$.
+- $A \equiv B$ is a **meta-claim** that says: $A$ and $B$ have **identical truth tables** — they always agree, no matter what their atoms mean.
+
+So $\equiv$ is *strictly stronger* than $\leftrightarrow$.
+
+> [!example]- A useful equivalence we'll use over and over
+> $A \leftrightarrow B \;\equiv\; (A \rightarrow B) \wedge (B \rightarrow A)$.
+>
+> Read aloud: "iff" means "implies and is implied by". You can verify by checking all 4 rows of the truth table.
+
+> [!warning]- A common mistake — confusing implication with equivalence
+> "If it rained → ground is wet" is TRUE.
+> "If ground is wet → it rained" is FALSE (someone could have spilled water).
+>
+> Implication is one-way. To get equivalence you need *both* directions.
+
+## 💡 Reading implications: *sufficient* and *necessary*
+
+The statement $A \rightarrow B$ has three equivalent readings:
+
+1. "If $A$, then $B$."
+2. "$A$ is **sufficient** for $B$" (*hinreichend*) — having $A$ alone is enough to guarantee $B$.
+3. "$B$ is **necessary** for $A$" (*notwendig*) — without $B$, you can't have $A$.
+
+> [!example]- Sufficient vs. necessary
+> Statement: "If it rained, then the ground is wet."
+> - **Rain is sufficient** for wet ground (rain alone guarantees wet).
+> - **Wet ground is necessary** for rain (no wet → no rain).
+> - Wet ground is NOT *sufficient* for rain (sprinklers exist).
+> - Rain is NOT *necessary* for wet ground (sprinklers).
+>
+> So "$A$ iff $B$" means "$A$ is **both** necessary and sufficient for $B$".
 
 ## 💡 Contraposition — the most useful identity in proof-writing
 
-$$A \rightarrow B \quad\Longleftrightarrow\quad \neg B \rightarrow \neg A$$
+$$A \rightarrow B \quad\equiv\quad \neg B \rightarrow \neg A$$
 
-> [!example]
+The "**Kontraponiertes**" of an implication. Verify by truth table — both sides are false in exactly the same row ($A$ true, $B$ false).
+
+> [!example]- Why contraposition saves the day
 > - "If it rains → ground is wet" $\;\equiv\;$ "If ground is dry → it didn't rain"
-> - "If $x^2$ is even → $x$ is even" $\;\equiv\;$ "If $x$ is odd → $x^2$ is odd" *(easier to prove!)*
+> - "If $x^2$ is even → $x$ is even" $\;\equiv\;$ "If $x$ is odd → $x^2$ is odd" *(much easier to prove! Squaring an odd number is direct algebra.)*
+> - "If $f$ is differentiable at $a$ → $f$ is continuous at $a$" $\;\equiv\;$ "If $f$ is not continuous at $a$ → $f$ is not differentiable at $a$"
+>
+> When the direct direction is hard, try contraposition.
 
 ## 📜 Quantifiers: $\forall$ and $\exists$
 
@@ -97,45 +200,136 @@ $$A \rightarrow B \quad\Longleftrightarrow\quad \neg B \rightarrow \neg A$$
 | $\forall x \in M : P(x)$ | "for all $x$ in $M$, $P(x)$ holds" | $\forall n \in \mathbb{N} : n \geq 1$ ✅ |
 | $\exists x \in M : P(x)$ | "there exists $x$ in $M$ with $P(x)$" | $\exists n \in \mathbb{N} : n^2 = 49$ ✅ |
 
-> [!tip] Negation rule — flip the quantifier and negate the statement
-> $$\neg(\forall x : P(x)) \;\equiv\; \exists x : \neg P(x)$$
-> $$\neg(\exists x : P(x)) \;\equiv\; \forall x : \neg P(x)$$
+> [!tip] Negation rule — flip the quantifier and negate inside
+> $$\neg(\forall x \in X : P(x)) \;\equiv\; \exists x \in X : \neg P(x)$$
+> $$\neg(\exists x \in X : P(x)) \;\equiv\; \forall x \in X : \neg P(x)$$
+>
+> Memorize this. It's the most-tested identity on the basic exam after induction.
 
-> [!example] Negating a real exam-style sentence (FS 2023 task MC1)
+> [!warning] Order of quantifiers matters!
+> Swap two adjacent quantifiers and you can change a true statement into a false one.
+> - $\forall m \in \mathbb{N}_0,\; \exists n \in \mathbb{N}_0 : m \leq n$ — **TRUE** (for each $m$, take $n := m$).
+> - $\exists n \in \mathbb{N}_0,\; \forall m \in \mathbb{N}_0 : m \leq n$ — **FALSE** ("there is a largest natural number").
+>
+> In the first version, $n$ is allowed to depend on $m$. In the second, one fixed $n$ must work for **every** $m$.
+
+> [!example]- Negating a real exam sentence (FS 2023 MC1)
 > Original: $\forall n \in \mathbb{N},\; \exists m \in \mathbb{N} : (m > n) \wedge (m < 2n)$
 >
 > Negation, step by step:
 > 1. Flip outer $\forall \to \exists$: $\;\exists n \in \mathbb{N},\; \neg(\exists m \in \mathbb{N} : \dots)$
 > 2. Flip inner $\exists \to \forall$: $\;\exists n \in \mathbb{N}, \forall m \in \mathbb{N} : \neg((m > n) \wedge (m < 2n))$
-> 3. De Morgan: $\neg(P \wedge Q) \equiv \neg P \vee \neg Q$
+> 3. De Morgan inside: $\neg(P \wedge Q) \equiv \neg P \vee \neg Q$.
 >
 > Final: $\boxed{\exists n \in \mathbb{N}, \forall m \in \mathbb{N} : (m \leq n) \vee (m \geq 2n)}$
 
-## 🔧 Three proof techniques you absolutely need
-
-### Direct proof
-Build a chain $A \Rightarrow B_1 \Rightarrow B_2 \Rightarrow \cdots \Rightarrow S$.
-
-### Proof by contradiction
-To prove $A \Rightarrow B$, **assume the opposite** ($A \wedge \neg B$) and derive nonsense.
-
-> [!example] There is no largest natural number
-> Assume there is a largest $n_0 \in \mathbb{N}$. But $n_0 + 1$ is also in $\mathbb{N}$, and $n_0 + 1 > n_0$. **Contradiction!** $\blacksquare$
-
-### Mathematical induction — your best friend on exams
-
-To prove $P(n)$ for **all** $n \in \mathbb{N}$:
-1. **Base case:** prove $P(1)$ (or $P(0)$).
-2. **Inductive step:** assume $P(n)$ holds — the **induction hypothesis** (IH) — and prove $P(n+1)$.
-
-> [!example] Sum of the first $n$ odd numbers $= n^2$
+> [!example]- Formal proof: there is no largest natural number
+> Claim: $\neg\,(\exists n \in \mathbb{N}_0,\; \forall m \in \mathbb{N}_0 : m \leq n)$.
 >
-> **Claim:** $\sum_{k=1}^n (2k-1) = n^2$.
+> Push the negation through the quantifiers: $\forall n \in \mathbb{N}_0,\; \exists m \in \mathbb{N}_0 : m > n$.
+>
+> Proof: given any $n$, take $m := n + 1$. Then $m \in \mathbb{N}_0$ and $m > n$. $\blacksquare$
+
+> [!info]- Names of bound variables don't matter (Goethe's joke)
+> $\forall x \in \mathbb{N} : x > 0$ and $\forall n \in \mathbb{N} : n > 0$ are *literally the same statement*. Bound variables are placeholders — only the structure matters.
+>
+> Goethe wrote in *Maximen und Reflexionen*: "Mathematicians are like Frenchmen — whatever you say to them, they translate it into their own language, and at once it is something entirely different."
+
+## 🔧 Modus ponens — the engine of every proof
+
+The fundamental rule of inference, written as an inference scheme:
+
+$$\frac{A,\quad A \rightarrow B}{B}$$
+
+Read: if I know $A$ is true, and I know "$A$ implies $B$" is true, I'm allowed to conclude $B$.
+
+> [!example]- Modus ponens in everyday math
+> - Premise 1: $x = 3$.
+> - Premise 2: If $x = 3$, then $x^2 = 9$.
+> - Conclusion: $x^2 = 9$. ✓
+>
+> Every "$\Rightarrow$" you write in a calculation is a hidden modus ponens.
+
+## 🔧 Four proof techniques you absolutely need
+
+### 1. Direct proof
+Build a chain $A \Rightarrow B_1 \Rightarrow B_2 \Rightarrow \cdots \Rightarrow B$. Apply modus ponens at every step.
+
+> [!example]- Direct proof: the first binomic formula
+> **Claim (Lemma 1.5 in Ziltener):** for all real $x, y$: $(x+y)^2 = x^2 + 2xy + y^2$.
+>
+> $(x+y)^2 = (x+y)(x+y) = x \cdot x + x \cdot y + y \cdot x + y \cdot y = x^2 + 2xy + y^2$. $\blacksquare$
+>
+> Each "$=$" is a direct application of distributivity / commutativity.
+
+### 2. Proof by contraposition
+To prove $A \Rightarrow B$, prove $\neg B \Rightarrow \neg A$ instead. The two are logically equivalent.
+
+> [!example]- Contraposition: "if $n^2$ is even, then $n$ is even"
+> Direct proof is hard (you'd need to factor $n^2$ somehow). Contrapositive: *if $n$ is odd, then $n^2$ is odd.*
+>
+> Suppose $n$ is odd, so $n = 2k + 1$ for some integer $k$. Then
+> $$n^2 = (2k+1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1.$$
+> That's of the form $2m + 1$, so $n^2$ is odd. $\blacksquare$
+
+> [!example]- Contraposition: $\sqrt{2} < \sqrt{3}$ (Ziltener Satz 1.8, first proof)
+> Use the fact that on $[0, \infty)$, $x \leq y \Rightarrow x^2 \leq y^2$ (Lemma 1.9).
+>
+> We want $A := (\sqrt{2} < \sqrt{3})$. Equivalently (by contraposition of the squaring lemma): if $\sqrt{2} \geq \sqrt{3}$ then $2 \geq 3$ — which is false. So $\sqrt{2} \geq \sqrt{3}$ is false, hence $\sqrt{2} < \sqrt{3}$. $\blacksquare$
+
+### 3. Proof by contradiction
+To prove a statement $S$, **assume $\neg S$** and derive a contradiction (something both true and false).
+
+> [!example]- There is no largest natural number
+> Assume there is a largest $n_0 \in \mathbb{N}$. But $n_0 + 1 \in \mathbb{N}$, and $n_0 + 1 > n_0$, contradicting that $n_0$ is the largest. **Contradiction.** $\blacksquare$
+
+> [!example]- $\sqrt{2}$ is irrational (classic, Ziltener Satz 2.1)
+> Assume for contradiction $\sqrt{2} = m/n$ with $m, n$ integers having no common factor of 2 (lowest terms).
+>
+> Squaring: $2 = m^2 / n^2$, so $m^2 = 2n^2$. Hence $m^2$ is even, so $m$ is even (by the previous example contraposed). Write $m = 2k$:
+> $$4k^2 = 2n^2 \;\Rightarrow\; n^2 = 2k^2,$$
+> so $n^2$ is even, so $n$ is even. But then $m, n$ both have a factor of 2 — contradicting our "lowest terms" assumption. $\blacksquare$
+
+> [!example]- $\sqrt{2 + \sqrt{3}} < 2$ (Ziltener Satz 1.10)
+> Assume for contradiction $\sqrt{2 + \sqrt{3}} \geq 2$. Squaring: $2 + \sqrt{3} \geq 4$, so $\sqrt{3} \geq 2$. Squaring again: $3 \geq 4$. False. $\blacksquare$
+
+> [!warning]- Subtle point about contradiction proofs
+> Inside a contradiction proof you are *temporarily reasoning from a false premise* (the negation of what you want to prove). So intermediate statements you derive can be **literally false statements** — and that's OK! The whole point is to keep deriving until you bump into a contradiction. From a false hypothesis, *anything* follows (*ex falso quodlibet*). Don't panic when you write down something that "looks wrong" mid-proof.
+
+### 4. Mathematical induction — your best friend on exams
+
+To prove $P(n)$ for **all** $n \in \mathbb{N}_0$:
+1. **Base case** (*Induktionsverankerung*): prove $P(0)$ (or $P(1)$ if the claim starts at 1).
+2. **Inductive step** (*Induktionsschritt*): assume $P(k)$ holds — the **induction hypothesis (IH)** — and from it deduce $P(k+1)$.
+
+The **domino picture**: line up infinitely many dominoes. Knock down the first one (base case); show that any falling domino topples its neighbor (inductive step). Then they all fall.
+
+> [!example]- Sum of the first $n$ odd numbers $= n^2$
+> **Claim:** $\sum_{k=1}^n (2k-1) = n^2$ for all $n \in \mathbb{N}$.
 >
 > **Base ($n=1$):** $1 = 1^2$ ✓
 >
 > **Step:** Assume $1 + 3 + \dots + (2n-1) = n^2$. Then
 > $$1 + 3 + \dots + (2n-1) + (2n+1) \stackrel{IH}{=} n^2 + (2n+1) = (n+1)^2 \quad\checkmark$$
+
+> [!example]- Sum of integers up to $n$ (Ziltener Satz 1.11)
+> **Claim:** $\sum_{i=1}^n i = \dfrac{n(n+1)}{2}$ for all $n \in \mathbb{N}_0$.
+>
+> **Base ($n=0$):** the empty sum equals $0 = \tfrac{0 \cdot 1}{2}$ ✓.
+>
+> **Step:** assume $\sum_{i=1}^k i = \tfrac{k(k+1)}{2}$. Then
+> $$\sum_{i=1}^{k+1} i = \sum_{i=1}^k i + (k+1) \stackrel{IH}{=} \frac{k(k+1)}{2} + (k+1) = \frac{(k+1)(k+2)}{2}.\quad\checkmark$$
+
+> [!example]- Bernoulli's inequality (Ziltener Lemma 2.7)
+> **Claim:** for all $n \in \mathbb{N}_0$ and $x \in [-1, \infty)$: $(1+x)^n \geq 1 + nx$.
+>
+> **Base ($n=0$):** $(1+x)^0 = 1 \geq 1 + 0\cdot x = 1$ ✓.
+>
+> **Step:** Assume $(1+x)^k \geq 1+kx$. Multiply by $(1+x) \geq 0$ (allowed since $x \geq -1$):
+> $$(1+x)^{k+1} \geq (1+kx)(1+x) = 1 + (k+1)x + kx^2 \geq 1 + (k+1)x.$$
+> Last step used $kx^2 \geq 0$ (since $k \geq 0$). $\checkmark$
+>
+> Bernoulli is the workhorse behind countless analysis estimates — it lets you replace $(1+x)^n$ by a linear lower bound.
 
 ## 🎯 How the exam tests logic
 
@@ -143,6 +337,7 @@ Every basic exam contains at least one logic / quantifier task. Common types:
 - **Negate a quantified statement** (FS 2023, MC1)
 - **Prove an inequality by induction** (FS 2015 task 9, FS 2019 task 13)
 - **Prove a sum-formula by induction**
+- **Multiple-choice** on logical equivalence, contraposition, vacuous truth.
 
 ## 📝 Practice tasks
 
@@ -179,18 +374,64 @@ Every basic exam contains at least one logic / quantifier task. Common types:
 >> $$= \frac{1}{2N+1} + \frac{1}{2N+2} - \frac{1}{N+1} = \frac{1}{2N+1} - \frac{1}{2N+2}$$
 >> Both differences match, so the identity transfers from $N$ to $N+1$. $\blacksquare$
 
+> [!question] **Task 1.4 (Contraposition)**
+> Prove by contraposition: if $n^2$ is divisible by 3, then $n$ is divisible by 3.
+>
+>> [!success]- Solution
+>> Contrapositive: *if $n$ is not divisible by 3, then $n^2$ is not divisible by 3.*
+>>
+>> If $3 \nmid n$, write $n = 3k + r$ with $r \in \{1, 2\}$.
+>> - $r = 1$: $n^2 = 9k^2 + 6k + 1 = 3(3k^2 + 2k) + 1$, remainder 1.
+>> - $r = 2$: $n^2 = 9k^2 + 12k + 4 = 3(3k^2 + 4k + 1) + 1$, remainder 1.
+>>
+>> In both cases $3 \nmid n^2$. $\blacksquare$
+>>
+>> *(This is exactly the trick used to prove $\sqrt 3$ is irrational, mirroring the $\sqrt 2$ argument.)*
+
+> [!question] **Task 1.5 (Truth table / equivalence)**
+> Show that $(A \rightarrow B) \equiv (\neg A \vee B)$.
+>
+>> [!success]- Solution
+>> | $A$ | $B$ | $A\to B$ | $\neg A$ | $\neg A \vee B$ |
+>> |---|---|---|---|---|
+>> | T | T | T | F | T |
+>> | T | F | F | F | F |
+>> | F | T | T | T | T |
+>> | F | F | T | T | T |
+>>
+>> Columns 3 and 5 match in every row. $\blacksquare$
+>>
+>> *(This identity is the basis for translating implications into Boolean logic, and explains why "false ⇒ anything" is true: $\neg A$ is already true, so the OR is true.)*
+
+> [!question] **Task 1.6 (Induction — geometric sum)**
+> Prove that for all $n \in \mathbb{N}_0$ and $q \in \mathbb{R} \setminus \{1\}$:
+> $$\sum_{k=0}^n q^k = \frac{1 - q^{n+1}}{1 - q}.$$
+>
+>> [!success]- Solution
+>> **Base ($n=0$):** LHS $= q^0 = 1$. RHS $= \frac{1 - q}{1 - q} = 1$. ✓
+>>
+>> **Step:** Assume the formula holds for $n$. Then
+>> $$\sum_{k=0}^{n+1} q^k = \sum_{k=0}^{n} q^k + q^{n+1} \stackrel{IH}{=} \frac{1 - q^{n+1}}{1 - q} + q^{n+1}$$
+>> $$= \frac{1 - q^{n+1} + q^{n+1}(1-q)}{1-q} = \frac{1 - q^{n+2}}{1-q}.\quad\checkmark$$
+>>
+>> This formula is the foundation of all geometric-series arguments later in the course.
+
 ---
 
 # 2 · Sets and functions
 
 ## 🤔 The big question
 
-Sets are the **nouns** of math; functions are the **verbs**. You can't talk about anything without them.
+**Sets** are the *nouns* of math; **functions** are the *verbs*. You can't talk about anything without them.
+
+In modern foundations (Zermelo–Fraenkel set theory), every mathematical object — numbers, functions, vectors, even logical formulas — is built from sets. So this chapter is the bedrock of everything that follows.
+
+> [!info] Where this chapter sits
+> This corresponds to Ziltener §1.2 (Mengenlehre) and §1.4 (Funktionen), and Struwe Chapter 1.
 
 ## 💡 Sets — collections without order
 
-> [!definition] Set
-> A **set** is an unordered collection of distinct objects, called **elements**.
+Cantor's original definition (1895): a set is *"an unordered collection of distinct objects gathered into a whole"*. Each object is called an **element** (*Element*); we write $x \in A$ for "$x$ is an element of $A$".
 
 Notation: $\{1, 2, 3\} = \{3, 1, 2\} = \{1, 1, 2, 3\}$ — order and repetition don't matter.
 
@@ -204,48 +445,230 @@ Notation: $\{1, 2, 3\} = \{3, 1, 2\} = \{1, 1, 2, 3\}$ — order and repetition 
 | Complex | $\mathbb{C}$ | $\{a + bi : a, b \in \mathbb{R}\}$ |
 | Empty set | $\emptyset$ or $\{\}$ | nothing |
 
-## 📜 Set operations and De Morgan
+> [!warning] $\emptyset$ vs $\{\emptyset\}$
+> - $\emptyset$ is the empty set: zero elements, $|\emptyset| = 0$.
+> - $\{\emptyset\}$ is a set whose **only** element is the empty set: one element, $|\{\emptyset\}| = 1$.
+>
+> They look almost identical in print but are very different. Don't confuse them.
+
+## 📜 Two ways to write a set
+
+**1. Roster form** (*aufzählende Schreibweise*) — list the elements:
+$$\{0, 1, 2, 3\}, \qquad \{-1, 1\}.$$
+
+**2. Set-builder** (*beschreibende Schreibweise*) — give a defining property $P$:
+$$\{x \mid P(x)\} \;=\; \text{"all $x$ such that $P(x)$ holds"}.$$
+
+> [!example]- Set-builder examples
+> - $\{n \in \mathbb{N}_0 \mid n \text{ even}\} = \{0, 2, 4, 6, \dots\}$.
+> - $\{(-1)^n \mid n \in \mathbb{N}_0\} = \{1, -1\}$ — only two distinct values, despite infinitely many $n$.
+> - $\{x \in \mathbb{R} \mid x^2 < 2\} = (-\sqrt{2}, \sqrt{2})$.
+> - $\{x \in \mathbb{Q} \mid x \geq 0,\; x^2 > 2\}$ — the set Ziltener uses to define $\sqrt 2$ as a Dedekind cut.
+
+## ⚠️ Russell's paradox — why "the set of all sets" is forbidden
+
+Try to define $X := \{x \mid x \notin x\}$ — "the set of all sets that don't contain themselves".
+
+Now ask: is $X \in X$?
+- If $X \in X$, then $X$ satisfies the defining property, so $X \notin X$. Contradiction.
+- If $X \notin X$, then $X$ satisfies the defining property, so $X \in X$. Contradiction.
+
+This is **Russell's paradox** (Bertrand Russell, 1901). The fix in modern set theory: you may only form $\{x \in X \mid P(x)\}$ — restricting to elements of a *pre-existing* set $X$. You cannot conjure sets out of arbitrary properties.
+
+> [!info]- The barber paradox (intuitive cousin)
+> *"In a town, the barber shaves exactly those men who don't shave themselves. Who shaves the barber?"* — same paradox, dressed in everyday clothes. Either answer leads to a contradiction. The resolution: no such barber can exist.
+
+## 📜 Set operations
+
+Fix a "universe" $X$ (the *Grundmenge*). For $A, B \subseteq X$:
 
 | Operation | Definition | Picture |
 |---|---|---|
-| Union | $A \cup B = \{x : x \in A \vee x \in B\}$ | both circles |
-| Intersection | $A \cap B = \{x : x \in A \wedge x \in B\}$ | overlap only |
-| Difference | $A \setminus B = \{x \in A : x \notin B\}$ | $A$ minus the overlap |
+| Union | $A \cup B = \{x \mid x \in A \vee x \in B\}$ | both circles |
+| Intersection | $A \cap B = \{x \mid x \in A \wedge x \in B\}$ | overlap only |
+| Difference | $A \setminus B = \{x \in A \mid x \notin B\}$ | $A$ minus the overlap |
 | Complement | $A^c = X \setminus A$ | everything outside $A$ |
-| Cartesian product | $A \times B = \{(a,b) : a \in A, b \in B\}$ | grid of pairs |
+| Subset | $A \subseteq B :\Leftrightarrow \forall x : x \in A \Rightarrow x \in B$ | $A$ inside $B$ |
 
-> [!theorem] De Morgan's Laws
-> $$(A \cap B)^c = A^c \cup B^c, \qquad (A \cup B)^c = A^c \cap B^c$$
+> [!theorem] De Morgan's Laws (Ziltener Satz 1.13)
+> For all $A, B \subseteq X$:
+> $$(A \cap B)^c = A^c \cup B^c, \qquad (A \cup B)^c = A^c \cap B^c.$$
+>
+> The set version and the propositional version of De Morgan are *the same theorem in two languages*: $\cap$ corresponds to $\wedge$, $\cup$ to $\vee$, complement to $\neg$.
+
+> [!example]- Why De Morgan works (mini proof)
+> $$x \in (A \cap B)^c$$
+> $\Leftrightarrow x \notin A \cap B$
+> $\Leftrightarrow \neg(x \in A \wedge x \in B)$
+> $\Leftrightarrow \neg(x \in A) \vee \neg(x \in B)$ ← logical De Morgan
+> $\Leftrightarrow x \in A^c \vee x \in B^c$
+> $\Leftrightarrow x \in A^c \cup B^c.\quad \blacksquare$
+
+## 💡 $n$-tuples and Cartesian products — when order matters
+
+Sets ignore order. But often we *want* order: a coordinate $(3, 5)$ on a map is different from $(5, 3)$.
+
+> [!definition] $n$-tuple (Ziltener 1.14)
+> An (ordered) $n$-tuple $(x_1, \dots, x_n)$ is determined by its entries **and their order**:
+> $$(x_1, \dots, x_n) = (y_1, \dots, y_n) \;\Leftrightarrow\; x_1 = y_1 \wedge \dots \wedge x_n = y_n.$$
+> A 2-tuple is a *pair*, a 3-tuple a *triple*.
+
+> [!definition] Cartesian product (Ziltener 1.15)
+> $$X \times Y := \{(x,y) \mid x \in X,\; y \in Y\}, \qquad X^n := \underbrace{X \times \dots \times X}_{n \text{ times}}.$$
+
+> [!example]- A small Cartesian product
+> $X = \{0, 1\}$, $Y = \{\text{Apple}, \text{House}, \text{Mountain}\}$.
+> $$X \times Y = \{(0,\text{A}), (0,\text{H}), (0,\text{M}), (1,\text{A}), (1,\text{H}), (1,\text{M})\}.$$
+> Six pairs. In general for finite sets: $|X \times Y| = |X| \cdot |Y|$.
+
+The set $\mathbb{R}^n$ is the **standard $n$-dimensional space**: $\mathbb{R}^1$ is the line, $\mathbb{R}^2$ the plane, $\mathbb{R}^3$ space.
+
+## 💡 Distance in $\mathbb{R}^n$ — the Euclidean norm and balls
+
+For $\mathbf{v} = (v_1, \dots, v_n) \in \mathbb{R}^n$, the **Euclidean norm** (length):
+$$\|\mathbf{v}\| := \sqrt{v_1^2 + v_2^2 + \dots + v_n^2}.$$
+
+This is just the Pythagorean theorem in $n$ dimensions. The distance between two points $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$ is $\|\mathbf{x} - \mathbf{y}\|$.
+
+> [!definition] Open ball, closed ball, sphere (Ziltener 1.16)
+> Fix a center $\mathbf{x}_0 \in \mathbb{R}^n$ and radius $r \in [0, \infty]$.
+> - **Open ball:** $B_r(\mathbf{x}_0) := \{\mathbf{x} \in \mathbb{R}^n \mid \|\mathbf{x} - \mathbf{x}_0\| < r\}$ — strict inequality.
+> - **Closed ball:** $\overline{B}_r(\mathbf{x}_0) := \{\mathbf{x} \in \mathbb{R}^n \mid \|\mathbf{x} - \mathbf{x}_0\| \leq r\}$.
+> - **Sphere:** $S_r^{n-1}(\mathbf{x}_0) := \{\mathbf{x} \in \mathbb{R}^n \mid \|\mathbf{x} - \mathbf{x}_0\| = r\}$ — the boundary surface.
+
+> [!example]- What balls actually look like
+> - In $\mathbb{R}^1$: $B_r(x_0) = (x_0 - r, x_0 + r)$ — an open interval. The "sphere" $S^0$ is just two points.
+> - In $\mathbb{R}^2$: an open disk; $S^1$ is a circle.
+> - In $\mathbb{R}^3$: a solid ball; $S^2$ is the spherical surface (Earth's surface, idealised).
+> - Edge cases: $B_0(\mathbf{x}_0) = \emptyset$, $\overline{B}_0(\mathbf{x}_0) = \{\mathbf{x}_0\}$, $B_\infty(\mathbf{x}_0) = \mathbb{R}^n$.
+>
+> Open balls are the building blocks for the entire concept of *limits* and *continuity* later on. Worth getting comfortable with now.
 
 ## 💡 Functions — the rule book
 
-> [!definition] Function
-> A function $f: X \to Y$ assigns to every $x \in X$ exactly **one** $f(x) \in Y$.
-> - $X$ — **domain**
-> - $Y$ — **codomain**
-> - Notation: $x \mapsto f(x)$
+> [!definition] Function (Ziltener 1.20)
+> A **function** (or *mapping*, *Abbildung*) is a triple $f = (X, Y, G)$ where:
+> - $X$ is a set, the **domain** (*Definitionsbereich*, $\operatorname{dom} f$);
+> - $Y$ is a set, the **codomain** (*Zielbereich*, $\operatorname{codom} f$);
+> - $G \subseteq X \times Y$ is the **graph** (*Graph*), satisfying: for every $x \in X$ there is exactly one $y \in Y$ with $(x, y) \in G$.
+>
+> We write $f : X \to Y$ and $f(x) = y$ for that unique $y$. The arrow notation $x \mapsto f(x)$ describes the *rule*.
 
-> [!example]
-> - $f: \mathbb{R} \to \mathbb{R},\; x \mapsto x^2$
-> - $g: \mathbb{R} \to \mathbb{R},\; x \mapsto \sin x$
-> - $h: [0, \infty) \to \mathbb{R},\; x \mapsto \sqrt{x}$ — only on non-negatives!
+> [!warning] Why three pieces, not just a formula?
+> The **same formula** can give **different functions** depending on the domain/codomain.
+> - $f : \mathbb{R} \to \mathbb{R},\; x \mapsto x^2$ is *not* surjective.
+> - $\tilde f : \mathbb{R} \to [0, \infty),\; x \mapsto x^2$ *is* surjective.
+> - $\hat f : [0, \infty) \to [0, \infty),\; x \mapsto x^2$ is *bijective*.
+>
+> Same rule, three different functions. Always specify all three pieces.
+
+> [!example]- Some functions to keep in mind
+> - $f : \mathbb{R} \to \mathbb{R},\; x \mapsto x^2$.
+> - $g : \mathbb{R} \to \mathbb{R},\; x \mapsto \sin x$.
+> - $h : [0, \infty) \to \mathbb{R},\; x \mapsto \sqrt{x}$ — domain restriction is essential, since $\sqrt{\cdot}$ isn't real for negatives.
+> - **Identity** $\operatorname{id}_X : X \to X$, $x \mapsto x$. The simplest non-trivial function.
+> - **A "real-life" function:** $X = \{\text{ETH students}\}$, $Y = \{\text{dates}\}$, $f(x) = $ birthday of $x$. (Each student has exactly one birthday — that's why this *is* a function. Two students can share a birthday — that's why it's not injective.)
+> - **From Ziltener:** $X = \{\text{real polynomials}\}$, $Y = \mathcal{P}(\mathbb{R})$, $f(p) = $ zero set of $p$. E.g. $f(1) = \emptyset$, $f(x+1) = \{-1\}$, $f(x^2 - 1) = \{-1, 1\}$.
+
+## 📜 Image and preimage
+
+> [!definition] Image and preimage (Ziltener 1.21)
+> Let $f : X \to Y$.
+> - For $A \subseteq X$, the **image** $f(A) := \{f(x) \mid x \in A\} \subseteq Y$. Special case: $\operatorname{im}(f) := f(X)$, the *range*.
+> - For $B \subseteq Y$, the **preimage** $f^{-1}(B) := \{x \in X \mid f(x) \in B\} \subseteq X$.
+> - For a single $y \in Y$: $f^{-1}(y) := f^{-1}(\{y\}) = \{x \in X \mid f(x) = y\}$.
+
+> [!warning] Notation trap — $f^{-1}$ has TWO meanings
+> $f^{-1}(B)$ is a **set** — defined for any function, no inversion required. It's "all $x$ that land in $B$"; it can be empty, a single point, or many.
+>
+> Don't confuse $f^{-1}(y)$ (preimage, a *set*) with $\dfrac{1}{f(y)}$ (reciprocal, a *number*). They use the same symbol but mean different things.
+>
+> Later, when $f$ is bijective, the symbol $f^{-1}$ also denotes the *inverse function* — and for a single point $y$, the preimage and inverse value agree: $f^{-1}(\{y\}) = \{f^{-1}(y)\}$.
+
+> [!example]- Image and preimage in action
+> Let $f : \mathbb{R} \to \mathbb{R},\; x \mapsto x^2$.
+> - $\operatorname{im}(f) = [0, \infty)$ — every non-negative real is hit.
+> - $f([1,2]) = [1, 4]$.
+> - $f^{-1}(\{4\}) = \{-2, +2\}$ (two preimages).
+> - $f^{-1}(\{-1\}) = \emptyset$ (no real square is negative).
+> - $f^{-1}((-\infty, 4)) = (-2, 2)$.
+
+> [!example]- Image and preimage with a discrete function
+> Let $f : \mathbb{N}_0 \to \mathbb{N}_0,\; f(n) = n^2$.
+> - $\operatorname{im}(f) = \{0, 1, 4, 9, 16, \dots\}$ — the perfect squares.
+> - $f^{-1}(\{1, 2, 3, 4, 5\}) = \{1, 2\}$ (since $1^2 = 1$ and $2^2 = 4$ are the only squares in that set).
 
 ## 🔧 Injective, surjective, bijective
 
-> [!definition]
-> - **Injective** (one-to-one): different inputs → different outputs. $\;f(x_1) = f(x_2) \Rightarrow x_1 = x_2$.
-> - **Surjective** (onto): every $y \in Y$ is hit. $\;\forall y \in Y, \exists x: f(x) = y$.
-> - **Bijective**: both. Then an inverse $f^{-1}: Y \to X$ exists.
+> [!definition] (Ziltener 1.22)
+> Let $f : X \to Y$.
+> - **Injective** (*injektiv*, one-to-one): $\forall x_1, x_2 \in X : f(x_1) = f(x_2) \Rightarrow x_1 = x_2$. Equivalently: different inputs → different outputs.
+> - **Surjective** (*surjektiv*, onto): $\forall y \in Y, \exists x \in X : f(x) = y$. Every $y$ is hit.
+> - **Bijective**: both injective and surjective. Then $f$ has an inverse function.
 
-> [!example] Mental picture
-> - $f(x) = x^2$ on $\mathbb{R}$: NOT injective ($f(1) = f(-1)$), NOT surjective onto $\mathbb{R}$ (negative numbers aren't hit).
-> - $f(x) = e^x: \mathbb{R} \to (0, \infty)$: bijective, inverse is $\ln$.
+The **graphical "horizontal line test"** for $f : \mathbb{R} \to \mathbb{R}$:
+- *Injective* ⟺ every horizontal line crosses the graph **at most once**.
+- *Surjective* ⟺ every horizontal line crosses **at least once**.
+- *Bijective* ⟺ every horizontal line crosses **exactly once**.
+
+> [!example]- Mental pictures
+> | Function | Injective? | Surjective? | Bijective? |
+> |---|---|---|---|
+> | $\operatorname{id}_X : X \to X$ | ✅ | ✅ | ✅ |
+> | $f: [0,\infty) \to \mathbb{R},\; x \mapsto x$ | ✅ | ❌ (negatives missed) | ❌ |
+> | $f: \mathbb{R} \to [0,\infty),\; x \mapsto x^2$ | ❌ ($f(1)=f(-1)$) | ✅ | ❌ |
+> | $f: \mathbb{R} \to \mathbb{R},\; x \mapsto x^2$ | ❌ | ❌ | ❌ |
+> | $f: \mathbb{R} \to \mathbb{R},\; x \mapsto x^3$ | ✅ | ✅ | ✅ |
+> | $\exp : \mathbb{R} \to (0, \infty)$ | ✅ | ✅ | ✅ (inverse: $\ln$) |
+>
+> Note how injectivity and surjectivity depend on **codomain choice**, not just on the formula.
+
+## 💡 The inverse function
+
+> [!definition] Inverse function (Ziltener 1.23)
+> If $f : X \to Y$ is **bijective**, define
+> $$f^{-1} : Y \to X, \qquad f^{-1}(y) := \text{the unique $x \in X$ with $f(x) = y$.}$$
+>
+> Then $f^{-1} \circ f = \operatorname{id}_X$ and $f \circ f^{-1} = \operatorname{id}_Y$. The graph of $f^{-1}$ is the reflection of the graph of $f$ across the line $y = x$.
+
+> [!warning]- Why bijectivity is required for an inverse
+> - If $f$ is not injective, two inputs share an output — so trying to invert at that output gives a multi-valued thing, not a function.
+> - If $f$ is not surjective, some $y$ has *no* preimage — so $f^{-1}(y)$ wouldn't be defined.
+>
+> Both conditions are necessary. Bijectivity = "exactly one preimage for every output".
+
+> [!example]- Common inverse functions
+> - $\operatorname{id}_X^{-1} = \operatorname{id}_X$ — the identity is its own inverse.
+> - $f : [0, \infty) \to [0, \infty),\; x \mapsto x^2$ has inverse $\sqrt{\cdot} : [0, \infty) \to [0, \infty)$.
+> - $\exp : \mathbb{R} \to (0, \infty)$ has inverse $\ln = \log : (0, \infty) \to \mathbb{R}$ (natural log).
+> - $\sin : [-\tfrac{\pi}{2}, \tfrac{\pi}{2}] \to [-1, 1]$ has inverse $\arcsin$ — note the carefully restricted domain to make it bijective.
+> - $\tan : (-\tfrac{\pi}{2}, \tfrac{\pi}{2}) \to \mathbb{R}$ has inverse $\arctan$.
 
 ## 🔧 Composition
 
-If $f: X \to Y$ and $g: Y \to Z$:
-$$(g \circ f)(x) = g(f(x))$$
-Apply $f$ first, then $g$. **Associative**: $(h \circ g) \circ f = h \circ (g \circ f)$.
+> [!definition] Composition (Ziltener 1.25)
+> If $f : X \to Y$ and $g : Y \to Z$, define
+> $$(g \circ f) : X \to Z, \qquad (g \circ f)(x) := g(f(x)).$$
+> Read right-to-left: apply $f$ first, then $g$.
+
+Properties:
+- **Associative:** $(h \circ g) \circ f = h \circ (g \circ f)$, written without parentheses as $h \circ g \circ f$.
+- **NOT commutative in general:** $g \circ f \neq f \circ g$. Often $f \circ g$ isn't even defined.
+
+> [!example]- Composition is not commutative
+> Let $f, g : \mathbb{R} \to \mathbb{R}$ with $f(x) = x + 1$ and $g(y) = y^2$.
+> - $(g \circ f)(x) = g(x+1) = (x+1)^2 = x^2 + 2x + 1$.
+> - $(f \circ g)(x) = f(x^2) = x^2 + 1$.
+>
+> $(x+1)^2 \neq x^2 + 1$ in general. Order matters.
+
+> [!example]- Composition with multiple variables
+> $f : \mathbb{R}^2 \to \mathbb{R},\; f(x, y) = x + y$ and $g = \exp : \mathbb{R} \to \mathbb{R}$.
+> - $(g \circ f)(x, y) = e^{x + y}$ ✓
+> - $(f \circ g)$ is **not defined**: $g$ outputs a single real, but $f$ wants a pair as input.
+
+> [!example]- Inverses via composition
+> If $f$ is bijective with inverse $f^{-1}$, then $f^{-1} \circ f = \operatorname{id}_X$ and $f \circ f^{-1} = \operatorname{id}_Y$. This is sometimes used as the *definition* of "inverse function" (and it's a slick way to verify a candidate inverse: just check both compositions equal the identity).
 
 ## 🎯 How the exam tests this
 
@@ -253,6 +676,85 @@ Set/function questions are warm-up multiple choice. Example FS 2023 MC2:
 > *True or false: for any $f: X \to Y$ and any $A, B, C \subseteq X$, we have $f((A \cup B) \cap C) = (f(A) \cup f(B)) \cap f(C)$.*
 
 **Answer: False.** The image and intersection don't generally commute when $f$ isn't injective.
+
+> [!example]- Tiny counterexample
+> Let $X = \{1, 2\}$, $Y = \{0\}$, $f(x) = 0$. Take $A = \{1\}$, $B = \emptyset$, $C = \{2\}$.
+> - LHS: $f((A \cup B) \cap C) = f(\{1\} \cap \{2\}) = f(\emptyset) = \emptyset$.
+> - RHS: $(f(\{1\}) \cup \emptyset) \cap f(\{2\}) = \{0\} \cap \{0\} = \{0\}$.
+>
+> $\emptyset \neq \{0\}$. Statement is false. $\blacksquare$
+>
+> *(Lesson: Image preserves $\cup$ but not $\cap$ in general. Preimage preserves both.)*
+
+## 📝 Practice tasks
+
+> [!question] **Task 2.1 (Set identity)**
+> Prove $A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$.
+>
+>> [!success]- Solution
+>> $x \in A \setminus (B \cup C)$
+>> $\Leftrightarrow x \in A \wedge x \notin B \cup C$
+>> $\Leftrightarrow x \in A \wedge \neg(x \in B \vee x \in C)$
+>> $\Leftrightarrow x \in A \wedge x \notin B \wedge x \notin C$ (De Morgan)
+>> $\Leftrightarrow (x \in A \wedge x \notin B) \wedge (x \in A \wedge x \notin C)$
+>> $\Leftrightarrow x \in (A \setminus B) \cap (A \setminus C)$. $\blacksquare$
+
+> [!question] **Task 2.2 (Image / preimage computation)**
+> For $f : \mathbb{R} \to \mathbb{R}$, $f(x) = x^2 - 1$, compute:
+>
+> (a) $f([-2, 2])$ &nbsp;&nbsp; (b) $f^{-1}([0, 3])$ &nbsp;&nbsp; (c) $f^{-1}((-2, 0))$
+>
+>> [!success]- Solution
+>> (a) On $[-2, 2]$: $x^2 \in [0, 4]$, so $f(x) = x^2 - 1 \in [-1, 3]$. **$f([-2,2]) = [-1, 3]$.**
+>>
+>> (b) $0 \leq x^2 - 1 \leq 3 \Leftrightarrow 1 \leq x^2 \leq 4 \Leftrightarrow x \in [-2, -1] \cup [1, 2]$.
+>>
+>> (c) $-2 < x^2 - 1 < 0 \Leftrightarrow -1 < x^2 < 1$. The left inequality holds automatically ($x^2 \geq 0 > -1$); the right gives $|x| < 1$. **$f^{-1}((-2, 0)) = (-1, 1)$.**
+
+> [!question] **Task 2.3 (Bijectivity & inverse)**
+> Show that $f : \mathbb{R} \setminus \{1\} \to \mathbb{R} \setminus \{1\}$, $f(x) = \dfrac{x+1}{x-1}$ is bijective and find $f^{-1}$.
+>
+>> [!success]- Solution
+>> Solve $y = \frac{x+1}{x-1}$ for $x$:
+>> $$y(x-1) = x+1 \;\Rightarrow\; yx - y = x + 1 \;\Rightarrow\; x(y - 1) = y + 1 \;\Rightarrow\; x = \frac{y+1}{y-1}.$$
+>>
+>> So $f^{-1}(y) = \dfrac{y+1}{y-1}$ — **the function equals its own inverse!** ($f \circ f = \operatorname{id}$, an *involution*.)
+>>
+>> The formula is well-defined exactly when $y \neq 1$, matching the codomain. So $f$ is a bijection.
+
+> [!question] **Task 2.4 (Composition)**
+> Let $f(x) = 2x + 3$ and $g(x) = x^2$. Compute $g \circ f$ and $f \circ g$, and verify they differ.
+>
+>> [!success]- Solution
+>> $(g \circ f)(x) = g(2x+3) = (2x+3)^2 = 4x^2 + 12x + 9$.
+>>
+>> $(f \circ g)(x) = f(x^2) = 2x^2 + 3$.
+>>
+>> At $x = 1$: $g \circ f = 25$, $f \circ g = 5$. Different. $\blacksquare$
+
+> [!question] **Task 2.5 (Preimage preserves $\cap$ and $\cup$)**
+> For any $f : X \to Y$ and any $A, B \subseteq Y$, prove:
+> (a) $f^{-1}(A \cap B) = f^{-1}(A) \cap f^{-1}(B)$
+> (b) $f^{-1}(A \cup B) = f^{-1}(A) \cup f^{-1}(B)$
+>
+>> [!success]- Solution
+>> (a) $x \in f^{-1}(A \cap B) \Leftrightarrow f(x) \in A \cap B \Leftrightarrow f(x) \in A \wedge f(x) \in B \Leftrightarrow x \in f^{-1}(A) \wedge x \in f^{-1}(B) \Leftrightarrow x \in f^{-1}(A) \cap f^{-1}(B)$.
+>>
+>> (b) Same argument with $\vee$ instead of $\wedge$. $\blacksquare$
+>>
+>> *(Compare with Task 2 of FS 2023 MC2: image is "less well-behaved" — it doesn't preserve $\cap$ in general. Preimage is the better citizen.)*
+
+> [!question] **Task 2.6 (Composition of bijections)**
+> Let $f : X \to Y$ and $g : Y \to Z$ both be bijective. Show $g \circ f : X \to Z$ is bijective and $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$ ("socks and shoes" rule).
+>
+>> [!success]- Solution
+>> **Injective:** if $(g \circ f)(x_1) = (g \circ f)(x_2)$, then $g(f(x_1)) = g(f(x_2))$. By injectivity of $g$: $f(x_1) = f(x_2)$. By injectivity of $f$: $x_1 = x_2$. ✓
+>>
+>> **Surjective:** for any $z \in Z$, surjectivity of $g$ gives $y \in Y$ with $g(y) = z$; surjectivity of $f$ gives $x \in X$ with $f(x) = y$. Then $(g \circ f)(x) = z$. ✓
+>>
+>> **Inverse formula:** $(f^{-1} \circ g^{-1}) \circ (g \circ f) = f^{-1} \circ (g^{-1} \circ g) \circ f = f^{-1} \circ \operatorname{id}_Y \circ f = f^{-1} \circ f = \operatorname{id}_X$. Similarly the other composition. So $f^{-1} \circ g^{-1}$ is the inverse. $\blacksquare$
+>>
+>> *Mnemonic: to undo "put on socks, then shoes" you do "take off shoes, then socks" — reverse order.*
 
 ---
 
