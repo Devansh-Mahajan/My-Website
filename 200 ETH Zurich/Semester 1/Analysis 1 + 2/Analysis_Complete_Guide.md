@@ -416,6 +416,168 @@ Every basic exam contains at least one logic / quantifier task. Common types:
 >>
 >> This formula is the foundation of all geometric-series arguments later in the course.
 
+## 📚 Official problem-set tasks (Loesung 00, 01, 02)
+
+The exercises below are taken verbatim from the official ITET HS24 Übungsserien (Ziltener). Try each one yourself before opening the solution toggle.
+
+> [!question] **L0.4 (warm-up: wenn, oder, ∃, ∀)**
+> Determine truth values:
+> (i) "If $n$ is even, then $n+1$ is odd" — for which $n \in \mathbb{N}$?
+> (ii) "If 1 is even, then 2 is odd."
+> (iii) "$1 + 1 = 2$ or $1$ is odd."
+> (iv) "Either $1 + 1 = 2$ or $1$ is odd." (exclusive)
+> (v) "$\forall m \in \mathbb{N}\; \exists n \in \mathbb{N} : m \leq n$."
+> (vi) "$\exists n \in \mathbb{N}\; \forall m \in \mathbb{N} : m \leq n$."
+>
+>> [!success]- Solution
+>> (i) **True for all $n$** (when $n$ even, $n+1$ odd; when $n$ odd, premise false → vacuously true).
+>> (ii) **True** (premise "1 is even" is false → vacuous).
+>> (iii) **True** (first part true).
+>> (iv) **False** (both parts true, exclusive-or rejects this).
+>> (v) **True** (take $n := m$).
+>> (vi) **False** (no largest natural number).
+
+> [!question] **L0.7 (warm-up induction)**
+> Prove $\sum_{i=1}^n i = \dfrac{n(n+1)}{2}$ for all $n \in \mathbb{N}$.
+>
+>> [!success]- Solution
+>> Base $n=1$: $1 = \tfrac{1\cdot 2}{2}$. ✓
+>> Step: $\sum_{i=1}^{n+1} i = (n+1) + \tfrac{n(n+1)}{2} = \tfrac{2(n+1) + n(n+1)}{2} = \tfrac{(n+1)(n+2)}{2}$. $\blacksquare$
+
+> [!question] **L1.1 (translate to symbols + truth value)**
+> Write each in symbols, then state the truth value:
+> (a) "Zero plus one is one, AND zero is greater than one."
+> (b) "Zero plus one is one, OR zero is less than one."
+> (c) "Either zero plus one is one, OR zero is less than one." (exclusive)
+> (d) "If zero is greater than one, then zero plus one is zero."
+> (e) "Zero is greater than one IFF zero plus one is one."
+>
+>> [!success]- Solution
+>> (a) $0+1 = 1 \wedge 0 > 1$ — **F** ($0>1$ is false).
+>> (b) $0+1 = 1 \vee 0 < 1$ — **T**.
+>> (c) $0+1 = 1 \;\dot\vee\; 0 < 1$ — **F** (both true → XOR false).
+>> (d) $0 > 1 \rightarrow 0 + 1 = 0$ — **T** (vacuous).
+>> (e) $0 > 1 \leftrightarrow 0 + 1 = 1$ — **F** (one side T, other F).
+
+> [!question] **L1.2 (truth-table identities to verify)**
+> Verify by truth table:
+> (a) $\neg(P \wedge Q) \equiv \neg P \vee \neg Q$ (De Morgan)
+> (b) $\neg(P \vee Q) \equiv \neg P \wedge \neg Q$ (De Morgan)
+> (c) $(P \rightarrow Q) \equiv (\neg Q \rightarrow \neg P)$ (Contraposition)
+> (d) $(P \leftrightarrow Q) \equiv (P \rightarrow Q) \wedge (Q \rightarrow P)$
+> (e) $P \wedge (Q \vee R) \equiv (P \wedge Q) \vee (P \wedge R)$ (Distribution)
+> (f) Counterexample: is $P \wedge (Q \vee R) \equiv (P \wedge Q) \vee R$?
+>
+>> [!success]- Solution
+>> (a)–(e): build the 4- or 8-row truth tables; the columns for the two sides match in every row.
+>>
+>> (f) **Not equivalent.** Take $P = F$, $Q = F$, $R = T$:
+>> - LHS: $F \wedge (F \vee T) = F \wedge T = F$.
+>> - RHS: $(F \wedge F) \vee T = F \vee T = T$.
+>> Different. So associating $\wedge$ and $\vee$ wrongly changes meaning.
+
+> [!question] **L1.3 (proofs by contraposition AND contradiction)**
+> (a) Prove: $\sqrt{3} < \sqrt{5}$.
+> (b) Prove: $\sqrt{3 + \sqrt{5}} < \sqrt{6}$.
+>
+> Show each by both contraposition and contradiction.
+>
+>> [!success]- Solution
+>> (a) **Contraposition:** the squaring lemma says $0 \leq x \leq y \Rightarrow x^2 \leq y^2$. Contrapose: $x^2 < y^2 \Rightarrow x < y$ (for $x, y \geq 0$). Apply with $x^2 = 3, y^2 = 5$: $3 < 5 \Rightarrow \sqrt 3 < \sqrt 5$. $\blacksquare$
+>>
+>> **Contradiction:** assume $\sqrt 3 \geq \sqrt 5$. Square (monotonic on $[0,\infty)$): $3 \geq 5$. False. $\blacksquare$
+>>
+>> (b) **Contradiction:** assume $\sqrt{3 + \sqrt 5} \geq \sqrt 6$. Square: $3 + \sqrt 5 \geq 6$, so $\sqrt 5 \geq 3$. Square again: $5 \geq 9$. False. $\blacksquare$
+>> (Contraposition: $5 < 9 \Rightarrow \sqrt 5 < 3 \Rightarrow 3 + \sqrt 5 < 6 \Rightarrow \sqrt{3+\sqrt 5} < \sqrt 6$.)
+
+> [!question] **L1.4 (induction power-pack — four classics)**
+> Prove by induction:
+> (a) $\sum_{k=1}^n k^2 = \tfrac{1}{6} n(n+1)(2n+1)$
+> (b) $\sum_{k=1}^n k^3 = \big(\tfrac{1}{2} n(n+1)\big)^2$
+> (c) $(1+x)(1+x^2)(1+x^4)\cdots(1+x^{2^n}) = \dfrac{1 - x^{2^{n+1}}}{1 - x}$ for $x \neq 1, n \in \mathbb{N}_0$
+> (d) $\sum_{k=1}^n k \cdot k! = (n+1)! - 1$
+>
+>> [!success]- Solution to (a)
+>> Base $n=1$: $1 = \tfrac{1\cdot 2 \cdot 3}{6}$. ✓
+>> Step: add $(n+1)^2$ and factor:
+>> $$\tfrac{n(n+1)(2n+1)}{6} + (n+1)^2 = \tfrac{(n+1)\big(n(2n+1) + 6(n+1)\big)}{6} = \tfrac{(n+1)(2n^2 + 7n + 6)}{6} = \tfrac{(n+1)(n+2)(2n+3)}{6}.\;\checkmark$$
+>
+>> [!success]- Solution to (b)
+>> Base $n=1$: $1 = (\tfrac{1\cdot 2}{2})^2$. ✓
+>> Step: $\big(\tfrac{n(n+1)}{2}\big)^2 + (n+1)^3 = \tfrac{(n+1)^2}{4}\big(n^2 + 4(n+1)\big) = \tfrac{(n+1)^2 (n+2)^2}{4} = \big(\tfrac{(n+1)(n+2)}{2}\big)^2.\;\checkmark$
+>
+>> [!success]- Solution to (c)
+>> Base $n=0$: $1+x = \tfrac{1 - x^2}{1 - x}$ ✓ (third binomic formula).
+>> Step: multiply both sides by $(1 + x^{2^{n+1}})$:
+>> $$\tfrac{1 - x^{2^{n+1}}}{1 - x}(1 + x^{2^{n+1}}) = \tfrac{1 - x^{2^{n+2}}}{1 - x}.\;\checkmark$$
+>
+>> [!success]- Solution to (d)
+>> Base $n=1$: $1 \cdot 1! = 1 = 2! - 1$. ✓
+>> Step: $\sum_{k=1}^{n+1} k\cdot k! = (n+1)\cdot(n+1)! + (n+1)! - 1 = (n+2)\cdot (n+1)! - 1 = (n+2)! - 1.\;\checkmark$
+
+> [!question] **L1.5 (the famous "all horses are the same color" fallacy)**
+> Where is the error in this "proof"?
+> *Claim: any group of $n$ horses has the same color. Base $n=1$: trivial. Step: take $n+1$ horses; remove one → the remaining $n$ are same color (IH); remove a different one → those $n$ are also same color (IH); overlap forces all $n+1$ to share the color.*
+>
+>> [!success]- Solution
+>> The step **fails when going from $n=1$ to $n=2$**: removing one horse from 2 leaves a single horse (one color, trivially); removing the *other* one leaves a different single horse — but the two singletons share *no* horse, so there's no "overlap" to force them to the same color. The argument silently assumes $n \geq 2$ when invoking overlap.
+
+> [!question] **L1.6 (multiple choice — equivalences and negations)**
+> (a) Which is always true?
+>   (i) $(\neg A \rightarrow B) \wedge (B \rightarrow A)$
+>   (ii) $(A \vee (\neg A \wedge B)) \leftrightarrow (A \vee B)$
+> (b) Negation of "It's raining and I have no umbrella":
+>   (i) "It's not raining or I have an umbrella."
+> (c) Contrapositive of "If it rains and I have no umbrella, I get wet":
+>   (iii) "If I don't get wet, then it's not raining or I have an umbrella."
+> (d) Negation of "10 is even and ≤ 11":
+>   (iii) "10 is not even or > 11."
+>
+>> [!success]- Solution
+>> (a) **(ii)** is the always-true tautology. Verify: $A \vee (\neg A \wedge B)$ is T iff $A$ is T or ($A$ is F and $B$ is T) — exactly when $A \vee B$ is T.
+>> (b) **(i)** by De Morgan applied to the conjunction.
+>> (c) **(iii)** flip and negate.
+>> (d) **(iii)** De Morgan again.
+
+> [!question] **L2.3 (quantifier interpretation + truth)**
+> State each in plain language and decide the truth value:
+> (a) $\forall n \in \mathbb{N}_0 : n \leq 1 \vee n > 1$
+> (b) $\forall x \in \mathbb{N}_0 : x \leq 1 \vee x > 1$
+> (c) $\exists x \in \mathbb{R}\; \forall (p, q) \in \mathbb{Z} \times (\mathbb{Z} \setminus \{0\}) : x \neq p/q$
+>
+> Then translate to symbols:
+> (1) "24 is not a perfect square."
+> (2) The Archimedean principle: "for every real $x$, there is a natural number larger than $x$."
+>
+>> [!success]- Solution
+>> (a) "Every $n \in \mathbb{N}_0$ is either $\leq 1$ or $> 1$." **True** (trichotomy on $\mathbb{R}$).
+>> (b) Same statement with renamed variable. **True** (Goethe's principle).
+>> (c) "There exists an irrational real number." **True** ($\sqrt{2}$ for instance).
+>>
+>> (1) $\nexists n \in \mathbb{N}_0 : n^2 = 24$.
+>> (2) $\forall x \in \mathbb{R}\; \exists n \in \mathbb{N}_0 : n > x$.
+
+> [!question] **L2.4 (negate AND determine truth)**
+> Negate each, then determine which (original or negation) is true.
+> (a) $\forall n \in \mathbb{N}_0 : n < n^2$
+> (b) $\forall n \in \mathbb{N}_0 : n \leq 1 \vee n > 1$
+> (c) $\forall x \in (0, \infty)\; \exists n \in \mathbb{N} : 1/n < x$
+> (d) $\exists n \in \mathbb{N}\; \forall x \in (0, \infty) : 1/n < x$
+>
+>> [!success]- Solution
+>> (a) Neg: $\exists n : n \geq n^2$. **Negation TRUE** ($n=0$: $0 \geq 0$). Original false.
+>> (b) Neg: $\exists n : n > 1 \wedge n \leq 1$ — never. **Original TRUE.**
+>> (c) Neg: $\exists x > 0 \;\forall n \geq 1 : 1/n \geq x$. **Original TRUE** (Archimedes).
+>> (d) Neg: $\forall n \geq 1\; \exists x > 0 : 1/n \geq x$ — take $x := 1/n$. **Negation TRUE** (no fixed $n$ beats every positive $x$).
+
+> [!question] **L4.9 (Bernoulli's inequality — the official version)**
+> Prove $(1+x)^n \geq 1 + nx$ for all $x \in [-1, \infty)$ and $n \in \mathbb{N}_0$.
+>
+>> [!success]- Solution
+>> Base $n=0$: $1 \geq 1$. ✓
+>> Step: $(1+x) \geq 0$ since $x \geq -1$, so multiplying the IH:
+>> $$(1+x)^{n+1} \geq (1+nx)(1+x) = 1 + (n+1)x + n x^2 \geq 1 + (n+1)x.\;\checkmark$$
+
 ---
 
 # 2 · Sets and functions
@@ -756,6 +918,177 @@ Set/function questions are warm-up multiple choice. Example FS 2023 MC2:
 >>
 >> *Mnemonic: to undo "put on socks, then shoes" you do "take off shoes, then socks" — reverse order.*
 
+## 📚 Official problem-set tasks (Loesung 00, 02, 03, 04)
+
+Set/function exercises taken verbatim from the official ITET HS24 Übungsserien. All solutions in toggle format.
+
+> [!question] **L0.1 (graphs warm-up)**
+> Sketch the graphs and give 4 specific points on each:
+> (a) $\exp_2(x) = 2^x$  (b) $\log_2$  (c) $\sin$  (d) $\cos$  (e) $f(x) = e^{-x^2}$ (Gaussian bell)
+>
+> How are the graphs of $\exp_2$ and $\log_2$ related?
+>
+>> [!success]- Solution
+>> Sample points:
+>> - (a) $(0,1), (1,2), (2,4), (3,8)$
+>> - (b) $(1,0), (2,1), (4,2), (8,3)$
+>> - (c) $(0,0), (\pi/2, 1), (\pi, 0), (3\pi/2, -1)$
+>> - (d) $(0,1), (\pi/2, 0), (\pi, -1), (3\pi/2, 0)$
+>> - (e) $(-1, e^{-1}), (0, 1), (1, e^{-1}), (2, e^{-4})$
+>>
+>> $\exp_2$ and $\log_2$ are inverse functions of each other; their graphs are reflections across the line $y = x$.
+
+> [!question] **L0.5 (set fundamentals)**
+> (i) How many elements?
+>   (a) $\emptyset$  (b) $\{\emptyset\}$  (c) $\{0, 1, 0\}$  (d) $\{(-1)^n \mid n \in \mathbb{Z}\}$
+>
+> (ii) Solution set of $x^2 + x - 2 = 0$?
+> (iii) Sketch $\{(x, y) \in \mathbb{R}^2 \mid x^2 + y^2 = 1\}$ and $\{(x,y,z) \in \mathbb{R}^3 \mid x^2 + y^2 + z^2 = 1\}$.
+>
+>> [!success]- Solution
+>> (i) (a) **0**  (b) **1**  (c) **2** (only $0, 1$ are distinct)  (d) **2** (only values $1, -1$).
+>>
+>> (ii) Quadratic formula: $x = \tfrac{-1 \pm 3}{2}$, so the set is $\{1, -2\}$.
+>>
+>> (iii) The unit circle $S^1 \subset \mathbb{R}^2$, and the unit sphere $S^2 \subset \mathbb{R}^3$.
+
+> [!question] **L2.1 (set operations practice)**
+> (a) Simplify: $X = \{1, 2, 1+1\}$, $Y = \{0 \cdot n \mid n \in \mathbb{N}_0\}$, $Z = \{n \in \mathbb{N}_0 \mid n > 0 \wedge n \leq 3\}$.
+> (b) For $X = \{0, 1\}, Y = \{1, 2\}$: compute $X \cap Y$, $X \cup Y$, $X \setminus Y$. Is $X \subseteq Y$?
+> (c) For $X = \{\text{Apple, House}\}, Y = \{0, 1, 2\}, Z = \{0, 1\}$: compute $X \times Y$, $Y^2$, $Z^3$.
+>
+>> [!success]- Solution
+>> (a) $X = \{1, 2\}$ (duplicates collapse); $Y = \{0\}$ (every element equals 0); $Z = \{1, 2, 3\}$.
+>>
+>> (b) $X \cap Y = \{1\}$; $X \cup Y = \{0, 1, 2\}$; $X \setminus Y = \{0\}$; $X \not\subseteq Y$ (since $0 \notin Y$).
+>>
+>> (c) $X \times Y$ has 6 pairs $\{(\text{A},0),\dots,(\text{H},2)\}$; $|Y^2| = 9$; $|Z^3| = 8$.
+
+> [!question] **L2.2 (De Morgan and distributivity for sets)**
+> Prove:
+> (a) $(A \cap B)^c = A^c \cup B^c$
+> (b) $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+> (c) $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
+>
+>> [!success]- Solution
+>> All three follow by translating "$x \in \dots$" into propositional logic and applying the corresponding propositional De Morgan / distributive law.
+>>
+>> (a) $x \in (A \cap B)^c \Leftrightarrow \neg(x \in A \wedge x \in B) \Leftrightarrow \neg(x \in A) \vee \neg(x \in B) \Leftrightarrow x \in A^c \cup B^c$. $\blacksquare$
+>>
+>> (b) $x \in A \cap (B \cup C) \Leftrightarrow (x \in A) \wedge (x \in B \vee x \in C) \Leftrightarrow (x \in A \wedge x \in B) \vee (x \in A \wedge x \in C) \Leftrightarrow x \in (A \cap B) \cup (A \cap C)$. $\blacksquare$
+>>
+>> (c) Same trick with $\vee$ and $\wedge$ swapped.
+
+> [!question] **L2.5 (function or not? — decoding the triple)**
+> Which of the following triples $(X, Y, G)$ is a function?
+> (a) $X = \mathbb{R}, Y = \mathbb{R}, G = \{(x, e^x) \mid x \in \mathbb{R}\}$
+> (b) $X = \mathbb{R}, Y = \mathbb{R}, G = \{(y^2, y) \mid y \in \mathbb{R}\}$
+> (c) $X = [0, \infty), Y = \mathbb{R}, G = \{(y^2, y) \mid y \in \mathbb{R}\}$
+> (d) $X = [0, \infty), Y = \mathbb{R}, G = \{(y^2, y) \mid y \in [0, \infty)\}$
+>
+>> [!success]- Solution
+>> (a) **Function** (each $x$ has exactly one $e^x$).
+>> (b) **Not a function**: $-1 \in X$ has no pair in $G$ (no $y$ with $y^2 = -1$).
+>> (c) **Not a function**: $1 \in X$ has *two* pairs $(1, 1)$ and $(1, -1)$ in $G$.
+>> (d) **Function**: this is exactly $f(x) = \sqrt{x}$.
+
+> [!question] **L2.6 (image and preimage with full proofs)**
+> Compute and prove:
+> (a) $\operatorname{im}(f)$ for $f(x) = x^2$ and for $h(x) = e^x$.
+> (b) $f^{-1}((-1, 4))$, $g^{-1}([-8, -1])$ for $g(x) = x^3$, $h^{-1}([-1, 1])$.
+>
+>> [!success]- Solution
+>> (a) $\operatorname{im}(f) = [0, \infty)$. ($\subseteq$) every square is $\geq 0$. ($\supseteq$) for $y \geq 0$ and $z := \max\{y, 1\}$ we have $f(0) = 0 \leq y \leq z \leq z^2 = f(z)$, so the intermediate value theorem yields some $x$ with $f(x) = y$.
+>>
+>> $\operatorname{im}(h) = (0, \infty)$. ($\subseteq$) $e^x > 0$. ($\supseteq$) For $y \geq 1$ apply IVT on $[0, y]$ since $h(0) = 1 \leq y \leq y \leq e^y = h(y)$. For $y < 1$, set $\tilde y = 1/y > 1$, find $\tilde x$ with $e^{\tilde x} = \tilde y$, then $h(-\tilde x) = 1/\tilde y = y$.
+>>
+>> (b) $f^{-1}((-1, 4)) = \{x : -1 < x^2 < 4\} = \{x : x^2 < 4\} = (-2, 2)$.
+>>
+>> $g^{-1}([-8, -1]) = \{x : -8 \leq x^3 \leq -1\} = [-2, -1]$ (cube root is monotonic).
+>>
+>> $h^{-1}([-1, 1]) = \{x : e^x \leq 1\} = (-\infty, 0]$ (since $e^x > 0$ always, the lower bound $-1$ is automatic).
+
+> [!question] **L2.7 (inj/surj/bij — the full menagerie)**
+> Classify each as injective / surjective / bijective:
+> (a) $f : \mathbb{N}_0 \to \{m \in \mathbb{N}_0 : m \text{ even}\}, f(n) = 2n$
+> (b) $f : [0, \infty) \to \mathbb{R}, f(x) = x$
+> (c) $f : \mathbb{R} \to [0, \infty), f(x) = x^2$
+> (d) $f : \mathbb{R} \to \mathbb{R}, f(x) = x^2$
+> (e) $f : \mathbb{R} \to \mathbb{R}, f(x) = 2x + 1$
+> (f) $f : \mathbb{R} \to (0, \infty), f(x) = e^{2x}$
+>
+>> [!success]- Solution
+>> (a) **Bijective**.
+>> (b) Injective only.
+>> (c) Surjective only.
+>> (d) Neither.
+>> (e) **Bijective**, with inverse $y \mapsto (y-1)/2$.
+>> (f) **Bijective**, with inverse $y \mapsto \tfrac{1}{2}\ln y$.
+
+> [!question] **L2.8 (compute the inverses)**
+> Find $f^{-1}$ for the bijective functions in L2.7.
+>
+>> [!success]- Solution
+>> (a) $f^{-1}(m) = m/2$.
+>> (e) $f^{-1}(y) = (y - 1)/2$.
+>> (f) $f^{-1}(y) = \tfrac{1}{2}\ln(y)$ for $y > 0$.
+
+> [!question] **L2.9 (compositions, including ill-defined ones)**
+> (a) $f, g : \mathbb{R} \to \mathbb{R}$ with $f(x) = x^2$, $g(y) = e^y$. Compute $g \circ f$ and $f \circ g$.
+> (b) $f : \mathbb{R}^2 \to \mathbb{R}, f(\mathbf{x}) = \|\mathbf{x}\|$; $g : \mathbb{R} \to \mathbb{R}, g(y) = e^y$. Compute $g \circ f$ and $g \circ f(1, 2)$. What about $f \circ g$?
+>
+>> [!success]- Solution
+>> (a) $(g \circ f)(x) = e^{x^2}$; $(f \circ g)(y) = (e^y)^2 = e^{2y}$.
+>>
+>> (b) $(g \circ f)(x_1, x_2) = e^{\sqrt{x_1^2 + x_2^2}}$; at $(1, 2)$: $e^{\sqrt 5}$. $f \circ g$ is **not well-defined**: $g$ produces a scalar, but $f$ takes a vector in $\mathbb{R}^2$.
+
+> [!question] **L2.10 (image/preimage and set operations — full proofs)**
+> (a) Prove $f^{-1}(B_1 \cup B_2) = f^{-1}(B_1) \cup f^{-1}(B_2)$, $f^{-1}(B_1 \cap B_2) = f^{-1}(B_1) \cap f^{-1}(B_2)$, and $f(A_1 \cup A_2) = f(A_1) \cup f(A_2)$.
+> (b) Find a counterexample to $f(A_1 \cap A_2) = f(A_1) \cap f(A_2)$.
+>
+>> [!success]- Solution
+>> (a) All three follow by translating to logic. E.g.:
+>> $x \in f^{-1}(B_1 \cap B_2) \Leftrightarrow f(x) \in B_1 \wedge f(x) \in B_2 \Leftrightarrow x \in f^{-1}(B_1) \cap f^{-1}(B_2)$. $\blacksquare$
+>>
+>> (b) Take $f : \{1, 2\} \to \{1\}$ with $f \equiv 1$, $A_1 = \{1\}, A_2 = \{2\}$. Then $A_1 \cap A_2 = \emptyset$, so $f(A_1 \cap A_2) = \emptyset$. But $f(A_1) \cap f(A_2) = \{1\} \cap \{1\} = \{1\}$. Different.
+
+> [!question] **L2.12 (multiple choice — set/function traps)**
+> (a) Are $f(f^{-1}(B)) = B$ and $f^{-1}(f(A)) = A$ always true?
+> (b) $\big||x - 2| - 1\big| < 3 \Leftrightarrow ?$
+> (c) If $g \circ f = \operatorname{id}_X$, what follows? (i) $f$ injective, (iv) $g$ surjective.
+> (d) $f$ even, $g$ odd: which products are even/odd?
+> (e) Inverse of $f : [0, \infty) \to \mathbb{R}, f(x) = x^4$?
+> (f) Negate $\forall a \in A,\, \exists b \in B : a \leq b$.
+>
+>> [!success]- Solution
+>> (a) Both **false in general**: equality requires extra hypotheses (surjectivity for the first, injectivity for the second).
+>> (b) $||x-2| - 1| < 3 \Leftrightarrow -3 < |x-2| - 1 < 3 \Leftrightarrow |x-2| < 4 \Leftrightarrow$ **$-2 < x < 6$.**
+>> (c) Both (i) and (iv): $g \circ f = \operatorname{id}_X$ forces $f$ to be injective and $g$ to be surjective.
+>> (d) $fg$ is **odd** (even·odd = odd); $fg^2$ is **even** (even·even = even).
+>> (e) The inverse **doesn't exist** as a map to $\mathbb{R}$: $f$ isn't surjective onto $\mathbb{R}$ (range is $[0, \infty)$).
+>> (f) $\exists a \in A : \forall b \in B : a > b$.
+
+> [!question] **L3.1 (element vs subset — fundamentals)**
+> Using $0 := \emptyset$, $1 := \{0\}$, $2 := \{0, 1\}$, $3 := \{0, 1, 2\}$, …, decide:
+> (a) $1 \in \{1\}$  (b) $1 \subseteq \{1\}$  (c) $\emptyset \in \{\emptyset\}$  (d) $\emptyset \subseteq \{\emptyset\}$  (e) $\forall X : \emptyset \subseteq X$
+>
+>> [!success]- Solution
+>> (a) **True** ($1$ is the unique element).
+>> (b) **False**: $1 = \{0\}$, so $1 \subseteq \{1\}$ would need $0 \in \{1\}$ — but $\{1\}$'s only element is $1$, not $0$.
+>> (c) **True**.
+>> (d) **True**: $\emptyset$ is a subset of every set.
+>> (e) **True** (vacuously: there's nothing to check).
+
+> [!question] **L4.1 (cardinality / equinumerosity)**
+> Show $\mathbb{N}_0$ and $\{\text{perfect squares}\} = \{0, 1, 4, 9, \dots\}$ have the same cardinality.
+>
+>> [!success]- Solution
+>> Define $f : \mathbb{N}_0 \to \{\text{perfect squares}\}$, $f(n) = n^2$.
+>> - **Injective**: if $n_1^2 = n_2^2$ with $n_1, n_2 \geq 0$, then $n_1 = n_2$.
+>> - **Surjective**: every perfect square is by definition some $n^2$.
+>>
+>> So $f$ is a bijection. The two sets are equinumerous (despite one being a strict subset of the other — the hallmark of infinite sets, Galileo's paradox).
+
 ---
 
 # 3 · Numbers — from $\mathbb{N}$ to $\mathbb{C}$
@@ -865,6 +1198,117 @@ This is why $\mathbb{C}$ is **algebraically closed** — and why FS 2023 MC3 ("d
 >> $-8 = 8e^{i\pi}$. The three cube roots:
 >> $$w_j = 2 e^{i(\pi + 2\pi j)/3}, \quad j = 0, 1, 2$$
 >> Concretely: $w_0 = 2e^{i\pi/3} = 1 + i\sqrt{3}$, $w_1 = 2e^{i\pi} = -2$, $w_2 = 2e^{i5\pi/3} = 1 - i\sqrt{3}$.
+
+## 📚 Official problem-set tasks (Loesung 02, 03, 04)
+
+> [!question] **L2.11 (compute sup, inf, max, min)**
+> For each of the following subsets of $\mathbb{R}$, compute $\sup$, $\inf$, and decide whether max/min exist:
+> (a) $A := \{1/n \mid n \in \mathbb{N}\}$
+> (b) $B := \{1/x \mid x \in (1, 2]\}$
+> (c) $C := \{x/(x+1) \mid x \in [2, \infty)\}$
+>
+>> [!success]- Solution
+>> (a) $A = \{1, 1/2, 1/3, \dots\}$. $\sup A = 1 = \max A$; $\inf A = 0$ (not attained, no min).
+>> (b) $B = [\tfrac{1}{2}, 1)$. $\inf B = 1/2 = \min B$; $\sup B = 1$ (not attained, no max).
+>> (c) The function $x \mapsto x/(x+1) = 1 - 1/(x+1)$ is strictly increasing. At $x = 2$ it equals $2/3$. As $x \to \infty$ it tends to 1. So $C = [2/3, 1)$: $\inf C = 2/3 = \min C$; $\sup C = 1$ (no max).
+
+> [!question] **L3.2 (Dedekind cuts in action)**
+> Recall $\bar r := \{s \in \mathbb{Q} : s > r\}$ for $r \in \mathbb{Q}$, and addition/multiplication of cuts.
+> (a) Show $\bar 1 + \bar 2 = \bar 3$.
+> (b) Show $\bar 1 \cdot \bar 1 = \bar 1$.
+> (c) Define $\sqrt 2 := \{r \in \mathbb{Q} : r \geq 0,\, r^2 > 2\}$. Verify $\sqrt 2$ is a Dedekind cut.
+>
+>> [!success]- Solution
+>> (a) $\bar 1 + \bar 2 = \{r + s : r > 1, s > 2\}$.
+>> ($\subseteq$): if $r > 1, s > 2$ then $r + s > 3$. ($\supseteq$): given $t > 3$, set $r = 1 + (t-3)/2$ and $s = 2 + (t-3)/2$; then $r > 1, s > 2$, and $r + s = t$. $\blacksquare$
+>>
+>> (b) Same idea: ($\subseteq$) $rs > 1$ when $r, s > 1$; ($\supseteq$) given $t > 1$, take $r = (t+1)/2 > 1$ and $s = t/r$, then $s > 1$ (algebra) and $rs = t$.
+>>
+>> (c) Check the four Dedekind cut axioms:
+>> - Nonempty: $r = 2$ has $r^2 = 4 > 2$. ✓
+>> - $\neq \mathbb{Q}$: $r = 1$ has $r^2 = 1 \not> 2$. ✓
+>> - Upward closed: if $r \in \sqrt 2$ and $s > r$, then $s^2 > r^2 > 2$. ✓
+>> - No smallest: given $r \in \sqrt 2$, set $s_0 := (2r+2)/(r+2)$. Then $s_0 < r$ and $s_0^2 > 2$ (after expanding). ✓
+
+> [!question] **L3.6 (sup and inf of $-A$)**
+> Let $\emptyset \neq A \subseteq \mathbb{R}$ be bounded, and define $-A := \{-a : a \in A\}$. Show:
+> $$\sup(-A) = -\inf A, \qquad \inf(-A) = -\sup A.$$
+>
+>> [!success]- Solution
+>> Note: $u$ is a lower bound of $A \Leftrightarrow \forall a \in A : u \leq a \Leftrightarrow \forall a : -u \geq -a \Leftrightarrow -u$ is an upper bound of $-A$.
+>>
+>> So $\inf A$ being a lower bound of $A$ means $-\inf A$ is an upper bound of $-A$, hence $\sup(-A) \leq -\inf A$. Conversely, $\sup(-A)$ being an upper bound of $-A$ makes $-\sup(-A)$ a lower bound of $A$, so $-\sup(-A) \leq \inf A$, i.e. $\sup(-A) \geq -\inf A$. Equality. $\blacksquare$
+>>
+>> The second identity follows from the first applied to $-A$ in place of $A$.
+
+> [!question] **L3.7 (complex arithmetic — bring to standard form)**
+> Compute in form $a + bi$:
+> (a) $(3 + 2i)(6 - 5i)$
+> (b) $\dfrac{1}{1 + i}$
+> (c) $\dfrac{3 + 4i}{2 - i}$
+> (d) $\left(\dfrac{1 + i}{1 - i}\right)^n$ for $n \in \mathbb{N}$
+> (e) $(1+i)^2 + (\overline{1+i})^2$
+> (f) $\left(\dfrac{1 + i\sqrt 3}{2}\right)^3$
+> (g) $(1+i)^6$ via polar form
+>
+>> [!success]- Solution
+>> (a) $18 - 15i + 12i + 10 = 28 - 3i$.
+>> (b) $\frac{1}{1+i} \cdot \frac{1-i}{1-i} = \frac{1-i}{2} = \tfrac{1}{2} - \tfrac{1}{2} i$.
+>> (c) $\frac{(3+4i)(2+i)}{(2-i)(2+i)} = \frac{2 + 11i}{5} = \tfrac{2}{5} + \tfrac{11}{5} i$.
+>> (d) $\frac{1+i}{1-i} = i$, so the answer is $i^n$ — periodic with period 4: $1, i, -1, -i, 1, \dots$.
+>> (e) $(1+i)^2 = 2i$, $(\overline{1+i})^2 = (1-i)^2 = -2i$, sum $= 0$.
+>> (f) $(1 + i\sqrt 3)^3 = 1 + 3 i\sqrt 3 + 3(i\sqrt 3)^2 + (i\sqrt 3)^3 = 1 + 3i\sqrt 3 - 9 - 3\sqrt 3\, i = -8$. Divide by $8$: $-1$.
+>> (g) $1+i = \sqrt 2 \,\operatorname{cis}(\pi/4)$, so $(1+i)^6 = 8\,\operatorname{cis}(3\pi/2) = -8i$.
+
+> [!question] **L3.8 (point sets in $\mathbb{C}$)**
+> Sketch:
+> (a) $M_1 := \{z \in \mathbb{C} : 1 < |z - i| < 2\}$
+> (b) $M_2 := \{z \in \mathbb{C} : |z - 1| = |z + 1|\}$
+>
+>> [!success]- Solution
+>> (a) Open **annulus** centered at $i$, between radii 1 and 2.
+>>
+>> (b) Set $z = x + iy$: $(x-1)^2 + y^2 = (x+1)^2 + y^2 \Leftrightarrow -2x = 2x \Leftrightarrow x = 0$. The **imaginary axis** (perpendicular bisector of $-1$ and $1$).
+
+> [!question] **L3.9 (zeros of complex quadratics)**
+> For $P(z) = az^2 + bz + c$ ($a \neq 0$), the zeros are $\alpha_\pm = (-b \pm \sqrt{b^2 - 4ac})/(2a)$. Apply to:
+> (a) $z^2 + 6z + 10$
+> (b) $4z^2 + 4iz - 1$
+> (c) $(z^2 + 1)(z - 3i)^2$
+>
+>> [!success]- Solution
+>> (a) Discriminant $36 - 40 = -4$, so $\sqrt{-4} = 2i$. Roots: $(-6 \pm 2i)/2 = -3 \pm i$.
+>>
+>> (b) Discriminant $-16 - (-16) = 0$, root $-i/2$ (double).
+>>
+>> (c) Factor reveals roots $\pm i$ and $3i$ (with $3i$ a double root).
+
+> [!question] **L3.10 / L4.11 (online MC — counting roots, sup, geometry, polar)**
+> (a) How many distinct zeros does $P(z) = z(z^2+1)^2 - z^2 - z^5$ have?
+> (b) Maximum of $A := \{1/n : n \in \mathbb{N}\} \cup (2, 4)$?
+> (c) Geometric shape of $M := \{c \in \mathbb{C} : |c - 1| = 2\}$?
+>
+>> [!success]- Solution
+>> (a) Expand: $P(z) = z(z^4 + 2z^2 + 1) - z^2 - z^5 = z^5 + 2z^3 + z - z^2 - z^5 = 2z^3 - z^2 + z = z(2z^2 - z + 1)$. Three distinct roots: $0$ and the two roots of $2z^2 - z + 1$ (discriminant $1 - 8 = -7$). **Answer: 3.**
+>>
+>> (b) Max **does not exist**: $\sup A = 4 \notin A$.
+>>
+>> (c) **Circle** centered at $1$ with radius $2$.
+
+> [!question] **L4.2 (the cis-function and powers)**
+> Bring to standard form:
+> (a) $(1+i)^2$  (b) $(1+i)(1-i)$  (c) $1/(1-i)$  (d) $\operatorname{cis}(\pi/4), \operatorname{cis}(\pi/3), \operatorname{cis}(\pi/6)$
+> (e) $(1+i)^{10}$  (f) $\big(\tfrac{1+\sqrt 3 i}{2}\big)^6$
+>
+> Prove: $\operatorname{cis}(\varphi + \psi) = \operatorname{cis}(\varphi)\operatorname{cis}(\psi)$ and $\operatorname{cis}(k\pi/2) = i^k$ for $k \in \mathbb{Z}$.
+>
+>> [!success]- Solution
+>> (a) $2i$. (b) $2$. (c) $\tfrac{1}{2} + \tfrac{1}{2} i$.
+>> (d) $\tfrac{\sqrt 2}{2}(1 + i)$, $\tfrac{1}{2} + \tfrac{\sqrt 3}{2} i$, $\tfrac{\sqrt 3}{2} + \tfrac{1}{2} i$.
+>> (e) Polar: $(\sqrt 2)^{10}\operatorname{cis}(10\pi/4) = 32\operatorname{cis}(5\pi/2) = 32 i$.
+>> (f) Polar: $\operatorname{cis}(6\cdot\pi/3) = \operatorname{cis}(2\pi) = 1$.
+>>
+>> The addition formula $\operatorname{cis}(\varphi + \psi) = \operatorname{cis}\varphi \cdot \operatorname{cis}\psi$ unpacks to the classical sin/cos addition theorems. The second identity follows iteratively from $\operatorname{cis}(\pi/2) = i$.
 
 ---
 
@@ -987,6 +1431,108 @@ $$\limsup_{n\to\infty} a_n := \lim_{n\to\infty}\!\Big(\sup_{k\geq n} a_k\Big), \
 >> [!success]- Solution
 >> $\lim_{n\to\infty} R_n = R_a + \lim_{n\to\infty} \frac{R_b R_c}{R_b/n + R_c} + R_d = R_a + R_b + R_d$. Converges.
 
+## 📚 Official problem-set tasks (Loesung 00, 04, 05)
+
+> [!question] **L0.6 (sequences warm-up)**
+> (i) First six terms of $a_n := n^2$.
+> (ii) Fibonacci: $a_0 = 0, a_1 = 1, a_n = a_{n-2} + a_{n-1}$. First six terms.
+> (iii) Convergence of $(n^2)_n$, $(1/n)_n$, $((n+1)/(n+2))_n$.
+>
+>> [!success]- Solution
+>> (i) $0, 1, 4, 9, 16, 25$.
+>> (ii) $0, 1, 1, 2, 3, 5$.
+>> (iii) Diverges to $\infty$; converges to $0$; converges to $1$.
+
+> [!question] **L4.5 (ε-N proofs of convergence)**
+> Prove via the ε-N definition:
+> (a) $a_n := 2/n \to 0$.
+> (b) $a_n := 1 + 1/\sqrt n \to 1$.
+> (c) $a_n := 2/n + 1 + 1/\sqrt n \to 1$.
+> (d) $a_n := (-1)^n$ diverges.
+>
+>> [!success]- Solution
+>> (a) Given $\varepsilon > 0$, choose $n_0 \geq 2/\varepsilon$ (Archimedes). For $n \geq n_0$: $|a_n - 0| = 2/n \leq 2/n_0 \leq \varepsilon$. ✓
+>>
+>> (b) Choose $n_0 \geq 1/\varepsilon^2$. For $n \geq n_0$: $|a_n - 1| = 1/\sqrt n \leq 1/\sqrt{n_0} \leq \varepsilon$. ✓
+>>
+>> (c) Sum of (a) and (b); limit is $0 + 1 = 1$. (Or: directly use the limit-laws.)
+>>
+>> (d) Suppose $a_n \to A$. Pick $\varepsilon = 1/2$. For all large $n$, $|(-1)^n - A| < 1/2$. But $(-1)^n$ alternates between $1$ and $-1$, which differ by $2$, contradicting "all within $1/2$ of one fixed $A$".
+
+> [!question] **L4.7 (zero × bounded = zero)**
+> Suppose $a_n \to 0$ and $(b_n)$ is bounded ($|b_n| \leq C$). Show $a_n b_n \to 0$.
+>
+>> [!success]- Solution
+>> Given $\varepsilon > 0$, set $\tilde\varepsilon := \varepsilon/C$. Pick $N$ so $|a_n| < \tilde\varepsilon$ for $n \geq N$. Then $|a_n b_n| \leq |a_n| \cdot C < (\varepsilon / C) \cdot C = \varepsilon$. $\blacksquare$
+>>
+>> *Used constantly: any $1/n$-style decay times any bounded oscillation (sin, cos, $(-1)^n$) goes to zero.*
+
+> [!question] **L4.8 (compute these limits)**
+> (a) $\lim \dfrac{n^2 - n + 3}{n^2 + 2}$
+> (b) $\lim \dfrac{n^3 - n^2 + 3}{2^n(n^2 + 5)}$
+> (c) $\lim \dfrac{\sqrt{n^2 - 1}}{n}$
+> (d) $\lim n^2 \left(\dfrac{\sin n}{2^n} + \dfrac{\cos n}{n^4}\right)$
+>
+>> [!success]- Solution
+>> (a) Divide by $n^2$: $\frac{1 - 1/n + 3/n^2}{1 + 2/n^2} \to 1$.
+>> (b) Numerator grows polynomially, denominator exponentially; limit $0$.
+>> (c) $\sqrt{1 - 1/n^2} \to 1$. (Conjugate trick gives $|\sqrt{1 - 1/n^2} - 1| \leq 1/n^2 \to 0$.)
+>> (d) Both terms are (zero-sequence)·(bounded). Use L4.7: limit $= 0 + 0 = 0$.
+
+> [!question] **L4.10 (Heron's method for $\sqrt c$)**
+> Fix $c \geq 1$. Define $a_1 := c$, $a_{n+1} := \tfrac{1}{2}(a_n + c/a_n)$.
+> (a) Show $1 \leq a_n \leq c$ for all $n$.
+> (b) Show $a_n^2 \geq c$.
+> (c) Show $(a_n)$ is monotonically decreasing.
+> (d) Conclude $a_n \to \sqrt c$.
+> (e) Numerical check for $c = 3$.
+>
+>> [!success]- Solution
+>> (a) Induction: $a_{n+1} = \tfrac{1}{2}(a_n + c/a_n) \in [\tfrac12(1 + 1), \tfrac12(c + c)] = [1, c]$.
+>>
+>> (b) $a_{n+1}^2 - c = \tfrac{1}{4}(a_n + c/a_n)^2 - c = \tfrac{1}{4}(a_n - c/a_n)^2 \geq 0$.
+>>
+>> (c) $a_n - a_{n+1} = \tfrac{1}{2a_n}(a_n^2 - c) \geq 0$ by (b).
+>>
+>> (d) Bounded + monotone ⇒ convergent (Chapter 4 main theorem). The limit $a$ satisfies $a = \tfrac12(a + c/a)$, so $a^2 = c$, hence $a = \sqrt c$.
+>>
+>> (e) $c = 3$: $a_1 = 3, a_2 = 2, a_3 = 1.75, a_4 \approx 1.73214, a_5 \approx 1.73205081$ — matches $\sqrt 3 \approx 1.732050808$ to 7 decimals. *Doubling of correct digits per step (quadratic convergence).*
+
+> [!question] **L4.11 (online MC — limits)**
+> (a) $\lim \dfrac{16 n^3 + 100 n + 10^6}{27 n^3 + 10920 n + 2020}$
+> (b) $\lim \dfrac{n^2}{2^n n^2 + 8}$
+> (c) $\lim \dfrac{n^3 + 22n^2 - 10}{29 n^2 - 27 n + 8}$
+>
+>> [!success]- Solution
+>> (a) **$16/27$** — leading coefficients dominate.
+>> (b) **$0$** — exponential beats polynomial.
+>> (c) **Diverges** to $+\infty$ (numerator degree exceeds denominator).
+
+> [!question] **L5.1 (lim sup and lim inf)**
+> Compute:
+> (a) $\limsup_{k\to\infty} (-1)^k(1 + 1/k)$
+> (b) $\liminf_{k\to\infty} (-1)^k(1 + 1/k)$
+> (c) $\limsup_{k\to\infty} k(1 + (-1)^k)$
+> (d) $\liminf_{k\to\infty} k(1 + (-1)^k)$
+>
+>> [!success]- Solution
+>> (a) Even subsequence $\to 1^+$, odd subsequence $\to -1^-$. **$\limsup = 1$.**
+>> (b) **$\liminf = -1$.**
+>> (c) Even: $a_{2k} = 4k \to \infty$. **$\limsup = +\infty$.**
+>> (d) Odd: $a_{2k+1} = 0$ for all $k$. **$\liminf = 0$.**
+
+> [!question] **L5.2 (vector convergence and $n$-th roots)**
+> (a) Convergence of $a_n := ((n+1)/n,\, 2^{-n}) \in \mathbb{R}^2$?
+> (b) Show $\sqrt[n]{n} \to 1$.
+> (c) Show $\sqrt[n]{n!} \to \infty$.
+>
+>> [!success]- Solution
+>> (a) Component-wise: $1 + 1/n \to 1$ and $2^{-n} \to 0$. **Limit $(1, 0)$.**
+>>
+>> (b) Write $\sqrt[n]{n} = 1 + \delta_n$ with $\delta_n \geq 0$. Then $n = (1 + \delta_n)^n \geq \binom{n}{2}\delta_n^2 = \tfrac{n(n-1)}{2}\delta_n^2$, so $\delta_n^2 \leq \tfrac{2}{n-1} \to 0$, hence $\delta_n \to 0$. ✓
+>>
+>> (c) Hint: $(2k)! \geq k^k$, so $\sqrt[n]{n!} \geq \sqrt{n/2}$ for both even and odd $n$. Given $C > 0$, pick $n_0 > 2C^2$; for $n \geq n_0$: $\sqrt[n]{n!} \geq \sqrt{n/2} > C$. So $\sqrt[n]{n!} \to \infty$. $\blacksquare$
+
 ---
 
 # 5 · Series — adding infinitely many things
@@ -1103,6 +1649,81 @@ It satisfies $\;e^{z+w} = e^z \cdot e^w\;$ — and from this single fact follow 
 >
 >> [!success]- Solution
 >> $F_k = (\tfrac14)^{k-1} F_1$, so $\sum F_k = \frac{F_1}{1 - 1/4} = \frac{4 F_1}{3}$, hence $F_1$ is $\frac{3}{4} = 75\%$.
+
+## 📚 Official problem-set tasks (Loesung 00, 05)
+
+> [!question] **L0.7 (warm-up: geometric series)**
+> Compute $1 + \tfrac12 + \tfrac14 + \tfrac18 + \dots$
+>
+>> [!success]- Solution
+>> Geometric series with $q = 1/2$: $\sum q^i = \dfrac{1}{1 - 1/2} = 2$.
+
+> [!question] **L5.3 (apply convergence tests)**
+> Show convergence of:
+> (a) $\sum_{k=1}^\infty \dfrac{(k!)^2}{(2k)!}$
+> (b) $\sum_{k=1}^\infty \dfrac{k!}{k^k}$
+> (c) $\sum_{k=1}^\infty k^p z^k$ for $|z| < 1, p \in \mathbb{N}$
+> (d) $\sum_{k=0}^\infty \dfrac{(-1)^k}{2k+1}$ (Leibniz series for $\pi/4$)
+>
+>> [!success]- Solution
+>> (a) **Ratio test:** $\dfrac{a_{k+1}}{a_k} = \dfrac{(k+1)^2}{(2k+2)(2k+1)} \to \dfrac{1}{4} < 1$. Convergent.
+>>
+>> (b) **Ratio test:** $\dfrac{a_{k+1}}{a_k} = \dfrac{(k+1)!\, k^k}{k!\,(k+1)^{k+1}} = \dfrac{k^k}{(k+1)^k} = \left(\dfrac{k}{k+1}\right)^k \to \dfrac{1}{e} < 1$. Convergent.
+>>
+>> (c) **Root test:** $\sqrt[k]{|k^p z^k|} = k^{p/k}\,|z| \to |z| < 1$ (using $\sqrt[k]{k} \to 1$). Convergent.
+>>
+>> (d) **Leibniz alternating-series test:** $b_k = 1/(2k+1)$ is positive, decreasing, $\to 0$. Convergent.
+
+> [!question] **L5.4 (Cauchy criterion, harmonic series, ζ-series)**
+> (a) Define $x_k := 3^{-k}$ if $4 \mid k$, else $x_k := -3^{-k}$. Show $a_n := \sum_{k=0}^n x_k$ is Cauchy (hence convergent).
+> (b) Write down the negation of "Cauchy".
+> (c) Show the harmonic series partial sums $H_n = \sum_{k=1}^n 1/k$ are NOT Cauchy.
+> (d) Conclude harmonic series diverges.
+> (e) Show $\sum 1/k^s$ diverges for $s \leq 1$.
+>
+>> [!success]- Solution
+>> (a) Given $\varepsilon > 0$, pick $n_0$ with $3^{-n_0} < \varepsilon$ (Bernoulli: $3^{n_0} \geq 1 + 2 n_0$). For $n \geq m \geq n_0$:
+>> $$|a_n - a_m| \leq \sum_{k=m+1}^n |x_k| \leq \sum_{k=m+1}^n 3^{-k} \leq \tfrac{3^{-m}}{2} \leq 3^{-n_0} < \varepsilon. \;\checkmark$$
+>>
+>> (b) **Negation:** $\exists \varepsilon > 0\;\forall n_0 \in \mathbb{N}_0\;\exists m, n \geq n_0 : |a_m - a_n| > \varepsilon$.
+>>
+>> (c) Take $\varepsilon = 1/4$. For any $n_0$, set $m = 2 n_0, n = n_0$. Then
+>> $$H_{2n_0} - H_{n_0} = \sum_{k=n_0+1}^{2n_0} \tfrac{1}{k} \geq \sum \tfrac{1}{2 n_0} = \tfrac{n_0}{2 n_0} = \tfrac{1}{2} > \tfrac{1}{4}.$$
+>> So $(H_n)$ fails Cauchy.
+>>
+>> (d) Cauchy is necessary for convergence in $\mathbb{R}$ (completeness), so $(H_n)$ diverges. $\blacksquare$
+>>
+>> (e) For $s \leq 1$: $1/k^s \geq 1/k$, so partial sums $\geq H_n$, which diverges. By comparison, $\sum 1/k^s$ diverges too.
+
+> [!question] **L5.5 (radius of convergence)**
+> Compute the radius of convergence $\rho = 1/\limsup \sqrt[k]{|c_k|}$ for the power series $\sum c_k z^k$:
+> (a) $c_k = 1$ &nbsp; (b) $c_k = 1/k^k$ &nbsp; (c) $c_k = k!/k^k$ &nbsp; (d) $c_k = k^p$ &nbsp; (e) $c_k = 1/k!$
+>
+> Then decide convergence at specific points:
+> (f) $\sum k!/k^k$ at $z = 1$.
+> (g) Geometric $\sum z^k$ for $|z| > 1$.
+> (h) Exponential $\sum z^k/k!$ for arbitrary $z$.
+>
+>> [!success]- Solution
+>> (a) $\rho = 1$.
+>> (b) $\sqrt[k]{1/k^k} = 1/k \to 0$, so $\rho = \infty$.
+>> (c) Use ratio test on $a_k = k! z^k / k^k$: ratio $\to |z|/e$, so $\rho = e$.
+>> (d) $\sqrt[k]{k^p} = k^{p/k} \to 1$, so $\rho = 1$.
+>> (e) $\sqrt[k]{1/k!} \to 0$, so $\rho = \infty$.
+>>
+>> (f) $|z| = 1 < e = \rho$: **converges**.
+>> (g) $|z| > 1 = \rho$: **diverges**.
+>> (h) $\rho = \infty$: **converges for every $z \in \mathbb{C}$**. (This is the definition of $e^z$.)
+
+> [!question] **L5.6 (online MC)**
+> (a) For a given sequence: which exists — limit, $\liminf$, or $\limsup$?
+> (b) True/false: $b_n := \sup_{k \geq n} a_k$ is monotonically decreasing; $c_n := \inf_{k \geq n} a_k$ is monotonically increasing.
+> (c) Is the harmonic series convergent or divergent?
+>
+>> [!success]- Solution
+>> (a) The $\liminf$ always exists (in $[-\infty, +\infty]$) — same for $\limsup$. The plain limit may not.
+>> (b) **True**: as $n$ grows, you take sup over a smaller set (so $b_n$ can only stay or shrink); inf over a smaller set can only stay or grow.
+>> (c) **Divergent** — the canonical example showing "$a_n \to 0$" is necessary but **not sufficient** for $\sum a_n$ to converge.
 
 ---
 
