@@ -1,10 +1,10 @@
 # 1.1 Motivation, Vektoren, Matrizen
 
 ## What are vectors?
-well in highschool you obviously heard about functions (linear functions, non linear functions, and so on ) and so on functions where introduced to us in the beginning as a way to graphically represent data. The example usually was if Person1 sells 1,2,3,4,5 apples at a fixed price per apple what would his totall earnings be? and then we represented that as a linear function where we could read the x-Amounts of apples for the y-Amount of profit. And as everyone knows these functions pretty quickly turned into a headache with function analysis linear functions non linear functions continous functions non continous functions first order derivatives second order derivatives and so on... But the core of the problem which was our first introduction to functions was a way to **better represent data**  since tables didnt really give us that much information.
+well in highschool you obviously heard about functions (linear functions, non linear functions, and so on ) and so on functions where introduced to us in the beginning as a way to graphically represent data. The example usually was if Person1 sells 1,2,3,4,5 apples at a fixed price per apple what would his totall earnings be? and then we represented that as a linear function where we could read the x-Amounts of apples for the y-Amount of profit. And as everyone knows these functions pretty quickly turned into a headache with function analysis linear functions non linear functions continous functions non continous functions first order derivatives second order derivatives and so on... But the core of the problem which was our first introduction to functions was a way to **better represent data**  since a simple table with x and y values didnt really give us that much information on how the values change or interact with each other and so on.
 
 
-Well linking that to vectors the core problems vectors solve for us is a **representation of data with a fixed direction** there are many examples but the first one that comes to my mind are Force vectors how to represent a force that is pu
+Well linking that to vectors the core problems vectors solve for us is a **representation of data with a fixed direction** there are many examples but the first one that comes to my mind are Force vectors how to represent a force that is pushing with a-Newton in x and y direction at Point (x,y).
 
 
 # 1.2 Gauss-Elimination
