@@ -78,9 +78,21 @@
               "icon": "lucide-file",
               "title": "Analysis_Complete_Guide"
             }
+          },
+          {
+            "id": "29b4d0e2847d87b7",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.13.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.13.7"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -100,7 +112,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": true
+                "autoReveal": true,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -252,7 +266,7 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b9e73311fd30c9b8",
+  "active": "29b4d0e2847d87b7",
   "lastOpenFiles": [
     "200 ETH Zurich/Semester 1/Analysis 1 + 2/Analysis_Complete_Guide.md",
     "200 ETH Zurich/Semester 1/Analysis 1 + 2/Analysis_Complete_Guide-2.md",
