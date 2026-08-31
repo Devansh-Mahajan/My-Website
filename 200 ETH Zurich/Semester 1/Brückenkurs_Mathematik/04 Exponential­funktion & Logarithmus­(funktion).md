@@ -1,28 +1,27 @@
-[[203_skript_exponentialfunktionen.pdf]]
+[[203_skript_exponentialfunktionen.pdf]]<br>
 [[204_skript_logarithmen.pdf]]
 
 ## 1. Exponentialfunktionen (Skript 203)
 
-Exponentialfunktionen modellieren Prozesse, bei denen sich eine Größe in gleichen Schritten **multiplikativ** um denselben Faktor verändert. Dies unterscheidet sie grundlegend von linearen (additive Veränderung) oder Potenzfunktionen (variabler multiplikativer Faktor) 1111.
+Exponentialfunktionen modellieren Prozesse, bei denen sich eine Größe in gleichen Schritten **multiplikativ** um denselben Factor verändert. Dies unterscheidet sie grundlegend von linearen (additive Veränderung) oder Potenzfunktionen (variabler multiplikativer Factor) 1111.
 
 ### 1.1 Definition
 
-- Eine Funktion der Form $f(x) = c \cdot a^x$ heißt **Exponentialfunktion** 2.
-    
-    - **Basis $a$:** $a \in \mathbb{R}$, $a > 0$, $a \neq 1$.
-        
-    - **Koeffizient $c$:** $c \in \mathbb{R}$, $c \neq 0$.
-        
-    - **Definitionsbereich:** $\mathbb{D} = \mathbb{R}$.
-        
+- Eine Function der Form $f(x) = c \cdot a^x$ heißt **Exponentialfunktion** 2.
+	- **Basis $a$:** $a \in \mathbb{R}$, $a > 0$, $a \neq 1$.
+	- **Koeffizient $c$:** $c \in \mathbb{R}$, $c \neq 0$.
+	- **Definitionsbereich:** $\mathbb{D} = \mathbb{R}$.
 - **Wichtiger Unterschied zu Potenzfunktionen:** Bei Exponentialfunktionen $a^x$ steht die Variable im Exponenten, bei Potenzfunktionen $x^p$ steht sie in der Basis 3.
-    
 
 ### 1.2 Charakteristische Eigenschaft
 
-- Multiplikative Veränderung: Wenn der Input $x$ um 1 erhöht wird, wird der Output $f(x)$ mit dem Faktor $a$ multipliziert:
-    
-    $$f(x+1) = c \cdot a^{x+1} = c \cdot a^x \cdot a^1 = f(x) \cdot a$$
+- Multiplikative Veränderung: Wenn der Input $x$ um 1 erhöht wird, wird der Output $f(x)$ mit dem Factor $a$ multipliziert:
+
+	$$
+
+f(x+1) = c \cdot a^{x+1} = c \cdot a^x \cdot a^1 = f(x) \cdot a
+
+$$
     
     4444
     
@@ -93,37 +92,27 @@ Exponentialfunktionen modellieren Prozesse, bei denen sich eine Größe in gleic
     
 - Definition: Die Eulersche Zahl $e$ ist dieser Grenzwert:
     
-    $$e = \lim_{n\to\infty} \left(1 + \frac{1}{n}\right)^n \approx 2.7182818284...$$
-    
+    $$
+e = \lim_{n\to\infty} \left(1 + \frac{1}{n}\right)^n \approx 2.7182818284...
+$$
+
     18181818
     
 - **Natürliche Exponentialfunktion:** $\exp(x) := e^x$.
-    
 - **Eigenschaften von $e$:**
-    
-    - **Irrational:** $e$ kann nicht als Bruch $p/q$ geschrieben werden 19191919.
-        
-    - **Transzendent:** $e$ ist keine Lösung einer Polynomgleichung mit ganzzahligen Koeffizienten 20202020.
-        
-- **Wachstumsvergleich:** $e^x$ wächst für $x \to \infty$ schneller als jede Potenzfunktion $x^p$ (für festes $p$) 21212121. Formal: $\lim_{x\to\infty} \frac{e^x}{x^p} = \infty$ 22.
-    
+	- **Irrational:** $e$ kann nicht also Bruch $p/q$ geschrieben werden 19191919.
+	- **Transzendent:** $e$ ist keine Lösung einer Polynomgleichung mit ganzzahligen Koeffizienten 20202020.
+- **Wachstumsvergleich:** $e^x$ wächst für $x \to \infty$ schneller also jede Potenzfunktion $x^p$ (für festes $p$) 21212121. Formal: $\lim_{x\to\infty} \frac{e^x}{x^p} = \infty$ 22.
 
 ### 1.6 Die Form $f(x) = c \cdot e^{rx}$
 
-- **Äquivalenz:** Jede Exponentialfunktion $f(x) = c \cdot a^x$ kann auch als $f(x) = c \cdot e^{rx}$ geschrieben werden (und umgekehrt), wobei $a = e^r$ bzw. $r = \ln(a)$ 23.
-    
+- **Äquivalenz:** Jede Exponentialfunktion $f(x) = c \cdot a^x$ kann auch also $f(x) = c \cdot e^{rx}$ geschrieben werden (und umgekehrt), wobei $a = e^r$ bzw. $r = \ln(a)$ 23.
 - **Vorteil:** Der Parameter $r$ repräsentiert die **relative Wachstumsrate**. Wenn $f'(x)$ die momentane Änderungsrate (Steigung) ist, dann gilt für $f(x)=c \cdot e^{rx}$: $f'(x) = r \cdot f(x)$ 24242424. $r$ gibt an, welcher Bruchteil des aktuellen Bestands pro Zeiteinheit hinzukommt (bei $r>0$) oder wegfällt (bei $r<0$).
-    
-- **Anwendungen in Naturwissenschaften:** Diese Form wird oft bevorzugt, wenn Wachstums- oder Zerfallsraten im Vordergrund stehen25252525. Beispiele:
-    
-    - Radioaktiver Zerfall: $N(t) = N_0 e^{-\lambda t}$ ($\lambda$ ist die Zerfallskonstante) 26.
-        
-    - Kondensatorentladung: $U(t) = U_0 e^{-t/(RC)}$ 27.
-        
-    - Barometrische Höhenformel: $p(h) = p_0 e^{-(\rho_0 g / p_0) h}$ 28.
-        
-    - Strahlungsabsorption: $I(d) = I_0 e^{-\mu d}$ ($\mu$ ist der Absorptionskoeffizient) 29.
-        
+- **Anwendungen in Naturwissenschaften:** Diese Form wird oft bevorzugt, wenn Wachstumsoder Zerfallsraten im Vordergrund stehen25252525. Beispiele:
+	- Radioaktiver Zerfall: $N(t) = N_0 e^{-\lambda t}$ ($\lambda$ ist die Zerfallskonstante) 26.
+	- Kondensatorentladung: $U(t) = U_0 e^{-t/(RC)}$ 27.
+	- Barometrische Höhenformel: $p(h) = p_0 e^{-(\rho_0 g / p_0) h}$ 28.
+	- Strahlungsabsorption: $I(d) = I_0 e^{-\mu d}$ ($\mu$ ist der Absorptionskoeffizient) 29.
 
 ---
 
@@ -133,114 +122,78 @@ Logarithmen sind die Umkehroperation zur Exponentiation und wurden historisch ei
 
 ### 2.1 Motivation: Napier und Briggs
 
-- **Idee:** Multiplikation/Division durch Addition/Subtraktion ersetzen 30.
-    
+- **Idee:** Multiplication/Division durch Addition/Subtraktion ersetzen 30.
 - **Grundlage:** Potenzgesetz $B^x \cdot B^y = B^{x+y}$ 31.
-    
 - **Logarithmus:** Der Exponent $x$, zu dem eine Basis $B$ potenziert werden muss, um eine Zahl $a$ zu erhalten ($a = B^x$)32323232.
-    
-- **Verfahren (Multiplikation $a \cdot b$):**
-    
-    1. Finde $x = \log_{10}(a)$ und $y = \log_{10}(b)$ (aus Tabellen 33).
-        
-    2. Addiere die Logarithmen: $z = x+y$.
-        
-    3. Finde die Zahl (Numerus), deren Logarithmus $z$ ist: $10^z$. Das ist das Ergebnis $a \cdot b$ 34343434.
-        
+- **Verfahren (Multiplication $a \cdot b$):**
+	
+	1. Find $x = \log_{10}(a)$ und $y = \log_{10}(b)$ (aus Tabellen 33).
+	2. Addiere die Logarithmen: $z = x+y$.
+	3. Find die Zahl (Numerus), deren Logarithmus $z$ ist: $10^z$. Das ist das Ergebnis $a \cdot b$ 34343434.
 
 ### 2.2 Definition
 
 - **Logarithmus von $a$ zur Basis $B$:** $x = \log_B(a)$ ist diejenige reelle Zahl $x$, für die $a = B^x$ gilt 35353535.
-    
-    - **Bedingungen:** $a > 0$ (Argument), $B > 0$, $B \neq 1$ (Basis)36363636.
-        
+	- **Bedingungen:** $a > 0$ (Argument), $B > 0$, $B \neq 1$ (Basis)36363636.
 - **Spezielle Notationen:**
-    
-    - **Zehnerlogarithmus:** $\log(a)$ oder $\lg(a) = \log_{10}(a)$37373737.
-        
-    - **Natürlicher Logarithmus:** $\ln(a) = \log_e(a)$38383838.
-        
-    - **Binärlogarithmus:** $\text{lb}(a) = \log_2(a)$39393939.
-        
+	- **Zehnerlogarithmus:** $\log(a)$ oder $\lg(a) = \log_{10}(a)$37373737.
+	- **Natürlicher Logarithmus:** $\ln(a) = \log_e(a)$38383838.
+	- **Binärlogarithmus:** $\text{lb}(a) = \log_2(a)$39393939.
 - **Wichtiger Wert:** $\log_B(1) = 0$ für jede Basis $B$, da $B^0 = 1$40404040.
-    
 
 ### 2.3 Triviale Identitäten
 
 Diese folgen direkt aus der Definition $a=B^x \iff x=\log_B(a)$:
 
 - **Identität I:** $B^{\log_B(a)} = a$41414141.
-    
 - **Identität II:** $\log_B(B^x) = x$42424242.
-    
 
 ### 2.4 Logarithmusgesetze
 
 Diese sind direkte "Übersetzungen" der Potenzgesetze in die Sprache der Logarithmen (Exponenten). Für $a, b > 0$, $B>0, B\neq 1$:
 
 - **(L1) Produktregel:** $\log_B(a \cdot b) = \log_B(a) + \log_B(b)$ 43.
-    
-    - _Herleitung:_ Aus $a=B^x, b=B^y \implies a \cdot b = B^{x+y}$. Logarithmieren beider Seiten ergibt $\log_B(a \cdot b) = x+y = \log_B(a) + \log_B(b)$ 44.
-        
+	- _Herleitung:_ Aus $a=B^x, b=B^y \implies a \cdot b = B^{x+y}$. Logarithmieren beider Seiten ergibt $\log_B(a \cdot b) = x+y = \log_B(a) + \log_B(b)$ 44.
 - **(L2) Quotientenregel:** $\log_B(\frac{a}{b}) = \log_B(a) - \log_B(b)$ 45.
-    
-    - _Herleitung:_ Aus $a/b = B^x / B^y = B^{x-y}$.
-        
+	- _Herleitung:_ Aus $a/b = B^x / B^y = B^{x-y}$.
 - **(L3) Potenzregel:** $\log_B(a^r) = r \cdot \log_B(a)$ (für $r \in \mathbb{R}$) 46.
-    
-    - _Herleitung:_ Aus $a=B^x \implies a^r = (B^x)^r = B^{x \cdot r}$. Logarithmieren ergibt $\log_B(a^r) = x \cdot r = r \cdot \log_B(a)$ 47.
-        
+	- _Herleitung:_ Aus $a=B^x \implies a^r = (B^x)^r = B^{x \cdot r}$. Logarithmieren ergibt $\log_B(a^r) = x \cdot r = r \cdot \log_B(a)$ 47.
 - **Spezialfälle von L3:**
-    
-    - $\log_B(\frac{1}{a}) = \log_B(a^{-1}) = -1 \cdot \log_B(a) = -\log_B(a)$48484848.
-        
-    - $\log_B(\sqrt[n]{a}) = \log_B(a^{1/n}) = \frac{1}{n} \cdot \log_B(a)$49494949.
-        
+	- $\log_B(\frac{1}{a}) = \log_B(a^{-1}) = -1 \cdot \log_B(a) = -\log_B(a)$48484848.
+	- $\log_B(\sqrt[n]{a}) = \log_B(a^{1/n}) = \frac{1}{n} \cdot \log_B(a)$49494949.
 
 ### 2.5 Lösen von Exponentialgleichungen
 
 Logarithmusgesetz L3 ist der "Nussknacker" 50505050.
 
 - **Strategie:** Logarithmiere beide Seiten der Gleichung (zu einer beliebigen, passenden Basis). Das Gesetz L3 erlaubt es, die Variable aus dem Exponenten "herunterzuholen".
-    
 - **Beispiel 1:** $2^x = 3$.
-    
-    - $\log(2^x) = \log(3)$
-        
-    - $x \cdot \log(2) = \log(3)$
-        
-    - $x = \frac{\log(3)}{\log(2)}$ 51515151.
-        
+	- $\log(2^x) = \log(3)$
+	- $x \cdot \log(2) = \log(3)$
+	- $x = \frac{\log(3)}{\log(2)}$ 51515151.
 - **Beispiel 2:** $2^{x-1} = 0.51^{3x}$.
-    
-    - $\text{lb}(2^{x-1}) = \text{lb}(0.51^{3x})$ (Basis 2 gewählt)52.
-        
-    - $(x-1) \cdot \underbrace{\text{lb}(2)}_{=1} = 3x \cdot \text{lb}(0.51)$ 53.
-        
-    - $x-1 = 3x \cdot \text{lb}(0.51)$.
-        
-    - Dies ist eine lineare Gleichung für $x$, die gelöst werden kann 54.
-        
+	- $\text{lb}(2^{x-1}) = \text{lb}(0.51^{3x})$ (Basis 2 gewählt)52.
+	- $(x-1) \cdot \underbrace{\text{lb}(2)}_{=1} = 3x \cdot \text{lb}(0.51)$ 53.
+	- $x-1 = 3x \cdot \text{lb}(0.51)$.
+	- Dies ist eine lineare Gleichung für $x$, die gelöst werden kann 54.
 - **Anwendung Dopingkontrolle:** $C(t) = C_0 \cdot (0.5)^{t/T_{1/2}}$. Gesucht $t$ für $C(t) = C_{Grenze}$.
-    
-    - $C_0 \cdot (0.5)^{t/T_{1/2}} = C_{Grenze}$
-        
-    - $(0.5)^{t/T_{1/2}} = C_{Grenze} / C_0$
-        
-    - $\log((0.5)^{t/T_{1/2}}) = \log(C_{Grenze} / C_0)$
-        
-    - $\frac{t}{T_{1/2}} \cdot \log(0.5) = \log(C_{Grenze}) - \log(C_0)$
-        
-    - $t = T_{1/2} \cdot \frac{\log(C_{Grenze}) - \log(C_0)}{\log(0.5)}$ 55.
-        
+	- $C_0 \cdot (0.5)^{t/T_{1/2}} = C_{Grenze}$
+	- $(0.5)^{t/T_{1/2}} = C_{Grenze} / C_0$
+	- $\log((0.5)^{t/T_{1/2}}) = \log(C_{Grenze} / C_0)$
+	- $\frac{t}{T_{1/2}} \cdot \log(0.5) = \log(C_{Grenze}) - \log(C_0)$
+	- $t = T_{1/2} \cdot \frac{\log(C_{Grenze}) - \log(C_0)}{\log(0.5)}$ 55.
 
 ### 2.6 Basisumrechnung
 
 Um $\log_U(a)$ (unbequeme Basis $U$) mit einer bequemen Basis $B$ (z.B. 10, e, 2) zu berechnen:
 
 - Formel:
-    
-    $$\log_U(a) = \frac{\log_B(a)}{\log_B(U)}$$
+
+	$$
+
+\log_U(a) = \frac{\log_B(a)}{\log_B(U)}
+
+$$
     
     56565656
     

@@ -2,10 +2,13 @@
 title: Two Ways of Trying to Be Good
 subtitle: Marcus Aurelius, the Mahabharata, and two different kinds of difficulty
 description: "Meditations gives you a method for acting well once you already know what's right. The Difficulty of Being Good is about the much harder case: not knowing."
-publish: true
+publish: false
 created_date: 2026-08-31
-tags: [books, philosophy, stoicism]
-enable_comments: true
+tags:
+  - books
+  - philosophy
+  - stoicism
+enable_comments: false
 ---
 
 I read these two books back to back, by accident, and I don't think I'll read them any other way again. Marcus Aurelius's *Meditations* and Gurcharan Das's *The Difficulty of Being Good* are ostensibly about the same thing — how to act well — but they solve for almost opposite problems. Marcus assumes you already know what's right and need help doing it anyway, at 3 a.m., annoyed, tired, surrounded by people who are being difficult. Das, reading the Mahabharata, assumes the opposite: that the hard part was never the doing. It was figuring out what "right" even meant, in a situation built specifically so that no answer is clean.

@@ -1,60 +1,39 @@
-[[106_skript_funktionen_grundlagen.pdf]]
-[[107_skript_lineare_funktionen.pdf]]
-[[108_skript_quadratische_funktionen.pdf]]
+[[106_skript_funktionen_grundlagen.pdf]]<br>
+[[107_skript_lineare_funktionen.pdf]]<br>
+[[108_skript_quadratische_funktionen.pdf]]<br>
 [[109_skript_bijektive_funktionen_und_umkehrfunktionen.pdf]]
 
 ## 1. Grundlagen der Funktionen (Skript 106)
 
-### 1.1 Was ist eine Funktion?
+### 1.1 Was ist eine Function?
 
-- **Alltagsbeispiele:** Die Schattenlänge eines Stabes hängt von der Tageszeit ab 1; der Preis einer Ware vom Gewicht 2; die Fallstrecke von der Fallzeit 3; die Blutgruppe von einer Person4. Eine Funktion beschreibt eine **Abhängigkeit**oder **Zuordnung** zwischen zwei Größen 55555.
-    
-- **Historische Entwicklung:** Das Konzept entwickelte sich über Jahrhunderte, von Eratosthenes 6666über Oresme 7bis zu Leibniz (Ende 17. Jhdt.), der den Begriff im Kontext von Kurvensteigungen prägte 8. Euler (18. Jhdt.) lieferte die erste systematische Darstellung und Definitionen, die auf analytischen Ausdrücken oder Abhängigkeiten basierten 999999999.
-    
-- **Formale Definition:** Eine Funktion $f$ ist eine **Zuordnung**, die jedem Element $x$ einer ersten Menge $\mathbb{D}$ (Definitionsmenge, Inputmenge) **genau ein** Element $y$ oder $f(x)$ einer zweiten Menge $\mathbb{W}$ (Wertemenge, Zielmenge, Outputmenge) zuordnet101010.
-    
-    - Die Zuordnung erfolgt nach einer bestimmten **Regel** oder **Formel**11.
-        
-    - **Eindeutigkeit:** Jedem $x \in \mathbb{D}$ wird _nur ein_ $y \in \mathbb{W}$ zugeordnet12. Mehrwertige Zuordnungen (z.B. $y = \pm \sqrt{x}$) sind _keine_ Funktionen im modernen Sinn13.
-        
-    - Es ist jedoch erlaubt, dass verschiedene $x$-Werte auf denselben $y$-Wert abgebildet werden (z.B. $f(x)=x^2$mit $f(2)=f(-2)=4$)14141414.
-        
+- **Alltagsbeispiele:** Die Schattenlänge eines Stabes hängt von der Tageszeit ab 1; der Preis einer Ware vom Gewicht 2; die Fallstrecke von der Fallzeit 3; die Blutgruppe von einer Person4. Eine Function beschreibt eine **Abhängigkeit**oder **Zuordnung** zwischen zwei Größen 55555.
+- **Historische Entwicklung:** Das Konzept entwickelte sich über Jahrhunderte, von Eratosthenes 6666über Oresme 7bis zu Leibniz (End 17. Jhdt.), der den Begriff im Kontext von Kurvensteigungen prägte 8. Euler (18. Jhdt.) lieferte die erste systematische Darstellung und Definitionen, die auf analytischen Ausdrücken oder Abhängigkeiten basierten 999999999.
+- **Formale Definition:** Eine Function $f$ ist eine **Zuordnung**, die jedem Element $x$ einer ersten Menge $\mathbb{D}$ (Definitionsmenge, Inputmenge) **genau ein** Element $y$ oder $f(x)$ einer zweiten Menge $\mathbb{W}$ (Wertemenge, Zielmenge, Outputmenge) zuordnet101010.
+	- Die Zuordnung erfolgt nach einer bestimmten **Regel** oder **Formel**11.
+	- **Eindeutigkeit:** Jedem $x \in \mathbb{D}$ wird _nur ein_ $y \in \mathbb{W}$ zugeordnet12. Mehrwertige Zuordnungen (z.B. $y = \pm \sqrt{x}$) sind _keine_ Funktionen im modernen Sinn13.
+	- Es ist jedoch erlaubt, dass verschiedene $x$-Werte auf denselben $y$-Wert abgebildet werden (z.B. $f(x)=x^2$mit $f(2)=f(-2)=4$)14141414.
 
 ### 1.2 Darstellung und Notation
 
-- **Mengendiagramme ("Wolken"):** Veranschaulichen die Zuordnung von Elementen aus $\mathbb{D}$ zu Elementen in $\mathbb{W}$ 15. Sie zeigen, dass jedem $x$ genau ein Pfeil entspringt, aber bei einem $y$ mehrere Pfeile ankommen dürfen16. Eine Zuordnung, bei der von einem $x$ mehrere Pfeile ausgehen, ist keine Funktion 17.
-    
-- **Funktionsmaschine:** Stellt die Funktion als Verarbeitungsprozess dar: Input $x$ wird in die "Maschine" $f$gegeben und zum Output $f(x)$ verarbeitet 181818181818181818.
-    
+- **Mengendiagramme ("Wolken"):** Veranschaulichen die Zuordnung von Elementen aus $\mathbb{D}$ zu Elementen in $\mathbb{W}$ 15. Sie zeigen, dass jedem $x$ genau ein Pfeil entspringt, aber bei einem $y$ mehrere Pfeile ankommen dürfen16. Eine Zuordnung, bei der von einem $x$ mehrere Pfeile ausgehen, ist keine Function 17.
+- **Funktionsmaschine:** Stellt die Function also Verarbeitungsprozess dar: Input $x$ wird in die "Maschine" $f$gegeben und zum Output $f(x)$ verarbeitet 181818181818181818.
 - **Schreibweisen:**
-    
-    - **Funktionsgleichung:** $y = f(x)$ (z.B. $y = x^2$)19191919.
-        
-    - **Zuordnungsvorschrift:** $f: x \mapsto f(x)$ (z.B. $f: x \mapsto \sqrt{x}$)20.
-        
-    - **Mit Definitions-/Wertebereich:** $f: \mathbb{D} \to \mathbb{W}, x \mapsto f(x)$ (z.B. $f: \mathbb{R}^+ \to \mathbb{R}^+, x \mapsto \sqrt{x}$)21.
-        
-    - **Funktionswert:** $f(a)$ bezeichnet den Output für den Input $a$ (z.B. $f(16) = 4$ für $f(x) = \sqrt{x}$) 22.
-        
+	- **Funktionsgleichung:** $y = f(x)$ (z.B. $y = x^2$)19191919.
+	- **Zuordnungsvorschrift:** $f: x \mapsto f(x)$ (z.B. $f: x \mapsto \sqrt{x}$)20.
+	- **Mit Definitions-/Wertebereich:** $f: \mathbb{D} \to \mathbb{W}, x \mapsto f(x)$ (z.B. $f: \mathbb{R}^+ \to \mathbb{R}^+, x \mapsto \sqrt{x}$)21.
+	- **Funktionswert:** $f(a)$ bezeichnet den Output für den Input $a$ (z.B. $f(16) = 4$ für $f(x) = \sqrt{x}$) 22.
 
 ### 1.3 Wichtige Begriffe (Terminologie)
 
-- **Funktion / Abbildung:** Synonyme.
-    
-- **$f(x)$:** Funktionswert an der Stelle $x$; Bild von $x$ unter $f$.
-    
+- **Function / Abbildung:** Synonyme.
+- **$f(x)$:** Funktionswert an der Stelle $x$; Bild von $x$ under $f$.
 - **$x$:** Unabhängige Variable; Argument; Urbild von $f(x)$.
-    
 - **$y$ (oder $f(x)$):** Abhängige Variable 26.
-    
 - **$\mathbb{D}$:** Definitionsmenge / Definitionsbereich / Domain / Urbildmenge: Menge aller erlaubten Inputs.
-    
 - **$\mathbb{W}$:** Wertemenge / Wertebereich / Codomain / Zielmenge: Eine Menge, die alle möglichen Outputs enthält.
-    
 - **Bildmenge / Range:** Die Menge aller _tatsächlich_ vorkommenden Funktionswerte $\{f(x) \mid x \in \mathbb{D}\}$. Die Bildmenge ist eine Teilmenge der Zielmenge/Wertemenge.
-    
-    - _Beispiel:_ Für $f(x) = x^2$ mit $f: \mathbb{R} \to \mathbb{R}$ ist $\mathbb{R}$ die Zielmenge, aber $\mathbb{R}_0^+$ die Bildmenge.
-        
+	- _Beispiel:_ Für $f(x) = x^2$ mit $f: \mathbb{R} \to \mathbb{R}$ ist $\mathbb{R}$ die Zielmenge, aber $\mathbb{R}_0^+$ die Bildmenge.
 
 ---
 
@@ -64,79 +43,50 @@ Der einfachste Funktionstyp, dessen Graph eine Gerade ist.
 
 ### 2.1 Definition
 
-- Eine Funktion $f$ heißt **linear**, wenn ihre Funktionsgleichung die Form $f(x) = a \cdot x + b$ hat 31.
-    
-- $a, b \in \mathbb{R}$ sind feste Parameter, wobei $a \neq 0$ (sonst wäre es eine konstante Funktion)32.
-    
+- Eine Function $f$ heißt **linear**, wenn ihre Funktionsgleichung die Form $f(x) = a \cdot x + b$ hat 31.
+- $a, b \in \mathbb{R}$ sind feste Parameter, wobei $a \neq 0$ (sonst wäre es eine konstante Function)32.
 - Lineare Funktionen sind **Polynomfunktionen 1. Grades**33.
-    
 
 ### 2.2 Der Graph: Die Gerade
 
-- Der Graph einer linearen Funktion ist immer eine **Gerade**34343434.
-    
+- Der Graph einer linearen Function ist immer eine **Gerade**34343434.
 
 ### 2.3 Bedeutung der Parameter $a$ und $b$
 
 - **$b$: y-Achsenabschnitt**
-    
-    - $f(0) = a \cdot 0 + b = b$ 35.
-        
-    - Der Graph schneidet die y-Achse im Punkt $(0, b)$36363636.
-        
+	- $f(0) = a \cdot 0 + b = b$ 35.
+	- Der Graph schneidet die y-Achse im Punkt $(0, b)$36363636.
 - **$a$: Steigung**
-    
-    - Die Steigung ist das Verhältnis der Output-Änderung ($\Delta y$) zur Input-Änderung ($\Delta x$): $a = \frac{\Delta y}{\Delta x} = \frac{f(x_2) - f(x_1)}{x_2 - x_1}$ 37.
-        
-    - Sie gibt an, um wie viel sich der Output $y$ ändert, wenn der Input $x$ um 1 erhöht wird383838383838383838.
-        
-    - $f(x+\Delta x) = a(x+\Delta x) + b = (ax+b) + a\Delta x = f(x) + a\Delta x$. Also $\Delta y = f(x+\Delta x) - f(x) = a\Delta x$ 39. Daraus folgt $\frac{\Delta y}{\Delta x} = a$.
-        
-    - $a > 0$: Gerade steigt (streng monoton wachsend)41.
-        
-    - $a < 0$: Gerade fällt (streng monoton fallend) 42.
-        
-    - $a = 0$: Horizontale Gerade (konstante Funktion, nicht linear nach Definition hier)43.
-        
-    - Eine vertikale Gerade hat _keine_ definierte Steigung ($\Delta x = 0$) 44444444. Steigung $1$ ($100\%$) bedeutet einen $45^\circ$-Winkel 45.
-        
+	- Die Steigung ist das Verhältnis der Output-Änderung ($\Delta y$) zur Input-Änderung ($\Delta x$): $a = \frac{\Delta y}{\Delta x} = \frac{f(x_2) - f(x_1)}{x_2 - x_1}$ 37.
+	- Sie gibt an, um wie viel sich der Output $y$ ändert, wenn der Input $x$ um 1 erhöht wird383838383838383838.
+	- $f(x+\Delta x) = a(x+\Delta x) + b = (ax+b) + a\Delta x = f(x) + a\Delta x$. Also $\Delta y = f(x+\Delta x) - f(x) = a\Delta x$ 39. Daraus folgt $\frac{\Delta y}{\Delta x} = a$.
+	- $a > 0$: Gerade steigt (streng monoton wachsend)41.
+	- $a < 0$: Gerade fällt (streng monoton fallend) 42.
+	- $a = 0$: Horizontal Gerade (konstante Function, nicht linear nach Definition hier)43.
+	- Eine vertikale Gerade hat _keine_ definierte Steigung ($\Delta x = 0$) 44444444. Steigung $1$ ($100\%$) bedeutet einen $45^\circ$-Winkel 45.
 
 ### 2.4 Typische Aufgaben
 
 - **Graph zeichnen:**
-    
-    1. Zeichne den y-Achsenabschnitt $(0, b)$ ein46.
-        
-    2. Gehe von $(0, b)$ aus $\Delta x$ Einheiten nach rechts und $\Delta y = a \cdot \Delta x$ Einheiten nach oben/unten (Steigungsdreieck)47.
-        
-    3. Verbinde die Punkte zu einer Geraden.
-        
-    
-    - _Alternativ:_ Berechne zwei beliebige Punkte (z.B. Schnittpunkte mit Achsen) und verbinde sie 484848484848484848.
-        
+	
+	1. Zeichne den y-Achsenabschnitt $(0, b)$ ein46.
+	2. Gehe von $(0, b)$ aus $\Delta x$ Einheiten nach rechts und $\Delta y = a \cdot \Delta x$ Einheiten nach oben/unten (Steigungsdreieck)47.
+	3. Verbinde die Punkte zu einer Geraden.
+
+	- _Alternativ:_ Berechne zwei beliebige Punkte (z.B. Schnittpunkte mit Achsen) und verbinde sie 484848484848484848.
 - **Liegt ein Punkt $P(x_p, y_p)$ auf der Geraden $y=ax+b$?**
-    
-    - Überprüfe, ob $y_p = a \cdot x_p + b$ eine wahre Aussage ist 49494949.
-        
+	- Überprüfe, ob $y_p = a \cdot x_p + b$ eine wahre Aussage ist 49494949.
 - **Funktionsgleichung aus zwei Punkten $P(x_1, y_1)$ und $Q(x_2, y_2)$ finden:**
-    
-    1. Berechne die Steigung: $a = \frac{y_2 - y_1}{x_2 - x_1}$ 505050505050505050.
-        
-    2. Setze $a$ und die Koordinaten eines Punktes (z.B. $P$) in $y = ax + b$ ein und löse nach $b$ auf: $b = y_1 - a x_1$ 515151515151515151.
-        
-    
-    - _Alternativ (Punkt-Steigungs-Form):_ $y = a(x - x_1) + y_1$52525252.
-        
+	
+	1. Berechne die Steigung: $a = \frac{y_2 - y_1}{x_2 - x_1}$ 505050505050505050.
+	2. Setze $a$ und die Koordinaten eines Punktes (z.B. $P$) in $y = ax + b$ ein und löse nach $b$ auf: $b = y_1 - a x_1$ 515151515151515151.
+
+	- _Alternativ (Punkt-Steigungs-Form):_ $y = a(x - x_1) + y_1$52525252.
 - **Relative Lage zweier Geraden $f_1(x)=a_1 x+b_1$ und $f_2(x)=a_2 x+b_2$:**
-    
-    - **Identisch:** $a_1 = a_2$ und $b_1 = b_2$53535353.
-        
-    - **Parallel (echt):** $a_1 = a_2$ aber $b_1 \neq b_2$54545454.
-        
-    - **Schneidend:** $a_1 \neq a_2$. Den Schnittpunkt $(x_S, y_S)$ findet man durch Gleichsetzen: $a_1 x_S + b_1 = a_2 x_S + b_2$. Löse nach $x_S$, dann $y_S = f_1(x_S)$ (oder $f_2(x_S)$) berechnen55555555555555555555555555555555555555555555555555.
-        
-    - **Orthogonal (senkrecht):** $a_1 \cdot a_2 = -1$ oder $a_2 = -1/a_1$ (Steigungen sind negativ reziprok)56565656.
-        
+	- **Identisch:** $a_1 = a_2$ und $b_1 = b_2$53535353.
+	- **Parallel (echt):** $a_1 = a_2$ aber $b_1 \neq b_2$54545454.
+	- **Schneidend:** $a_1 \neq a_2$. Den Schnittpunkt $(x_S, y_S)$ findet man durch Gleichsetzen: $a_1 x_S + b_1 = a_2 x_S + b_2$. Löse nach $x_S$, dann $y_S = f_1(x_S)$ (oder $f_2(x_S)$) berechnen55555555555555555555555555555555555555555555555555.
+	- **Orthogonal (senkrecht):** $a_1 \cdot a_2 = -1$ oder $a_2 = -1/a_1$ (Steigungen sind negative reziprok)56565656.
 
 ---
 
@@ -146,39 +96,41 @@ Polynomfunktionen 2. Grades, deren Graphen Parabeln sind.
 
 ### 3.1 Definition und Polynomfunktionen
 
-- Eine Funktion $f$ heißt **quadratisch**, wenn ihre Funktionsgleichung die Form $f(x) = a x^2 + b x + c$ hat 57.
-    
+- Eine Function $f$ heißt **quadratisch**, wenn ihre Funktionsgleichung die Form $f(x) = a x^2 + b x + c$ hat 57.
 - $a, b, c \in \mathbb{R}$ sind feste Koeffizienten, wobei $a \neq 0$ (sonst wäre sie linear) 58.
-    
 - **Polynomfunktionen:** Funktionen der Form $f(x) = a_n x^n + a_{n-1} x^{n-1} + \ldots + a_1 x + a_0$ 59.
-    
-    - Lineare Funktionen sind Polynomfunktionen 1. Grades 60.
-        
-    - Quadratische Funktionen sind Polynomfunktionen 2. Grades 61616161.
-        
+	- Lineare Funktionen sind Polynomfunktionen 1. Grades 60.
+	- Quadratische Funktionen sind Polynomfunktionen 2. Grades 61616161.
 
 ### 3.2 Der Graph: Die Parabel
 
-- Der Graph einer quadratischen Funktion ist immer eine **Parabel**62.
-    
+- Der Graph einer quadratischen Function ist immer eine **Parabel**62.
 - **Normalparabel:** Der Graph von $f(x)=x^2$ (hier ist $a=1, b=0, c=0$)63. Sie ist achsensymmetrisch zur y-Achse und hat ihren tiefsten Punkt im Ursprung64.
-    
 
 ### 3.3 Scheitelpunkt und Symmetrieachse
 
 Jede Parabel $f(x) = ax^2 + bx + c$ besitzt einen **Scheitelpunkt** $S(x_S, y_S)$, der entweder der tiefste (Minimum bei $a>0$) oder der höchste Punkt (Maximum bei $a<0$) ist 65656565656565656565656565656565.
 
-- Herleitung via quadratisches Ergänzen: Man formt den Funktionsterm um 66:
-    
-    $$f(x) = a \left( x + \frac{b}{2a} \right)^2 + \left( c - \frac{b^2}{4a} \right)$$
+- Herleitung via quadratisches Ergänzen: Man format den Funktionsterm um 66:
+
+	$$
+
+f(x) = a \left( x + \frac{b}{2a} \right)^2 + \left( c - \frac{b^2}{4a} \right)
+
+$$
     
     Der quadrierte Term $(x + \frac{b}{2a})^2$ ist immer $\ge 0$ und minimal (gleich 0) für $x = -\frac{b}{2a}$ 67. An dieser Stelle erreicht $f(x)$ seinen Extremwert.
     
 - Scheitelpunktkoordinaten:
     
-    $$x_S = -\frac{b}{2a}$$
-    
-    $$y_S = f(x_S) = c - \frac{b^2}{4a}$$
+    $$
+x_S = -\frac{b}{2a}
+$$
+
+    $$
+y_S = f(x_S) = c - \frac{b^2}{4a}
+
+$$
     
     68
     
