@@ -18,11 +18,12 @@ const today = new Date();
 <style>
 	footer {
 		padding: 2rem 1.5rem;
-		border-top: 1px solid rgba(var(--gray), 0.14);
+		border-top: 1px solid rgba(var(--gray), 0.16);
+		font-family: var(--font-ui);
 	}
 
 	.footer-inner {
-		max-width: 960px;
+		max-width: 780px;
 		margin: 0 auto;
 		display: flex;
 		align-items: center;
@@ -32,26 +33,26 @@ const today = new Date();
 	}
 
 	.copyright {
-		font-size: 0.875rem;
+		font-size: 0.82rem;
 		color: rgb(var(--gray));
 	}
 
 	.footer-links {
 		display: flex;
-		gap: 1.5rem;
+		gap: 1.4rem;
 	}
 
 	.footer-links a {
-		font-size: 0.875rem;
+		font-size: 0.82rem;
 		font-weight: 500;
 		color: rgb(var(--gray));
 		text-decoration: none;
+		border-bottom: none;
 		transition: color 0.15s ease;
 	}
 
 	.footer-links a:hover {
 		color: rgb(var(--black));
-		text-decoration: none;
 	}
 
 	.login-link {

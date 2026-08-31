@@ -28,10 +28,7 @@ const posts = (await getCollection('blog'))
 	<main>
 
 		<section class="page-hero">
-			<p class="eyebrow-tag">
-				<svg viewBox="0 0 10 14" fill="currentColor" aria-hidden="true" style="width:7px;height:10px;flex-shrink:0"><path d="M6.5 0L0 8h4.5L3 14l7-8.5H5.5L6.5 0z"/></svg>
-				Writing
-			</p>
+			<p class="eyebrow-tag">Writing</p>
 			<h1>Essays &amp; notes.</h1>
 			<p class="lead">Thinking across circuits, systems, and mathematics — published openly.</p>
 		</section>
@@ -53,8 +50,7 @@ const posts = (await getCollection('blog'))
 			<div class="empty-state">
 				<p class="empty-message">No essays published yet.</p>
 				<a href={QUARTZ_URL} target="_blank" rel="noreferrer" class="empty-link">
-					Browse the Quartz notes
-					<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7m0 0H7m10 0v10"/></svg>
+					Browse the Quartz notes &rarr;
 				</a>
 			</div>
 		)}
@@ -66,32 +62,26 @@ const posts = (await getCollection('blog'))
 
 <style>
 	main {
-		max-width: 960px;
+		max-width: 780px;
 		margin: 0 auto;
-		padding: 0 1.5rem 8rem;
+		padding: 0 1.5rem 7rem;
 	}
 
 	.page-hero { padding: 4rem 0 3.5rem; }
 
 	h1 {
 		margin: 0 0 1rem;
-		font-size: clamp(2.5rem, 7vw, 4.25rem);
-		font-weight: 800;
-		line-height: 0.95;
-		letter-spacing: -0.038em;
-	}
-
-	[data-theme='dark'] h1 {
-		text-shadow:
-			0 0 50px color-mix(in srgb, var(--accent) 20%, transparent),
-			0 0 100px color-mix(in srgb, var(--accent) 8%, transparent);
+		font-size: clamp(2.5rem, 6vw, 3.5rem);
+		font-weight: 500;
+		line-height: 1.05;
+		letter-spacing: -0.015em;
 	}
 
 	.lead {
-		max-width: 520px;
+		max-width: 46ch;
 		margin: 0;
-		font-size: clamp(1rem, 2vw, 1.125rem);
-		line-height: 1.68;
+		font-size: 1.0625rem;
+		line-height: 1.7;
 		color: rgb(var(--gray));
 	}
 
@@ -103,22 +93,14 @@ const posts = (await getCollection('blog'))
 		gap: 1.25rem;
 	}
 
-	.empty-message { margin: 0; font-size: 1.125rem; color: rgb(var(--gray)); }
+	.empty-message { margin: 0; font-size: 1.0625rem; color: rgb(var(--gray)); }
 
 	.empty-link {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.4rem;
-		padding: 0.575rem 1.1rem;
-		background: var(--accent);
-		color: #fff !important;
-		border-radius: 999px;
+		font-family: var(--font-ui);
 		font-size: 0.9rem;
 		font-weight: 500;
-		text-decoration: none !important;
-		transition: opacity 0.18s ease, transform 0.18s ease;
+		color: var(--accent);
 	}
-	.empty-link:hover { opacity: 0.85; transform: translateY(-1px); }
 
 	@media (max-width: 768px) {
 		main { padding: 0 1.1rem 5rem; }

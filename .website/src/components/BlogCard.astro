@@ -12,121 +12,70 @@ interface Props {
 const { title, description, date, slug } = Astro.props;
 ---
 
-<article class="blog-card">
-	<a href={getUrl(`/${slug}/`)} class="card-link">
-		<div class="card-inner">
-			<div class="card-body">
-				{date && (
-					<time class="card-date"><FormattedDate date={date} /></time>
-				)}
-				<h2 class="card-title">{title}</h2>
-				{description && <p class="card-desc">{description}</p>}
-			</div>
-			<div class="card-footer">
-				<span class="card-cta">
-					Read
-					<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
-				</span>
-			</div>
-		</div>
-	</a>
-</article>
+<a class="post-row" href={getUrl(`/${slug}/`)}>
+	{date && (
+		<time class="post-date"><FormattedDate date={date} /></time>
+	)}
+	<span class="post-main">
+		<h3 class="post-title">{title}</h3>
+		{description && <p class="post-desc">{description}</p>}
+	</span>
+	<span class="post-arrow" aria-hidden="true">
+		<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+	</span>
+</a>
 
 <style>
-	.blog-card {
-		border-radius: 14px;
-		background: rgb(var(--gray-light));
-		border: 1px solid rgba(var(--gray), 0.16);
-		overflow: hidden;
-		transition:
-			transform    0.28s cubic-bezier(0.22, 1, 0.36, 1),
-			box-shadow   0.28s cubic-bezier(0.22, 1, 0.36, 1),
-			border-color 0.2s ease;
-	}
-
-	.blog-card:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 18px 36px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.04);
-		border-color: rgba(var(--gray), 0.32);
-	}
-
-	[data-theme='dark'] .blog-card {
-		background: rgba(var(--gray-light), 0.5);
-	}
-
-	[data-theme='dark'] .blog-card:hover {
-		box-shadow: 0 18px 36px rgba(0,0,0,0.4), 0 4px 8px rgba(0,0,0,0.2);
-	}
-
-	.card-link {
-		display: block;
-		text-decoration: none;
-		color: inherit;
-	}
-
-	.card-inner {
-		display: flex;
-		flex-direction: column;
-		height: 100%;
-		padding: 1.5rem;
-		gap: 1rem;
-	}
-
-	.card-body {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-	}
-
-	.card-date {
-		font-size: 0.78rem;
-		font-weight: 500;
-		color: rgb(var(--gray));
-		letter-spacing: 0.01em;
-	}
-
-	.card-title {
-		margin: 0;
-		font-size: 1rem;
-		font-weight: 600;
-		line-height: 1.35;
-		letter-spacing: -0.01em;
+	.post-row {
+		display: grid;
+		grid-template-columns: 8rem 1fr auto;
+		gap: 1.5rem;
+		align-items: baseline;
+		padding: 1.5rem 0;
+		border-top: 1px solid rgba(var(--gray), 0.16);
 		color: rgb(var(--black));
-		transition: color 0.15s ease;
+		text-decoration: none;
+		transition: opacity 0.15s ease;
+	}
+	.post-row:first-child { border-top: none; }
+
+	.post-row:hover { opacity: 0.72; }
+
+	.post-date {
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		letter-spacing: 0.02em;
+		color: rgb(var(--gray));
+		padding-top: 0.3rem;
 	}
 
-	.blog-card:hover .card-title {
-		color: var(--accent);
+	.post-title {
+		margin: 0 0 0.4rem;
+		font-size: 1.2rem;
+		font-weight: 500;
+		line-height: 1.3;
+		letter-spacing: -0.008em;
+		color: rgb(var(--black));
 	}
 
-	.card-desc {
+	.post-desc {
 		margin: 0;
-		font-size: 0.875rem;
+		font-size: 0.9375rem;
 		line-height: 1.6;
 		color: rgb(var(--gray));
-		display: -webkit-box;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 3;
-		overflow: hidden;
+		max-width: 46ch;
 	}
 
-	.card-footer {
-		padding-top: 0.875rem;
-		border-top: 1px solid rgba(var(--black), 0.06);
+	.post-arrow {
+		align-self: center;
+		display: flex;
+		color: rgb(var(--gray));
+		transition: transform 0.15s ease, color 0.15s ease;
 	}
+	.post-row:hover .post-arrow { transform: translateX(3px); color: var(--accent); }
 
-	.card-cta {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.3rem;
-		font-size: 0.835rem;
-		font-weight: 500;
-		color: var(--accent);
-		transition: gap 0.2s ease;
-	}
-
-	.blog-card:hover .card-cta {
-		gap: 0.55rem;
+	@media (max-width: 640px) {
+		.post-row { grid-template-columns: 1fr auto; }
+		.post-date { display: none; }
 	}
 </style>

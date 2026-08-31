@@ -1,38 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 /* ── Tokens ──────────────────────────────────────────── */
 :root {
-	--accent:      #0071e3;
-	--accent-dark: #0055b3;
+	--accent:      #35507a;
+	--accent-dark: #23334d;
 
-	--bg:         255, 255, 255;
-	--black:       29,  29,  31;
-	--gray:       110, 110, 115;
-	--gray-light: 245, 245, 247;
-	--gray-dark:   29,  29,  31;
+	--bg:         245, 244, 240;
+	--black:       23,  24,  26;
+	--gray:        86,  88,  93;
+	--gray-light: 238, 236, 229;
+	--gray-dark:   23,  24,  26;
 
-	--box-shadow:       0 2px 6px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08);
+	--box-shadow:       0 2px 6px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.05);
 	--theme-transition: background-color 0.3s ease, color 0.3s ease;
 
-	--font-heading: 'Inter', -apple-system, 'SF Pro Display', BlinkMacSystemFont, system-ui, sans-serif;
-	--font-body:    'Inter', -apple-system, 'SF Pro Text',    BlinkMacSystemFont, system-ui, sans-serif;
-	--font-mono:    'JetBrains Mono', 'SF Mono', Monaco, Consolas, monospace;
+	--font-heading: 'Newsreader', 'Iowan Old Style', Georgia, serif;
+	--font-body:    'Newsreader', 'Iowan Old Style', Georgia, serif;
+	--font-ui:      'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--font-mono:    'IBM Plex Mono', 'SF Mono', Monaco, Consolas, monospace;
 }
 
 [data-theme='dark'] {
-	--accent:      #2997ff;
-	--accent-dark: #0071e3;
+	--accent:      #8ea6c9;
+	--accent-dark: #a9bdda;
 
-	--bg:           0,   0,   0;
-	--black:      245, 245, 247;
-	--gray:       134, 134, 139;
-	--gray-light:  28,  28,  30;
-	--gray-dark:  210, 210, 215;
+	--bg:          22,  22,  21;
+	--black:      236, 233, 226;
+	--gray:       166, 163, 154;
+	--gray-light:  30,  30,  28;
+	--gray-dark:  210, 207, 200;
 
-	--box-shadow: 0 2px 8px rgba(0,0,0,0.5), 0 8px 24px rgba(0,0,0,0.3);
+	--box-shadow: 0 2px 8px rgba(0,0,0,0.45), 0 8px 24px rgba(0,0,0,0.3);
 }
 
 /* ── Base ────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
 body {
 	font-family: var(--font-body);
 	margin: 0;
@@ -45,7 +48,6 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	font-weight: 400;
 	font-optical-sizing: auto;
-	font-feature-settings: "cv11", "ss01";
 	text-rendering: optimizeLegibility;
 	overflow-wrap: break-word;
 	transition: var(--theme-transition);
@@ -54,7 +56,7 @@ body {
 a, button, input { transition: var(--theme-transition); }
 
 main {
-	width: 920px;
+	width: 780px;
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
@@ -69,12 +71,12 @@ h1, h2, h3, h4, h5, h6 {
 	color: rgb(var(--black));
 	line-height: 1.2;
 	font-family: var(--font-heading);
-	font-weight: 600;
-	letter-spacing: -0.015em;
+	font-weight: 500;
+	letter-spacing: -0.01em;
 	font-optical-sizing: auto;
-	font-feature-settings: "cv11", "ss01";
+	text-wrap: balance;
 }
-h1 { font-size: 2.5rem;  font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.025em; }
+h1 { font-size: 2.5rem;  font-weight: 500; margin-bottom: 1rem; letter-spacing: -0.015em; }
 h2 { font-size: 2rem;    margin-top: 2.5rem; }
 h3 { font-size: 1.5rem;  margin-top: 2rem; }
 h4 { font-size: 1.25rem; margin-top: 1.5rem; }
@@ -85,9 +87,10 @@ strong, b { font-weight: 600; }
 a {
 	color: var(--accent);
 	text-decoration: none;
-	font-weight: 500;
+	border-bottom: 1px solid transparent;
+	transition: border-color 0.15s ease, color 0.15s ease;
 }
-a:hover { text-decoration: underline; }
+a:hover { border-bottom-color: currentColor; }
 
 p {
 	margin-bottom: 1.25em;
@@ -103,38 +106,37 @@ textarea, input {
 	border: 1px solid rgba(var(--gray), 0.2);
 }
 textarea { width: 100%; font-family: var(--font-mono); }
-input    { font-family: var(--font-body); }
+input    { font-family: var(--font-ui); }
 
 table { width: 100%; margin: 2rem 0; border-collapse: collapse; }
 table td, table th { padding: 0.75rem; border: 1px solid rgba(var(--gray), 0.2); }
 
-img { max-width: 100%; height: auto; border-radius: 10px; margin: 2rem 0; }
+img { max-width: 100%; height: auto; border-radius: 6px; margin: 2rem 0; }
 
 code {
 	padding: 0.2em 0.4em;
 	background-color: rgba(var(--gray-light), 0.8);
-	border-radius: 5px;
+	border-radius: 4px;
 	font-family: var(--font-mono);
-	font-size: 0.875em;
-	font-weight: 500;
+	font-size: 0.85em;
+	font-weight: 400;
 }
 
 pre {
 	padding: 1.5em;
-	border-radius: 10px;
+	border-radius: 6px;
 	background-color: rgb(var(--gray-light));
 	overflow-x: auto;
 }
-pre > code { all: unset; font-family: var(--font-mono); font-size: 0.875em; }
+pre > code { all: unset; font-family: var(--font-mono); font-size: 0.85em; }
 
 blockquote {
-	border-left: 3px solid var(--accent);
+	border-left: 2px solid var(--accent);
 	margin: 2rem 0;
 	padding: 1rem 1.5rem;
 	font-style: italic;
 	color: rgb(var(--gray-dark));
-	background-color: rgba(var(--gray-light), 0.5);
-	border-radius: 0 10px 10px 0;
+	background: none;
 }
 
 hr { border: none; border-top: 1px solid rgba(var(--gray), 0.18); margin: 3rem 0; }
@@ -175,8 +177,8 @@ li { margin: 0.5rem 0; line-height: 1.7; }
 
 .prose pre { margin: 1.5em 0; }
 
-.prose a { border-bottom: 1px solid transparent; transition: border-color 0.15s ease; }
-.prose a:hover { text-decoration: none; border-bottom-color: var(--accent); }
+.prose a { border-bottom: 1px solid rgba(var(--gray), 0.4); }
+.prose a:hover { border-bottom-color: var(--accent); color: var(--accent); }
 
 .prose img, .prose figure { margin: 2em 0; }
 .prose figcaption { text-align: center; font-size: 0.875em; color: rgb(var(--gray)); margin-top: 0.5em; }
@@ -203,53 +205,27 @@ li { margin: 0.5rem 0; line-height: 1.7; }
 
 /* ── Shared page utilities ───────────────────────────── */
 
-/* Pill badge (blog/tag/notes pages) */
+/* Small uppercase label — section eyebrow, page kicker */
 .eyebrow-tag {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.4rem;
+	display: block;
 	margin: 0 0 1.25rem;
-	padding: 0.3rem 0.8rem;
-	background: color-mix(in srgb, var(--accent) 10%, transparent);
-	color: var(--accent);
-	border-radius: 999px;
-	font-size: 0.74rem;
+	font-family: var(--font-ui);
+	font-size: 0.72rem;
 	font-weight: 600;
-	letter-spacing: 0.07em;
+	letter-spacing: 0.09em;
 	text-transform: uppercase;
+	color: rgb(var(--gray));
 }
 
-/* Section divider: gradient rule above a block */
+/* Section divider: plain hairline rule above a block */
 .section-rule {
-	position: relative;
+	padding-top: 1rem;
+	border-top: 1px solid rgba(var(--gray), 0.16);
+}
+
+/* Post index list (blog + tag pages) — editorial rows, not cards */
+.posts-grid {
+	display: flex;
+	flex-direction: column;
 	padding-top: 1rem;
 }
-.section-rule::before {
-	content: '';
-	position: absolute;
-	top: 0; left: 0; right: 0;
-	height: 1px;
-	background: linear-gradient(90deg,
-		transparent 0%,
-		rgba(var(--gray), 0.18) 15%,
-		rgba(0, 113, 227, 0.30) 50%,
-		rgba(var(--gray), 0.18) 85%,
-		transparent 100%);
-}
-[data-theme='dark'] .section-rule::before {
-	background: linear-gradient(90deg,
-		transparent 0%,
-		rgba(var(--gray), 0.18) 15%,
-		rgba(41, 151, 255, 0.40) 50%,
-		rgba(var(--gray), 0.18) 85%,
-		transparent 100%);
-}
-
-/* Blog post list grid (blog + tag pages) */
-.posts-grid {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 1rem;
-	padding-top: 2.5rem;
-}
-@media (max-width: 768px) { .posts-grid { grid-template-columns: 1fr; } }

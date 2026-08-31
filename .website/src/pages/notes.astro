@@ -30,46 +30,44 @@ import { QUARTZ_URL } from '../consts';
 
 <style>
 	.redirect-page {
-		max-width: 760px;
+		max-width: 780px;
 		min-height: calc(100vh - 12rem);
 		margin: 0 auto;
-		padding: 8rem 1.5rem;
+		padding: 6rem 1.5rem;
 	}
 
 	.eyebrow {
-		margin: 0 0 1rem;
+		margin: 0 0 1.25rem;
 		color: rgb(var(--gray));
-		font-size: 0.85rem;
+		font-family: var(--font-ui);
+		font-size: 0.72rem;
 		font-weight: 600;
 		text-transform: uppercase;
-		letter-spacing: 0.08em;
+		letter-spacing: 0.09em;
 	}
 
 	h1 {
 		margin: 0 0 1rem;
 		color: rgb(var(--black));
-		font-size: clamp(3rem, 8vw, 6rem);
-		line-height: 0.95;
-		letter-spacing: 0;
+		font-weight: 500;
+		font-size: clamp(2.5rem, 6vw, 3.5rem);
+		line-height: 1.05;
+		letter-spacing: -0.015em;
 	}
 
 	p {
-		max-width: 520px;
-		color: rgb(var(--gray-dark));
-		font-size: 1.2rem;
-		line-height: 1.55;
+		max-width: 46ch;
+		color: rgb(var(--gray));
+		font-size: 1.0625rem;
+		line-height: 1.7;
 	}
 
 	a {
-		display: inline-flex;
-		align-items: center;
-		min-height: 2.75rem;
+		display: inline-block;
 		margin-top: 1rem;
-		padding: 0 1.15rem;
-		border-radius: 8px;
-		background: rgb(var(--black));
-		color: rgb(var(--gray-light));
-		font-weight: 600;
-		text-decoration: none;
+		font-family: var(--font-ui);
+		font-size: 0.9rem;
+		font-weight: 500;
+		color: var(--accent);
 	}
 </style>

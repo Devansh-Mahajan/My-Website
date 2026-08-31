@@ -33,19 +33,19 @@ const selectedWork = [
 	{
 		title: 'ETH Zurich EECS Notebook',
 		meta: 'Circuits · Signals · Systems',
-		description: 'EECS coursework notes — digital circuits, signal processing, linear systems, and computer architecture.',
+		description: 'Coursework notes on digital circuits, signal processing, linear systems, and computer architecture.',
 		href: notes.eecs,
 	},
 	{
 		title: 'Competitive Programming',
 		meta: 'Algorithms · Complexity',
-		description: 'Problem solving notes, algorithm templates, and contest techniques at IOI difficulty.',
+		description: 'Problem-solving notes, algorithm templates, and contest technique at IOI difficulty.',
 		href: notes.programming,
 	},
 	{
 		title: 'Projects',
 		meta: 'Hardware · Software · Quant',
-		description: 'Project logs across hardware, software systems, and quantitative experiments.',
+		description: 'Build logs across hardware, software systems, and quantitative experiments.',
 		href: notes.projects,
 	},
 ];
@@ -61,10 +61,10 @@ const noteLinks = [
 ];
 
 const focusAreas = [
-	{ idx: '01', title: 'Electronics',       description: 'Circuits, signals, digital logic, and physical systems.' },
-	{ idx: '02', title: 'Mathematics',       description: 'Proofs, linear algebra, calculus, probability, and problem solving.' },
-	{ idx: '03', title: 'Software Systems',  description: 'Clean implementation, automation, infrastructure, and data workflows.' },
-	{ idx: '04', title: 'Quantitative Work', description: 'Modelling, backtesting, statistics, and computational experiments.' },
+	{ title: 'Electronics',       description: 'Circuits, signals, digital logic, and physical systems.' },
+	{ title: 'Mathematics',       description: 'Proofs, linear algebra, calculus, probability, and problem solving.' },
+	{ title: 'Software Systems',  description: 'Implementation, automation, infrastructure, and data workflows.' },
+	{ title: 'Quantitative Work', description: 'Modelling, backtesting, statistics, and computational experiments.' },
 ];
 ---
 
@@ -79,279 +79,79 @@ const focusAreas = [
 
 			<!-- ── HERO ─────────────────────────────────── -->
 			<section class="hero" aria-labelledby="hero-name">
+				<p class="eyebrow">ETH Z&uuml;rich &middot; EECS</p>
+				<h1 id="hero-name">Devansh Mahajan</h1>
+				<p class="tagline">Electrical engineering and mathematics.</p>
+				<p class="lead">Coursework, problem sets, and side projects &mdash; written up as I go and kept public, not cleaned up after the fact.</p>
 
-				<!-- PCB schematic: routes itself in on load, two calm signal pulses -->
-				<svg class="pcb-bg" viewBox="0 0 520 600" fill="none"
-				     preserveAspectRatio="xMaxYMid meet" aria-hidden="true">
-
-					<!-- ══ TRACES ═══════════════════════════════════════ -->
-					<g stroke="currentColor" stroke-width="1.1" fill="none" stroke-linecap="square">
-
-						<!-- Rails + bus spine -->
-						<path class="tr tr-1"   pathLength="1000" d="M 520 50 H 290"/>
-						<path class="tr tr-2"   pathLength="1000" d="M 290 20 H 440"/>
-						<path class="tr tr-2b"  pathLength="1000" d="M 480 20 H 520"/>
-						<path class="tr tr-3"   pathLength="1000" d="M 290 20 V 50"/>
-						<path class="tr tr-4"   pathLength="1000" d="M 290 50 V 565"/>
-						<path class="tr tr-15"  pathLength="1000" d="M 290 565 V 583"/>
-
-						<!-- U1 (FPGA, left): bus → right pin stubs -->
-						<path class="tr tr-5"   pathLength="1000" d="M 290 133 H 238"/>
-						<path class="tr tr-5b"  pathLength="1000" d="M 290 149 H 238"/>
-						<path class="tr tr-5c"  pathLength="1000" d="M 290 165 H 238"/>
-						<path class="tr tr-5d"  pathLength="1000" d="M 290 181 H 238"/>
-						<!-- U1 left pin exits off-screen -->
-						<path class="tr tr-6"   pathLength="1000" d="M 64 133 H 0"/>
-						<path class="tr tr-6b"  pathLength="1000" d="M 64 149 H 0"/>
-						<path class="tr tr-6c"  pathLength="1000" d="M 64 165 H 0"/>
-
-						<!-- U2 (MCU, right): bus → left pin stubs -->
-						<path class="tr tr-7"   pathLength="1000" d="M 290 128 H 314"/>
-						<path class="tr tr-7b"  pathLength="1000" d="M 290 143 H 314"/>
-						<path class="tr tr-7c"  pathLength="1000" d="M 290 158 H 314"/>
-						<path class="tr tr-7d"  pathLength="1000" d="M 290 173 H 314"/>
-						<!-- U2 right outputs -->
-						<path class="tr tr-8"   pathLength="1000" d="M 430 128 H 520"/>
-						<path class="tr tr-8b"  pathLength="1000" d="M 430 143 H 520"/>
-
-						<!-- C1: VCC junction stub down, then GND lead -->
-						<path class="tr tr-9"   pathLength="1000" d="M 372 50 V 60"/>
-						<path class="tr tr-9b"  pathLength="1000" d="M 372 66 V 92"/>
-
-						<!-- C2: branch off bus, GND lead -->
-						<path class="tr tr-10"  pathLength="1000" d="M 290 265 H 452 V 272"/>
-						<path class="tr tr-10b" pathLength="1000" d="M 452 278 V 302"/>
-
-						<!-- R1: inline on trace at y=310 -->
-						<path class="tr tr-11"  pathLength="1000" d="M 290 310 H 375"/>
-						<path class="tr tr-11b" pathLength="1000" d="M 413 310 H 520"/>
-
-						<!-- L1: left lead, arc bumps (4×), right lead -->
-						<path class="tr tr-12"  pathLength="1000" d="M 290 375 H 352"/>
-						<path class="tr tr-12c" pathLength="1000" stroke-linecap="round"
-						      d="M 352 375 Q 361 362 370 375 Q 379 362 388 375 Q 397 362 406 375 Q 415 362 424 375"/>
-						<path class="tr tr-12b" pathLength="1000" d="M 424 375 H 520"/>
-
-						<!-- R2: inline at y=445 -->
-						<path class="tr tr-13"  pathLength="1000" d="M 290 445 H 372"/>
-						<path class="tr tr-13b" pathLength="1000" d="M 410 445 H 520"/>
-
-					</g>
-
-					<!-- ══ GND SYMBOLS ══════════════════════════════════ -->
-					<g stroke="currentColor" stroke-width="0.9" stroke-linecap="round">
-						<!-- Bus bottom -->
-						<line x1="278" y1="586" x2="302" y2="586"/>
-						<line x1="282" y1="591" x2="298" y2="591"/>
-						<line x1="286" y1="596" x2="294" y2="596"/>
-					</g>
-					<g stroke="currentColor" stroke-width="0.75" stroke-linecap="round">
-						<!-- C1 bottom -->
-						<line x1="365" y1="93"  x2="379" y2="93"/>
-						<line x1="368" y1="97"  x2="376" y2="97"/>
-						<line x1="371" y1="101" x2="373" y2="101"/>
-						<!-- C2 bottom -->
-						<line x1="445" y1="304" x2="459" y2="304"/>
-						<line x1="448" y1="308" x2="456" y2="308"/>
-						<line x1="451" y1="312" x2="453" y2="312"/>
-					</g>
-
-					<!-- ══ VIAS — staggered pulse so nodes feel alive ══ -->
-					<circle class="via-o" cx="290" cy="50"  r="5"/>  <circle class="via-i" cx="290" cy="50"  r="2"   style="animation-delay:0.0s"/>
-					<circle class="via-o" cx="290" cy="20"  r="3.5"/><circle class="via-i" cx="290" cy="20"  r="1.5" style="animation-delay:0.6s"/>
-					<circle class="via-o" cx="290" cy="265" r="3.5"/><circle class="via-i" cx="290" cy="265" r="1.5" style="animation-delay:1.2s"/>
-					<circle class="via-o" cx="290" cy="310" r="4"/>  <circle class="via-i" cx="290" cy="310" r="1.8" style="animation-delay:0.4s"/>
-					<circle class="via-o" cx="290" cy="375" r="4"/>  <circle class="via-i" cx="290" cy="375" r="1.8" style="animation-delay:1.8s"/>
-					<circle class="via-o" cx="290" cy="445" r="3.5"/><circle class="via-i" cx="290" cy="445" r="1.5" style="animation-delay:0.9s"/>
-					<circle class="via-o" cx="372" cy="50"  r="3.5"/><circle class="via-i" cx="372" cy="50"  r="1.5" style="animation-delay:1.5s"/>
-
-					<!-- ══ U1: FPGA (schematic box, left of bus) ════════ -->
-					<rect class="ic-box" x="78" y="116" width="160" height="90" rx="2"/>
-					<circle class="ic-pin1" cx="86" cy="124" r="2.2"/>
-					<line class="ic-pin" x1="238" y1="131" x2="252" y2="131"/>
-					<line class="ic-pin" x1="238" y1="147" x2="252" y2="147"/>
-					<line class="ic-pin" x1="238" y1="163" x2="252" y2="163"/>
-					<line class="ic-pin" x1="238" y1="179" x2="252" y2="179"/>
-					<line class="ic-pin" x1="78"  y1="131" x2="64"  y2="131"/>
-					<line class="ic-pin" x1="78"  y1="147" x2="64"  y2="147"/>
-					<line class="ic-pin" x1="78"  y1="163" x2="64"  y2="163"/>
-					<line class="ic-div" x1="78" y1="176" x2="238" y2="176"/>
-					<text class="ic-ref-lbl" x="158" y="168">U1</text>
-					<text class="ic-val-lbl" x="158" y="182">FPGA</text>
-
-					<!-- ══ U2: MCU (right of bus) ════════════════════════ -->
-					<rect class="ic-box" x="328" y="112" width="88" height="74" rx="2"/>
-					<circle class="ic-pin1" cx="336" cy="120" r="2"/>
-					<line class="ic-pin" x1="328" y1="128" x2="314" y2="128"/>
-					<line class="ic-pin" x1="328" y1="143" x2="314" y2="143"/>
-					<line class="ic-pin" x1="328" y1="158" x2="314" y2="158"/>
-					<line class="ic-pin" x1="328" y1="173" x2="314" y2="173"/>
-					<line class="ic-pin" x1="416" y1="128" x2="430" y2="128"/>
-					<line class="ic-pin" x1="416" y1="143" x2="430" y2="143"/>
-					<line class="ic-div" x1="328" y1="155" x2="416" y2="155"/>
-					<text class="ic-ref-lbl" x="372" y="147">U2</text>
-					<text class="ic-val-lbl" x="372" y="161">MCU</text>
-
-					<!-- ══ C1: Decoupling capacitor (VCC → GND) ═════════ -->
-					<line class="ic-pin" x1="363" y1="60" x2="381" y2="60"/>
-					<line class="ic-pin" x1="363" y1="66" x2="381" y2="66"/>
-					<text class="comp-ref-lbl" x="388" y="61">C1</text>
-					<text class="comp-val-lbl" x="388" y="72">100n</text>
-
-					<!-- ══ C2: Bypass capacitor (bus branch → GND) ══════ -->
-					<line class="ic-pin" x1="443" y1="272" x2="461" y2="272"/>
-					<line class="ic-pin" x1="443" y1="278" x2="461" y2="278"/>
-					<text class="comp-ref-lbl" x="466" y="277">C2</text>
-					<text class="comp-val-lbl" x="466" y="288">10µ</text>
-
-					<!-- ══ R1: Resistor 4.7k ═════════════════════════════ -->
-					<rect class="ic-box r-box" x="375" y="303" width="38" height="14" rx="1.5"/>
-					<text class="comp-ref-lbl" x="394" y="299">R1</text>
-					<text class="comp-val-lbl" x="394" y="327">4.7k</text>
-
-					<!-- ══ L1: Inductor 10µH (4 arc bumps) ══════════════ -->
-					<!-- arc bumps drawn as tr-12c in trace group above -->
-					<text class="comp-ref-lbl" x="388" y="357">L1</text>
-					<text class="comp-val-lbl" x="388" y="390">10µH</text>
-
-					<!-- ══ R2: Resistor 10k ══════════════════════════════ -->
-					<rect class="ic-box r-box" x="372" y="438" width="38" height="14" rx="1.5"/>
-					<text class="comp-ref-lbl" x="391" y="434">R2</text>
-					<text class="comp-val-lbl" x="391" y="462">10k</text>
-
-					<!-- ══ Y1: Crystal oscillator (inline on return rail) -->
-					<rect class="ic-box" x="440" y="13" width="40" height="14" rx="2"/>
-					<rect class="ic-box crys" x="448" y="15.5" width="24" height="9" rx="0.5"/>
-					<text class="comp-ref-lbl" x="460" y="9">Y1</text>
-					<text class="comp-val-lbl" x="460" y="33">16MHz</text>
-
-					<!-- ══ SIGNALS ════════════════════════════════════════ -->
-					<!-- sig-1: power rail → bus → R1 branch → right -->
-					<path class="sig sig-1" d="M 520 50 H 290 V 310 H 520"/>
-					<!-- sig-2: return rail → Y1 crystal -->
-					<path class="sig sig-2" d="M 290 20 H 440"/>
-					<!-- sig-3: bus → L1 inductor arcs → right -->
-					<path class="sig sig-3" stroke-linecap="round"
-					      d="M 290 375 H 352 Q 361 362 370 375 Q 379 362 388 375 Q 397 362 406 375 Q 415 362 424 375 H 520"/>
-					<!-- sig-4: bus → through U2 layer → right output -->
-					<path class="sig sig-4" d="M 290 143 H 520"/>
-
-				</svg>
-
-				<!-- Ghost: math/code equations wipe in and fade in the PCB region -->
-				<div class="code-ghost" aria-hidden="true">
-					<span class="cg cg-1">&#8711; &times; E = &#8722;&#8706;B/&#8706;t</span>
-					<span class="cg cg-2">O(n log n)</span>
-					<span class="cg cg-3">H(s) = Y(s) / X(s)</span>
-					<span class="cg cg-4">&#8721; &#955;&#7522; = tr(A)</span>
+				<div class="hero-links">
+					<a href={notes.home} target="_blank" rel="noreferrer">
+						Browse Notes
+						<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7m0 0H7m10 0v10"/></svg>
+					</a>
+					<a href="https://github.com/Devansh-Mahajan" target="_blank" rel="noreferrer">GitHub</a>
+					<a href="https://www.linkedin.com/in/devansh-mahajan-2b2b99185/" target="_blank" rel="noreferrer">LinkedIn</a>
 				</div>
 
-				<!-- Hero text content -->
-				<div class="hero-content">
-
-					<div class="eth-badge" aria-label="Currently enrolled at ETH Zürich, EECS">
-						<span class="ping-wrapper" aria-hidden="true">
-							<span class="ping-ring"></span>
-							<span class="ping-dot"></span>
-						</span>
-						ETH Z&uuml;rich &middot; EECS
-					</div>
-
-					<h1 id="hero-name">Devansh<br />Mahajan</h1>
-
-					<p class="lead">
-						Electrical engineering and mathematics at ETH Z&uuml;rich.
-						Every note, experiment, and build is public.
-					</p>
-
-					<div class="hero-actions">
-						<a class="btn-primary" href={notes.home} target="_blank" rel="noreferrer">
-							Browse Notes
-							<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7m0 0H7m10 0v10"/></svg>
-						</a>
-						<a class="btn-ghost" href="https://github.com/Devansh-Mahajan" target="_blank" rel="noreferrer">GitHub</a>
-						<a class="btn-ghost" href="https://www.linkedin.com/in/devansh-mahajan-2b2b99185/" target="_blank" rel="noreferrer">LinkedIn</a>
-					</div>
-
-					<p class="hero-meta" aria-label="Status">
-						<span>BSc Candidate</span>
-						<span class="meta-sep" aria-hidden="true">/</span>
-						<span>Spring 2026</span>
-						<span class="meta-sep" aria-hidden="true">/</span>
-						<span>Z&uuml;rich</span>
-					</p>
-
-				</div>
-
+				<p class="hero-meta" aria-label="Status">
+					<span>BSc Candidate</span>
+					<span>Spring 2026</span>
+					<span>Z&uuml;rich</span>
+				</p>
 			</section>
 
-			<!-- ── 01 — SELECTED WORK ────────────────────── -->
+			<!-- ── SELECTED WORK ──────────────────────────── -->
 			<section class="section" aria-labelledby="work-heading">
-				<header class="section-header">
-					<span class="section-num">01</span>
-					<h2 id="work-heading">Selected Work</h2>
-				</header>
+				<p class="section-label" id="work-heading">Selected work</p>
 
-				<div class="work-grid">
-					{selectedWork.map((item, i) => (
-						<a
-							class="work-card"
-							href={item.href}
-							target="_blank"
-							rel="noreferrer"
-							style={`animation-delay:${0.05 + i * 0.07}s`}
-						>
-							<p class="card-meta">{item.meta}</p>
-							<h3>{item.title}</h3>
-							<p class="card-desc">{item.description}</p>
-							<span class="card-arrow" aria-hidden="true">
+				<div class="work-list">
+					{selectedWork.map((item) => (
+						<a class="work-row" href={item.href} target="_blank" rel="noreferrer">
+							<span class="work-meta">{item.meta}</span>
+							<span class="work-main">
+								<h3>{item.title}</h3>
+								<p>{item.description}</p>
+							</span>
+							<span class="work-arrow" aria-hidden="true">
 								<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
 							</span>
 						</a>
 					))}
 				</div>
-
-				<nav class="notes-nav" aria-label="Notes index">
-					<span class="notes-nav-label">Browse</span>
-					<div class="note-tags" role="list">
-						{noteLinks.map((link) => (
-							<a class="note-tag" href={link.href} target="_blank" rel="noreferrer" role="listitem">
-								{link.label}
-							</a>
-						))}
-					</div>
-					<a class="notes-all-link" href={notes.home} target="_blank" rel="noreferrer">
-						All notes
-						<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7m0 0H7m10 0v10"/></svg>
-					</a>
-				</nav>
 			</section>
 
-			<!-- ── 02 — FOCUS ────────────────────────────── -->
+			<!-- ── BROWSE NOTES ──────────────────────────── -->
+			<section class="section" aria-labelledby="notes-heading">
+				<p class="section-label" id="notes-heading">Browse notes</p>
+				<p class="notes-line">
+					{noteLinks.map((link, i) => (
+						<>
+							{i > 0 && <span class="notes-sep">&middot;</span>}
+							<a href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
+						</>
+					))}
+					<a class="all-notes" href={notes.home} target="_blank" rel="noreferrer">&rarr; All notes</a>
+				</p>
+			</section>
+
+			<!-- ── FOCUS ─────────────────────────────────── -->
 			<section class="section" aria-labelledby="focus-heading">
-				<header class="section-header">
-					<span class="section-num">02</span>
-					<h2 id="focus-heading">Focus</h2>
-				</header>
-				<div class="focus-grid">
+				<p class="section-label" id="focus-heading">Focus</p>
+				<dl class="focus-list">
 					{focusAreas.map((area) => (
-						<div class="focus-cell">
-							<span class="cell-idx">{area.idx}</span>
-							<strong>{area.title}</strong>
-							<p>{area.description}</p>
+						<div class="focus-item">
+							<dt>{area.title}</dt>
+							<dd>{area.description}</dd>
 						</div>
 					))}
-				</div>
+				</dl>
 			</section>
 
-			<!-- ── 03 — WRITING ──────────────────────────── -->
+			<!-- ── WRITING ───────────────────────────────── -->
 			{hasPosts && (
 				<section class="section" aria-labelledby="writing-heading">
-					<header class="section-header">
-						<span class="section-num">03</span>
-						<h2 id="writing-heading">Writing</h2>
-					</header>
-					<div class="post-grid">
+					<p class="section-label" id="writing-heading">Writing</p>
+					<div class="posts-grid">
 						{posts.map((post) => (
 							<BlogCard
 								title={post.data.title}
@@ -361,10 +161,7 @@ const focusAreas = [
 							/>
 						))}
 					</div>
-					<a class="more-link" href={getUrl('/blog')}>
-						All writing
-						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
-					</a>
+					<a class="more-link" href={getUrl('/blog')}>All writing &rarr;</a>
 				</section>
 			)}
 
@@ -373,695 +170,201 @@ const focusAreas = [
 	</body>
 </html>
 
-
 <style>
-	/* ═══════════════════════════════════════════════════════
-	   KEYFRAMES
-	   ═══════════════════════════════════════════════════════ */
+	main {
+		max-width: 780px;
+		margin: 0 auto;
+		padding: 0 1.5rem 7rem;
+	}
 
-	@keyframes fadeUp {
-		from { opacity: 0; transform: translateY(12px); }
+	/* ═══ HERO ═══ */
+	.hero {
+		padding: 4.75rem 0 4.25rem;
+		opacity: 0;
+		animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards;
+	}
+	@keyframes rise {
+		from { opacity: 0; transform: translateY(8px); }
 		to   { opacity: 1; transform: translateY(0); }
 	}
-
-	@keyframes ping {
-		75%, 100% { transform: scale(2.2); opacity: 0; }
+	@media (prefers-reduced-motion: reduce) {
+		.hero { animation: none; opacity: 1; }
 	}
 
-	/* PCB traces draw themselves in on load (one-shot) */
-	@keyframes drawTrace {
-		from { stroke-dashoffset: 1000; }
-		to   { stroke-dashoffset: 0; }
-	}
-
-	/* Universal signal dot — works on any path length */
-	@keyframes sigPulse {
-		0%   { stroke-dashoffset:    0; opacity: 0; }
-		5%   { opacity: 0.9; }
-		88%  { opacity: 0.9; }
-		100% { stroke-dashoffset: -1000; opacity: 0; }
-	}
-
-	/* Via node activity pulse */
-	@keyframes viaPulse {
-		0%, 100% { opacity: 0.3; }
-		50%      { opacity: 1;   }
-	}
-
-	/* Ghost code: clip-wipe in from left, linger, fade out */
-	@keyframes codeReveal {
-		0%   { clip-path: inset(0 100% 0 0); opacity: 0; }
-		5%   { opacity: var(--ghost-vis, 0.07); }
-		20%  { clip-path: inset(0 0% 0 0); }
-		55%  { clip-path: inset(0 0% 0 0); opacity: var(--ghost-vis, 0.07); }
-		70%  { opacity: 0; }
-		78%  { clip-path: inset(0 100% 0 0); }
-		100% { clip-path: inset(0 100% 0 0); opacity: 0; }
-	}
-
-	/* ═══════════════════════════════════════════════════════
-	   TOKENS
-	   ═══════════════════════════════════════════════════════ */
-
-	:root { --ghost-vis: 0.13; }
-	[data-theme='dark'] { --ghost-vis: 0.20; }
-
-	/* ═══════════════════════════════════════════════════════
-	   LAYOUT
-	   ═══════════════════════════════════════════════════════ */
-
-	main {
-		max-width: 960px;
-		margin: 0 auto;
-		padding: 0 1.5rem 8rem;
-	}
-
-	/* ═══════════════════════════════════════════════════════
-	   HERO
-	   ═══════════════════════════════════════════════════════ */
-
-	.hero {
-		position: relative;
-		overflow: hidden;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		padding: 6rem 0 5.5rem;
-	}
-
-	/* Content sits above the decorative layers */
-	.hero-content {
-		position: relative;
-		z-index: 1;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-	/* ── PCB schematic ── */
-	.pcb-bg {
-		position: absolute;
-		right: -24px;
-		top: 0;
-		height: 100%;
-		width: 52%;
-		pointer-events: none;
-		z-index: 0;
-		color: rgba(0, 113, 227, 0.15);
-		mask-image: linear-gradient(to right,
-			transparent 0%,
-			rgba(0,0,0,0.2) 22%,
-			rgba(0,0,0,0.65) 52%,
-			black 72%
-		);
-		-webkit-mask-image: linear-gradient(to right,
-			transparent 0%,
-			rgba(0,0,0,0.2) 22%,
-			rgba(0,0,0,0.65) 52%,
-			black 72%
-		);
-	}
-	[data-theme='dark'] .pcb-bg { color: rgba(41, 151, 255, 0.28); }
-
-	/* Traces */
-	.tr {
-		stroke-dasharray: 1000;
-		stroke-dashoffset: 1000;
-		animation: drawTrace 1.3s cubic-bezier(0.25, 0, 0.5, 1) forwards;
-	}
-	/* Rails + bus — establish the skeleton first */
-	.tr-1   { animation-delay: 0.10s; }
-	.tr-2   { animation-delay: 0.18s; }
-	.tr-2b  { animation-delay: 0.25s; }
-	.tr-3   { animation-delay: 0.28s; }
-	.tr-4   { animation-delay: 0.38s; }
-	/* C1 stub — branches off power rail early */
-	.tr-9   { animation-delay: 0.50s; }
-	.tr-9b  { animation-delay: 0.56s; }
-	/* U1 + U2 connections — both ICs route simultaneously */
-	.tr-5   { animation-delay: 0.62s; }
-	.tr-7   { animation-delay: 0.62s; }
-	.tr-5b  { animation-delay: 0.68s; }
-	.tr-7b  { animation-delay: 0.68s; }
-	.tr-5c  { animation-delay: 0.74s; }
-	.tr-7c  { animation-delay: 0.74s; }
-	.tr-5d  { animation-delay: 0.80s; }
-	.tr-7d  { animation-delay: 0.80s; }
-	/* IC outputs */
-	.tr-8   { animation-delay: 0.88s; }
-	.tr-8b  { animation-delay: 0.93s; }
-	.tr-6   { animation-delay: 0.95s; }
-	.tr-6b  { animation-delay: 1.00s; }
-	.tr-6c  { animation-delay: 1.05s; }
-	/* Lower component branches — cascade downward */
-	.tr-10  { animation-delay: 1.10s; }
-	.tr-10b { animation-delay: 1.16s; }
-	.tr-11  { animation-delay: 1.22s; }
-	.tr-11b { animation-delay: 1.28s; }
-	.tr-12  { animation-delay: 1.34s; }
-	.tr-12c { animation-delay: 1.40s; }
-	.tr-12b { animation-delay: 1.52s; }
-	.tr-13  { animation-delay: 1.56s; }
-	.tr-13b { animation-delay: 1.62s; }
-	.tr-15  { animation-delay: 1.70s; }
-
-	/* Via rings */
-	.via-o {
-		stroke: currentColor;
-		stroke-width: 1.2;
-		fill: none;
-	}
-	.via-i {
-		fill: currentColor;
-		animation: viaPulse 3.5s ease-in-out infinite;
-	}
-
-	/* IC schematic symbol */
-	.ic-box {
-		stroke: currentColor;
-		stroke-width: 1;
-		fill: color-mix(in srgb, currentColor 5%, transparent);
-	}
-	.r-box { fill: color-mix(in srgb, currentColor 6%, transparent); }
-	.ic-pin1 {
-		fill: currentColor;
-		opacity: 0.55;
-	}
-	.ic-pin {
-		stroke: currentColor;
-		stroke-width: 1;
-		fill: none;
-	}
-	.ic-div {
-		stroke: currentColor;
-		stroke-width: 0.5;
-		opacity: 0.35;
-	}
-	.ic-ref-lbl {
-		font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
-		font-size: 9px;
-		fill: currentColor;
-		text-anchor: middle;
-		font-weight: 700;
-		opacity: 0.9;
-	}
-	.ic-val-lbl {
-		font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
-		font-size: 5.5px;
-		fill: currentColor;
-		text-anchor: middle;
-		opacity: 0.45;
-	}
-	.comp-ref-lbl {
-		font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
-		font-size: 6.5px;
-		fill: currentColor;
-		text-anchor: middle;
-		opacity: 0.65;
-	}
-	.comp-val-lbl {
-		font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
-		font-size: 5px;
-		fill: currentColor;
-		text-anchor: middle;
-		opacity: 0.42;
-	}
-
-	/* Crystal inner wafer (slightly different fill) */
-	.crys { fill: color-mix(in srgb, currentColor 9%, transparent); }
-
-	/* Signal dots — all use universal sigPulse keyframe */
-	.sig { fill: none; stroke: var(--accent); opacity: 0; }
-
-	/* sig-1: main traversal, power → bus → R1 → exit (~720 px) */
-	.sig-1 {
-		stroke-width: 2;
-		stroke-dasharray: 14 990;
-		animation: sigPulse 6.5s linear infinite 2.2s;
-	}
-	/* sig-2: return rail → Y1 (~150 px), small dot */
-	.sig-2 {
-		stroke-width: 1.4;
-		stroke-dasharray: 8 990;
-		animation: sigPulse 4.5s linear infinite 6.0s;
-	}
-	/* sig-3: bus → L1 inductor arcs → exit (~250 px) */
-	.sig-3 {
-		stroke-width: 1.6;
-		stroke-dasharray: 10 990;
-		animation: sigPulse 5.5s linear infinite 4.0s;
-	}
-	/* sig-4: bus → U2 layer → right output (~230 px), fast */
-	.sig-4 {
-		stroke-width: 1.4;
-		stroke-dasharray: 8 990;
-		animation: sigPulse 3.8s linear infinite 8.5s;
-	}
-
-	/* ── Ghost code fragments ── */
-	.code-ghost {
-		position: absolute;
-		inset: 0;
-		pointer-events: none;
-		z-index: 0;
-		overflow: hidden;
-	}
-
-	.cg {
-		position: absolute;
+	.eyebrow {
 		font-family: var(--font-mono);
-		font-size: 0.68rem;
-		font-weight: 400;
+		font-size: 0.75rem;
 		letter-spacing: 0.04em;
-		color: rgb(var(--black));
-		white-space: nowrap;
-		clip-path: inset(0 100% 0 0);
-		opacity: 0;
-		animation: codeReveal 16s ease-in-out infinite;
+		color: rgb(var(--gray));
+		margin: 0 0 1.5rem;
 	}
 
-	.cg-1 { top: 14%; left: 54%; animation-delay:  1s; }
-	.cg-2 { top: 34%; left: 66%; animation-delay:  5s; }
-	.cg-3 { top: 58%; left: 55%; animation-delay:  9s; }
-	.cg-4 { top: 76%; left: 63%; animation-delay: 13s; }
-
-	/* ── ETH Badge with ping ── */
-	.eth-badge {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
-		margin-bottom: 2rem;
-		padding: 0.35rem 0.85rem 0.35rem 0.65rem;
-		background: rgb(var(--gray-light));
-		border: 1px solid rgba(var(--gray), 0.18);
-		border-radius: 999px;
-		font-size: 0.78rem;
+	.hero h1 {
+		font-size: clamp(2.75rem, 7vw, 4rem);
 		font-weight: 500;
-		letter-spacing: -0.005em;
-		color: rgb(var(--black));
-		animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0s both;
+		line-height: 1.02;
+		margin-bottom: 0.6rem;
 	}
 
-	[data-theme='dark'] .eth-badge {
-		background: rgba(var(--gray-light), 0.6);
+	.tagline {
+		font-family: var(--font-heading);
+		font-style: italic;
+		font-weight: 400;
+		font-size: clamp(1.25rem, 2.6vw, 1.5rem);
+		color: rgb(var(--gray));
+		margin: 0 0 1.75rem;
 	}
 
-	.ping-wrapper {
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 9px;
-		height: 9px;
-		flex-shrink: 0;
-	}
-
-	.ping-ring {
-		position: absolute;
-		inset: 0;
-		border-radius: 50%;
-		background: #30d158;
-		animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
-	}
-
-	.ping-dot {
-		position: relative;
-		width: 7px;
-		height: 7px;
-		background: #30d158;
-		border-radius: 50%;
-		flex-shrink: 0;
-	}
-
-	/* ── Name ── */
-	h1 {
-		margin: 0 0 1.25rem;
-		font-size: clamp(4rem, 10vw, 7rem);
-		font-weight: 700;
-		line-height: 0.92;
-		letter-spacing: -0.04em;
-		color: rgb(var(--black));
-		animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.06s both;
-	}
-
-	/* ── Lead ── */
 	.lead {
-		max-width: 440px;
-		margin: 0 0 2.25rem;
+		max-width: 46ch;
 		font-size: 1.0625rem;
-		line-height: 1.68;
+		line-height: 1.7;
 		color: rgb(var(--gray));
-		font-weight: 400;
-		animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+		margin: 0 0 2.25rem;
 	}
 
-	/* ── CTA row ── */
-	.hero-actions {
-		display: flex;
-		align-items: center;
-		gap: 0.6rem;
-		flex-wrap: wrap;
-		animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both;
-	}
-
-	/* ── Meta line ── */
-	.hero-meta {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		margin: 1.25rem 0 0;
-		font-family: var(--font-mono);
-		font-size: 0.7rem;
-		letter-spacing: 0.02em;
-		color: rgb(var(--gray));
-		opacity: 0.55;
-		animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
-	}
-
-	.meta-sep { opacity: 0.45; }
-
-	/* ═══════════════════════════════════════════════════════
-	   BUTTONS
-	   ═══════════════════════════════════════════════════════ */
-
-	.btn-primary {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.4rem;
-		padding: 0.575rem 1.1rem;
-		background: var(--accent);
-		color: #fff !important;
-		border-radius: 999px;
-		font-size: 0.875rem;
-		font-weight: 500;
-		letter-spacing: -0.005em;
-		text-decoration: none !important;
-		transition: opacity 0.18s ease, transform 0.18s ease;
-	}
-	.btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
-
-	.btn-ghost {
-		display: inline-flex;
-		align-items: center;
-		padding: 0.575rem 1.1rem;
-		background: transparent;
-		border: 1px solid rgba(var(--gray), 0.28);
-		color: rgb(var(--black)) !important;
-		border-radius: 999px;
-		font-size: 0.875rem;
-		font-weight: 500;
-		letter-spacing: -0.005em;
-		text-decoration: none !important;
-		transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
-	}
-	.btn-ghost:hover {
-		background: rgba(var(--gray-light), 0.9);
-		border-color: rgba(var(--gray), 0.45);
-		transform: translateY(-1px);
-	}
-
-	/* ═══════════════════════════════════════════════════════
-	   SECTIONS
-	   ═══════════════════════════════════════════════════════ */
-
-	.section {
-		padding: 5rem 0;
-		border-top: 1px solid rgba(var(--gray), 0.14);
-	}
-
-	.section-header {
-		display: flex;
-		align-items: baseline;
-		gap: 1rem;
-		margin-bottom: 2.75rem;
-	}
-
-	.section-num {
-		font-family: var(--font-mono);
-		font-size: 0.68rem;
-		font-weight: 400;
-		letter-spacing: 0.05em;
-		color: var(--accent);
-		opacity: 0.75;
-		flex-shrink: 0;
-		padding-top: 0.2rem;
-	}
-
-	.section-header h2 {
-		margin: 0;
-		font-size: clamp(1.625rem, 3.5vw, 2.25rem);
-		font-weight: 600;
-		line-height: 1.1;
-		letter-spacing: -0.025em;
-		color: rgb(var(--black));
-	}
-
-	/* ═══════════════════════════════════════════════════════
-	   WORK CARDS
-	   ═══════════════════════════════════════════════════════ */
-
-	.work-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1px;
-		background: rgba(var(--gray), 0.12);
-		border-radius: 16px;
-		overflow: hidden;
-		border: 1px solid rgba(var(--gray), 0.12);
-	}
-
-	.work-card {
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		padding: 1.75rem;
-		background: rgb(var(--bg));
-		text-decoration: none !important;
-		color: rgb(var(--black)) !important;
-		transition:
-			background 0.2s ease,
-			transform  0.2s cubic-bezier(0.22, 1, 0.36, 1);
-		animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
-	}
-
-	.work-card:hover {
-		background: rgb(var(--gray-light));
-	}
-
-	[data-theme='dark'] .work-card { background: rgb(var(--bg)); }
-	[data-theme='dark'] .work-card:hover { background: rgba(var(--gray-light), 0.5); }
-
-	.card-meta {
-		margin: 0 0 0.6rem;
-		font-family: var(--font-mono);
-		font-size: 0.67rem;
-		font-weight: 400;
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
-		color: var(--accent);
-		opacity: 0.8;
-	}
-
-	.work-card h3 {
-		margin: 0 0 0.5rem;
-		font-size: 0.9375rem;
-		font-weight: 600;
-		line-height: 1.3;
-		letter-spacing: -0.012em;
-	}
-
-	.card-desc {
-		flex: 1;
-		margin: 0;
-		font-size: 0.875rem;
-		line-height: 1.65;
-		color: rgb(var(--gray));
-	}
-
-	.card-arrow {
-		display: flex;
-		align-items: center;
-		margin-top: 1.5rem;
-		color: var(--accent);
-		opacity: 0.7;
-		transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
-	}
-	.work-card:hover .card-arrow { transform: translateX(4px); opacity: 1; }
-
-	/* ═══════════════════════════════════════════════════════
-	   NOTES NAV
-	   ═══════════════════════════════════════════════════════ */
-
-	.notes-nav {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		margin-top: 1.25rem;
-		padding: 0.75rem 1rem;
-		border: 1px solid rgba(var(--gray), 0.14);
-		border-radius: 12px;
-		flex-wrap: wrap;
-	}
-
-	.notes-nav-label {
-		font-family: var(--font-mono);
-		font-size: 0.66rem;
-		font-weight: 400;
-		letter-spacing: 0.07em;
-		text-transform: uppercase;
-		color: rgb(var(--gray));
-		white-space: nowrap;
-		padding-right: 0.4rem;
-		border-right: 1px solid rgba(var(--gray), 0.2);
-	}
-
-	.note-tags {
+	.hero-links {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.35rem;
-		flex: 1;
-	}
-
-	.note-tag {
-		padding: 0.25rem 0.6rem;
-		border: 1px solid rgba(var(--gray), 0.18);
-		border-radius: 999px;
-		font-size: 0.775rem;
-		font-weight: 500;
-		color: rgb(var(--black)) !important;
-		text-decoration: none !important;
-		transition: border-color 0.15s ease, color 0.15s ease;
-	}
-	.note-tag:hover { border-color: var(--accent); color: var(--accent) !important; }
-
-	.notes-all-link {
-		display: inline-flex;
 		align-items: center;
-		gap: 0.25rem;
-		margin-left: auto;
-		font-size: 0.8rem;
-		font-weight: 500;
-		color: var(--accent) !important;
-		text-decoration: none !important;
-		white-space: nowrap;
-		transition: opacity 0.15s ease;
+		gap: 0.4rem 1.5rem;
+		font-family: var(--font-ui);
+		font-size: 0.9rem;
+		margin-bottom: 2.25rem;
 	}
-	.notes-all-link:hover { opacity: 0.7; }
-
-	/* ═══════════════════════════════════════════════════════
-	   FOCUS GRID
-	   ═══════════════════════════════════════════════════════ */
-
-	.focus-grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1px;
-		background: rgba(var(--gray), 0.12);
-		border-radius: 16px;
-		overflow: hidden;
-		border: 1px solid rgba(var(--gray), 0.12);
-	}
-
-	.focus-cell {
-		padding: 1.875rem 2rem;
-		background: rgb(var(--bg));
-		transition: background 0.2s ease;
-	}
-
-	.focus-cell:hover { background: rgb(var(--gray-light)); }
-
-	[data-theme='dark'] .focus-cell { background: rgb(var(--bg)); }
-	[data-theme='dark'] .focus-cell:hover { background: rgba(var(--gray-light), 0.4); }
-
-	.cell-idx {
-		display: block;
-		margin-bottom: 0.65rem;
-		font-family: var(--font-mono);
-		font-size: 0.64rem;
-		font-weight: 400;
-		letter-spacing: 0.05em;
-		color: var(--accent);
-		opacity: 0.6;
-	}
-
-	.focus-cell strong {
-		display: block;
-		margin-bottom: 0.4rem;
-		font-size: 0.9375rem;
-		font-weight: 600;
-		letter-spacing: -0.012em;
-		color: rgb(var(--black));
-	}
-
-	.focus-cell p {
-		margin: 0;
-		font-size: 0.875rem;
-		line-height: 1.65;
-		color: rgb(var(--gray));
-	}
-
-	/* ═══════════════════════════════════════════════════════
-	   WRITING
-	   ═══════════════════════════════════════════════════════ */
-
-	.post-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1rem;
-		margin-bottom: 1.5rem;
-	}
-
-	.more-link {
+	.hero-links a {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.3rem;
-		font-size: 0.875rem;
-		font-weight: 500;
-		color: var(--accent) !important;
-		text-decoration: none !important;
+		color: rgb(var(--black));
+		border-bottom: 1px solid rgba(var(--gray), 0.4);
+		padding-bottom: 1px;
+	}
+	.hero-links a:hover { color: var(--accent); border-color: var(--accent); }
+	.hero-links a svg { opacity: 0.6; }
+
+	.hero-meta {
+		display: flex;
+		gap: 0.5rem;
+		margin: 0;
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		letter-spacing: 0.03em;
+		color: rgb(var(--gray));
+		opacity: 0.75;
+	}
+	.hero-meta span + span::before { content: '/'; margin-right: 0.5rem; opacity: 0.5; }
+
+	/* ═══ SECTIONS ═══ */
+	.section { padding: 3.75rem 0; border-top: 1px solid rgba(var(--gray), 0.16); }
+
+	.section-label {
+		font-family: var(--font-ui);
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+		color: rgb(var(--gray));
+		margin: 0 0 2rem;
+	}
+
+	/* Selected work — editorial index rows */
+	.work-list { display: flex; flex-direction: column; }
+	.work-row {
+		display: grid;
+		grid-template-columns: 11rem 1fr auto;
+		gap: 1.5rem;
+		align-items: baseline;
+		padding: 1.5rem 0;
+		border-top: 1px solid rgba(var(--gray), 0.16);
+		color: rgb(var(--black));
+		text-decoration: none;
 		transition: opacity 0.15s ease;
 	}
-	.more-link:hover { opacity: 0.7; }
+	.work-list .work-row:first-child { border-top: none; }
+	.work-row:hover { opacity: 0.72; }
 
-	/* ═══════════════════════════════════════════════════════
-	   RESPONSIVE
-	   ═══════════════════════════════════════════════════════ */
+	.work-meta {
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		letter-spacing: 0.02em;
+		color: rgb(var(--gray));
+		padding-top: 0.3rem;
+	}
+	.work-main h3 {
+		font-size: 1.2rem;
+		font-weight: 500;
+		margin: 0 0 0.4rem;
+	}
+	.work-main p {
+		font-size: 0.9375rem;
+		line-height: 1.6;
+		color: rgb(var(--gray));
+		margin: 0;
+		max-width: 46ch;
+	}
+	.work-arrow {
+		align-self: center;
+		display: flex;
+		color: rgb(var(--gray));
+		transition: transform 0.15s ease, color 0.15s ease;
+	}
+	.work-row:hover .work-arrow { transform: translateX(3px); color: var(--accent); }
 
-	/* Respect reduced motion */
-	@media (prefers-reduced-motion: reduce) {
-		.tr  { animation: none; stroke-dashoffset: 0; }
-		.sig { display: none; }
-		.cg  { display: none; }
+	/* Browse notes — inline index */
+	.notes-line {
+		font-family: var(--font-ui);
+		font-size: 0.95rem;
+		line-height: 2.1;
+		color: rgb(var(--gray));
+		margin: 0;
+	}
+	.notes-line a {
+		color: rgb(var(--black));
+		border-bottom: 1px solid rgba(var(--gray), 0.4);
+	}
+	.notes-line a:hover { color: var(--accent); border-color: var(--accent); }
+	.notes-sep { color: rgb(var(--gray)); margin: 0 0.55rem; opacity: 0.6; }
+	.notes-line .all-notes {
+		font-size: 0.85rem;
+		color: var(--accent);
+		border: none;
+		margin-left: 0.4rem;
 	}
 
-	@media (max-width: 760px) {
+	/* Focus — definition list */
+	.focus-list { display: flex; flex-direction: column; gap: 1.6rem; margin: 0; }
+	.focus-item { display: grid; grid-template-columns: 12rem 1fr; gap: 1.5rem; }
+	.focus-item dt { font-family: var(--font-heading); font-weight: 500; font-size: 1.05rem; }
+	.focus-item dd {
+		margin: 0;
+		font-size: 0.9375rem;
+		line-height: 1.65;
+		color: rgb(var(--gray));
+		max-width: 46ch;
+	}
+
+	/* Writing */
+	.more-link {
+		display: inline-block;
+		margin-top: 1rem;
+		font-family: var(--font-ui);
+		font-size: 0.875rem;
+		font-weight: 500;
+		color: var(--accent);
+	}
+
+	/* ═══ RESPONSIVE ═══ */
+	@media (max-width: 640px) {
 		main { padding: 0 1.25rem 5rem; }
+		.hero { padding: 3rem 0 2.5rem; }
+		.section { padding: 2.75rem 0; }
 
-		.pcb-bg     { display: none; }
-		.code-ghost { display: none; }
+		.work-row { grid-template-columns: 1fr auto; }
+		.work-meta { display: none; }
 
-		.hero { padding: 4rem 0 3.5rem; }
+		.focus-item { grid-template-columns: 1fr; gap: 0.35rem; }
 
-		h1 {
-			font-size: clamp(3.25rem, 16vw, 4.5rem);
-			letter-spacing: -0.035em;
-			line-height: 0.93;
-		}
-
-		.section { padding: 3.5rem 0; }
-
-		.work-grid   { grid-template-columns: 1fr; }
-		.post-grid   { grid-template-columns: 1fr; }
-		.focus-grid  { grid-template-columns: 1fr; }
-
-		.notes-nav { gap: 0.4rem; }
-		.notes-all-link { margin-left: 0; }
-	}
-
-	@media (max-width: 480px) {
-		.hero { padding: 3rem 0 3rem; }
-		.hero-actions { gap: 0.45rem; }
-		.notes-nav-label { display: none; }
 		.hero-meta { flex-wrap: wrap; }
 	}
 </style>
