@@ -83,12 +83,24 @@
             "id": "29b4d0e2847d87b7",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.13.7"
+                "file": "Blog/two-ways-of-trying-to-be-good.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.13.7"
+              "icon": "lucide-file",
+              "title": "two-ways-of-trying-to-be-good"
             }
           }
         ],
@@ -268,6 +280,7 @@
   },
   "active": "29b4d0e2847d87b7",
   "lastOpenFiles": [
+    "Blog/markdown-style-guide.md",
     "Blog/two-ways-of-trying-to-be-good.md",
     "200 ETH Zurich/Semester 1/Analysis 1 + 2/Analysis_Complete_Guide.md",
     "200 ETH Zurich/Semester 1/Analysis 1 + 2/Analysis_Complete_Guide-2.md",
@@ -278,7 +291,6 @@
     "600 Sidequests/Sidequests.md",
     "700 Quant/Quantitative Work.md",
     "600 Sidequests/test.md",
-    "Blog/markdown-style-guide.md",
     "Blog/public/_redirects",
     "998 Attachements/00. Worum geht es bei der Mechanik.pdf",
     "800 Projects/Projects.md",
