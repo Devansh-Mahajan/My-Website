@@ -1,0 +1,113 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BlogCard from '../components/BlogCard.astro';
+import { QUARTZ_URL } from '../consts';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+	.filter(post => post.data.publish)
+	.sort((a, b) => {
+		const dateA = a.data.created_date?.valueOf() ?? 0;
+		const dateB = b.data.created_date?.valueOf() ?? 0;
+		return dateB - dateA;
+	});
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+	<BaseHead
+		title="Writing — Devansh Mahajan"
+		description="Essays and notes from study, mathematics, and software systems work."
+	/>
+</head>
+<body>
+	<Header />
+	<main>
+
+		<section class="page-hero">
+			<p class="eyebrow-tag">Writing</p>
+			<h1>Essays &amp; notes.</h1>
+			<p class="lead">Thinking across circuits, systems, and mathematics — published openly.</p>
+		</section>
+
+		{posts.length > 0 ? (
+			<section class="section-rule">
+				<div class="posts-grid">
+					{posts.map((post) => (
+						<BlogCard
+							title={post.data.title}
+							description={post.data.description ?? undefined}
+							date={post.data.created_date ?? undefined}
+							slug={post.data.slug ?? post.id}
+						/>
+					))}
+				</div>
+			</section>
+		) : (
+			<div class="empty-state">
+				<p class="empty-message">No essays published yet.</p>
+				<a href={QUARTZ_URL} target="_blank" rel="noreferrer" class="empty-link">
+					Browse the Quartz notes &rarr;
+				</a>
+			</div>
+		)}
+
+	</main>
+	<Footer />
+</body>
+</html>
+
+<style>
+	main {
+		max-width: 780px;
+		margin: 0 auto;
+		padding: 0 1.5rem 7rem;
+	}
+
+	.page-hero { padding: 4rem 0 3.5rem; }
+
+	h1 {
+		margin: 0 0 1rem;
+		font-size: clamp(2.5rem, 6vw, 3.5rem);
+		font-weight: 500;
+		line-height: 1.05;
+		letter-spacing: -0.015em;
+	}
+
+	.lead {
+		max-width: 46ch;
+		margin: 0;
+		font-size: 1.0625rem;
+		line-height: 1.7;
+		color: rgb(var(--gray));
+	}
+
+	.empty-state {
+		padding: 5rem 0;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1.25rem;
+	}
+
+	.empty-message { margin: 0; font-size: 1.0625rem; color: rgb(var(--gray)); }
+
+	.empty-link {
+		font-family: var(--font-ui);
+		font-size: 0.9rem;
+		font-weight: 500;
+		color: var(--accent);
+	}
+
+	@media (max-width: 768px) {
+		main { padding: 0 1.1rem 5rem; }
+		.page-hero { padding: 3rem 0 2.5rem; }
+	}
+	@media (max-width: 480px) {
+		main { padding: 0 0.75rem 4rem; }
+		.page-hero { padding: 2.5rem 0 2rem; }
+	}
+</style>

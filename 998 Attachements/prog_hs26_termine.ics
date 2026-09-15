@@ -1,0 +1,420 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//HSLU//PROG HS26//DE
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:PROG-HS26-s0101@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20260914T153000
+DTEND;TZID=Europe/Zurich:20260914T171500
+SUMMARY:PROG s01_01 Vorlesung: Algorithmen\, Organisation & Werkzeuge
+LOCATION:S1A_431
+DESCRIPTION:Thema: Algorithmen\, Programmieren & Einführung Python (ch02) 
+ | Zoom: https://hslu.zoom.us/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GF
+ xal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s0102@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20260916T125000
+DTEND;TZID=Europe/Zurich:20260916T151000
+SUMMARY:PROG s01_02 Vorlesung: Einführung in Python
+LOCATION:S1A_431
+DESCRIPTION:Thema: Algorithmen\, Programmieren & Einführung Python (ch02) 
+ | Hausaufgabe 01 – Einführung Python online\, Abgabe Sa 19.09.2026 23:5
+ 9 | Zoom: https://hslu.zoom.us/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7
+ GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-hw01@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260920
+SUMMARY:PROG – Abgabe Hausaufgabe 01 – Einführung Python (freiwillig)
+DESCRIPTION:Besprechung in der Coding-Session der Folgewoche.
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s0201@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20260921T153000
+DTEND;TZID=Europe/Zurich:20260921T171500
+SUMMARY:PROG s02_01 Coding: Besprechung Hausaufgabe 01 & Coding
+LOCATION:S1A_431
+DESCRIPTION:Thema: Kontrollanweisungen (ch03) | Zoom: https://hslu.zoom.us/
+ j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s0202@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20260923T125000
+DTEND;TZID=Europe/Zurich:20260923T151000
+SUMMARY:PROG s02_02 Vorlesung: Kontrollanweisungen
+LOCATION:S1A_431
+DESCRIPTION:Thema: Kontrollanweisungen (ch03) | Hausaufgabe 02 – Kontroll
+ anweisungen online\, Abgabe Sa 26.09.2026 23:59 | Zoom: https://hslu.zoom.
+ us/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-hw02@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;VALUE=DATE:20260926
+DTEND;VALUE=DATE:20260927
+SUMMARY:PROG – Abgabe Hausaufgabe 02 – Kontrollanweisungen (freiwillig)
+DESCRIPTION:Besprechung in der Coding-Session der Folgewoche.
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s0301@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20260928T153000
+DTEND;TZID=Europe/Zurich:20260928T171500
+SUMMARY:PROG s03_01 Coding: Besprechung Hausaufgabe 02 & Coding-Projekt Fra
+ ktale
+LOCATION:S1A_431
+DESCRIPTION:Thema: Funktionen (ch04) | Zoom: https://hslu.zoom.us/j/6824581
+ 4101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s0302@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20260930T125000
+DTEND;TZID=Europe/Zurich:20260930T151000
+SUMMARY:PROG s03_02 Vorlesung: Funktionen
+LOCATION:S1A_431
+DESCRIPTION:Thema: Funktionen (ch04) | Hausaufgabe 03 – Funktionen online
+ \, Abgabe Sa 03.10.2026 23:59 | Zoom: https://hslu.zoom.us/j/68245814101?p
+ wd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-hw03@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;VALUE=DATE:20261003
+DTEND;VALUE=DATE:20261004
+SUMMARY:PROG – Abgabe Hausaufgabe 03 – Funktionen (freiwillig)
+DESCRIPTION:Besprechung in der Coding-Session der Folgewoche.
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s0401@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261005T153000
+DTEND;TZID=Europe/Zurich:20261005T171500
+SUMMARY:PROG s04_01 Coding: Besprechung Hausaufgabe 03 & Coding-Projekt Pas
+ calsches Dreieck
+LOCATION:S1A_431
+DESCRIPTION:Thema: Listen & Tupel – Teil 1 (ch05) | Zoom: https://hslu.zo
+ om.us/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s0402@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261007T125000
+DTEND;TZID=Europe/Zurich:20261007T151000
+SUMMARY:PROG s04_02 Vorlesung: Listen & Tupel – Teil 1
+LOCATION:S1A_431
+DESCRIPTION:Thema: Listen & Tupel – Teil 1 (ch05) | Hausaufgabe 04 – Li
+ sten & Tupel I online\, Abgabe Sa 10.10.2026 23:59 | Zoom: https://hslu.zo
+ om.us/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-hw04@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;VALUE=DATE:20261010
+DTEND;VALUE=DATE:20261011
+SUMMARY:PROG – Abgabe Hausaufgabe 04 – Listen & Tupel I (freiwillig)
+DESCRIPTION:Besprechung in der Coding-Session der Folgewoche.
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s0501@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261012T153000
+DTEND;TZID=Europe/Zurich:20261012T171500
+SUMMARY:PROG s05_01 Coding: Besprechung Hausaufgabe 04 & Coding-Projekt Tic
+ TacToe
+LOCATION:S1A_431
+DESCRIPTION:Thema: Listen & Tupel – Teil 2 (ch06) | Zoom: https://hslu.zo
+ om.us/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s0502@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261014T125000
+DTEND;TZID=Europe/Zurich:20261014T151000
+SUMMARY:PROG s05_02 Vorlesung: Comprehensions\, Lambdas & 2D-Listen
+LOCATION:S1A_431
+DESCRIPTION:Thema: Listen & Tupel – Teil 2 (ch06) | Hausaufgabe 05 – Li
+ sten & Tupel II online\, Abgabe Sa 17.10.2026 23:59 | Zoom: https://hslu.z
+ oom.us/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-hw05@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261018
+SUMMARY:PROG – Abgabe Hausaufgabe 05 – Listen & Tupel II (freiwillig)
+DESCRIPTION:Besprechung in der Coding-Session der Folgewoche.
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s0601@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261019T153000
+DTEND;TZID=Europe/Zurich:20261019T171500
+SUMMARY:PROG s06_01 Coding: Besprechung Hausaufgabe 05 & Coding
+LOCATION:S1A_431
+DESCRIPTION:Thema: Dictionaries & Sets (ch07) | Zoom: https://hslu.zoom.us/
+ j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s0602@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261021T125000
+DTEND;TZID=Europe/Zurich:20261021T151000
+SUMMARY:PROG s06_02 Vorlesung: Dictionaries & Sets
+LOCATION:S1A_431
+DESCRIPTION:Thema: Dictionaries & Sets (ch07) | Hausaufgabe 06 – Dictiona
+ ries & Sets online\, Abgabe Sa 24.10.2026 23:59 | Zoom: https://hslu.zoom.
+ us/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-hw06@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:PROG – Abgabe Hausaufgabe 06 – Dictionaries & Sets (freiwillig)
+DESCRIPTION:Besprechung in der Coding-Session der Folgewoche.
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s0701@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261026T153000
+DTEND;TZID=Europe/Zurich:20261026T171500
+SUMMARY:PROG s07_01 Coding: Besprechung Hausaufgabe 06 & Coding-Projekt L-S
+ ysteme
+LOCATION:S1A_431
+DESCRIPTION:Thema: Strings & Regular Expressions (ch08) | Zoom: https://hsl
+ u.zoom.us/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s0702@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261028T125000
+DTEND;TZID=Europe/Zurich:20261028T151000
+SUMMARY:PROG s07_02 Vorlesung: Strings & Regular Expressions
+LOCATION:S1A_431
+DESCRIPTION:Thema: Strings & Regular Expressions (ch08) | Hausaufgabe 07 
+ – Strings & Regex online\, Abgabe Sa 31.10.2026 23:59 | Zoom: https://hs
+ lu.zoom.us/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-hw07@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261101
+SUMMARY:PROG – Abgabe Hausaufgabe 07 – Strings & Regex (freiwillig)
+DESCRIPTION:Besprechung in der Coding-Session der Folgewoche.
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s0801@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261102T153000
+DTEND;TZID=Europe/Zurich:20261102T171500
+SUMMARY:PROG s08_01 Coding: Besprechung Hausaufgabe 07 & Coding
+LOCATION:S1A_431
+DESCRIPTION:Thema: Files & Exceptions (ch09) | Zoom: https://hslu.zoom.us/j
+ /68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s0802@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261104T125000
+DTEND;TZID=Europe/Zurich:20261104T151000
+SUMMARY:PROG s08_02 Vorlesung: Files & Exceptions
+LOCATION:S1A_431
+DESCRIPTION:Thema: Files & Exceptions (ch09) | Hausaufgabe 08 – Files & E
+ xceptions online\, Abgabe Sa 07.11.2026 23:59 | Zoom: https://hslu.zoom.us
+ /j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-hw08@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:PROG – Abgabe Hausaufgabe 08 – Files & Exceptions (freiwillig)
+DESCRIPTION:Besprechung in der Coding-Session der Folgewoche.
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s0901@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261109T153000
+DTEND;TZID=Europe/Zurich:20261109T171500
+SUMMARY:PROG s09_01 Coding: Besprechung Hausaufgabe 08 & Coding
+LOCATION:S1A_431
+DESCRIPTION:Thema: Pandas – Einführung | Zoom: https://hslu.zoom.us/j/68
+ 245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s0902@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261111T125000
+DTEND;TZID=Europe/Zurich:20261111T151000
+SUMMARY:PROG s09_02 Vorlesung: Pandas – Series und DataFrames
+LOCATION:S1A_431
+DESCRIPTION:Thema: Pandas – Einführung | Hausaufgabe 09 – Pandas onlin
+ e\, Abgabe Sa 14.11.2026 23:59 | Zoom: https://hslu.zoom.us/j/68245814101?
+ pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-hw09@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:PROG – Abgabe Hausaufgabe 09 – Pandas (freiwillig)
+DESCRIPTION:Besprechung in der Coding-Session der Folgewoche.
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s1001@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261116T153000
+DTEND;TZID=Europe/Zurich:20261116T171500
+SUMMARY:PROG s10_01 Coding: Besprechung Hausaufgabe 09 & Coding
+LOCATION:S1A_431
+DESCRIPTION:Thema: Pandas Advanced & Explorative Datenanalyse | Zoom: https
+ ://hslu.zoom.us/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s1002@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261118T125000
+DTEND;TZID=Europe/Zurich:20261118T151000
+SUMMARY:PROG s10_02 Vorlesung: Advanced Pandas\, fehlende Werte & EDA
+LOCATION:S1A_431
+DESCRIPTION:Thema: Pandas Advanced & Explorative Datenanalyse | Hausaufgabe
+  10 – Pandas Advanced online\, Abgabe Sa 21.11.2026 23:59 | Zoom: https:
+ //hslu.zoom.us/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-hw10@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:PROG – Abgabe Hausaufgabe 10 – Pandas Advanced (freiwillig)
+DESCRIPTION:Besprechung in der Coding-Session der Folgewoche.
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s1101@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261123T153000
+DTEND;TZID=Europe/Zurich:20261123T171500
+SUMMARY:PROG s11_01 Coding: Besprechung Hausaufgabe 10 & Coding
+LOCATION:S1A_431
+DESCRIPTION:Thema: NumPy & Visualisierung | Zoom: https://hslu.zoom.us/j/68
+ 245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s1102@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261125T125000
+DTEND;TZID=Europe/Zurich:20261125T151000
+SUMMARY:PROG s11_02 Vorlesung: NumPy Arrays\, Matplotlib & Seaborn
+LOCATION:S1A_431
+DESCRIPTION:Thema: NumPy & Visualisierung | Hausaufgabe 11 – NumPy & Visu
+ alisierung online\, Abgabe Sa 28.11.2026 23:59 | Zoom: https://hslu.zoom.u
+ s/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-hw11@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+SUMMARY:PROG – Abgabe Hausaufgabe 11 – NumPy & Visualisierung (freiwill
+ ig)
+DESCRIPTION:Besprechung in der Coding-Session der Folgewoche.
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s1201@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261130T153000
+DTEND;TZID=Europe/Zurich:20261130T171500
+SUMMARY:PROG s12_01 Coding: Besprechung Hausaufgabe 11 & Coding
+LOCATION:S1A_431
+DESCRIPTION:Thema: Data Sourcing – SQL\, APIs & Web Scraping | Zoom: http
+ s://hslu.zoom.us/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s1202@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261202T125000
+DTEND;TZID=Europe/Zurich:20261202T151000
+SUMMARY:PROG s12_02 Vorlesung: SQL mit Pandas\, REST-APIs & Web Scraping
+LOCATION:S1A_431
+DESCRIPTION:Thema: Data Sourcing – SQL\, APIs & Web Scraping | Hausaufgab
+ e 12 – Data Sourcing online\, Abgabe Sa 05.12.2026 23:59 | Zoom: https:/
+ /hslu.zoom.us/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-hw12@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:PROG – Abgabe Hausaufgabe 12 – Data Sourcing (freiwillig)
+DESCRIPTION:Besprechung in der Coding-Session der Folgewoche.
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s1301@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261207T153000
+DTEND;TZID=Europe/Zurich:20261207T171500
+SUMMARY:PROG s13_01 Coding: Besprechung Hausaufgabe 12 & Coding
+LOCATION:S1A_431
+DESCRIPTION:Thema: Objektorientierte Programmierung – Teil 1 | Zoom: http
+ s://hslu.zoom.us/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s1302@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261209T125000
+DTEND;TZID=Europe/Zurich:20261209T151000
+SUMMARY:PROG s13_02 Vorlesung: Klassen\, Objekte\, Attribute & Properties
+LOCATION:S1A_431
+DESCRIPTION:Thema: Objektorientierte Programmierung – Teil 1 | Hausaufgab
+ e 13 – OOP I online\, Abgabe Sa 12.12.2026 23:59 | Zoom: https://hslu.zo
+ om.us/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-hw13@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:PROG – Abgabe Hausaufgabe 13 – OOP I (freiwillig)
+DESCRIPTION:Besprechung in der Coding-Session der Folgewoche.
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s1401@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261214T153000
+DTEND;TZID=Europe/Zurich:20261214T171500
+SUMMARY:PROG s14_01 Coding: Besprechung Hausaufgabe 13 & Coding
+LOCATION:S1A_431
+DESCRIPTION:Thema: OOP Teil 2 – Vererbung\, Polymorphismus & Rückblick |
+  Zoom: https://hslu.zoom.us/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFx
+ al.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-s1402@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;TZID=Europe/Zurich:20261216T125000
+DTEND;TZID=Europe/Zurich:20261216T151000
+SUMMARY:PROG s14_02 Vorlesung: Vererbung\, Polymorphismus\, Rückblick & ME
+ P-Vorbereitung
+LOCATION:S1A_431
+DESCRIPTION:Thema: OOP Teil 2 – Vererbung\, Polymorphismus & Rückblick |
+  Hausaufgabe 14 – Probeklausur online\, Abgabe Sa 19.12.2026 23:59 | Zoo
+ m: https://hslu.zoom.us/j/68245814101?pwd=uMx5qW7hmrWP3tJUew6ITjDF7GFxal.1
+END:VEVENT
+BEGIN:VEVENT
+UID:PROG-HS26-hw14@hslu.ch
+DTSTAMP:20260912T182612Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261220
+SUMMARY:PROG – Abgabe Hausaufgabe 14 – Probeklausur (freiwillig)
+DESCRIPTION:Besprechung in der Coding-Session der Folgewoche.
+END:VEVENT
+END:VCALENDAR

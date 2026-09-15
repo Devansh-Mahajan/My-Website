@@ -1,0 +1,286 @@
+{
+  "main": {
+    "id": "b4ae388590e00fba",
+    "type": "split",
+    "children": [
+      {
+        "id": "826323f1308171d1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cf297a929fe04fa7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "200 University Coursework/Semester 1/Lineare Algebra/Woche 1-Ressources.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Woche 1-Ressources"
+            }
+          },
+          {
+            "id": "8914cbd3006e361a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "200 University Coursework/Semester 1/Diskrete Mathematik für Datenstrukturen und Algorithmen/Diskrete Mathematik für Datenstrukturen und Algorithmen.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Diskrete Mathematik für Datenstrukturen und Algorithmen"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d5e9f8921163f743",
+    "type": "split",
+    "children": [
+      {
+        "id": "19185f563c84144a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f3d1b0f46aca7cf4",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "5c5fb8f729231498",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "b144a7c07a8e99db",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "44ac1d4342bf6645",
+    "type": "split",
+    "children": [
+      {
+        "id": "860e8fbeacc237e9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a06de71410efdbfe",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "700 Quant/Untitled.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Untitled"
+            }
+          },
+          {
+            "id": "be2ef7f44b70719a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "700 Quant/Untitled.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Untitled"
+            }
+          },
+          {
+            "id": "44e765fe0258bcdb",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "46543bc471d1d696",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "600 Sidequests/Reading List.md",
+                "followCursor": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Reading List"
+            }
+          },
+          {
+            "id": "50a785512a07001b",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          },
+          {
+            "id": "8fb9694eb5212a71",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
+      "bases:Create new base": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "audio-recorder:Start/stop recording": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "8914cbd3006e361a",
+  "lastOpenFiles": [
+    "998 Attachements/Archive.zip",
+    "998 Attachements/DMATH-ALGO_Administration.pdf",
+    "200 University Coursework/Semester 1/Lineare Algebra/Woche 1-Ressources.md",
+    "200 University Coursework/Semester 1/Diskrete Mathematik für Datenstrukturen und Algorithmen/Diskrete Mathematik für Datenstrukturen und Algorithmen.md",
+    "200 University Coursework/Semester 1/Diskrete Mathematik für Datenstrukturen und Algorithmen",
+    "200 University Coursework/Semester 1/Lineare Algebra/Lineare Algebra.md",
+    "998 Attachements/jumpstart.md",
+    "998 Attachements/lial-sw-01-folien.pdf",
+    "998 Attachements/lial-sw-01-uebungen.pdf",
+    "998 Attachements/lial-sw-01-uebungen-2.pdf",
+    "998 Attachements/lial-sw-01-loesungen-2.pdf",
+    "998 Attachements/lial-sw-01-loesungen.pdf",
+    "998 Attachements/lial-sw-01-folien-2.pdf",
+    "200 University Coursework/Semester 1/Programming for Data Science & AI/Week 1.md",
+    "200 University Coursework/Semester 1/Programming for Data Science & AI/Programming for Data Science & AI.md",
+    "200 University Coursework/Semester 1/Prompt Engineering for Beginners/Week 01.md",
+    "998 Attachements/lial-einfuehrendes-beispiel-2.ipynb",
+    "998 Attachements/gerade-gerade-2d.ipynb",
+    "998 Attachements/prog_hs26_syllabus.md",
+    "200 University Coursework/Semester 1/Prompt Engineering for Beginners/Prompt Engineering for Beginners.md",
+    "200 University Coursework/index.md",
+    "700 AI & ML/AI, ML & Physical AI Project Roadmap.md",
+    "600 Sidequests/Sidequests/AURA.md",
+    "600 Sidequests/Sidequests.md",
+    "index.md",
+    "600 Sidequests/index.md",
+    "600 Sidequests/Reading List.md",
+    "800 Projects/Projects.md",
+    "700 AI & ML/detailed roadmap.md",
+    "999 Templates/03 Blog Template.md",
+    "999 Templates/02 Lecture or Topic Template.md",
+    "999 Templates/00 Class Template.md",
+    "Legal.md",
+    "400 IOI/Competitive Programming.md",
+    "100 Notes/Undisputed Victory.md",
+    "100 Notes/Arie de Geus, The Living Company.md",
+    "998 Attachements/Pasted image 20260211175839.png",
+    "998 Attachements/Pasted image 20251028153113.png",
+    "998 Attachements/Pasted image 20251028144030.png",
+    "998 Attachements/Pasted image 20251028143906.png",
+    "998 Attachements/Pasted image 20251028122723.png",
+    "998 Attachements/Pasted image 20251028122649.png",
+    "Untitled.canvas",
+    "998 Attachements/Pasted image 20251024182905.png",
+    "998 Attachements/Pasted image 20251024172032.png",
+    "998 Attachements/Pasted image 20251024170633.png",
+    "998 Attachements/Pasted image 20251024170610.png",
+    "Untitled 3.canvas",
+    "Untitled 2.canvas",
+    "Untitled 1.canvas"
+  ]
+}

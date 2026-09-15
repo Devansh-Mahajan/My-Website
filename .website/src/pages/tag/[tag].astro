@@ -1,0 +1,112 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog', ({ data }) => data.publish !== false);
+	const tags = [...new Set(posts.flatMap(post => post.data.tags ?? []))];
+
+	return [
+		{ params: { tag: 'all' }, props: { posts, tag: 'all' } },
+		...tags.map(tag => ({
+			params: { tag },
+			props: { posts: posts.filter(post => post.data.tags?.includes(tag)), tag },
+		})),
+	];
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+
+const sortedPosts = [...posts].sort((a, b) => {
+	const dateA = a.data.created_date?.valueOf() ?? 0;
+	const dateB = b.data.created_date?.valueOf() ?? 0;
+	return dateB - dateA;
+});
+
+const isAll      = tag === 'all';
+const pageTitle  = isAll ? 'All Writing' : `#${tag}`;
+const pageDesc   = isAll
+	? 'Essays and notes from study, mathematics, and software systems.'
+	: `Writing tagged with #${tag}.`;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+	<BaseHead title={`${pageTitle} — Devansh Mahajan`} description={pageDesc} />
+</head>
+<body>
+	<Header />
+	<main>
+
+		<section class="page-hero">
+			<p class="eyebrow-tag">{isAll ? 'Writing' : 'Tag'}</p>
+			<h1>{pageTitle}</h1>
+			<p class="lead">{pageDesc}</p>
+		</section>
+
+		{sortedPosts.length > 0 ? (
+			<section class="section-rule">
+				<div class="posts-grid">
+					{sortedPosts.map((post) => (
+						<BlogCard
+							title={post.data.title}
+							description={post.data.description ?? undefined}
+							date={post.data.created_date}
+							slug={post.data.slug ?? post.id}
+						/>
+					))}
+				</div>
+			</section>
+		) : (
+			<div class="empty-state">
+				<p class="empty-message">No posts tagged #{tag} yet.</p>
+			</div>
+		)}
+
+	</main>
+	<Footer />
+</body>
+</html>
+
+<style>
+	main {
+		max-width: 780px;
+		margin: 0 auto;
+		padding: 0 1.5rem 7rem;
+	}
+
+	.page-hero { padding: 4rem 0 3.5rem; }
+
+	h1 {
+		margin: 0 0 1rem;
+		font-size: clamp(2.5rem, 6vw, 3.5rem);
+		font-weight: 500;
+		line-height: 1.05;
+		letter-spacing: -0.015em;
+	}
+
+	.lead {
+		max-width: 46ch;
+		margin: 0;
+		font-size: 1.0625rem;
+		line-height: 1.7;
+		color: rgb(var(--gray));
+	}
+
+	.empty-state { padding: 5rem 0; }
+	.empty-message { margin: 0; font-size: 1.0625rem; color: rgb(var(--gray)); }
+
+	@media (max-width: 768px) {
+		main { padding: 0 1.1rem 5rem; }
+		.page-hero { padding: 3rem 0 2.5rem; }
+	}
+	@media (max-width: 480px) {
+		main { padding: 0 0.75rem 4rem; }
+		.page-hero { padding: 2.5rem 0 2rem; }
+	}
+</style>

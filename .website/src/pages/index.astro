@@ -1,0 +1,413 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BlogCard from '../components/BlogCard.astro';
+import { QUARTZ_URL, SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { getCollection } from 'astro:content';
+import { getUrl } from '../utils/url';
+
+const roadmapImage = '/images.jpeg';
+const paulGrahamTweet = '/Screenshot 2026-09-12 at 19.46.59.png';
+const profilePhoto = '/images/Foto_Devansh_Mahajan.JPG';
+
+const notes = {
+	home:        QUARTZ_URL,
+	coursework:  `${QUARTZ_URL}200-University-Coursework/Study-Notes-Overview`,
+	math:        `${QUARTZ_URL}300-IMO-+-Putnam/Strategies-in-problem-solving`,
+	programming: `${QUARTZ_URL}400-IOI/Competitive-Programming`,
+	books:       `${QUARTZ_URL}500-Book/Book-Notes`,
+	sidequests:  `${QUARTZ_URL}600-Sidequests/Sidequests`,
+	quant:       `${QUARTZ_URL}700-Quant/Quantitative-Work`,
+	projects:    `${QUARTZ_URL}800-Projects/Projects`,
+};
+
+const posts = (await getCollection('blog'))
+	.filter((post) => post.data.publish)
+	.sort((a, b) => {
+		const dateA = a.data.created_date?.valueOf() ?? 0;
+		const dateB = b.data.created_date?.valueOf() ?? 0;
+		return dateB - dateA;
+	})
+	.slice(0, 3);
+
+const hasPosts = posts.length > 0;
+
+const essay = {
+	kicker: 'Essay',
+	title: 'Notes Toward the Next Wave of Intelligence',
+	lead: 'If I were seventeen again, I\u2019d spend my time taking AI apart, understanding how it works, and rebuilding it into tools that solve real problems.',
+	paragraphs: [
+		'AI is rewriting the terms of software, science, and physical systems at the same time. The interesting part isn\u2019t the model itself \u2014 it\u2019s what happens once intelligence becomes a programmable material, embedded into products, workflows, and machines rather than opened as an app.',
+		'The bottleneck now is understanding, not compute: how models are trained, how they fail, how they\u2019re evaluated, and how they\u2019re deployed without quietly breaking something downstream. That\u2019s the skill worth building, and it compounds in a way prompting tricks don\u2019t.',
+	],
+	directionParagraph: 'The direction \u2014 smaller models running on more devices, tighter loops between sensing and acting, systems that improve from real outcomes rather than static benchmarks \u2014 is where I\u2019m pointing the coursework and projects on this site.',
+};
+
+const roadmap = [
+	{
+		step: '01',
+		title: 'Learn the training stack, not just the API',
+		description: 'Work through how a model actually gets built \u2014 data pipelines, pretraining, fine-tuning, alignment \u2014 even at small scale. Reproducing a small transformer teaches more than reading ten papers about a large one.',
+	},
+	{
+		step: '02',
+		title: 'Get fluent in evaluation, not just generation',
+		description: 'Anyone can get a model to produce an answer. Fewer people can say confidently whether it\u2019s correct, safe, and reproducible at scale. Evaluation harnesses and failure taxonomies are undersupplied \u2014 which is exactly why they\u2019re leverage.',
+	},
+	{
+		step: '03',
+		title: 'Move inference toward the edge',
+		description: 'As models get distilled and quantized for phones, robots, and embedded hardware, the question shifts from how big a model can be to how little it needs to still work \u2014 a systems and hardware problem as much as a machine-learning one.',
+	},
+	{
+		step: '04',
+		title: 'Close the loop: perceive, act, improve',
+		description: 'The next wave of useful AI won\u2019t just answer questions \u2014 it will sense an environment, take an action, and update from the outcome. Start with a small physical or simulated system, not a slide deck.',
+	},
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+
+			<!-- ── HERO ─────────────────────────────────── -->
+			<section class="hero" aria-labelledby="hero-name">
+				<div class="hero-identity">
+					<img class="hero-photo" src={profilePhoto} alt="Portrait of Devansh Mahajan" />
+					<div class="hero-identity-text">
+						<p class="eyebrow">Notes</p>
+						<h1 id="hero-name">Devansh Mahajan</h1>
+					</div>
+				</div>
+				<p class="tagline">Engineering and mathematics.</p>
+				<p class="lead">Coursework, problem sets, and side projects &mdash; written up as I go and kept public, not cleaned up after the fact.</p>
+
+				<div class="hero-links">
+					<a href={notes.home} target="_blank" rel="noreferrer">
+						Browse Notes
+						<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7m0 0H7m10 0v10"/></svg>
+					</a>
+					<a href="https://github.com/Devansh-Mahajan" target="_blank" rel="noreferrer">GitHub</a>
+					<a href="https://www.linkedin.com/in/devansh-mahajan-2b2b99185/" target="_blank" rel="noreferrer">LinkedIn</a>
+				</div>
+
+				<p class="hero-meta" aria-label="Status">
+					<span>BSc Candidate</span>
+					<span>Spring 2026</span>
+					<span>Z&uuml;rich</span>
+				</p>
+			</section>
+
+			<!-- ── ESSAY ─────────────────────────────────── -->
+			<section class="section essay" aria-labelledby="essay-heading">
+				<p class="section-label" id="essay-heading">{essay.kicker}</p>
+
+				<h2 class="essay-title">{essay.title}</h2>
+				<p class="essay-lead">{essay.lead}</p>
+
+				<figure class="essay-figure-tweet">
+					<img src={paulGrahamTweet} alt="Screenshot of a Paul Graham tweet about learning how to build LLMs from scratch." />
+				</figure>
+
+				{essay.paragraphs.map((paragraph) => (
+					<p class="essay-p">{paragraph}</p>
+				))}
+
+				<p class="essay-p">{essay.directionParagraph}</p>
+
+				<figure class="essay-figure-wide">
+					<img src={roadmapImage} alt="Timeline graphic showing AI progressing from perception to generative, agentic, and physical AI." />
+					<figcaption>the direction, not the destination.</figcaption>
+				</figure>
+
+				<ol class="roadmap-list">
+					{roadmap.map((item) => (
+						<li class="roadmap-row">
+							<span class="roadmap-step">{item.step}</span>
+							<span class="roadmap-main">
+								<h3>{item.title}</h3>
+								<p>{item.description}</p>
+							</span>
+						</li>
+					))}
+				</ol>
+			</section>
+
+			<!-- ── WRITING ───────────────────────────────── -->
+			{hasPosts && (
+				<section class="section" aria-labelledby="writing-heading">
+					<p class="section-label" id="writing-heading">Writing</p>
+					<div class="posts-grid">
+						{posts.map((post) => (
+							<BlogCard
+								title={post.data.title}
+								description={post.data.description}
+								date={post.data.created_date}
+								slug={post.id}
+							/>
+						))}
+					</div>
+					<a class="more-link" href={getUrl('/blog')}>All writing &rarr;</a>
+				</section>
+			)}
+
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		max-width: 780px;
+		margin: 0 auto;
+		padding: 0 1.5rem 7rem;
+	}
+
+	/* ═══ HERO ═══ */
+	.hero {
+		padding: 4.75rem 0 4.25rem;
+		opacity: 0;
+		animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards;
+	}
+	@keyframes rise {
+		from { opacity: 0; transform: translateY(8px); }
+		to   { opacity: 1; transform: translateY(0); }
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.hero { animation: none; opacity: 1; }
+	}
+
+	/* ── Identity row: photo + eyebrow/name ── */
+	.hero-identity {
+		display: flex;
+		align-items: center;
+		gap: 1.75rem;
+		margin-bottom: 0.6rem;
+	}
+
+	.hero-photo {
+		width: 132px;
+		height: 132px;
+		border-radius: 50%;
+		object-fit: cover;
+		flex-shrink: 0;
+		border: 1px solid rgba(var(--gray), 0.18);
+		background: rgb(var(--white));
+	}
+
+	.hero-identity-text {
+		min-width: 0;
+	}
+
+	.eyebrow {
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		letter-spacing: 0.04em;
+		color: rgb(var(--gray));
+		margin: 0 0 0.35rem;
+	}
+
+	.hero h1 {
+		font-size: clamp(2.25rem, 6vw, 4rem);
+		font-weight: 500;
+		line-height: 1.02;
+		margin: 0;
+	}
+
+	.tagline {
+		font-family: var(--font-heading);
+		font-style: italic;
+		font-weight: 400;
+		font-size: clamp(1.25rem, 2.6vw, 1.5rem);
+		color: rgb(var(--gray));
+		margin: 0 0 1.75rem;
+	}
+
+	.lead {
+		max-width: 46ch;
+		font-size: 1.0625rem;
+		line-height: 1.7;
+		color: rgb(var(--gray));
+		margin: 0 0 2.25rem;
+	}
+
+	.hero-links {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.4rem 1.5rem;
+		font-family: var(--font-ui);
+		font-size: 0.9rem;
+		margin-bottom: 2.25rem;
+	}
+	.hero-links a {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3rem;
+		color: rgb(var(--black));
+		border-bottom: 1px solid rgba(var(--gray), 0.4);
+		padding-bottom: 1px;
+	}
+	.hero-links a:hover { color: var(--accent); border-color: var(--accent); }
+	.hero-links a svg { opacity: 0.6; }
+
+	.hero-meta {
+		display: flex;
+		gap: 0.5rem;
+		margin: 0;
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		letter-spacing: 0.03em;
+		color: rgb(var(--gray));
+		opacity: 0.75;
+	}
+	.hero-meta span + span::before { content: '/'; margin-right: 0.5rem; opacity: 0.5; }
+
+	/* ═══ SECTIONS ═══ */
+	.section { padding: 3.75rem 0; border-top: 1px solid rgba(var(--gray), 0.16); }
+
+	.section-label {
+		font-family: var(--font-ui);
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+		color: rgb(var(--gray));
+		margin: 0 0 2rem;
+	}
+
+	/* ═══ ESSAY ═══ */
+	.essay-title {
+		font-family: var(--font-heading);
+		font-weight: 500;
+		font-size: clamp(1.5rem, 3.2vw, 1.9rem);
+		line-height: 1.25;
+		max-width: 26ch;
+		margin: 0 0 1.25rem;
+	}
+
+	.essay-lead {
+		font-family: var(--font-heading);
+		font-style: italic;
+		font-weight: 400;
+		font-size: 1.15rem;
+		line-height: 1.6;
+		max-width: 52ch;
+		color: rgb(var(--black));
+		margin: 0 0 1.75rem;
+	}
+
+	/* Tweet screenshot — a UI card already, so it only needs a hairline
+	   border and a narrower, centered measure. No shadow, no full-bleed
+	   width, or it fights its own on-screen chrome. */
+	.essay-figure-tweet {
+		max-width: 460px;
+		margin: 0 auto 2rem;
+		border: 1px solid rgba(var(--gray), 0.18);
+		border-radius: 0.75rem;
+		overflow: hidden;
+	}
+	.essay-figure-tweet img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	/* Roadmap chart — a photographed slide, so it gets the lift treatment
+	   the hero image used to have: full column width, soft shadow. */
+	.essay-figure-wide {
+		margin: 2rem 0 1.75rem;
+		border-radius: 1rem;
+		overflow: hidden;
+		border: 1px solid rgba(var(--gray), 0.18);
+		box-shadow: 0 24px 60px rgba(18, 24, 38, 0.08);
+	}
+	.essay-figure-wide img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	.essay-figure-wide figcaption {
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		letter-spacing: 0.02em;
+		color: rgb(var(--gray));
+		padding: 0.75rem 1rem;
+		background: rgb(var(--white));
+	}
+
+	.essay-p {
+		max-width: 58ch;
+		font-size: 0.9375rem;
+		line-height: 1.7;
+		color: rgb(var(--gray));
+		margin: 0 0 1.15rem;
+	}
+
+	.roadmap-list {
+		list-style: none;
+		margin: 2.5rem 0 0;
+		padding: 0;
+	}
+	.roadmap-row {
+		display: grid;
+		grid-template-columns: 3rem 1fr;
+		gap: 1.5rem;
+		padding: 1.5rem 0;
+		border-top: 1px solid rgba(var(--gray), 0.16);
+	}
+	.roadmap-list .roadmap-row:first-child { border-top: none; }
+
+	.roadmap-step {
+		font-family: var(--font-mono);
+		font-size: 0.8rem;
+		color: var(--accent);
+		padding-top: 0.2rem;
+	}
+	.roadmap-main h3 {
+		font-size: 1.0625rem;
+		font-weight: 500;
+		margin: 0 0 0.4rem;
+	}
+	.roadmap-main p {
+		font-size: 0.9375rem;
+		line-height: 1.6;
+		color: rgb(var(--gray));
+		margin: 0;
+		max-width: 52ch;
+	}
+
+	/* Writing */
+	.more-link {
+		display: inline-block;
+		margin-top: 1rem;
+		font-family: var(--font-ui);
+		font-size: 0.875rem;
+		font-weight: 500;
+		color: var(--accent);
+	}
+
+	/* ═══ RESPONSIVE ═══ */
+	@media (max-width: 640px) {
+		main { padding: 0 1.25rem 5rem; }
+		.hero { padding: 3rem 0 2.5rem; }
+		.section { padding: 2.75rem 0; }
+
+		.hero-identity { gap: 1rem; }
+		.hero-photo { width: 76px; height: 76px; }
+
+		.essay-figure-tweet { max-width: 100%; }
+
+		.roadmap-row { grid-template-columns: 1fr; gap: 0.4rem; }
+		.roadmap-step { padding-top: 0; }
+
+		.hero-meta { flex-wrap: wrap; }
+	}
+</style>

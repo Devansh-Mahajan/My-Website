@@ -1,0 +1,1 @@
+- The average life expectancy of a multinational company Fortune 500 or its equivalent is between 40 and 50 years.

@@ -1,0 +1,73 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { QUARTZ_URL } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="Notes - Devansh Mahajan"
+			description="Study notes are published on Quartz."
+			canonical_url={QUARTZ_URL}
+			no_index={true}
+		/>
+		<meta http-equiv="refresh" content={`0;url=${QUARTZ_URL}`} />
+	</head>
+	<body>
+		<Header />
+		<main class="redirect-page">
+			<p class="eyebrow">Notes</p>
+			<h1>Opening Quartz.</h1>
+			<p>The notes index now lives on the Quartz site.</p>
+			<a href={QUARTZ_URL}>Continue to Quartz</a>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.redirect-page {
+		max-width: 780px;
+		min-height: calc(100vh - 12rem);
+		margin: 0 auto;
+		padding: 6rem 1.5rem;
+	}
+
+	.eyebrow {
+		margin: 0 0 1.25rem;
+		color: rgb(var(--gray));
+		font-family: var(--font-ui);
+		font-size: 0.72rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.09em;
+	}
+
+	h1 {
+		margin: 0 0 1rem;
+		color: rgb(var(--black));
+		font-weight: 500;
+		font-size: clamp(2.5rem, 6vw, 3.5rem);
+		line-height: 1.05;
+		letter-spacing: -0.015em;
+	}
+
+	p {
+		max-width: 46ch;
+		color: rgb(var(--gray));
+		font-size: 1.0625rem;
+		line-height: 1.7;
+	}
+
+	a {
+		display: inline-block;
+		margin-top: 1rem;
+		font-family: var(--font-ui);
+		font-size: 0.9rem;
+		font-weight: 500;
+		color: var(--accent);
+	}
+</style>

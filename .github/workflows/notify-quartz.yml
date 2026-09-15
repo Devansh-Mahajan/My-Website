@@ -1,0 +1,24 @@
+name: Notify Quartz
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.md"
+      - "**/*.mdx"
+      - "998 Attachements/**"
+      - "!Blog/**"
+      - "!999 Templates/**"
+      - "!.obsidian/**"
+      - "!vault-admin/**"
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch event to Quartz
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PAT_FOR_QUARTZ }}
+          repository: Devansh-Mahajan/Obsidian-Website
+          event-type: vault-updated
