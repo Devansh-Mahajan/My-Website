@@ -1,1 +1,1 @@
-![[DMATH-ALGO_Administration.pdf]]![[Archive.zip]]sasasas
+![[DMATH-ALGO_Administration.pdf]]![[Archive.zip]]
